@@ -33,7 +33,7 @@ add_filter('wp_nav_menu_objects', 'rps_members_menu', 10, 2);
 
 function rps_members_menu($sorted_menu_items, $args)
 {
-    if ($args->theme_location == 'Primary' && is_user_logged_in()) {
+    if ($args->theme_location == 'main' && is_user_logged_in()) {
         $header_members = wp_get_nav_menu_items('Header_members');
         _wp_menu_item_classes_by_context($header_members);
         foreach ($header_members as $item) {
