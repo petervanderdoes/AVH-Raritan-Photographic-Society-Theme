@@ -33,3 +33,13 @@
  * Define additional styles here. Note that the styles defined through options will override these styles.
  * To override those styles you have to increase the CSS specificity here. For more on specificity see
  */
+.breadcrumb {
+    font-size: 92%;
+    padding: 0;
+}
+
+#subnav {
+	background-color: inherit;
+    border: 0 none;
+    margin: 4px 2px -11px;
+}

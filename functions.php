@@ -24,6 +24,8 @@ function suffu_scion_theme_setup() {
 	// ... You will need to define the kill_left_sidebars and kill_right_sidebars functions.
 
 	// And so on.
+    remove_action('suffusion_before_begin_content', 'suffusion_build_breadcrumb');
+    add_action('suffusion_after_begin_wrapper', 'suffusion_build_breadcrumb');
 }
 
 /**
