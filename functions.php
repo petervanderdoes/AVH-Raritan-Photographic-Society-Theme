@@ -99,30 +99,33 @@ class RPS_Member_Menu_Widget extends WP_Widget
             return;
         }
         ?>
-<p><label
-	for="<?php
+<p>
+	<label
+		for="<?php
         echo $this->get_field_id('title');
         ?>"><?php
         _e('Title:')?></label> <input type="text" class="widefat"
-	id="<?php
+		id="<?php
         echo $this->get_field_id('title');
         ?>"
-	name="<?php
+		name="<?php
         echo $this->get_field_name('title');
         ?>"
-	value="<?php
+		value="<?php
         echo $title;
-        ?>" /></p>
-<p><label
-	for="<?php
+        ?>" />
+</p>
+<p>
+	<label
+		for="<?php
         echo $this->get_field_id('rps_member_menu');
         ?>"><?php
         _e('Select Menu:');
         ?></label> <select
-	id="<?php
+		id="<?php
         echo $this->get_field_id('rps_member_menu');
         ?>"
-	name="<?php
+		name="<?php
         echo $this->get_field_name('rps_member_menu');
         ?>">
 		<?php
@@ -131,8 +134,23 @@ class RPS_Member_Menu_Widget extends WP_Widget
             echo '<option' . $selected . ' value="' . $menu->term_id . '">' . $menu->name . '</option>';
         }
         ?>
-			</select></p>
+			</select>
+</p>
 <?php
     }
 }
 register_widget('RPS_Member_Menu_Widget');
+
+add_action('em_event_output_condition', 'my_em_styles_event_output_condition', 1, 4);
+
+function my_em_styles_event_output_condition ($replacement, $condition, $match, $EM_Event)
+{
+    if (is_object($EM_Event) && preg_match('/^has_speaker$/', $condition, $matches)) {
+        if (isset($EM_Event->event_attributes['Speaker']) && (strlen($EM_Event->event_attributes['Speaker']) > 0)) {
+            $replacement = preg_replace("/\{\/?$condition\}/", '', $match);
+        } else {
+            $replacement = '';
+        }
+    }
+    return $replacement;
+}
