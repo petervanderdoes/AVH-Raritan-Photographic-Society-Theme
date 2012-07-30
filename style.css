@@ -51,3 +51,12 @@
     border-top-right-radius: inherit;
 	background-color: #000;
 }
+
+/**
+ * Event Manager
+ */
+.em-location-map {
+	border-radius: 5px;
+}
+}
+ */
