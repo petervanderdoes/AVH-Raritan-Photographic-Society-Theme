@@ -43,3 +43,11 @@
     border: 0 none;
     margin: 4px 2px -11px;
 }
+
+#header-container {
+	border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+	background-color: #000;
+}
