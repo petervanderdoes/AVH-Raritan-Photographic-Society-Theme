@@ -52,6 +52,9 @@
 	background-color: #000;
 }
 
+input[type="email"] {
+	border-radius: 5px;
+}
 /**
  * Event Manager
  */
