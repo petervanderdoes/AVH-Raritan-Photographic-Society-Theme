@@ -61,5 +61,25 @@ input[type="email"] {
 .em-location-map {
 	border-radius: 5px;
 }
-}
+
+
+/**
+ * Gravity Forms
  */
+.gform_wrapper *:focus {
+	background-color: #999999;
+	color: #333333;
+    outline: 0 none;
+}
+
+.gform_wrapper select {
+    background-color: #333333;
+    background-origin: padding-box;
+    border: 1px solid #555555;
+    border-radius: 5px 5px 5px 5px;
+    color: #999999;
+    font-family: inherit;
+    font-size: 11px;
+    letter-spacing: normal;
+    padding: 3px 0;
+}
