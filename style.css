@@ -55,6 +55,21 @@
 input[type="email"] {
 	border-radius: 5px;
 }
+#rps-login-bar {
+	float: right;
+    font-size: 96%;
+    padding-right: 9px;
+    padding-top: 1em;
+}
+#rps-login-bar a, #rps-login-bar  a:visited {
+    display: inline;
+    font-size: 100%;
+    font-weight: bold;
+    height: 22px;
+    line-height: 22px;
+    padding: 0;
+    text-decoration: none;
+}
 /**
  * Event Manager
  */
