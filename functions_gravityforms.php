@@ -1,13 +1,21 @@
 <?php
-define('RPS_GF_PROFILE', 2); // define the ID number of your profile form.
+rps_GF_setup_actions_filters();
 
 /**
  * All actions and filters
  */
-add_filter('gform_pre_render_' . RPS_GF_PROFILE, 'rps_populate_profile_fields');
-add_action('gform_after_submission_' . RPS_GF_PROFILE, 'rps_gf_profile_update', 100, 2);
+function rps_GF_setup_actions_filters() {
+	$_gf_edit_profile_id =  RGFormsModel::get_form_id('Edit profile');
+	add_filter('gform_pre_render_' . $_gf_edit_profile_id, 'rps_GF_populate_profile_fields');
+	add_action('gform_after_submission_' . $_gf_edit_profile_id, 'rps_GF_update_profile', 100, 2);
+}
 
-function rps_get_GF_profile_fields ()
+/**
+ * Setup the fields
+ *
+ * @return array
+ */
+function rps_GF_get_profile_fields ()
 {
 	$_fields['first_name'] = array ( 'gf_index' => '1.3', 'wp_meta' => 'first_name' );
 	$_fields['last_name'] = array ( 'gf_index' => '1.6', 'wp_meta' => 'last_name' );
@@ -27,9 +35,9 @@ function rps_get_GF_profile_fields ()
  *
  * @filter gform_pre_render_
  */
-function rps_populate_profile_fields ($form)
+function rps_GF_populate_profile_fields ($form)
 {
-	$_gf_fields = rps_get_GF_profile_fields();
+	$_gf_fields = rps_GF_get_profile_fields();
 	$profileuser = wp_get_current_user();
 
 	foreach ($form['fields'] as &$field) {
@@ -87,7 +95,7 @@ function rps_populate_profile_fields ($form)
  *
  * @action gform_after_submission_
  */
-function rps_gf_profile_update ($entry, $form)
+function rps_GF_update_profile ($entry, $form)
 {
 	global $wpdb;
 
@@ -104,7 +112,7 @@ function rps_gf_profile_update ($entry, $form)
 	$userdata = get_userdata($user_id);
 	$user->user_login = $wpdb->escape($userdata->user_login);
 
-	$gf_fields = rps_get_GF_profile_fields();
+	$gf_fields = rps_GF_get_profile_fields();
 
 	$user->first_name = sanitize_text_field($entry[$gf_fields['first_name']['gf_index']]);
 	$user->last_name = sanitize_text_field($entry[$gf_fields['last_name']['gf_index']]);
