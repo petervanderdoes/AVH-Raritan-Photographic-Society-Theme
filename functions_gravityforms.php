@@ -1,5 +1,5 @@
 <?php
-define( 'RPS_GF_PROFILE', 2 ); // define the ID number of your profile form.
+define('RPS_GF_PROFILE', 2); // define the ID number of your profile form.
 
 /**
  * All actions and filters
@@ -7,20 +7,21 @@ define( 'RPS_GF_PROFILE', 2 ); // define the ID number of your profile form.
 add_filter('gform_pre_render_' . RPS_GF_PROFILE, 'rps_populate_profile_fields');
 add_action('gform_after_submission_' . RPS_GF_PROFILE, 'rps_gf_profile_update', 100, 2);
 
-
-function rps_get_GF_profile_fields() {
-	$_fields['first_name'] = array ( 'gf_index' => '1.3', 'wp_meta' => 'first_name');
+function rps_get_GF_profile_fields ()
+{
+	$_fields['first_name'] = array ( 'gf_index' => '1.3', 'wp_meta' => 'first_name' );
 	$_fields['last_name'] = array ( 'gf_index' => '1.6', 'wp_meta' => 'last_name' );
 	$_fields['nickname'] = array ( 'gf_index' => '2', 'wp_meta' => 'nickname' );
 	$_fields['display_name'] = array ( 'gf_index' => '3', 'wp_meta' => 'display_name' );
 	$_fields['website'] = array ( 'gf_index' => '8', 'wp_meta' => 'user_url' );
 
 	// Fields below are added by the parent Theme.
-	$_fields['facebook'] = array ( 'gf_index' => '9', 'wp_meta' => 'user_url' );
-	$_fields['flickr'] = array ( 'gf_index' => '10', 'wp_meta' => 'user_url' );
+	$_fields['facebook'] = array ( 'gf_index' => '9', 'wp_meta' => 'facebook' );
+	$_fields['flickr'] = array ( 'gf_index' => '10', 'wp_meta' => 'flickr' );
 
 	return $_fields;
 }
+
 /**
  * Populate the fields before display
  *
@@ -81,7 +82,6 @@ function rps_populate_profile_fields ($form)
 }
 
 /**
- *
  * Update the user's profile with information from the received profile GF.
  * run last - just to make sure that everything is fine and dandy.
  *
@@ -89,6 +89,8 @@ function rps_populate_profile_fields ($form)
  */
 function rps_gf_profile_update ($entry, $form)
 {
+	global $wpdb;
+
 	// make sure that the user is logged in
 	// we shouldn't get here because the form should check for logged in
 	// users...
@@ -96,16 +98,27 @@ function rps_gf_profile_update ($entry, $form)
 		wp_redirect(home_url());
 		exit();
 	}
+	$user_id = get_current_user_id();
+	$user = new stdClass();
+	$user->ID = (int) $user_id;
+	$userdata = get_userdata($user_id);
+	$user->user_login = $wpdb->escape($userdata->user_login);
 
-	// get current user info...
-	global $current_user;
-	get_currentuserinfo();
+	$gf_fields = rps_get_GF_profile_fields();
 
-	// build the metadata from the entry
-	$new_user_metadata = array ();
-	$gf_field = rps_get_GF_profile_fields();
+	$user->first_name = sanitize_text_field($entry[$gf_fields['first_name']['gf_index']]);
+	$user->last_name = sanitize_text_field($entry[$gf_fields['last_name']['gf_index']]);
+	$user->nickname = sanitize_text_field($entry[$gf_fields['nickname']['gf_index']]);
+	$user->display_name = sanitize_text_field($entry[$gf_fields['display_name']['gf_index']]);
 
-	foreach ($gf_fields as $field_name => $info) {
-		update_user_meta($current_user->ID, $info['wp_meta'], $entry[$info['gf_index']]);
-	}
+	$user->user_url = esc_url_raw($entry[$gf_fields['website']['gf_index']]);
+	$user->user_url = preg_match('/^(https?):/is', $user->user_url) ? $user->user_url : 'http://' . $user->user_url;
+
+	$user->facebook = esc_url_raw($entry[$gf_fields['facebook']['gf_index']]);
+	$user->facebook = preg_match('/^(https?):/is', $user->facebook) ? $user->facebook : 'http://' . $user->facebook;
+
+	$user->flickr = esc_url_raw($entry[$gf_fields['flickr']['gf_index']]);
+	$user->flickr = preg_match('/^(https?):/is', $user->flickr) ? $user->flickr : 'http://' . $user->flickr;
+
+	wp_update_user(get_object_vars($user));
 }
