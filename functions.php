@@ -49,6 +49,9 @@ if (rps_is_plugin_active('gravityforms/gravityforms.php')) {
 	include 'functions_gravityforms.php';
 }
 
+if (rps_is_plugin_active('theme-my-login/theme-my-login.php')) {
+	include 'functions_theme_my_login.php';
+}
 /**
  * Check if a plugin is active
  *
