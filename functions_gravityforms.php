@@ -8,6 +8,19 @@ add_filter('gform_pre_render_' . RPS_GF_PROFILE, 'rps_populate_profile_fields');
 add_action('gform_after_submission_' . RPS_GF_PROFILE, 'rps_gf_profile_update', 100, 2);
 
 
+function rps_get_GF_profile_fields() {
+	$_fields['first_name'] = array ( 'gf_index' => '1.3', 'wp_meta' => 'first_name');
+	$_fields['last_name'] = array ( 'gf_index' => '1.6', 'wp_meta' => 'last_name' );
+	$_fields['nickname'] = array ( 'gf_index' => '2', 'wp_meta' => 'nickname' );
+	$_fields['display_name'] = array ( 'gf_index' => '3', 'wp_meta' => 'display_name' );
+	$_fields['website'] = array ( 'gf_index' => '8', 'wp_meta' => 'user_url' );
+
+	// Fields below are added by the parent Theme.
+	$_fields['facebook'] = array ( 'gf_index' => '9', 'wp_meta' => 'user_url' );
+	$_fields['flickr'] = array ( 'gf_index' => '10', 'wp_meta' => 'user_url' );
+
+	return $_fields;
+}
 /**
  * Populate the fields before display
  *
@@ -15,21 +28,18 @@ add_action('gform_after_submission_' . RPS_GF_PROFILE, 'rps_gf_profile_update', 
  */
 function rps_populate_profile_fields ($form)
 {
-	$rps_gf_meta = array ( 'first_name' => 'first_name', 'last_name' => 'last_name', 'nickname' => 'nickname', 'email' => 'user_email', 'website' => 'user_url' );
+	$_gf_fields = rps_get_GF_profile_fields();
 	$profileuser = wp_get_current_user();
 
 	foreach ($form['fields'] as &$field) {
 
-		foreach ($rps_gf_meta as $gf_key => $meta_key) {
-			if (strpos($field['cssClass'], 'rps-profile-' . $gf_key) !== false) {
-				$field['defaultValue'] = $profileuser->$meta_key;
-			}
-		}
 		if (strpos($field['cssClass'], 'rps-profile-name') !== false) {
 			$gf_name_id = $field['id'];
 			$field['defaultValue'][$gf_name_id . '.3'] = $profileuser->first_name;
 			$field['defaultValue'][$gf_name_id . '.6'] = $profileuser->last_name;
+			continue;
 		}
+
 		if (strpos($field['cssClass'], 'rps-profile-display-name') !== false) {
 			$public_display = array ();
 			$public_display['display_nickname'] = $profileuser->nickname;
@@ -56,6 +66,14 @@ function rps_populate_profile_fields ($form)
 				$choices[] = array ( 'text' => $item, 'value' => $item, 'isSelected' => $isSelected );
 			}
 			$field['choices'] = $choices;
+			continue;
+		}
+
+		foreach ($_gf_fields as $gf_key => $info) {
+			if (strpos($field['cssClass'], 'rps-profile-' . $gf_key) !== false) {
+				$field['defaultValue'] = $profileuser->$info['wp_meta'];
+				break;
+			}
 		}
 	}
 
@@ -85,13 +103,7 @@ function rps_gf_profile_update ($entry, $form)
 
 	// build the metadata from the entry
 	$new_user_metadata = array ();
-	$gf_fields['first_name'] = array ( 'gf_index' => '1.3', 'wp_meta' => 'first_name' );
-	$gf_fields['last_name'] = array ( 'gf_index' => '1.6', 'wp_meta' => 'last_name' );
-	$gf_fields['nickname'] = array ( 'gf_index' => 2, 'wp_meta' => 'nickname' );
-	$gf_fields['nickname'] = array ( 'gf_index' => 2, 'wp_meta' => 'nickname' );
-	$gf_fields['display_name'] = array ( 'gf_index' => 3, 'wp_meta' => 'display_name' );
-	$gf_fields['email'] = array ( 'gf_index' => 7, 'wp_meta' => 'user_email' );
-	$gf_fields['website'] = array ( 'gf_index' => 8, 'wp_meta' => 'user_url' );
+	$gf_field = rps_get_GF_profile_fields();
 
 	foreach ($gf_fields as $field_name => $info) {
 		update_user_meta($current_user->ID, $info['wp_meta'], $entry[$info['gf_index']]);
