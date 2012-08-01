@@ -241,7 +241,10 @@ if (trim($ret_str) != '') {
 	    $login_bar .= 'Logged in: <a href="'.admin_url('profile.php').'">'.$user_identity."</a>";
 	    $login_bar .= ' | <a href="'.wp_logout_url(apply_filters('the_permalink', get_permalink($post->ID))).'">Log out</a>';
 	} else {
-	    $login_bar .= "Login | Register";
+	    $login_bar .= '<a href="'. wp_login_url(apply_filters('the_permalink', get_permalink($post->ID))).'">Login</a>';
+	    if ( get_option('users_can_register') ) {
+			$login_bar .= ' | <a href="' . site_url('wp-login.php?action=register', 'login') . '">Register</a>';
+		}
 	}
 	$login_bar .= "</div>\n";
 	$ret_str .= $login_bar;
