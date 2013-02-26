@@ -34,41 +34,43 @@
  * To override those styles you have to increase the CSS specificity here. For more on specificity see
  */
 .breadcrumb {
-    font-size: 92%;
-    padding: 0;
+	font-size: 92%;
+	padding: 0;
 }
 
 #subnav {
 	background-color: inherit;
-    border: 0 none;
-    margin: 4px 2px -11px;
+	border: 0 none;
+	margin: 4px 2px -11px;
 }
 
 #header-container {
 	background-color: #000;
 	border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
+	border-bottom-right-radius: 0;
+	border-top-left-radius: inherit;
+	border-top-right-radius: inherit;
 }
 
 input[type="email"] {
 	border-radius: 5px;
 }
+
 #rps-login-bar {
 	float: right;
-    font-size: 96%;
-    padding-right: 9px;
-    padding-top: 1em;
+	font-size: 96%;
+	padding-right: 9px;
+	padding-top: 1em;
 }
-#rps-login-bar a, #rps-login-bar  a:visited {
-    display: inline;
-    font-size: 100%;
-    font-weight: bold;
-    height: 22px;
-    line-height: 22px;
-    padding: 0;
-    text-decoration: none;
+
+#rps-login-bar a,#rps-login-bar  a:visited {
+	display: inline;
+	font-size: 100%;
+	font-weight: bold;
+	height: 22px;
+	line-height: 22px;
+	padding: 0;
+	text-decoration: none;
 }
 
 /**
@@ -77,7 +79,7 @@ input[type="email"] {
 #theme-my-login *:focus {
 	background-color: #999999;
 	color: #333333;
-    outline: 0 none;
+	outline: 0 none;
 }
 
 ul.tml-action-links {
@@ -106,17 +108,26 @@ ul.tml-action-links li {
 .gform_wrapper *:focus {
 	background-color: #999999;
 	color: #333333;
-    outline: 0 none;
+	outline: 0 none;
 }
 
 .gform_wrapper select {
-    background-color: #333333;
-    background-origin: padding-box;
-    border-radius: 5px 5px 5px 5px;
-    border: 1px solid #555555;
-    color: #999999;
-    font-family: inherit;
-    font-size: 11px;
-    letter-spacing: normal;
-    padding: 3px 0;
+	background-color: #333333;
+	background-origin: padding-box;
+	border-radius: 5px 5px 5px 5px;
+	border: 1px solid #555555;
+	color: #999999;
+	font-family: inherit;
+	font-size: 11px;
+	letter-spacing: normal;
+	padding: 3px 0;
+}
+
+#picatcha {
+	background-color: inherit !important;
+	border: 1px solid #555555 !important;
+}
+
+.picatcha   .img_btn {
+	border: 2px solid #555555 !important;
 }
