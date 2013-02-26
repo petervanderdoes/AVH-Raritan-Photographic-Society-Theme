@@ -15,12 +15,27 @@ function rps_TML_setup_actions_filters() {
 }
 
 function rps_TML_change_action_links_title($title, $action) {
-	switch ( $action ) {
-		case 'lostpassword':
-		case 'retrievepassword':
-		case 'resetpass':
-		case 'rp':
-			$title = __( 'Forgot your password?', 'theme-my-login' );
+	if ( is_user_logged_in() ) {
+		$user = wp_get_current_user;
+		if ( 'profile' == $action )
+			$title = 'Your Profile';
+		else
+			$title = sprintf( 'Welcome, %s', $user->display_name );
+	} else {
+		switch ( $action ) {
+			case 'register' :
+				$title = 'Sign Up';
+				break;
+			case 'lostpassword':
+			case 'retrievepassword':
+			case 'resetpass':
+			case 'rp':
+				$title = 'Password Recovery';
+				break;
+			case 'login':
+			default:
+				$title = 'Sign In';
+		}
 	}
 	return $title;
 }
