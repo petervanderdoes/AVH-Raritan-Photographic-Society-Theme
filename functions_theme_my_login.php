@@ -12,6 +12,7 @@ rps_TML_setup_actions_filters();
  */
 function rps_TML_setup_actions_filters() {
 	add_filter('tml_title', 'rps_TML_change_action_links_title',100,2);
+	add_filter('tml_approval_role', 'rps_TML_set_role',100,2);
 }
 
 function rps_TML_change_action_links_title($title, $action) {
@@ -38,4 +39,8 @@ function rps_TML_change_action_links_title($title, $action) {
 		}
 	}
 	return $title;
+}
+
+function rps_TML_set_role($role,$id) {
+	return 's2member_level1';
 }
