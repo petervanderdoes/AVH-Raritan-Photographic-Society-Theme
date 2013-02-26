@@ -55,7 +55,9 @@ if (rps_is_plugin_active('theme-my-login/theme-my-login.php')) {
 	include 'functions_theme_my_login.php';
 }
 function yoast_breadcrumb_output() {
-	yoast_breadcrumb('<div id="subnav" class="breadcrumb">',"</div>");
+	if (function_exists('yoast_breadcrumb')) {
+		yoast_breadcrumb('<div id="subnav" class="breadcrumb">',"</div>");
+	}
 }
 /**
  * Check if a plugin is active
