@@ -32,7 +32,9 @@ function suffu_scion_theme_setup()
 
     // And so on.
     remove_action( 'suffusion_before_begin_content', 'suffusion_build_breadcrumb' );
+    remove_action('suffusion_document_header', 'suffusion_set_title');
     add_action( 'suffusion_after_begin_wrapper', 'suffusion_build_breadcrumb' );
+    add_action('suffusion_document_header', 'rps_suffusion_set_title');
 }
 
 /**
@@ -51,6 +53,9 @@ if (rps_is_plugin_active('gravityforms/gravityforms.php')) {
 
 if (rps_is_plugin_active('theme-my-login/theme-my-login.php')) {
 	include 'functions_theme_my_login.php';
+}
+function yoast_breadcrumb_output() {
+	yoast_breadcrumb('<div id="subnav" class="breadcrumb">',"</div>");
 }
 /**
  * Check if a plugin is active
@@ -77,4 +82,8 @@ function rps_members_menu( $sorted_menu_items, $args )
 		}
 	}
 	return $sorted_menu_items;
+}
+
+function rps_suffusion_set_title() {
+	echo "\t<title>".wp_title('&bull;', false)."</title>\n";
 }
