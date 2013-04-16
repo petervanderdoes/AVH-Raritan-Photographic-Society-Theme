@@ -1,34 +1,38 @@
 <?php
 /**
- * These functions and actiosn are used in conjuction with the Event Manger Plugin
+ * These functions and actions are used in conjuction with the S2 Member Plugin
  */
 
 /**
  * All actions and filters
  */
-add_filter( 'ws_plugin__s2member_sc_if_conditionals', 'my_ws_plugin__s2member_sc_if_conditionals', 1, 4 );
-
+add_filter('ws_plugin__s2member_sc_if_conditionals', 'rps_s2member_sc_if_conditionals', 1, 4);
 
 /**
- * Handles output conditions
+ * Handles output of the s2If shortcode
  *
- * @action em_event_output_condition
+ * @param string $content
+ *        The content between the shortcode tags
+ * @param array $vars
+ *        The variables used during the processing of the shortcode.
+ *        The variable 'condition_failed' indicates if the check done by the shortcode failed. If it's not set the check succeeded.
+ * @return string The content to be displayed
  */
-function my_ws_plugin__s2member_sc_if_conditionals( $content, $vars )
+function rps_s2member_sc_if_conditionals ($content, $vars)
 {
-	if (isset ($vars['condition_failed']) && $vars['condition_failed'] === TRUE ) {
+	if ( isset($vars['condition_failed']) && $vars['condition_failed'] === TRUE ) {
 		$content = "<fieldset>";
 		$content .= "<legend>";
-		$content .="<small>Members only</small>";
-		$content .="</legend>";
-		$content .="<strong>";
-		if (is_user_logged_in()) {
-			$content .="Only paid members can see this content.";
+		$content .= "<small>Members only</small>";
+		$content .= "</legend>";
+		$content .= "<strong>";
+		if ( is_user_logged_in() ) {
+			$content .= "Only paid members can see this content.";
 		} else {
-			$content .="You must be logged to see this content.";
+			$content .= "You must be logged to see this content.";
 		}
-		$content .="</strong>";
-		$content .="</fieldset>";
+		$content .= "</strong>";
+		$content .= "</fieldset>";
 	}
 	return $content;
 }

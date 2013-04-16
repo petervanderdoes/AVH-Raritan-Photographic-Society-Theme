@@ -1,27 +1,35 @@
 <?php
 /**
- * These functions and actiosn are used in conjuction with the Event Manger Plugin
+ * These functions and hooks/filters are used in conjuction with the plugin: Event Manger
  */
 
 /**
- * All actions and filters
+ * All hooks and filters
  */
-add_action( 'em_event_output_condition', 'my_em_styles_event_output_condition', 1, 4 );
-
+add_filter('em_event_output_show_condition', 'rps_EM_output_show_condition', 1, 4);
 
 /**
- * Handles output conditions
+ * Handle custom conditional placeholders.
  *
- * @action em_event_output_condition
+ * As we have custom conditional placeholders we need to check if the condition is met to show the placeholder content.
+ *
+ * Current custom conditional placeholders:
+ * - has_speaker
+ *
+ * @param boolean $show_condition
+ * @param string $condition
+ *        The name of the conditional placeholder.
+ * @param string $match
+ *        The string with conditional placeholder from opening to closing placeholder.
+ * @param object $EM_Event
+ * @return boolean
  */
-function my_em_styles_event_output_condition( $replacement, $condition, $match, $EM_Event )
+function rps_EM_output_show_condition ($show_condition, $condition, $match, $EM_Event)
 {
-	if ( is_object( $EM_Event ) && preg_match( '/^has_speaker$/', $condition, $matches ) ) {
-		if ( isset( $EM_Event->event_attributes['Speaker'] ) && ( strlen( $EM_Event->event_attributes['Speaker'] ) > 0 ) ) {
-			$replacement = preg_replace( "/\{\/?$condition\}/", '', $match );
-		} else {
-			$replacement = '';
+	if ( is_object($EM_Event) && $condition == 'has_speaker' ) {
+		if ( isset($EM_Event->event_attributes['Speaker']) && ( strlen($EM_Event->event_attributes['Speaker']) > 0 ) ) {
+			$show_condition = TRUE;
 		}
 	}
-	return $replacement;
+	return $show_condition;
 }
