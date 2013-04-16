@@ -54,6 +54,11 @@ if (rps_is_plugin_active('gravityforms/gravityforms.php')) {
 if (rps_is_plugin_active('theme-my-login/theme-my-login.php')) {
 	include 'functions_theme_my_login.php';
 }
+
+if (rps_is_plugin_active('s2member/s2member.php')) {
+	include 'functions_s2member.php';
+}
+
 function yoast_breadcrumb_output() {
 	if (function_exists('yoast_breadcrumb')) {
 		yoast_breadcrumb('<div id="subnav" class="breadcrumb">',"</div>");
