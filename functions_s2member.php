@@ -27,7 +27,7 @@ function rps_s2member_sc_if_conditionals ($content, $vars)
 		$content .= "</legend>";
 		$content .= "<strong>";
 		if ( is_user_logged_in() ) {
-			$content .= "Only paid members can see this content.";
+			$content .= "Only members can see this content.";
 		} else {
 			$content .= "You must be logged to see this content.";
 		}
