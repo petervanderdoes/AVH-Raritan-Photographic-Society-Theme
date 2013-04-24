@@ -59,10 +59,8 @@ if (rps_is_plugin_active('s2member/s2member.php')) {
 	include 'functions_s2member.php';
 }
 
-function yoast_breadcrumb_output() {
-	if (function_exists('yoast_breadcrumb')) {
-		yoast_breadcrumb('<div id="subnav" class="breadcrumb">',"</div>");
-	}
+if (rps_is_plugin_active('wordpress-seo/wp-seo.php')) {
+	include 'functions_wordpress_seo.php';
 }
 /**
  * Check if a plugin is active
