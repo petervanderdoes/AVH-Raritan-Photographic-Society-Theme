@@ -2,8 +2,12 @@
 /**
  * Threaded comments
  *
- * @package Suffusion
+ * @package Suffu-RPS
  * @subpackage Templates
+ */
+
+/**
+ * Only show comments section for logged in users and paid members,
  */
 if (is_user_logged_in() && user_can($user_ID, 'access_s2member_level1'))
 {

@@ -6,7 +6,7 @@
 /**
  * All hooks and filters
  */
-add_filter('em_event_output_show_condition', 'rps_EM_output_show_condition', 1, 4);
+add_filter('em_event_output_show_condition', 'filterRPS_EM_output_show_condition', 1, 4);
 
 /**
  * Handle custom conditional placeholders.
@@ -24,7 +24,7 @@ add_filter('em_event_output_show_condition', 'rps_EM_output_show_condition', 1, 
  * @param object $EM_Event
  * @return boolean
  */
-function rps_EM_output_show_condition ($show_condition, $condition, $match, $EM_Event)
+function filterRPS_EM_output_show_condition ($show_condition, $condition, $match, $EM_Event)
 {
 	if ( is_object($EM_Event) && $condition == 'has_speaker' ) {
 		if ( isset($EM_Event->event_attributes['Speaker']) && ( strlen($EM_Event->event_attributes['Speaker']) > 0 ) ) {

@@ -6,7 +6,7 @@
 /**
  * All actions and filters
  */
-add_filter('ws_plugin__s2member_sc_if_conditionals', 'rps_s2member_sc_if_conditionals', 1, 4);
+add_filter('ws_plugin__s2member_sc_if_conditionals', 'filterRPS_S2M_sc_if_conditionals', 1, 4);
 
 /**
  * Handles output of the s2If shortcode
@@ -18,7 +18,7 @@ add_filter('ws_plugin__s2member_sc_if_conditionals', 'rps_s2member_sc_if_conditi
  *        The variable 'condition_failed' indicates if the check done by the shortcode failed. If it's not set the check succeeded.
  * @return string The content to be displayed
  */
-function rps_s2member_sc_if_conditionals ($content, $vars)
+function filterRPS_S2M_sc_if_conditionals ($content, $vars)
 {
 	if ( isset($vars['condition_failed']) && $vars['condition_failed'] === TRUE ) {
 		$content = rps_s2member_display_restriction("Only members can see this content");

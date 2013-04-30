@@ -2,20 +2,20 @@
 /**
  * Your child theme's core functions file
  *
- * @package Suffu-scion
+ * @package Suffu-RPS
  */
 
 // This is the entry for your custom functions file. The name of the function is
-// suffu_scion_theme_setup and its priority is 15.
+// suffu_rps_theme_setup and its priority is 15.
 // So it will run after Suffusion's function, which is executed with a priority
 // 10.
-add_action( "after_setup_theme", "suffu_scion_theme_setup", 15 );
+add_action( "after_setup_theme", "actionRPS_theme_setup", 15 );
 
 /**
  * Use this function to add/remove hooks for Suffusion's execution, or to
  * disable theme functionality
  */
-function suffu_scion_theme_setup()
+function actionRPS_theme_setup()
 {
     // If you want to disable the "Additional Options for Suffusion" box:
     // remove_theme_support('suffusion-additional-options');
@@ -34,7 +34,7 @@ function suffu_scion_theme_setup()
     remove_action( 'suffusion_before_begin_content', 'suffusion_build_breadcrumb' );
     remove_action('suffusion_document_header', 'suffusion_set_title');
     add_action( 'suffusion_after_begin_wrapper', 'suffusion_build_breadcrumb' );
-    add_action('suffusion_document_header', 'rps_suffusion_set_title');
+    add_action('suffusion_document_header', 'actionRPS_set_document_title');
 }
 
 /**
@@ -75,9 +75,9 @@ function rps_is_plugin_active($plugin) {
 
 // Add functionality to the default WordPress menu system
 // This will add a menu item when a user is logged in.
-add_filter( 'wp_nav_menu_objects', 'rps_members_menu', 10, 2 );
+add_filter( 'wp_nav_menu_objects', 'filterRPS_members_menu', 10, 2 );
 
-function rps_members_menu( $sorted_menu_items, $args )
+function filterRPS_members_menu( $sorted_menu_items, $args )
 {
 	if ( $args->theme_location == 'main' && is_user_logged_in() ) {
 		$header_members = wp_get_nav_menu_items( 'Header_members' );
@@ -89,6 +89,6 @@ function rps_members_menu( $sorted_menu_items, $args )
 	return $sorted_menu_items;
 }
 
-function rps_suffusion_set_title() {
+function actionRPS_set_document_title() {
 	echo "\t<title>".wp_title('&bull;', false)."</title>\n";
 }
