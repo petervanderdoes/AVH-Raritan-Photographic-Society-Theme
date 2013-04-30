@@ -45,6 +45,9 @@
 }
 
 #header-container {
+	background-image: url("images/RPS-LOGO-MASTER-2012-2.jpg");
+    background-position: left top;
+    background-repeat: no-repeat;
 	background-color: #000;
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
