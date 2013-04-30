@@ -69,7 +69,13 @@ if (rps_is_plugin_active('wordpress-seo/wp-seo.php')) {
  * @return boolean
  */
 function rps_is_plugin_active($plugin) {
-	return in_array( $plugin, (array) get_option( 'active_plugins', array() ) ) ;
+	static $active_plugins = NULL;
+
+	if ($active_plugins === NULL ){
+		$active_plugins = (array) get_option( 'active_plugins', array() );
+	}
+
+	return in_array( $plugin, $active_plugins ) ;
 }
 
 
