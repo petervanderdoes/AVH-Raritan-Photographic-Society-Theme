@@ -46,8 +46,8 @@
 
 #header-container {
 	background-image: url("images/RPS-LOGO-MASTER-2012-2.jpg");
-    background-position: left top;
-    background-repeat: no-repeat;
+	background-position: left top;
+	background-repeat: no-repeat;
 	background-color: #000;
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
@@ -74,6 +74,56 @@ input[type="email"] {
 	line-height: 22px;
 	padding: 0;
 	text-decoration: none;
+}
+
+/**
+* Showcase
+*/
+#rps_showcase {
+	margin: 0 auto;
+	width: 100%;
+}
+
+#rps_showcase h5 {
+	text-align: center;
+	font-family: Oswald;
+}
+
+#rps_showcase .image {
+	text-align: center;
+}
+
+#rps_showcase .thumb_img {
+	vertical-align: middle;
+}
+
+#rps_showcase .col-control {
+	width: 960px;
+}
+
+#rps_showcase ul {
+	float: left;
+	list-style: none outside none;
+	margin: 0 0 -1px;
+	padding: 0;
+	vertical-align: bottom;
+}
+
+#rps_showcase li:last-child {
+	margin: 0;
+}
+
+#rps_showcase li {
+	float: left;
+	line-height: 150px;
+	margin: 0 25px 0 0;
+	min-height: 154px;
+	padding: 10px;
+	width: 150px;
+}
+
+#rps_showcase .dbx-box {
+	margin: 0;
 }
 
 /**
