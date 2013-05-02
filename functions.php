@@ -34,8 +34,11 @@ function actionRPS_theme_setup ()
 	// And so on.
 	remove_action('suffusion_before_begin_content', 'suffusion_build_breadcrumb');
 	remove_action('suffusion_document_header', 'suffusion_set_title');
+	remove_action('wp_enqueue_scripts', 'suffusion_enqueue_styles');
+
 	add_action('suffusion_after_begin_wrapper', 'suffusion_build_breadcrumb');
 	add_action('suffusion_document_header', 'actionRPS_set_document_title');
+	add_action('wp_enqueue_scripts', 'suffusion_enqueue_styles',999);
 }
 
 /**
