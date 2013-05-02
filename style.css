@@ -176,6 +176,59 @@ ul.tml-action-links li {
 	padding: 3px 0;
 }
 
+.gform_wrapper .chzn-container .chzn-drop {
+		background-color: #999999;
+	color: #333333;
+	border: 1px solid #555555;
+}
+
+.gform_wrapper .chzn-container-single .chzn-single div {
+	background-color: #333333;
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #333333), color-stop(1, #000000));
+	background-image: -webkit-linear-gradient(center bottom, #333333 0%, #000000 100%);
+	background-image: -moz-linear-gradient(center bottom, #333333 0%, #000000 100%);
+	background-image: -o-linear-gradient(top, #333333 0%,#000000 100%);
+	background-image: -ms-linear-gradient(top, #333333 0%,#000000 100%); filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#000000',GradientType=0 );
+	background-image: linear-gradient(top, #333333 0%,#000000 100%);
+	border-left: 1px solid #555555;
+}
+.gform_wrapper .chzn-container-single .chzn-single {
+	background-color: #333333;
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #333333), color-stop(1, #000000));
+	background-image: -webkit-linear-gradient(center bottom, #333333 0%, #000000 100%);
+	background-image: -moz-linear-gradient(center bottom, #333333 0%, #000000 100%);
+	background-image: -o-linear-gradient(top, #333333 0%,#000000 100%);
+	background-image: -ms-linear-gradient(top, #333333 0%,#000000 100%); filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#000000',GradientType=0 );
+	background-image: linear-gradient(top, #333333 0%,#000000 100%);
+	border: 1px solid #555555;
+	color: #999999;
+}
+
+.gform_wrapper .chzn-container-active .chzn-single {
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0);
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,0);
+	-o-box-shadow: 0 0 5px rgba(0,0,0,0);
+	box-shadow: 0 0 5px rgba(0,0,0,0);
+}
+.gform_wrapper .chzn-container-active .chzn-single-with-drop {
+	border: 1px solid #555555;
+	background-color: #333333;
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #333333), color-stop(1, #000000));
+	background-image: -webkit-linear-gradient(center bottom, #333333 0%, #000000 100%);
+	background-image: -moz-linear-gradient(center bottom, #333333 0%, #000000 100%);
+	background-image: -o-linear-gradient(top, #333333 0%,#000000 100%);
+	background-image: -ms-linear-gradient(top, #333333 0%,#000000 100%); filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#000000',GradientType=0 );
+	background-image: linear-gradient(top, #333333 0%,#000000 100%);
+
+}
+
+.gform_wrapper .chzn-container .chzn-results .highlighted {
+    background-color: #555555;
+}
+
+.gform_wrapper .chzn-container-single .chzn-search input {
+	border: 1px solid #555;
+}
 #picatcha {
 	background-color: inherit !important;
 	border: 1px solid #555555 !important;
