@@ -10,6 +10,12 @@ $_gf_edit_profile_id = RGFormsModel::get_form_id('Edit profile');
 add_filter('gform_pre_render_' . $_gf_edit_profile_id, 'filterRPS_GF_populate_profile_fields');
 add_action('gform_after_submission_' . $_gf_edit_profile_id, 'actionRPS_GF_update_profile', 100, 2);
 
+// Prepoluate the p field on the contact form. The parameter name is hidden_paidmember.
+add_filter('gform_field_value_hidden_paidmember', 'filterRPS_GF_populate_hidden_paidmember');
+add_filter('gform_field_value_first_name', 'filterRPS_GF_populate_first_name');
+add_filter('gform_field_value_last_name', 'filterRPS_GF_populate_last_name');
+add_filter('gform_field_value_email', 'filterRPS_GF_populate_email');
+
 // activate password field (By default Gravity Forms does not allow a password field to be used. This filter enables this option.
 add_filter("gform_enable_password_field", create_function("", "return true;"));
 
@@ -137,4 +143,76 @@ function actionRPS_GF_update_profile ($entry, $form)
 	$_user->flickr = preg_match('/^(https?):/is', $_user->flickr) ? $_user->flickr : 'http://' . $_user->flickr;
 
 	wp_update_user(get_object_vars($_user));
+}
+
+/**
+ * Prepopulate the field paidmember.
+ *
+ * This field exists in the contact form and is used as a conditional field for the picatcha field.
+ * If that field has the value as given in this function, the picatcha field is not used.
+ * We don't show the picatcha field for current members,
+ *
+ * @param string $value
+ * @return string
+ */
+function filterRPS_GF_populate_hidden_paidmember ($value)
+{
+	if ( is_user_logged_in() && user_can(get_current_user_id(), 'access_s2member_level1') ) {
+		// The value must correspond with the value in the form itself.
+		$value = "B5NjSa6tqvJV9jTqM358";
+	}
+	return $value;
+}
+
+/**
+ * Pre-populate the field first_name when user is logged in and paid member
+ *
+ * @param string $value
+ * @return string
+ */
+function filterRPS_GF_populate_first_name ($value)
+{
+	global $user_ID;
+
+	if ( is_user_logged_in() && user_can($user_ID, 'access_s2member_level1') ) {
+		$user = get_user_by('id', $user_ID);
+		$value = $user->user_firstname;
+	}
+	return $value;
+}
+
+/**
+ * Pre-populate the field last_name when user is logged in and paid member
+ *
+ * @param string $value
+ * @return string
+ */
+
+function filterRPS_GF_populate_last_name ($value)
+{
+	global $current_user, $user_ID;
+
+	if ( is_user_logged_in() && user_can($user_ID, 'access_s2member_level1') ) {
+		$user = get_user_by('id', $user_ID);
+		$value = $user->user_lastname;
+	}
+	return $value;
+}
+
+/**
+ * Pre-populate the field email when user is logged in and paid member
+ *
+ * @param string $value
+ * @return string
+ */
+
+function filterRPS_GF_populate_email ($value)
+{
+	global $current_user, $user_ID;
+
+	if ( is_user_logged_in() && user_can($user_ID, 'access_s2member_level1') ) {
+		$user = get_user_by('id', $user_ID);
+		$value = $user->user_email;
+	}
+	return $value;
 }
