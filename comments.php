@@ -9,7 +9,8 @@
 /**
  * Only show comments section for logged in users and paid members,
  */
-if ( is_user_logged_in() && user_can($user_ID, 'access_s2member_level1') ) {
+global $user_ID;
+if ( is_user_logged_in() && rps_is_paid_member($user_ID) ) {
 	?>
 <section id="comments">
 <?php

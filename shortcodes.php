@@ -7,12 +7,15 @@ add_shortcode('rps_paid_member', 'shortcodeContentForPaidMembers');
 /**
  * Handles the shortcode rps_paid_member
  *
- * @return string The content to be displayed
+ * @uses $user_ID;
  *
+ * @return string The content to be displayed
  */
 function shortcodeContentForPaidMembers ($atts, $content)
 {
-	if ( is_user_not_logged_in() || user_cannot(get_current_user_id(), 'access_s2member_level1') ) {
+	global $user_ID;
+
+	if ( ( !is_user_logged_in() ) || ( !rps_is_paid_member($user_ID) ) ) {
 		$content = rps_display_restriction("Only members can see this content");
 	}
 	return $content;

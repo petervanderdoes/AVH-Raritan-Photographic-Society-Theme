@@ -104,6 +104,8 @@ function filterRPS_GF_populate_profile_fields ($form)
  * Update the user's profile with information from the received profile GF.
  * run last - just to make sure that everything is fine and dandy.
  *
+ * @uses $wpdb
+ *
  * @param array $entry
  *        Array of all the entries in the form
  * @param array $form
@@ -152,12 +154,16 @@ function actionRPS_GF_update_profile ($entry, $form)
  * If that field has the value as given in this function, the picatcha field is not used.
  * We don't show the picatcha field for current members,
  *
+ * @uses $user_ID
+ *
  * @param string $value
  * @return string
  */
 function filterRPS_GF_populate_hidden_paidmember ($value)
 {
-	if ( is_user_logged_in() && user_can(get_current_user_id(), 'access_s2member_level1') ) {
+	global $user_ID;
+
+	if ( is_user_logged_in() && rps_is_paid_member($user_ID) ) {
 		// The value must correspond with the value in the form itself.
 		$value = "B5NjSa6tqvJV9jTqM358";
 	}
@@ -167,6 +173,8 @@ function filterRPS_GF_populate_hidden_paidmember ($value)
 /**
  * Pre-populate the field first_name when user is logged in and paid member
  *
+ * @uses $user_ID
+ *
  * @param string $value
  * @return string
  */
@@ -174,7 +182,7 @@ function filterRPS_GF_populate_first_name ($value)
 {
 	global $user_ID;
 
-	if ( is_user_logged_in() && user_can($user_ID, 'access_s2member_level1') ) {
+	if ( is_user_logged_in() && rps_is_paid_member($user_ID) ) {
 		$user = get_user_by('id', $user_ID);
 		$value = $user->user_firstname;
 	}
@@ -184,15 +192,17 @@ function filterRPS_GF_populate_first_name ($value)
 /**
  * Pre-populate the field last_name when user is logged in and paid member
  *
+ * @uses $user_ID
+ *
  * @param string $value
  * @return string
  */
 
 function filterRPS_GF_populate_last_name ($value)
 {
-	global $current_user, $user_ID;
+	global $user_ID;
 
-	if ( is_user_logged_in() && user_can($user_ID, 'access_s2member_level1') ) {
+	if ( is_user_logged_in() && rps_is_paid_member($user_ID) ) {
 		$user = get_user_by('id', $user_ID);
 		$value = $user->user_lastname;
 	}
@@ -202,15 +212,17 @@ function filterRPS_GF_populate_last_name ($value)
 /**
  * Pre-populate the field email when user is logged in and paid member
  *
+ * @uses $user_ID
+ *
  * @param string $value
  * @return string
  */
 
 function filterRPS_GF_populate_email ($value)
 {
-	global $current_user, $user_ID;
+	global $user_ID;
 
-	if ( is_user_logged_in() && user_can($user_ID, 'access_s2member_level1') ) {
+	if ( is_user_logged_in() && rps_is_paid_member($user_ID) ) {
 		$user = get_user_by('id', $user_ID);
 		$value = $user->user_email;
 	}

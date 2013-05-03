@@ -38,7 +38,7 @@ function actionRPS_theme_setup ()
 
 	add_action('suffusion_after_begin_wrapper', 'suffusion_build_breadcrumb');
 	add_action('suffusion_document_header', 'actionRPS_set_document_title');
-	add_action('wp_enqueue_scripts', 'suffusion_enqueue_styles',999);
+	add_action('wp_enqueue_scripts', 'suffusion_enqueue_styles', 999);
 }
 
 /**
@@ -106,15 +106,13 @@ function actionRPS_set_document_title ()
 	echo "\t<title>" . wp_title('&bull;', false) . "</title>\n";
 }
 
-function avh_check_user_role ($role, $user_id = null)
+/**
+ * Check by user ID if user is a paid member
+ *
+ * @param int $user_ID
+ * @return boolean
+ */
+function rps_is_paid_member ($user_ID)
 {
-	if ( is_numeric($user_id) )
-		$user = get_userdata($user_id);
-	else
-		$user = wp_get_current_user();
-
-	if ( empty($user) )
-		return false;
-
-	return in_array($role, (array) $user->roles);
+	return user_can($user_ID, 'access_s2member_level1');
 }
