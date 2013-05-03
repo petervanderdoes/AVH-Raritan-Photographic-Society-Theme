@@ -40,4 +40,3 @@ if ( $suf_footer_layout_style != 'in-align' ) {
 }
 ?>
 </footer>
-<!-- <?php echo get_num_queries(); ?> queries, <?php suffusion_get_memory_usage(); ?> in <?php timer_stop(1); ?> seconds. -->
