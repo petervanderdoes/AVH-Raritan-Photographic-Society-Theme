@@ -6,11 +6,13 @@
 /**
  * All hooks and filters
  */
+
+// Add filters and actions for updating user information. We use a form instead of the admin section.
 $_gf_edit_profile_id = RGFormsModel::get_form_id('Edit profile');
 add_filter('gform_pre_render_' . $_gf_edit_profile_id, 'filterRPS_GF_populate_profile_fields');
 add_action('gform_after_submission_' . $_gf_edit_profile_id, 'actionRPS_GF_update_profile', 100, 2);
 
-// Prepoluate the p field on the contact form. The parameter name is hidden_paidmember.
+// Pre-populate filters. gform_field_value_$pparameter
 add_filter('gform_field_value_hidden_paidmember', 'filterRPS_GF_populate_hidden_paidmember');
 add_filter('gform_field_value_first_name', 'filterRPS_GF_populate_first_name');
 add_filter('gform_field_value_last_name', 'filterRPS_GF_populate_last_name');
@@ -197,7 +199,6 @@ function filterRPS_GF_populate_first_name ($value)
  * @param string $value
  * @return string
  */
-
 function filterRPS_GF_populate_last_name ($value)
 {
 	global $user_ID;
@@ -217,7 +218,6 @@ function filterRPS_GF_populate_last_name ($value)
  * @param string $value
  * @return string
  */
-
 function filterRPS_GF_populate_email ($value)
 {
 	global $user_ID;

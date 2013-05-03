@@ -12,34 +12,8 @@
 // 10.
 add_action("after_setup_theme", "actionRPS_theme_setup", 15);
 
-/**
- * Use this function to add/remove hooks for Suffusion's execution, or to
- * disable theme functionality
- */
-function actionRPS_theme_setup ()
-{
-	// If you want to disable the "Additional Options for Suffusion" box:
-	// remove_theme_support('suffusion-additional-options');
-
-	// If you want to disable left sidebars for something that Suffusion doesn't
-	// support through options:
-	// add_filter('suffusion_can_display_left_sidebars', 'kill_left_sidebars');
-
-	// ... and for right sidebars:
-	// add_filter('suffusion_can_display_right_sidebars',
-	// 'kill_right_sidebars');
-	// ... You will need to define the kill_left_sidebars and
-	// kill_right_sidebars functions.
-
-	// And so on.
-	remove_action('suffusion_before_begin_content', 'suffusion_build_breadcrumb');
-	remove_action('suffusion_document_header', 'suffusion_set_title');
-	remove_action('wp_enqueue_scripts', 'suffusion_enqueue_styles');
-
-	add_action('suffusion_after_begin_wrapper', 'suffusion_build_breadcrumb');
-	add_action('suffusion_document_header', 'actionRPS_set_document_title');
-	add_action('wp_enqueue_scripts', 'suffusion_enqueue_styles', 999);
-}
+// Standard actions and filters
+add_filter('wp_nav_menu_objects', 'filterRPS_members_menu', 10, 2);
 
 /**
  * Here you can define any additional functions that you are hooking in the
@@ -85,13 +59,45 @@ function rps_is_plugin_active ($plugin)
 	return in_array($plugin, $active_plugins);
 }
 
-// Add functionality to the default WordPress menu system
-// This will add a menu item when a user is logged in.
-add_filter('wp_nav_menu_objects', 'filterRPS_members_menu', 10, 2);
+/**
+ * Check by user ID if user is a paid member
+ *
+ * @param int $user_ID
+ * @return boolean
+ */
+function rps_is_paid_member ($user_ID)
+{
+	return user_can($user_ID, 'access_s2member_level1');
+}
 
+/**
+ * Use this function to add/remove hooks for Suffusion's execution, or to
+ * disable theme functionality
+ */
+function actionRPS_theme_setup ()
+{
+	remove_action('suffusion_before_begin_content', 'suffusion_build_breadcrumb');
+	remove_action('suffusion_document_header', 'suffusion_set_title');
+	remove_action('wp_enqueue_scripts', 'suffusion_enqueue_styles');
+
+	add_action('suffusion_after_begin_wrapper', 'suffusion_build_breadcrumb');
+	add_action('suffusion_document_header', 'actionRPS_set_document_title');
+	add_action('wp_enqueue_scripts', 'suffusion_enqueue_styles', 999);
+}
+
+
+/**
+ * This will add a menu item when a user is logged in.
+ *
+ * @param array $sorted_menu_items
+ * @param object $args
+ * @return array
+ */
 function filterRPS_members_menu ($sorted_menu_items, $args)
 {
-	if ( $args->theme_location == 'main' && is_user_logged_in() ) {
+	global $user_ID;
+
+	if ( $args->theme_location == 'main' && is_user_logged_in() && rps_is_paid_member($user_ID)) {
 		$header_members = wp_get_nav_menu_items('Header_members');
 		_wp_menu_item_classes_by_context($header_members);
 		foreach ( $header_members as $item ) {
@@ -104,15 +110,4 @@ function filterRPS_members_menu ($sorted_menu_items, $args)
 function actionRPS_set_document_title ()
 {
 	echo "\t<title>" . wp_title('&bull;', false) . "</title>\n";
-}
-
-/**
- * Check by user ID if user is a paid member
- *
- * @param int $user_ID
- * @return boolean
- */
-function rps_is_paid_member ($user_ID)
-{
-	return user_can($user_ID, 'access_s2member_level1');
 }
