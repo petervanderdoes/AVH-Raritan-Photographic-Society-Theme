@@ -33,11 +33,30 @@
  * Define additional styles here. Note that the styles defined through options will override these styles.
  * To override those styles you have to increase the CSS specificity here. For more on specificity see
  */
+
 body {
     font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
-    font-size: 13px;
+    font-size: 14px;
+    background-attachment: scroll;
+    background-image: url("images/black_denim.png");
+    background-position: left top;
+    background-repeat: repeat;
+}
+.entry, .non-wp-entry {
+    font-size: 1em;
 }
 
+.suf-mag-category, .suf-mag-excerpt, .suf-tile {
+    font-size: 1em;
+}
+
+h2.suf-mag-excerpt-title a, h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag-excerpt-title a:active, h2.suf-tile-title a, h2.suf-tile-title a:hover, h2.suf-tile-title a:visited, h2.suf-tile-title a:active {
+    font-size: 0.6em;
+}
+
+.suf-mag-excerpt-full-story {
+    font-size: 0.9em;
+}
 .suf-gradient {
 	background:
 		url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQxOWVmYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg1JSIgc3RvcC1jb2xvcj0iIzQxOWVmYiIgc3RvcC1vcGFjaXR5PSIwLjE0Ii8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iIzA0MGIxMSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -137,7 +156,7 @@ h2.suf-tile-title {
 
 .suf-mag-excerpts h3 {
 	font-family: Oswald;
-	font-size: 150%;
+	 font-size: 1.5em;
 	font-weight: 400;
 	line-height: 2em;
 	margin: 0;
@@ -210,7 +229,7 @@ input[type="email"] {
 
 .rps-showcases h3 {
 	font-family: Oswald;
-	font-size: 150%;
+	font-size: 1.5em;;
 	font-weight: 400;
 	line-height: 2em;
 	margin: 0;
