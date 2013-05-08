@@ -11,6 +11,8 @@
 @import "suffusion/dark-style";
 @import "suffusion/dark-royal-blue";
 
+@import "partials/header";
+
 $base-font-size: 14px;
 $base-line-height: 19px;
 @include establish-baseline;
