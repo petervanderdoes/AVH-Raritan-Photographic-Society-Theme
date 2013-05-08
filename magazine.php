@@ -11,6 +11,9 @@
 get_header();
 
 global $post, $suf_mag_content_enabled, $suf_mag_entity_order, $suf_mag_headlines_enabled, $suf_mag_excerpts_enabled, $suf_mag_categories_enabled, $suf_mag_total_excerpts;
+global $suf_post_show_comment;
+
+$suf_post_show_comment = 'hide';
 ?>
 
 <div id="main-col">
@@ -41,10 +44,13 @@ while ( $articles->have_posts() ) {
 	$post_to_skip[]=$post->ID;
 	echo '<article class="' . join(' ', get_post_class(array('excerpt'))) . '" id="post-' . $post->ID . '">';
 	suffusion_after_begin_post();
-	echo '<div class="entry-container fix">';
-	echo '<div class="entry fix">';
+	echo '<div class="entry-container bottom fix">';
+	echo '<div class="entry entry-content fix">';
 	suffusion_excerpt();
 	echo '</div>';
+	echo "\t<div class='suf-mag-excerpt-footer'>\n";
+	echo "\t\t<a href='" . get_permalink($post->ID) . "' class='suf-mag-excerpt-full-story'>$suf_mag_excerpt_full_story_text</a>";
+	echo "\t</div>\n";
 	suffusion_after_content();
 	echo '</div>';
 	suffusion_before_end_post();
