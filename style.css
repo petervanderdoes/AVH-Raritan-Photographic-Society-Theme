@@ -15,19 +15,19 @@
  */
 
 /* Always include this first if you are not inheriting */
-/* @import url("../suffusion/style.css"); */
+@import url("../suffusion/style.css");
 
 /* Include this if you are not inheriting and you wish to have rounded corners */
-/* @import url("../suffusion/rounded-corners.css"); */
+@import url("../suffusion/rounded-corners.css");
 
 /* Include this for your specific skin if you are not inheriting */
-/* @import url("../suffusion/skins/light-theme-royal-blue/skin.css"); */
+@import url("../suffusion/skins/light-theme-royal-blue/skin.css");
 
 /* Include this if you are using a dark theme and you are not inheriting. This is not needed for newer skins like Minima or Photonique */
-/* @import url("../suffusion/dark-style.css"); */
+@import url("../suffusion/dark-style.css");
 
 /* Include this for your specific skin if you are using a dark theme and you are not inheriting */
-/* @import url("../suffusion/skins/dark-theme-royal-blue/skin.css"); */
+@import url("../suffusion/skins/dark-theme-royal-blue/skin.css");
 
 /**
  * Define additional styles here. Note that the styles defined through options will override these styles.
