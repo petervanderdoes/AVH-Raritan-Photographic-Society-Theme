@@ -1,5 +1,9 @@
 @import "compass";
 @include global-reset;
+$base-font-size: 14px;
+$base-line-height: 19px;
+//$relative-font-sizing: false;
+@include establish-baseline;
 
 @import "assets/variables";
 @import "assets/mixins";
@@ -12,10 +16,7 @@
 
 @import "partials/header";
 @import "partials/navigation-bar";
-
-$base-font-size: 14px;
-$base-line-height: 19px;
-@include establish-baseline;
+@import "partials/breadcrumb";
 
 body {
   font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
@@ -114,11 +115,6 @@ h2.suf-tile-title a {
   &:hover, &:visited, &:active {
     font-size: 58%;
   }
-}
-
-.breadcrumb {
-  font-size: 92%;
-  padding: 0;
 }
 
 #header-container {

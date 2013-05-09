@@ -57,7 +57,7 @@
 		  }
     }
 		&.sf-menu {
-      @include adjust-font-size-to(14px);
+      @include adjust-font-size-to(13px);
     	display: inline-block;
   	}
 		.col-control.right ul.sf-menu {
@@ -736,7 +736,7 @@ img.home-icon {
 
 #rps-login-bar {
   float: right;
-  @include adjust-font-size-to(13px);
+  @include adjust-font-size-to(12px);
   padding-right: 9px;
   padding-top: 1em;
   a,
