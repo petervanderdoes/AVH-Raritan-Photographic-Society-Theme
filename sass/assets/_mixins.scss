@@ -1,5 +1,13 @@
-@mixin gradient-1 {
-  @include filter-gradient($color-royal-blue-light, $color-royal-blue-dark, vertical);
-  $experimental-support-for-svg: true;
-  @include background(linear-gradient(top,  $color-royal-blue-light-fully-opaque 0%,$color-royal-blue-dark-no-opaque 100%));
+@mixin gradient-transparent {
+	background: $color-royal-blue-light;
+  	@include filter-gradient($color-royal-blue-light, $color-royal-blue-dark, vertical);
+  	$experimental-support-for-svg: true;
+  	@include background(linear-gradient(top,  $color-royal-blue-light-opaque 0%,$color-royal-blue-dark-transparent 100%));
+}
+
+@mixin gradient-opaque {
+	background: $color-royal-blue-light;
+	@include filter-gradient($color-royal-blue-light, $color-royal-blue-dark, vertical);
+	$experimental-support-for-svg: true;
+	@include background(linear-gradient(top,  $color-royal-blue-light-opaque 0%,$color-royal-blue-dark-opaque 100%));
 }

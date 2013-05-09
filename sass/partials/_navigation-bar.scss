@@ -1,0 +1,749 @@
+#nav {
+  border-bottom: 1px solid #555;
+	ul {
+    	list-style: none;
+    	display: block;
+    	margin: 0 0 -1px 0;
+    	padding: 0;
+    	float: left;
+    	vertical-align: bottom;
+    	li {
+      		margin: 0 4px 0 0;
+      		padding: 0;
+      		float: left;
+			a {
+          color: #b8b8b8;
+          background: #000;
+      		padding: 8px 8px 5px 8px;
+      		text-decoration: none;
+      		display: inline-block;
+    		}
+    	}
+  		&.continuous ul {
+    		margin-left: 10px;
+  		}
+  		&.continuous ul li {
+    		margin: 0;
+    		border: 1px solid #555;
+        border-radius: 0;
+    		a {
+      			border-radius: 0;
+    		}
+  		}
+		  ul {
+        position: absolute;
+        margin-left: -1px;
+        li {
+          border: 1px solid #555;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+          a {
+				    padding: 8px 8px 5px 8px;
+    			  text-decoration: none;
+    			  display: block;
+    			  line-height: 22px;
+	          z-index: 100;
+			      border-top-left-radius: 0;
+      		  border-top-right-radius: 0;
+				    &:visited {
+              padding: 8px 8px 5px 8px;
+        			text-decoration: none;
+        			display: block;
+        			line-height: 22px;
+          		border-top-left-radius: 0;
+        	  	border-top-right-radius: 0;
+        		}
+      		}
+		  }
+    }
+		&.sf-menu {
+      @include adjust-font-size-to(14px);
+    	display: inline-block;
+  	}
+		.col-control.right ul.sf-menu {
+    		float: right;
+  	}
+	}
+ 	.current_page_item a {
+    	text-decoration: none;
+    	&:hover {
+      		text-decoration: none;
+    	}
+  	}
+  	li {
+  		float: left;
+    	position: relative;
+    	z-index: 1;
+    	a:active {
+        	text-decoration: none;
+		}
+      	&:hover {
+        	z-index: 100;
+      	}
+    }
+    &:hover {
+      z-index: 100;
+    }
+
+  &.continuous {
+	    border-bottom: 1px solid #0052a4;
+  	}
+ 	a {
+    	display: block;
+    	font-size: 100%;
+    	text-decoration: none;
+    	height: 22px;
+    	padding: 8px 8px 5px 8px;
+    	line-height: 22px;
+    	font-weight: bold;
+    	&:visited {
+      		display: block;
+      		font-size: 100%;
+      		text-decoration: none;
+      		height: 22px;
+      		padding: 8px 8px 5px 8px;
+      		line-height: 22px;
+      		font-weight: bold;
+    	}
+		&.current {
+ 			color: #ffffff;
+    		@include gradient-opaque;
+  		}
+	}
+	li a:hover {
+  		color: #ffffff;
+  		@include gradient-opaque;
+  	}
+}
+
+.float-ptr {
+  font-size: 130%;
+  float: right;
+  background: $arrows-img no-repeat scroll -16px 0 transparent;
+  height: 8px;
+  width: 8px;
+  top: 45%;
+  right: 3px;
+  position: absolute;
+}
+.down-ptr {
+  font-size: 130%;
+  float: right;
+  background: $arrows-img no-repeat scroll 0 0 transparent;
+  height: 8px;
+  width: 8px;
+  top: 45%;
+  right: 5px;
+  position: absolute;
+  margin-left: 5px;
+}
+img.home-icon {
+  height: 21px;
+}
+#nav ul li a.with-arrow, #nav-top ul li a.with-arrow {
+  padding-right: 22px;
+}
+
+/* remove all the bullets, borders and padding from the default list styling */
+
+#nav-top.continuous ul {
+  margin-left: 10px;
+}
+
+#nav.continuous ul ul, #nav-top.continuous ul ul {
+  margin-left: 0;
+}
+
+/* float the list to make it horizontal and a relative positon so that you can control the dropdown menu positon */
+
+#nav-top ul.sf-menu {
+  display: inline-block;
+}
+
+#nav .col-control.center, #nav-top .col-control.center {
+  text-align: center;
+}
+
+#nav .col-control.center ul.sf-menu, #nav-top .col-control.center ul.sf-menu {
+  float: none;
+}
+
+/* Styling for navigation menus */
+
+/* style the links for the top level */
+
+.sf-menu ul {
+  visibility: hidden;
+}
+
+.mm-tab {
+  &:hover ul, .keep-open ul {
+    visibility: visible;
+  }
+}
+
+/* hide the sub levels and give them a positon absolute so that they take up no room */
+
+#nav ul .pagenav ul, #nav-top ul .pagenav ul, #nav ul .categories ul, #nav-top ul .categories ul {
+  visibility: hidden;
+  position: absolute;
+}
+
+#nav ul {
+  .dd-tab ul {
+    visibility: hidden;
+    position: absolute;
+    /*height:0;*/
+    top: 35px;
+    left: 0;
+    width: 149px;
+    ul {
+      left: 145px;
+      top: -1px;
+      width: 149px;
+    }
+  }
+  ul {
+    ul.left {
+      left: -149px;
+    }
+    a {
+      height: auto;
+      line-height: 1em;
+      padding: 8px 10px 5px 10px;
+      width: 128px;
+      border-width: 1px 1px 1px 1px;
+      text-align: left;
+      &:visited {
+        height: auto;
+        line-height: 1em;
+        padding: 8px 10px 5px 10px;
+        width: 128px;
+        border-width: 1px 1px 1px 1px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+/* position the third level flyout menu */
+
+/* position the third level flyout menu for a left flyout */
+
+/* style the second level links */
+
+#nav-top {
+  font-size: 100%;
+  border-bottom: 1px solid;
+  padding: 0 10px;
+  ul {
+    list-style: none;
+    display: block;
+    margin: 0 0 -1px 0;
+    padding: 0;
+    vertical-align: bottom;
+    li {
+      margin: 0 0 0 0;
+      padding: 0;
+      float: left;
+      border: 1px solid;
+    }
+    ul {
+      position: absolute;
+    }
+    .mm-tab ul {
+      position: relative;
+    }
+    li a {
+      line-height: 22px;
+      padding: 8px 8px 5px 8px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    ul li {
+      z-index: 100;
+      a {
+        z-index: 100;
+      }
+    }
+  }
+  .current_page_item a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  li {
+    a {
+      &:active {
+        text-decoration: none;
+      }
+      &:hover {
+        z-index: 100;
+      }
+    }
+    float: left;
+    position: relative;
+    z-index: 1;
+    &:hover {
+      z-index: 100;
+    }
+  }
+  ul ul li a {
+    padding: 8px 8px 5px 8px;
+    text-decoration: none;
+    display: block;
+    line-height: 22px;
+    &:visited {
+      padding: 8px 8px 5px 8px;
+      text-decoration: none;
+      display: block;
+      line-height: 22px;
+    }
+  }
+  a {
+    display: block;
+    font-size: 108%;
+    text-decoration: none;
+    height: 22px;
+    padding: 8px 8px 5px 8px;
+    line-height: 22px;
+    font-weight: bold;
+    &:visited {
+      display: block;
+      font-size: 108%;
+      text-decoration: none;
+      height: 22px;
+      padding: 8px 8px 5px 8px;
+      line-height: 22px;
+      font-weight: bold;
+    }
+  }
+  &.continuous {
+    ul {
+      margin: 0;
+      li {
+        margin: 0;
+        border: none;
+      }
+    }
+    a {
+      font-size: 100%;
+      min-height: 22px;
+      padding: 8px 8px 5px 8px;
+      line-height: 22px;
+      font-weight: bold;
+      &:visited {
+        font-size: 100%;
+        min-height: 22px;
+        padding: 8px 8px 5px 8px;
+        line-height: 22px;
+        font-weight: bold;
+      }
+    }
+  }
+  ul {
+    .dd-tab ul {
+      visibility: hidden;
+      position: absolute;
+      /*height:0;*/
+      top: 35px;
+      left: 0;
+      width: 149px;
+      ul {
+        left: 145px;
+        top: -1px;
+        width: 149px;
+      }
+    }
+    ul {
+      ul.left {
+        left: -149px;
+      }
+      a {
+        height: auto;
+        line-height: 1em;
+        padding: 8px 10px 5px 10px;
+        width: 128px;
+        border-width: 1px 1px 1px 1px;
+        text-align: left;
+        &:visited {
+          height: auto;
+          line-height: 1em;
+          padding: 8px 10px 5px 10px;
+          width: 128px;
+          border-width: 1px 1px 1px 1px;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+#subnav {
+  background: #fff;
+  margin-top: 15px;
+  border: 1px solid #c0c0c0;
+  ul {
+    margin: 0;
+    padding: 0 0 0 5px;
+    list-style: none;
+  }
+  li {
+    border-right: 1px solid #D8D8D8;
+    padding: 4px 7px;
+    margin: 0;
+    float: left;
+    font-weight: bold;
+    a {
+      text-decoration: none;
+      color: #c0c0c0;
+      &:visited {
+        text-decoration: none;
+        color: #c0c0c0;
+      }
+    }
+  }
+  .page_item {
+    text-decoration: none;
+    color: #c0c0c0;
+  }
+  li a:hover {
+    text-decoration: none;
+  }
+  ul ul li {
+    display: none;
+  }
+}
+
+/* Level 3 */
+
+.hier-nav {
+  background: #EDF3E6;
+  margin-top: 3px;
+  border: 1px solid #c0c0c0;
+  ul {
+    margin: 0;
+    padding: 0 0 0 5px;
+    list-style: none;
+  }
+  li {
+    border-right: 1px solid #D8D8D8;
+    padding: 4px 7px;
+    margin: 0;
+    float: left;
+    font-weight: normal;
+    font-size: 91.67%;
+    a {
+      text-decoration: none;
+      color: #c0c0c0;
+      &:visited {
+        text-decoration: none;
+        color: #c0c0c0;
+      }
+    }
+  }
+  .page_item {
+    text-decoration: none;
+    color: #c0c0c0;
+  }
+  .current_page_item, .current_page_parent {
+    background: #fff;
+    border-left: 1px solid #D8D8D8;
+  }
+  li a:hover {
+    text-decoration: none;
+  }
+  ul ul li {
+    display: none;
+  }
+}
+
+/* main menu */
+
+#nav-top {
+  &.continuous ul ul li {
+    border: 1px solid #B6D1E4;
+  }
+  ul li a {
+    color: #444;
+    background-color: #f8f8ff;
+  }
+}
+
+#nav-top {
+  a.current {
+    background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+    color: #fff;
+    &:visited, &:hover, &:active {
+      background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+      color: #fff;
+    }
+  }
+  li a:hover {
+    background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+    color: #fff;
+  }
+}
+
+#nav-top.continuous {
+  border-bottom: 1px solid #0052a4;
+  a.current {
+    color: #444;
+    background: #f8f8ff;
+    &:visited, &:hover, &:active {
+      color: #444;
+      background: #f8f8ff;
+    }
+  }
+  li {
+    a:hover {
+      color: #444;
+      background: #f8f8ff;
+    }
+    li a {
+      color: #444;
+      background: #f8f8ff;
+      &:visited {
+        color: #444;
+        background: #f8f8ff;
+      }
+    }
+  }
+}
+
+#nav.continuous {
+  a.current {
+    color: #444;
+    background: #f8f8ff;
+    &:visited, &:hover, &:active {
+      color: #444;
+      background: #f8f8ff;
+    }
+  }
+  li {
+    a:hover {
+      color: #444;
+      background: #f8f8ff;
+    }
+    li a {
+      color: #444;
+      background: #f8f8ff;
+      &:visited {
+        color: #444;
+        background: #f8f8ff;
+      }
+    }
+  }
+}
+
+#nav-top.continuous {
+  color: #fff;
+  background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+  ul li {
+    color: #fff;
+    background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+  }
+  a {
+    color: #fff;
+    background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+    &:visited {
+      color: #fff;
+      background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+    }
+  }
+  li li a {
+    &:hover {
+      color: #fff;
+      background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+    }
+    &.current {
+      color: #fff;
+      background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+      &:visited, &:hover, &:active {
+        color: #fff;
+        background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+      }
+    }
+  }
+}
+
+#nav.continuous {
+  color: #fff;
+  background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+  ul li {
+    color: #fff;
+    background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+  }
+  a {
+    color: #fff;
+    background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+    &:visited {
+      color: #fff;
+      background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+    }
+  }
+  li li a {
+    &:hover {
+      color: #fff;
+      background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+    }
+    &.current {
+      color: #fff;
+      background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+      &:visited, &:hover, &:active {
+        color: #fff;
+        background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+      }
+    }
+  }
+}
+
+#nav-top {
+  background-color: #f8f8ff;
+  border: 1px solid #B6D1E4;
+  border-top: none;
+  ul {
+    li, ul li {
+      border: 1px solid #B6D1E4;
+    }
+  }
+}
+
+/* sub menu */
+
+#subnav {
+  background: #fff;
+  margin-top: 15px;
+  border: 1px solid #c0c0c0;
+  ul {
+    margin: 0px;
+    padding: 0px 0px 0px 5px;
+    list-style: none;
+  }
+  .current_page_item a, .current_page_parent a {
+    color: $color-royal-blue-light;
+    &:visited {
+      color: $color-royal-blue-light;
+    }
+  }
+  li a:hover {
+    color: $color-royal-blue-light;
+  }
+}
+
+/* Level 3 */
+
+.hier-nav {
+  background: #f8f8ff;
+  .current_page_item a, .current_page_parent a {
+    color: $color-royal-blue-light;
+    &:visited {
+      color: $color-royal-blue-light;
+    }
+  }
+  li a:hover {
+    color: $color-royal-blue-light;
+  }
+}
+
+#top-bar-right-spanel-tab .toggle {
+  border: 1px solid #b6d1e4;
+  a {
+    background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+    color: #ffffff;
+  }
+}
+
+#nav-top {
+  border: 1px solid #555;
+  border-top: none;
+  background-color: #222;
+  ul {
+    li {
+      border: 1px solid #555;
+      a {
+        color: #b8b8b8;
+        background-color: #000;
+      }
+    }
+    ul li {
+      border: 1px solid #555;
+    }
+  }
+}
+
+/* sub menu */
+
+#subnav {
+  background-color: #111;
+  border: 1px solid #555;
+  li {
+    border-right: 1px solid #666;
+    a {
+      color: #666;
+      &:visited {
+        color: #666;
+      }
+    }
+  }
+  .page_item {
+    color: #666;
+  }
+  .current_page_item, .current_page_parent {
+    background-color: #444;
+  }
+}
+
+/* Third level */
+
+.hier-nav {
+  background-color: #222;
+  border: 1px solid #555;
+  margin-top: 0px;
+  .current_page_item, .current_page_parent {
+    background-color: #444;
+    border-left: 1px solid #555;
+  }
+  li {
+    border-right: 1px solid #666;
+  }
+}
+
+#top-bar-right-spanel-tab .toggle {
+  border: 1px solid #555;
+}
+
+#subnav li a:hover, .hier-nav li a:hover, .postdata a:hover, h1.posttitle a:hover, h2.posttitle a:hover, .tags a:hover, .page-nav a:hover, .post-nav a:hover {
+  color: $color-royal-blue-light;
+}
+
+#nav-top {
+  a.current {
+    @include gradient-opaque;
+  }
+  li a:hover {
+      @include gradient-opaque;
+  }
+}
+
+#subnav {
+  background-color: inherit;
+  border: 0 none;
+  margin: 4px 2px -11px;
+}
+
+
+#rps-login-bar {
+  float: right;
+  @include adjust-font-size-to(13px);
+  padding-right: 9px;
+  padding-top: 1em;
+  a,
+  a:visited {
+    display: inline;
+    font-weight: bold;
+    padding: 0;
+    text-decoration: none;
+  }
+}

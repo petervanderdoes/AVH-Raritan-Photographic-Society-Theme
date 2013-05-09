@@ -1,8 +1,5 @@
 /* sub menu */
 
-#subnav li a:hover, .hier-nav li a:hover, .postdata a:hover, h1.posttitle a:hover, h2.posttitle a:hover, .tags a:hover, .page-nav a:hover, .post-nav a:hover {
-  color: #227ad1;
-}
 
 /* Level 3 */
 
@@ -15,20 +12,20 @@
 /* next & previous post navigation */
 
 .suf-page-nav a.page-numbers {
-  color: #227ad1;
+  color: $color-royal-blue-light;
   &:visited {
-    color: #227ad1;
+    color: $color-royal-blue-light;
   }
 }
 
 /* comment list */
 
 .commentlist cite {
-  color: #227ad1;
+  color: $color-royal-blue-light;
   a {
-    color: #227ad1;
+    color: $color-royal-blue-light;
     &:visited {
-      color: #227ad1;
+      color: $color-royal-blue-light;
     }
   }
 }
@@ -36,18 +33,18 @@
 /* Credits  */
 
 #cred a:hover {
-  color: #227ad1;
+  color: $color-royal-blue-light;
 }
 
 .suf-widget a {
   &:hover, &:focus, &:active {
-    color: #227ad1;
+    color: $color-royal-blue-light;
   }
 }
 
 .warea a {
   &:hover, &:focus, &:active {
-    color: #227ad1;
+    color: $color-royal-blue-light;
   }
 }
 
@@ -55,13 +52,13 @@
 
 .wp-pagenavi {
   a {
-    color: #227ad1;
+    color: $color-royal-blue-light;
     &:visited {
-      color: #227ad1;
+      color: $color-royal-blue-light;
     }
   }
   span {
-    color: #227ad1;
+    color: $color-royal-blue-light;
   }
   a:hover {
     color: #fff;

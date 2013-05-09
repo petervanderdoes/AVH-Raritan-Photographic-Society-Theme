@@ -135,27 +135,6 @@ a {
   border-radius: 20px;
 }
 
-#nav {
-  &.continuous ul li {
-    border-radius: 0;
-    a {
-      border-radius: 0;
-    }
-  }
-  ul ul li {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    a {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      &:visited {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-      }
-    }
-  }
-}
-
 /* Same top-left and top-right */
 
 .dbx-handle {
