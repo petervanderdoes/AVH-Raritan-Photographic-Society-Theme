@@ -5,7 +5,12 @@ $color-royal-blue-light-transparent: rgba(65,105,225,0);
 $color-royal-blue-dark-opaque: rgba(0,35,102,1);
 $color-royal-blue-dark-transparent: rgba(0,35,102,0);
 
-$background-img: image-url('black_denim.png', false, false);
+$color-input-bg: rgb(118,118,118);
+$color-input-focus-bg: rgb(205,205,205);
+$color-input-text: contrast-color($color-input-bg);
+$color-input-text-focus: contrast-color($color-input-focus-bg);
+
+$background-img: image-url('bg-rps.png', false, false);
 $header-img: image-url('RPS-LOGO-2012.jpg', false,false);
 
 $arrows-img: image-url('arrows.gif', false, false);

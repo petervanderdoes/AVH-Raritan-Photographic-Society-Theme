@@ -1,8 +1,9 @@
-@import "compass";
-@include global-reset;
 $base-font-size: 14px;
 $base-line-height: 19px;
-//$relative-font-sizing: false;
+$rhythm-unit: rem;
+
+@import "compass";
+@include global-reset;
 @include establish-baseline;
 
 @import "assets/variables";
@@ -20,16 +21,15 @@ $base-line-height: 19px;
 
 body {
   font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
-  @include adjust-font-size-to(14px);
   background-attachment: scroll;
   background-image: $background-img;
-  background-repeat: repeat;
+  background-repeat: repeat-x;
   color: #b8b8b8;
   font-size-adjust: none;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
-  background-color: #444;
+  background-color: #000;
 }
 
 .entry, .non-wp-entry, .suf-mag-category, .suf-mag-excerpt, .suf-tile {
@@ -84,7 +84,7 @@ a.suf-mag-excerpt-full-story {
 
 .post .date {
   @include gradient-opaque;
-  border-radius: 3px;
+  @include border-radius(3px);
 }
 
 .suf-mag-excerpts:after {
@@ -122,14 +122,14 @@ h2.suf-tile-title a {
   background-position: left top;
   background-repeat: no-repeat;
   background-color: #000;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
+  @include border-bottom-left-radius(0);
+  @include border-bottom-right-radius(0);
+  @include border-top-left-radius(inherit);
+  @include border-top-right-radius(inherit);
 }
 
 input[type="email"] {
-  border-radius: 5px;
+ @include border-radius(5px);
 }
 
 /**
@@ -159,7 +159,7 @@ input[type="email"] {
 }
 
 .rps-sc-tile {
-  border-radius: 5px 5px 5px 5px;
+  @include border-radius(5px);
   background-color: #000000;
   border: 1px solid #555555;
   padding-top: 0;
@@ -246,7 +246,7 @@ ul.tml-action-links {
  */
 
 .em-location-map {
-  border-radius: 5px;
+  @include border-radius(5px);
 }
 
 .event-list {
@@ -265,10 +265,22 @@ ul.tml-action-links {
     color: #333333;
     outline: 0 none;
   }
+  .gform_body {
+    input,
+    textarea {
+      @include gradient-input;
+      color: $color-input-text;
+    }
+    input:focus,
+    textarea:focus {
+     @include gradient-input-focus;
+      color: $color-input-text-focus;
+    }
+  }
   select {
     background-color: #333333;
     background-origin: padding-box;
-    border-radius: 5px 5px 5px 5px;
+    @include border-radius(5px);
     border: 1px solid #555555;
     color: #999999;
     font-family: inherit;

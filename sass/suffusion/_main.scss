@@ -864,7 +864,7 @@ a {
 
 .author-below .comment-reply-link, .author-above .comment-reply-link, .author-below .comment-reply-login, .author-above .comment-reply-login {
   border-width: 0 0 0 1px;
-  border-radius: 0;
+  @include border-radius(0);
 }
 
 li.comment div.reply {
@@ -2257,8 +2257,8 @@ h2.suf-tile-title {
 .suf-tile-topmost {
   width: 100%;
   margin: 0;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  @include border-top-left-radius(5px);
+  @include border-top-right-radius(5px);
 }
 
 .suf-mag-excerpt-image.suf-tile-topmost a, .suf-tile-image.suf-tile-topmost a {

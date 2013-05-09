@@ -11,3 +11,17 @@
 	$experimental-support-for-svg: true;
 	@include background(linear-gradient(top,  $color-royal-blue-light-opaque 0%,$color-royal-blue-dark-opaque 100%));
 }
+
+@mixin gradient-input {
+	background: $color-input-bg;
+	@include filter-gradient(darken($color-input-bg, 30%), $color-input-bg, vertical);
+	$experimental-support-for-svg: true;
+	@include background(linear-gradient(top, darken($color-input-bg, 30%) 0%,$color-input-bg 50%,$color-input-bg 100%));
+}
+
+@mixin gradient-input-focus {
+	background: $color-input-focus-bg;
+	@include filter-gradient(darken($color-input-focus-bg, 30%), $color-input-focus-bg, vertical);
+	$experimental-support-for-svg: true;
+	@include background(linear-gradient(top, darken($color-input-focus-bg, 30%) 0%,$color-input-focus-bg 50%,$color-input-focus-bg 100%));
+}

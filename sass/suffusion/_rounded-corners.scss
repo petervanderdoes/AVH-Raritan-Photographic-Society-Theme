@@ -8,320 +8,320 @@
 
 .photonique {
   #subnav, .hier-nav {
-    border-radius: 0;
+    @include border-radius(0);
   }
 }
 
 .suf-flat-widget, .warea .suf-flat-widget .dbx-content {
-  border-radius: 0;
+  @include border-radius(0);
 }
 
 #language-selector ul ul li {
-  border-radius: 0;
+  @include border-radius(0);
   a {
-    border-radius: 0;
+    @include border-radius(0);
     &:visited {
-      border-radius: 0;
+      @include border-radius(0);
     }
   }
 }
 
 a {
   &.comment-reply-link, &.comment-reply-login {
-    border-radius: 3px;
+    @include border-radius(3px);
   }
 }
 
 .comment-response-type, .response-type, .wp-caption, .exif-button, .suf-mag-headline-block li.suf-mag-headline a.tab-current, .widget-suf-cat-posts li.suf-cat-post:hover, .suf-mag-category li.suf-mag-catblock-post:hover, .activity-meta a, ul.item-list span.activity {
-  border-radius: 3px;
+  @include border-radius(3px);
 }
 
 .cl-widget, .suf-widget, .post, article.page, .non-wp-post, #subnav, .hier-nav, .page-nav, .post-nav, .flattened, .author-profile, .info-tag, .info-category, #featured-posts {
-  border-radius: 5px;
+  @include border-radius(5px);
 }
 
 h3 {
   &#comments, &.comments, &#respond, &.respond {
-    border-radius: 5px;
+    @include border-radius(5px);
   }
 }
 
 #reply-title, textarea, .author-info, blockquote, pre {
-  border-radius: 5px;
+  @include border-radius(5px);
 }
 
 input {
   &[type="text"], &[type="password"] {
-    border-radius: 5px;
+    @include border-radius(5px);
   }
 }
 
 .commentlist li, .suf-mag-category, .suf-mag-excerpt, .suf-tile, h2.suf-mag-headlines-title, .suf-mag-excerpts-header, .suf-mag-categories-header, #recaptcha_response_field {
-  border-radius: 5px;
+  @include border-radius(5px);
 }
 
 #language-selector ul li {
-  border-radius: 5px;
+  @include border-radius(5px);
   a {
-    border-radius: 5px;
+    @include border-radius(5px);
     &:visited {
-      border-radius: 5px;
+      @include border-radius(5px);
     }
   }
 }
 
 .download, .announcement, .warning, .note, .suf-mag-headlines, .nr-post h3, .nr_widget h4 {
-  border-radius: 5px;
+  @include border-radius(5px);
 }
 
 .post form#whats-new-form {
   #whats-new-textarea {
-    border-radius: 5px;
+    @include border-radius(5px);
   }
-  border-radius: 5px;
+  @include border-radius(5px);
 }
 
 ul.item-list li, .standard-form, fieldset, .outer-pullout-container .meta-pullout {
-  border-radius: 5px;
+  @include border-radius(5px);
 }
 
 #wrapper {
-  border-radius: 7px;
+  @include border-radius(7px);
 }
 
 input.searchfield, .dir-search input {
-  border-radius: 10px;
+  @include border-radius(10px);
 }
 
 legend, .button {
-  border-radius: 20px;
+ @include border-radius(20px);
 }
 
 input {
   &[type="button"], &[type="submit"] {
-    border-radius: 20px;
+    @include border-radius(20px);
   }
 }
 
 .submit {
-  border-radius: 20px;
+  @include border-radius(20px);
 }
 
 a {
   &.more-link {
-    border-radius: 20px;
+    @include border-radius(20px);
   }
   &.excerpt-more-append {
-    border-radius: 20px;
+    @include border-radius(20px);
     &:hover, &:visited {
-      border-radius: 20px;
+      @include border-radius(20px);
     }
   }
   &.suf-mag-excerpt-full-story {
-    border-radius: 20px;
+    @include border-radius(20px);
     &:hover, &:visited {
-      border-radius: 20px;
+      @include border-radius(20px);
     }
   }
   &.suf-mag-category-all-posts {
-    border-radius: 20px;
+    @include border-radius(20px);
     &:hover, &:visited {
-      border-radius: 20px;
+      @include border-radius(20px);
     }
   }
 }
 
 .generic-button {
-  border-radius: 20px;
+  @include border-radius(20px);
 }
 
 /* Same top-left and top-right */
 
 .dbx-handle {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  @include border-top-left-radius(3px);
+  @include border-top-right-radius(3px);
 }
 
 #commentform label.textarea, h2.suf-mag-category-title {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  @include border-top-left-radius(5px);
+  @include border-top-right-radius(5px);
 }
 
 #language-selector ul ul li:first-child {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  @include border-top-left-radius(5px);
+  @include border-top-right-radius(5px);
   a {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    @include border-top-left-radius(5px);
+    @include border-top-right-radius(5px);
     &:visited {
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
+      @include border-top-left-radius(5px);
+      @include border-top-right-radius(5px);
     }
   }
 }
 
 ul.sidebar-tabs li a {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  @include border-top-left-radius(5px);
+  @include border-top-right-radius(5px);
 }
 
 #nav ul {
   li {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    @include border-top-left-radius(5px);
+    @include border-top-right-radius(5px);
     a {
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
+      @include border-top-left-radius(5px);
+      @include border-top-right-radius(5px);
     }
   }
   ul ul {
     li:first-child {
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
+      @include border-top-left-radius(5px);
+      @include border-top-right-radius(5px);
       > a {
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
+        @include border-top-left-radius(5px);
+        @include border-top-right-radius(5px);
       }
     }
     ul li:first-child > a:hover {
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
+      @include border-top-left-radius(5px);
+      @include border-top-right-radius(5px);
     }
   }
 }
 
 #nav-top ul ul ul li:first-child {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  @include border-top-left-radius(5px);
+  @include border-top-right-radius(5px);
   > a {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    @include border-top-left-radius(5px);
+    @include border-top-right-radius(5px);
     &:hover {
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
+      @include border-top-left-radius(5px);
+      @include border-top-right-radius(5px);
     }
   }
 }
 
 #item-nav div.item-list-tabs ul li {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  @include border-top-left-radius(5px);
+  @include border-top-right-radius(5px);
 }
 
 /* Same top-left and bottom-left */
 
 #commentform label {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  @include border-top-left-radius(5px);
+  @include border-bottom-left-radius(5px);
 }
 
 .collapse .searchfield {
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  @include border-top-left-radius(15px);
+  @include border-bottom-left-radius(15px);
+  @include border-top-right-radius(0);
+  @include border-bottom-right-radius(0);
 }
 
 /* Same top-right and bottom-right */
 
 #commentform input {
   &[type='text'].inside {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    @include border-top-right-radius(0);
+    @include border-bottom-right-radius(0);
   }
   &[type="text"] {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    @include border-top-right-radius(5px);
+    @include border-bottom-right-radius(5px);
   }
 }
 
 /* Same bottom-left and bottom-right */
 
 #language-selector ul ul li:last-child {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  @include border-bottom-left-radius(5px);
+  @include border-bottom-right-radius(5px);
   a {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    @include border-bottom-left-radius(5px);
+    @include border-bottom-right-radius(5px);
     &:visited {
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
+      @include border-bottom-left-radius(5px);
+      @include border-bottom-right-radius(5px);
     }
   }
 }
 
 div.sidebar-tab-content {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  @include border-bottom-left-radius(5px);
+  @include border-bottom-right-radius(5px);
 }
 
 #nav ul ul li:last-child {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  @include border-bottom-left-radius(5px);
+  @include border-bottom-right-radius(5px);
   > a {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    @include border-bottom-left-radius(5px);
+    @include border-bottom-right-radius(5px);
     &:hover {
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
+      @include border-bottom-left-radius(5px);
+      @include border-bottom-right-radius(5px);
     }
   }
 }
 
 #nav-top {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  @include border-bottom-left-radius(5px);
+  @include border-bottom-right-radius(5px);
   ul ul li:last-child {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    @include border-bottom-left-radius(5px);
+    @include border-bottom-right-radius(5px);
     > a {
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
+      @include border-bottom-left-radius(5px);
+      @include border-bottom-right-radius(5px);
       &:hover {
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
+        @include border-bottom-left-radius(5px);
+        @include border-bottom-right-radius(5px);
       }
     }
   }
 }
 
 .photonique #nav-top {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  @include border-bottom-left-radius(0);
+  @include border-bottom-right-radius(0);
 }
 
 /* Solo corners */
 
 #commentform {
   input[type="text"], label.textarea {
-    border-bottom-left-radius: 0;
+    @include border-bottom-left-radius(0);
   }
   input[type="text"] {
-    border-top-left-radius: 0;
+    @include border-top-left-radius(0);
   }
   textarea {
-    border-top-left-radius: 0;
+    @include border-top-left-radius(0);
     &.inside {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
+      @include border-top-right-radius(0);
+      @include border-bottom-right-radius(0);
+      @include border-bottom-left-radius(0);
     }
   }
 }
 
 .mm-warea {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  @include border-bottom-left-radius(10px);
+  @include border-bottom-right-radius(10px);
 }
 
 #nav .mm-warea .mm-widget li {
   &:first-child, &:last-child {
-    border-radius: 0;
+    @include border-radius(0);
   }
 }
 
 #nav-top .mm-warea .mm-widget li {
   &:first-child, &:last-child {
-    border-radius: 0;
+    @include border-radius(0);
   }
 }

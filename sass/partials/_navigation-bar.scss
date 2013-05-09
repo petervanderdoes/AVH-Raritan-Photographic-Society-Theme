@@ -25,9 +25,9 @@
   		&.continuous ul li {
     		margin: 0;
     		border: 1px solid #555;
-        border-radius: 0;
+       		@include border-radius(0);
     		a {
-      			border-radius: 0;
+      			@include border-radius(0);
     		}
   		}
 		  ul {
@@ -35,23 +35,23 @@
         margin-left: -1px;
         li {
           border: 1px solid #555;
-          border-top-left-radius: 0;
-          border-top-right-radius: 0;
+          @include border-top-left-radius(0);
+          @include border-top-right-radius(0);
           a {
 				    padding: 8px 8px 5px 8px;
     			  text-decoration: none;
     			  display: block;
     			  line-height: 22px;
 	          z-index: 100;
-			      border-top-left-radius: 0;
-      		  border-top-right-radius: 0;
+			      @include border-top-left-radius(0);
+      		  @include border-top-right-radius(0);
 				    &:visited {
               padding: 8px 8px 5px 8px;
         			text-decoration: none;
         			display: block;
         			line-height: 22px;
-          		border-top-left-radius: 0;
-        	  	border-top-right-radius: 0;
+          		@include border-top-left-radius(0);
+        	  	@include border-top-right-radius(0);
         		}
       		}
 		  }
