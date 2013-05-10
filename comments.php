@@ -10,7 +10,6 @@
  * Only show comments section for logged in users and paid members,
  */
 global $user_ID;
-if ( is_user_logged_in() && rps_is_paid_member($user_ID) ) {
 	?>
 <section id="comments">
 <?php
@@ -97,7 +96,7 @@ if ( is_user_logged_in() && rps_is_paid_member($user_ID) ) {
 					</p>";
 			}
 
-			comment_form(apply_filters('suffusion_comment_form_fields', array('fields' => array('author' => $author_field,'email' => $email_field,'url' => $url_field),'comment_field' => $comment_field,'logged_in_as' => '','must_log_in' => '<p class="must-log-in">' . '<a href="' . wp_login_url(apply_filters('the_permalink', get_permalink($post->ID))) . '">' . __('You must be logged in to post a comment.', 'suffusion') . '</a></p>','title_reply' => '<span class="icon">&nbsp;</span>' . __('Leave a Reply', "suffusion"),'title_reply_to' => __('Leave a Reply to %s', "suffusion"),'label_submit' => __('Submit Comment', "suffusion"),'comment_notes_before' => apply_filters('suffusion_before_comment_form', "<span></span>"),'comment_notes_after' => apply_filters('suffusion_after_comment_form', '<p class="form-allowed-tags">' . sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'suffusion'), '<code>' . allowed_tags() . '</code>') . '</p>'),'cancel_reply_link' => __('Cancel reply', 'suffusion'))));
+			rps_comment_form(apply_filters('suffusion_comment_form_fields', array('fields' => array('author' => $author_field,'email' => $email_field,'url' => $url_field),'comment_field' => $comment_field,'logged_in_as' => '','must_log_in' => '<p class="must-log-in">' . '<a href="' . wp_login_url(apply_filters('the_permalink', get_permalink($post->ID))) . '">' . __('You must be logged in to post a comment.', 'suffusion') . '</a></p>','title_reply' => '<span class="icon">&nbsp;</span>' . __('Leave a Reply', "suffusion"),'title_reply_to' => __('Leave a Reply to %s', "suffusion"),'label_submit' => __('Submit Comment', "suffusion"),'comment_notes_before' => apply_filters('suffusion_before_comment_form', "<span></span>"),'comment_notes_after' => apply_filters('suffusion_after_comment_form', '<p class="form-allowed-tags">' . sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'suffusion'), '<code>' . allowed_tags() . '</code>') . '</p>'),'cancel_reply_link' => __('Cancel reply', 'suffusion'))));
 		} else { // Comments are closed
 			$message_disabled = false;
 			if ( is_page() && isset($suf_comments_disabled_all_sel) && $suf_comments_disabled_all_sel == 'all' ) {
@@ -123,5 +122,3 @@ if ( is_user_logged_in() && rps_is_paid_member($user_ID) ) {
 	?>
 </section>
 <!-- #comments -->
-<?php
-}
