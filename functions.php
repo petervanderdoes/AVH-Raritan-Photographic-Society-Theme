@@ -114,6 +114,8 @@ function actionRPS_set_document_title ()
 /**
  * Magazine template function to build queries for individual magazine sections.
  *
+ * Updated so you can add 'to_skip' argument, to skip the given post ID's
+ *
  * @param array $args
  * @return array
  */

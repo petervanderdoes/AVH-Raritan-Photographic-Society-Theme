@@ -11,9 +11,10 @@
 get_header();
 
 global $post, $suf_mag_content_enabled, $suf_mag_entity_order, $suf_mag_headlines_enabled, $suf_mag_excerpts_enabled, $suf_mag_categories_enabled, $suf_mag_total_excerpts;
+global $suf_mag_excerpt_full_story_text, $suf_mag_excerpts_images_enabled, $suf_mag_excerpt_full_story_position, $suf_mag_excerpt_title_alignment;
 global $suf_post_show_comment;
 
-$suf_post_show_comment = 'hide';
+//$suf_post_show_comment = 'hide';
 ?>
 
 <div id="main-col">
