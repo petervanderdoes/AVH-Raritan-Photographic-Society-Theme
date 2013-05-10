@@ -1,0 +1,41 @@
+/**
+* Comment Form
+*/
+#commentform {
+  input[type="text"]:focus {
+    border: solid 1px #999;
+  }
+  input[type="submit"] {
+    width: 145px;
+    color: #ffffff;
+    @include gradient-opaque;
+    @include adjust-font-size-to(13px);
+  }
+  input {
+    @include gradient-input;
+    color: $color-input-text;
+    font-size: 1em;
+    font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
+    &:focus {
+      @include gradient-input-focus;
+      color: $color-input-text-focus;
+    }
+  }
+  textarea {
+    @include gradient-input;
+    color: $color-input-text;
+    font-size: 1em;
+    font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
+    height: 140px;
+    border: solid 1px #999999;
+    padding: 5px 3px 3px 7px;
+    margin-top: -1px;
+    width: 90%;
+    max-width: 90%;
+    &:focus {
+      @include gradient-input-focus;
+      color: $color-input-text-focus;
+      border: solid 1px #999;
+    }
+  }
+}

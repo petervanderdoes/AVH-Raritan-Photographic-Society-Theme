@@ -1,12 +1,13 @@
 #header {
-	min-height: 190px;
-	padding: 15px 0;
+  min-height: 190px;
+  padding: 15px 0;
 }
 
 /* Blog title & description*/
 /* We use a picture as a header, in theme options it is set to hidden */
+
 .blogtitle.hidden,
 .description.hidden {
-	display: none;
-	visibility: hidden;
+  display: none;
+  visibility: hidden;
 }

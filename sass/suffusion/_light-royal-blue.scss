@@ -1,9 +1,9 @@
 /* Standard Styles */
 
 a {
-  color: $color-royal-blue-light;
+  color: $color-link;
   &:visited {
-    color: $color-royal-blue-light;
+    color: $color-link;
   }
   &.dbx-toggle {
     background-image: url(../../images/exp-coll-rblue.png);
@@ -52,12 +52,6 @@ a {
   background-color: #f8f8ff;
 }
 
-/* Blog title */
-
-.blogtitle a:hover {
-  color: $color-royal-blue-light;
-}
-
 /* search form */
 
 input[type="submit"].searchsubmit {
@@ -69,8 +63,6 @@ input[type="submit"].searchsubmit {
     background: url(../../images/search-button-rblue.gif) no-repeat 0 0;
   }
 }
-
-
 
 /* content */
 
@@ -85,17 +77,17 @@ input[type="submit"].searchsubmit {
 }
 
 .bookdata a:hover, .postdata a:hover, h1.posttitle a:hover, h2.posttitle a:hover, .tags a:hover {
-  color: $color-royal-blue-light;
+ color: $color-link;
 }
 
 /* post title */
 
 .page-links {
   span {
-    border-color: $color-royal-blue-light;
+   color: $color-link;
   }
   > span, a:hover {
-    background-color: $color-royal-blue-light;
+    color: $color-link;
     color: #fff;
   }
 }
@@ -103,29 +95,29 @@ input[type="submit"].searchsubmit {
 /* next & previous page navigation */
 
 .page-nav a:hover, .post-nav a:hover {
-  color: $color-royal-blue-light;
+  color: $color-link;
 }
 
 /* next & previous post navigation */
 
 .suf-page-nav {
   a {
-    border-color: $color-royal-blue-light;
-    color: $color-royal-blue-light;
+    border-color: $color-link;
+    color: $color-link;
     &:visited {
-      border-color: $color-royal-blue-light;
-      color: $color-royal-blue-light;
+      border-color: $color-link;
+      color: $color-link;
     }
   }
   span {
-    border-color: $color-royal-blue-light;
-    color: $color-royal-blue-light;
+    border-color: $color-link;
+    color: $color-link;
   }
   a:hover {
-    background-color: $color-royal-blue-light;
+    background-color: $color-link;
   }
   span.current {
-    background-color: $color-royal-blue-light;
+    background-color: $color-link;
     color: #ffffff;
   }
 }
@@ -146,11 +138,11 @@ h3 {
 
 .commentlist {
   cite {
-    color: $color-royal-blue-light;
+    color: $color-link;
     a {
-      color: $color-royal-blue-light;
+      color: $color-link;
       &:visited {
-        color: $color-royal-blue-light;
+        color: $color-link;
       }
     }
   }
@@ -161,10 +153,10 @@ h3 {
 
 .comment-response-types {
   span {
-    border-color: $color-royal-blue-light;
+    color: $color-link;
   }
   > span, a:hover {
-    background-color: $color-royal-blue-light;
+    background-color: $color-link;
     color: #fff;
   }
 }
@@ -178,7 +170,7 @@ h3 {
 #cred {
   border-top: 1px solid #B6D1E4;
   a:hover {
-    color: $color-royal-blue-light;
+    color: $color-link;
   }
 }
 
@@ -221,19 +213,19 @@ input {
 
 div.sidebar-tab-content a {
   &:hover, &:focus, &:active {
-    color: $color-royal-blue-light;
+    color: $color-link;
   }
 }
 
 .suf-widget a {
   &:hover, &:focus, &:active {
-    color: $color-royal-blue-light;
+    color: $color-link;
   }
 }
 
 .warea a {
   &:hover, &:focus, &:active {
-    color: $color-royal-blue-light;
+    color: $color-link;
   }
 }
 
@@ -265,76 +257,27 @@ div.sbtab-content-meta .rss, .suf-widget .rss, .suf-flat-widget .rss, .suf-panel
   color: #fff;
 }
 
-/* These settings are required for Featured Posts */
-
-.sliderIndex a, #sliderIndex a {
-  border-color: $color-royal-blue-light;
-  color: $color-royal-blue-light;
-  &:visited {
-    border-color: $color-royal-blue-light;
-    color: $color-royal-blue-light;
-  }
-}
-
-.sliderIndex a {
-  &:hover, &.activeSlide {
-    background-color: $color-royal-blue-light;
-    color: #fff;
-  }
-}
-
-#sliderIndex a {
-  &:hover, &.activeSlide {
-    background-color: $color-royal-blue-light;
-    color: #fff;
-  }
-}
-
-.index-overlaid {
-  .sliderIndex a {
-    &:hover, &.activeSlide {
-      background-color: $color-royal-blue-light;
-      color: #fff;
-    }
-  }
-  #sliderIndex a {
-    &:hover, &.activeSlide {
-      background-color: $color-royal-blue-light;
-      color: #fff;
-    }
-  }
-}
-
-.pager-bullets {
-  #sliderPager a, .sliderPager a {
-    background: url(../../images/slider-gray.png) transparent no-repeat center center;
-  }
-  #sliderPager a.activeSlide, .sliderPager a.activeSlide, #sliderPager a:hover, .sliderPager a:hover {
-    background: url(../../images/slider-blue.png) transparent no-repeat center center;
-  }
-}
-
 /* These settings are for common plugins */
 
 .wp-pagenavi {
   a {
-    border-color: $color-royal-blue-light;
-    color: $color-royal-blue-light;
+    border-color: $color-link;
+    color: $color-link;
     &:visited {
-      border-color: $color-royal-blue-light;
-      color: $color-royal-blue-light;
+      border-color: $color-link;
+      color: $color-link;
     }
   }
   span {
-    border-color: $color-royal-blue-light;
-    color: $color-royal-blue-light;
+    border-color: $color-link;
+    color: $color-link;
     &.current {
-      background-color: $color-royal-blue-light;
+      background-color: $color-link;
       color: #fff;
     }
   }
   a:hover {
-    background-color: $color-royal-blue-light;
+    background-color: $color-link;
     color: #fff;
   }
 }
@@ -385,14 +328,4 @@ a {
   border: 1px solid #b6d1e4;
   border-top: none;
   color: #333;
-}
-
-#nav .mm-warea .mm-widget ul li, #nav-top .mm-warea .mm-widget ul li {
-  background: url(../../images/icons/bulletrbl.png) transparent no-repeat;
-  color: #333;
-}
-
-#nav .mm-warea .mm-widget a, #nav-top .mm-warea .mm-widget a, #nav .mm-warea .mm-widget a:visited, #nav-top .mm-warea .mm-widget a:visited, #nav .mm-warea .mm-widget a:hover, #nav-top .mm-warea .mm-widget a:hover {
-  background: none;
-  color: $color-royal-blue-light;
 }

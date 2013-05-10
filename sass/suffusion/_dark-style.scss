@@ -37,21 +37,6 @@ fieldset {
   background-color: #444;
 }
 
-#nav {
-  border-bottom: 1px solid #555;
-  ul {
-    li, ul li {
-      border: 1px solid #555;
-    }
-    li a {
-      color: #b8b8b8;
-      background: #000;
-    }
-  }
-}
-
-
-
 .post, article.page {
   background-color: #000;
   border: 1px solid #555;
@@ -494,16 +479,6 @@ img.suf-widget-thumb, .suf-mosaic-img {
 
 .exif-button, .navigation-attachment {
   border-color: #222;
-}
-
-.mm-warea {
-  background: #000;
-  border-color: #333;
-  color: #b8b8b8;
-}
-
-#nav .mm-warea .mm-widget ul li, #nav-top .mm-warea .mm-widget ul li {
-  color: #b8b8b8;
 }
 
 .cl-widget {

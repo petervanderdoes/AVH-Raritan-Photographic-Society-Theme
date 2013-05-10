@@ -3,7 +3,9 @@ $base-line-height: 19px;
 $rhythm-unit: rem;
 
 @import "compass";
+
 @include global-reset;
+
 @include establish-baseline;
 
 @import "assets/variables";
@@ -18,6 +20,7 @@ $rhythm-unit: rem;
 @import "partials/header";
 @import "partials/navigation-bar";
 @import "partials/breadcrumb";
+@import "partials/comments";
 
 body {
   font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
@@ -45,6 +48,7 @@ h2.suf-mag-excerpt-title {
     @include adjust-font-size-to(15px);
   }
 }
+
 h2.suf-tile-title {
   @include adjust-font-size-to(15px);
   a,
@@ -55,14 +59,8 @@ h2.suf-tile-title {
   }
 }
 
-
 .suf-mag-excerpt-full-story {
   font-size: 0.9em;
-}
-
-#commentform textarea {
-  font-size: 1em;
-  font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
 }
 
 .suf-gradient {
@@ -129,7 +127,7 @@ h2.suf-tile-title a {
 }
 
 input[type="email"] {
- @include border-radius(5px);
+  @include border-radius(5px);
 }
 
 /**
@@ -261,8 +259,8 @@ ul.tml-action-links {
 
 .gform_wrapper {
   *:focus {
-    background-color: #999999;
-    color: #333333;
+    background-color: $color-input-bg-focus;
+    color: $color-input-text-focus;
     outline: 0 none;
   }
   .gform_body {
@@ -273,7 +271,7 @@ ul.tml-action-links {
     }
     input:focus,
     textarea:focus {
-     @include gradient-input-focus;
+      @include gradient-input-focus;
       color: $color-input-text-focus;
     }
   }

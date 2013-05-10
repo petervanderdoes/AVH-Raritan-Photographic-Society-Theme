@@ -1,6 +1,5 @@
 /* sub menu */
 
-
 /* Level 3 */
 
 /* content */
@@ -12,20 +11,20 @@
 /* next & previous post navigation */
 
 .suf-page-nav a.page-numbers {
-  color: $color-royal-blue-light;
+  color: $color-link;
   &:visited {
-    color: $color-royal-blue-light;
+    color: $color-link;
   }
 }
 
 /* comment list */
 
 .commentlist cite {
-  color: $color-royal-blue-light;
+  color: $color-link;
   a {
-    color: $color-royal-blue-light;
+    color: $color-link;
     &:visited {
-      color: $color-royal-blue-light;
+      color: $color-link;
     }
   }
 }
@@ -33,18 +32,18 @@
 /* Credits  */
 
 #cred a:hover {
-  color: $color-royal-blue-light;
+  color: $color-link;
 }
 
 .suf-widget a {
   &:hover, &:focus, &:active {
-    color: $color-royal-blue-light;
+    color: $color-link;
   }
 }
 
 .warea a {
   &:hover, &:focus, &:active {
-    color: $color-royal-blue-light;
+    color: $color-link;
   }
 }
 
@@ -52,13 +51,13 @@
 
 .wp-pagenavi {
   a {
-    color: $color-royal-blue-light;
+    color: $color-link;
     &:visited {
-      color: $color-royal-blue-light;
+      color: $color-link;
     }
   }
   span {
-    color: $color-royal-blue-light;
+    color: $color-link;
   }
   a:hover {
     color: #fff;

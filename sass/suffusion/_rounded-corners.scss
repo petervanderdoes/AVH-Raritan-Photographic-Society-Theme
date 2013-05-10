@@ -94,7 +94,7 @@ input.searchfield, .dir-search input {
 }
 
 legend, .button {
- @include border-radius(20px);
+  @include border-radius(20px);
 }
 
 input {
@@ -165,44 +165,6 @@ ul.sidebar-tabs li a {
   @include border-top-right-radius(5px);
 }
 
-#nav ul {
-  li {
-    @include border-top-left-radius(5px);
-    @include border-top-right-radius(5px);
-    a {
-      @include border-top-left-radius(5px);
-      @include border-top-right-radius(5px);
-    }
-  }
-  ul ul {
-    li:first-child {
-      @include border-top-left-radius(5px);
-      @include border-top-right-radius(5px);
-      > a {
-        @include border-top-left-radius(5px);
-        @include border-top-right-radius(5px);
-      }
-    }
-    ul li:first-child > a:hover {
-      @include border-top-left-radius(5px);
-      @include border-top-right-radius(5px);
-    }
-  }
-}
-
-#nav-top ul ul ul li:first-child {
-  @include border-top-left-radius(5px);
-  @include border-top-right-radius(5px);
-  > a {
-    @include border-top-left-radius(5px);
-    @include border-top-right-radius(5px);
-    &:hover {
-      @include border-top-left-radius(5px);
-      @include border-top-right-radius(5px);
-    }
-  }
-}
-
 #item-nav div.item-list-tabs ul li {
   @include border-top-left-radius(5px);
   @include border-top-right-radius(5px);
@@ -255,36 +217,6 @@ div.sidebar-tab-content {
   @include border-bottom-right-radius(5px);
 }
 
-#nav ul ul li:last-child {
-  @include border-bottom-left-radius(5px);
-  @include border-bottom-right-radius(5px);
-  > a {
-    @include border-bottom-left-radius(5px);
-    @include border-bottom-right-radius(5px);
-    &:hover {
-      @include border-bottom-left-radius(5px);
-      @include border-bottom-right-radius(5px);
-    }
-  }
-}
-
-#nav-top {
-  @include border-bottom-left-radius(5px);
-  @include border-bottom-right-radius(5px);
-  ul ul li:last-child {
-    @include border-bottom-left-radius(5px);
-    @include border-bottom-right-radius(5px);
-    > a {
-      @include border-bottom-left-radius(5px);
-      @include border-bottom-right-radius(5px);
-      &:hover {
-        @include border-bottom-left-radius(5px);
-        @include border-bottom-right-radius(5px);
-      }
-    }
-  }
-}
-
 .photonique #nav-top {
   @include border-bottom-left-radius(0);
   @include border-bottom-right-radius(0);
@@ -306,22 +238,5 @@ div.sidebar-tab-content {
       @include border-bottom-right-radius(0);
       @include border-bottom-left-radius(0);
     }
-  }
-}
-
-.mm-warea {
-  @include border-bottom-left-radius(10px);
-  @include border-bottom-right-radius(10px);
-}
-
-#nav .mm-warea .mm-widget li {
-  &:first-child, &:last-child {
-    @include border-radius(0);
-  }
-}
-
-#nav-top .mm-warea .mm-widget li {
-  &:first-child, &:last-child {
-    @include border-radius(0);
   }
 }

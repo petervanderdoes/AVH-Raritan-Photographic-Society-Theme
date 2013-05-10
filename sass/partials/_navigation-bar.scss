@@ -1,119 +1,123 @@
 #nav {
   border-bottom: 1px solid #555;
-	ul {
-    	list-style: none;
-    	display: block;
-    	margin: 0 0 -1px 0;
-    	padding: 0;
-    	float: left;
-    	vertical-align: bottom;
-    	li {
-      		margin: 0 4px 0 0;
-      		padding: 0;
-      		float: left;
-			a {
-          color: #b8b8b8;
-          background: #000;
-      		padding: 8px 8px 5px 8px;
-      		text-decoration: none;
-      		display: inline-block;
-    		}
-    	}
-  		&.continuous ul {
-    		margin-left: 10px;
-  		}
-  		&.continuous ul li {
-    		margin: 0;
-    		border: 1px solid #555;
-       		@include border-radius(0);
-    		a {
-      			@include border-radius(0);
-    		}
-  		}
-		  ul {
-        position: absolute;
-        margin-left: -1px;
-        li {
-          border: 1px solid #555;
+  ul {
+    list-style: none;
+    display: block;
+    margin: 0 0 -1px 0;
+    padding: 0;
+    float: left;
+    vertical-align: bottom;
+    &.continuous ul {
+      margin-left: 10px;
+    }
+    &.continuous ul li {
+      margin: 0;
+      border: 1px solid #555;
+      @include border-radius(0);
+      a {
+        @include border-radius(0);
+      }
+    }
+    li {
+      margin: 0 4px 0 0;
+      padding: 0;
+      float: left;
+      border: 1px solid #555;
+      @include border-top-left-radius(5px);
+      @include border-top-right-radius(5px);
+      a {
+        @include border-top-left-radius(5px);
+      @include border-top-right-radius(5px);
+        color: #b8b8b8;
+        background: #000;
+        padding: 8px 8px 5px 8px;
+        text-decoration: none;
+        display: inline-block;
+      }
+    }
+    ul {
+      position: absolute;
+      margin-left: -1px;
+      li {
+        border: 1px solid #555;
+        @include border-top-left-radius(0);
+        @include border-top-right-radius(0);
+        a {
+          padding: 8px 8px 5px 8px;
+          text-decoration: none;
+          display: block;
+          line-height: 22px;
+          z-index: 100;
           @include border-top-left-radius(0);
           @include border-top-right-radius(0);
-          a {
-				    padding: 8px 8px 5px 8px;
-    			  text-decoration: none;
-    			  display: block;
-    			  line-height: 22px;
-	          z-index: 100;
-			      @include border-top-left-radius(0);
-      		  @include border-top-right-radius(0);
-				    &:visited {
-              padding: 8px 8px 5px 8px;
-        			text-decoration: none;
-        			display: block;
-        			line-height: 22px;
-          		@include border-top-left-radius(0);
-        	  	@include border-top-right-radius(0);
-        		}
-      		}
-		  }
+          &:visited {
+            padding: 8px 8px 5px 8px;
+            text-decoration: none;
+            display: block;
+            line-height: 22px;
+            @include border-top-left-radius(0);
+            @include border-top-right-radius(0);
+          }
+        }
+      }
     }
-		&.sf-menu {
+    &.sf-menu {
       @include adjust-font-size-to(13px);
-    	display: inline-block;
-  	}
-		.col-control.right ul.sf-menu {
-    		float: right;
-  	}
-	}
- 	.current_page_item a {
-    	text-decoration: none;
-    	&:hover {
-      		text-decoration: none;
-    	}
-  	}
-  	li {
-  		float: left;
-    	position: relative;
-    	z-index: 1;
-    	a:active {
-        	text-decoration: none;
-		}
-      	&:hover {
-        	z-index: 100;
-      	}
+      display: inline-block;
+    }
+    .col-control.right ul.sf-menu {
+      float: right;
+    }
+  }
+  .current_page_item a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  li {
+    float: left;
+    position: relative;
+    z-index: 1;
+    a:active {
+      text-decoration: none;
     }
     &:hover {
       z-index: 100;
     }
-
+  }
+  &:hover {
+    z-index: 100;
+  }
   &.continuous {
-	    border-bottom: 1px solid #0052a4;
-  	}
- 	a {
-    	display: block;
-    	font-size: 100%;
-    	text-decoration: none;
-    	height: 22px;
-    	padding: 8px 8px 5px 8px;
-    	line-height: 22px;
-    	font-weight: bold;
-    	&:visited {
-      		display: block;
-      		font-size: 100%;
-      		text-decoration: none;
-      		height: 22px;
-      		padding: 8px 8px 5px 8px;
-      		line-height: 22px;
-      		font-weight: bold;
-    	}
-		&.current {
- 			color: #ffffff;
-    		@include gradient-opaque;
-  		}
-	}
-	li a:hover {
-  		color: #ffffff;
-  		@include gradient-opaque;
-  	}
+    border-bottom: 1px solid #0052a4;
+  }
+  a {
+    display: block;
+    font-size: 100%;
+    text-decoration: none;
+    height: 22px;
+    padding: 8px 8px 5px 8px;
+    line-height: 22px;
+    font-weight: bold;
+    &:visited {
+      display: block;
+      font-size: 100%;
+      text-decoration: none;
+      height: 22px;
+      padding: 8px 8px 5px 8px;
+      line-height: 22px;
+      font-weight: bold;
+    }
+    &.current {
+      color: #ffffff;
+      @include gradient-opaque;
+    }
+  }
+  li a:hover {
+    color: #ffffff;
+    @include gradient-opaque;
+  }
 }
 
 .float-ptr {
@@ -126,6 +130,7 @@
   right: 3px;
   position: absolute;
 }
+
 .down-ptr {
   font-size: 130%;
   float: right;
@@ -137,9 +142,11 @@
   position: absolute;
   margin-left: 5px;
 }
+
 img.home-icon {
   height: 21px;
 }
+
 #nav ul li a.with-arrow, #nav-top ul li a.with-arrow {
   padding-right: 22px;
 }
@@ -622,13 +629,13 @@ img.home-icon {
     list-style: none;
   }
   .current_page_item a, .current_page_parent a {
-    color: $color-royal-blue-light;
+    color: $color-link;
     &:visited {
-      color: $color-royal-blue-light;
+      color: $color-link;
     }
   }
   li a:hover {
-    color: $color-royal-blue-light;
+    color: $color-link;
   }
 }
 
@@ -637,13 +644,13 @@ img.home-icon {
 .hier-nav {
   background: #f8f8ff;
   .current_page_item a, .current_page_parent a {
-    color: $color-royal-blue-light;
+    color: $color-link;
     &:visited {
-      color: $color-royal-blue-light;
+      color: $color-link;
     }
   }
   li a:hover {
-    color: $color-royal-blue-light;
+    color: $color-link;
   }
 }
 
@@ -715,7 +722,7 @@ img.home-icon {
 }
 
 #subnav li a:hover, .hier-nav li a:hover, .postdata a:hover, h1.posttitle a:hover, h2.posttitle a:hover, .tags a:hover, .page-nav a:hover, .post-nav a:hover {
-  color: $color-royal-blue-light;
+  color: $color-link;
 }
 
 #nav-top {
@@ -723,7 +730,7 @@ img.home-icon {
     @include gradient-opaque;
   }
   li a:hover {
-      @include gradient-opaque;
+    @include gradient-opaque;
   }
 }
 
@@ -733,12 +740,11 @@ img.home-icon {
   margin: 4px 2px -11px;
 }
 
-
 #rps-login-bar {
   float: right;
   @include adjust-font-size-to(12px);
   padding-right: 9px;
-  padding-top: 1em;
+  padding-top: 8px;
   a,
   a:visited {
     display: inline;
