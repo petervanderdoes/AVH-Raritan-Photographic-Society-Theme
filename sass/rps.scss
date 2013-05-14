@@ -1,6 +1,13 @@
 $base-font-size: 14px;
-$base-line-height: 19px;
+$base-line-height: $base-font-size * 1.5;
 $rhythm-unit: rem;
+
+/**
+* Basefont for Oswald font.
+* Our $base-font-size is 14px and this base font give the same width for Oswald
+*/
+$base-font-size-oswald: 16px;
+$base-line-height-oswald: $base-font-size-oswald * 1.5;
 
 @import "compass";
 
@@ -21,6 +28,8 @@ $rhythm-unit: rem;
 @import "partials/navigation-bar";
 @import "partials/breadcrumb";
 @import "partials/comments";
+@import "partials/events-manager";
+@import "partials/magazine-layout";
 
 body {
   font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
@@ -36,18 +45,9 @@ body {
 }
 
 .entry, .non-wp-entry, .suf-mag-category, .suf-mag-excerpt, .suf-tile {
-  @include adjust-font-size-to(14px);
+  @include adjust-font-size-to($base-font-size);
 }
 
-h2.suf-mag-excerpt-title {
-  @include adjust-font-size-to(15px);
-  a,
-  a:hover,
-  a:visited,
-  a:active {
-    @include adjust-font-size-to(15px);
-  }
-}
 
 h2.suf-tile-title {
   @include adjust-font-size-to(15px);
@@ -85,27 +85,9 @@ a.suf-mag-excerpt-full-story {
   @include border-radius(3px);
 }
 
-.suf-mag-excerpts:after {
-  margin: 5px;
-}
-
 h2.suf-tile-title {
   margin-top: 0;
   text-align: left;
-}
-
-.suf-mag-excerpts h3 {
-  font-family: Oswald;
-  @include adjust-font-size-to(21px);
-  font-weight: 400;
-  line-height: 2em;
-  margin: 0;
-  padding: 0;
-  font-weight: 400;
-  a {
-    color: #EEEEEE;
-    text-decoration: none;
-  }
 }
 
 h2.suf-tile-title a {
@@ -237,112 +219,4 @@ ul.tml-action-links {
   li {
     padding: 0;
   }
-}
-
-/**
- * Event Manager
- */
-
-.em-location-map {
-  @include border-radius(5px);
-}
-
-.event-list {
-  list-style: disc outside none;
-  padding: inherit;
-  text-align: left;
-}
-
-/**
- * Gravity Forms
- */
-
-.gform_wrapper {
-  *:focus {
-    background-color: $color-input-bg-focus;
-    color: $color-input-text-focus;
-    outline: 0 none;
-  }
-  .gform_body {
-    input,
-    textarea {
-      @include gradient-input;
-      color: $color-input-text;
-    }
-    input:focus,
-    textarea:focus {
-      @include gradient-input-focus;
-      color: $color-input-text-focus;
-    }
-  }
-  select {
-    background-color: #333333;
-    background-origin: padding-box;
-    @include border-radius(5px);
-    border: 1px solid #555555;
-    color: #999999;
-    font-family: inherit;
-    font-size: 11px;
-    letter-spacing: normal;
-    padding: 3px 0;
-  }
-  .chzn-container .chzn-drop {
-    background-color: #999999;
-    color: #333333;
-    border: 1px solid #555555;
-  }
-  .chzn-container-single .chzn-single {
-    div {
-      background-color: #333333;
-      background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #333333), color-stop(1, black));
-      background-image: -webkit-linear-gradient(center bottom, #333333 0%, black 100%);
-      background-image: -moz-linear-gradient(center bottom, #333333 0%, black 100%);
-      background-image: -o-linear-gradient(top, #333333 0%, black 100%);
-      background-image: -ms-linear-gradient(top, #333333 0%, black 100%);
-      background-image: linear-gradient(top, #333333 0%, black 100%);
-      border-left: 1px solid #555555;
-    }
-    background-color: #333333;
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #333333), color-stop(1, black));
-    background-image: -webkit-linear-gradient(center bottom, #333333 0%, black 100%);
-    background-image: -moz-linear-gradient(center bottom, #333333 0%, black 100%);
-    background-image: -o-linear-gradient(top, #333333 0%, black 100%);
-    background-image: -ms-linear-gradient(top, #333333 0%, black 100%);
-    background-image: linear-gradient(top, #333333 0%, black 100%);
-    border: 1px solid #555555;
-    color: #999999;
-  }
-  .chzn-container-active {
-    .chzn-single {
-      -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
-      -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
-      -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0);
-    }
-    .chzn-single-with-drop {
-      border: 1px solid #555555;
-      background-color: #333333;
-      background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #333333), color-stop(1, black));
-      background-image: -webkit-linear-gradient(center bottom, #333333 0%, black 100%);
-      background-image: -moz-linear-gradient(center bottom, #333333 0%, black 100%);
-      background-image: -o-linear-gradient(top, #333333 0%, black 100%);
-      background-image: -ms-linear-gradient(top, #333333 0%, black 100%);
-      background-image: linear-gradient(top, #333333 0%, black 100%);
-    }
-  }
-  .chzn-container .chzn-results .highlighted {
-    background-color: #555555;
-  }
-  .chzn-container-single .chzn-search input {
-    border: 1px solid #555;
-  }
-}
-
-#picatcha {
-  background-color: inherit !important;
-  border: 1px solid #555555 !important;
-}
-
-.picatcha .img_btn {
-  border: 2px solid #555555 !important;
 }

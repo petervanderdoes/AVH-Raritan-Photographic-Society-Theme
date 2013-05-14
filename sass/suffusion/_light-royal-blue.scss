@@ -77,14 +77,14 @@ input[type="submit"].searchsubmit {
 }
 
 .bookdata a:hover, .postdata a:hover, h1.posttitle a:hover, h2.posttitle a:hover, .tags a:hover {
- color: $color-link;
+  color: $color-link;
 }
 
 /* post title */
 
 .page-links {
   span {
-   color: $color-link;
+    color: $color-link;
   }
   > span, a:hover {
     color: $color-link;

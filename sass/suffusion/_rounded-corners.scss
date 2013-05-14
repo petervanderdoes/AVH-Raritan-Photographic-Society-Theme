@@ -56,7 +56,7 @@ input {
   }
 }
 
-.commentlist li, .suf-mag-category, .suf-mag-excerpt, .suf-tile, h2.suf-mag-headlines-title, .suf-mag-excerpts-header, .suf-mag-categories-header, #recaptcha_response_field {
+.commentlist li, #recaptcha_response_field {
   @include border-radius(5px);
 }
 

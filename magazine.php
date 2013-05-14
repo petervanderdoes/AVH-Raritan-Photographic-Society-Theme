@@ -129,6 +129,25 @@ if ( $total > 0 ) {
 echo "<section class='rps-showcases'>\n";
 do_action('rps_showcase', '0');
 echo "</section>\n";
+
+echo '<div id="rps-info">';
+echo '<div class="suf-tiles suf-tiles-3">';
+
+echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-0">'."\n";
+echo rps_EM_list_events();
+echo '</div>'."\n";
+
+echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-1">'."\n";
+echo '<ul>';
+wp_list_categories(array('title_li'=>''));
+echo '</ul>';
+echo '</div>'."\n";
+
+echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-2">'."\n";
+echo '</div>'."\n";
+
+echo '</div>'."\n";
+echo '</section>'."\n";
 ?>
       </div>
 	<!-- content -->

@@ -27,12 +27,21 @@
       @include border-top-right-radius(5px);
       a {
         @include border-top-left-radius(5px);
-      @include border-top-right-radius(5px);
+        @include border-top-right-radius(5px);
         color: #b8b8b8;
-        background: #000;
+        background: transparent;
         padding: 8px 8px 5px 8px;
         text-decoration: none;
         display: inline-block;
+      }
+      &.menu-item {
+        background-color: #000;
+      }
+      &.current-menu-item,
+      &.current-menu-ancestor,
+      &.current-post-ancestor {
+        color: #ffffff;
+        @include gradient-opaque;
       }
     }
     ul {
@@ -723,15 +732,6 @@ img.home-icon {
 
 #subnav li a:hover, .hier-nav li a:hover, .postdata a:hover, h1.posttitle a:hover, h2.posttitle a:hover, .tags a:hover, .page-nav a:hover, .post-nav a:hover {
   color: $color-link;
-}
-
-#nav-top {
-  a.current {
-    @include gradient-opaque;
-  }
-  li a:hover {
-    @include gradient-opaque;
-  }
 }
 
 #subnav {

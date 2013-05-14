@@ -33,3 +33,22 @@ function filterRPS_EM_output_show_condition ($show_condition, $condition, $match
 	}
 	return $show_condition;
 }
+
+function rps_EM_list_events() {
+	$arg = array(
+	'title' => __('Events','dbem'),
+	'scope' => 'future',
+	'order' => 'ASC',
+	'limit' => 5,
+	'category' => 0,
+	'format_header' => '<ul>',
+	'format' => '<li>#_EVENTLINK<br />#_CATEGORYNAME</li>',
+	'format_footer' => '</ul>',
+	'nolistwrap' => false,
+	'orderby' => 'event_start_date,event_start_time,event_name',
+	'all_events' => 0,
+	'all_events_text' => __('all events', 'dbem'),
+	'no_events_text' => __('No events', 'dbem')
+	);
+	return EM_Events::output($arg);
+}

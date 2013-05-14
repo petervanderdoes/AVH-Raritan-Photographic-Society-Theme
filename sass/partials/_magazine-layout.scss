@@ -1,0 +1,104 @@
+.suf-mag-excerpts {
+  width: 100%;
+  padding: 0;
+  margin: 10px 0;
+  display: inline-block;
+  h3 {
+    font-family: Oswald;
+    @include adjust-font-size-to($base-font-size-oswald*1.3);
+    font-weight: 400;
+    line-height: 2em;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    a {
+      color: #EEEEEE;
+      text-decoration: none;
+    }
+  }
+  &:after {
+    marging: 5px;
+  }
+}
+
+h2.suf-mag-excerpt-title {
+  @include adjust-font-size-to($base-font-size);
+  font-weight: bold;
+  border-top: 1px dotted #c0c0c0;
+  border-bottom: 1px dotted #c0c0c0;
+  padding: 5px 0;
+  margin-right: 8px;
+  margin-left: 8px;
+  a,
+  a:hover,
+  a:visited,
+  a:active {
+    text-decoration: none;
+  }
+}
+
+.suf-mag-excerpt-text p, .suf-tile-text p {
+  @include margin-leader();
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+/* Props to the brilliant technique highlighted here: http://stackoverflow.com/questions/6865194/fluid-width-with-equally-spaced-divs.
+ This distributes divs equally in a fluid-width row without any JS hack and without using CSS multi-columns. */
+
+.suf-tiles, .suf-mag-excerpts {
+  text-align: justify;
+  -ms-text-justify: distribute;
+  text-justify: distribute;
+  &:after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+  }
+}
+
+.suf-tile-1c {
+  width: 100%;
+}
+
+.suf-tile-2c {
+  width: 49%;
+}
+
+.suf-tile-3c {
+  width: 32%;
+}
+
+.suf-tile-4c {
+  width: 24%;
+}
+
+.suf-tile-5c {
+  width: 19%;
+}
+
+.suf-tile-6c {
+  width: 16%;
+}
+
+.suf-tile-7c {
+  width: 13%;
+}
+
+.suf-tile-8c {
+  width: 12%;
+}
+
+.suf-tile-9c {
+  width: 10.5%;
+}
+
+.suf-tile-10c {
+  width: 9.5%;
+}
+
+.suf-mag-excerpt, .suf-tile {
+  @include border-radius(5px);
+}
