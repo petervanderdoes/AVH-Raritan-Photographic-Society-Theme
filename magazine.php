@@ -11,9 +11,10 @@
 get_header();
 
 global $post, $suf_mag_content_enabled, $suf_mag_entity_order, $suf_mag_headlines_enabled, $suf_mag_excerpts_enabled, $suf_mag_categories_enabled, $suf_mag_total_excerpts;
+global $suf_mag_excerpt_full_story_text, $suf_mag_excerpts_images_enabled, $suf_mag_excerpt_full_story_position, $suf_mag_excerpt_title_alignment;
 global $suf_post_show_comment;
 
-$suf_post_show_comment = 'hide';
+//$suf_post_show_comment = 'hide';
 ?>
 
 <div id="main-col">
@@ -128,6 +129,25 @@ if ( $total > 0 ) {
 echo "<section class='rps-showcases'>\n";
 do_action('rps_showcase', '0');
 echo "</section>\n";
+
+echo '<div id="rps-info">';
+echo '<div class="suf-tiles suf-tiles-3">';
+
+echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-0">'."\n";
+echo rps_EM_list_events();
+echo '</div>'."\n";
+
+echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-1">'."\n";
+echo '<ul>';
+wp_list_categories(array('title_li'=>''));
+echo '</ul>';
+echo '</div>'."\n";
+
+echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-2">'."\n";
+echo '</div>'."\n";
+
+echo '</div>'."\n";
+echo '</section>'."\n";
 ?>
       </div>
 	<!-- content -->

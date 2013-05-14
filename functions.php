@@ -126,6 +126,8 @@ function filterRPS_comment_form_allow_comment($allow_comment) {
 /**
  * Magazine template function to build queries for individual magazine sections.
  *
+ * Updated so you can add 'to_skip' argument, to skip the given post ID's
+ *
  * @param array $args
  * @return array
  */
