@@ -1,4 +1,4 @@
-$base-font-size: 14px;
+$base-font-size: 13px;
 $base-line-height: $base-font-size * 1.5;
 $rhythm-unit: rem;
 
@@ -6,7 +6,7 @@ $rhythm-unit: rem;
 * Basefont for Oswald font.
 * Our $base-font-size is 14px and this base font give the same width for Oswald
 */
-$base-font-size-oswald: 16px;
+$base-font-size-oswald: 15px;
 $base-line-height-oswald: $base-font-size-oswald * 1.5;
 
 @import "compass";
