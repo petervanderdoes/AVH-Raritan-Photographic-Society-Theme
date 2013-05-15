@@ -171,40 +171,6 @@ input[type="email"] {
   width: 100%;
 }
 
-.rps-showcases {
-  .image {
-    text-align: center;
-  }
-  .thumb_img {
-    vertical-align: middle;
-  }
-  .col-control {
-    width: 960px;
-  }
-  .suf-tile {
-    margin-bottom: 3px;
-  }
-  ul {
-    float: left;
-    list-style: none outside none;
-    margin: 0 4px;
-    padding: 0;
-    vertical-align: bottom;
-  }
-  li {
-    float: left;
-    line-height: 150px;
-    margin: 0 13px 10px;
-    min-height: 154px;
-    padding: 10px;
-    width: 150px;
-    &:last-child {
-      margin-bottom: 10px;
-    }
-
-  }
-}
-
 /**
 * Theme My Login
 */
