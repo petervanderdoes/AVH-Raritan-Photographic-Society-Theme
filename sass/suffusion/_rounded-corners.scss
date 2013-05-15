@@ -99,34 +99,34 @@ legend, .button {
 
 input {
   &[type="button"], &[type="submit"] {
-    @include border-radius(20px);
+    @include border-radius(3px);
   }
 }
 
 .submit {
-  @include border-radius(20px);
+  @include border-radius(3px);
 }
 
 a {
   &.more-link {
-    @include border-radius(20px);
+    @include border-radius(3px);
   }
   &.excerpt-more-append {
-    @include border-radius(20px);
+    @include border-radius(3px);
     &:hover, &:visited {
-      @include border-radius(20px);
+      @include border-radius(3px);
     }
   }
   &.suf-mag-excerpt-full-story {
-    @include border-radius(20px);
+    @include border-radius(3px);
     &:hover, &:visited {
-      @include border-radius(20px);
+      @include border-radius(3px);
     }
   }
   &.suf-mag-category-all-posts {
-    @include border-radius(20px);
+    @include border-radius(3px);
     &:hover, &:visited {
-      @include border-radius(20px);
+      @include border-radius(3px);
     }
   }
 }

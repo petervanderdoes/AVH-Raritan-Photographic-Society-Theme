@@ -42,7 +42,7 @@ function rps_EM_list_events() {
 	'limit' => 5,
 	'category' => 0,
 	'format_header' => '<ul>',
-	'format' => '<li>#_EVENTLINK<br />#_CATEGORYNAME</li>',
+	'format' => '<li>#_EVENTDATES - #_CATEGORYNAME: #_EVENTLINK</li>',
 	'format_footer' => '</ul>',
 	'nolistwrap' => false,
 	'orderby' => 'event_start_date,event_start_time,event_name',

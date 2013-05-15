@@ -14,7 +14,7 @@ global $post, $suf_mag_content_enabled, $suf_mag_entity_order, $suf_mag_headline
 global $suf_mag_excerpt_full_story_text, $suf_mag_excerpts_images_enabled, $suf_mag_excerpt_full_story_position, $suf_mag_excerpt_title_alignment;
 global $suf_post_show_comment;
 
-//$suf_post_show_comment = 'hide';
+// $suf_post_show_comment = 'hide';
 ?>
 
 <div id="main-col">
@@ -36,13 +36,13 @@ if ( is_numeric($sticky[0]) ) {
 	$amount_of_stickies_to_display = 1;
 	$sticky = array_slice($sticky, 0, $amount_of_stickies_to_display);
 	/* Query sticky posts */
-	$articles=new WP_Query(array('post__in' => $sticky,'caller_get_posts' => 1));
+	$articles = new WP_Query(array('post__in' => $sticky,'caller_get_posts' => 1));
 } else {
-	$articles=new WP_Query(array('showposts'=>1));
+	$articles = new WP_Query(array('showposts' => 1));
 }
 while ( $articles->have_posts() ) {
 	$articles->the_post();
-	$post_to_skip[]=$post->ID;
+	$post_to_skip[] = $post->ID;
 	echo '<article class="' . join(' ', get_post_class(array('excerpt'))) . '" id="post-' . $post->ID . '">';
 	suffusion_after_begin_post();
 	echo '<div class="entry-container bottom fix">';
@@ -92,13 +92,14 @@ if ( $total > 0 ) {
 				}
 
 				global $post, $suf_mag_excerpt_full_story_text, $suf_mag_excerpts_images_enabled, $suf_mag_excerpt_full_story_position, $suf_mag_excerpt_title_alignment;
+				$post_to_skip[] = $post->ID;
 				$categories = get_the_category($post->ID);
 				if ( empty($categories) )
 					$categories = apply_filters('the_category', __('Uncategorized'), '', '');
 
 				$category = $categories[0];
 				$category_link = '<a href="' . esc_url(get_category_link($category->term_id)) . '" title="' . esc_attr(sprintf(__("View all articles in %s"), $category->name)) . '" rel="category tag">';
-				$category_text = '<h3>' . $category_link . $category->name . '</a>';
+				$category_text = '<h3>' . $category_link . $category->name . '</h3></a>';
 
 				echo "\n\t<div class='suf-mag-excerpt entry-content suf-tile-{$cols_per_row}c $suf_mag_excerpt_full_story_position'>\n";
 
@@ -130,24 +131,88 @@ echo "<section class='rps-showcases'>\n";
 do_action('rps_showcase', '0');
 echo "</section>\n";
 
-echo '<div id="rps-info">';
+echo '<section class="rps-misc">';
 echo '<div class="suf-tiles suf-tiles-3">';
 
-echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-0">'."\n";
+echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-0">' . "\n";
+echo "\t\t<div class='suf-gradient suf-tile-topmost'><h3>Upcoming events</h3></div>\n";
+echo "\t\t<div class='suf-tile-text entry-content'>\n";
 echo rps_EM_list_events();
-echo '</div>'."\n";
+echo "\t\t</div>\n";
+echo '</div>' . "\n";
 
-echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-1">'."\n";
+echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-1">' . "\n";
+echo "\t\t<div class='suf-gradient suf-tile-topmost'><h3>Latest news</h3></div>\n";
+echo "\t\t<div class='suf-tile-text entry-content'>\n";
 echo '<ul>';
-wp_list_categories(array('title_li'=>''));
+wp_reset_query();
+
+$ctr = 0;
+$queries = rps_suffusion_get_mag_section_queries(array('meta_check_field' => 'suf_magazine_excerpt','category_prefix' => 'suf_mag_excerpt_categories','to_skip' => $post_to_skip,'total' => 10));
+$total = 0;
+foreach ( $queries as $query ) {
+	if ( isset($query->posts) && is_array($query->posts) ) {
+		$total += count($query->posts);
+	}
+}
+if ( $total > 0 ) {
+	foreach ( $queries as $query ) {
+		if ( isset($query->posts) && is_array($query->posts) ) {
+			$num_results = count($query->posts);
+			while ( $query->have_posts() ) {
+				if ( $ctr >= 10 ) {
+					break;
+				}
+				global $post;
+				$query->the_post();
+				$categories = get_the_category($post->ID);
+				if ( empty($categories) )
+					$categories = apply_filters('the_category', __('Uncategorized'), '', '');
+
+				$category = $categories[0];
+				$category_link = '<a href="' . esc_url(get_category_link($category->term_id)) . '" title="' . esc_attr(sprintf(__("View all articles in %s"), $category->name)) . '" rel="category tag">';
+				$category_text = $category_link . $category->name . '</a>';
+				$title_text = "<a href='" . get_permalink($post->ID) . "'>" . get_the_title($post->ID) . "</a>\n";
+				echo '<li>';
+				echo $category_text .': '. $title_text;
+				echo '</li>';
+				$ctr++;
+			}
+		}
+	}
+}
+// $categories = suffusion_get_allowed_categories('suf_mag_excerpt_categories');
+// if ( is_array($categories) && count($categories) > 0 ) {
+// 	$query_cats = array();
+// 	foreach ( $categories as $category ) {
+// 		$query_cats[] = $category->cat_ID;
+// 	}
+// 	$query_posts = implode(",", array_values($query_cats));
+// }
+// $query = new WP_query(array(
+// 	'ignore_sticky_posts' => 1,
+// 	'cat' => $query_posts,
+// 	'limit' => 10,
+// 	'post__not_in' => $post_to_skip,
+// 	'meta_query' => array(
+// 		array(
+// 			'key' => 'suf_magazine_excerpt',
+// 			'value' => 'on',
+// 			'compare' => '=',
+// 			'type' => 'STRING'
+// 			)
+// 		)
+// 	)
+// );
 echo '</ul>';
-echo '</div>'."\n";
+echo "\t\t</div>\n";
+echo '</div>' . "\n";
 
-echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-2">'."\n";
-echo '</div>'."\n";
+echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-2">' . "\n";
+echo '</div>' . "\n";
 
-echo '</div>'."\n";
-echo '</section>'."\n";
+echo '</div>' . "\n";
+echo '</section>' . "\n";
 ?>
       </div>
 	<!-- content -->

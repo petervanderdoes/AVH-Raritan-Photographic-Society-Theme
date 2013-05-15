@@ -10,7 +10,7 @@ $color-royal-blue-dark: rgb(0, 35, 102);
 $color-royal-blue-light-opaque: rgba(65, 105, 225, 1);
 $color-royal-blue-light-transparent: rgba(65, 105, 225, 0);
 $color-royal-blue-dark-opaque: rgba(0, 35, 102, 1);
-$color-royal-blue-dark-transparent: rgba(0, 35, 102, 0);
+$color-royal-blue-dark-transparent: rgba(0, 35, 102, 0.2);
 
 $color-grey-1: rgb(169, 169, 169);
 $color-grey-1-highlight: lighten($color-grey-1, 25%);
@@ -19,6 +19,9 @@ $color-grey-3: rgb(85, 85, 85);
 /**
 * Generalization
 */
+$color-text: darken(white, 25);
+$color-text-highlight: darken(white, 10);
+$color-text-lowlight: darken(white, 40);
 $color-link: $color-royal-blue-light;
 $color-event: $color-royal-blue-light;
 

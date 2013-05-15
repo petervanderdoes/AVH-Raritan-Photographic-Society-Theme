@@ -1,10 +1,6 @@
 /* Standard Styles */
 
 a {
-  color: $color-link;
-  &:visited {
-    color: $color-link;
-  }
   &.dbx-toggle {
     background-image: url(../../images/exp-coll-rblue.png);
     background-repeat: no-repeat;
@@ -65,22 +61,6 @@ input[type="submit"].searchsubmit {
 }
 
 /* content */
-
-.post .date {
-  background: url(../../images/caldark.png) no-repeat;
-  color: #fff;
-  span {
-    &.day, &.month, &.year {
-      color: #fff;
-    }
-  }
-}
-
-.bookdata a:hover, .postdata a:hover, h1.posttitle a:hover, h2.posttitle a:hover, .tags a:hover {
-  color: $color-link;
-}
-
-/* post title */
 
 .page-links {
   span {

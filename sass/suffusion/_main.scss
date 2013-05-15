@@ -1,12 +1,5 @@
 /* Standard Styles */
 
-a {
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
 p, .p {
   margin-bottom: 1.5em;
   text-align: left;
@@ -107,55 +100,6 @@ abbr, acronym {
 
 /* Headers */
 
-h1, h2, h3, h4, h5, h6 {
-  color: #333;
-  margin: 0.5em 0;
-  padding: 0;
-  line-height: 1.1em;
-}
-
-h2.suf-mag-category-title {
-  margin: 0;
-}
-
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  color: #333;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-h3, h4, h5, h6 {
-  font-weight: bold;
-}
-
-h1 {
-  font-size: 200%;
-}
-
-h2 {
-  font-size: 183%;
-}
-
-h3 {
-  font-size: 166%;
-}
-
-h4 {
-  font-size: 150%;
-  font-weight: bold;
-}
-
-h5 {
-  font-size: 133%;
-  font-weight: bold;
-}
-
-h6 {
-  font-size: 116%;
-  font-weight: bold;
-}
 
 .entry table, .comment-body table {
   width: 100%;
@@ -331,12 +275,6 @@ input[type="submit"].searchsubmit {
 
 /* content */
 
-#content {
-  clear: both;
-  overflow: hidden;
-  margin-top: 15px;
-}
-
 .no-header.no-main-nav #content {
   margin-top: 0;
 }
@@ -348,56 +286,6 @@ input[type="submit"].searchsubmit {
   clear: both;
   overflow: hidden;
   margin-bottom: 10px;
-}
-
-.post {
-  .date {
-    height: 48px;
-    width: 48px;
-    right: 58px;
-    font: normal 150% Arial, Helvetica, sans-serif;
-    color: #ffffff;
-    text-align: center;
-    padding: 0;
-    line-height: 100%;
-    margin-left: -100%;
-    float: left;
-    position: relative;
-    span {
-      &.day {
-        font: normal 100% Arial, Helvetica, sans-serif;
-        color: #ffffff;
-        text-align: center;
-        padding: 0;
-        line-height: 100%;
-      }
-      &.month {
-        height: 12px;
-        display: block;
-        font: normal 50% Arial, Helvetica, sans-serif;
-        color: #ffffff;
-        text-align: center;
-        padding-top: 2px;
-      }
-      &.year {
-        height: 12px;
-        display: block;
-        font: normal 50% Arial, Helvetica, sans-serif;
-        color: #ffffff;
-        text-align: center;
-        padding-top: 0;
-      }
-    }
-  }
-  .title {
-    float: left;
-    margin-left: 10px;
-    width: 635px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-  }
 }
 
 .page-links {
@@ -423,125 +311,7 @@ a.more-link {
   float: right;
 }
 
-.postdata {
-  font-size: 90%;
-  color: #999999;
-  a {
-    color: #999999;
-    text-decoration: none;
-    &:visited {
-      color: #999999;
-      text-decoration: none;
-    }
-    &:hover {
-      text-decoration: none;
-    }
-  }
-  .icon {
-    display: none;
-    width: 16px;
-    height: 16px;
-    margin-right: 4px;
-    margin-left: 4px;
-  }
-  .category {
-    padding-right: 10px;
-    float: left;
-    .icon {
-      background: no-repeat 0 0;
-    }
-  }
-  .author .icon {
-    background: no-repeat -32px -128px;
-  }
-  .tax .icon {
-    background: no-repeat -32px -144px;
-  }
-  .permalink {
-    padding-right: 10px;
-    float: left;
-    .icon {
-      background: no-repeat 0 -16px;
-    }
-  }
-  .comments {
-    padding-right: 10px;
-    float: right;
-    .icon {
-      background: no-repeat 0 -64px;
-    }
-  }
-  .edit {
-    padding-right: 10px;
-    float: right;
-    .icon {
-      background: no-repeat 0 -112px;
-    }
-  }
-  .line-date .icon {
-    background: no-repeat 0 -32px;
-  }
-  &.line {
-    text-align: center;
-    padding: 0.8em;
-    span {
-      float: none;
-      margin: 0 0.5em;
-      padding: 0;
-      &.author, &.comments {
-        float: none;
-        margin: 0 0.5em;
-        padding: 0;
-      }
-      &.icon {
-        margin-right: 4px;
-        margin-left: 0;
-      }
-      &.vcard {
-        margin-left: 0;
-        margin-right: 0;
-      }
-    }
-  }
-}
-
-.entry, .non-wp-entry {
-  padding: 15px 0 5px;
-  clear: both;
-  font-size: 116%;
-  line-height: 1.6em;
-  margin-bottom: 1em;
-  overflow: hidden;
-}
-
-.post-footer {
-  font-size: 91.67%;
-  margin: 5px 0;
-  width: 100%;
-}
-
 /* post title */
-
-h1.posttitle, h2.posttitle {
-  color: #000;
-  margin: 3px 0 2px;
-  padding-bottom: 4px;
-  font-size: 200%;
-  border-bottom: dotted 1px #CCCCCC;
-}
-
-h1.posttitle a, h2.posttitle a {
-  color: #000;
-  text-decoration: none;
-  &:visited {
-    color: #000;
-    text-decoration: none;
-  }
-}
-
-h1.posttitle a:hover, h2.posttitle a:hover {
-  text-decoration: none;
-}
 
 span.author {
   float: left;
@@ -2322,19 +2092,6 @@ a.follow-icon-and-tag {
     padding: 5px 0 5px 5px;
     font-family: Arial, sans-serif;
   }
-}
-
-.title-container {
-  padding-left: 58px;
-  /*padding-right: 10px;*/
-}
-
-.post .title {
-  float: left;
-  width: 100%;
-  position: relative;
-  margin: 0;
-  padding: 0;
 }
 
 .widget_tag_cloud {

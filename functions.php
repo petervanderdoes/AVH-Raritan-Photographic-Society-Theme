@@ -163,6 +163,7 @@ function rps_suffusion_get_mag_section_queries ($args = array())
 	}
 	$posts_to_ignore = array_merge($solos, $posts_to_skip);
 
+	$total_posts_to_get = (isset($args['total']) ? $args['total'] : $suf_mag_total_excerpts);
 	$category_prefix = $args['category_prefix'];
 	if ( $category_prefix ) {
 		$categories = suffusion_get_allowed_categories($category_prefix);
@@ -172,7 +173,7 @@ function rps_suffusion_get_mag_section_queries ($args = array())
 				$query_cats[] = $category->cat_ID;
 			}
 			$query_posts = implode(",", array_values($query_cats));
-			$cat_query = new WP_query(array('cat' => $query_posts,'post__not_in' => $posts_to_ignore,'posts_per_page' => (int) $suf_mag_total_excerpts));
+			$cat_query = new WP_query(array('cat' => $query_posts,'post__not_in' => $posts_to_ignore,'posts_per_page' => (int) $total_posts_to_get));
 			$queries[] = $cat_query;
 		}
 	}

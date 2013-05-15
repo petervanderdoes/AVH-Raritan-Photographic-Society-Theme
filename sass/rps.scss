@@ -9,6 +9,11 @@ $rhythm-unit: rem;
 $base-font-size-oswald: 15px;
 $base-line-height-oswald: $base-font-size-oswald * 1.5;
 
+/**
+* Full Story
+*/
+$base-font-size-full-story: 14px;
+
 @import "compass";
 
 @include global-reset;
@@ -24,19 +29,21 @@ $base-line-height-oswald: $base-font-size-oswald * 1.5;
 @import "suffusion/dark-style";
 @import "suffusion/dark-royal-blue";
 
+@import "partials/general";
 @import "partials/header";
 @import "partials/navigation-bar";
 @import "partials/breadcrumb";
 @import "partials/comments";
 @import "partials/events-manager";
 @import "partials/magazine-layout";
+@import "partials/post";
 
 body {
   font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
   background-attachment: scroll;
   background-image: $background-img;
   background-repeat: repeat-x;
-  color: #b8b8b8;
+  color: $color-text;
   font-size-adjust: none;
   font-style: normal;
   font-variant: normal;
@@ -44,10 +51,27 @@ body {
   background-color: #000;
 }
 
-.entry, .non-wp-entry, .suf-mag-category, .suf-mag-excerpt, .suf-tile {
+#content {
+  clear: both;
+  overflow: hidden;
+}
+.entry, .non-wp-entry {
+  padding: 15px 0 5px;
+  clear: both;
+  margin-bottom: 1em;
+  overflow: hidden;
+}
+
+.suf-mag-category, .suf-mag-excerpt, .suf-tile {
   @include adjust-font-size-to($base-font-size);
 }
 
+.excerpt {
+  @include adjust-font-size-to($base-font-size);
+}
+.full-content {
+  @include adjust-font-size-to($base-font-size-full-story);
+}
 
 h2.suf-tile-title {
   @include adjust-font-size-to(15px);
@@ -78,11 +102,6 @@ a.suf-mag-excerpt-full-story {
 
 .warea a.suf-mag-category-all-posts, a.suf-mag-category-all-posts {
   @include gradient-opaque;
-}
-
-.post .date {
-  @include gradient-opaque;
-  @include border-radius(3px);
 }
 
 h2.suf-tile-title {
@@ -122,10 +141,9 @@ input[type="email"] {
   padding: 0;
   width: 100%;
   h3 {
+    @include adjust-font-size-to($base-font-size-oswald*1.3);
     font-family: Oswald;
-    font-size: 1.5em;
     font-weight: 400;
-    line-height: 2em;
     margin: 0;
     padding: 0;
   }
@@ -169,34 +187,22 @@ input[type="email"] {
   ul {
     float: left;
     list-style: none outside none;
-    margin: 0;
+    margin: 0 4px;
     padding: 0;
     vertical-align: bottom;
   }
   li {
-    &:last-child {
-      margin-left: 12px;
-      margin-right: 12px;
-    }
     float: left;
     line-height: 150px;
-    margin: 0 6px 10px 12px;
+    margin: 0 13px 10px;
     min-height: 154px;
     padding: 10px;
     width: 150px;
+    &:last-child {
+      margin-bottom: 10px;
+    }
+
   }
-}
-
-#rps_showcase .dbx-box {
-  margin: 0;
-}
-
-#rps-others:after {
-  content: "";
-  display: inline-block;
-  font-size: 0;
-  line-height: 0;
-  width: 100%;
 }
 
 /**

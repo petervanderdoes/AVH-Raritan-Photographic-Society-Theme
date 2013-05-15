@@ -46,6 +46,15 @@ else {
 if ($post->post_type == 'post') {
 	?>
 <header class='post-header title-container fix'>
+<?php
+ 		if ("post" == $post->post_type) {
+		?>
+	<div class="date"><span class="month"><?php the_time('M'); ?></span> <span
+			class="day"><?php the_time('d'); ?></span><span class="year"><?php the_time('Y'); ?></span></div>
+	<?php
+
+	}
+	?>
 	<div class="title">
 		<<?php echo $header_tag;?> class="posttitle"><?php echo suffusion_get_post_title_and_link(); ?></<?php echo $header_tag;?>>
 	<?php
@@ -128,15 +137,6 @@ if ($post->post_type == 'post') {
 }
 	?>
 </div><!-- /.title -->
-	<?php
- 		if ("post" == $post->post_type) {
-		?>
-	<div class="date"><span class="month"><?php the_time('M'); ?></span> <span
-			class="day"><?php the_time('d'); ?></span><span class="year"><?php the_time('Y'); ?></span></div>
-	<?php
-
-	}
-	?>
 </header><!-- /.title-container -->
 	<?php
 
