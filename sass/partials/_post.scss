@@ -106,7 +106,7 @@ h1.posttitle, h2.posttitle {
     line-height: 100%;
     float: left;
     position: relative;
-    @include gradient-opaque;
+    @include gradient-buttons;
   	@include border-radius(3px);
     }
     span {

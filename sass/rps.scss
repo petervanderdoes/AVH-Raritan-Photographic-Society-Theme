@@ -33,10 +33,11 @@ $base-font-size-full-story: 14px;
 @import "partials/header";
 @import "partials/navigation-bar";
 @import "partials/breadcrumb";
-@import "partials/comments";
+@import "partials/forms";
 @import "partials/events-manager";
 @import "partials/magazine-layout";
 @import "partials/post";
+@import "partials/sidebars";
 
 body {
   font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
@@ -83,25 +84,23 @@ h2.suf-tile-title {
   }
 }
 
-.suf-mag-excerpt-full-story {
-  font-size: 0.9em;
-}
-
 .suf-gradient {
-  @include gradient-transparent;
+  @include gradient-header;
 }
 
 .suf-mag-headline-block li.suf-mag-headline a.tab-current, h2.suf-mag-category-title {
-  @include gradient-opaque;
+  @include gradient-buttons;
 }
 
 a.excerpt-more-append,
-a.suf-mag-excerpt-full-story {
-  @include gradient-opaque;
+{
+    color: $color-button-text;
+    border: solid 1px $color-button-border;
+  @include gradient-buttons;
 }
 
 .warea a.suf-mag-category-all-posts, a.suf-mag-category-all-posts {
-  @include gradient-opaque;
+  @include gradient-buttons;
 }
 
 h2.suf-tile-title {

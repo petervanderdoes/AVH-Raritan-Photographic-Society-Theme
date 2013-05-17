@@ -30,7 +30,16 @@ $color-input-bg-focus: $color-grey-1-highlight;
 $color-input-text: contrast-color($color-input-bg);
 $color-input-text-focus: contrast-color($color-input-bg-focus);
 
+$color-button-text: $color-grey-1-highlight;
+$color-button-border: $color-royal-blue-dark;
+
 $background-img: image-url("bg-rps.png", false, false);
 $header-img: image-url("RPS-LOGO-2012.jpg", false, false);
 
 $arrows-img: image-url("arrows.gif", false, false);
+$ul-image: image-url("icons/bulletrbl.png", false, false);
+
+/**
+* Font sizes
+*/
+$font-small: $base-font-size*0.93;

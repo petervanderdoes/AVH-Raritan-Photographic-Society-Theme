@@ -885,32 +885,7 @@ input[type="text"]:focus {
   border: solid 1px #666;
 }
 
-.button, input[type="submit"], .submit {
-  font-weight: normal;
-  margin: 0;
-  padding: 3px 15px 3px 15px;
-}
-
-.button:hover, input[type="submit"]:hover, .button:active, input[type="submit"]:active {
-  font-weight: bold;
-}
-
 /* sidebar */
-
-#sidebar, #sidebar-b, #sidebar-2, #sidebar-2-b {
-  margin-top: 15px;
-  width: 260px;
-  color: #666666;
-  line-height: 160%;
-}
-
-#sidebar.left, #sidebar-b.left, #sidebar-2.left, #sidebar-2-b.left, #wsidebar-top.left, #wsidebar-bottom.left {
-  float: left;
-}
-
-#sidebar.right, #sidebar-b.right, #sidebar-2.right, #sidebar-2-b.right, #wsidebar-top.right, #wsidebar-bottom.right {
-  float: right;
-}
 
 #wsidebar-top {
   margin: 15px 0 0 0;

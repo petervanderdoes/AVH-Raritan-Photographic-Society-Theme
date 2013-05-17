@@ -41,7 +41,7 @@
       &.current-menu-ancestor,
       &.current-post-ancestor {
         color: #ffffff;
-        @include gradient-opaque;
+        @include gradient-buttons;
       }
     }
     ul {
@@ -120,24 +120,24 @@
     }
     &.current {
       color: #ffffff;
-      @include gradient-opaque;
+      @include gradient-buttons;
     }
   }
   li a:hover {
     color: #ffffff;
-    @include gradient-opaque;
+    @include gradient-buttons;
   }
 }
 
 #subnav {
-  @include adjust-font-size-to(12px);
+  @include adjust-font-size-to($font-small);
   background-color: inherit;
   margin: 4px 2px ;
 }
 
 #rps-login-bar {
   float: right;
-  @include adjust-font-size-to(12px);
+  @include adjust-font-size-to($font-small);
   padding-right: 9px;
   padding-top: 8px;
   a {

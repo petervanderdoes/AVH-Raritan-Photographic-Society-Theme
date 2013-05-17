@@ -1,0 +1,19 @@
+#sidebar, #sidebar-b, #sidebar-2, #sidebar-2-b {
+  width: 260px;
+  color: #666666;
+  line-height: 160%;
+}
+
+#sidebar.left, #sidebar-b.left, #sidebar-2.left, #sidebar-2-b.left, #wsidebar-top.left, #wsidebar-bottom.left {
+  float: left;
+}
+
+#sidebar.right, #sidebar-b.right, #sidebar-2.right, #sidebar-2-b.right, #wsidebar-top.right, #wsidebar-bottom.right {
+  float: right;
+}
+
+.widget_em_widget {
+	ul {
+		@include pretty-bullets("icons/bulletrbl.png")
+	}
+}

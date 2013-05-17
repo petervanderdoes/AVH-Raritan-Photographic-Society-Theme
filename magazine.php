@@ -50,7 +50,7 @@ while ( $articles->have_posts() ) {
 	suffusion_excerpt();
 	echo '</div>';
 	echo "\t<div class='suf-mag-excerpt-footer'>\n";
-	echo "\t\t<a href='" . get_permalink($post->ID) . "' class='suf-mag-excerpt-full-story'>$suf_mag_excerpt_full_story_text</a>";
+	echo "\t\t<a href='" . get_permalink($post->ID) . "' class='suf-mag-excerpt-full-story button'>$suf_mag_excerpt_full_story_text</a>";
 	echo "\t</div>\n";
 	suffusion_after_content();
 	echo '</div>';
@@ -113,7 +113,7 @@ if ( $total > 0 ) {
 
 				if ( trim($suf_mag_excerpt_full_story_text) ) {
 					echo "\t<div class='suf-mag-excerpt-footer'>\n";
-					echo "\t\t<a href='" . get_permalink($post->ID) . "' class='suf-mag-excerpt-full-story'>$suf_mag_excerpt_full_story_text</a>";
+					echo "\t\t<a href='" . get_permalink($post->ID) . "' class='suf-mag-excerpt-full-story button'>$suf_mag_excerpt_full_story_text</a>";
 					echo "\t</div>\n";
 				}
 

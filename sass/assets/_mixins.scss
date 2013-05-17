@@ -1,15 +1,22 @@
-@mixin gradient-transparent {
+@mixin gradient-header {
   background: $color-royal-blue-light;
   @include filter-gradient($color-royal-blue-light, $color-royal-blue-dark, vertical);
   $experimental-support-for-svg: true;
   @include background(linear-gradient(top, $color-royal-blue-light-opaque 0%, $color-royal-blue-dark-transparent 100%));
 }
 
-@mixin gradient-opaque {
+@mixin gradient-buttons {
   background: $color-royal-blue-light;
   @include filter-gradient($color-royal-blue-light, $color-royal-blue-dark, vertical);
   $experimental-support-for-svg: true;
   @include background(linear-gradient(top, $color-royal-blue-light-opaque 0%, $color-royal-blue-dark-opaque 100%));
+}
+
+@mixin gradient-buttons-active {
+  background: lighten($color-royal-blue-light,10);
+  @include filter-gradient(lighten($color-royal-blue-light,10), lighten($color-royal-blue-dark,10), vertical);
+  $experimental-support-for-svg: true;
+  @include background(linear-gradient(top, lighten($color-royal-blue-light-opaque,10) 0%, lighten($color-royal-blue-dark-opaque,10) 100%));
 }
 
 @mixin gradient-input {
@@ -24,10 +31,6 @@
   @include filter-gradient(darken($color-input-bg-focus, 25%), $color-input-bg-focus, vertical);
   $experimental-support-for-svg: true;
   @include background(linear-gradient(top, darken($color-input-bg-focus, 25%) 0%, $color-input-bg-focus 50%, $color-input-bg-focus 100%));
-}
-
-@mixin adjust-font-size-only($to-size, $from-size: $base-font-size) {
-  font-size: $font-unit * $to-size / $from-size;
 }
 
 @mixin link-style {
