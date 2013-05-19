@@ -1,6 +1,5 @@
 #sidebar, #sidebar-b, #sidebar-2, #sidebar-2-b {
   width: 260px;
-  color: #666666;
   line-height: 160%;
 }
 
@@ -12,8 +11,49 @@
   float: right;
 }
 
+.suf-widget ul li {
+  background-repeat: no-repeat;
+  padding-left: 22px;
+  background-position: 0 1px;
+  padding-bottom: 3px;
+}
+
+.warea a {
+  &:hover, &:focus, &:active {
+    color: $color-text-highlight;
+  }
+}
+
+.tab-box div.sidebar-tab-content a, div.sidebar-tab-content a, .suf-widget a, .warea a {
+  color: $color-text-highlight;
+  text-decoration: none;
+  &:visited {
+    color: $color-text-highlight;
+    text-decoration: none;
+  }
+}
+
 .widget_em_widget {
-	ul {
-		@include pretty-bullets("icons/bulletrbl.png")
-	}
+  ul {
+    @include pretty-bullets("icons/bulletrbl.png");
+    li {
+      &.all-events-link {
+        background-image: none;
+        padding: 0;
+        a {
+          padding: 4px 10px;
+          width: auto;
+          color: $color-text-highlight;
+          @include adjust-font-size-to($font-small);
+          &:hover, &:active, &:focus {
+            color: $color-text-highlight;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    p {
+      line-height: 1rem;
+    }
+  }
 }

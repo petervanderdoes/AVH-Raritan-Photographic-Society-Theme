@@ -265,17 +265,6 @@ div.sbtab-content-meta .rss, .suf-widget .rss, .suf-flat-widget .rss, .suf-panel
 
 /* Magazine */
 
-a {
-  &.excerpt-more-append, &.suf-mag-excerpt-full-story {
-    background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
-    color: #fff;
-    &:visited {
-      background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
-      color: #fff;
-    }
-  }
-}
-
 .warea a.suf-mag-category-all-posts, a.suf-mag-category-all-posts {
   background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
   color: #fff;

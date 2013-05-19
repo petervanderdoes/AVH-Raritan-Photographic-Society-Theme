@@ -234,10 +234,6 @@ input {
 
 /* sidebar */
 
-#sidebar, #sidebar-b, #sidebar-2, #sidebar-2-b {
-  color: #666666;
-}
-
 /* sidebar */
 
 .suf-widget h3 {
@@ -256,23 +252,8 @@ div.tab-box div.sidebar-tab-content a {
   }
 }
 
-.suf-widget a {
-  &:hover, &:active {
-    text-decoration: underline;
-  }
-}
-
 .warea ul.suf-cat-posts-list a {
   &:hover, &:active {
-    text-decoration: none;
-  }
-}
-
-.tab-box div.sidebar-tab-content a, div.sidebar-tab-content a, .suf-widget a, .warea a {
-  color: #999;
-  text-decoration: none;
-  &:visited {
-    color: #999;
     text-decoration: none;
   }
 }
@@ -340,8 +321,6 @@ div.sidebar-tab-content, .suf-mag-headlines, .suf-mag-excerpt, .suf-tile, .suf-m
 }
 
 /* Magazine */
-
-
 
 .widget-suf-cat-posts li.suf-cat-post a, .suf-mag-category li.suf-mag-catblock-post a {
   color: #eee;

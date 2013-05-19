@@ -3,15 +3,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .button {
-	width: auto;
+  width: auto;
+  color: $color-button-text;
+  border: solid 1px $color-button-border;
+  @include gradient-buttons;
+  @include adjust-font-size-to($font-small);
+  &:hover, &:active, &:focus {
     color: $color-button-text;
-    border: solid 1px $color-button-border;
-    @include gradient-buttons;
-    @include adjust-font-size-to($font-small);
-    &:hover, &:active, &:focus {
-      color: $color-button-text;
-      @include gradient-buttons-active;
-    }
+    @include gradient-buttons-active;
+  }
 }
 
 //.button, input[type="submit"], .submit {

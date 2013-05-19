@@ -100,7 +100,6 @@ abbr, acronym {
 
 /* Headers */
 
-
 .entry table, .comment-body table {
   width: 100%;
   border-collapse: collapse;
@@ -947,45 +946,6 @@ input[type="text"]:focus {
   }
 }
 
-div.sidebar-tab-content a {
-  color: #000000;
-  text-decoration: none;
-}
-
-.suf-widget a {
-  color: #000000;
-  text-decoration: none;
-  &:visited {
-    color: #000000;
-    text-decoration: none;
-  }
-}
-
-div.sidebar-tab-content a {
-  &:hover, &:focus, &:active {
-    text-decoration: underline;
-  }
-}
-
-.warea div.sidebar-tab-content a {
-  &:hover, &:focus, &:active {
-    text-decoration: underline;
-  }
-}
-
-.suf-widget a {
-  &:hover, &:focus, &:active {
-    text-decoration: underline;
-  }
-  &.openid_link {
-    padding-left: 16px;
-  }
-}
-
-.recentcomments a.openid_link, a.openid_link {
-  padding-left: 16px;
-}
-
 .suf-mag-category ul, .sidebar-tab-content ul, .suf-widget ul, .suf-flat-widget ul, .suf-panel-widget ul, .widget_categories ul, .widget_archive ul {
   list-style: none;
   margin: 0;
@@ -1002,7 +962,7 @@ div.sidebar-tab-content a {
   }
 }
 
-.sidebar-tab-content ul li, .suf-widget ul li, .suf-flat-widget ul li, .suf-panel-widget ul li {
+.sidebar-tab-content ul li, .suf-flat-widget ul li, .suf-panel-widget ul li {
   background-repeat: no-repeat;
   padding-left: 22px;
   background-position: 0 1px;

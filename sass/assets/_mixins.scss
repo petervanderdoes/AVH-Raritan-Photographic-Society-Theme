@@ -13,10 +13,10 @@
 }
 
 @mixin gradient-buttons-active {
-  background: lighten($color-royal-blue-light,10);
-  @include filter-gradient(lighten($color-royal-blue-light,10), lighten($color-royal-blue-dark,10), vertical);
+  background: lighten($color-royal-blue-light, 10);
+  @include filter-gradient(lighten($color-royal-blue-light, 10), lighten($color-royal-blue-dark, 10), vertical);
   $experimental-support-for-svg: true;
-  @include background(linear-gradient(top, lighten($color-royal-blue-light-opaque,10) 0%, lighten($color-royal-blue-dark-opaque,10) 100%));
+  @include background(linear-gradient(top, lighten($color-royal-blue-light-opaque, 10) 0%, lighten($color-royal-blue-dark-opaque, 10) 100%));
 }
 
 @mixin gradient-input {

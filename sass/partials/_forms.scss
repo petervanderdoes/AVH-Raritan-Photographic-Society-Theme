@@ -15,6 +15,17 @@
       color: $color-input-text-focus;
     }
   }
+  input[type="submit"] {
+    width: auto;
+    color: $color-button-text;
+    border: solid 1px $color-button-border;
+    @include gradient-buttons;
+    @include adjust-font-size-to($font-small);
+    &:hover, &:active, &:focus {
+      color: $color-button-text;
+      @include gradient-buttons-active;
+    }
+  }
   textarea {
     @include gradient-input;
     color: $color-input-text;
@@ -35,13 +46,13 @@
 }
 
 input[type="submit"] {
-    width: auto;
+  width: auto;
+  color: $color-button-text;
+  border: solid 1px $color-button-border;
+  @include gradient-buttons;
+  @include adjust-font-size-to($font-small);
+  &:hover, &:active, &:focus {
     color: $color-button-text;
-    border: solid 1px $color-button-border;
-    @include gradient-buttons;
-    @include adjust-font-size-to($font-small);
-    &:hover, &:active, &:focus {
-      color: $color-button-text;
-      @include gradient-buttons-active;
-    }
+    @include gradient-buttons-active;
   }
+}

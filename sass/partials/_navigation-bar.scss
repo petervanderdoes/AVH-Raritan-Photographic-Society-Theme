@@ -132,7 +132,7 @@
 #subnav {
   @include adjust-font-size-to($font-small);
   background-color: inherit;
-  margin: 4px 2px ;
+  margin: 4px 2px;
 }
 
 #rps-login-bar {
@@ -461,7 +461,6 @@ img.home-icon {
   }
 }
 
-
 #nav.continuous {
   a.current {
     color: #444;
@@ -517,7 +516,6 @@ img.home-icon {
     }
   }
 }
-
 
 /* Level 3 */
 
@@ -578,4 +576,3 @@ img.home-icon {
 #top-bar-right-spanel-tab .toggle {
   border: 1px solid #555;
 }
-

@@ -49,13 +49,14 @@ body {
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
-  background-color: #000;
+  background-color: $background-color;
 }
 
 #content {
   clear: both;
   overflow: hidden;
 }
+
 .entry, .non-wp-entry {
   padding: 15px 0 5px;
   clear: both;
@@ -70,6 +71,7 @@ body {
 .excerpt {
   @include adjust-font-size-to($base-font-size);
 }
+
 .full-content {
   @include adjust-font-size-to($base-font-size-full-story);
 }
@@ -92,10 +94,9 @@ h2.suf-tile-title {
   @include gradient-buttons;
 }
 
-a.excerpt-more-append,
-{
-    color: $color-button-text;
-    border: solid 1px $color-button-border;
+a.excerpt-more-append {
+  color: $color-button-text;
+  border: solid 1px $color-button-border;
   @include gradient-buttons;
 }
 
@@ -140,7 +141,7 @@ input[type="email"] {
   padding: 0;
   width: 100%;
   h3 {
-    @include adjust-font-size-to($base-font-size-oswald*1.3);
+    @include adjust-font-size-to($base-font-size-oswald * 1.3);
     font-family: Oswald;
     font-weight: 400;
     margin: 0;

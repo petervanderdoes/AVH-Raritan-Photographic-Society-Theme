@@ -1,5 +1,5 @@
 h1.posttitle, h2.posttitle {
-  @include adjust-font-size-to($base-font-size-oswald*2);
+  @include adjust-font-size-to($base-font-size-oswald * 2);
   color: $color-text-highlight;
   font-family: Oswald;
   font-style: normal;
@@ -7,14 +7,14 @@ h1.posttitle, h2.posttitle {
   font-weight: normal;
   border-bottom: dotted 1px #CCCCCC;
   padding-top: 9px;
-  a{
-  	@include link-style;
+  a {
+    @include link-style;
   }
 }
 
 .postdata {
-   @include adjust-font-size-to($base-font-size*0.93);
-   margin-top: 2px;
+  @include adjust-font-size-to($base-font-size * 0.93);
+  margin-top: 2px;
   color: $color-text-lowlight;
   a {
     color: $color-text-lowlight;
@@ -107,42 +107,43 @@ h1.posttitle, h2.posttitle {
     float: left;
     position: relative;
     @include gradient-buttons;
-  	@include border-radius(3px);
+    @include border-radius(3px);
+  }
+  span {
+    &.day {
+      font: normal 100% Arial, Helvetica, sans-serif;
+      color: #ffffff;
+      text-align: center;
+      padding: 0;
+      line-height: 100%;
     }
-    span {
-      &.day {
-        font: normal 100% Arial, Helvetica, sans-serif;
-        color: #ffffff;
-        text-align: center;
-        padding: 0;
-        line-height: 100%;
-      }
-      &.month {
-        height: 12px;
-        display: block;
-        font: normal 50% Arial, Helvetica, sans-serif;
-        color: #ffffff;
-        text-align: center;
-        padding-top: 2px;
-      }
-      &.year {
-        height: 12px;
-        display: block;
-        font: normal 50% Arial, Helvetica, sans-serif;
-        color: #ffffff;
-        text-align: center;
-        padding-top: 0;
-      }
+    &.month {
+      height: 12px;
+      display: block;
+      font: normal 50% Arial, Helvetica, sans-serif;
+      color: #ffffff;
+      text-align: center;
+      padding-top: 2px;
     }
+    &.year {
+      height: 12px;
+      display: block;
+      font: normal 50% Arial, Helvetica, sans-serif;
+      color: #ffffff;
+      text-align: center;
+      padding-top: 0;
+    }
+  }
   .title {
     position: relative;
-	margin-left: 53px; // Width of datebox+5
-  	padding: 0;
+    margin-left: 53px;
+    // Width of datebox+5
+    padding: 0;
   }
 }
 
 .post-footer {
-  @include adjust-font-size-to($base-font-size*0.93);
+  @include adjust-font-size-to($base-font-size * 0.93);
   margin: 5px 0;
   width: 100%;
 }

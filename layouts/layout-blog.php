@@ -39,7 +39,7 @@ if (have_posts()) {
 			(!(is_singular() || is_category() || is_tag() || is_search() || is_author() || is_date() || is_year() || is_month() || is_day() || is_time()) && $suf_index_excerpt == "excerpt"))) {
 			$show_image = $suf_show_excerpt_thumbnail == "show" ? true : false;
 			$classes = array('excerpt');
-			$more_text = "\t<div class='suf-mag-excerpt-footer'>\n\t\t<a href='" . get_permalink($post->ID) . "' class='suf-mag-excerpt-full-story'>$suf_mag_excerpt_full_story_text</a>\t</div>\n";
+			$more_text = "\t<div class='suf-mag-excerpt-footer'>\n\t\t<a href='" . get_permalink($post->ID) . "' class='suf-mag-excerpt-full-story button'>$suf_mag_excerpt_full_story_text</a>\t</div>\n";
 		}
 		else {
 			$classes = array('full-content');
