@@ -8,14 +8,13 @@ role :web, "rps.avirtualhome.com"                          # Your HTTP server, A
 role :app, "rps.avirtualhome.com"                          # This may be the same as your `Web` server
 role :db,  "rps.avirtualhome.com", :primary => true # This is where Rails migrations will run
 
-set :deploy_to, "/home/pdoes/capistrano"
+set :deploy_to, "/home/pdoes/capistrano/rps/theme"
 set :use_sudo, false
 set :deploy_via, :remote_cache
 set :copy_exclude, [".git", ".gitmodules", ".DS_Store", ".gitignore", "sass", "Capfile", "config"]
 set :keep_releases, 5
 
 set :branch, fetch(:branch, "develop")
-set :current_dir, "/home/pdoes/test"
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
