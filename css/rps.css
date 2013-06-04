@@ -6321,7 +6321,7 @@ h2.suf-tile-title a:hover, h2.suf-tile-title a:visited, h2.suf-tile-title a:acti
 }
 
 /* line 61, ../sass/partials/_magazine-layout.scss */
-.suf-mag-excerpt-text p, .suf-tile-text p, .suf-tile-text ul {
+.suf-mag-excerpt-text p, .suf-tile-text p, .suf-tile-text ul, .suf-tile-text > table {
   margin-top: 20px;
   margin-top: 1.5rem;
   padding-bottom: 20px;

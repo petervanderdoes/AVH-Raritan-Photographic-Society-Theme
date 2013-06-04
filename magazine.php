@@ -144,7 +144,7 @@ echo '</div>' . "\n";
 echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-1">' . "\n";
 echo "\t\t<div class='suf-gradient suf-tile-topmost'><h3>Latest news</h3></div>\n";
 echo "\t\t<div class='suf-tile-text entry-content'>\n";
-echo '<ul>';
+echo '<table>';
 wp_reset_query();
 
 $ctr = 0;
@@ -173,9 +173,9 @@ if ( $total > 0 ) {
 				$category_link = '<a href="' . esc_url(get_category_link($category->term_id)) . '" title="' . esc_attr(sprintf(__("View all articles in %s"), $category->name)) . '" rel="category tag">';
 				$category_text = $category_link . $category->name . '</a>';
 				$title_text = "<a href='" . get_permalink($post->ID) . "'>" . get_the_title($post->ID) . "</a>\n";
-				echo '<li>';
-				echo $category_text .': '. $title_text;
-				echo '</li>';
+				echo '<tr>';
+				echo '<td style="white-space: nowrap; vertical-align: top;">'.$category_text .':&nbsp;</td><td>'. $title_text.'</td>';
+				echo '</tr>';
 				$ctr++;
 			}
 		}
@@ -204,7 +204,7 @@ if ( $total > 0 ) {
 // 		)
 // 	)
 // );
-echo '</ul>';
+echo '</tbody></table>';
 echo "\t\t</div>\n";
 echo '</div>' . "\n";
 

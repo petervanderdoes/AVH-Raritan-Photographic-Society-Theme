@@ -58,7 +58,7 @@ h2 {
   color: #ddd;
 }
 
-.suf-mag-excerpt-text p, .suf-tile-text p, .suf-tile-text ul {
+.suf-mag-excerpt-text p, .suf-tile-text p, .suf-tile-text ul, .suf-tile-text > table {
   @include margin-leader;
   @include padding-trailer;
   margin-left: 8px;
