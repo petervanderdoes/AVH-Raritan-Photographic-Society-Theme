@@ -5511,8 +5511,9 @@ h1, h2, h3, h4, h5, h6 {
 /* line 39, ../sass/assets/_mixins.scss */
 #rps-login-bar a:visited {
   color: inherit;
+  text-decoration: none;
 }
-/* line 42, ../sass/assets/_mixins.scss */
+/* line 43, ../sass/assets/_mixins.scss */
 #rps-login-bar a:hover {
   color: royalblue;
   text-decoration: none;
@@ -6009,8 +6010,9 @@ img.home-icon {
 /* line 39, ../sass/assets/_mixins.scss */
 .breadcrumb a:visited {
   color: inherit;
+  text-decoration: none;
 }
-/* line 42, ../sass/assets/_mixins.scss */
+/* line 43, ../sass/assets/_mixins.scss */
 .breadcrumb a:hover {
   color: royalblue;
   text-decoration: none;
@@ -6185,10 +6187,11 @@ table.em-calendar td.eventful {
 }
 /* line 25, ../sass/partials/_events-manager.scss */
 table.em-calendar td.eventful a {
+  padding: 5px;
   color: royalblue;
   text-decoration: none;
 }
-/* line 28, ../sass/partials/_events-manager.scss */
+/* line 29, ../sass/partials/_events-manager.scss */
 table.em-calendar td.eventful a:hover {
   -webkit-border-radius: 1rem;
   -moz-border-radius: 1rem;
@@ -6196,11 +6199,11 @@ table.em-calendar td.eventful a:hover {
   background-color: royalblue;
   color: #e6e6e6;
 }
-/* line 35, ../sass/partials/_events-manager.scss */
+/* line 36, ../sass/partials/_events-manager.scss */
 table.em-calendar td.eventful-today {
   background-color: black;
 }
-/* line 37, ../sass/partials/_events-manager.scss */
+/* line 38, ../sass/partials/_events-manager.scss */
 table.em-calendar td.eventful-today a {
   padding: 5px;
   background-color: #a6a6a6;
@@ -6209,16 +6212,16 @@ table.em-calendar td.eventful-today a {
   -moz-border-radius: 1rem;
   border-radius: 1rem;
 }
-/* line 42, ../sass/partials/_events-manager.scss */
+/* line 43, ../sass/partials/_events-manager.scss */
 table.em-calendar td.eventful-today a:hover {
   background-color: royalblue;
   color: #e6e6e6;
 }
-/* line 48, ../sass/partials/_events-manager.scss */
+/* line 49, ../sass/partials/_events-manager.scss */
 table.em-calendar td.eventless-today {
   background-color: black;
 }
-/* line 50, ../sass/partials/_events-manager.scss */
+/* line 51, ../sass/partials/_events-manager.scss */
 table.em-calendar td.eventless-today .day {
   padding: 5px;
   background-color: #a6a6a6;
@@ -6228,14 +6231,14 @@ table.em-calendar td.eventless-today .day {
   border-radius: 1rem;
 }
 
-/* line 60, ../sass/partials/_events-manager.scss */
+/* line 61, ../sass/partials/_events-manager.scss */
 .em-location-map {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
 
-/* line 64, ../sass/partials/_events-manager.scss */
+/* line 65, ../sass/partials/_events-manager.scss */
 .event-list {
   list-style: disc outside none;
   padding: inherit;
@@ -6503,8 +6506,9 @@ h1.posttitle a, h2.posttitle a {
 /* line 39, ../sass/assets/_mixins.scss */
 h1.posttitle a:visited, h2.posttitle a:visited {
   color: inherit;
+  text-decoration: none;
 }
-/* line 42, ../sass/assets/_mixins.scss */
+/* line 43, ../sass/assets/_mixins.scss */
 h1.posttitle a:hover, h2.posttitle a:hover {
   color: royalblue;
   text-decoration: none;
@@ -6683,6 +6687,31 @@ h1.posttitle a:hover, h2.posttitle a:hover {
   width: 100%;
 }
 
+/* line 1, ../sass/partials/_comments.scss */
+.must-log-in {
+  font-size: 12px;
+  font-size: 0.93rem;
+  line-height: 20px;
+  line-height: 1.5rem;
+  margin-top: 2px;
+  color: #666666;
+}
+/* line 5, ../sass/partials/_comments.scss */
+.must-log-in a {
+  color: #666666;
+  text-decoration: none;
+}
+/* line 39, ../sass/assets/_mixins.scss */
+.must-log-in a:visited {
+  color: #666666;
+  text-decoration: none;
+}
+/* line 43, ../sass/assets/_mixins.scss */
+.must-log-in a:hover {
+  color: royalblue;
+  text-decoration: none;
+}
+
 /* line 1, ../sass/partials/_sidebars.scss */
 #sidebar, #sidebar-b, #sidebar-2, #sidebar-2-b {
   width: 260px;
@@ -6730,7 +6759,7 @@ h1.posttitle a:hover, h2.posttitle a:hover {
 /* line 29, ../../../../../../../../opt/rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/typography/lists/_bullets.scss */
 .widget_em_widget ul li {
   padding-left: 14px;
-  background: url('../images/icons/bulletrbl.png?1366677416') no-repeat -1px 1px;
+  background: url('../images/icons/bulletrbl.png?1368931506') no-repeat -1px 1px;
   list-style-type: none;
 }
 /* line 40, ../sass/partials/_sidebars.scss */
@@ -6758,7 +6787,7 @@ h1.posttitle a:hover, h2.posttitle a:hover {
   line-height: 1rem;
 }
 
-/* line 42, ../sass/rps.scss */
+/* line 43, ../sass/rps.scss */
 body {
   font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
   background-attachment: scroll;
@@ -6773,12 +6802,28 @@ body {
 }
 
 /* line 55, ../sass/rps.scss */
+a {
+  color: #e6e6e6;
+  text-decoration: none;
+}
+/* line 39, ../sass/assets/_mixins.scss */
+a:visited {
+  color: #e6e6e6;
+  text-decoration: none;
+}
+/* line 43, ../sass/assets/_mixins.scss */
+a:hover {
+  color: royalblue;
+  text-decoration: none;
+}
+
+/* line 59, ../sass/rps.scss */
 #content {
   clear: both;
   overflow: hidden;
 }
 
-/* line 60, ../sass/rps.scss */
+/* line 64, ../sass/rps.scss */
 .entry, .non-wp-entry {
   padding: 15px 0 5px;
   clear: both;
@@ -6786,7 +6831,7 @@ body {
   overflow: hidden;
 }
 
-/* line 67, ../sass/rps.scss */
+/* line 71, ../sass/rps.scss */
 .suf-mag-category, .suf-mag-excerpt, .suf-tile {
   font-size: 13px;
   font-size: 1rem;
@@ -6794,7 +6839,7 @@ body {
   line-height: 1.5rem;
 }
 
-/* line 71, ../sass/rps.scss */
+/* line 75, ../sass/rps.scss */
 .excerpt {
   font-size: 13px;
   font-size: 1rem;
@@ -6802,7 +6847,7 @@ body {
   line-height: 1.5rem;
 }
 
-/* line 75, ../sass/rps.scss */
+/* line 79, ../sass/rps.scss */
 .full-content {
   font-size: 14px;
   font-size: 1.07692rem;
@@ -6810,14 +6855,14 @@ body {
   line-height: 1.5rem;
 }
 
-/* line 79, ../sass/rps.scss */
+/* line 83, ../sass/rps.scss */
 h2.suf-tile-title {
   font-size: 15px;
   font-size: 1.15385rem;
   line-height: 20px;
   line-height: 1.5rem;
 }
-/* line 84, ../sass/rps.scss */
+/* line 88, ../sass/rps.scss */
 h2.suf-tile-title a,
 h2.suf-tile-title a:hover,
 h2.suf-tile-title a:visited,
@@ -6828,7 +6873,7 @@ h2.suf-tile-title a:active {
   line-height: 1.5rem;
 }
 
-/* line 89, ../sass/rps.scss */
+/* line 93, ../sass/rps.scss */
 .suf-gradient {
   background: royalblue;
   *zoom: 1;
@@ -6840,7 +6885,7 @@ h2.suf-tile-title a:active {
   background: linear-gradient(to bottom, #4169e1 0%, rgba(0, 35, 102, 0.2) 100%);
 }
 
-/* line 93, ../sass/rps.scss */
+/* line 97, ../sass/rps.scss */
 .suf-mag-headline-block li.suf-mag-headline a.tab-current, h2.suf-mag-category-title {
   background: royalblue;
   *zoom: 1;
@@ -6852,7 +6897,7 @@ h2.suf-tile-title a:active {
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
 
-/* line 97, ../sass/rps.scss */
+/* line 101, ../sass/rps.scss */
 a.excerpt-more-append {
   color: #e9e9e9;
   border: solid 1px #002366;
@@ -6866,7 +6911,7 @@ a.excerpt-more-append {
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
 
-/* line 103, ../sass/rps.scss */
+/* line 107, ../sass/rps.scss */
 .warea a.suf-mag-category-all-posts, a.suf-mag-category-all-posts {
   background: royalblue;
   *zoom: 1;
@@ -6878,22 +6923,22 @@ a.excerpt-more-append {
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
 
-/* line 107, ../sass/rps.scss */
+/* line 111, ../sass/rps.scss */
 h2.suf-tile-title {
   margin-top: 0;
   text-align: left;
 }
 
-/* line 112, ../sass/rps.scss */
+/* line 116, ../sass/rps.scss */
 h2.suf-tile-title a {
   font-size: 58%;
 }
-/* line 114, ../sass/rps.scss */
+/* line 118, ../sass/rps.scss */
 h2.suf-tile-title a:hover, h2.suf-tile-title a:visited, h2.suf-tile-title a:active {
   font-size: 58%;
 }
 
-/* line 119, ../sass/rps.scss */
+/* line 123, ../sass/rps.scss */
 #header-container {
   background-image: url('../images/RPS-LOGO-2012.jpg');
   background-position: left top;
@@ -6913,7 +6958,7 @@ h2.suf-tile-title a:hover, h2.suf-tile-title a:visited, h2.suf-tile-title a:acti
   border-top-right-radius: inherit;
 }
 
-/* line 130, ../sass/rps.scss */
+/* line 134, ../sass/rps.scss */
 input[type="email"] {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -6923,14 +6968,14 @@ input[type="email"] {
 /**
 * Showcase
 */
-/* line 138, ../sass/rps.scss */
+/* line 142, ../sass/rps.scss */
 .rps-showcases {
   display: inline-block;
   margin: 10px 0;
   padding: 0;
   width: 100%;
 }
-/* line 143, ../sass/rps.scss */
+/* line 147, ../sass/rps.scss */
 .rps-showcases h3 {
   font-size: 20px;
   font-size: 1.5rem;
@@ -6941,7 +6986,7 @@ input[type="email"] {
   margin: 0;
   padding: 0;
 }
-/* line 150, ../sass/rps.scss */
+/* line 154, ../sass/rps.scss */
 .rps-showcases:after {
   content: "";
   display: inline-block;
@@ -6950,7 +6995,7 @@ input[type="email"] {
   width: 100%;
 }
 
-/* line 159, ../sass/rps.scss */
+/* line 163, ../sass/rps.scss */
 .rps-sc-tile {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -6971,14 +7016,14 @@ input[type="email"] {
 /**
 * Theme My Login
 */
-/* line 178, ../sass/rps.scss */
+/* line 182, ../sass/rps.scss */
 #theme-my-login *:focus {
   background-color: #999999;
   color: #333333;
   outline: 0 none;
 }
 
-/* line 184, ../sass/rps.scss */
+/* line 188, ../sass/rps.scss */
 ul.tml-action-links {
   display: block;
   float: right;
@@ -6987,7 +7032,7 @@ ul.tml-action-links {
   padding: 0;
   vertical-align: bottom;
 }
-/* line 191, ../sass/rps.scss */
+/* line 195, ../sass/rps.scss */
 ul.tml-action-links li {
   padding: 0;
 }

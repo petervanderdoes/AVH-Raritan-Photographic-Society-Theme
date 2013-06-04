@@ -23,6 +23,7 @@ table.em-calendar {
     &.eventful {
       color: $color-link;
       a {
+        padding: 5px;
         color: $color-link;
         text-decoration: none;
         &:hover {

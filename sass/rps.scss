@@ -37,6 +37,7 @@ $base-font-size-full-story: 14px;
 @import "partials/events-manager";
 @import "partials/magazine-layout";
 @import "partials/post";
+@import "partials/comments";
 @import "partials/sidebars";
 
 body {
@@ -50,6 +51,9 @@ body {
   font-variant: normal;
   font-weight: normal;
   background-color: $background-color;
+}
+a {
+   @include link-style($color: $color-text-highlight);
 }
 
 #content {

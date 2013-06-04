@@ -33,14 +33,15 @@
   @include background(linear-gradient(top, darken($color-input-bg-focus, 25%) 0%, $color-input-bg-focus 50%, $color-input-bg-focus 100%));
 }
 
-@mixin link-style {
-  color: inherit;
+@mixin link-style ($color: inherit, $visit-color:$color, $hover-color:$color-link) {
+  color: $color;
   text-decoration: none;
   &:visited {
-    color: inherit;
+    color: $visit-color;
+    text-decoration: none;
   }
   &:hover {
-    color: $color-link;
+    color: $hover-color;
     text-decoration: none;
   }
 }
