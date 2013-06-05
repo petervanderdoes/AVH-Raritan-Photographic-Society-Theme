@@ -893,7 +893,7 @@ input[type="text"]:focus {
   }
 }
 
-.suf-mag-category ul, .sidebar-tab-content ul, .suf-widget ul, .suf-flat-widget ul, .suf-panel-widget ul, .widget_categories ul, .widget_archive ul {
+.suf-mag-category ul, .suf-widget ul, .suf-flat-widget ul, .suf-panel-widget ul, .widget_categories ul, .widget_archive ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -909,20 +909,20 @@ input[type="text"]:focus {
   }
 }
 
-.sidebar-tab-content ul li, .suf-flat-widget ul li, .suf-panel-widget ul li {
+.suf-flat-widget ul li, .suf-panel-widget ul li {
   background-repeat: no-repeat;
   padding-left: 22px;
   background-position: 0 1px;
   padding-bottom: 3px;
 }
 
-.tab-box div.sbtab-content-archives ul li, .tabbed-sidebar div.sbtab-content-archives ul li, .widget_archive ul li {
+.widget_archive ul li {
   background: url(images/icons/calendar_date.png) no-repeat;
   padding-left: 20px;
   padding-bottom: 3px;
 }
 
-.tab-box div.sbtab-content-categories ul li, .tabbed-sidebar div.sbtab-content-categories ul li, .widget_categories ul li {
+.widget_categories ul li {
   background: no-repeat 0 2px;
   padding-bottom: 3px;
 }
@@ -1365,7 +1365,7 @@ img {
 
 /* meta */
 
-.tab-box div.sbtab-content-meta .rss, .tabbed-sidebar div.sbtab-content-meta .rss, .suf-widget .rss {
+.suf-widget .rss {
   background: no-repeat left center;
   padding-bottom: 3px;
 }
@@ -1544,92 +1544,6 @@ hr.clear {
       left: auto;
     }
   }
-}
-
-/* Contains the entire.tab-box section */
-
-.tab-box, .tabbed-sidebar {
-  display: block;
-  /*	margin-top: 15px;*/
-}
-
-.tab-box-left {
-  margin-right: 15px;
-}
-
-.sidebar-shell .tab-box-left {
-  margin-right: 0;
-}
-
-.tab-box-right {
-  margin-left: 15px;
-}
-
-.sidebar-shell .tab-box-right {
-  margin-left: 0;
-}
-
-.sidebar-container-left .tab-box {
-  float: left;
-}
-
-.sidebar-container-right .tab-box {
-  float: right;
-}
-
-/* List of tabs */
-
-ul.sidebar-tabs {
-  font: bold 100%/100% Arial, Helvetica, sans-serif;
-  display: inline-block;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  li {
-    list-style: none;
-    float: left;
-    margin: 0 2px 0 0;
-    padding: 0;
-    a {
-      overflow: hidden;
-      display: block;
-      padding: 7px;
-      text-decoration: none;
-      border: 1px solid #c0c0c0;
-      cursor: pointer;
-      color: #444;
-      background-color: #fff;
-    }
-  }
-}
-
-.warea {
-  ul.sidebar-tabs li a {
-    overflow: hidden;
-    display: block;
-    padding: 7px;
-    text-decoration: none;
-    border: 1px solid #c0c0c0;
-    cursor: pointer;
-    color: #444;
-    background-color: #fff;
-  }
-  .sidebar-tabs a {
-    text-decoration: none;
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}
-
-/* The content shown when a tab is selected */
-
-div.sidebar-tab-content {
-  display: block;
-  padding: 10px;
-  background: #fff;
-  border: 1px solid #c0c0c0;
-  margin-top: -5px;
 }
 
 /* Magazine */
@@ -2026,30 +1940,6 @@ a.follow-icon-and-tag {
 }
 
 /* Widget container. */
-
-/* Sliding panel widgets. */
-
-#top-bar-right-spanel-tab {
-  float: right;
-  display: inline-block;
-  margin-left: 10px;
-  .toggle! {}
-  a {
-    margin: 0;
-    padding: 8px 8px 5px 8px;
-    text-align: center;
-    &.open! {}
-    &.close {
-      display: none;
-    }
-    &:hover {
-      cursor: pointer;
-    }
-    .arrow {
-      font-style: normal;
-    }
-  }
-}
 
 /* Wrapper for the open/close button. */
 

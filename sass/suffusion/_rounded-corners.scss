@@ -160,16 +160,6 @@ a {
   }
 }
 
-ul.sidebar-tabs li a {
-  @include border-top-left-radius(5px);
-  @include border-top-right-radius(5px);
-}
-
-#item-nav div.item-list-tabs ul li {
-  @include border-top-left-radius(5px);
-  @include border-top-right-radius(5px);
-}
-
 /* Same top-left and bottom-left */
 
 #commentform label {
@@ -210,11 +200,6 @@ ul.sidebar-tabs li a {
       @include border-bottom-right-radius(5px);
     }
   }
-}
-
-div.sidebar-tab-content {
-  @include border-bottom-left-radius(5px);
-  @include border-bottom-right-radius(5px);
 }
 
 .photonique #nav-top {

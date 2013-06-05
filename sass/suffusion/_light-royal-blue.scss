@@ -178,12 +178,6 @@ h3 {
   }
 }
 
-div.sidebar-tab-content a {
-  &:hover, &:focus, &:active {
-    color: $color-link;
-  }
-}
-
 .suf-widget a {
   &:hover, &:focus, &:active {
     color: $color-link;
@@ -245,21 +239,7 @@ div.sbtab-content-meta .rss, .suf-widget .rss, .suf-flat-widget .rss, .suf-panel
   }
 }
 
-.warea ul.sidebar-tabs li a.tab-current, ul.sidebar-tabs li a.tab-current, .suf-mag-headline-block li.suf-mag-headline a.tab-current, h2.suf-mag-category-title {
-  background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
-  color: #fff;
-}
-
 /* Magazine */
-
-.warea a.suf-mag-category-all-posts, a.suf-mag-category-all-posts {
-  background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
-  color: #fff;
-  &:visited {
-    background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
-    color: #fff;
-  }
-}
 
 .exif-button {
   background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
