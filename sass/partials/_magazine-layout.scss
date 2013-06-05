@@ -53,11 +53,16 @@ h2 {
 }
 
 .suf-mag-excerpts-header {
-  border-color: #555;
+  border-color: $color-border;
   background-color: #000;
   color: #ddd;
 }
 
+.suf-tile-text > table {
+  td {
+    vertical-align: top;
+  }
+}
 .suf-mag-excerpt-text p, .suf-tile-text p, .suf-tile-text ul, .suf-tile-text > table {
   @include margin-leader;
   @include padding-trailer;

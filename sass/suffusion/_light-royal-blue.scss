@@ -141,34 +141,21 @@ h3 {
   }
 }
 
-/* Credits  */
+//.button {
+//  background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+//  color: #fff;
+//  &:visited {
+ //   background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+//    color: #fff;
+//  }
+//}
 
-#page-footer {
-  border-top: 1px solid #B6D1E4;
-}
-
-#cred {
-  border-top: 1px solid #B6D1E4;
-  a:hover {
-    color: $color-link;
-  }
-}
-
-.button {
-  background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
-  color: #fff;
-  &:visited {
-    background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
-    color: #fff;
-  }
-}
-
-input {
-  &[type="submit"], &[type="button"] {
-    background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
-    color: #fff;
-  }
-}
+//input {
+//  &[type="submit"], &[type="button"] {
+//    background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
+//    color: #fff;
+//  }
+//}
 
 /* sidebar */
 

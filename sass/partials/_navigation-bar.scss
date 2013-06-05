@@ -1,5 +1,5 @@
 #nav {
-  border-bottom: 1px solid #555;
+  border-bottom: 1px solid $color-border;
   ul {
     list-style: none;
     display: block;
@@ -12,7 +12,7 @@
     }
     &.continuous ul li {
       margin: 0;
-      border: 1px solid #555;
+      border: 1px solid $color-border;
       @include border-radius(0);
       a {
         @include border-radius(0);
@@ -22,7 +22,7 @@
       margin: 0 4px 0 0;
       padding: 0;
       float: left;
-      border: 1px solid #555;
+      border: 1px solid $color-border;
       @include border-top-left-radius(5px);
       @include border-top-right-radius(5px);
       a {
@@ -48,7 +48,7 @@
       position: absolute;
       margin-left: -1px;
       li {
-        border: 1px solid #555;
+        border: 1px solid $color-border;
         @include border-top-left-radius(0);
         @include border-top-right-radius(0);
         a {
@@ -541,19 +541,19 @@ img.home-icon {
 }
 
 #nav-top {
-  border: 1px solid #555;
+  border: 1px solid $color-border;
   border-top: none;
   background-color: #222;
   ul {
     li {
-      border: 1px solid #555;
+      border: 1px solid $color-border;
       a {
         color: #b8b8b8;
         background-color: #000;
       }
     }
     ul li {
-      border: 1px solid #555;
+      border: 1px solid $color-border;
     }
   }
 }
@@ -562,11 +562,11 @@ img.home-icon {
 
 .hier-nav {
   background-color: #222;
-  border: 1px solid #555;
+  border: 1px solid $color-border;
   margin-top: 0px;
   .current_page_item, .current_page_parent {
     background-color: #444;
-    border-left: 1px solid #555;
+    border-left: 1px solid $color-border;
   }
   li {
     border-right: 1px solid #666;
@@ -574,5 +574,5 @@ img.home-icon {
 }
 
 #top-bar-right-spanel-tab .toggle {
-  border: 1px solid #555;
+  border: 1px solid $color-border;
 }

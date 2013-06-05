@@ -741,59 +741,6 @@ ul.children {
   padding-left: 20px;
 }
 
-/* Credits  */
-
-#cred {
-  font-size: 91.67%;
-  padding: 0;
-  clear: both;
-  height: auto;
-  overflow: hidden;
-}
-
-#page-footer {
-  margin-top: 10px;
-  overflow: hidden;
-  #cred {
-    border-top: none;
-  }
-}
-
-#cred {
-  .designer {
-    padding: 8px 22px;
-    float: left;
-  }
-  a {
-    color: #000;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  .valid {
-    padding: 8px 22px;
-    float: right;
-  }
-  table {
-    border: none;
-    padding: 0;
-    margin: 10px 0;
-    width: 100%;
-  }
-  td {
-    width: 33%;
-    &.cred-left {
-      text-align: left;
-    }
-    &.cred-center {
-      text-align: center;
-    }
-    &.cred-right {
-      text-align: right;
-    }
-  }
-}
-
 /* Emphasis */
 
 .download, .announcement, .warning, .note {

@@ -27,7 +27,7 @@ $base-font-size-full-story: 14px;
 @import "suffusion/rounded-corners";
 @import "suffusion/light-royal-blue";
 @import "suffusion/dark-style";
-@import "suffusion/dark-royal-blue";
+//@import "suffusion/dark-royal-blue";
 
 @import "partials/general";
 @import "partials/header";
@@ -39,6 +39,7 @@ $base-font-size-full-story: 14px;
 @import "partials/post";
 @import "partials/comments";
 @import "partials/sidebars";
+@import "partials/footer";
 
 body {
   font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
@@ -163,7 +164,7 @@ input[type="email"] {
 .rps-sc-tile {
   @include border-radius(5px);
   background-color: #000000;
-  border: 1px solid #555555;
+  border: 1px solid $color-border;
   padding-top: 0;
   display: inline-block;
   font-size: 108%;

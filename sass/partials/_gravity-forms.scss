@@ -20,7 +20,7 @@
     background-color: #333333;
     background-origin: padding-box;
     @include border-radius(5px);
-    border: 1px solid #555555;
+    border: 1px solid $color-border;
     color: #999999;
     font-family: inherit;
     font-size: 11px;
@@ -30,7 +30,7 @@
   .chzn-container .chzn-drop {
     background-color: #999999;
     color: #333333;
-    border: 1px solid #555555;
+    border: 1px solid $color-border;
   }
   .chzn-container-single .chzn-single {
     div {
@@ -41,7 +41,7 @@
       background-image: -o-linear-gradient(top, #333333 0%, black 100%);
       background-image: -ms-linear-gradient(top, #333333 0%, black 100%);
       background-image: linear-gradient(top, #333333 0%, black 100%);
-      border-left: 1px solid #555555;
+      border-left: 1px solid $color-border;
     }
     background-color: #333333;
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #333333), color-stop(1, black));
@@ -50,7 +50,7 @@
     background-image: -o-linear-gradient(top, #333333 0%, black 100%);
     background-image: -ms-linear-gradient(top, #333333 0%, black 100%);
     background-image: linear-gradient(top, #333333 0%, black 100%);
-    border: 1px solid #555555;
+    border: 1px solid $color-border;
     color: #999999;
   }
   .chzn-container-active {
@@ -61,7 +61,7 @@
       box-shadow: 0 0 5px rgba(0, 0, 0, 0);
     }
     .chzn-single-with-drop {
-      border: 1px solid #555555;
+      border: 1px solid $color-border;
       background-color: #333333;
       background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #333333), color-stop(1, black));
       background-image: -webkit-linear-gradient(center bottom, #333333 0%, black 100%);
@@ -72,18 +72,18 @@
     }
   }
   .chzn-container .chzn-results .highlighted {
-    background-color: #555555;
+    background-color: $color-border;
   }
   .chzn-container-single .chzn-search input {
-    border: 1px solid #555;
+    border: 1px solid $color-border;
   }
 }
 
 #picatcha {
   background-color: inherit !important;
-  border: 1px solid #555555 !important;
+  border: 1px solid $color-border !important;
 }
 
 .picatcha .img_btn {
-  border: 2px solid #555555 !important;
+  border: 2px solid $color-border !important;
 }
