@@ -34,13 +34,14 @@ function filterRPS_EM_output_show_condition ($show_condition, $condition, $match
 	return $show_condition;
 }
 
-function rps_EM_list_events() {
+function rps_EM_list_events($parent_category) {
+	$categories=get_term_children($parent_category,EM_TAXONOMY_CATEGORY);
 	$arg = array(
 	'title' => __('Events','dbem'),
 	'scope' => 'future',
 	'order' => 'ASC',
 	'limit' => 5,
-	'category' => 0,
+	'category' => $categories,
 	'format_header' => '<table><tbody>',
 	'format' => '<tr><td style="white-space: nowrap; vertical-align: top;">#_EVENTDATES -&nbsp;</td><td>#_CATEGORYNAME: #_EVENTLINK</td>',
 	'format_footer' => '</tbody></table>',

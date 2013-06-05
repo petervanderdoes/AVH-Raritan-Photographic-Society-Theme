@@ -17,6 +17,7 @@ add_filter('wp_nav_menu_objects', 'filterRPS_members_menu', 10, 2);
 
 // RPS Actions & Filters
 add_filter('rps_comment_form_allow_comment','filterRPS_comment_form_allow_comment',10,1);
+add_filter( 'style_loader_src', 'rps_remove_cssjs_ver', 10, 2 );
 
 /**
  * Here you can define any additional functions that you are hooking in the
@@ -122,6 +123,17 @@ function filterRPS_comment_form_allow_comment($allow_comment) {
 	}
 
 	return $allow_comment;
+}
+
+function rps_remove_cssjs_ver($src, $handle) {
+
+	global $wp_styles;
+
+	if ( $handle == 'suffusion-theme') {
+		$file=parse_url($wp_styles->registered[$handle]->src);
+		$date = filemtime($_SERVER['DOCUMENT_ROOT'].$file['path']);
+	}
+	return $src;
 }
 /**
  * Magazine template function to build queries for individual magazine sections.

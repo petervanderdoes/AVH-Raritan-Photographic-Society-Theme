@@ -135,9 +135,9 @@ echo '<section class="rps-misc">';
 echo '<div class="suf-tiles suf-tiles-3">';
 
 echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-0">' . "\n";
-echo "\t\t<div class='suf-gradient suf-tile-topmost'><h3>Upcoming events</h3></div>\n";
+echo "\t\t<div class='suf-gradient suf-tile-topmost'><h3>RPS Events</h3></div>\n";
 echo "\t\t<div class='suf-tile-text entry-content'>\n";
-echo rps_EM_list_events();
+echo rps_EM_list_events(17);
 echo "\t\t</div>\n";
 echo '</div>' . "\n";
 
