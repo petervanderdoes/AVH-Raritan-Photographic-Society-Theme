@@ -135,14 +135,14 @@ echo '<section class="rps-misc">';
 echo '<div class="suf-tiles suf-tiles-3">';
 
 echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-0">' . "\n";
-echo "\t\t<div class='suf-gradient suf-tile-topmost'><h3>RPS Events</h3></div>\n";
+echo "\t\t<div class='suf-gradient suf-tile-topmost'><h3>RPS events</h3></div>\n";
 echo "\t\t<div class='suf-tile-text entry-content'>\n";
 echo rps_EM_list_events(17);
 echo "\t\t</div>\n";
 echo '</div>' . "\n";
 
 echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-1">' . "\n";
-echo "\t\t<div class='suf-gradient suf-tile-topmost'><h3>Latest news</h3></div>\n";
+echo "\t\t<div class='suf-gradient suf-tile-topmost'><h3>More articles</h3></div>\n";
 echo "\t\t<div class='suf-tile-text entry-content'>\n";
 echo '<table>';
 wp_reset_query();
