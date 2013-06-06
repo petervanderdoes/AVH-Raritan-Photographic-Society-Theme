@@ -7,6 +7,7 @@
  * All hooks and filters
  */
 add_filter('em_event_output_show_condition', 'filterRPS_EM_output_show_condition', 1, 4);
+add_filter('em_widget_events_get_args', 'filterRPS_EM_get_child_categories', 10, 1);
 
 /**
  * Handle custom conditional placeholders.
@@ -34,6 +35,28 @@ function filterRPS_EM_output_show_condition ($show_condition, $condition, $match
 	return $show_condition;
 }
 
+/**
+ * Collect all children of the given categories in a widget form.
+ *
+ * By default the widget only shows the given categories, we prefer to show the children of the given categories as well.
+ * This is more compliant with the default WordPress behavior.
+ *
+ * @param array $instance
+ * @return array
+ */
+function filterRPS_EM_get_child_categories($instance) {
+	if ($instance['category'] != '0') {
+	$categories= explode(',',$instance['category']);
+	$all_categories=array();
+	foreach ($categories as $category_id) {
+		$all_categories[]=$category_id;
+		$children=get_term_children($category_id,EM_TAXONOMY_CATEGORY);
+		$all_categories = array_merge($children);
+	}
+	$instance['category'] = $all_categories;
+	}
+	return $instance;
+}
 function rps_EM_list_events($parent_category) {
 	$categories=get_term_children($parent_category,EM_TAXONOMY_CATEGORY);
 	$arg = array(
