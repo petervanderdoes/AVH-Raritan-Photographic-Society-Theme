@@ -46,17 +46,32 @@ function filterRPS_EM_output_show_condition ($show_condition, $condition, $match
  */
 function filterRPS_EM_get_child_categories($instance) {
 	if ($instance['category'] != '0') {
-	$categories= explode(',',$instance['category']);
-	$all_categories=array();
-	foreach ($categories as $category_id) {
-		$all_categories[]=$category_id;
-		$children=get_term_children($category_id,EM_TAXONOMY_CATEGORY);
-		$all_categories = array_merge($children);
-	}
-	$instance['category'] = $all_categories;
+		$instance['category'] = rps_EM_get_children_of_categories($instance['category']);
 	}
 	return $instance;
 }
+
+/**
+ * Get all children of the given categories
+ *
+ * @param array|string $categories
+ * @return array
+ */
+function rps_EM_get_children_of_categories($categories) {
+	$all_categories=array();
+	if (! is_array($categories)) {
+		$categories = explode(',', $categories);
+	}
+	foreach ($categories as $category_id) {
+		$all_categories[] = (int) $category_id;
+		$children=get_term_children($category_id,EM_TAXONOMY_CATEGORY);
+		$all_categories = array_merge($children, $all_categories);
+	}
+	$all_categories = array_unique($all_categories);
+	return $all_categories;
+}
+
+
 function rps_EM_list_events($parent_category) {
 	$categories=get_term_children($parent_category,EM_TAXONOMY_CATEGORY);
 	$arg = array(
