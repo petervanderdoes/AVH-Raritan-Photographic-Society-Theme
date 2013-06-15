@@ -65,6 +65,9 @@ function filterRPS_EM_event_output_placeholder ($replace, $em, $full_result, $ta
 		case '#_EVENTNAME':
 			$replace = '<span itemprop="name">' . $em->event_name . '</span>';
 			break;
+		case '#_12HSTARTTIME':
+			$replace = '<meta itemprop="startDate" content="'. date('c',$em->start).'">';
+			break;
 	}
 	return $replace;
 }
