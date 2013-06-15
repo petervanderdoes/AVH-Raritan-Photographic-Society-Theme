@@ -1,6 +1,8 @@
 set :application, "rps_theme"
 set :repository,  "git@bitbucket.org:petervanderdoes/rps-theme.git"
 set :scm, :git
+_cset(:apc_webroot) { "" }
+
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
