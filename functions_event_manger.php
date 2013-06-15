@@ -8,6 +8,8 @@
  */
 add_filter('em_event_output_show_condition', 'filterRPS_EM_output_show_condition', 1, 4);
 add_filter('em_widget_events_get_args', 'filterRPS_EM_get_child_categories', 10, 1);
+add_filter('em_event_output_placeholder', 'filterRPS_EM_event_output_placeholder', 10, 4);
+add_filter('em_location_output_placeholder', 'filterRPS_EM_location_output_filter', 10, 4);
 
 /**
  * Handle custom conditional placeholders.
@@ -44,11 +46,45 @@ function filterRPS_EM_output_show_condition ($show_condition, $condition, $match
  * @param array $instance
  * @return array
  */
-function filterRPS_EM_get_child_categories($instance) {
-	if ($instance['category'] != '0') {
+function filterRPS_EM_get_child_categories ($instance)
+{
+	if ( $instance['category'] != '0' ) {
 		$instance['category'] = rps_EM_get_children_of_categories($instance['category']);
 	}
 	return $instance;
+}
+
+function filterRPS_EM_event_output_placeholder ($replace, $em, $full_result, $target)
+{
+	switch ( $full_result )
+	{
+		case '#_EVENTLINK':
+			$event_link = esc_url($em->get_permalink());
+			$replace = '<a itemprop="url" href="' . $event_link . '" title="' . esc_attr($em->event_name) . '"><span itemprop="name">' . esc_attr($em->event_name) . '</span></a>';
+			break;
+		case '#_EVENTNAME':
+			$replace = '<span itemprop="name">' . $em->event_name . '</span>';
+			break;
+	}
+	return $replace;
+}
+
+function filterRPS_EM_location_output_filter ($replace, $em, $full_result, $target)
+{
+	switch ( $full_result )
+	{
+		case '#_LOCATIONRPS1':
+			$replace = '<span itemprop="location" itemscope itemtype="http://schema.org/Place">';
+			$replace .= '<span itemprop="name">'.$em->location_name.'</span>';
+			$replace .= '<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">';
+			//$replace .= ', '. '<span itemprop="streetAddress">'.$em->location_address.'</span>';
+			$replace .= ', '. '<span itemprop="addressLocality">'.$em->location_town.'</span>';
+			$replace .= ', '. '<span itemprop="addressRegion">'.$em->location_state.'</span>';
+			$replace .= '</span></span>';
+
+			break;
+	}
+	return $replace;
 }
 
 /**
@@ -57,37 +93,24 @@ function filterRPS_EM_get_child_categories($instance) {
  * @param array|string $categories
  * @return array
  */
-function rps_EM_get_children_of_categories($categories) {
-	$all_categories=array();
-	if (! is_array($categories)) {
+function rps_EM_get_children_of_categories ($categories)
+{
+	$all_categories = array();
+	if ( !is_array($categories) ) {
 		$categories = explode(',', $categories);
 	}
-	foreach ($categories as $category_id) {
+	foreach ( $categories as $category_id ) {
 		$all_categories[] = (int) $category_id;
-		$children=get_term_children($category_id,EM_TAXONOMY_CATEGORY);
+		$children = get_term_children($category_id, EM_TAXONOMY_CATEGORY);
 		$all_categories = array_merge($children, $all_categories);
 	}
 	$all_categories = array_unique($all_categories);
 	return $all_categories;
 }
 
-
-function rps_EM_list_events($parent_category) {
-	$categories=get_term_children($parent_category,EM_TAXONOMY_CATEGORY);
-	$arg = array(
-	'title' => __('Events','dbem'),
-	'scope' => 'future',
-	'order' => 'ASC',
-	'limit' => 5,
-	'category' => $categories,
-	'format_header' => '<table><tbody>',
-	'format' => '<tr><td style="white-space: nowrap; vertical-align: top;">#_EVENTDATES -&nbsp;</td><td>#_CATEGORYNAME: #_EVENTLINK</td>',
-	'format_footer' => '</tbody></table>',
-	'nolistwrap' => false,
-	'orderby' => 'event_start_date,event_start_time,event_name',
-	'all_events' => 0,
-	'all_events_text' => __('all events', 'dbem'),
-	'no_events_text' => __('No events', 'dbem')
-	);
+function rps_EM_list_events ($parent_category)
+{
+	$categories = get_term_children($parent_category, EM_TAXONOMY_CATEGORY);
+	$arg = array('title' => __('Events', 'dbem'),'scope' => 'future','order' => 'ASC','limit' => 5,'category' => $categories,'format_header' => '<table><tbody>','format' => '<tr><td style="white-space: nowrap; vertical-align: top;">#_EVENTDATES -&nbsp;</td><td>#_CATEGORYNAME: #_EVENTLINK</td>','format_footer' => '</tbody></table>','nolistwrap' => false,'orderby' => 'event_start_date,event_start_time,event_name','all_events' => 0,'all_events_text' => __('all events', 'dbem'),'no_events_text' => __('No events', 'dbem'));
 	return EM_Events::output($arg);
 }
