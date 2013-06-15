@@ -65,8 +65,12 @@ function filterRPS_EM_event_output_placeholder ($replace, $em, $full_result, $ta
 		case '#_EVENTNAME':
 			$replace = '<span itemprop="name">' . $em->event_name . '</span>';
 			break;
-		case '#_MICROFORMATSTARTTIME':
-			$replace = '<meta itemprop="startDate" content="'. date('c',$em->start).'">';
+		case '#_RPSEVENTDATE':
+			$replace = '<span class="dtstart">';
+			$replace .= date_i18n('M j, Y', $em->start).'<br />';
+			$replace .= date('g:i A', strtotime($em->event_start_time));
+			$replace .= '<meta itemprop="startDate" content="'. date('c',$em->start).'">';
+			$replace .= '</span>';
 			break;
 	}
 	return $replace;
