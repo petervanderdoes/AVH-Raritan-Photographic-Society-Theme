@@ -65,12 +65,10 @@ function filterRPS_EM_event_output_placeholder ($replace, $em, $full_result, $ta
 		case '#_EVENTNAME':
 			$replace = '<span itemprop="name">' . $em->event_name . '</span>';
 			break;
-		case '#_RPSEVENTDATE':
-			$replace = '<span class="dtstart">';
-			$replace .= date_i18n('M j, Y', $em->start).'<br />';
-			$replace .= date('g:i A', strtotime($em->event_start_time));
-			$replace .= '<meta itemprop="startDate" content="'. date('c',$em->start).'">';
-			$replace .= '</span>';
+		case '#_SCHEMADATE':
+			//$replace = '<span class="dtstart">';
+			$replace = '<meta itemprop="startDate" content="' . date('c', $em->start) . '">';
+			//$replace .= '</span>';
 			break;
 	}
 	return $replace;
@@ -80,13 +78,13 @@ function filterRPS_EM_location_output_filter ($replace, $em, $full_result, $targ
 {
 	switch ( $full_result )
 	{
-		case '#_LOCATIONRPS1':
-			$replace = '<span itemprop="location" itemscope itemtype="http://schema.org/Place">';
-			$replace .= '<span itemprop="name">'.$em->location_name.'</span>';
+		case '#_SCHEMAPLACE':
+			$replace = '<span itemprop="location" itemscope itemtype="http://schema.org/EventVenue">';
+			$replace .= '<meta itemprop="name" content="' . $em->location_name . '">';
 			$replace .= '<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">';
-			//$replace .= ', '. '<span itemprop="streetAddress">'.$em->location_address.'</span>';
-			$replace .= ', '. '<span itemprop="addressLocality">'.$em->location_town.'</span>';
-			$replace .= ', '. '<span itemprop="addressRegion">'.$em->location_state.'</span>';
+			$replace .= '<meta itemprop="streetAddress" content="'.$em->location_address.'">';
+			$replace .= '<meta itemprop="addressLocality" content="' . $em->location_town . '">';
+			$replace .= '<meta itemprop="addressRegion" content=">' . $em->location_state . '">';
 			$replace .= '</span></span>';
 
 			break;
@@ -118,6 +116,22 @@ function rps_EM_get_children_of_categories ($categories)
 function rps_EM_list_events ($parent_category)
 {
 	$categories = get_term_children($parent_category, EM_TAXONOMY_CATEGORY);
-	$arg = array('title' => __('Events', 'dbem'),'scope' => 'future','order' => 'ASC','limit' => 5,'category' => $categories,'format_header' => '<table><tbody>','format' => '<tr><td style="white-space: nowrap; vertical-align: top;">#_EVENTDATES -&nbsp;</td><td>#_CATEGORYNAME: #_EVENTLINK</td>','format_footer' => '</tbody></table>','nolistwrap' => false,'orderby' => 'event_start_date,event_start_time,event_name','all_events' => 0,'all_events_text' => __('all events', 'dbem'),'no_events_text' => __('No events', 'dbem'));
+	// @format_off
+	$arg = array(
+		'title' => __('Events', 'dbem'),
+		'scope' => 'future',
+		'order' => 'ASC',
+		'limit' => 5,
+		'category' => $categories,
+		'format_header' => '<table><tbody>',
+		'format' => '<tr itemtype="http://schema.org/Event" itemscope=""><td style="white-space: nowrap; vertical-align: top;">#_EVENTDATES -&nbsp;</td><td>#_CATEGORYNAME: #_EVENTLINK #_SCHEMADATE #_SCHEMAPLACE</td></tr>',
+		'format_footer' => '</tbody></table>',
+		'nolistwrap' => false,
+		'orderby' => 'event_start_date,event_start_time,event_name',
+		'all_events' => 0,
+		'all_events_text' => __('all events', 'dbem'),
+		'no_events_text' => __('No events', 'dbem')
+	);
+	// @format_on
 	return EM_Events::output($arg);
 }

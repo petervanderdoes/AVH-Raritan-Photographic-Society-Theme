@@ -45,7 +45,7 @@ else {
 
 if ($post->post_type == 'post') {
 	?>
-<header class='post-header title-container fix'>
+<header class='entry-header post-header title-container fix'>
 <?php
  		if ("post" == $post->post_type) {
 		?>
@@ -56,7 +56,7 @@ if ($post->post_type == 'post') {
 	}
 	?>
 	<div class="title">
-		<<?php echo $header_tag;?> class="posttitle"><?php echo suffusion_get_post_title_and_link(); ?></<?php echo $header_tag;?>>
+		<<?php echo $header_tag;?> class="entry-title posttitle"><?php echo suffusion_get_post_title_and_link(); ?></<?php echo $header_tag;?>>
 	<?php
  			if ($post_meta_position == 'corners') {
 	?>
@@ -144,8 +144,8 @@ if ($post->post_type == 'post') {
 else {
 	if (!is_singular()) {
 		?>
-<header class="post-header fix">
-	<<?php echo $header_tag; ?> class="posttitle"><?php echo suffusion_get_post_title_and_link(); ?></<?php echo $header_tag; ?>>
+<header class="entry-header post-header fix">
+	<<?php echo $header_tag; ?> class="entry-title posttitle"><?php echo suffusion_get_post_title_and_link(); ?></<?php echo $header_tag; ?>>
 </header>
 	<?php
 	}
@@ -153,8 +153,8 @@ else {
 		$hide_title = suffusion_get_post_meta($post->ID, 'suf_hide_page_title', true);
 		if (!$hide_title) {
 			?>
-<header class="post-header fix">
-	<<?php echo $header_tag; ?> class="posttitle"><?php the_title(); ?></<?php echo $header_tag; ?>>
+<header class="entry-header post-header fix">
+	<<?php echo $header_tag; ?> class="entry-title posttitle"><?php the_title(); ?></<?php echo $header_tag; ?>>
 </header>
 		<?php
 		}
