@@ -63,12 +63,8 @@ function filterRPS_EM_event_output_placeholder ($replace, $em, $full_result, $ta
 		{
 			case '#_SCHEMALINK':
 				$event_link = esc_url($em->get_permalink());
-//				$replace = '<a itemprop="url" href="' . $event_link . '" title="' . esc_attr($em->event_name) . '"><span itemprop="name">' . esc_attr($em->event_name) . '</span></a>';
 				$replace = '<meta itemprop="url" content="' . $event_link . '">';
 				$replace .= '<meta itemprop="name" content="' .esc_attr($em->event_name) . '">';
-				break;
-			case '#_EVENTNAME':
-				$replace = '<span itemprop="name">' . $em->event_name . '</span>';
 				break;
 			case '#_SCHEMADATE':
 				$replace = '<meta itemprop="startDate" content="' . date('c', $em->start) . '">';
