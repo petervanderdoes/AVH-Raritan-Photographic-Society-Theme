@@ -51,7 +51,7 @@ if ($post->post_type == 'post') {
 		?>
 	<div class="date"><span class="month"><?php the_time('M'); ?></span> <span
 			class="day"><?php the_time('d'); ?></span><span class="year"><?php the_time('Y'); ?></span></div>
-			<?php echo '<div class="updated"><time datetime="' . date(DATE_W3C, get_post_modified_time('U', true)) . '" pubdate="pubdate"></time></div>';?>
+			<?php echo '<div class="updated" style="display: none"><time datetime="' . date(DATE_W3C, get_post_modified_time('U', true)) . '">'. get_post_modified_time('U', true).'</time></div>';?>
 	<?php
 
 	}
