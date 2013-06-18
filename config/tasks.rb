@@ -20,7 +20,7 @@ namespace :apc do
 	task :clear_cache, :roles => :app do
 		apc_file = "#{current_release}#{apc_webroot}/apc_clear.php"
 		curl_options = "-s"
-		put "<?php apc_clear_cache(); apc_clear_cache('user'); apc_clear_cache('opcode'); echo json_encode(array('APC Clear Cache' => true));?>", apc_file, :mode => 0644
+		put "<?php apc_clear_cache(); apc_clear_cache('user'); apc_clear_cache('opcode'); ?>", apc_file, :mode => 0644
 		run "curl #{curl_options} #{url_base}/apc_clear.php && rm -f #{apc_file}"
 	end
 end
