@@ -9,7 +9,7 @@
 add_filter('em_event_output_show_condition', 'filterRPS_EM_output_show_condition', 1, 4);
 add_filter('em_widget_events_get_args', 'filterRPS_EM_get_child_categories', 10, 1);
 add_filter('em_event_output_placeholder', 'filterRPS_EM_event_output_placeholder', 10, 4);
-add_filter('em_location_output_placeholder', 'filterRPS_EM_location_output_filter', 10, 4);
+add_filter('em_location_output_placeholder', 'filterRPS_EM_location_output_placeholder', 10, 4);
 
 /**
  * Handle custom conditional placeholders.
@@ -56,42 +56,44 @@ function filterRPS_EM_get_child_categories ($instance)
 
 function filterRPS_EM_event_output_placeholder ($replace, $em, $full_result, $target)
 {
-	switch ( $full_result )
-	{
-		case '#_EVENTLINK':
-			$event_link = esc_url($em->get_permalink());
-			$replace = '<a itemprop="url" href="' . $event_link . '" title="' . esc_attr($em->event_name) . '"><span itemprop="name">' . esc_attr($em->event_name) . '</span></a>';
-			break;
-		case '#_EVENTNAME':
-			$replace = '<span itemprop="name">' . $em->event_name . '</span>';
-			break;
-		case '#_SCHEMADATE':
-			//$replace = '<span class="dtstart">';
-			$replace = '<meta itemprop="startDate" content="' . date('c', $em->start) . '">';
-			//$replace .= '</span>';
-			break;
+	$categories = $em->get_categories()->categories;
+
+	if ( rps_EM_is_rps_category($categories) ) {
+		switch ( $full_result )
+		{
+			case '#_SCHEMALINK':
+				$event_link = esc_url($em->get_permalink());
+//				$replace = '<a itemprop="url" href="' . $event_link . '" title="' . esc_attr($em->event_name) . '"><span itemprop="name">' . esc_attr($em->event_name) . '</span></a>';
+				$replace = '<meta itemprop="url" content="' . $event_link . '">';
+				$replace .= '<meta itemprop="name" content="' .esc_attr($em->event_name) . '">';
+				break;
+			case '#_EVENTNAME':
+				$replace = '<span itemprop="name">' . $em->event_name . '</span>';
+				break;
+			case '#_SCHEMADATE':
+				$replace = '<meta itemprop="startDate" content="' . date('c', $em->start) . '">';
+				$replace .= '<meta itemprop="endDate" content="' . date('c', $em->end) . '">';
+				break;
+		}
 	}
 	return $replace;
 }
 
-function filterRPS_EM_location_output_filter ($replace, $em, $full_result, $target)
-{
+function filterRPS_EM_location_output_placeholder ($replace, $em, $full_result, $target) {
 	switch ( $full_result )
 	{
-		case '#_SCHEMAPLACE':
-			$replace = '<span itemprop="location" itemscope itemtype="http://schema.org/EventVenue">';
-			$replace .= '<meta itemprop="name" content="' . $em->location_name . '">';
-			$replace .= '<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">';
-			$replace .= '<meta itemprop="streetAddress" content="'.$em->location_address.'">';
-			$replace .= '<meta itemprop="addressLocality" content="' . $em->location_town . '">';
-			$replace .= '<meta itemprop="addressRegion" content=">' . $em->location_state . '">';
-			$replace .= '</span></span>';
-
-			break;
+	case '#_SCHEMAPLACE':
+		$replace = '<span itemprop="location" itemscope itemtype="http://schema.org/EventVenue">';
+		$replace .= '<meta itemprop="name" content="' . $em->location_name . '">';
+		$replace .= '<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">';
+		$replace .= '<meta itemprop="streetAddress" content="' . $em->location_address . '">';
+		$replace .= '<meta itemprop="addressLocality" content="' . $em->location_town . '">';
+		$replace .= '<meta itemprop="addressRegion" content=">' . $em->location_state . '">';
+		$replace .= '</span></span>';
+		break;
 	}
 	return $replace;
 }
-
 /**
  * Get all children of the given categories
  *
@@ -124,7 +126,7 @@ function rps_EM_list_events ($parent_category)
 		'limit' => 5,
 		'category' => $categories,
 		'format_header' => '<table><tbody>',
-		'format' => '<tr itemtype="http://schema.org/Event" itemscope=""><td style="white-space: nowrap; vertical-align: top;">#_EVENTDATES -&nbsp;</td><td>#_CATEGORYNAME: #_EVENTLINK #_SCHEMADATE #_SCHEMAPLACE</td></tr>',
+		'format' => '<tr itemtype="http://schema.org/Event" itemscope=""><td style="white-space: nowrap; vertical-align: top;">#_EVENTDATES -&nbsp;</td><td>#_CATEGORYNAME: #_EVENTLINK #_SCHEMALINK #_SCHEMADATE #_SCHEMAPLACE</td></tr>',
 		'format_footer' => '</tbody></table>',
 		'nolistwrap' => false,
 		'orderby' => 'event_start_date,event_start_time,event_name',
@@ -134,4 +136,21 @@ function rps_EM_list_events ($parent_category)
 	);
 	// @format_on
 	return EM_Events::output($arg);
+}
+
+function rps_EM_is_rps_category ($categories)
+{
+	static $rps_categories=null;
+
+	if ($rps_categories === null ){
+		$rps_categories = rps_EM_get_children_of_categories(17);
+	}
+	$in_rps_categories = false;
+	foreach ( $categories as $category ) {
+		if ( in_array($category->id, $rps_categories) ) {
+			$in_rps_categories = true;
+			break;
+		}
+	}
+	return $in_rps_categories;
 }
