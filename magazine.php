@@ -33,7 +33,7 @@ if ( is_array($suf_mag_entity_order) ) {
 $sticky = get_option('sticky_posts');
 if ( is_numeric($sticky[0]) ) {
 	rsort($sticky);
-	$amount_of_stickies_to_display = 1;
+	$amount_of_stickies_to_display = 4;
 	$sticky = array_slice($sticky, 0, $amount_of_stickies_to_display);
 	/* Query sticky posts */
 	$articles = new WP_Query(array('post__in' => $sticky,'caller_get_posts' => 1));
