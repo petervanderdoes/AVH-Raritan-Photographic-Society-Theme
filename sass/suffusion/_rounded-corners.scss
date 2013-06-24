@@ -1,0 +1,227 @@
+/**
+ * This file enables CSS3-based rounded corners for capable browsers.
+ *
+ * Author: Sayontan Sinha
+ */
+
+/* All corners same */
+
+.photonique {
+  #subnav, .hier-nav {
+    @include border-radius(0);
+  }
+}
+
+.suf-flat-widget, .warea .suf-flat-widget .dbx-content {
+  @include border-radius(0);
+}
+
+#language-selector ul ul li {
+  @include border-radius(0);
+  a {
+    @include border-radius(0);
+    &:visited {
+      @include border-radius(0);
+    }
+  }
+}
+
+a {
+  &.comment-reply-link, &.comment-reply-login {
+    @include border-radius(3px);
+  }
+}
+
+.comment-response-type, .response-type, .wp-caption, .exif-button, .suf-mag-headline-block li.suf-mag-headline a.tab-current, .widget-suf-cat-posts li.suf-cat-post:hover, .suf-mag-category li.suf-mag-catblock-post:hover, .activity-meta a, ul.item-list span.activity {
+  @include border-radius(3px);
+}
+
+.cl-widget, .suf-widget, .post, article.page, .non-wp-post, #subnav, .hier-nav, .page-nav, .post-nav, .flattened, .author-profile, .info-tag, .info-category, #featured-posts {
+  @include border-radius(5px);
+}
+
+h3 {
+  &#comments, &.comments, &#respond, &.respond {
+    @include border-radius(5px);
+  }
+}
+
+#reply-title, textarea, .author-info, blockquote, pre {
+  @include border-radius(5px);
+}
+
+input {
+  &[type="text"], &[type="password"] {
+    @include border-radius(5px);
+  }
+}
+
+.commentlist li, #recaptcha_response_field {
+  @include border-radius(5px);
+}
+
+#language-selector ul li {
+  @include border-radius(5px);
+  a {
+    @include border-radius(5px);
+    &:visited {
+      @include border-radius(5px);
+    }
+  }
+}
+
+.download, .announcement, .warning, .note, .suf-mag-headlines, .nr-post h3, .nr_widget h4 {
+  @include border-radius(5px);
+}
+
+.post form#whats-new-form {
+  #whats-new-textarea {
+    @include border-radius(5px);
+  }
+  @include border-radius(5px);
+}
+
+ul.item-list li, .standard-form, fieldset, .outer-pullout-container .meta-pullout {
+  @include border-radius(5px);
+}
+
+#wrapper {
+  @include border-radius(7px);
+}
+
+input.searchfield, .dir-search input {
+  @include border-radius(10px);
+}
+
+legend, .button {
+  @include border-radius(20px);
+}
+
+input {
+  &[type="button"], &[type="submit"] {
+    @include border-radius(3px);
+  }
+}
+
+.submit {
+  @include border-radius(3px);
+}
+
+a {
+  &.more-link {
+    @include border-radius(3px);
+  }
+  &.excerpt-more-append {
+    @include border-radius(3px);
+    &:hover, &:visited {
+      @include border-radius(3px);
+    }
+  }
+  &.suf-mag-excerpt-full-story {
+    @include border-radius(3px);
+    &:hover, &:visited {
+      @include border-radius(3px);
+    }
+  }
+  &.suf-mag-category-all-posts {
+    @include border-radius(3px);
+    &:hover, &:visited {
+      @include border-radius(3px);
+    }
+  }
+}
+
+.generic-button {
+  @include border-radius(20px);
+}
+
+/* Same top-left and top-right */
+
+.dbx-handle {
+  @include border-top-left-radius(3px);
+  @include border-top-right-radius(3px);
+}
+
+#commentform label.textarea, h2.suf-mag-category-title {
+  @include border-top-left-radius(5px);
+  @include border-top-right-radius(5px);
+}
+
+#language-selector ul ul li:first-child {
+  @include border-top-left-radius(5px);
+  @include border-top-right-radius(5px);
+  a {
+    @include border-top-left-radius(5px);
+    @include border-top-right-radius(5px);
+    &:visited {
+      @include border-top-left-radius(5px);
+      @include border-top-right-radius(5px);
+    }
+  }
+}
+
+/* Same top-left and bottom-left */
+
+#commentform label {
+  @include border-top-left-radius(5px);
+  @include border-bottom-left-radius(5px);
+}
+
+.collapse .searchfield {
+  @include border-top-left-radius(15px);
+  @include border-bottom-left-radius(15px);
+  @include border-top-right-radius(0);
+  @include border-bottom-right-radius(0);
+}
+
+/* Same top-right and bottom-right */
+
+#commentform input {
+  &[type='text'].inside {
+    @include border-top-right-radius(0);
+    @include border-bottom-right-radius(0);
+  }
+  &[type="text"] {
+    @include border-top-right-radius(5px);
+    @include border-bottom-right-radius(5px);
+  }
+}
+
+/* Same bottom-left and bottom-right */
+
+#language-selector ul ul li:last-child {
+  @include border-bottom-left-radius(5px);
+  @include border-bottom-right-radius(5px);
+  a {
+    @include border-bottom-left-radius(5px);
+    @include border-bottom-right-radius(5px);
+    &:visited {
+      @include border-bottom-left-radius(5px);
+      @include border-bottom-right-radius(5px);
+    }
+  }
+}
+
+.photonique #nav-top {
+  @include border-bottom-left-radius(0);
+  @include border-bottom-right-radius(0);
+}
+
+/* Solo corners */
+
+#commentform {
+  input[type="text"], label.textarea {
+    @include border-bottom-left-radius(0);
+  }
+  input[type="text"] {
+    @include border-top-left-radius(0);
+  }
+  textarea {
+    @include border-top-left-radius(0);
+    &.inside {
+      @include border-top-right-radius(0);
+      @include border-bottom-right-radius(0);
+      @include border-bottom-left-radius(0);
+    }
+  }
+}

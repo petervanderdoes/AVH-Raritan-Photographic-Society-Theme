@@ -1,0 +1,51 @@
+/**
+* Theme specific colors
+*
+* These color names should only be used in this file.
+* For all other files, the General Colors section colors should be used.
+*
+*/
+$color-royal-blue-light: rgb(65, 105, 225);
+$color-royal-blue-dark: rgb(0, 35, 102);
+$color-royal-blue-light-opaque: rgba(65, 105, 225, 1);
+$color-royal-blue-light-transparent: rgba(65, 105, 225, 0);
+$color-royal-blue-dark-opaque: rgba(0, 35, 102, 1);
+$color-royal-blue-dark-transparent: rgba(0, 35, 102, 0.2);
+
+$color-grey-1: rgb(169, 169, 169);
+$color-grey-1-highlight: lighten($color-grey-1, 25%);
+$color-grey-3: rgb(85, 85, 85);
+
+
+
+/**
+* Generalization
+*/
+$color-text: darken(white, 35);
+$color-text-highlight: darken(white, 10);
+$color-text-lowlight: darken(white, 60);
+$color-link: $color-royal-blue-light;
+$color-link-lowlight: $color-royal-blue-dark;
+$color-event: $color-royal-blue-light;
+
+$color-input-bg: $color-grey-1;
+$color-input-bg-focus: $color-grey-1-highlight;
+$color-input-text: contrast-color($color-input-bg);
+$color-input-text-focus: contrast-color($color-input-bg-focus);
+
+$color-button-text: $color-grey-1-highlight;
+$color-button-border: $color-royal-blue-dark;
+
+$color-border: $color-grey-3;
+
+$background-img: image-url("bg-rps.png", false, false);
+$background-color: rgb(0, 0, 0);
+$header-img: image-url("RPS-LOGO-2012.jpg", false, false);
+
+$arrows-img: image-url("arrows.gif", false, false);
+$ul-image: image-url("icons/bulletrbl.png", false, false);
+
+/**
+* Font sizes
+*/
+$font-small: $base-font-size * 0.93;

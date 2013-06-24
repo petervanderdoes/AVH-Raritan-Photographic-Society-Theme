@@ -1,0 +1,69 @@
+table.em-calendar {
+  width: 100%;
+  thead {
+    color: $color-text-highlight;
+  }
+  td {
+    &.eventless-pre, &.eventless-post {
+      color: $color-text-lowlight;
+    }
+    &.eventful-pre, &.eventful-post {
+      color: $color-link-lowlight;
+      a {
+      	padding: 5px;
+        color: $color-link-lowlight;
+        text-decoration: none;
+        &:hover {
+          @include border-radius(1rem);
+          background-color: $color-link-lowlight;
+          color: $color-text-lowlight;
+        }
+      }
+    }
+    &.eventful {
+      color: $color-link;
+      a {
+        padding: 5px;
+        color: $color-link;
+        text-decoration: none;
+        &:hover {
+          @include border-radius(1rem);
+          background-color: $color-link;
+          color: $color-text-highlight;
+        }
+      }
+    }
+    &.eventful-today {
+      background-color: $background-color;
+      a {
+      	padding: 5px;
+        background-color: $color-text;
+        color: $background-color;
+        @include border-radius(1rem);
+        &:hover {
+          background-color: $color-link;
+          color: $color-text-highlight;
+        }
+      }
+    }
+    &.eventless-today {
+      background-color: $background-color;
+      .day {
+      	padding: 5px;
+        background-color: $color-text;
+        color: $background-color;
+        @include border-radius(1rem);
+      }
+    }
+  }
+}
+
+.em-location-map {
+  @include border-radius(5px);
+}
+
+.event-list {
+  list-style: disc outside none;
+  padding: inherit;
+  text-align: left;
+}

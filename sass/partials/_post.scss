@@ -1,0 +1,149 @@
+h1.posttitle, h2.posttitle {
+  @include adjust-font-size-to($base-font-size-oswald * 2);
+  color: $color-text-highlight;
+  font-family: Oswald;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  border-bottom: dotted 1px #CCCCCC;
+  padding-top: 9px;
+  a {
+    @include link-style;
+  }
+}
+
+.postdata {
+  @include adjust-font-size-to($base-font-size * 0.93);
+  margin-top: 2px;
+  color: $color-text-lowlight;
+  a {
+    color: $color-text-lowlight;
+    text-decoration: none;
+    &:visited {
+      color: $color-text-lowlight;
+      text-decoration: none;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .icon {
+    display: none;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    margin-left: 4px;
+  }
+  .category {
+    padding-right: 10px;
+    float: left;
+    .icon {
+      background: no-repeat 0 0;
+    }
+  }
+  .author .icon {
+    background: no-repeat -32px -128px;
+  }
+  .tax .icon {
+    background: no-repeat -32px -144px;
+  }
+  .permalink {
+    padding-right: 10px;
+    float: left;
+    .icon {
+      background: no-repeat 0 -16px;
+    }
+  }
+  .comments {
+    padding-right: 10px;
+    float: right;
+    .icon {
+      background: no-repeat 0 -64px;
+    }
+  }
+  .edit {
+    padding-right: 10px;
+    float: right;
+    .icon {
+      background: no-repeat 0 -112px;
+    }
+  }
+  .line-date .icon {
+    background: no-repeat 0 -32px;
+  }
+  &.line {
+    text-align: center;
+    padding: 0.8em;
+    span {
+      float: none;
+      margin: 0 0.5em;
+      padding: 0;
+      &.author, &.comments {
+        float: none;
+        margin: 0 0.5em;
+        padding: 0;
+      }
+      &.icon {
+        margin-right: 4px;
+        margin-left: 0;
+      }
+      &.vcard {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.post {
+  .date {
+    height: 48px;
+    width: 48px;
+    font: normal 150% Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    text-align: center;
+    padding: 0;
+    line-height: 100%;
+    float: left;
+    position: relative;
+    @include gradient-buttons;
+    @include border-radius(3px);
+  }
+  span {
+    &.day {
+      font: normal 100% Arial, Helvetica, sans-serif;
+      color: #ffffff;
+      text-align: center;
+      padding: 0;
+      line-height: 100%;
+    }
+    &.month {
+      height: 12px;
+      display: block;
+      font: normal 50% Arial, Helvetica, sans-serif;
+      color: #ffffff;
+      text-align: center;
+      padding-top: 2px;
+    }
+    &.year {
+      height: 12px;
+      display: block;
+      font: normal 50% Arial, Helvetica, sans-serif;
+      color: #ffffff;
+      text-align: center;
+      padding-top: 0;
+    }
+  }
+  .title {
+    position: relative;
+    margin-left: 53px;
+    // Width of datebox+5
+    padding: 0;
+  }
+}
+
+.post-footer {
+  @include adjust-font-size-to($base-font-size * 0.93);
+  margin: 5px 0;
+  width: 100%;
+}

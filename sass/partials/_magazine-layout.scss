@@ -1,0 +1,200 @@
+.suf-mag-excerpts {
+  width: 100%;
+  padding: 0;
+  margin: 10px 0;
+  display: inline-block;
+  h3 {
+    font-family: Oswald;
+    @include adjust-font-size-to($base-font-size-oswald * 1.5);
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+  &:after {
+    marging: 5px;
+  }
+}
+
+.suf-mag-headline-block li.suf-mag-headline a {
+  color: #fff;
+}
+
+h2 {
+  &.suf-mag-excerpt-title, &.suf-tile-title {
+    color: $color-text-highlight;
+    @include adjust-font-size-to($base-font-size * 1.2, 1);
+    font-weight: 700;
+    border-top: 1px dotted #c0c0c0;
+    border-bottom: 1px dotted #c0c0c0;
+    padding: 5px 0;
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+  &.suf-mag-excerpt-title a {
+    color: $color-text-highlight;
+    text-decoration: none;
+    &:hover, &:visited, &:active {
+      color: $color-text-highlight;
+      text-decoration: none;
+    }
+  }
+  &.suf-tile-title a {
+    color: $color-text-highlight;
+    text-decoration: none;
+    &:hover, &:visited, &:active {
+      color: $color-text-highlight;
+      text-decoration: none;
+    }
+  }
+}
+
+.suf-mag-excerpts-header {
+  border-color: $color-border;
+  background-color: #000;
+  color: #ddd;
+}
+
+.suf-tile-text > table {
+  td {
+    vertical-align: top;
+  }
+}
+.suf-mag-excerpt-text p, .suf-tile-text p, .suf-tile-text ul, .suf-tile-text > table {
+  @include margin-leader;
+  @include padding-trailer;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.rps-showcases {
+  .image {
+    text-align: center;
+  }
+  .thumb_img {
+    vertical-align: middle;
+  }
+  .col-control {
+    width: 960px;
+  }
+  .suf-tile {
+    margin-bottom: 3px;
+  }
+  ul {
+    float: left;
+    list-style: none outside none;
+    margin: 0 4px;
+    padding: 0;
+    vertical-align: bottom;
+  }
+  li {
+    float: left;
+    line-height: 150px;
+    margin: 0 13px 10px;
+    min-height: 154px;
+    padding: 10px;
+    width: 150px;
+    &:last-child {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.rps-misc {
+  width: 100%;
+  padding: 0;
+  margin: 10px 0;
+  display: inline-block;
+  h3 {
+    font-family: Oswald;
+    @include adjust-font-size-to($base-font-size-oswald);
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+  &:after {
+    marging: 5px;
+  }
+  .suf-tile-text {
+    text-align: left;
+  }
+  ul {
+    li {
+      a {
+        color: $color-text-highlight;
+        text-decoration: none;
+        &:hover, &:visited, &:active {
+          color: $color-text-highlight;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+/* Props to the brilliant technique highlighted here: http://stackoverflow.com/questions/6865194/fluid-width-with-equally-spaced-divs.
+ This distributes divs equally in a fluid-width row without any JS hack and without using CSS multi-columns. */
+
+.suf-tiles, .suf-mag-excerpts, .rps-showcases, .rps-misc {
+  text-align: justify;
+  -ms-text-justify: distribute;
+  text-justify: distribute;
+  &:after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+  }
+}
+
+.suf-tile-1c {
+  width: 100%;
+}
+
+.suf-tile-2c {
+  width: 49%;
+}
+
+.suf-tile-3c {
+  width: 32%;
+}
+
+.suf-tile-4c {
+  width: 24%;
+}
+
+.suf-tile-5c {
+  width: 19%;
+}
+
+.suf-tile-6c {
+  width: 16%;
+}
+
+.suf-tile-7c {
+  width: 13%;
+}
+
+.suf-tile-8c {
+  width: 12%;
+}
+
+.suf-tile-9c {
+  width: 10.5%;
+}
+
+.suf-tile-10c {
+  width: 9.5%;
+}
+
+.suf-mag-excerpt, .suf-tile {
+  @include border-radius(5px);
+}

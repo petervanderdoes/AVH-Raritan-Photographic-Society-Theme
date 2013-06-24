@@ -1,0 +1,399 @@
+code {
+  background-color: #222222;
+}
+
+pre {
+  background-color: #222222;
+  border: 1px solid $color-border;
+}
+
+/* Headers */
+
+fieldset {
+  border: 1px solid #333;
+}
+
+#wrapper {
+  border: 1px solid $color-border;
+  background-color: #222;
+}
+
+.suf-widget {
+  background-color: #000;
+  border: 1px solid $color-border;
+}
+
+.dbx-handle {
+  border-bottom: 1px dotted $color-border;
+}
+
+/* search form */
+
+.searchfield {
+  background-color: #444;
+}
+
+.post, article.page {
+  background-color: #000;
+  border: 1px solid $color-border;
+}
+
+/* post title */
+.author {
+  color: #aaa;
+}
+
+.tags {
+  color: #aaa;
+  a {
+    color: #999;
+  }
+}
+
+.page-links span {
+  border-color: #222222;
+}
+
+/* next & previous page navigation */
+
+.page-nav {
+  background-color: #000;
+  border: 1px solid $color-border;
+  a {
+    color: #fff;
+    &:visited {
+      color: #fff;
+    }
+  }
+}
+
+.suf-page-nav {
+  a {
+    border-color: #222222;
+    &:visited {
+      border-color: #222222;
+    }
+  }
+  span {
+    border-color: #222222;
+  }
+}
+
+.page-nav .suf-page-nav a.page-numbers:hover, div.navigation .suf-page-nav a.page-numbers:hover {
+  color: #ffffff;
+}
+
+/* next & previous post navigation */
+
+.post-nav {
+  background-color: #000;
+  border: 1px solid $color-border;
+  a {
+    color: #999999;
+    &:visited {
+      color: #999999;
+    }
+  }
+  .previous .icon {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -160px;
+    float: left;
+    margin-right: 4px;
+  }
+  .next .icon {
+    width: 16px;
+    height: 16px;
+    background-position: -16px -160px;
+    float: right;
+    margin-left: 4px;
+  }
+}
+
+/* commentform */
+
+#commentform {
+  label.suf-comment-label {
+    color: #ffffff;
+    border: solid 1px #222;
+  }
+  small {
+    color: #999999;
+  }
+  textarea {
+    border: solid 1px $color-border;
+    background-color: #333;
+    &:focus {
+      border: solid 1px #999;
+    }
+  }
+  input[type="text"]:focus {
+    border: solid 1px #999;
+  }
+}
+
+.commentlist {
+  li {
+    &.comment, &.pingback, &.trackback {
+      border: 1px solid #222;
+      background-color: #080808;
+    }
+    &.alt {
+      border: 1px solid #333;
+      background-color: #202020;
+    }
+  }
+  small a {
+    color: #999999;
+    &:visited {
+      color: #999999;
+    }
+  }
+}
+
+.comment-author {
+  border-bottom: 1px dotted #444;
+}
+
+.author-below .comment-body, .author-above .comment-body {
+  background-color: #222;
+}
+
+.author-below .arrow, .author-above .arrow {
+  border-left-color: #222;
+}
+
+a {
+  &.comment-reply-link, &.comment-reply-login {
+    border: solid 1px #222222;
+  }
+}
+
+.comment-response-type, .response-type {
+  border: solid 1px #222222;
+}
+
+/* Comments  */
+
+h3 {
+  &#comments, &.comments, &#respond, &.respond {
+    background-color: #333;
+  }
+}
+
+#reply-title {
+  background-color: #333;
+}
+
+/* commentform */
+
+label {
+  color: #666;
+  font-size: 100%;
+}
+
+small {
+  color: #555;
+}
+
+input {
+  background-color: #333;
+  color: #999;
+  border: solid 1px $color-border;
+}
+
+textarea {
+  color: #999;
+  border: solid 1px $color-border;
+  background-color: #333;
+  &:focus {
+    border: solid 1px #666;
+  }
+}
+
+input {
+  &[type="text"]:focus, &[type="password"]:focus {
+    border: solid 1px #666;
+  }
+}
+
+#postbox textarea:focus {
+  border: solid 1px #666;
+}
+
+/* sidebar */
+
+/* sidebar */
+
+.suf-widget h3 {
+  color: #999;
+  a {
+    color: #999;
+    &:visited {
+      color: #999;
+    }
+  }
+}
+
+div.tab-box div.sidebar-tab-content a {
+  &:hover, &:active {
+    text-decoration: underline;
+  }
+}
+
+.warea ul.suf-cat-posts-list a {
+  &:hover, &:active {
+    text-decoration: none;
+  }
+}
+
+.wp-caption {
+  background-color: #000000;
+}
+
+.author-profile, .info-tag, .info-category {
+  border: solid 1px $color-border;
+  background-color: #000;
+}
+
+/* Settings for Featured Posts */
+
+#featured-posts {
+  border-color: $color-border;
+  background-color: #000000;
+}
+
+#sliderIndex a {
+  border-color: #222222;
+  &:hover, &:visited {
+    border-color: #222222;
+  }
+}
+
+.index-overlaid {
+  #sliderIndex a, .sliderIndex a {
+    background-color: #000;
+  }
+}
+
+.pager-bullets.index-overlaid {
+  #sliderPager a, .sliderPager a {
+    background-color: transparent;
+  }
+}
+
+/* These settings are for common plugins */
+
+.wp-pagenavi {
+  a {
+    border-color: #222222;
+    &:visited {
+      border-color: #222222;
+    }
+  }
+  span {
+    border-color: #222222;
+  }
+}
+
+/* Tabbed Sidebar */
+
+.warea ul.sidebar-tabs li a, ul.sidebar-tabs li a {
+  background-color: #000;
+  border: 1px solid $color-border;
+  color: #fff;
+}
+
+div.sidebar-tab-content, .suf-mag-headlines, .suf-mag-excerpt, .suf-tile, .suf-mag-category {
+  background-color: #000;
+  border: 1px solid $color-border;
+}
+
+/* Magazine */
+
+.widget-suf-cat-posts li.suf-cat-post a, .suf-mag-category li.suf-mag-catblock-post a {
+  color: #eee;
+}
+
+.widget-suf-cat-posts li.suf-cat-post, .suf-mag-category li.suf-mag-catblock-post {
+  border-bottom: 1px dotted #222;
+}
+
+.widget-suf-cat-posts li.suf-cat-post:hover, .suf-mag-category li.suf-mag-catblock-post:hover {
+  border: 1px solid $color-border;
+}
+
+.flattened {
+  background-color: #000;
+  border: 1px solid $color-border;
+}
+
+.author-info {
+  border: 1px solid $color-border;
+}
+
+.nr-post h3 {
+  border: 1px solid #444;
+}
+
+div {
+  &.booklisting img, &.bookentry img {
+    border: 1px solid #444;
+  }
+}
+
+.nr_widget h4 {
+  border: 1px solid #444;
+}
+
+.meta-left-pullout ul {
+  border-right: 1px dotted $color-border;
+}
+
+.meta-right-pullout ul {
+  border-left: 1px dotted $color-border;
+}
+
+.meta-pullout li {
+  border-bottom: 1px dotted $color-border;
+}
+
+.attachment object.text {
+  color: #999;
+  border: solid 1px $color-border;
+  background-color: #666;
+}
+
+table.exif td {
+  border-bottom: 1px dotted #222;
+}
+
+.flickr_badge_image img, .suf-twitter-avatar {
+  border-color: #333;
+}
+
+.warea ul.suf-posts-thumbnail li {
+  border-bottom: 1px dotted #333;
+}
+
+img.suf-widget-thumb, .suf-mosaic-img {
+  border-color: #333;
+}
+
+.entry th, .comment-body th, .entry td, .comment-body td {
+  border-bottom: 1px dotted #222;
+}
+
+.exif-button, .navigation-attachment {
+  border-color: #222;
+}
+
+.cl-widget {
+  background: #000;
+  border: 1px solid #333;
+}
+
+.outer-pullout-container .meta-pullout {
+  background: #000;
+  border: 1px solid $color-border;
+}

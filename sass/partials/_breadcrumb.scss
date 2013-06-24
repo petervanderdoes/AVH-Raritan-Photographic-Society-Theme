@@ -1,0 +1,10 @@
+.breadcrumb {
+  padding: 0;
+  a {
+    @include link-style;
+  }
+}
+
+.breadcrumb_last {
+  font-weight: 700;
+}

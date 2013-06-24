@@ -1,0 +1,53 @@
+/* sub menu */
+
+/* Level 3 */
+
+/* content */
+
+/* post title */
+
+/* next & previous page navigation */
+
+/* next & previous post navigation */
+
+.suf-page-nav a.page-numbers {
+  color: $color-link;
+  &:visited {
+    color: $color-link;
+  }
+}
+
+/* comment list */
+
+.commentlist cite {
+  color: $color-link;
+  a {
+    color: $color-link;
+    &:visited {
+      color: $color-link;
+    }
+  }
+}
+
+.suf-widget a {
+  &:hover, &:focus, &:active {
+    color: $color-link;
+  }
+}
+
+/* These settings are for common plugins */
+
+.wp-pagenavi {
+  a {
+    color: $color-link;
+    &:visited {
+      color: $color-link;
+    }
+  }
+  span {
+    color: $color-link;
+  }
+  a:hover {
+    color: #fff;
+  }
+}

@@ -1,0 +1,199 @@
+$base-font-size: 13px;
+$base-line-height: $base-font-size * 1.5;
+$rhythm-unit: rem;
+
+/**
+* Basefont for Oswald font.
+* Our $base-font-size is 14px and this base font give the same width for Oswald
+*/
+$base-font-size-oswald: 15px;
+$base-line-height-oswald: $base-font-size-oswald * 1.5;
+
+/**
+* Full Story
+*/
+$base-font-size-full-story: 14px;
+
+@import "compass";
+
+@include global-reset;
+
+@include establish-baseline;
+
+@import "assets/variables";
+@import "assets/mixins";
+
+@import "suffusion/main";
+@import "suffusion/rounded-corners";
+@import "suffusion/light-royal-blue";
+@import "suffusion/dark-style";
+//@import "suffusion/dark-royal-blue";
+
+@import "partials/general";
+@import "partials/header";
+@import "partials/navigation-bar";
+@import "partials/breadcrumb";
+@import "partials/forms";
+@import "partials/events-manager";
+@import "partials/magazine-layout";
+@import "partials/post";
+@import "partials/comments";
+@import "partials/sidebars";
+@import "partials/footer";
+
+body {
+  font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
+  background-attachment: scroll;
+  background-image: $background-img;
+  background-repeat: repeat-x;
+  color: $color-text;
+  font-size-adjust: none;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  background-color: $background-color;
+}
+a {
+   @include link-style($color: $color-text-highlight);
+}
+
+#content {
+  clear: both;
+  overflow: hidden;
+}
+
+.entry, .non-wp-entry {
+  padding: 15px 0 5px;
+  clear: both;
+  margin-bottom: 1em;
+  overflow: hidden;
+}
+
+.suf-mag-category, .suf-mag-excerpt, .suf-tile {
+  @include adjust-font-size-to($base-font-size);
+}
+
+.excerpt {
+  @include adjust-font-size-to($base-font-size);
+}
+
+.full-content {
+  @include adjust-font-size-to($base-font-size-full-story);
+}
+
+h2.suf-tile-title {
+  @include adjust-font-size-to(15px);
+  a,
+  a:hover,
+  a:visited,
+  a:active {
+    @include adjust-font-size-to(15px);
+  }
+}
+
+.suf-gradient {
+  @include gradient-header;
+}
+
+.suf-mag-headline-block li.suf-mag-headline a.tab-current, h2.suf-mag-category-title {
+  @include gradient-buttons;
+}
+
+a.excerpt-more-append {
+  color: $color-button-text;
+  border: solid 1px $color-button-border;
+  @include gradient-buttons;
+}
+
+.warea a.suf-mag-category-all-posts, a.suf-mag-category-all-posts {
+  @include gradient-buttons;
+}
+
+h2.suf-tile-title {
+  margin-top: 0;
+  text-align: left;
+}
+
+h2.suf-tile-title a {
+  font-size: 58%;
+  &:hover, &:visited, &:active {
+    font-size: 58%;
+  }
+}
+
+#header-container {
+  background-image: $header-img;
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-color: #000;
+  @include border-bottom-left-radius(0);
+  @include border-bottom-right-radius(0);
+  @include border-top-left-radius(inherit);
+  @include border-top-right-radius(inherit);
+}
+
+input[type="email"] {
+  @include border-radius(5px);
+}
+
+/**
+* Showcase
+*/
+
+.rps-showcases {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 0;
+  width: 100%;
+  h3 {
+    @include adjust-font-size-to($base-font-size-oswald * 1.3);
+    font-family: Oswald;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+  }
+  &:after {
+    content: "";
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+    width: 100%;
+  }
+}
+
+.rps-sc-tile {
+  @include border-radius(5px);
+  background-color: #000000;
+  border: 1px solid $color-border;
+  padding-top: 0;
+  display: inline-block;
+  font-size: 108%;
+  line-height: 20px;
+  margin-top: 5px;
+  position: relative;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+}
+
+/**
+* Theme My Login
+*/
+
+#theme-my-login *:focus {
+  background-color: #999999;
+  color: #333333;
+  outline: 0 none;
+}
+
+ul.tml-action-links {
+  display: block;
+  float: right;
+  list-style: none;
+  margin: 0 0 -1px 0;
+  padding: 0;
+  vertical-align: bottom;
+  li {
+    padding: 0;
+  }
+}
