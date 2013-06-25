@@ -146,4 +146,9 @@ h1.posttitle, h2.posttitle {
   @include adjust-font-size-to($base-font-size * 0.93);
   margin: 5px 0;
   width: 100%;
+  & span.author {
+    float: left;
+    display: inline-block;
+  }
 }
+
