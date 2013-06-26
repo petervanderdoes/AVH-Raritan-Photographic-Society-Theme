@@ -1,18 +1,9 @@
 /**
  * Theme Name: RPS Suffusion child Theme
  * Theme URI: http://blog.avirtualhome.com
- * Description: A starter child theme for Suffusion. In the line that says "Tags:" below, add buddypress if this is being used for BuddyPress. E.g. "Tags: buddypress"
+ * Description: Theme build for Raritan Photogrpahic Society. Child them of Suffusion
  * Version: 1.0.0
  * Author: Peter van der Does
  * Author URI: http://blog.avirtualhome.com
  * Template: suffusion
- * Tags:
  */
-
-
-/* @import url("../suffusion/style.css"); */
-/* @import url("../suffusion/rounded-corners.css"); */
-/* @import url("../suffusion/skins/light-theme-royal-blue/skin.css"); */
-/* @import url("../suffusion/dark-style.css"); */
-/* @import url("../suffusion/skins/dark-theme-royal-blue/skin.css"); */
-@import url("css/rps.css");

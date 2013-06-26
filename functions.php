@@ -17,7 +17,8 @@ add_filter('wp_nav_menu_objects', 'filterRPS_members_menu', 10, 2);
 
 // RPS Actions & Filters
 add_filter('rps_comment_form_allow_comment','filterRPS_comment_form_allow_comment',10,1);
-add_filter( 'style_loader_src', 'rps_remove_cssjs_ver', 10, 2 );
+add_filter( 'style_loader_src', 'filterRPS_remove_cssjs_ver', 10, 2 );
+
 
 /**
  * Here you can define any additional functions that you are hooking in the
@@ -82,11 +83,11 @@ function actionRPS_theme_setup ()
 {
 	remove_action('suffusion_before_begin_content', 'suffusion_build_breadcrumb');
 	remove_action('suffusion_document_header', 'suffusion_set_title');
-	//remove_action('wp_enqueue_scripts', 'suffusion_enqueue_styles');
+	remove_action('wp_enqueue_scripts', 'suffusion_enqueue_styles');
 
 	add_action('suffusion_after_begin_wrapper', 'suffusion_build_breadcrumb');
 	add_action('suffusion_document_header', 'actionRPS_set_document_title');
-	//add_action('wp_enqueue_scripts', 'suffusion_enqueue_styles', 999);
+	add_action('wp_enqueue_scripts', 'actionRPS_enqueue_styles');
 }
 
 /**
@@ -125,13 +126,150 @@ function filterRPS_comment_form_allow_comment($allow_comment) {
 	return $allow_comment;
 }
 
-function rps_remove_cssjs_ver($src, $handle) {
+/**
+ * Adds all stylesheets used by Suffusion. Even conditional stylesheets are loaded, by using the "style_loader_tag" filter hook.
+ * The theme version is added as a URL parameter so that when you upgrade the latest version is picked up.
+ *
+ * Exact copy of the suffusion function called suffusion_enqueue_styles
+ *
+ * @return void
+ */
+function actionRPS_enqueue_styles() {
+	// We don't want to enqueue any styles if this is not an admin page
+	if (is_admin()) {
+		return;
+	}
 
-	global $wp_styles;
+	global $suf_style_inheritance, $suffusion_theme_hierarchy, $suf_color_scheme, $suf_show_rounded_corners, $suf_autogen_css;
+	if (!isset($suffusion_theme_hierarchy[$suf_color_scheme])) {
+		if (@file_exists(get_stylesheet_directory().'/skins/'.$suf_color_scheme.'/skin.css')) {
+			$sheets = array('style.css', 'skins/'.$suf_color_scheme.'/skin.css');
+		}
+		else if (@file_exists(get_template_directory().'/skins/'.$suf_color_scheme.'/skin.css')) {
+			$sheets = array('style.css', 'skins/'.$suf_color_scheme.'/skin.css');
+		}
+		else {
+			$sheets = array('style.css');
+		}
+	}
+	else {
+		$sheets = $suffusion_theme_hierarchy[$suf_color_scheme];
+	}
 
-	if ( $handle == 'suffusion-theme') {
-		$file=parse_url($wp_styles->registered[$handle]->src);
-		$date = filemtime($_SERVER['DOCUMENT_ROOT'].$file['path']);
+	$template_path = get_template_directory();
+	$stylesheet_path = get_stylesheet_directory();
+
+	// Core styles - either from Suffusion or from its child themes
+	if ($suf_style_inheritance == 'nothing' && is_child_theme()) {
+		//wp_enqueue_style('suffusion-theme', get_stylesheet_uri(), array(), SUFFUSION_THEME_VERSION);
+		$rps_style_version = '1';
+		if ( WP_LOCAL_DEV == true ) {
+			wp_enqueue_style('suffusion-theme-rps', get_stylesheet_directory_uri().'/css/rps.css');
+		} else {
+			wp_enqueue_style('suffusion-theme-rps', get_stylesheet_directory_uri().'/css/rps-'.$style_version.'.css');
+		}
+	}
+	else {
+		wp_enqueue_style("suffusion-theme", get_template_directory_uri().'/style.css', array(), SUFFUSION_THEME_VERSION);
+
+		$skin_count = 0;
+		foreach ($sheets as $sheet) {
+			if ($sheet == 'style.css') {
+				continue;
+			}
+			if (file_exists($template_path."/$sheet")) {
+				$skin_count++;
+				wp_enqueue_style("suffusion-theme-skin-{$skin_count}", get_template_directory_uri()."/$sheet", array('suffusion-theme'), SUFFUSION_THEME_VERSION);
+			}
+		}
+		if (is_child_theme()) {
+			wp_enqueue_style('suffusion-child', get_stylesheet_uri(), array('suffusion-theme'), SUFFUSION_THEME_VERSION);
+		}
+	}
+
+	global $suffusion, $suf_mosaic_zoom_library;
+	if ($suffusion->get_content_layout() == 'mosaic') {
+		if ($suf_mosaic_zoom_library == 'fancybox') {
+			if (@file_exists($stylesheet_path.'/scripts/fancybox/jquery.fancybox-1.3.4.css')) {
+				wp_enqueue_style("suffusion-slideshow", get_stylesheet_directory_uri().'/scripts/fancybox/jquery.fancybox-1.3.4.css', array(), SUFFUSION_THEME_VERSION);
+			}
+			else {
+				wp_enqueue_style("suffusion-slideshow", get_template_directory_uri().'/scripts/fancybox/jquery.fancybox-1.3.4.css', array(), SUFFUSION_THEME_VERSION);
+			}
+		}
+		else if ($suf_mosaic_zoom_library == 'colorbox') {
+			if (@file_exists($stylesheet_path.'/scripts/colorbox/colorbox.css')) {
+				wp_enqueue_style("suffusion-slideshow", get_stylesheet_directory_uri().'/scripts/colorbox/colorbox.css', array(), SUFFUSION_THEME_VERSION);
+			}
+			else {
+				wp_enqueue_style("suffusion-slideshow", get_template_directory_uri().'/scripts/colorbox/colorbox.css', array(), SUFFUSION_THEME_VERSION);
+			}
+		}
+	}
+
+	// Attachment styles. Loaded conditionally, because it uses a rather heavy image, which we don't want to load always.
+	if (is_attachment()) {
+		wp_enqueue_style('suffusion-attachment', get_template_directory_uri().'/attachment-styles.css', array('suffusion-theme'), SUFFUSION_THEME_VERSION);
+	}
+
+	// Rounded corners, loaded if the browser is not IE <= 8
+	if ($suf_show_rounded_corners == 'show') {
+		wp_register_style('suffusion-rounded', get_template_directory_uri().'/rounded-corners.css', array('suffusion-theme'), SUFFUSION_THEME_VERSION);
+		//		$GLOBALS['wp_styles']->add_data('suffusion_rounded', 'conditional', '!IE'); // Doesn't work (yet). See http://core.trac.wordpress.org/ticket/16118. Instead we will filter style_loader_tag
+		wp_enqueue_style('suffusion-rounded');
+	}
+
+	// BP admin-bar, loaded only if this is a BP installation
+	if (defined('BP_VERSION')) {
+		if (substr(BP_VERSION, 0, 3) == '1.6') {
+			$stylesheet = WP_PLUGIN_URL.'/buddypress/bp-core/css/buddybar.css';
+		}
+		else {
+			$stylesheet = WP_PLUGIN_URL.'/buddypress/bp-themes/bp-default/_inc/css/adminbar.css';
+		}
+		wp_enqueue_style('bp-admin-bar', apply_filters('bp_core_admin_bar_css', $stylesheet), array(), BP_VERSION);
+	}
+
+	// IE-specific CSS, loaded if the browser is IE < 8
+	wp_enqueue_style('suffusion-ie', get_template_directory_uri().'/ie-fix.css', array('suffusion-theme'), SUFFUSION_THEME_VERSION);
+
+	// Custom styles, built based on selected options.
+	$css_loaded = false;
+	if ($suf_autogen_css == 'autogen-file') {
+		$upload_dir = wp_upload_dir();
+		$custom_file = trailingslashit($upload_dir['basedir']).'suffusion/custom-styles.css';
+		if (@file_exists($custom_file)) {
+			$custom_file_url = $upload_dir['baseurl'].'/suffusion/custom-styles.css';
+			wp_enqueue_style('suffusion-generated', $custom_file_url, array('suffusion-theme', 'suffusion-ie'), SUFFUSION_THEME_VERSION);
+			$css_loaded = true;
+		}
+	}
+
+	if (($suf_autogen_css == 'autogen' || $suf_autogen_css == 'nogen-link') || (!$css_loaded && $suf_autogen_css == 'autogen-file')) {
+		wp_enqueue_style('suffusion-generated?suffusion-css=css', home_url(), array('suffusion-theme', 'suffusion-ie'), SUFFUSION_THEME_VERSION);
+	}
+
+	// Custom styles, from included CSS files
+	for ($i = 1; $i <= 3; $i++) {
+		$var = "suf_custom_css_link_{$i}";
+		global $$var;
+		if (isset($$var) && trim($$var) != "") {
+			wp_enqueue_style('suffusion-included-'.$i, $$var, array('suffusion-theme'), null);
+		}
+	}
+}
+
+function filterRPS_remove_cssjs_ver($src) {
+	$parsed_url = parse_url($src);
+	if (substr($parsed_url['path'],0, 33) == '/content/themes/suffu-rps/css/rps' ) {
+		$scheme   = isset($parsed_url['scheme']) ? $parsed_url['scheme'] . '://' : '';
+  		$host     = isset($parsed_url['host']) ? $parsed_url['host'] : '';
+  		$port     = isset($parsed_url['port']) ? ':' . $parsed_url['port'] : '';
+  		$user     = isset($parsed_url['user']) ? $parsed_url['user'] : '';
+  		$pass     = isset($parsed_url['pass']) ? ':' . $parsed_url['pass']  : '';
+  		$pass     = ($user || $pass) ? "$pass@" : '';
+  		$path     = isset($parsed_url['path']) ? $parsed_url['path'] : '';
+  		$src = "$scheme$user$pass$host$port$path";
 	}
 	return $src;
 }
