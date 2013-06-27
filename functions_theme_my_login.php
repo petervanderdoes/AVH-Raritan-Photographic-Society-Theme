@@ -18,32 +18,31 @@ add_filter('tml_approval_role', 'filterRPS_TML_set_role', 100, 2);
  *        Action
  * @return string Title
  */
-function filterRPS_TML_change_action_links_title ($title, $action)
+function filterRPS_TML_change_action_links_title($title, $action)
 {
-	if ( is_user_logged_in() ) {
-		$user = wp_get_current_user();
-		if ( 'profile' == $action )
-			$title = 'Your Profile';
-		else
-			$title = sprintf('Welcome, %s', $user->display_name);
-	} else {
-		switch ( $action )
-		{
-			case 'register':
-				$title = 'Sign Up';
-				break;
-			case 'lostpassword':
-			case 'retrievepassword':
-			case 'resetpass':
-			case 'rp':
-				$title = 'Password Recovery';
-				break;
-			case 'login':
-			default:
-				$title = 'Sign In';
-		}
-	}
-	return $title;
+    if (is_user_logged_in()) {
+        $user = wp_get_current_user();
+        if ('profile' == $action)
+            $title = 'Your Profile';
+        else
+            $title = sprintf('Welcome, %s', $user->display_name);
+    } else {
+        switch ($action) {
+            case 'register':
+                $title = 'Sign Up';
+                break;
+            case 'lostpassword':
+            case 'retrievepassword':
+            case 'resetpass':
+            case 'rp':
+                $title = 'Password Recovery';
+                break;
+            case 'login':
+            default:
+                $title = 'Sign In';
+        }
+    }
+    return $title;
 }
 
 /**
@@ -57,7 +56,7 @@ function filterRPS_TML_change_action_links_title ($title, $action)
  *        User ID
  * @return string New role
  */
-function filterRPS_TML_set_role ($role, $id)
+function filterRPS_TML_set_role($role, $id)
 {
-	return 's2member_level1';
+    return 's2member_level1';
 }
