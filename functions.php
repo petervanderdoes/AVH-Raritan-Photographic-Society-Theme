@@ -49,24 +49,24 @@ include 'shortcodes.php';
 /**
  * Check if a plugin is active
  *
- * @param string $plugin        
+ * @param string $plugin
  * @return boolean
  */
 function rps_is_plugin_active($plugin)
 {
     static $active_plugins = NULL;
-    
+
     if ($active_plugins === NULL) {
         $active_plugins = (array) get_option('active_plugins', array());
     }
-    
+
     return in_array($plugin, $active_plugins);
 }
 
 /**
  * Check by user ID if user is a paid member
  *
- * @param int $user_ID        
+ * @param int $user_ID
  * @return boolean
  */
 function rps_is_paid_member($user_ID)
@@ -83,7 +83,7 @@ function actionRPS_theme_setup()
     remove_action('suffusion_before_begin_content', 'suffusion_build_breadcrumb');
     remove_action('suffusion_document_header', 'suffusion_set_title');
     remove_action('wp_enqueue_scripts', 'suffusion_enqueue_styles');
-    
+
     add_action('suffusion_after_begin_wrapper', 'suffusion_build_breadcrumb');
     add_action('suffusion_document_header', 'actionRPS_set_document_title');
     add_action('wp_enqueue_scripts', 'actionRPS_enqueue_styles');
@@ -92,14 +92,14 @@ function actionRPS_theme_setup()
 /**
  * This will add a menu item when a user is logged in.
  *
- * @param array $sorted_menu_items        
- * @param object $args        
+ * @param array $sorted_menu_items
+ * @param object $args
  * @return array
  */
 function filterRPS_members_menu($sorted_menu_items, $args)
 {
     global $user_ID;
-    
+
     if ($args->theme_location == 'main' && is_user_logged_in() && rps_is_paid_member($user_ID)) {
         $header_members = wp_get_nav_menu_items('Header_members');
         _wp_menu_item_classes_by_context($header_members);
@@ -118,11 +118,11 @@ function actionRPS_set_document_title()
 function filterRPS_comment_form_allow_comment($allow_comment)
 {
     global $user_ID;
-    
+
     if (is_user_logged_in() && rps_is_paid_member($user_ID)) {
         $allow_comment = true;
     }
-    
+
     return $allow_comment;
 }
 
@@ -141,7 +141,7 @@ function actionRPS_enqueue_styles()
     if (is_admin()) {
         return;
     }
-    
+
     global $suf_style_inheritance, $suffusion_theme_hierarchy, $suf_color_scheme, $suf_show_rounded_corners, $suf_autogen_css;
     if (! isset($suffusion_theme_hierarchy[$suf_color_scheme])) {
         if (@file_exists(get_stylesheet_directory() . '/skins/' . $suf_color_scheme . '/skin.css')) {
@@ -149,7 +149,7 @@ function actionRPS_enqueue_styles()
                 'style.css',
                 'skins/' . $suf_color_scheme . '/skin.css'
             );
-        } else 
+        } else
             if (@file_exists(get_template_directory() . '/skins/' . $suf_color_scheme . '/skin.css')) {
                 $sheets = array(
                     'style.css',
@@ -163,10 +163,10 @@ function actionRPS_enqueue_styles()
     } else {
         $sheets = $suffusion_theme_hierarchy[$suf_color_scheme];
     }
-    
+
     $template_path = get_template_directory();
     $stylesheet_path = get_stylesheet_directory();
-    
+
     // Core styles - either from Suffusion or from its child themes
     if ($suf_style_inheritance == 'nothing' && is_child_theme()) {
         // wp_enqueue_style('suffusion-theme', get_stylesheet_uri(), array(), SUFFUSION_THEME_VERSION);
@@ -174,11 +174,11 @@ function actionRPS_enqueue_styles()
         if (WP_LOCAL_DEV == true) {
             wp_enqueue_style('suffusion-theme-rps', get_stylesheet_directory_uri() . '/css/rps.css');
         } else {
-            wp_enqueue_style('suffusion-theme-rps', get_stylesheet_directory_uri() . '/css/rps-' . $style_version . '.css');
+            wp_enqueue_style('suffusion-theme-rps', get_stylesheet_directory_uri() . '/css/rps-' . $rps_style_version . '.css');
         }
     } else {
         wp_enqueue_style("suffusion-theme", get_template_directory_uri() . '/style.css', array(), SUFFUSION_THEME_VERSION);
-        
+
         $skin_count = 0;
         foreach ($sheets as $sheet) {
             if ($sheet == 'style.css') {
@@ -197,7 +197,7 @@ function actionRPS_enqueue_styles()
             ), SUFFUSION_THEME_VERSION);
         }
     }
-    
+
     global $suffusion, $suf_mosaic_zoom_library;
     if ($suffusion->get_content_layout() == 'mosaic') {
         if ($suf_mosaic_zoom_library == 'fancybox') {
@@ -206,7 +206,7 @@ function actionRPS_enqueue_styles()
             } else {
                 wp_enqueue_style("suffusion-slideshow", get_template_directory_uri() . '/scripts/fancybox/jquery.fancybox-1.3.4.css', array(), SUFFUSION_THEME_VERSION);
             }
-        } else 
+        } else
             if ($suf_mosaic_zoom_library == 'colorbox') {
                 if (@file_exists($stylesheet_path . '/scripts/colorbox/colorbox.css')) {
                     wp_enqueue_style("suffusion-slideshow", get_stylesheet_directory_uri() . '/scripts/colorbox/colorbox.css', array(), SUFFUSION_THEME_VERSION);
@@ -215,14 +215,14 @@ function actionRPS_enqueue_styles()
                 }
             }
     }
-    
+
     // Attachment styles. Loaded conditionally, because it uses a rather heavy image, which we don't want to load always.
     if (is_attachment()) {
         wp_enqueue_style('suffusion-attachment', get_template_directory_uri() . '/attachment-styles.css', array(
             'suffusion-theme'
         ), SUFFUSION_THEME_VERSION);
     }
-    
+
     // Rounded corners, loaded if the browser is not IE <= 8
     if ($suf_show_rounded_corners == 'show') {
         wp_register_style('suffusion-rounded', get_template_directory_uri() . '/rounded-corners.css', array(
@@ -231,7 +231,7 @@ function actionRPS_enqueue_styles()
         // $GLOBALS['wp_styles']->add_data('suffusion_rounded', 'conditional', '!IE'); // Doesn't work (yet). See http://core.trac.wordpress.org/ticket/16118. Instead we will filter style_loader_tag
         wp_enqueue_style('suffusion-rounded');
     }
-    
+
     // BP admin-bar, loaded only if this is a BP installation
     if (defined('BP_VERSION')) {
         if (substr(BP_VERSION, 0, 3) == '1.6') {
@@ -241,12 +241,12 @@ function actionRPS_enqueue_styles()
         }
         wp_enqueue_style('bp-admin-bar', apply_filters('bp_core_admin_bar_css', $stylesheet), array(), BP_VERSION);
     }
-    
+
     // IE-specific CSS, loaded if the browser is IE < 8
     wp_enqueue_style('suffusion-ie', get_template_directory_uri() . '/ie-fix.css', array(
         'suffusion-theme'
     ), SUFFUSION_THEME_VERSION);
-    
+
     // Custom styles, built based on selected options.
     $css_loaded = false;
     if ($suf_autogen_css == 'autogen-file') {
@@ -261,14 +261,14 @@ function actionRPS_enqueue_styles()
             $css_loaded = true;
         }
     }
-    
+
     if (($suf_autogen_css == 'autogen' || $suf_autogen_css == 'nogen-link') || (! $css_loaded && $suf_autogen_css == 'autogen-file')) {
         wp_enqueue_style('suffusion-generated?suffusion-css=css', home_url(), array(
             'suffusion-theme',
             'suffusion-ie'
         ), SUFFUSION_THEME_VERSION);
     }
-    
+
     // Custom styles, from included CSS files
     for ($i = 1; $i <= 3; $i ++) {
         $var = "suf_custom_css_link_{$i}";
@@ -302,7 +302,7 @@ function filterRPS_remove_cssjs_ver($src)
  *
  * Updated so you can add 'to_skip' argument, to skip the given post ID's
  *
- * @param array $args        
+ * @param array $args
  * @return array
  */
 function rps_suffusion_get_mag_section_queries($args = array())
@@ -312,7 +312,7 @@ function rps_suffusion_get_mag_section_queries($args = array())
     $meta_check_field = $args['meta_check_field'];
     $solos = array();
     $queries = array();
-    
+
     if ($meta_check_field) {
         // Previously the script was loading all posts into memory using get_posts and checking the meta field. This causes the code to crash if the # posts is high.
         $querystr = "SELECT wposts.*
@@ -324,7 +324,7 @@ function rps_suffusion_get_mag_section_queries($args = array())
 		AND wposts.post_type = 'post'
 		ORDER BY wposts.post_date DESC
 		";
-        
+
         $post_results = $wpdb->get_results($querystr, OBJECT);
         foreach ($post_results as $post) {
             setup_postdata($post);
@@ -339,7 +339,7 @@ function rps_suffusion_get_mag_section_queries($args = array())
         $queries[] = $solo_query;
     }
     $posts_to_ignore = array_merge($solos, $posts_to_skip);
-    
+
     $total_posts_to_get = (isset($args['total']) ? $args['total'] : $suf_mag_total_excerpts);
     $category_prefix = $args['category_prefix'];
     if ($category_prefix) {
@@ -382,16 +382,16 @@ function rps_suffusion_get_mag_section_queries($args = array())
 function rps_comment_form($args = array(), $post_id = null)
 {
     global $id;
-    
+
     if (null === $post_id)
         $post_id = $id;
     else
         $id = $post_id;
-    
+
     $commenter = wp_get_current_commenter();
     $user = wp_get_current_user();
     $user_identity = $user->exists() ? $user->display_name : '';
-    
+
     $req = get_option('require_name_email');
     $aria_req = ($req ? " aria-required='true'" : '');
     $fields = array(
@@ -399,7 +399,7 @@ function rps_comment_form($args = array(), $post_id = null)
         'email' => '<p class="comment-form-email"><label for="email">' . __('Email') . ($req ? ' <span class="required">*</span>' : '') . '</label> ' . '<input id="email" name="email" type="text" value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $aria_req . ' /></p>',
         'url' => '<p class="comment-form-url"><label for="url">' . __('Website') . '</label>' . '<input id="url" name="url" type="text" value="' . esc_attr($commenter['comment_author_url']) . '" size="30" /></p>'
     );
-    
+
     $required_text = sprintf(' ' . __('Required fields are marked %s'), '<span class="required">*</span>');
     $defaults = array(
         'fields' => apply_filters('comment_form_default_fields', $fields),
@@ -415,9 +415,9 @@ function rps_comment_form($args = array(), $post_id = null)
         'cancel_reply_link' => __('Cancel reply'),
         'label_submit' => __('Post Comment')
     );
-    
+
     $args = wp_parse_args($args, apply_filters('comment_form_defaults', $defaults));
-    
+
     ?>
 		<?php if ( comments_open( $post_id ) ) : ?>
 			<?php do_action( 'comment_form_before' ); ?>
