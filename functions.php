@@ -19,7 +19,6 @@ add_filter('wp_nav_menu_objects', 'filterRPS_members_menu', 10, 2);
 add_filter('rps_comment_form_allow_comment','filterRPS_comment_form_allow_comment',10,1);
 add_filter( 'style_loader_src', 'filterRPS_remove_cssjs_ver', 10, 2 );
 
-
 /**
  * Here you can define any additional functions that you are hooking in the
  * theme sectup function.

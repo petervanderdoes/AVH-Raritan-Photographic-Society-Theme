@@ -4918,6 +4918,11 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(to bottom, #6d8ce8 0%, #003599 100%);
 }
 
+/* line 17, ../sass/partials/_general.scss */
+.hide {
+  display: none;
+}
+
 /* line 1, ../sass/partials/_header.scss */
 #header {
   min-height: 190px;
