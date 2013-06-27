@@ -170,7 +170,7 @@ function actionRPS_enqueue_styles()
     // Core styles - either from Suffusion or from its child themes
     if ($suf_style_inheritance == 'nothing' && is_child_theme()) {
         // wp_enqueue_style('suffusion-theme', get_stylesheet_uri(), array(), SUFFUSION_THEME_VERSION);
-        $rps_style_version = '1';
+        $rps_style_version = '7';
         if (WP_LOCAL_DEV == true) {
             wp_enqueue_style('suffusion-theme-rps', get_stylesheet_directory_uri() . '/css/rps.css');
         } else {
