@@ -19,22 +19,22 @@ add_filter('em_location_output_placeholder', 'filterRPS_EM_location_output_place
  * Current custom conditional placeholders:
  * - has_speaker
  *
- * @param boolean $show_condition
+ * @param boolean $show_condition        
  * @param string $condition
  *        The name of the conditional placeholder.
  * @param string $match
  *        The string with conditional placeholder from opening to closing placeholder.
- * @param object $EM_Event
+ * @param object $EM_Event        
  * @return boolean
  */
-function filterRPS_EM_output_show_condition ($show_condition, $condition, $match, $EM_Event)
+function filterRPS_EM_output_show_condition($show_condition, $condition, $match, $EM_Event)
 {
-	if ( is_object($EM_Event) && $condition == 'has_speaker' ) {
-		if ( isset($EM_Event->event_attributes['Speaker']) && ( strlen($EM_Event->event_attributes['Speaker']) > 0 ) ) {
-			$show_condition = TRUE;
-		}
-	}
-	return $show_condition;
+    if (is_object($EM_Event) && $condition == 'has_speaker') {
+        if (isset($EM_Event->event_attributes['Speaker']) && (strlen($EM_Event->event_attributes['Speaker']) > 0)) {
+            $show_condition = TRUE;
+        }
+    }
+    return $show_condition;
 }
 
 /**
@@ -43,110 +43,110 @@ function filterRPS_EM_output_show_condition ($show_condition, $condition, $match
  * By default the widget only shows the given categories, we prefer to show the children of the given categories as well.
  * This is more compliant with the default WordPress behavior.
  *
- * @param array $instance
+ * @param array $instance        
  * @return array
  */
-function filterRPS_EM_get_child_categories ($instance)
+function filterRPS_EM_get_child_categories($instance)
 {
-	if ( $instance['category'] != '0' ) {
-		$instance['category'] = rps_EM_get_children_of_categories($instance['category']);
-	}
-	return $instance;
+    if ($instance['category'] != '0') {
+        $instance['category'] = rps_EM_get_children_of_categories($instance['category']);
+    }
+    return $instance;
 }
 
-function filterRPS_EM_event_output_placeholder ($replace, $em, $full_result, $target)
+function filterRPS_EM_event_output_placeholder($replace, $em, $full_result, $target)
 {
-	$categories = $em->get_categories()->categories;
-
-	if ( rps_EM_is_rps_category($categories) ) {
-		switch ( $full_result )
-		{
-			case '#_SCHEMALINK':
-				$event_link = esc_url($em->get_permalink());
-				$replace = '<meta itemprop="url" content="' . $event_link . '">';
-				$replace .= '<meta itemprop="name" content="' .esc_attr($em->event_name) . '">';
-				break;
-			case '#_SCHEMADATE':
-				$replace = '<meta itemprop="startDate" content="' . date('c', $em->start) . '">';
-				$replace .= '<meta itemprop="endDate" content="' . date('c', $em->end) . '">';
-				break;
-		}
-	}
-	return $replace;
+    $categories = $em->get_categories()->categories;
+    
+    if (rps_EM_is_rps_category($categories)) {
+        switch ($full_result) {
+            case '#_SCHEMALINK':
+                $event_link = esc_url($em->get_permalink());
+                $replace = '<meta itemprop="url" content="' . $event_link . '">';
+                $replace .= '<meta itemprop="name" content="' . esc_attr($em->event_name) . '">';
+                break;
+            case '#_SCHEMADATE':
+                $replace = '<meta itemprop="startDate" content="' . date('c', $em->start) . '">';
+                $replace .= '<meta itemprop="endDate" content="' . date('c', $em->end) . '">';
+                break;
+        }
+    }
+    return $replace;
 }
 
-function filterRPS_EM_location_output_placeholder ($replace, $em, $full_result, $target) {
-	switch ( $full_result )
-	{
-	case '#_SCHEMAPLACE':
-		$replace = '<span itemprop="location" itemscope itemtype="http://schema.org/EventVenue">';
-		$replace .= '<meta itemprop="name" content="' . $em->location_name . '">';
-		$replace .= '<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">';
-		$replace .= '<meta itemprop="streetAddress" content="' . $em->location_address . '">';
-		$replace .= '<meta itemprop="addressLocality" content="' . $em->location_town . '">';
-		$replace .= '<meta itemprop="addressRegion" content=">' . $em->location_state . '">';
-		$replace .= '</span></span>';
-		break;
-	}
-	return $replace;
+function filterRPS_EM_location_output_placeholder($replace, $em, $full_result, $target)
+{
+    switch ($full_result) {
+        case '#_SCHEMAPLACE':
+            $replace = '<span itemprop="location" itemscope itemtype="http://schema.org/EventVenue">';
+            $replace .= '<meta itemprop="name" content="' . $em->location_name . '">';
+            $replace .= '<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">';
+            $replace .= '<meta itemprop="streetAddress" content="' . $em->location_address . '">';
+            $replace .= '<meta itemprop="addressLocality" content="' . $em->location_town . '">';
+            $replace .= '<meta itemprop="addressRegion" content=">' . $em->location_state . '">';
+            $replace .= '</span></span>';
+            break;
+    }
+    return $replace;
 }
+
 /**
  * Get all children of the given categories
  *
- * @param array|string $categories
+ * @param array|string $categories        
  * @return array
  */
-function rps_EM_get_children_of_categories ($categories)
+function rps_EM_get_children_of_categories($categories)
 {
-	$all_categories = array();
-	if ( !is_array($categories) ) {
-		$categories = explode(',', $categories);
-	}
-	foreach ( $categories as $category_id ) {
-		$all_categories[] = (int) $category_id;
-		$children = get_term_children($category_id, EM_TAXONOMY_CATEGORY);
-		$all_categories = array_merge($children, $all_categories);
-	}
-	$all_categories = array_unique($all_categories);
-	return $all_categories;
+    $all_categories = array();
+    if (! is_array($categories)) {
+        $categories = explode(',', $categories);
+    }
+    foreach ($categories as $category_id) {
+        $all_categories[] = (int) $category_id;
+        $children = get_term_children($category_id, EM_TAXONOMY_CATEGORY);
+        $all_categories = array_merge($children, $all_categories);
+    }
+    $all_categories = array_unique($all_categories);
+    return $all_categories;
 }
 
-function rps_EM_list_events ($parent_category)
+function rps_EM_list_events($parent_category)
 {
-	$categories = get_term_children($parent_category, EM_TAXONOMY_CATEGORY);
-	// @format_off
-	$arg = array(
-		'title' => __('Events', 'dbem'),
-		'scope' => 'future',
-		'order' => 'ASC',
-		'limit' => 5,
-		'category' => $categories,
-		'format_header' => '<table><tbody>',
-		'format' => '<tr itemtype="http://schema.org/Event" itemscope=""><td style="white-space: nowrap; vertical-align: top;">#_EVENTDATES -&nbsp;</td><td>#_CATEGORYNAME: #_EVENTLINK #_SCHEMALINK #_SCHEMADATE #_SCHEMAPLACE</td></tr>',
-		'format_footer' => '</tbody></table>',
-		'nolistwrap' => false,
-		'orderby' => 'event_start_date,event_start_time,event_name',
-		'all_events' => 0,
-		'all_events_text' => __('all events', 'dbem'),
-		'no_events_text' => __('No events', 'dbem')
-	);
-	// @format_on
-	return EM_Events::output($arg);
+    $categories = get_term_children($parent_category, EM_TAXONOMY_CATEGORY);
+    // @format_off
+    $arg = array(
+        'title' => __('Events', 'dbem'),
+        'scope' => 'future',
+        'order' => 'ASC',
+        'limit' => 5,
+        'category' => $categories,
+        'format_header' => '<table><tbody>',
+        'format' => '<tr itemtype="http://schema.org/Event" itemscope=""><td style="white-space: nowrap; vertical-align: top;">#_EVENTDATES -&nbsp;</td><td>#_CATEGORYNAME: #_EVENTLINK #_SCHEMALINK #_SCHEMADATE #_SCHEMAPLACE</td></tr>',
+        'format_footer' => '</tbody></table>',
+        'nolistwrap' => false,
+        'orderby' => 'event_start_date,event_start_time,event_name',
+        'all_events' => 0,
+        'all_events_text' => __('all events', 'dbem'),
+        'no_events_text' => __('No events', 'dbem')
+    );
+    // @format_on
+    return EM_Events::output($arg);
 }
 
-function rps_EM_is_rps_category ($categories)
+function rps_EM_is_rps_category($categories)
 {
-	static $rps_categories=null;
-
-	if ($rps_categories === null ){
-		$rps_categories = rps_EM_get_children_of_categories(17);
-	}
-	$in_rps_categories = false;
-	foreach ( $categories as $category ) {
-		if ( in_array($category->id, $rps_categories) ) {
-			$in_rps_categories = true;
-			break;
-		}
-	}
-	return $in_rps_categories;
+    static $rps_categories = null;
+    
+    if ($rps_categories === null) {
+        $rps_categories = rps_EM_get_children_of_categories(17);
+    }
+    $in_rps_categories = false;
+    foreach ($categories as $category) {
+        if (in_array($category->id, $rps_categories)) {
+            $in_rps_categories = true;
+            break;
+        }
+    }
+    return $in_rps_categories;
 }

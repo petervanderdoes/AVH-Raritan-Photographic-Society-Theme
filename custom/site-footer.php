@@ -9,14 +9,14 @@
  */
 global $suf_footer_left, $suf_footer_center, $suf_footer_layout_style;
 $display = apply_filters('suffusion_can_display_site_footer', true);
-if ( !$display ) {
-	return;
+if (! $display) {
+    return;
 }
 ?>
 <footer>
 <?php
-if ( $suf_footer_layout_style != 'in-align' ) {
-	?>
+if ($suf_footer_layout_style != 'in-align') {
+    ?>
 	<div id='page-footer'>
 		<div class='col-control'>
 	<?php
@@ -32,8 +32,8 @@ if ( $suf_footer_layout_style != 'in-align' ) {
 				</table>
 			</div>
 <?php
-if ( $suf_footer_layout_style != 'in-align' ) {
-	?>
+if ($suf_footer_layout_style != 'in-align') {
+    ?>
 		</div>
 	</div>
 	<?php
