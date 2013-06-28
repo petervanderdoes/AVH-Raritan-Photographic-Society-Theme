@@ -167,35 +167,11 @@ function actionRPS_enqueue_styles()
     $template_path = get_template_directory();
     $stylesheet_path = get_stylesheet_directory();
 
-    // Core styles - either from Suffusion or from its child themes
-    if ($suf_style_inheritance == 'nothing' && is_child_theme()) {
-        // wp_enqueue_style('suffusion-theme', get_stylesheet_uri(), array(), SUFFUSION_THEME_VERSION);
-        $rps_style_version = '7';
-        if (WP_LOCAL_DEV == true) {
-            wp_enqueue_style('suffusion-theme-rps', get_stylesheet_directory_uri() . '/css/rps.css');
-        } else {
-            wp_enqueue_style('suffusion-theme-rps', get_stylesheet_directory_uri() . '/css/rps-' . $rps_style_version . '.css');
-        }
+    $rps_style_version = '7';
+    if (WP_LOCAL_DEV == true) {
+        wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps.css');
     } else {
-        wp_enqueue_style("suffusion-theme", get_template_directory_uri() . '/style.css', array(), SUFFUSION_THEME_VERSION);
-
-        $skin_count = 0;
-        foreach ($sheets as $sheet) {
-            if ($sheet == 'style.css') {
-                continue;
-            }
-            if (file_exists($template_path . "/$sheet")) {
-                $skin_count ++;
-                wp_enqueue_style("suffusion-theme-skin-{$skin_count}", get_template_directory_uri() . "/$sheet", array(
-                    'suffusion-theme'
-                ), SUFFUSION_THEME_VERSION);
-            }
-        }
-        if (is_child_theme()) {
-            wp_enqueue_style('suffusion-child', get_stylesheet_uri(), array(
-                'suffusion-theme'
-            ), SUFFUSION_THEME_VERSION);
-        }
+        wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps-' . $rps_style_version . '.css');
     }
 
     global $suffusion, $suf_mosaic_zoom_library;
