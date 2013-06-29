@@ -56,3 +56,7 @@ input[type="submit"] {
     @include gradient-buttons-active;
   }
 }
+
+input[type="submit"].searchsubmit {
+  background: image-url("search-button-rblue.png", false, false);
+}
