@@ -19,12 +19,12 @@ add_filter('em_location_output_placeholder', 'filterRPS_EM_location_output_place
  * Current custom conditional placeholders:
  * - has_speaker
  *
- * @param boolean $show_condition
+ * @param boolean $show_condition        
  * @param string $condition
  *        The name of the conditional placeholder.
  * @param string $match
  *        The string with conditional placeholder from opening to closing placeholder.
- * @param object $EM_Event
+ * @param object $EM_Event        
  * @return boolean
  */
 function filterRPS_EM_output_show_condition($show_condition, $condition, $match, $EM_Event)
@@ -43,7 +43,7 @@ function filterRPS_EM_output_show_condition($show_condition, $condition, $match,
  * By default the widget only shows the given categories, we prefer to show the children of the given categories as well.
  * This is more compliant with the default WordPress behavior.
  *
- * @param array $instance
+ * @param array $instance        
  * @return array
  */
 function filterRPS_EM_get_child_categories($instance)
@@ -57,7 +57,7 @@ function filterRPS_EM_get_child_categories($instance)
 function filterRPS_EM_event_output_placeholder($replace, $em, $full_result, $target)
 {
     $categories = $em->get_categories()->categories;
-
+    
     if (rps_EM_is_rps_category($categories)) {
         switch ($full_result) {
             case '#_SCHEMALINK':
@@ -93,7 +93,7 @@ function filterRPS_EM_location_output_placeholder($replace, $em, $full_result, $
 /**
  * Get all children of the given categories
  *
- * @param array|string $categories
+ * @param array|string $categories        
  * @return array
  */
 function rps_EM_get_children_of_categories($categories)
@@ -114,7 +114,7 @@ function rps_EM_get_children_of_categories($categories)
 function rps_EM_list_events($parent_category)
 {
     $categories = get_term_children($parent_category, EM_TAXONOMY_CATEGORY);
-    // @format_off
+    // @formatter:off
     $arg = array(
         'title' => __('Events', 'dbem'),
         'scope' => 'future',
@@ -130,14 +130,14 @@ function rps_EM_list_events($parent_category)
         'all_events_text' => __('all events', 'dbem'),
         'no_events_text' => __('No events', 'dbem')
     );
-    // @format_on
+    // @formatter:on
     return EM_Events::output($arg);
 }
 
 function rps_EM_is_rps_category($categories)
 {
     static $rps_categories = null;
-
+    
     if ($rps_categories === null) {
         $rps_categories = rps_EM_get_children_of_categories(17);
     }

@@ -35,9 +35,7 @@ $entity_order = $suf_nav_entity_order;
 global $$suffusion_page_option, $$suffusion_cats_option, $$suffusion_links_option, $$suffusion_menus_option;
 
 $selected_menus = $$suffusion_menus_option;
-$menu_args = array(
-    'sort_column' => 'menu_order'
-);
+$menu_args = array('sort_column' => 'menu_order');
 
 if ($menus_all_sel == 'selected') {
     if (trim($selected_menus) == '') {
@@ -74,12 +72,7 @@ $ret_str = $home_link;
 foreach ($entity_order as $entity) {
     if ($entity == 'pages') {
         $selected_pages = $$suffusion_page_option;
-        $page_args = array(
-            'sort_column' => 'menu_order,post_title',
-            'child_of' => 0,
-            'echo' => 0,
-            'suffusion_nav_display' => $pages_style
-        );
+        $page_args = array('sort_column' => 'menu_order,post_title', 'child_of' => 0, 'echo' => 0, 'suffusion_nav_display' => $pages_style);
         
         if ($page_all_sel == 'selected') {
             if (trim($selected_pages) == '') {
@@ -109,13 +102,7 @@ foreach ($entity_order as $entity) {
         $ret_str .= $page_str;
     } else 
         if ($entity == 'categories') {
-            $cat_args = array(
-                'orderby' => 'name',
-                'order' => 'ASC',
-                'child_of' => 0,
-                'echo' => 0,
-                'current_category' => 0
-            );
+            $cat_args = array('orderby' => 'name', 'order' => 'ASC', 'child_of' => 0, 'echo' => 0, 'current_category' => 0);
             
             if (function_exists('mycategoryorder')) {
                 $cat_args['orderby'] = 'order';
@@ -151,15 +138,7 @@ foreach ($entity_order as $entity) {
             $ret_str .= $cat_str;
         } else 
             if ($entity == 'links') {
-                $link_args = array(
-                    'orderby' => 'name',
-                    'order' => 'ASC',
-                    'limit' => - 1,
-                    'echo' => 0,
-                    'categorize' => 0,
-                    'title_before' => '',
-                    'title_after' => ''
-                );
+                $link_args = array('orderby' => 'name', 'order' => 'ASC', 'limit' => - 1, 'echo' => 0, 'categorize' => 0, 'title_before' => '', 'title_after' => '');
                 if (function_exists('mylinkorder')) {
                     $link_args['orderby'] = 'order';
                 }
@@ -195,14 +174,7 @@ foreach ($entity_order as $entity) {
             } else 
                 if ((strlen($entity) >= 5 && substr($entity, 0, 5) == 'menu-')) {
                     if (count($menus_to_show) != 0) {
-                        $menu_print_args = array(
-                            'container' => '',
-                            'menu_class' => 'menu',
-                            'echo' => false,
-                            'depth' => 0,
-                            'theme_location' => $suffusion_menu_location,
-                            'items_wrap' => '%3$s'
-                        );
+                        $menu_print_args = array('container' => '', 'menu_class' => 'menu', 'echo' => false, 'depth' => 0, 'theme_location' => $suffusion_menu_location, 'items_wrap' => '%3$s');
                         if (current_theme_supports('mega-menus')) {
                             $menu_print_args['walker'] = new Suffusion_MM_Walker();
                         }

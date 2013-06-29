@@ -103,12 +103,12 @@ foreach ($queries as $query) {
 if ($total > 0) {
     global $suf_mag_excerpts_per_row, $suf_mag_excerpts_title, $suf_mag_total_excerpts;
     echo "<section class='suf-mag-excerpts suf-mag-excerpts-$suf_mag_excerpts_per_row'>\n";
-
+    
     if (trim($suf_mag_excerpts_title) != '') {
         global $suf_mag_excerpts_main_title_alignment;
         echo "<div class='suf-mag-excerpts-header $suf_mag_excerpts_main_title_alignment'>" . stripslashes($suf_mag_excerpts_title) . "</div>";
     }
-
+    
     $ctr = 0;
     $cols_per_row = $suf_mag_excerpts_per_row;
     foreach ($queries as $query) {
@@ -124,40 +124,40 @@ if ($total > 0) {
                         $cols_per_row = $total - $ctr;
                     }
                 }
-
+                
                 global $post, $suf_mag_excerpt_full_story_text, $suf_mag_excerpts_images_enabled, $suf_mag_excerpt_full_story_position, $suf_mag_excerpt_title_alignment;
                 $post_to_skip[] = $post->ID;
                 $categories = get_the_category($post->ID);
                 if (empty($categories))
                     $categories = apply_filters('the_category', __('Uncategorized'), '', '');
-
+                
                 $category = $categories[0];
                 $category_link = '<a href="' . esc_url(get_category_link($category->term_id)) . '" title="' . esc_attr(sprintf(__("View all articles in %s"), $category->name)) . '" rel="category tag">';
                 $category_text = '<h3>' . $category_link . $category->name . '</h3></a>';
-
+                
                 echo "\n\t<div class='suf-mag-excerpt entry-content suf-tile-{$cols_per_row}c $suf_mag_excerpt_full_story_position'>\n";
-
+                
                 echo "\t\t<div class='suf-gradient suf-tile-topmost'>" . $category_text . "</div>\n";
-
+                
                 echo "\t\t<h2 class='suf-mag-excerpt-title $suf_mag_excerpt_title_alignment'><a class='entry-title' rel='bookmark' href='" . get_permalink($post->ID) . "'>" . get_the_title($post->ID) . "</a></h2>\n";
-
+                
                 echo "\t\t<div class='suf-mag-excerpt-text entry-content'>\n";
                 suffusion_excerpt();
                 echo "\t\t</div>\n";
-
+                
                 if (trim($suf_mag_excerpt_full_story_text)) {
                     echo "\t<div class='suf-mag-excerpt-footer'>\n";
                     echo "\t\t<a href='" . get_permalink($post->ID) . "' class='suf-mag-excerpt-full-story button'>$suf_mag_excerpt_full_story_text</a>";
                     echo "\t</div>\n";
                 }
-
+                
                 echo "\t</div>";
                 $ctr ++;
             }
             wp_reset_postdata();
         }
     }
-
+    
     echo "</section>\n";
 }
 
@@ -202,7 +202,7 @@ if ($total > 0) {
                 $categories = get_the_category($post->ID);
                 if (empty($categories))
                     $categories = apply_filters('the_category', __('Uncategorized'), '', '');
-
+                
                 $category = $categories[0];
                 $category_link = '<a href="' . esc_url(get_category_link($category->term_id)) . '" title="' . esc_attr(sprintf(__("View all articles in %s"), $category->name)) . '" rel="category tag">';
                 $category_text = $category_link . $category->name . '</a>';
