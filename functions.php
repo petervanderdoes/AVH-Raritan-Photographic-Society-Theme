@@ -64,17 +64,6 @@ function rps_is_plugin_active($plugin)
 }
 
 /**
- * Check by user ID if user is a paid member
- *
- * @param int $user_ID
- * @return boolean
- */
-function rps_is_paid_member($user_ID)
-{
-    return user_can($user_ID, 'access_s2member_level1');
-}
-
-/**
  * Use this function to add/remove hooks for Suffusion's execution, or to
  * disable theme functionality
  */
