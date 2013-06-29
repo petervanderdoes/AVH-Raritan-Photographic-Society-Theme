@@ -4227,209 +4227,198 @@ a.dbx-toggle:visited {
   background-color: #f8f8ff;
 }
 
-/* search form */
-/* line 53, ../sass/suffusion/_light-royal-blue.scss */
-input[type="submit"].searchsubmit {
-  background: url(../../images/search-button-rblue.png) no-repeat 0 0;
-}
-
-/* line 58, ../sass/suffusion/_light-royal-blue.scss */
-#ie6 #right-header-widgets .searchsubmit, #ie6 #left-header-widgets .searchsubmit, #ie6 #top-bar-right-widgets .searchsubmit, #ie6 #top-bar-left-widgets .searchsubmit, #ie6 #sidebar .searchsubmit, #ie6 #sidebar-2 .searchsubmit, #ie6 #sidebar-b .searchsubmit, #ie6 #sidebar-2-b .searchsubmit, #ie6 #horizontal-outer-widgets-1 .searchsubmit, #ie6 #horizontal-outer-widgets-2 .searchsubmit {
-  background: url(../../images/search-button-rblue.gif) no-repeat 0 0;
-}
-
 /* content */
-/* line 66, ../sass/suffusion/_light-royal-blue.scss */
+/* line 54, ../sass/suffusion/_light-royal-blue.scss */
 .page-links span {
   color: royalblue;
 }
-/* line 69, ../sass/suffusion/_light-royal-blue.scss */
+/* line 57, ../sass/suffusion/_light-royal-blue.scss */
 .page-links > span, .page-links a:hover {
   color: royalblue;
   color: #fff;
 }
 
 /* next & previous page navigation */
-/* line 77, ../sass/suffusion/_light-royal-blue.scss */
+/* line 65, ../sass/suffusion/_light-royal-blue.scss */
 .page-nav a:hover, .post-nav a:hover {
   color: royalblue;
 }
 
 /* next & previous post navigation */
-/* line 84, ../sass/suffusion/_light-royal-blue.scss */
+/* line 72, ../sass/suffusion/_light-royal-blue.scss */
 .suf-page-nav a {
   border-color: royalblue;
   color: royalblue;
 }
-/* line 87, ../sass/suffusion/_light-royal-blue.scss */
+/* line 75, ../sass/suffusion/_light-royal-blue.scss */
 .suf-page-nav a:visited {
   border-color: royalblue;
   color: royalblue;
 }
-/* line 92, ../sass/suffusion/_light-royal-blue.scss */
+/* line 80, ../sass/suffusion/_light-royal-blue.scss */
 .suf-page-nav span {
   border-color: royalblue;
   color: royalblue;
 }
-/* line 96, ../sass/suffusion/_light-royal-blue.scss */
+/* line 84, ../sass/suffusion/_light-royal-blue.scss */
 .suf-page-nav a:hover {
   background-color: royalblue;
 }
-/* line 99, ../sass/suffusion/_light-royal-blue.scss */
+/* line 87, ../sass/suffusion/_light-royal-blue.scss */
 .suf-page-nav span.current {
   background-color: royalblue;
   color: #ffffff;
 }
 
 /* Comments  */
-/* line 108, ../sass/suffusion/_light-royal-blue.scss */
+/* line 96, ../sass/suffusion/_light-royal-blue.scss */
 h3#comments, h3.comments, h3#respond, h3.respond {
   background-color: #f8f8ff;
 }
 
-/* line 113, ../sass/suffusion/_light-royal-blue.scss */
+/* line 101, ../sass/suffusion/_light-royal-blue.scss */
 #reply-title {
   background-color: #f8f8ff;
 }
 
 /* comment list */
-/* line 120, ../sass/suffusion/_light-royal-blue.scss */
+/* line 108, ../sass/suffusion/_light-royal-blue.scss */
 .commentlist cite {
   color: royalblue;
 }
-/* line 122, ../sass/suffusion/_light-royal-blue.scss */
+/* line 110, ../sass/suffusion/_light-royal-blue.scss */
 .commentlist cite a {
   color: royalblue;
 }
-/* line 124, ../sass/suffusion/_light-royal-blue.scss */
+/* line 112, ../sass/suffusion/_light-royal-blue.scss */
 .commentlist cite a:visited {
   color: royalblue;
 }
-/* line 129, ../sass/suffusion/_light-royal-blue.scss */
+/* line 117, ../sass/suffusion/_light-royal-blue.scss */
 .commentlist li.alt {
   background-color: #f8f8ff;
 }
 
-/* line 135, ../sass/suffusion/_light-royal-blue.scss */
+/* line 123, ../sass/suffusion/_light-royal-blue.scss */
 .comment-response-types span {
   color: royalblue;
 }
-/* line 138, ../sass/suffusion/_light-royal-blue.scss */
+/* line 126, ../sass/suffusion/_light-royal-blue.scss */
 .comment-response-types > span, .comment-response-types a:hover {
   background-color: royalblue;
   color: #fff;
 }
 
 /* sidebar */
-/* line 162, ../sass/suffusion/_light-royal-blue.scss */
+/* line 150, ../sass/suffusion/_light-royal-blue.scss */
 .suf-widget h3 {
   color: #444;
 }
-/* line 164, ../sass/suffusion/_light-royal-blue.scss */
+/* line 152, ../sass/suffusion/_light-royal-blue.scss */
 .suf-widget h3 a {
   color: #444;
 }
-/* line 166, ../sass/suffusion/_light-royal-blue.scss */
+/* line 154, ../sass/suffusion/_light-royal-blue.scss */
 .suf-widget h3 a:visited {
   color: #444;
 }
-/* line 170, ../sass/suffusion/_light-royal-blue.scss */
+/* line 158, ../sass/suffusion/_light-royal-blue.scss */
 .suf-widget h3.scheme {
   color: #fff;
 }
-/* line 172, ../sass/suffusion/_light-royal-blue.scss */
+/* line 160, ../sass/suffusion/_light-royal-blue.scss */
 .suf-widget h3.scheme a {
   color: #fff;
 }
-/* line 174, ../sass/suffusion/_light-royal-blue.scss */
+/* line 162, ../sass/suffusion/_light-royal-blue.scss */
 .suf-widget h3.scheme a:visited {
   color: #fff;
 }
 
-/* line 182, ../sass/suffusion/_light-royal-blue.scss */
+/* line 170, ../sass/suffusion/_light-royal-blue.scss */
 .suf-widget a:hover, .suf-widget a:focus, .suf-widget a:active {
   color: royalblue;
 }
 
-/* line 188, ../sass/suffusion/_light-royal-blue.scss */
+/* line 176, ../sass/suffusion/_light-royal-blue.scss */
 .warea a:hover, .warea a:focus, .warea a:active {
   color: royalblue;
 }
 
-/* line 193, ../sass/suffusion/_light-royal-blue.scss */
+/* line 181, ../sass/suffusion/_light-royal-blue.scss */
 .tab-box div.sbtab-content-categories ul li, .widget_categories ul li {
   background-image: url(../../images/icons/folderbl16.png);
 }
 
 /* meta */
-/* line 199, ../sass/suffusion/_light-royal-blue.scss */
+/* line 187, ../sass/suffusion/_light-royal-blue.scss */
 div.sbtab-content-meta .rss, .suf-widget .rss, .suf-flat-widget .rss, .suf-panel-widget .rss, .widget_meta .rss {
   background-image: url(../../images/icons/rssrblue16.png);
 }
 
-/* line 203, ../sass/suffusion/_light-royal-blue.scss */
+/* line 191, ../sass/suffusion/_light-royal-blue.scss */
 .widget_calendar td.with-posts {
   background: #0052a4;
 }
-/* line 205, ../sass/suffusion/_light-royal-blue.scss */
+/* line 193, ../sass/suffusion/_light-royal-blue.scss */
 .widget_calendar td.with-posts a {
   color: #fff;
 }
 
 /* Comment Form */
-/* line 212, ../sass/suffusion/_light-royal-blue.scss */
+/* line 200, ../sass/suffusion/_light-royal-blue.scss */
 #commentform label.fancy {
   background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
   color: #fff;
 }
 
 /* These settings are for common plugins */
-/* line 220, ../sass/suffusion/_light-royal-blue.scss */
+/* line 208, ../sass/suffusion/_light-royal-blue.scss */
 .wp-pagenavi a {
   border-color: royalblue;
   color: royalblue;
 }
-/* line 223, ../sass/suffusion/_light-royal-blue.scss */
+/* line 211, ../sass/suffusion/_light-royal-blue.scss */
 .wp-pagenavi a:visited {
   border-color: royalblue;
   color: royalblue;
 }
-/* line 228, ../sass/suffusion/_light-royal-blue.scss */
+/* line 216, ../sass/suffusion/_light-royal-blue.scss */
 .wp-pagenavi span {
   border-color: royalblue;
   color: royalblue;
 }
-/* line 231, ../sass/suffusion/_light-royal-blue.scss */
+/* line 219, ../sass/suffusion/_light-royal-blue.scss */
 .wp-pagenavi span.current {
   background-color: royalblue;
   color: #fff;
 }
-/* line 236, ../sass/suffusion/_light-royal-blue.scss */
+/* line 224, ../sass/suffusion/_light-royal-blue.scss */
 .wp-pagenavi a:hover {
   background-color: royalblue;
   color: #fff;
 }
 
 /* Magazine */
-/* line 244, ../sass/suffusion/_light-royal-blue.scss */
+/* line 232, ../sass/suffusion/_light-royal-blue.scss */
 .exif-button {
   background: #0052a4 url(../../images/menu-dark.jpg) repeat-x top left;
   border-color: #c0c0c0;
 }
-/* line 247, ../sass/suffusion/_light-royal-blue.scss */
+/* line 235, ../sass/suffusion/_light-royal-blue.scss */
 .exif-button a {
   color: #fff;
 }
-/* line 250, ../sass/suffusion/_light-royal-blue.scss */
+/* line 238, ../sass/suffusion/_light-royal-blue.scss */
 .exif-button .open .icon {
   background-position: -48px -96px;
 }
-/* line 253, ../sass/suffusion/_light-royal-blue.scss */
+/* line 241, ../sass/suffusion/_light-royal-blue.scss */
 .exif-button .close .icon {
   background-position: -64px -96px;
 }
 
-/* line 258, ../sass/suffusion/_light-royal-blue.scss */
+/* line 246, ../sass/suffusion/_light-royal-blue.scss */
 .mm-warea {
   background: #fff;
   border: 1px solid #b6d1e4;
@@ -5807,6 +5796,11 @@ input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:fo
   background: -moz-linear-gradient(top, #6d8ce8 0%, #003599 100%);
   background: -o-linear-gradient(top, #6d8ce8 0%, #003599 100%);
   background: linear-gradient(to bottom, #6d8ce8 0%, #003599 100%);
+}
+
+/* line 60, ../sass/partials/_forms.scss */
+input[type="submit"].searchsubmit {
+  background: url('../images/search-button-rblue.png');
 }
 
 /* line 1, ../sass/partials/_events-manager.scss */

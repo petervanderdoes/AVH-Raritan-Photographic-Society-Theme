@@ -48,18 +48,6 @@ a {
   background-color: #f8f8ff;
 }
 
-/* search form */
-
-input[type="submit"].searchsubmit {
-  background: url(../../images/search-button-rblue.png) no-repeat 0 0;
-}
-
-#ie6 {
-  #right-header-widgets .searchsubmit, #left-header-widgets .searchsubmit, #top-bar-right-widgets .searchsubmit, #top-bar-left-widgets .searchsubmit, #sidebar .searchsubmit, #sidebar-2 .searchsubmit, #sidebar-b .searchsubmit, #sidebar-2-b .searchsubmit, #horizontal-outer-widgets-1 .searchsubmit, #horizontal-outer-widgets-2 .searchsubmit {
-    background: url(../../images/search-button-rblue.gif) no-repeat 0 0;
-  }
-}
-
 /* content */
 
 .page-links {

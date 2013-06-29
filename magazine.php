@@ -29,28 +29,32 @@ if (is_array($suf_mag_entity_order)) {
 } else {
     $sequence = explode(',', $suf_mag_entity_order);
 }
+$categories = suffusion_get_allowed_categories($category_prefix);
+if (is_array($categories) && count($categories) > 0) {
+    $cats = array();
+    foreach ($categories as $category) {
+        $cats[] = $category->cat_ID;
+    }
+    $query_cats = implode(",", array_values($cats));
+}
 
 $sticky = get_option('sticky_posts');
 if (is_numeric($sticky[0])) {
     rsort($sticky);
-    $amount_of_stickies_to_display = 4;
+    $amount_of_stickies_to_display = 2;
     $sticky = array_slice($sticky, 0, $amount_of_stickies_to_display);
     /* Query sticky posts */
-    $articles = new WP_Query(array(
-        'post__in' => $sticky,
-        'caller_get_posts' => 1
-    ));
+    $articles = new WP_Query(array('post__in' => $sticky, 'ignore_sticky_posts' => 1));
 } else {
-    $articles = new WP_Query(array(
-        'showposts' => 1
-    ));
+    $articles = new WP_Query(array('posts_per_page' => 4, 'cat' => $query_cats));
 }
+
+$posts_in_wide_format = 0;
+$max_wide_posts = 4;
 while ($articles->have_posts()) {
     $articles->the_post();
     $post_to_skip[] = $post->ID;
-    echo '<article class="' . join(' ', get_post_class(array(
-        'excerpt'
-    ))) . '" id="post-' . $post->ID . '">';
+    echo '<article class="' . join(' ', get_post_class(array('excerpt'))) . '" id="post-' . $post->ID . '">';
     suffusion_after_begin_post();
     echo '<div class="entry-container bottom fix">';
     echo '<div class="entry entry-content fix">';
@@ -63,14 +67,33 @@ while ($articles->have_posts()) {
     echo '</div>';
     suffusion_before_end_post();
     echo '</article>';
+    $posts_in_wide_format ++;
 }
 wp_reset_query();
 
-$queries = rps_suffusion_get_mag_section_queries(array(
-    'meta_check_field' => 'suf_magazine_excerpt',
-    'category_prefix' => 'suf_mag_excerpt_categories',
-    'to_skip' => $post_to_skip
-));
+if ($posts_in_wide_format < $max_wide_posts) {
+    $articles = new WP_Query(array('posts_per_page' => $max_wide_posts - $posts_in_wide_format, 'post__not_in' => $post_to_skip, 'cat' => $query_cats));
+    while ($articles->have_posts()) {
+        $articles->the_post();
+        $post_to_skip[] = $post->ID;
+        echo '<article class="' . join(' ', get_post_class(array('excerpt'))) . '" id="post-' . $post->ID . '">';
+        suffusion_after_begin_post();
+        echo '<div class="entry-container bottom fix">';
+        echo '<div class="entry entry-content fix">';
+        suffusion_excerpt();
+        echo '</div>';
+        echo "\t<div class='suf-mag-excerpt-footer'>\n";
+        echo "\t\t<a href='" . get_permalink($post->ID) . "' class='suf-mag-excerpt-full-story button'>$suf_mag_excerpt_full_story_text</a>";
+        echo "\t</div>\n";
+        suffusion_after_content();
+        echo '</div>';
+        suffusion_before_end_post();
+        echo '</article>';
+    }
+}
+wp_reset_query();
+
+$queries = rps_suffusion_get_mag_section_queries(array('meta_check_field' => 'suf_magazine_excerpt', 'category_prefix' => 'suf_mag_excerpt_categories', 'to_skip' => $post_to_skip));
 $total = 0;
 foreach ($queries as $query) {
     if (isset($query->posts) && is_array($query->posts)) {
@@ -159,12 +182,7 @@ echo '<table>';
 wp_reset_query();
 
 $ctr = 0;
-$queries = rps_suffusion_get_mag_section_queries(array(
-    'meta_check_field' => 'suf_magazine_excerpt',
-    'category_prefix' => 'suf_mag_excerpt_categories',
-    'to_skip' => $post_to_skip,
-    'total' => 10
-));
+$queries = rps_suffusion_get_mag_section_queries(array('meta_check_field' => 'suf_magazine_excerpt', 'category_prefix' => 'suf_mag_excerpt_categories', 'to_skip' => $post_to_skip, 'total' => 10));
 $total = 0;
 foreach ($queries as $query) {
     if (isset($query->posts) && is_array($query->posts)) {

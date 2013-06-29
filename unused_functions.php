@@ -9,9 +9,8 @@ class RPS_Member_Menu_Widget extends WP_Widget
     function RPS_Member_Menu_Widget()
     {
         $widget_ops = array(
-            
-            'description' => __('Use this widget to add one of your custom menus as a widget and display it only when the visitor is logged in.')
-        );
+
+        'description' => __('Use this widget to add one of your custom menus as a widget and display it only when the visitor is logged in.'));
         parent::WP_Widget('rps_member_menu', __('Custom Member Menu'), $widget_ops);
     }
 
@@ -26,10 +25,7 @@ class RPS_Member_Menu_Widget extends WP_Widget
             echo $args['before_widget'];
             if (! empty($instance['title']))
                 echo $args['before_title'] . $instance['title'] . $args['after_title'];
-            wp_nav_menu(array(
-                'fallback_cb' => '',
-                'menu' => $rps_member_menu
-            ));
+            wp_nav_menu(array('fallback_cb' => '', 'menu' => $rps_member_menu));
             echo $args['after_widget'];
         }
     }
@@ -46,9 +42,7 @@ class RPS_Member_Menu_Widget extends WP_Widget
         $title = isset($instance['title']) ? $instance['title'] : '';
         $rps_member_menu = isset($instance['rps_member_menu']) ? $instance['rps_member_menu'] : '';
         // Get menus
-        $menus = get_terms('nav_menu', array(
-            'hide_empty' => false
-        ));
+        $menus = get_terms('nav_menu', array('hide_empty' => false));
         // If no menus exists, direct the user to go and create some.
         if (! $menus) {
             echo '<p>' . sprintf(__('No menus have been created yet. <a href="%s">Create some</a>.'), admin_url('nav-menus.php')) . '</p>';
@@ -56,7 +50,8 @@ class RPS_Member_Menu_Widget extends WP_Widget
         }
         ?>
 <p>
-	<label for="<?php
+	<label
+		for="<?php
         echo $this->get_field_id('title');
         ?>"><?php
         _e('Title:')?></label> <input type="text" class="widefat"
@@ -71,7 +66,8 @@ class RPS_Member_Menu_Widget extends WP_Widget
         ?>" />
 </p>
 <p>
-	<label for="<?php
+	<label
+		for="<?php
         echo $this->get_field_id('rps_member_menu');
         ?>"><?php
         _e('Select Menu:');

@@ -32,14 +32,10 @@ if (have_posts()) {
         
         if (($suffusion_current_post_index > $suffusion_full_post_count_for_view) && ((is_category() && $suf_category_excerpt == "excerpt") || (is_tag() && $suf_tag_excerpt == "excerpt") || (is_search() && $suf_search_excerpt == "excerpt") || (is_author() && $suf_author_excerpt == "excerpt") || ((is_date() || is_year() || is_month() || is_day() || is_time()) && $suf_archive_excerpt == "excerpt") || (isset($page_of_posts) && $page_of_posts && $suf_pop_excerpt == "excerpt") || (! (is_singular() || is_category() || is_tag() || is_search() || is_author() || is_date() || is_year() || is_month() || is_day() || is_time()) && $suf_index_excerpt == "excerpt"))) {
             $show_image = $suf_show_excerpt_thumbnail == "show" ? true : false;
-            $classes = array(
-                'excerpt'
-            );
+            $classes = array('excerpt');
             $more_text = "\t<div class='suf-mag-excerpt-footer'>\n\t\t<a href='" . get_permalink($post->ID) . "' class='suf-mag-excerpt-full-story button'>$suf_mag_excerpt_full_story_text</a>\t</div>\n";
         } else {
-            $classes = array(
-                'full-content'
-            );
+            $classes = array('full-content');
             $more_text = '';
         }
         if (isset($cpt_meta_position) && $cpt_meta_position) {

@@ -194,7 +194,6 @@ if ($post->post_type == 'post') {
         ?>
 	</div>
 <?php
-
-	}
+    }
 }
 ?>
