@@ -148,7 +148,7 @@ function actionRPS_enqueue_styles()
     $template_path = get_template_directory();
     $stylesheet_path = get_stylesheet_directory();
     
-    $rps_style_version = '66a366c';
+    $rps_style_version = '72f2c6f';
     if (WP_LOCAL_DEV == true) {
         wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps.css');
     } else {
