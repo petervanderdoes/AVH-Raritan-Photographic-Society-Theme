@@ -1,24 +1,20 @@
 /* Credits  */
+//#page-footer {
+//  margin-top: 10px;
+//  overflow: hidden;
+//  border-top: 1px solid $color-border;
+//  #cred {
+//    border-top: none;
+//  }
+//}
 
 #cred {
-  font-size: 91.67%;
+  border-top: 1px solid $color-border;
+  @include adjust-font-size-to($base-font-size * 0.8);
   padding: 0;
   clear: both;
   height: auto;
   overflow: hidden;
-}
-
-#page-footer {
-  margin-top: 10px;
-  overflow: hidden;
-  border-top: 1px solid $color-border;
-  #cred {
-    border-top: none;
-  }
-}
-
-#cred {
-  border-top: 1px solid $color-border;
   .designer {
     padding: 8px 22px;
     float: left;
@@ -37,6 +33,7 @@
     width: 100%;
   }
   td {
+    vertical-align: top;
     width: 33%;
     &.cred-left {
       text-align: left;
