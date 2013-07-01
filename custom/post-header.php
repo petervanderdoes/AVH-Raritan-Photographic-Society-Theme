@@ -34,7 +34,8 @@ $post_show_comment = $$show_comment;
 $post_show_perm = $$show_perm;
 $post_with_title_show_perm = $$with_title_show_perm;
 
-if (is_singular()) {
+
+if (is_singular() && (!is_front_page())) {
     $header_tag = "h1";
 } else {
     $header_tag = "h2";
@@ -68,7 +69,7 @@ if ($post->post_type == 'post') {
             $append = apply_filters('suffusion_after_byline_html', do_shortcode($suf_byline_after_permalink), 'permalink');
             echo "<span class='permalink'><span class='icon'>&nbsp;</span>" . $prepend . suffusion_get_post_title_and_link($permalink_text) . $append . "</span>\n";
         }
-        
+
         if (($post_show_posted_by == 'show-tleft' || $post_show_posted_by == 'show-tright') && $post_meta_position == 'corners') {
             suffusion_print_author_byline();
         }
@@ -95,14 +96,14 @@ if ($post->post_type == 'post') {
             } else {
                 $comments_disabled = false;
             }
-            
+
             if ('open' == $post->comment_status && ($post_show_comment == 'show' || $post_show_comment == 'show-tleft') && ! $comments_disabled) {
                 ?>
 				<span class="comments"><span class="icon">&nbsp;</span><a
 				href="<?php echo get_permalink($post->ID)?>#respond"><?php _e('Add comments', 'suffusion'); ?></a></span>
 				<?php
             }
-        } else 
+        } else
             if ($post_show_comment == 'show' || $post_show_comment == 'show-tleft') {
                 ?>
 			<span class="comments"><span class="icon">&nbsp;</span><?php comments_popup_link(__('No Responses', 'suffusion') . ' &#187;', __('1 Response', 'suffusion') . ' &#187;', __('% Responses', 'suffusion') . ' &#187;'); ?></span>
@@ -153,7 +154,7 @@ if ($post->post_type == 'post') {
 <?php
         }
     }
-    
+
     if ($post->post_type == 'page' && $suf_page_meta_position == 'corners') {
         ?>
 <div class="postdata fix">
@@ -161,7 +162,7 @@ if ($post->post_type == 'post') {
         if ($suf_page_show_posted_by == 'show-tleft' || $suf_page_show_posted_by == 'show-tright') {
             suffusion_print_author_byline();
         }
-        
+
         if (is_attachment()) {
             $mime = get_post_mime_type();
             if (strpos($mime, '/') > - 1) {
@@ -177,7 +178,7 @@ if ($post->post_type == 'post') {
         } else {
             $comments_disabled = false;
         }
-        
+
         if ('open' == $post->comment_status && ($suf_page_show_comment == 'show' || $suf_page_show_comment == 'show-tleft') && ! $comments_disabled) {
             ?>
 			<span class="comments"><span class="icon">&nbsp;</span><a

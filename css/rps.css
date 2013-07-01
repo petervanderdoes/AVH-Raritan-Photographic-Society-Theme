@@ -6450,36 +6450,24 @@ h1.posttitle a:hover, h2.posttitle a:hover {
 }
 
 /* Credits  */
-/* line 3, ../sass/partials/_footer.scss */
+/* line 11, ../sass/partials/_footer.scss */
 #cred {
-  font-size: 91.67%;
+  border-top: 1px solid #555555;
+  font-size: 10px;
+  font-size: 0.8rem;
+  line-height: 20px;
+  line-height: 1.5rem;
   padding: 0;
   clear: both;
   height: auto;
   overflow: hidden;
 }
-
-/* line 11, ../sass/partials/_footer.scss */
-#page-footer {
-  margin-top: 10px;
-  overflow: hidden;
-  border-top: 1px solid #555555;
-}
-/* line 15, ../sass/partials/_footer.scss */
-#page-footer #cred {
-  border-top: none;
-}
-
-/* line 20, ../sass/partials/_footer.scss */
-#cred {
-  border-top: 1px solid #555555;
-}
-/* line 22, ../sass/partials/_footer.scss */
+/* line 18, ../sass/partials/_footer.scss */
 #cred .designer {
   padding: 8px 22px;
   float: left;
 }
-/* line 26, ../sass/partials/_footer.scss */
+/* line 22, ../sass/partials/_footer.scss */
 #cred a {
   color: #a6a6a6;
   text-decoration: none;
@@ -6494,31 +6482,32 @@ h1.posttitle a:hover, h2.posttitle a:hover {
   color: royalblue;
   text-decoration: none;
 }
-/* line 29, ../sass/partials/_footer.scss */
+/* line 25, ../sass/partials/_footer.scss */
 #cred .valid {
   padding: 8px 22px;
   float: right;
 }
-/* line 33, ../sass/partials/_footer.scss */
+/* line 29, ../sass/partials/_footer.scss */
 #cred table {
   border: none;
   padding: 0;
   margin: 10px 0;
   width: 100%;
 }
-/* line 39, ../sass/partials/_footer.scss */
+/* line 35, ../sass/partials/_footer.scss */
 #cred td {
+  vertical-align: top;
   width: 33%;
 }
-/* line 41, ../sass/partials/_footer.scss */
+/* line 38, ../sass/partials/_footer.scss */
 #cred td.cred-left {
   text-align: left;
 }
-/* line 44, ../sass/partials/_footer.scss */
+/* line 41, ../sass/partials/_footer.scss */
 #cred td.cred-center {
   text-align: center;
 }
-/* line 47, ../sass/partials/_footer.scss */
+/* line 44, ../sass/partials/_footer.scss */
 #cred td.cred-right {
   text-align: right;
 }
