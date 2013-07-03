@@ -33,11 +33,11 @@ function rps_GF_get_profile_fields()
     $_fields['nickname'] = array('gf_index' => '2', 'wp_meta' => 'nickname');
     $_fields['display_name'] = array('gf_index' => '3', 'wp_meta' => 'display_name');
     $_fields['website'] = array('gf_index' => '8', 'wp_meta' => 'user_url');
-    
+
     // Fields below are added by the parent Theme.
     $_fields['facebook'] = array('gf_index' => '9', 'wp_meta' => 'facebook');
     $_fields['flickr'] = array('gf_index' => '10', 'wp_meta' => 'flickr');
-    
+
     return $_fields;
 }
 
@@ -52,35 +52,35 @@ function filterRPS_GF_populate_profile_fields($form)
 {
     $_gf_fields = rps_GF_get_profile_fields();
     $_profileuser = wp_get_current_user();
-    
+
     foreach ($form['fields'] as &$field) {
-        
+
         if (strpos($field['cssClass'], 'rps-profile-name') !== false) {
             $_gf_name_id = $field['id'];
             $field['defaultValue'][$_gf_name_id . '.3'] = $_profileuser->first_name;
             $field['defaultValue'][$_gf_name_id . '.6'] = $_profileuser->last_name;
             continue;
         }
-        
+
         if (strpos($field['cssClass'], 'rps-profile-display-name') !== false) {
             $_public_display = array();
             $_public_display['display_nickname'] = $_profileuser->nickname;
             $_public_display['display_username'] = $_profileuser->user_login;
-            
+
             if (! empty($_profileuser->first_name))
                 $_public_display['display_firstname'] = $_profileuser->first_name;
-            
+
             if (! empty($_profileuser->last_name))
                 $_public_display['display_lastname'] = $_profileuser->last_name;
-            
+
             if (! empty($_profileuser->first_name) && ! empty($_profileuser->last_name)) {
                 $_public_display['display_firstlast'] = $_profileuser->first_name . ' ' . $_profileuser->last_name;
                 $_public_display['display_lastfirst'] = $_profileuser->last_name . ' ' . $_profileuser->first_name;
             }
-            
+
             if (! in_array($_profileuser->display_name, $_public_display)) // Only add this if it isn't duplicated elsewhere
                 $_public_display = array('display_displayname' => $_profileuser->display_name) + $_public_display;
-            
+
             $_public_display = array_map('trim', $_public_display);
             $_public_display = array_unique($_public_display);
             foreach ($_public_display as $id => $item) {
@@ -90,7 +90,7 @@ function filterRPS_GF_populate_profile_fields($form)
             $field['choices'] = $choices;
             continue;
         }
-        
+
         foreach ($_gf_fields as $gf_key => $info) {
             if (strpos($field['cssClass'], 'rps-profile-' . $gf_key) !== false) {
                 $field['defaultValue'] = $_profileuser->$info['wp_meta'];
@@ -98,7 +98,7 @@ function filterRPS_GF_populate_profile_fields($form)
             }
         }
     }
-    
+
     return $form;
 }
 
@@ -107,7 +107,7 @@ function filterRPS_GF_populate_profile_fields($form)
  * run last - just to make sure that everything is fine and dandy.
  *
  * @uses $wpdb
- *      
+ *
  * @param array $entry
  *        Array of all the entries in the form
  * @param array $form
@@ -116,7 +116,7 @@ function filterRPS_GF_populate_profile_fields($form)
 function actionRPS_GF_update_profile($entry, $form)
 {
     global $wpdb;
-    
+
     // make sure that the user is logged in
     // we shouldn't get here because the form should check for logged in
     // users...
@@ -129,23 +129,33 @@ function actionRPS_GF_update_profile($entry, $form)
     $_user->ID = (int) $_user_id;
     $_userdata = get_userdata($_user_id);
     $_user->user_login = $wpdb->escape($_userdata->user_login);
-    
+
     $gf_fields = rps_GF_get_profile_fields();
-    
+
     $_user->first_name = sanitize_text_field($entry[$gf_fields['first_name']['gf_index']]);
     $_user->last_name = sanitize_text_field($entry[$gf_fields['last_name']['gf_index']]);
     $_user->nickname = sanitize_text_field($entry[$gf_fields['nickname']['gf_index']]);
     $_user->display_name = sanitize_text_field($entry[$gf_fields['display_name']['gf_index']]);
-    
-    $_user->user_url = esc_url_raw($entry[$gf_fields['website']['gf_index']]);
-    $_user->user_url = preg_match('/^(https?):/is', $_user->user_url) ? $_user->user_url : 'http://' . $_user->user_url;
-    
-    $_user->facebook = esc_url_raw($entry[$gf_fields['facebook']['gf_index']]);
-    $_user->facebook = preg_match('/^(https?):/is', $_user->facebook) ? $_user->facebook : 'http://' . $_user->facebook;
-    
-    $_user->flickr = esc_url_raw($entry[$gf_fields['flickr']['gf_index']]);
-    $_user->flickr = preg_match('/^(https?):/is', $_user->flickr) ? $_user->flickr : 'http://' . $_user->flickr;
-    
+
+    if (empty($entry[$gf_fields['website']['gf_index']]) || $entry[$gf_fields['website']['gf_index']] == "http://") {
+        $_user->user_url = '';
+    } else {
+        $_user->user_url = esc_url_raw($entry[$gf_fields['website']['gf_index']]);
+        $_user->user_url = preg_match('/^(https?):/is', $_user->user_url) ? $_user->user_url : 'http://' . $_user->user_url;
+    }
+
+    if (empty($entry[$gf_fields['facebook']['gf_index']]) || $entry[$gf_fields['facebook']['gf_index']] == "http://") {
+        $_user->facebook = '';
+    } else {
+        $_user->facebook = esc_url_raw($entry[$gf_fields['facebook']['gf_index']]);
+        $_user->facebook = preg_match('/^(https?):/is', $_user->facebook) ? $_user->facebook : 'http://' . $_user->facebook;
+    }
+    if (empty($entry[$gf_fields['flickr']['gf_index']]) || $entry[$gf_fields['flickr']['gf_index']] == "http://") {
+        $_user->flickr = '';
+    } else {
+        $_user->flickr = esc_url_raw($entry[$gf_fields['flickr']['gf_index']]);
+        $_user->flickr = preg_match('/^(https?):/is', $_user->flickr) ? $_user->flickr : 'http://' . $_user->flickr;
+    }
     wp_update_user(get_object_vars($_user));
 }
 
@@ -157,14 +167,14 @@ function actionRPS_GF_update_profile($entry, $form)
  * We don't show the picatcha field for current members,
  *
  * @uses $user_ID
- *      
- * @param string $value        
+ *
+ * @param string $value
  * @return string
  */
 function filterRPS_GF_populate_hidden_paidmember($value)
 {
     global $user_ID;
-    
+
     if (is_user_logged_in() && rps_is_paid_member($user_ID)) {
         // The value must correspond with the value in the form itself.
         $value = "B5NjSa6tqvJV9jTqM358";
@@ -176,14 +186,14 @@ function filterRPS_GF_populate_hidden_paidmember($value)
  * Pre-populate the field first_name when user is logged in and paid member
  *
  * @uses $user_ID
- *      
- * @param string $value        
+ *
+ * @param string $value
  * @return string
  */
 function filterRPS_GF_populate_first_name($value)
 {
     global $user_ID;
-    
+
     if (is_user_logged_in() && rps_is_paid_member($user_ID)) {
         $user = get_user_by('id', $user_ID);
         $value = $user->user_firstname;
@@ -195,14 +205,14 @@ function filterRPS_GF_populate_first_name($value)
  * Pre-populate the field last_name when user is logged in and paid member
  *
  * @uses $user_ID
- *      
- * @param string $value        
+ *
+ * @param string $value
  * @return string
  */
 function filterRPS_GF_populate_last_name($value)
 {
     global $user_ID;
-    
+
     if (is_user_logged_in() && rps_is_paid_member($user_ID)) {
         $user = get_user_by('id', $user_ID);
         $value = $user->user_lastname;
@@ -214,14 +224,14 @@ function filterRPS_GF_populate_last_name($value)
  * Pre-populate the field email when user is logged in and paid member
  *
  * @uses $user_ID
- *      
- * @param string $value        
+ *
+ * @param string $value
  * @return string
  */
 function filterRPS_GF_populate_email($value)
 {
     global $user_ID;
-    
+
     if (is_user_logged_in() && rps_is_paid_member($user_ID)) {
         $user = get_user_by('id', $user_ID);
         $value = $user->user_email;
