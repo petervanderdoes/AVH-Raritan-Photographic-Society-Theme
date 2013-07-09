@@ -156,7 +156,7 @@ function actionRPS_GF_update_profile($entry, $form)
         $_user->flickr = esc_url_raw($entry[$gf_fields['flickr']['gf_index']]);
         $_user->flickr = preg_match('/^(https?):/is', $_user->flickr) ? $_user->flickr : 'http://' . $_user->flickr;
     }
-    wp_update_user(get_object_vars($_user));
+    wp_update_user($_user);
 }
 
 /**
