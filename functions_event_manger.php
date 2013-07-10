@@ -19,12 +19,12 @@ add_filter('em_location_output_placeholder', 'filterRPS_EM_location_output_place
  * Current custom conditional placeholders:
  * - has_speaker
  *
- * @param boolean $show_condition        
+ * @param boolean $show_condition
  * @param string $condition
  *        The name of the conditional placeholder.
  * @param string $match
  *        The string with conditional placeholder from opening to closing placeholder.
- * @param object $EM_Event        
+ * @param object $EM_Event
  * @return boolean
  */
 function filterRPS_EM_output_show_condition($show_condition, $condition, $match, $EM_Event)
@@ -43,7 +43,7 @@ function filterRPS_EM_output_show_condition($show_condition, $condition, $match,
  * By default the widget only shows the given categories, we prefer to show the children of the given categories as well.
  * This is more compliant with the default WordPress behavior.
  *
- * @param array $instance        
+ * @param array $instance
  * @return array
  */
 function filterRPS_EM_get_child_categories($instance)
@@ -54,20 +54,22 @@ function filterRPS_EM_get_child_categories($instance)
     return $instance;
 }
 
-function filterRPS_EM_event_output_placeholder($replace, $em, $full_result, $target)
+function filterRPS_EM_event_output_placeholder($replace, $EM_Event, $full_result, $target)
 {
-    $categories = $em->get_categories()->categories;
-    
-    if (rps_EM_is_rps_category($categories)) {
+
+   $EM_Categories = $EM_Event->get_categories();
+
+    if (rps_EM_is_rps_category($EM_Categories->categories)) {
         switch ($full_result) {
             case '#_SCHEMALINK':
-                $event_link = esc_url($em->get_permalink());
+                $event_link = esc_url($EM_Event->get_permalink());
+                $EM_Category = $EM_Categories->get_first();
                 $replace = '<meta itemprop="url" content="' . $event_link . '">';
-                $replace .= '<meta itemprop="name" content="' . esc_attr($em->event_name) . '">';
+                $replace .= '<meta itemprop="name" content="' . esc_attr($EM_Category->name).': '.esc_attr($EM_Event->event_name) . '">';
                 break;
             case '#_SCHEMADATE':
-                $replace = '<meta itemprop="startDate" content="' . date('c', $em->start) . '">';
-                $replace .= '<meta itemprop="endDate" content="' . date('c', $em->end) . '">';
+                $replace = '<meta itemprop="startDate" content="' . date('c', $EM_Event->start) . '">';
+                $replace .= '<meta itemprop="endDate" content="' . date('c', $EM_Event->end) . '">';
                 break;
         }
     }
@@ -93,7 +95,7 @@ function filterRPS_EM_location_output_placeholder($replace, $em, $full_result, $
 /**
  * Get all children of the given categories
  *
- * @param array|string $categories        
+ * @param array|string $categories
  * @return array
  */
 function rps_EM_get_children_of_categories($categories)
@@ -137,7 +139,7 @@ function rps_EM_list_events($parent_category)
 function rps_EM_is_rps_category($categories)
 {
     static $rps_categories = null;
-    
+
     if ($rps_categories === null) {
         $rps_categories = rps_EM_get_children_of_categories(17);
     }
