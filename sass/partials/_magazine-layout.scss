@@ -1,7 +1,6 @@
 .suf-mag-excerpts {
   width: 100%;
   padding: 0;
-  margin: 10px 0;
   display: inline-block;
   h3 {
     font-family: $headings;
@@ -237,4 +236,5 @@ h2 {
 
 .suf-mag-excerpt, .suf-tile {
   @include border-radius(5px);
+  margin-bottom: 1rem;
 }
