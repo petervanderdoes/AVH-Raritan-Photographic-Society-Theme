@@ -21,6 +21,8 @@ $color-grey-3: rgb(85, 85, 85);
 /**
 * Generalization
 */
+$base-font-size-full-story: 14px;
+
 $color-text: darken(white, 35);
 $color-text-highlight: darken(white, 10);
 $color-text-lowlight: darken(white, 60);
@@ -49,3 +51,17 @@ $ul-image: image-url("icons/bulletrbl.png", false, false);
 * Font sizes
 */
 $font-small: $base-font-size * 0.93;
+
+/**
+* Basefont for Oswald font.
+* Our $base-font-size is 14px and this base font give the same width for Oswald
+*/
+$base-font-size-oswald: 15px;
+$base-line-height-oswald: $base-font-size-oswald * 1.5;
+
+
+
+/**
+* Font families
+*/
+$headings: "Oswald";

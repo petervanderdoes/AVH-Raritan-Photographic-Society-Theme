@@ -7,7 +7,6 @@
 //    border-top: none;
 //  }
 //}
-
 #cred {
   border-top: 1px solid $color-border;
   @include adjust-font-size-to($base-font-size * 0.8);
