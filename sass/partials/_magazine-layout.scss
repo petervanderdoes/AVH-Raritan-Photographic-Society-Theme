@@ -1,4 +1,4 @@
-.suf-mag-excerpts {
+.suf-mag-excerpts, .rps-welcome {
   width: 100%;
   padding: 0;
   display: inline-block;
@@ -19,6 +19,13 @@
   }
 }
 
+.rps-welcome .suf-tile-text {
+  @include adjust-font-size-to($base-font-size-full-story * 1.1);
+  p {
+    @include rhythm($font-size: $base-font-size-full-story * 1.1)
+  }
+}
+
 .suf-mag-headline-block li.suf-mag-headline a {
   color: #fff;
 }
@@ -33,21 +40,13 @@ h2 {
     padding: 5px 0;
     margin-right: 8px;
     margin-left: 8px;
-  }
-  &.suf-mag-excerpt-title a {
-    color: $color-text-highlight;
-    text-decoration: none;
-    &:hover, &:visited, &:active {
+    a {
       color: $color-text-highlight;
       text-decoration: none;
-    }
-  }
-  &.suf-tile-title a {
-    color: $color-text-highlight;
-    text-decoration: none;
-    &:hover, &:visited, &:active {
-      color: $color-text-highlight;
-      text-decoration: none;
+      &:hover, &:visited, &:active {
+        color: $color-text-highlight;
+        text-decoration: none;
+      }
     }
   }
 }
@@ -63,6 +62,7 @@ h2 {
     vertical-align: top;
   }
 }
+
 .suf-mag-excerpt-text p, .suf-tile-text p, .suf-tile-text ul, .suf-tile-text > table {
   @include margin-leader;
   @include padding-trailer;

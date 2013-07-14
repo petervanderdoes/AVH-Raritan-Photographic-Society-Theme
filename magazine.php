@@ -21,24 +21,38 @@ global $suf_post_show_comment;
 <?php suffusion_before_begin_content(); ?>
 	<div id="content" class="hfeed">
 <?php
+echo "\n" . '<section class="rps-welcome">';
+echo '<div class="suf-tiles suf-tiles-1">';
+
+echo '<div class="suf-tile suf-tile-1c suf-tile-ctr-0">';
+echo '<div class="suf-gradient suf-tile-topmost"><h3>Welcome</h3></div>';
+echo '<div class="suf-tile-text entry-content">';
+echo '<p>Whether you’re a beginner or advanced amateur (even a professional) photographer, the Raritan Photographic Society, based in Middlesex County, New Jersey, has something to offer you.</p>';
+echo '<p>In addition to monthly lecture and competition/critique meetings, our members enjoy field trips and workshops, as well as our holiday and banquet parties.<br />';
+echo 'If you want to socialize with other photographers and at the same time improve your photography skills, the Raritan Photographic Society is a fun camera club to be a part of.</p>';
+echo '<p>Before you decide to join, you are welcome to attend a meeting or two. You’ll be able to meet our members and find out in person what we’re all about. Check the ' . em_get_link('schedule of events') . ' for the season to see when and where we meet</p>
+    ';
+echo '</div>';
+echo '</div>';
+echo '</section>' . "\n";
 
 $sticky = get_option('sticky_posts');
-if (is_numeric($sticky[0])) {
+if (is_array($sticky) && is_numeric($sticky[0])) {
     rsort($sticky);
     $amount_of_stickies_to_display = 3;
     $sticky = array_slice($sticky, 0, $amount_of_stickies_to_display);
     /* Query sticky posts */
     $sticky_articles = new WP_Query(array('post__in' => $sticky, 'ignore_sticky_posts' => 1));
-}
 
-if (is_object($sticky_articles)) {
-    $sticky_queries[] = $sticky_articles;
-    while ($sticky_articles->have_posts()) {
-        $sticky_articles->the_post();
-        $post_to_skip[] = $post->ID;
+    if (is_object($sticky_articles)) {
+        $sticky_queries[] = $sticky_articles;
+        while ($sticky_articles->have_posts()) {
+            $sticky_articles->the_post();
+            $post_to_skip[] = $post->ID;
+        }
     }
+    wp_reset_query();
 }
-wp_reset_query();
 
 $mag_queries = rps_suffusion_get_mag_section_queries(array('meta_check_field' => 'suf_magazine_excerpt', 'category_prefix' => 'suf_mag_excerpt_categories', 'to_skip' => $post_to_skip));
 $queries = array_merge($sticky_queries, $mag_queries);
@@ -163,29 +177,7 @@ if ($total > 0) {
         }
     }
 }
-// $categories = suffusion_get_allowed_categories('suf_mag_excerpt_categories');
-// if ( is_array($categories) && count($categories) > 0 ) {
-// $query_cats = array();
-// foreach ( $categories as $category ) {
-// $query_cats[] = $category->cat_ID;
-// }
-// $query_posts = implode(",", array_values($query_cats));
-// }
-// $query = new WP_query(array(
-// 'ignore_sticky_posts' => 1,
-// 'cat' => $query_posts,
-// 'limit' => 10,
-// 'post__not_in' => $post_to_skip,
-// 'meta_query' => array(
-// array(
-// 'key' => 'suf_magazine_excerpt',
-// 'value' => 'on',
-// 'compare' => '=',
-// 'type' => 'STRING'
-// )
-// )
-// )
-// );
+
 echo '</tbody></table>';
 echo "\t\t</div>\n";
 echo '</div>' . "\n";
