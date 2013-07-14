@@ -72,12 +72,13 @@ if ($total > 0) {
     }
 
     $ctr = 0;
+    $tiles = 0;
     $cols_per_row = $suf_mag_excerpts_per_row;
     foreach ($queries as $query) {
         if (isset($query->posts) && is_array($query->posts)) {
             $num_results = count($query->posts);
             while ($query->have_posts()) {
-                if ($ctr >= 6) {
+                if ($ctr >= $suf_mag_total_excerpts) {
                     break;
                 }
                 $query->the_post();
@@ -115,6 +116,12 @@ if ($total > 0) {
 
                 echo "\t</div>";
                 $ctr ++;
+                $tiles ++;
+                if ($tiles == $cols_per_row) {
+                    $tiles = 0;
+                    echo "</section>\n";
+                    echo "<section class='suf-mag-excerpts suf-mag-excerpts-$suf_mag_excerpts_per_row'>\n";
+                }
             }
             wp_reset_postdata();
         }
