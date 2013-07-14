@@ -17,11 +17,12 @@ set :deploy_via, :remote_cache
 set :copy_exclude, [".git", ".gitmodules", ".DS_Store", ".gitignore", "sass", "Capfile", "config"]
 set :keep_releases, 5
 
-set :branch, fetch(:branch, "feature/develop")
+set :branch, fetch(:branch, "feature/1.2.0")
 
 # if you want to clean up old releases on each deploy uncomment this:
 after "deploy:restart", "deploy:cleanup"
 after "deploy", "apc:clear_cache"
+#after "deploy:finalize_update", "db:update_database"
 
 # If you are using Passenger mod_rails uncomment this:
 # namespace :deploy do
