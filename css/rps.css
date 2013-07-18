@@ -5861,18 +5861,18 @@ table.em-calendar td.eventless-today .day {
 }
 
 /* line 1, ../sass/partials/_magazine-layout.scss */
-.suf-mag-excerpts, .rps-welcome {
+.suf-mag-excerpts {
   width: 100%;
   padding: 0;
   display: inline-block;
 }
 /* line 5, ../sass/partials/_magazine-layout.scss */
-.suf-mag-excerpts h3, .rps-welcome h3 {
+.suf-mag-excerpts h3 {
   font-family: "Oswald";
   font-size: 23px;
-  font-size: 1.73077rem;
-  line-height: 39px;
-  line-height: 3rem;
+  font-size: 1.75rem;
+  line-height: 34px;
+  line-height: 2.625rem;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -5880,40 +5880,58 @@ table.em-calendar td.eventless-today .day {
   text-align: center;
 }
 /* line 13, ../sass/partials/_magazine-layout.scss */
-.suf-mag-excerpts h3 a, .rps-welcome h3 a {
+.suf-mag-excerpts h3 a {
   color: white;
   text-decoration: none;
 }
 /* line 18, ../sass/partials/_magazine-layout.scss */
-.suf-mag-excerpts:after, .rps-welcome:after {
+.suf-mag-excerpts:after {
   marging: 5px;
 }
 
 /* line 23, ../sass/partials/_magazine-layout.scss */
-.rps-welcome .suf-tile-text {
-  font-size: 15px;
-  font-size: 1.18462rem;
-  line-height: 20px;
-  line-height: 1.5rem;
+.rps-welcome {
+  width: 100%;
+  padding: 0;
+  display: inline-block;
 }
-/* line 25, ../sass/partials/_magazine-layout.scss */
-.rps-welcome .suf-tile-text p {
-  margin-top: 20px;
-  margin-top: 1.5rem;
-  padding-top: 0px;
-  padding-top: 0rem;
-  padding-bottom: 0px;
-  padding-bottom: 0rem;
-  margin-bottom: 20px;
-  margin-bottom: 1.5rem;
+/* line 27, ../sass/partials/_magazine-layout.scss */
+.rps-welcome h3 {
+  font-family: "Oswald";
+  font-size: 25px;
+  font-size: 1.925rem;
+  line-height: 38px;
+  line-height: 2.8875rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-align: center;
+}
+/* line 35, ../sass/partials/_magazine-layout.scss */
+.rps-welcome h3 a {
+  color: white;
+  text-decoration: none;
+}
+/* line 40, ../sass/partials/_magazine-layout.scss */
+.rps-welcome:after {
+  marging: 5px;
 }
 
-/* line 30, ../sass/partials/_magazine-layout.scss */
+/* line 47, ../sass/partials/_magazine-layout.scss */
+.rps-welcome .suf-tile-text p {
+  font-size: 15px;
+  font-size: 1.18462rem;
+  line-height: 21px;
+  line-height: 1.65rem;
+}
+
+/* line 53, ../sass/partials/_magazine-layout.scss */
 .suf-mag-headline-block li.suf-mag-headline a {
   color: #fff;
 }
 
-/* line 35, ../sass/partials/_magazine-layout.scss */
+/* line 58, ../sass/partials/_magazine-layout.scss */
 h2.suf-mag-excerpt-title, h2.suf-tile-title {
   color: #e6e6e6;
   font-size: 16px;
@@ -5927,30 +5945,30 @@ h2.suf-mag-excerpt-title, h2.suf-tile-title {
   margin-right: 8px;
   margin-left: 8px;
 }
-/* line 44, ../sass/partials/_magazine-layout.scss */
+/* line 67, ../sass/partials/_magazine-layout.scss */
 h2.suf-mag-excerpt-title a, h2.suf-tile-title a {
   color: #e6e6e6;
   text-decoration: none;
 }
-/* line 47, ../sass/partials/_magazine-layout.scss */
+/* line 70, ../sass/partials/_magazine-layout.scss */
 h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag-excerpt-title a:active, h2.suf-tile-title a:hover, h2.suf-tile-title a:visited, h2.suf-tile-title a:active {
   color: #e6e6e6;
   text-decoration: none;
 }
 
-/* line 55, ../sass/partials/_magazine-layout.scss */
+/* line 78, ../sass/partials/_magazine-layout.scss */
 .suf-mag-excerpts-header {
   border-color: #555555;
   background-color: #000;
   color: #ddd;
 }
 
-/* line 62, ../sass/partials/_magazine-layout.scss */
+/* line 85, ../sass/partials/_magazine-layout.scss */
 .suf-tile-text > table td {
   vertical-align: top;
 }
 
-/* line 67, ../sass/partials/_magazine-layout.scss */
+/* line 90, ../sass/partials/_magazine-layout.scss */
 .suf-mag-category, .suf-mag-excerpt, .suf-tile {
   font-size: 13px;
   font-size: 1rem;
@@ -5968,13 +5986,13 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   padding-bottom: 1em;
 }
 
-/* line 79, ../sass/partials/_magazine-layout.scss */
+/* line 102, ../sass/partials/_magazine-layout.scss */
 .suf-mag-excerpt-text {
   padding-bottom: 20px;
   padding-bottom: 1.5rem;
 }
 
-/* line 82, ../sass/partials/_magazine-layout.scss */
+/* line 105, ../sass/partials/_magazine-layout.scss */
 .suf-mag-excerpt-text p, .suf-tile-text p, .suf-tile-text ul {
   margin-top: 20px;
   margin-top: 1.5rem;
@@ -5988,7 +6006,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   margin-right: 8px;
 }
 
-/* line 88, ../sass/partials/_magazine-layout.scss */
+/* line 111, ../sass/partials/_magazine-layout.scss */
 .suf-tile-text > table {
   margin-left: 8px;
   margin-right: 8px;
@@ -5997,30 +6015,30 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 /**
 * Showcase
 */
-/* line 97, ../sass/partials/_magazine-layout.scss */
+/* line 120, ../sass/partials/_magazine-layout.scss */
 .rps-showcases {
   display: inline-block;
   margin: 10px 0;
   padding: 0;
   width: 100%;
 }
-/* line 102, ../sass/partials/_magazine-layout.scss */
+/* line 125, ../sass/partials/_magazine-layout.scss */
 .rps-showcases .image {
   text-align: center;
 }
-/* line 105, ../sass/partials/_magazine-layout.scss */
+/* line 128, ../sass/partials/_magazine-layout.scss */
 .rps-showcases .thumb_img {
   vertical-align: middle;
 }
-/* line 108, ../sass/partials/_magazine-layout.scss */
+/* line 131, ../sass/partials/_magazine-layout.scss */
 .rps-showcases .col-control {
   width: 960px;
 }
-/* line 111, ../sass/partials/_magazine-layout.scss */
+/* line 134, ../sass/partials/_magazine-layout.scss */
 .rps-showcases .suf-tile {
   margin-bottom: 3px;
 }
-/* line 114, ../sass/partials/_magazine-layout.scss */
+/* line 137, ../sass/partials/_magazine-layout.scss */
 .rps-showcases ul {
   float: left;
   list-style: none outside none;
@@ -6028,7 +6046,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   padding: 0;
   vertical-align: bottom;
 }
-/* line 121, ../sass/partials/_magazine-layout.scss */
+/* line 144, ../sass/partials/_magazine-layout.scss */
 .rps-showcases li {
   float: left;
   line-height: 150px;
@@ -6037,23 +6055,23 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   padding: 10px;
   width: 150px;
 }
-/* line 128, ../sass/partials/_magazine-layout.scss */
+/* line 151, ../sass/partials/_magazine-layout.scss */
 .rps-showcases li:last-child {
   margin-bottom: 10px;
 }
-/* line 132, ../sass/partials/_magazine-layout.scss */
+/* line 155, ../sass/partials/_magazine-layout.scss */
 .rps-showcases h3 {
   font-size: 20px;
   font-size: 1.5rem;
-  line-height: 39px;
-  line-height: 3rem;
+  line-height: 29px;
+  line-height: 2.25rem;
   font-family: "Oswald";
   font-weight: 400;
   margin: 0;
   padding: 0;
   color: white;
 }
-/* line 140, ../sass/partials/_magazine-layout.scss */
+/* line 163, ../sass/partials/_magazine-layout.scss */
 .rps-showcases:after {
   content: "";
   display: inline-block;
@@ -6062,7 +6080,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   width: 100%;
 }
 
-/* line 149, ../sass/partials/_magazine-layout.scss */
+/* line 172, ../sass/partials/_magazine-layout.scss */
 .rps-sc-tile {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -6083,45 +6101,45 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 /**
 * Misc boxes
 */
-/* line 167, ../sass/partials/_magazine-layout.scss */
+/* line 190, ../sass/partials/_magazine-layout.scss */
 .rps-misc {
   width: 100%;
   padding: 0;
   margin: 10px 0;
   display: inline-block;
 }
-/* line 172, ../sass/partials/_magazine-layout.scss */
+/* line 195, ../sass/partials/_magazine-layout.scss */
 .rps-misc h3 {
   font-family: "Oswald";
-  font-size: 20px;
-  font-size: 1.5rem;
-  line-height: 39px;
-  line-height: 3rem;
+  font-size: 17px;
+  font-size: 1.3rem;
+  line-height: 25px;
+  line-height: 1.95rem;
   font-weight: 400;
   margin: 0;
   padding: 0;
   color: white;
   text-align: center;
 }
-/* line 180, ../sass/partials/_magazine-layout.scss */
+/* line 203, ../sass/partials/_magazine-layout.scss */
 .rps-misc h3 a {
   color: white;
   text-decoration: none;
 }
-/* line 185, ../sass/partials/_magazine-layout.scss */
+/* line 208, ../sass/partials/_magazine-layout.scss */
 .rps-misc:after {
   marging: 5px;
 }
-/* line 188, ../sass/partials/_magazine-layout.scss */
+/* line 211, ../sass/partials/_magazine-layout.scss */
 .rps-misc .suf-tile-text {
   text-align: left;
 }
-/* line 193, ../sass/partials/_magazine-layout.scss */
+/* line 216, ../sass/partials/_magazine-layout.scss */
 .rps-misc ul li a {
   color: #e6e6e6;
   text-decoration: none;
 }
-/* line 196, ../sass/partials/_magazine-layout.scss */
+/* line 219, ../sass/partials/_magazine-layout.scss */
 .rps-misc ul li a:hover, .rps-misc ul li a:visited, .rps-misc ul li a:active {
   color: #e6e6e6;
   text-decoration: none;
@@ -6129,13 +6147,13 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 
 /* Props to the brilliant technique highlighted here: http://stackoverflow.com/questions/6865194/fluid-width-with-equally-spaced-divs.
  This distributes divs equally in a fluid-width row without any JS hack and without using CSS multi-columns. */
-/* line 208, ../sass/partials/_magazine-layout.scss */
+/* line 231, ../sass/partials/_magazine-layout.scss */
 .suf-tiles, .suf-mag-excerpts, .rps-showcases, .rps-misc {
   text-align: justify;
   -ms-text-justify: distribute;
   text-justify: distribute;
 }
-/* line 212, ../sass/partials/_magazine-layout.scss */
+/* line 235, ../sass/partials/_magazine-layout.scss */
 .suf-tiles:after, .suf-mag-excerpts:after, .rps-showcases:after, .rps-misc:after {
   content: '';
   width: 100%;
@@ -6144,52 +6162,52 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   line-height: 0;
 }
 
-/* line 221, ../sass/partials/_magazine-layout.scss */
+/* line 244, ../sass/partials/_magazine-layout.scss */
 .suf-tile-1c {
   width: 100%;
 }
 
-/* line 225, ../sass/partials/_magazine-layout.scss */
+/* line 248, ../sass/partials/_magazine-layout.scss */
 .suf-tile-2c {
   width: 49%;
 }
 
-/* line 229, ../sass/partials/_magazine-layout.scss */
+/* line 252, ../sass/partials/_magazine-layout.scss */
 .suf-tile-3c {
   width: 32%;
 }
 
-/* line 233, ../sass/partials/_magazine-layout.scss */
+/* line 256, ../sass/partials/_magazine-layout.scss */
 .suf-tile-4c {
   width: 24%;
 }
 
-/* line 237, ../sass/partials/_magazine-layout.scss */
+/* line 260, ../sass/partials/_magazine-layout.scss */
 .suf-tile-5c {
   width: 19%;
 }
 
-/* line 241, ../sass/partials/_magazine-layout.scss */
+/* line 264, ../sass/partials/_magazine-layout.scss */
 .suf-tile-6c {
   width: 16%;
 }
 
-/* line 245, ../sass/partials/_magazine-layout.scss */
+/* line 268, ../sass/partials/_magazine-layout.scss */
 .suf-tile-7c {
   width: 13%;
 }
 
-/* line 249, ../sass/partials/_magazine-layout.scss */
+/* line 272, ../sass/partials/_magazine-layout.scss */
 .suf-tile-8c {
   width: 12%;
 }
 
-/* line 253, ../sass/partials/_magazine-layout.scss */
+/* line 276, ../sass/partials/_magazine-layout.scss */
 .suf-tile-9c {
   width: 10.5%;
 }
 
-/* line 257, ../sass/partials/_magazine-layout.scss */
+/* line 280, ../sass/partials/_magazine-layout.scss */
 .suf-tile-10c {
   width: 9.5%;
 }
@@ -6212,8 +6230,8 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 
 /* line 10, ../sass/partials/_post.scss */
 .entry-header h1, .entry-header h2 {
-  font-size: 30px;
-  font-size: 2.30769rem;
+  font-size: 26px;
+  font-size: 2rem;
   line-height: 39px;
   line-height: 3rem;
   color: #e6e6e6;

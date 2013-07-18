@@ -27,11 +27,19 @@ echo '<div class="suf-tiles suf-tiles-1">';
 echo '<div class="suf-tile suf-tile-1c suf-tile-ctr-0">';
 echo '<div class="suf-gradient suf-tile-topmost"><h3>Welcome</h3></div>';
 echo '<div class="suf-tile-text entry-content">';
-echo '<p>Whether you’re a beginner or advanced amateur (even a professional) photographer, the Raritan Photographic Society, based in Middlesex County, New Jersey, has something to offer you.</p>';
-echo '<p>In addition to monthly lecture and competition/critique meetings, our members enjoy field trips and workshops, as well as our holiday and banquet parties.<br />';
-echo 'If you want to socialize with other photographers and at the same time improve your photography skills, the Raritan Photographic Society is a fun camera club to be a part of.</p>';
-echo '<p>Before you decide to join, you are welcome to attend a meeting or two. You’ll be able to meet our members and find out in person what we’re all about. Check the ' . em_get_link('schedule of events') . ' for the season to see when and where we meet</p>
-    ';
+// echo '<p>Whether you’re a beginner or advanced amateur (even a professional) photographer, the Raritan Photographic Society, based in Middlesex County, New Jersey, has something to offer you.</p>';
+// echo '<p>In addition to monthly lecture and competition/critique meetings, our members enjoy field trips and workshops, as well as our holiday and banquet parties.';
+// echo 'If you want to socialize with other photographers and at the same time improve your photography skills, the Raritan Photographic Society is a fun camera club to be a part of.</p>';
+// echo '<p>Before you decide to join, you are welcome to attend a meeting or two. You’ll be able to meet our members and find out in person what we’re all about. Check the ' . em_get_link('schedule of events') . ' for the season to see when and where we meet</p>';
+
+echo '<p>Welcome to the Raritan Photographic Society. Based in Middlesex County we are New Jersey’s oldest photo club.</p>';
+echo '<p>If you enjoy using your camera phone, point & shoot, digital SLR, or mirrorless camera and want to socialize with other photographers, while at the same time improving your photography skills, the Raritan Photographic Society is a fun camera club to be a part of.</p>';
+echo '<p>In addition to monthly lecture and competition/critique meetings, we organize field trips and workshops. All these programs will help you grow as a photographer, whether you are a beginning or professional photographer. Besides the for mentioned programs we organize a holiday party, as well as an end of the year banquet.</p>';
+echo '<p>Before you decide to join, you are welcome to attend a meeting. You’ll be able to meet our members and find out in person what we’re all about.Check the ' . em_get_link('schedule of events') . ' for the season to see when and where we meet.</p>';
+echo '<p>I hope to welcome you at one of the meetings.<br />';
+echo 'Peter van der Does<br />';
+echo 'President</p>';
+
 echo '</div>';
 echo '</div>';
 echo '</section>' . "\n";
