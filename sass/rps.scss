@@ -31,6 +31,10 @@ $rhythm-unit: rem;
 @import "partials/sidebars";
 @import "partials/footer";
 
+$social-spacing: 8px;
+@import "social/*.png";
+@include all-social-sprites;
+
 body {
   font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
   background-attachment: scroll;

@@ -26,7 +26,15 @@ if ($suf_footer_layout_style != 'in-align') {
 				<table>
 					<tr>
 						<td class="cred-left"><?php $strip = stripslashes($suf_footer_left); $strip = wp_specialchars_decode($strip, ENT_QUOTES); echo do_shortcode($strip); ?></td>
-						<td class="cred-center"><?php $strip = stripslashes($suf_footer_center); $strip = wp_specialchars_decode($strip, ENT_QUOTES); echo do_shortcode($strip); ?></td>
+						<td class="cred-center">
+						<?php
+						echo 'Raritan Photographic Society on the web';
+						echo "<ul>";
+echo "<li><a href='https://www.facebook.com/pages/Raritan-Photographic-Society/157106827664588?sk=info' class='rps-facebook'>Facebook</a></li>";
+echo "<li><a href='http://www.meetup.com/http-www-raritanphoto-com/' class='rps-meetup'>Meetup</a></li>";
+echo "<li><a href='https://plus.google.com/114179804721869477091/about' class='rps-google-plus'>Google+</a></li>";
+echo "<li><a href='https://twitter.com/raritanphoto' class='rps-twitter'>Twitter</a></li>";
+echo "</ul>";?></td>
 						<td class="cred-right">Build using the Suffusion theme</td>
 					</tr>
 				</table>

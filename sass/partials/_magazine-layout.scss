@@ -102,7 +102,7 @@ h2 {
 .suf-mag-excerpt-text {
   @include padding-trailer();
 }
-.suf-mag-excerpt-text p, .suf-tile-text p, .suf-tile-text ul {
+.suf-mag-excerpt-text p, .suf-tile-text p{
   @include rhythm();
   margin-left: 8px;
   margin-right: 8px;
@@ -212,6 +212,10 @@ h2 {
     text-align: left;
   }
   ul {
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 0;
+    padding: 0;
     li {
       a {
         color: $color-text-highlight;
@@ -220,6 +224,23 @@ h2 {
           color: $color-text-highlight;
           text-decoration: none;
         }
+        &.rps-facebook {
+          padding-left: 24px;
+          @extend .social-facebook;
+        }
+        &.rps-meetup {
+          padding-left: 24px;
+          @extend .social-meetup;
+        }
+        &.rps-google-plus {
+          padding-left: 24px;
+          @extend .social-google-plus;
+        }
+        &.rps-twitter {
+          padding-left: 24px;
+          @extend .social-twitter;
+        }
+
       }
     }
   }

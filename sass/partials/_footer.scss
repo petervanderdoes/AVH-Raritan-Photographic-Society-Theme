@@ -44,4 +44,39 @@
       text-align: right;
     }
   }
-}
+
+ul {
+margin: 0;
+padding: 0;
+display: inline-block;
+    li {
+    padding-right: 1rem;
+    float: left;
+      a {
+        color: $color-text-highlight;
+        text-decoration: none;
+        &:hover, &:visited, &:active {
+          color: $color-text-highlight;
+          text-decoration: none;
+        }
+        &.rps-facebook {
+          padding-left: 24px;
+          @extend .social-facebook;
+        }
+        &.rps-meetup {
+          padding-left: 24px;
+          @extend .social-meetup;
+        }
+        &.rps-google-plus {
+          padding-left: 24px;
+          @extend .social-google-plus;
+        }
+        &.rps-twitter {
+          padding-left: 24px;
+          @extend .social-twitter;
+        }
+
+      }
+    }
+  }
+  }
