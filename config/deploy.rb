@@ -2,6 +2,7 @@ set :application, "rps_theme"
 set :repository,  "git@bitbucket.org:petervanderdoes/rps-theme.git"
 set :scm, :git
 set :apc_webroot,  ""
+set :opc_webroot,  ""
 set :url_base, "http://rps.avirtualhome.com/content/themes/suffu-rps/"
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
@@ -21,7 +22,7 @@ set :branch, fetch(:branch, "feature/1.2.0")
 
 # if you want to clean up old releases on each deploy uncomment this:
 after "deploy:restart", "deploy:cleanup"
-after "deploy", "apc:clear_cache"
+after "deploy", "opc:clear_cache"
 #after "deploy:finalize_update", "db:update_database"
 
 # If you are using Passenger mod_rails uncomment this:
