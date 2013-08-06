@@ -1,6 +1,7 @@
 $base-font-size: 13px;
 $base-line-height: $base-font-size * 1.5;
 $rhythm-unit: rem;
+
 //$round-to-nearest-half-line: true;
 //$min-line-padding: 0px;
 
@@ -17,6 +18,7 @@ $rhythm-unit: rem;
 @import "suffusion/rounded-corners";
 @import "suffusion/light-royal-blue";
 @import "suffusion/dark-style";
+
 //@import "suffusion/dark-royal-blue";
 
 @import "partials/general";
@@ -32,7 +34,10 @@ $rhythm-unit: rem;
 @import "partials/footer";
 
 $social-spacing: 8px;
+$social-sprite-dimensions: true;
+
 @import "social/*.png";
+
 @include all-social-sprites;
 
 body {
@@ -47,8 +52,9 @@ body {
   font-weight: normal;
   background-color: $background-color;
 }
+
 a {
-   @include link-style($color: $color-text-highlight);
+  @include link-style($color: $color-text-highlight);
 }
 
 #content {

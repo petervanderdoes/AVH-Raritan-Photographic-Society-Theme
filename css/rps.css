@@ -4870,7 +4870,7 @@ strong {
   font-weight: 700;
 }
 
-/* line 16, ../sass/partials/_general.scss */
+/* line 17, ../sass/partials/_general.scss */
 .hide {
   display: none;
 }
@@ -5918,7 +5918,7 @@ table.em-calendar td.eventless-today .day {
   marging: 5px;
 }
 
-/* line 47, ../sass/partials/_magazine-layout.scss */
+/* line 46, ../sass/partials/_magazine-layout.scss */
 .rps-welcome .suf-tile-text p {
   font-size: 15px;
   font-size: 1.18462rem;
@@ -5992,7 +5992,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   padding-bottom: 1.5rem;
 }
 
-/* line 105, ../sass/partials/_magazine-layout.scss */
+/* line 106, ../sass/partials/_magazine-layout.scss */
 .suf-mag-excerpt-text p, .suf-tile-text p {
   margin-top: 20px;
   margin-top: 1.5rem;
@@ -6006,7 +6006,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   margin-right: 8px;
 }
 
-/* line 111, ../sass/partials/_magazine-layout.scss */
+/* line 112, ../sass/partials/_magazine-layout.scss */
 .suf-tile-text > table {
   margin-left: 8px;
   margin-right: 8px;
@@ -6015,30 +6015,30 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 /**
 * Showcase
 */
-/* line 120, ../sass/partials/_magazine-layout.scss */
+/* line 121, ../sass/partials/_magazine-layout.scss */
 .rps-showcases {
   display: inline-block;
   margin: 10px 0;
   padding: 0;
   width: 100%;
 }
-/* line 125, ../sass/partials/_magazine-layout.scss */
+/* line 126, ../sass/partials/_magazine-layout.scss */
 .rps-showcases .image {
   text-align: center;
 }
-/* line 128, ../sass/partials/_magazine-layout.scss */
+/* line 129, ../sass/partials/_magazine-layout.scss */
 .rps-showcases .thumb_img {
   vertical-align: middle;
 }
-/* line 131, ../sass/partials/_magazine-layout.scss */
+/* line 132, ../sass/partials/_magazine-layout.scss */
 .rps-showcases .col-control {
   width: 960px;
 }
-/* line 134, ../sass/partials/_magazine-layout.scss */
+/* line 135, ../sass/partials/_magazine-layout.scss */
 .rps-showcases .suf-tile {
   margin-bottom: 3px;
 }
-/* line 137, ../sass/partials/_magazine-layout.scss */
+/* line 138, ../sass/partials/_magazine-layout.scss */
 .rps-showcases ul {
   float: left;
   list-style: none outside none;
@@ -6046,7 +6046,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   padding: 0;
   vertical-align: bottom;
 }
-/* line 144, ../sass/partials/_magazine-layout.scss */
+/* line 145, ../sass/partials/_magazine-layout.scss */
 .rps-showcases li {
   float: left;
   line-height: 150px;
@@ -6055,11 +6055,11 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   padding: 10px;
   width: 150px;
 }
-/* line 151, ../sass/partials/_magazine-layout.scss */
+/* line 152, ../sass/partials/_magazine-layout.scss */
 .rps-showcases li:last-child {
   margin-bottom: 10px;
 }
-/* line 155, ../sass/partials/_magazine-layout.scss */
+/* line 156, ../sass/partials/_magazine-layout.scss */
 .rps-showcases h3 {
   font-size: 20px;
   font-size: 1.5rem;
@@ -6071,7 +6071,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   padding: 0;
   color: white;
 }
-/* line 163, ../sass/partials/_magazine-layout.scss */
+/* line 164, ../sass/partials/_magazine-layout.scss */
 .rps-showcases:after {
   content: "";
   display: inline-block;
@@ -6080,7 +6080,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   width: 100%;
 }
 
-/* line 172, ../sass/partials/_magazine-layout.scss */
+/* line 173, ../sass/partials/_magazine-layout.scss */
 .rps-sc-tile {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -6101,14 +6101,14 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 /**
 * Misc boxes
 */
-/* line 190, ../sass/partials/_magazine-layout.scss */
+/* line 191, ../sass/partials/_magazine-layout.scss */
 .rps-misc {
   width: 100%;
   padding: 0;
   margin: 10px 0;
   display: inline-block;
 }
-/* line 195, ../sass/partials/_magazine-layout.scss */
+/* line 196, ../sass/partials/_magazine-layout.scss */
 .rps-misc h3 {
   font-family: "Oswald";
   font-size: 17px;
@@ -6121,62 +6121,46 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   color: white;
   text-align: center;
 }
-/* line 203, ../sass/partials/_magazine-layout.scss */
+/* line 204, ../sass/partials/_magazine-layout.scss */
 .rps-misc h3 a {
   color: white;
   text-decoration: none;
 }
-/* line 208, ../sass/partials/_magazine-layout.scss */
+/* line 209, ../sass/partials/_magazine-layout.scss */
 .rps-misc:after {
   marging: 5px;
 }
-/* line 211, ../sass/partials/_magazine-layout.scss */
+/* line 212, ../sass/partials/_magazine-layout.scss */
 .rps-misc .suf-tile-text {
   text-align: left;
 }
-/* line 214, ../sass/partials/_magazine-layout.scss */
+/* line 215, ../sass/partials/_magazine-layout.scss */
 .rps-misc ul {
   margin-left: 8px;
   margin-right: 8px;
   margin-top: 0;
   padding: 0;
 }
-/* line 220, ../sass/partials/_magazine-layout.scss */
+/* line 221, ../sass/partials/_magazine-layout.scss */
 .rps-misc ul li a {
   color: #e6e6e6;
   text-decoration: none;
 }
-/* line 223, ../sass/partials/_magazine-layout.scss */
+/* line 224, ../sass/partials/_magazine-layout.scss */
 .rps-misc ul li a:hover, .rps-misc ul li a:visited, .rps-misc ul li a:active {
   color: #e6e6e6;
   text-decoration: none;
 }
-/* line 227, ../sass/partials/_magazine-layout.scss */
-.rps-misc ul li a.rps-facebook {
-  padding-left: 24px;
-}
-/* line 231, ../sass/partials/_magazine-layout.scss */
-.rps-misc ul li a.rps-meetup {
-  padding-left: 24px;
-}
-/* line 235, ../sass/partials/_magazine-layout.scss */
-.rps-misc ul li a.rps-google-plus {
-  padding-left: 24px;
-}
-/* line 239, ../sass/partials/_magazine-layout.scss */
-.rps-misc ul li a.rps-twitter {
-  padding-left: 24px;
-}
 
 /* Props to the brilliant technique highlighted here: http://stackoverflow.com/questions/6865194/fluid-width-with-equally-spaced-divs.
  This distributes divs equally in a fluid-width row without any JS hack and without using CSS multi-columns. */
-/* line 252, ../sass/partials/_magazine-layout.scss */
+/* line 236, ../sass/partials/_magazine-layout.scss */
 .suf-tiles, .suf-mag-excerpts, .rps-showcases, .rps-misc {
   text-align: justify;
   -ms-text-justify: distribute;
   text-justify: distribute;
 }
-/* line 256, ../sass/partials/_magazine-layout.scss */
+/* line 240, ../sass/partials/_magazine-layout.scss */
 .suf-tiles:after, .suf-mag-excerpts:after, .rps-showcases:after, .rps-misc:after {
   content: '';
   width: 100%;
@@ -6185,52 +6169,52 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   line-height: 0;
 }
 
-/* line 265, ../sass/partials/_magazine-layout.scss */
+/* line 249, ../sass/partials/_magazine-layout.scss */
 .suf-tile-1c {
   width: 100%;
 }
 
-/* line 269, ../sass/partials/_magazine-layout.scss */
+/* line 253, ../sass/partials/_magazine-layout.scss */
 .suf-tile-2c {
   width: 49%;
 }
 
-/* line 273, ../sass/partials/_magazine-layout.scss */
+/* line 257, ../sass/partials/_magazine-layout.scss */
 .suf-tile-3c {
   width: 32%;
 }
 
-/* line 277, ../sass/partials/_magazine-layout.scss */
+/* line 261, ../sass/partials/_magazine-layout.scss */
 .suf-tile-4c {
   width: 24%;
 }
 
-/* line 281, ../sass/partials/_magazine-layout.scss */
+/* line 265, ../sass/partials/_magazine-layout.scss */
 .suf-tile-5c {
   width: 19%;
 }
 
-/* line 285, ../sass/partials/_magazine-layout.scss */
+/* line 269, ../sass/partials/_magazine-layout.scss */
 .suf-tile-6c {
   width: 16%;
 }
 
-/* line 289, ../sass/partials/_magazine-layout.scss */
+/* line 273, ../sass/partials/_magazine-layout.scss */
 .suf-tile-7c {
   width: 13%;
 }
 
-/* line 293, ../sass/partials/_magazine-layout.scss */
+/* line 277, ../sass/partials/_magazine-layout.scss */
 .suf-tile-8c {
   width: 12%;
 }
 
-/* line 297, ../sass/partials/_magazine-layout.scss */
+/* line 281, ../sass/partials/_magazine-layout.scss */
 .suf-tile-9c {
   width: 10.5%;
 }
 
-/* line 301, ../sass/partials/_magazine-layout.scss */
+/* line 285, ../sass/partials/_magazine-layout.scss */
 .suf-tile-10c {
   width: 9.5%;
 }
@@ -6357,12 +6341,12 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   line-height: 3rem;
   color: #e6e6e6;
 }
-/* line 80, ../sass/partials/_post.scss */
+/* line 79, ../sass/partials/_post.scss */
 .entry ul li {
   list-style: disc;
 }
 
-/* line 85, ../sass/partials/_post.scss */
+/* line 84, ../sass/partials/_post.scss */
 .post-footer {
   font-size: 12px;
   font-size: 0.93rem;
@@ -6371,13 +6355,13 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   margin: 5px 0;
   width: 100%;
 }
-/* line 89, ../sass/partials/_post.scss */
+/* line 88, ../sass/partials/_post.scss */
 .post-footer span.author {
   float: left;
   display: inline-block;
 }
 
-/* line 95, ../sass/partials/_post.scss */
+/* line 94, ../sass/partials/_post.scss */
 .postdata {
   font-size: 12px;
   font-size: 0.93rem;
@@ -6386,21 +6370,21 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   margin-top: 2px;
   color: #666666;
 }
-/* line 99, ../sass/partials/_post.scss */
+/* line 98, ../sass/partials/_post.scss */
 .postdata a {
   color: #666666;
   text-decoration: none;
 }
-/* line 102, ../sass/partials/_post.scss */
+/* line 101, ../sass/partials/_post.scss */
 .postdata a:visited {
   color: #666666;
   text-decoration: none;
 }
-/* line 106, ../sass/partials/_post.scss */
+/* line 105, ../sass/partials/_post.scss */
 .postdata a:hover {
   text-decoration: none;
 }
-/* line 110, ../sass/partials/_post.scss */
+/* line 109, ../sass/partials/_post.scss */
 .postdata .icon {
   display: none;
   width: 16px;
@@ -6408,77 +6392,77 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   margin-right: 4px;
   margin-left: 4px;
 }
-/* line 117, ../sass/partials/_post.scss */
+/* line 116, ../sass/partials/_post.scss */
 .postdata .category {
   padding-right: 10px;
   float: left;
 }
-/* line 120, ../sass/partials/_post.scss */
+/* line 119, ../sass/partials/_post.scss */
 .postdata .category .icon {
   background: no-repeat 0 0;
 }
-/* line 124, ../sass/partials/_post.scss */
+/* line 123, ../sass/partials/_post.scss */
 .postdata .author .icon {
   background: no-repeat -32px -128px;
 }
-/* line 127, ../sass/partials/_post.scss */
+/* line 126, ../sass/partials/_post.scss */
 .postdata .tax .icon {
   background: no-repeat -32px -144px;
 }
-/* line 130, ../sass/partials/_post.scss */
+/* line 129, ../sass/partials/_post.scss */
 .postdata .permalink {
   padding-right: 10px;
   float: left;
 }
-/* line 133, ../sass/partials/_post.scss */
+/* line 132, ../sass/partials/_post.scss */
 .postdata .permalink .icon {
   background: no-repeat 0 -16px;
 }
-/* line 137, ../sass/partials/_post.scss */
+/* line 136, ../sass/partials/_post.scss */
 .postdata .comments {
   padding-right: 10px;
   float: right;
 }
-/* line 140, ../sass/partials/_post.scss */
+/* line 139, ../sass/partials/_post.scss */
 .postdata .comments .icon {
   background: no-repeat 0 -64px;
 }
-/* line 144, ../sass/partials/_post.scss */
+/* line 143, ../sass/partials/_post.scss */
 .postdata .edit {
   padding-right: 10px;
   float: right;
 }
-/* line 147, ../sass/partials/_post.scss */
+/* line 146, ../sass/partials/_post.scss */
 .postdata .edit .icon {
   background: no-repeat 0 -112px;
 }
-/* line 151, ../sass/partials/_post.scss */
+/* line 150, ../sass/partials/_post.scss */
 .postdata .line-date .icon {
   background: no-repeat 0 -32px;
 }
-/* line 154, ../sass/partials/_post.scss */
+/* line 153, ../sass/partials/_post.scss */
 .postdata.line {
   text-align: center;
   padding: 0.8em;
 }
-/* line 157, ../sass/partials/_post.scss */
+/* line 156, ../sass/partials/_post.scss */
 .postdata.line span {
   float: none;
   margin: 0 0.5em;
   padding: 0;
 }
-/* line 161, ../sass/partials/_post.scss */
+/* line 160, ../sass/partials/_post.scss */
 .postdata.line span.author, .postdata.line span.comments {
   float: none;
   margin: 0 0.5em;
   padding: 0;
 }
-/* line 166, ../sass/partials/_post.scss */
+/* line 165, ../sass/partials/_post.scss */
 .postdata.line span.icon {
   margin-right: 4px;
   margin-left: 0;
 }
-/* line 170, ../sass/partials/_post.scss */
+/* line 169, ../sass/partials/_post.scss */
 .postdata.line span.vcard {
   margin-left: 0;
   margin-right: 0;
@@ -6646,71 +6630,72 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 #cred td.cred-right {
   text-align: right;
 }
-/* line 48, ../sass/partials/_footer.scss */
+/* line 47, ../sass/partials/_footer.scss */
 #cred ul {
   margin: 0;
   padding: 0;
   display: inline-block;
 }
-/* line 52, ../sass/partials/_footer.scss */
+/* line 51, ../sass/partials/_footer.scss */
 #cred ul li {
   padding-right: 1rem;
   float: left;
 }
-/* line 55, ../sass/partials/_footer.scss */
+/* line 54, ../sass/partials/_footer.scss */
 #cred ul li a {
   color: #e6e6e6;
   text-decoration: none;
 }
-/* line 58, ../sass/partials/_footer.scss */
+/* line 57, ../sass/partials/_footer.scss */
 #cred ul li a:hover, #cred ul li a:visited, #cred ul li a:active {
   color: #e6e6e6;
   text-decoration: none;
 }
-/* line 62, ../sass/partials/_footer.scss */
-#cred ul li a.rps-facebook {
-  padding-left: 24px;
+/* line 64, ../sass/partials/_footer.scss */
+#cred .social-icon {
+  padding-right: 0.5rem;
+  display: inline-block;
 }
-/* line 66, ../sass/partials/_footer.scss */
-#cred ul li a.rps-meetup {
-  padding-left: 24px;
-}
-/* line 70, ../sass/partials/_footer.scss */
-#cred ul li a.rps-google-plus {
-  padding-left: 24px;
-}
-/* line 74, ../sass/partials/_footer.scss */
-#cred ul li a.rps-twitter {
-  padding-left: 24px;
+/* line 68, ../sass/partials/_footer.scss */
+#cred .social-text {
+  vertical-align: top;
 }
 
 /* line 71, social/*.png */
-.social-sprite, .social-facebook, .rps-misc ul li a.rps-facebook, #cred ul li a.rps-facebook, .social-google-plus, .rps-misc ul li a.rps-google-plus, #cred ul li a.rps-google-plus, .social-meetup, .rps-misc ul li a.rps-meetup, #cred ul li a.rps-meetup, .social-twitter, .rps-misc ul li a.rps-twitter, #cred ul li a.rps-twitter {
+.social-sprite, .social-facebook, .social-google-plus, .social-meetup, .social-twitter {
   background-image: url('../images/social-s6988306a0e.png');
   background-repeat: no-repeat;
 }
 
 /* line 77, ../../../../../../../../opt/rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.social-facebook, .rps-misc ul li a.rps-facebook, #cred ul li a.rps-facebook {
+.social-facebook {
   background-position: 0 0;
+  height: 16px;
+  width: 16px;
 }
 
 /* line 77, ../../../../../../../../opt/rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.social-google-plus, .rps-misc ul li a.rps-google-plus, #cred ul li a.rps-google-plus {
+.social-google-plus {
   background-position: 0 -24px;
+  height: 16px;
+  width: 16px;
 }
 
 /* line 77, ../../../../../../../../opt/rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.social-meetup, .rps-misc ul li a.rps-meetup, #cred ul li a.rps-meetup {
+.social-meetup {
   background-position: 0 -48px;
+  height: 16px;
+  width: 16px;
 }
 
 /* line 77, ../../../../../../../../opt/rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.social-twitter, .rps-misc ul li a.rps-twitter, #cred ul li a.rps-twitter {
+.social-twitter {
   background-position: 0 -72px;
+  height: 16px;
+  width: 16px;
 }
 
-/* line 38, ../sass/rps.scss */
+/* line 43, ../sass/rps.scss */
 body {
   font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
   background-attachment: scroll;
@@ -6724,7 +6709,7 @@ body {
   background-color: black;
 }
 
-/* line 50, ../sass/rps.scss */
+/* line 56, ../sass/rps.scss */
 a {
   color: #e6e6e6;
   text-decoration: none;
@@ -6740,13 +6725,13 @@ a:hover {
   text-decoration: none;
 }
 
-/* line 54, ../sass/rps.scss */
+/* line 60, ../sass/rps.scss */
 #content {
   clear: both;
   overflow: hidden;
 }
 
-/* line 59, ../sass/rps.scss */
+/* line 65, ../sass/rps.scss */
 .entry, .non-wp-entry {
   padding: 15px 0 5px;
   clear: both;
@@ -6754,14 +6739,14 @@ a:hover {
   overflow: hidden;
 }
 
-/* line 66, ../sass/rps.scss */
+/* line 72, ../sass/rps.scss */
 h2.suf-tile-title {
   font-size: 15px;
   font-size: 1.15385rem;
   line-height: 20px;
   line-height: 1.5rem;
 }
-/* line 71, ../sass/rps.scss */
+/* line 77, ../sass/rps.scss */
 h2.suf-tile-title a,
 h2.suf-tile-title a:hover,
 h2.suf-tile-title a:visited,
@@ -6772,7 +6757,7 @@ h2.suf-tile-title a:active {
   line-height: 1.5rem;
 }
 
-/* line 76, ../sass/rps.scss */
+/* line 82, ../sass/rps.scss */
 .suf-gradient {
   background: royalblue;
   *zoom: 1;
@@ -6784,7 +6769,7 @@ h2.suf-tile-title a:active {
   background: linear-gradient(to bottom, #4169e1 0%, rgba(0, 35, 102, 0.2) 100%);
 }
 
-/* line 80, ../sass/rps.scss */
+/* line 86, ../sass/rps.scss */
 .suf-mag-headline-block li.suf-mag-headline a.tab-current, h2.suf-mag-category-title {
   background: royalblue;
   *zoom: 1;
@@ -6796,7 +6781,7 @@ h2.suf-tile-title a:active {
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
 
-/* line 84, ../sass/rps.scss */
+/* line 90, ../sass/rps.scss */
 a.excerpt-more-append {
   color: #e9e9e9;
   border: solid 1px #002366;
@@ -6810,7 +6795,7 @@ a.excerpt-more-append {
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
 
-/* line 90, ../sass/rps.scss */
+/* line 96, ../sass/rps.scss */
 .warea a.suf-mag-category-all-posts, a.suf-mag-category-all-posts {
   background: royalblue;
   *zoom: 1;
@@ -6822,22 +6807,22 @@ a.excerpt-more-append {
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
 
-/* line 94, ../sass/rps.scss */
+/* line 100, ../sass/rps.scss */
 h2.suf-tile-title {
   margin-top: 0;
   text-align: left;
 }
 
-/* line 99, ../sass/rps.scss */
+/* line 105, ../sass/rps.scss */
 h2.suf-tile-title a {
   font-size: 58%;
 }
-/* line 101, ../sass/rps.scss */
+/* line 107, ../sass/rps.scss */
 h2.suf-tile-title a:hover, h2.suf-tile-title a:visited, h2.suf-tile-title a:active {
   font-size: 58%;
 }
 
-/* line 106, ../sass/rps.scss */
+/* line 112, ../sass/rps.scss */
 #header-container {
   background-image: url('../images/RPS-LOGO-2012.jpg');
   background-position: left top;
@@ -6857,7 +6842,7 @@ h2.suf-tile-title a:hover, h2.suf-tile-title a:visited, h2.suf-tile-title a:acti
   border-top-right-radius: inherit;
 }
 
-/* line 117, ../sass/rps.scss */
+/* line 123, ../sass/rps.scss */
 input[type="email"] {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -6867,14 +6852,14 @@ input[type="email"] {
 /**
 * Theme My Login
 */
-/* line 125, ../sass/rps.scss */
+/* line 131, ../sass/rps.scss */
 #theme-my-login *:focus {
   background-color: #999999;
   color: #333333;
   outline: 0 none;
 }
 
-/* line 131, ../sass/rps.scss */
+/* line 137, ../sass/rps.scss */
 ul.tml-action-links {
   display: block;
   float: right;
@@ -6883,7 +6868,7 @@ ul.tml-action-links {
   padding: 0;
   vertical-align: bottom;
 }
-/* line 138, ../sass/rps.scss */
+/* line 144, ../sass/rps.scss */
 ul.tml-action-links li {
   padding: 0;
 }

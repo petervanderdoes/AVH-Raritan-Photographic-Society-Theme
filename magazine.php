@@ -45,6 +45,7 @@ if ( !rps_is_paid_member(get_current_user_id()) ) {
 	echo '</div>';
 	echo '</section>' . "\n";
 }
+
 $sticky = get_option('sticky_posts');
 if ( is_array($sticky) && is_numeric($sticky[0]) ) {
 	rsort($sticky);
