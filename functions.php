@@ -139,9 +139,24 @@ function actionRPS_enqueue_styles()
     if (WP_LOCAL_DEV == true) {
         wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps.css');
     } else {
-        $rps_style_version = "7db803a";
+        $rps_style_version = "7bef96a";
         wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps-' . $rps_style_version . '.css');
     }
+    if (! isset($suffusion_theme_hierarchy[$suf_color_scheme])) {
+        if (@file_exists(get_stylesheet_directory() . '/skins/' . $suf_color_scheme . '/skin.css')) {
+            $sheets = array('style.css', 'skins/' . $suf_color_scheme . '/skin.css');
+        } else
+            if (@file_exists(get_template_directory() . '/skins/' . $suf_color_scheme . '/skin.css')) {
+                $sheets = array('style.css', 'skins/' . $suf_color_scheme . '/skin.css');
+            } else {
+                $sheets = array('style.css');
+            }
+    } else {
+        $sheets = $suffusion_theme_hierarchy[$suf_color_scheme];
+    }
+
+    // IE-specific CSS, loaded if the browser is IE < 8
+    wp_enqueue_style('suffusion-ie', get_template_directory_uri() . '/ie-fix.css', array('suffusion-theme'), SUFFUSION_THEME_VERSION);
 
     global $suffusion, $suf_mosaic_zoom_library;
     if ($suffusion->get_content_layout() == 'mosaic') {

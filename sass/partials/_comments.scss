@@ -1,5 +1,5 @@
 .must-log-in {
-	@include adjust-font-size-to($base-font-size * 0.93);
+  @include adjust-font-size-to($base-font-size * 0.93);
   margin-top: 2px;
   color: $color-text-lowlight;
   a {
