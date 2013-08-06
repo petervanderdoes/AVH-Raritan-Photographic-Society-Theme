@@ -33,12 +33,12 @@ $rhythm-unit: rem;
 @import "partials/sidebars";
 @import "partials/footer";
 
-$social-spacing: 8px;
-$social-sprite-dimensions: true;
+$social-icon-16-spacing: 8px;
+$social-icon-16-sprite-dimensions: true;
 
-@import "social/*.png";
+@import "social-icon-16/*.png";
 
-@include all-social-sprites;
+@include all-social-icon-16-sprites;
 
 body {
   font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;

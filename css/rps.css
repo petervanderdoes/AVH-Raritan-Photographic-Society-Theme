@@ -6652,7 +6652,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   text-decoration: none;
 }
 /* line 64, ../sass/partials/_footer.scss */
-#cred .social-icon {
+#cred .social-icon-16 {
   padding-right: 0.5rem;
   display: inline-block;
 }
@@ -6661,35 +6661,35 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   vertical-align: top;
 }
 
-/* line 71, social/*.png */
-.social-sprite, .social-facebook, .social-google-plus, .social-meetup, .social-twitter {
-  background-image: url('../images/social-s6988306a0e.png');
+/* line 71, social-icon-16/*.png */
+.social-icon-16-sprite, .social-icon-16-facebook, .social-icon-16-google-plus, .social-icon-16-meetup, .social-icon-16-twitter {
+  background-image: url('../images/social-icon-16-se03d974571.png');
   background-repeat: no-repeat;
 }
 
 /* line 77, ../../../../../../../../opt/rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.social-facebook {
+.social-icon-16-facebook {
   background-position: 0 0;
   height: 16px;
   width: 16px;
 }
 
 /* line 77, ../../../../../../../../opt/rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.social-google-plus {
+.social-icon-16-google-plus {
   background-position: 0 -24px;
   height: 16px;
   width: 16px;
 }
 
 /* line 77, ../../../../../../../../opt/rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.social-meetup {
+.social-icon-16-meetup {
   background-position: 0 -48px;
   height: 16px;
   width: 16px;
 }
 
 /* line 77, ../../../../../../../../opt/rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.social-twitter {
+.social-icon-16-twitter {
   background-position: 0 -72px;
   height: 16px;
   width: 16px;
