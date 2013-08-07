@@ -10,7 +10,7 @@ table.em-calendar {
     &.eventful-pre, &.eventful-post {
       color: $color-link-lowlight;
       a {
-      	padding: 5px;
+        padding: 5px;
         color: $color-link-lowlight;
         text-decoration: none;
         &:hover {
@@ -36,7 +36,7 @@ table.em-calendar {
     &.eventful-today {
       background-color: $background-color;
       a {
-      	padding: 5px;
+        padding: 5px;
         background-color: $color-text;
         color: $background-color;
         @include border-radius(1rem);
@@ -49,7 +49,7 @@ table.em-calendar {
     &.eventless-today {
       background-color: $background-color;
       .day {
-      	padding: 5px;
+        padding: 5px;
         background-color: $color-text;
         color: $background-color;
         @include border-radius(1rem);

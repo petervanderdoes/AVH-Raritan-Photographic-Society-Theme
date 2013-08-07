@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'railsless-deploy'
+require 'net/scp'
 # Uncomment if you are using Rails' asset pipeline
     # load 'deploy/assets'
 load 'config/tasks'

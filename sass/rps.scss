@@ -2,17 +2,8 @@ $base-font-size: 13px;
 $base-line-height: $base-font-size * 1.5;
 $rhythm-unit: rem;
 
-/**
-* Basefont for Oswald font.
-* Our $base-font-size is 14px and this base font give the same width for Oswald
-*/
-$base-font-size-oswald: 15px;
-$base-line-height-oswald: $base-font-size-oswald * 1.5;
-
-/**
-* Full Story
-*/
-$base-font-size-full-story: 14px;
+//$round-to-nearest-half-line: true;
+//$min-line-padding: 0px;
 
 @import "compass";
 
@@ -27,6 +18,7 @@ $base-font-size-full-story: 14px;
 @import "suffusion/rounded-corners";
 @import "suffusion/light-royal-blue";
 @import "suffusion/dark-style";
+
 //@import "suffusion/dark-royal-blue";
 
 @import "partials/general";
@@ -41,6 +33,13 @@ $base-font-size-full-story: 14px;
 @import "partials/sidebars";
 @import "partials/footer";
 
+$social-icon-16-spacing: 8px;
+$social-icon-16-sprite-dimensions: true;
+
+@import "social-icon-16/*.png";
+
+@include all-social-icon-16-sprites;
+
 body {
   font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
   background-attachment: scroll;
@@ -53,8 +52,9 @@ body {
   font-weight: normal;
   background-color: $background-color;
 }
+
 a {
-   @include link-style($color: $color-text-highlight);
+  @include link-style($color: $color-text-highlight);
 }
 
 #content {
@@ -67,18 +67,6 @@ a {
   clear: both;
   margin-bottom: 1em;
   overflow: hidden;
-}
-
-.suf-mag-category, .suf-mag-excerpt, .suf-tile {
-  @include adjust-font-size-to($base-font-size);
-}
-
-.excerpt {
-  @include adjust-font-size-to($base-font-size);
-}
-
-.full-content {
-  @include adjust-font-size-to($base-font-size-full-story);
 }
 
 h2.suf-tile-title {
@@ -134,46 +122,6 @@ h2.suf-tile-title a {
 
 input[type="email"] {
   @include border-radius(5px);
-}
-
-/**
-* Showcase
-*/
-
-.rps-showcases {
-  display: inline-block;
-  margin: 10px 0;
-  padding: 0;
-  width: 100%;
-  h3 {
-    @include adjust-font-size-to($base-font-size-oswald * 1.3);
-    font-family: Oswald;
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
-  }
-  &:after {
-    content: "";
-    display: inline-block;
-    font-size: 0;
-    line-height: 0;
-    width: 100%;
-  }
-}
-
-.rps-sc-tile {
-  @include border-radius(5px);
-  background-color: #000000;
-  border: 1px solid $color-border;
-  padding-top: 0;
-  display: inline-block;
-  font-size: 108%;
-  line-height: 20px;
-  margin-top: 5px;
-  position: relative;
-  text-align: center;
-  vertical-align: top;
-  width: 100%;
 }
 
 /**

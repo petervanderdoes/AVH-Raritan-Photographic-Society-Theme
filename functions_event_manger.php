@@ -10,6 +10,7 @@ add_filter('em_event_output_show_condition', 'filterRPS_EM_output_show_condition
 add_filter('em_widget_events_get_args', 'filterRPS_EM_get_child_categories', 10, 1);
 add_filter('em_event_output_placeholder', 'filterRPS_EM_event_output_placeholder', 10, 4);
 add_filter('em_location_output_placeholder', 'filterRPS_EM_location_output_placeholder', 10, 4);
+add_filter('em_widget_calendar_get_args', 'filterRPS_EM_get_child_categories', 10, 1);
 
 /**
  * Handle custom conditional placeholders.
@@ -116,6 +117,12 @@ function rps_EM_get_children_of_categories($categories)
 function rps_EM_list_events($parent_category)
 {
     $categories = get_term_children($parent_category, EM_TAXONOMY_CATEGORY);
+
+    if ( $parent_category == 17 ) {
+    	$format = '<tr itemtype="http://schema.org/Event" itemscope=""><td style="white-space: nowrap;vertical-align: top;">#_EVENTDATES</td><td style="padding-left: 1rem;vertical-align: top;">#_CATEGORYNAME: #_EVENTLINK #_SCHEMALINK #_SCHEMADATE #_SCHEMAPLACE</td></tr>';
+    } else {
+    	$format = '<tr><td style="white-space: nowrap;vertical-align: top;">#_EVENTDATES</td><td style="padding-left: 1rem;vertical-align: top;">#_CATEGORYNAME: #_EVENTLINK</td></tr>';
+    }
     // @formatter:off
     $arg = array(
         'title' => __('Events', 'dbem'),
@@ -123,9 +130,9 @@ function rps_EM_list_events($parent_category)
         'order' => 'ASC',
         'limit' => 5,
         'category' => $categories,
-        'format_header' => '<table><tbody>',
-        'format' => '<tr itemtype="http://schema.org/Event" itemscope=""><td style="white-space: nowrap; vertical-align: top;">#_EVENTDATES -&nbsp;</td><td>#_CATEGORYNAME: #_EVENTLINK #_SCHEMALINK #_SCHEMADATE #_SCHEMAPLACE</td></tr>',
-        'format_footer' => '</tbody></table>',
+        'format_header' => '',
+        'format' => '<table><tbody>'.$format.'</tbody></table>',
+        'format_footer' => '',
         'nolistwrap' => false,
         'orderby' => 'event_start_date,event_start_time,event_name',
         'all_events' => 0,

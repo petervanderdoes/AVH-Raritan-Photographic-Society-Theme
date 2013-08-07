@@ -1,7 +1,7 @@
 /* Standard Styles */
 
 p, .p {
-  margin-bottom: 1.5em;
+  //  margin-bottom: 1.5em;
   text-align: left;
 }
 
@@ -1598,21 +1598,6 @@ hr.clear {
   padding: 0;
 }
 
-.suf-mag-category, .suf-mag-excerpt, .suf-tile {
-  padding: 0 0 8px;
-  font-size: 108%;
-  line-height: 20px;
-  text-align: center;
-  border: 1px solid #c0c0c0;
-  vertical-align: top;
-  background-color: #ffffff;
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  width: 100%;
-  margin-top: 5px;
-}
-
 .suf-tile-1c {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1632,24 +1617,6 @@ hr.clear {
 div.suf-tile-image {
   float: none;
   display: inline-block;
-}
-
-h2.suf-tile-title {
-  border-top: 1px dotted #c0c0c0;
-  border-bottom: 1px dotted #c0c0c0;
-  line-height: 18px;
-  padding: 5px 0;
-  margin-right: 8px;
-  margin-left: 8px;
-  a,
-  a:hover,
-  a:visited,
-  a:active {
-    font-weight: bold;
-    font-size: 48%;
-    text-decoration: none;
-    color: #444;
-  }
 }
 
 .suf-tiles {
