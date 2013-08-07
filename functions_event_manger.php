@@ -10,6 +10,7 @@ add_filter('em_event_output_show_condition', 'filterRPS_EM_output_show_condition
 add_filter('em_widget_events_get_args', 'filterRPS_EM_get_child_categories', 10, 1);
 add_filter('em_event_output_placeholder', 'filterRPS_EM_event_output_placeholder', 10, 4);
 add_filter('em_location_output_placeholder', 'filterRPS_EM_location_output_placeholder', 10, 4);
+add_filter('em_widget_calendar_get_args', 'filterRPS_EM_get_child_categories', 10, 1);
 
 /**
  * Handle custom conditional placeholders.

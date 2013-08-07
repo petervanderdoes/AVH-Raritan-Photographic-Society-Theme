@@ -18,7 +18,7 @@ set :deploy_via, :remote_cache
 set :copy_exclude, [".git", ".gitmodules", ".DS_Store", ".gitignore", "sass", "Capfile", "config"]
 set :keep_releases, 5
 
-set :branch, fetch(:branch, "feature/1.2.0")
+set :branch, fetch(:branch, "develop")
 
 # if you want to clean up old releases on each deploy uncomment this:
 after "deploy:restart", "deploy:cleanup"
