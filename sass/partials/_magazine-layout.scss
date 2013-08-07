@@ -82,8 +82,13 @@ h2 {
 }
 
 .suf-tile-text > table {
+  margin-left: 8px;
   td {
     vertical-align: top;
+  }
+  &:after {
+    content: "";
+    border-top: 1px;
   }
 }
 
@@ -105,11 +110,6 @@ h2 {
 
 .suf-mag-excerpt-text p, .suf-tile-text p {
   @include rhythm;
-  margin-left: 8px;
-  margin-right: 8px;
-}
-
-.suf-tile-text > table {
   margin-left: 8px;
   margin-right: 8px;
 }

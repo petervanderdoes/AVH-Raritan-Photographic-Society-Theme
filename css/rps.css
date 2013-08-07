@@ -5963,12 +5963,21 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   color: #ddd;
 }
 
-/* line 85, ../sass/partials/_magazine-layout.scss */
+/* line 84, ../sass/partials/_magazine-layout.scss */
+.suf-tile-text > table {
+  margin-left: 8px;
+}
+/* line 86, ../sass/partials/_magazine-layout.scss */
 .suf-tile-text > table td {
   vertical-align: top;
 }
+/* line 89, ../sass/partials/_magazine-layout.scss */
+.suf-tile-text > table:after {
+  content: "";
+  border-top: 1px;
+}
 
-/* line 90, ../sass/partials/_magazine-layout.scss */
+/* line 95, ../sass/partials/_magazine-layout.scss */
 .suf-mag-category, .suf-mag-excerpt, .suf-tile {
   font-size: 13px;
   font-size: 1rem;
@@ -5986,13 +5995,13 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   padding-bottom: 1em;
 }
 
-/* line 102, ../sass/partials/_magazine-layout.scss */
+/* line 107, ../sass/partials/_magazine-layout.scss */
 .suf-mag-excerpt-text {
   padding-bottom: 20px;
   padding-bottom: 1.5rem;
 }
 
-/* line 106, ../sass/partials/_magazine-layout.scss */
+/* line 111, ../sass/partials/_magazine-layout.scss */
 .suf-mag-excerpt-text p, .suf-tile-text p {
   margin-top: 20px;
   margin-top: 1.5rem;
@@ -6002,12 +6011,6 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   padding-bottom: 0rem;
   margin-bottom: 20px;
   margin-bottom: 1.5rem;
-  margin-left: 8px;
-  margin-right: 8px;
-}
-
-/* line 112, ../sass/partials/_magazine-layout.scss */
-.suf-tile-text > table {
   margin-left: 8px;
   margin-right: 8px;
 }
