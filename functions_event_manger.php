@@ -119,9 +119,9 @@ function rps_EM_list_events($parent_category)
     $categories = get_term_children($parent_category, EM_TAXONOMY_CATEGORY);
 
     if ( $parent_category == 17 ) {
-    	$format = '<tr itemtype="http://schema.org/Event" itemscope=""><td style="white-space: nowrap; vertical-align: top;">#_EVENTDATES -&nbsp;</td><td>#_CATEGORYNAME: #_EVENTLINK #_SCHEMALINK #_SCHEMADATE #_SCHEMAPLACE</td></tr>';
+    	$format = '<tr itemtype="http://schema.org/Event" itemscope=""><td style="white-space: nowrap;vertical-align: top;">#_EVENTDATES</td><td style="padding-left: 1rem;vertical-align: top;">#_CATEGORYNAME: #_EVENTLINK #_SCHEMALINK #_SCHEMADATE #_SCHEMAPLACE</td></tr>';
     } else {
-    	$format = '<tr><td style="white-space: nowrap; vertical-align: top;">#_EVENTDATES -&nbsp;</td><td>#_CATEGORYNAME: #_EVENTLINK</td></tr>';
+    	$format = '<tr><td style="white-space: nowrap;vertical-align: top;">#_EVENTDATES</td><td style="padding-left: 1rem;vertical-align: top;">#_CATEGORYNAME: #_EVENTLINK</td></tr>';
     }
     // @formatter:off
     $arg = array(
