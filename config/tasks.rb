@@ -34,7 +34,7 @@ namespace :opc do
 		opc_file = "#{current_release}#{opc_webroot}/opc_clear.php"
 		curl_options = "-s"
 		put "<?php define('CACHEPREFIX',function_exists('opcache_reset')?'opcache_':(function_exists('accelerator_reset')?'accelerator_':'')); call_user_func(CACHEPREFIX.'reset'); ?>", opc_file, :mode => 0644
-		run "curl #{curl_options} #{url_base}/opc_clear.php && rm -f #{opc_file}"
+		run "curl #{curl_options} #{url_base}opc_clear.php && rm -f #{opc_file}"
 	end
 end
 
