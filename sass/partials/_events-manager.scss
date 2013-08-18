@@ -67,3 +67,18 @@ table.em-calendar {
   padding: inherit;
   text-align: left;
 }
+
+div.css-search {
+    background: inherit;
+    border: inherit;
+    border-radius: inherit;
+    min-height: 40px;
+    padding: 5px;
+    position: relative;
+}
+
+div.css-search div.em-search-main .em-search-submit {
+  @include gradient-buttons;
+  color: $color-button-text;
+  border: solid 1px $color-button-border;
+}
