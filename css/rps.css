@@ -65,7 +65,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 105, ../../../../../../../../opt/rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
-  font-size: 81.25%;
+  font-size: 87.5%;
   line-height: 1.5em;
 }
 
@@ -4847,9 +4847,9 @@ img.suf-widget-thumb, .suf-mosaic-img {
   background: -moz-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: -o-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
-  font-size: 12px;
+  font-size: 13px;
   font-size: 0.93rem;
-  line-height: 20px;
+  line-height: 21px;
   line-height: 1.5rem;
 }
 /* line 7, ../sass/partials/_general.scss */
@@ -5009,8 +5009,8 @@ strong {
 /* line 73, ../sass/partials/_navigation-bar.scss */
 #nav ul.sf-menu {
   font-size: 13px;
-  font-size: 1rem;
-  line-height: 20px;
+  font-size: 0.92857rem;
+  line-height: 21px;
   line-height: 1.5rem;
   display: inline-block;
 }
@@ -5095,9 +5095,9 @@ strong {
 
 /* line 132, ../sass/partials/_navigation-bar.scss */
 #subnav {
-  font-size: 12px;
+  font-size: 13px;
   font-size: 0.93rem;
-  line-height: 20px;
+  line-height: 21px;
   line-height: 1.5rem;
   background-color: inherit;
   margin: 4px 2px;
@@ -5106,9 +5106,9 @@ strong {
 /* line 138, ../sass/partials/_navigation-bar.scss */
 #rps-login-bar {
   float: right;
-  font-size: 12px;
+  font-size: 13px;
   font-size: 0.93rem;
-  line-height: 20px;
+  line-height: 21px;
   line-height: 1.5rem;
   padding-right: 9px;
   padding-top: 8px;
@@ -5679,9 +5679,9 @@ img.home-icon {
   background: -moz-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: -o-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
-  font-size: 12px;
+  font-size: 13px;
   font-size: 0.93rem;
-  line-height: 20px;
+  line-height: 21px;
   line-height: 1.5rem;
 }
 /* line 24, ../sass/partials/_forms.scss */
@@ -5743,9 +5743,9 @@ input[type="submit"] {
   background: -moz-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: -o-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
-  font-size: 12px;
+  font-size: 13px;
   font-size: 0.93rem;
-  line-height: 20px;
+  line-height: 21px;
   line-height: 1.5rem;
 }
 /* line 54, ../sass/partials/_forms.scss */
@@ -5894,8 +5894,8 @@ div.css-search div.em-search-main .em-search-submit {
 .suf-mag-excerpts h3 {
   font-family: "Oswald";
   font-size: 23px;
-  font-size: 1.75rem;
-  line-height: 34px;
+  font-size: 1.625rem;
+  line-height: 37px;
   line-height: 2.625rem;
   font-weight: 400;
   margin: 0;
@@ -5923,8 +5923,8 @@ div.css-search div.em-search-main .em-search-submit {
 .rps-welcome h3 {
   font-family: "Oswald";
   font-size: 25px;
-  font-size: 1.925rem;
-  line-height: 38px;
+  font-size: 1.7875rem;
+  line-height: 40px;
   line-height: 2.8875rem;
   font-weight: 400;
   margin: 0;
@@ -5945,8 +5945,8 @@ div.css-search div.em-search-main .em-search-submit {
 /* line 46, ../sass/partials/_magazine-layout.scss */
 .rps-welcome .suf-tile-text p {
   font-size: 15px;
-  font-size: 1.18462rem;
-  line-height: 21px;
+  font-size: 1.1rem;
+  line-height: 23px;
   line-height: 1.65rem;
 }
 
@@ -5958,9 +5958,9 @@ div.css-search div.em-search-main .em-search-submit {
 /* line 58, ../sass/partials/_magazine-layout.scss */
 h2.suf-mag-excerpt-title, h2.suf-tile-title {
   color: #e6e6e6;
-  font-size: 16px;
+  font-size: 17px;
   font-size: 1.2rem;
-  line-height: 20px;
+  line-height: 21px;
   line-height: 1.5rem;
   font-weight: 700;
   border-top: 1px dotted #c0c0c0;
@@ -6003,9 +6003,9 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 
 /* line 95, ../sass/partials/_magazine-layout.scss */
 .suf-mag-category, .suf-mag-excerpt, .suf-tile {
-  font-size: 13px;
+  font-size: 14px;
   font-size: 1rem;
-  line-height: 20px;
+  line-height: 21px;
   line-height: 1.5rem;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -6021,19 +6021,19 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 
 /* line 107, ../sass/partials/_magazine-layout.scss */
 .suf-mag-excerpt-text {
-  padding-bottom: 20px;
+  padding-bottom: 21px;
   padding-bottom: 1.5rem;
 }
 
 /* line 111, ../sass/partials/_magazine-layout.scss */
 .suf-mag-excerpt-text p, .suf-tile-text p {
-  margin-top: 20px;
+  margin-top: 21px;
   margin-top: 1.5rem;
   padding-top: 0px;
   padding-top: 0rem;
   padding-bottom: 0px;
   padding-bottom: 0rem;
-  margin-bottom: 20px;
+  margin-bottom: 21px;
   margin-bottom: 1.5rem;
   margin-left: 8px;
   margin-right: 8px;
@@ -6089,8 +6089,8 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 /* line 156, ../sass/partials/_magazine-layout.scss */
 .rps-showcases h3 {
   font-size: 20px;
-  font-size: 1.5rem;
-  line-height: 29px;
+  font-size: 1.39286rem;
+  line-height: 32px;
   line-height: 2.25rem;
   font-family: "Oswald";
   font-weight: 400;
@@ -6139,8 +6139,8 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 .rps-misc h3 {
   font-family: "Oswald";
   font-size: 17px;
-  font-size: 1.3rem;
-  line-height: 25px;
+  font-size: 1.20714rem;
+  line-height: 27px;
   line-height: 1.95rem;
   font-weight: 400;
   margin: 0;
@@ -6248,25 +6248,25 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 
 /* line 1, ../sass/partials/_post.scss */
 .excerpt {
-  font-size: 13px;
+  font-size: 14px;
   font-size: 1rem;
-  line-height: 20px;
+  line-height: 21px;
   line-height: 1.5rem;
 }
 
 /* line 5, ../sass/partials/_post.scss */
 .full-content {
   font-size: 14px;
-  font-size: 1.07692rem;
-  line-height: 20px;
+  font-size: 1rem;
+  line-height: 21px;
   line-height: 1.5rem;
 }
 
 /* line 10, ../sass/partials/_post.scss */
 .entry-header h1, .entry-header h2 {
   font-size: 26px;
-  font-size: 2rem;
-  line-height: 39px;
+  font-size: 1.85714rem;
+  line-height: 42px;
   line-height: 3rem;
   color: #e6e6e6;
   font-family: "Oswald";
@@ -6347,25 +6347,25 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 /* line 67, ../sass/partials/_post.scss */
 .entry h2 {
   font-size: 22px;
-  font-size: 1.72308rem;
-  line-height: 39px;
+  font-size: 1.6rem;
+  line-height: 42px;
   line-height: 3rem;
   color: #e6e6e6;
 }
 /* line 71, ../sass/partials/_post.scss */
 .entry h3 {
   font-size: 20px;
-  font-size: 1.50769rem;
-  line-height: 39px;
+  font-size: 1.4rem;
+  line-height: 42px;
   line-height: 3rem;
   color: #e6e6e6;
 }
 /* line 75, ../sass/partials/_post.scss */
 .entry h4 {
   font-size: 17px;
-  font-size: 1.29231rem;
-  line-height: 39px;
-  line-height: 3rem;
+  font-size: 1.2rem;
+  line-height: 21px;
+  line-height: 1.5rem;
   color: #e6e6e6;
 }
 /* line 79, ../sass/partials/_post.scss */
@@ -6375,9 +6375,9 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 
 /* line 84, ../sass/partials/_post.scss */
 .post-footer {
-  font-size: 12px;
+  font-size: 13px;
   font-size: 0.93rem;
-  line-height: 20px;
+  line-height: 21px;
   line-height: 1.5rem;
   margin: 5px 0;
   width: 100%;
@@ -6390,9 +6390,9 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 
 /* line 94, ../sass/partials/_post.scss */
 .postdata {
-  font-size: 12px;
+  font-size: 13px;
   font-size: 0.93rem;
-  line-height: 20px;
+  line-height: 21px;
   line-height: 1.5rem;
   margin-top: 2px;
   color: #666666;
@@ -6497,9 +6497,9 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 
 /* line 1, ../sass/partials/_comments.scss */
 .must-log-in {
-  font-size: 12px;
+  font-size: 13px;
   font-size: 0.93rem;
-  line-height: 20px;
+  line-height: 21px;
   line-height: 1.5rem;
   margin-top: 2px;
   color: #666666;
@@ -6580,9 +6580,9 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   padding: 4px 10px;
   width: auto;
   color: #e6e6e6;
-  font-size: 12px;
+  font-size: 13px;
   font-size: 0.93rem;
-  line-height: 20px;
+  line-height: 21px;
   line-height: 1.5rem;
 }
 /* line 48, ../sass/partials/_sidebars.scss */
@@ -6599,9 +6599,9 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 /* line 10, ../sass/partials/_footer.scss */
 #cred {
   border-top: 1px solid #555555;
-  font-size: 10px;
+  font-size: 11px;
   font-size: 0.8rem;
-  line-height: 20px;
+  line-height: 21px;
   line-height: 1.5rem;
   padding: 0;
   clear: both;
@@ -6769,8 +6769,8 @@ a:hover {
 /* line 72, ../sass/rps.scss */
 h2.suf-tile-title {
   font-size: 15px;
-  font-size: 1.15385rem;
-  line-height: 20px;
+  font-size: 1.07143rem;
+  line-height: 21px;
   line-height: 1.5rem;
 }
 /* line 77, ../sass/rps.scss */
@@ -6779,8 +6779,8 @@ h2.suf-tile-title a:hover,
 h2.suf-tile-title a:visited,
 h2.suf-tile-title a:active {
   font-size: 15px;
-  font-size: 1.15385rem;
-  line-height: 20px;
+  font-size: 1.07143rem;
+  line-height: 21px;
   line-height: 1.5rem;
 }
 
