@@ -128,7 +128,7 @@ function actionRPS_GF_update_profile($entry, $form)
     $_user = new stdClass();
     $_user->ID = (int) $_user_id;
     $_userdata = get_userdata($_user_id);
-    $_user->user_login = $wpdb->escape($_userdata->user_login);
+    $_user->user_login = esc_sql($_userdata->user_login);
 
     $gf_fields = rps_GF_get_profile_fields();
 
