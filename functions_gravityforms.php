@@ -21,6 +21,30 @@ add_filter('gform_field_value_email', 'filterRPS_GF_populate_email');
 // activate password field (By default Gravity Forms does not allow a password field to be used. This filter enables this option.
 add_filter("gform_enable_password_field", create_function("", "return true;"));
 
+add_action("gform_enqueue_scripts", 'actionRPS_GF_enqueue_scripts', 99, 2);
+
+/**
+ * The combination of Gravity Forms Picatcha 1.2 and jQuery 1.10.x results in a problem when you have fields in your form that you limit the charcters on.
+ * Picatcha checks is the jQuery script is present and if the version is < '1.7'. This fails with a version of 1.1x.x
+ *
+ * @param string|array $form
+ * @param boolean $ajax
+ */
+function actionRPS_GF_enqueue_scripts($form, $ajax)
+{
+	if(!is_array(rgar($form, "fields")))
+		return;
+
+	//cycle through the fields to see if picatcha is being used
+	foreach( $form['fields'] as $field){
+		if( ($field['type']=='picatcha') ){
+			wp_dequeue_script("gform_picatcha_script");
+			wp_deregister_script("gform_picatcha_script");
+			wp_enqueue_script("gform_picatcha_script", get_stylesheet_directory_uri() .'/scripts/picatcha.js', array("jquery"),false);
+			break;
+		}
+	}
+}
 /**
  * Setup the fields
  *
