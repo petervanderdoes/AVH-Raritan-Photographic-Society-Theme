@@ -24,8 +24,11 @@ add_filter("gform_enable_password_field", create_function("", "return true;"));
 add_action("gform_enqueue_scripts", 'actionRPS_GF_enqueue_scripts', 99, 2);
 
 /**
- * The combination of Gravity Forms Picatcha 1.2 and jQuery 1.10.x results in a problem when you have fields in your form that you limit the charcters on.
- * Picatcha checks is the jQuery script is present and if the version is < '1.7'. This fails with a version of 1.1x.x
+ * The combination of Gravity Forms Picatcha 1.2 and jQuery 1.10.x results
+ * in a problem when you have fields in your form that you limit the
+ * characters on.
+ * Picatcha checks is the jQuery script is present and if the
+ * version is < '1.7'. This fails with a version of 1.1x.x
  *
  * @param string|array $form
  * @param boolean $ajax
