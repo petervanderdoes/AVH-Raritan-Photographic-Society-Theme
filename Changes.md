@@ -2,11 +2,11 @@
 
 == Changelog
 
-= Version 1.3.0-dev.1 =
-* Preparation for new development cycle.
-
-= Version 1.3.0-dev.1 =
-* Preparation for new development cycle.
+= Version 1.3.0-dev.1
+* Fix problem with Gravity Forms.
+  The Picatcha JavaScript is downloaded from their server, but the version
+  check of jQuery fails, making it load jQuery 1.9.1 which in his turn makes
+  the word count fail in Gravity Forms,
 
 = Version 1.2.1
 * Typo in the welcome message
