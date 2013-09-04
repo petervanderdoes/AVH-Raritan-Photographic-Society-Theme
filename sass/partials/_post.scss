@@ -79,6 +79,9 @@
   ul li {
     list-style: disc;
   }
+  p {
+    @include trailer($font-size: $base-font-size-full-story);
+  }
 }
 
 .post-footer {
