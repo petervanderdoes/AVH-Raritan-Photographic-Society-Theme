@@ -35,19 +35,20 @@ add_action("gform_enqueue_scripts", 'actionRPS_GF_enqueue_scripts', 99, 2);
  */
 function actionRPS_GF_enqueue_scripts($form, $ajax)
 {
-	if(!is_array(rgar($form, "fields")))
-		return;
+    if (!is_array(rgar($form, "fields")))
+        return;
 
-	//cycle through the fields to see if picatcha is being used
-	foreach( $form['fields'] as $field){
-		if( ($field['type']=='picatcha') ){
-			wp_dequeue_script("gform_picatcha_script");
-			wp_deregister_script("gform_picatcha_script");
-			wp_enqueue_script("gform_picatcha_script", get_stylesheet_directory_uri() .'/scripts/picatcha.js', array("jquery"),false);
-			break;
-		}
-	}
+        // cycle through the fields to see if picatcha is being used
+    foreach ($form['fields'] as $field) {
+        if (( $field['type'] == 'picatcha' )) {
+            wp_dequeue_script("gform_picatcha_script");
+            wp_deregister_script("gform_picatcha_script");
+            wp_enqueue_script("gform_picatcha_script", get_stylesheet_directory_uri() . '/scripts/picatcha.js', array("jquery"), false);
+            break;
+        }
+    }
 }
+
 /**
  * Setup the fields
  *
@@ -55,15 +56,15 @@ function actionRPS_GF_enqueue_scripts($form, $ajax)
  */
 function rps_GF_get_profile_fields()
 {
-    $_fields['first_name'] = array('gf_index' => '1.3', 'wp_meta' => 'first_name');
-    $_fields['last_name'] = array('gf_index' => '1.6', 'wp_meta' => 'last_name');
-    $_fields['nickname'] = array('gf_index' => '2', 'wp_meta' => 'nickname');
-    $_fields['display_name'] = array('gf_index' => '3', 'wp_meta' => 'display_name');
-    $_fields['website'] = array('gf_index' => '8', 'wp_meta' => 'user_url');
+    $_fields['first_name'] = array('gf_index' => '1.3','wp_meta' => 'first_name');
+    $_fields['last_name'] = array('gf_index' => '1.6','wp_meta' => 'last_name');
+    $_fields['nickname'] = array('gf_index' => '2','wp_meta' => 'nickname');
+    $_fields['display_name'] = array('gf_index' => '3','wp_meta' => 'display_name');
+    $_fields['website'] = array('gf_index' => '8','wp_meta' => 'user_url');
 
     // Fields below are added by the parent Theme.
-    $_fields['facebook'] = array('gf_index' => '9', 'wp_meta' => 'facebook');
-    $_fields['flickr'] = array('gf_index' => '10', 'wp_meta' => 'flickr');
+    $_fields['facebook'] = array('gf_index' => '9','wp_meta' => 'facebook');
+    $_fields['flickr'] = array('gf_index' => '10','wp_meta' => 'flickr');
 
     return $_fields;
 }
@@ -94,25 +95,25 @@ function filterRPS_GF_populate_profile_fields($form)
             $_public_display['display_nickname'] = $_profileuser->nickname;
             $_public_display['display_username'] = $_profileuser->user_login;
 
-            if (! empty($_profileuser->first_name))
+            if (!empty($_profileuser->first_name))
                 $_public_display['display_firstname'] = $_profileuser->first_name;
 
-            if (! empty($_profileuser->last_name))
+            if (!empty($_profileuser->last_name))
                 $_public_display['display_lastname'] = $_profileuser->last_name;
 
-            if (! empty($_profileuser->first_name) && ! empty($_profileuser->last_name)) {
+            if (!empty($_profileuser->first_name) && !empty($_profileuser->last_name)) {
                 $_public_display['display_firstlast'] = $_profileuser->first_name . ' ' . $_profileuser->last_name;
                 $_public_display['display_lastfirst'] = $_profileuser->last_name . ' ' . $_profileuser->first_name;
             }
 
-            if (! in_array($_profileuser->display_name, $_public_display)) // Only add this if it isn't duplicated elsewhere
+            if (!in_array($_profileuser->display_name, $_public_display)) // Only add this if it isn't duplicated elsewhere
                 $_public_display = array('display_displayname' => $_profileuser->display_name) + $_public_display;
 
             $_public_display = array_map('trim', $_public_display);
             $_public_display = array_unique($_public_display);
             foreach ($_public_display as $id => $item) {
-                $_is_selected = ($_profileuser->display_name == $item ? 1 : null);
-                $choices[] = array('text' => $item, 'value' => $item, 'isSelected' => $_is_selected);
+                $_is_selected = ( $_profileuser->display_name == $item ? 1 : null );
+                $choices[] = array('text' => $item,'value' => $item,'isSelected' => $_is_selected);
             }
             $field['choices'] = $choices;
             continue;
@@ -147,7 +148,7 @@ function actionRPS_GF_update_profile($entry, $form)
     // make sure that the user is logged in
     // we shouldn't get here because the form should check for logged in
     // users...
-    if (! is_user_logged_in()) {
+    if (!is_user_logged_in()) {
         wp_redirect(home_url());
         exit();
     }
