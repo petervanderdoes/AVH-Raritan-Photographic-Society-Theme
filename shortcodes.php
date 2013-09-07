@@ -9,14 +9,14 @@ add_shortcode('rps_archive', 'shortcodeRPS_archive');
  * Handles the shortcode rps_paid_member
  *
  * @uses $user_ID;
- *      
+ *
  * @return string The content to be displayed
  */
 function shortcodeContentForPaidMembers($atts, $content)
 {
     global $user_ID;
-    
-    if ((! is_user_logged_in()) || (! rps_is_paid_member($user_ID))) {
+
+    if (( !is_user_logged_in() ) || ( !rps_is_paid_member($user_ID) )) {
         $content = rps_display_restriction("Only members can see this content");
     }
     return $content;
@@ -25,8 +25,8 @@ function shortcodeContentForPaidMembers($atts, $content)
 /**
  * Display a nice banner for not logged in people and non-members.
  *
- * @param string $logged_in_message        
- * @param string $not_logged_in_message        
+ * @param string $logged_in_message
+ * @param string $not_logged_in_message
  * @return string
  */
 function rps_display_restriction($logged_in_message = "Only members can see this content", $not_logged_in_message = "You must be logged to see this content.")
@@ -48,13 +48,13 @@ function rps_display_restriction($logged_in_message = "Only members can see this
 
 function shortcodeRPS_archive($atts)
 {
-    extract(shortcode_atts(array('text' => 'Select season', 'pulldown' => 'yes', 'values' => ''), $atts));
-    
+    extract(shortcode_atts(array('text' => 'Select season','pulldown' => 'yes','values' => ''), $atts));
+
     $output = '';
     if (empty($values)) {
         return;
     }
-    
+
     $form_values = json_decode($values, true);
     $form = $text . '<br />';
     $form .= "<select name='myselect' id='myselect' class='rps-select'>\n";
@@ -64,7 +64,7 @@ function shortcodeRPS_archive($atts)
         $selected = '';
     }
     $form .= "</select>\n";
-    
+
     $script = '<script type="text/javascript">' . "\n";
     $script .= "jQuery('select').change(function () {\n";
     $script .= "	jQuery('.rps-list').hide();\n";
@@ -72,7 +72,7 @@ function shortcodeRPS_archive($atts)
     $script .= "	jQuery('#id' + id).show();\n";
     $script .= "});\n";
     $script .= '</script>' . "\n";
-    
+
     $output = $form . $script . '<br />';
     return $output;
 }
