@@ -5,13 +5,13 @@
 = Version 1.4.0-dev.1 =
 * Preparation for new development cycle.
 
-= Version 1.4.0-dev.1 =
-* Preparation for new development cycle.
+= Version 1.3.2
+* Fix ical so only RPS events show up.
 
-= Version 1.4.0-dev.1 =
-* Preparation for new development cycle.
+= Version 1.3.1
+* Fix paragraph rhythm
 
-= Version 1.3.0-dev.1
+= Version 1.3.0
 * Fix problem with Gravity Forms.
   The Picatcha JavaScript is downloaded from their server, but the version
   check of jQuery fails, making it load jQuery 1.9.1 which in his turn makes
