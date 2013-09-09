@@ -47,6 +47,8 @@ if (!rps_is_paid_member(get_current_user_id())) {
 }
 
 $sticky = get_option('sticky_posts');
+$post_to_skip = array();
+$sticky_queries = array();
 if (is_array($sticky) && is_numeric($sticky[0])) {
     rsort($sticky);
     $amount_of_stickies_to_display = 3;
