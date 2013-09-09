@@ -56,15 +56,15 @@ function actionRPS_GF_enqueue_scripts($form, $ajax)
  */
 function rps_GF_get_profile_fields()
 {
-    $_fields['first_name'] = array('gf_index' => '1.3','wp_meta' => 'first_name');
-    $_fields['last_name'] = array('gf_index' => '1.6','wp_meta' => 'last_name');
-    $_fields['nickname'] = array('gf_index' => '2','wp_meta' => 'nickname');
-    $_fields['display_name'] = array('gf_index' => '3','wp_meta' => 'display_name');
-    $_fields['website'] = array('gf_index' => '8','wp_meta' => 'user_url');
+    $_fields['first_name'] = array('gf_index' => '1.3', 'wp_meta' => 'first_name');
+    $_fields['last_name'] = array('gf_index' => '1.6', 'wp_meta' => 'last_name');
+    $_fields['nickname'] = array('gf_index' => '2', 'wp_meta' => 'nickname');
+    $_fields['display_name'] = array('gf_index' => '3', 'wp_meta' => 'display_name');
+    $_fields['website'] = array('gf_index' => '8', 'wp_meta' => 'user_url');
 
     // Fields below are added by the parent Theme.
-    $_fields['facebook'] = array('gf_index' => '9','wp_meta' => 'facebook');
-    $_fields['flickr'] = array('gf_index' => '10','wp_meta' => 'flickr');
+    $_fields['facebook'] = array('gf_index' => '9', 'wp_meta' => 'facebook');
+    $_fields['flickr'] = array('gf_index' => '10', 'wp_meta' => 'flickr');
 
     return $_fields;
 }
@@ -113,7 +113,7 @@ function filterRPS_GF_populate_profile_fields($form)
             $_public_display = array_unique($_public_display);
             foreach ($_public_display as $id => $item) {
                 $_is_selected = ( $_profileuser->display_name == $item ? 1 : null );
-                $choices[] = array('text' => $item,'value' => $item,'isSelected' => $_is_selected);
+                $choices[] = array('text' => $item, 'value' => $item, 'isSelected' => $_is_selected);
             }
             $field['choices'] = $choices;
             continue;
