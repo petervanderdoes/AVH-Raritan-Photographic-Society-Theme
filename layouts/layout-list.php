@@ -11,7 +11,7 @@ global $post, $page_title, $wp_query, $suf_excerpt_list_count, $suf_cat_info_ena
 
 $context = $suffusion->get_context();
 $suffusion_list_layout = true;
-if (! isset($suffusion_duplicate_posts))
+if (!isset($suffusion_duplicate_posts))
     $suffusion_duplicate_posts = array();
 
 $page_title = get_bloginfo('name');
@@ -30,9 +30,9 @@ if (isset($suffusion_cpt_post_id)) {
     $hide_title = suffusion_get_post_meta($suffusion_cpt_post_id, 'suf_hide_page_title', true);
 }
 
-if ($suf_excerpt_list_count == 'all' && ! $page_of_posts) {
+if ($suf_excerpt_list_count == 'all' && !$page_of_posts) {
     $query_args = $wp_query->query;
-    $query_args['posts_per_page'] = - 1;
+    $query_args['posts_per_page'] = -1;
     $wp_query = new WP_Query($query_args);
 } else
     if ($page_of_posts) {
@@ -51,13 +51,13 @@ if (have_posts()) {
     }
 
     while (have_posts()) {
-        $suffusion_current_post_index ++;
+        $suffusion_current_post_index++;
         if ($suffusion_current_post_index > $suffusion_full_post_count_for_view) {
             break;
         }
         the_post();
         if (in_array($post->ID, $suffusion_duplicate_posts)) {
-            $suffusion_current_post_index --;
+            $suffusion_current_post_index--;
             continue;
         }
         ?>
@@ -110,7 +110,7 @@ if (have_posts()) {
         ?>
 <section class='post <?php echo $class; ?> fix'>
 <?php
-        if (! $hide_title) {
+        if (!$hide_title) {
             ?>
 		<header class="post-header">
 		<h2 class="posttitle"><?php echo $page_title; ?></h2>

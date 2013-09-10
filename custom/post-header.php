@@ -34,8 +34,7 @@ $post_show_comment = $$show_comment;
 $post_show_perm = $$show_perm;
 $post_with_title_show_perm = $$with_title_show_perm;
 
-
-if (is_singular() && (!is_front_page())) {
+if (is_singular() && ( !is_front_page() )) {
     $header_tag = "h1";
 } else {
     $header_tag = "h2";
@@ -63,14 +62,14 @@ if ($post->post_type == 'post') {
 	<div class="postdata fix">
 		<?php
         $title = get_the_title();
-        if (($post_show_perm == 'show-tleft' || $post_show_perm == 'show-tright') && (($title == '' || ! $title) || (! ($title == '' || ! $title) && $post_with_title_show_perm != 'hide'))) {
+        if (( $post_show_perm == 'show-tleft' || $post_show_perm == 'show-tright' ) && ( ( $title == '' || !$title ) || ( !( $title == '' || !$title ) && $post_with_title_show_perm != 'hide' ) )) {
             $permalink_text = apply_filters('suffusion_permalink_text', __('Permalink', 'suffusion'));
             $prepend = apply_filters('suffusion_before_byline_html', do_shortcode($suf_byline_before_permalink), 'permalink');
             $append = apply_filters('suffusion_after_byline_html', do_shortcode($suf_byline_after_permalink), 'permalink');
             echo "<span class='permalink'><span class='icon'>&nbsp;</span>" . $prepend . suffusion_get_post_title_and_link($permalink_text) . $append . "</span>\n";
         }
 
-        if (($post_show_posted_by == 'show-tleft' || $post_show_posted_by == 'show-tright') && $post_meta_position == 'corners') {
+        if (( $post_show_posted_by == 'show-tleft' || $post_show_posted_by == 'show-tright' ) && $post_meta_position == 'corners') {
             suffusion_print_author_byline();
         }
         if ($post_show_cats == 'show' || $post_show_cats == 'show-tright') {
@@ -83,7 +82,7 @@ if ($post->post_type == 'post') {
         if (is_singular()) {
             if (is_attachment()) {
                 $mime = get_post_mime_type();
-                if (strpos($mime, '/') > - 1) {
+                if (strpos($mime, '/') > -1) {
                     $mime = substr($mime, 0, strpos($mime, '/'));
                 }
                 $comments_disabled_var = "suf_{$mime}_comments";
@@ -97,7 +96,7 @@ if ($post->post_type == 'post') {
                 $comments_disabled = false;
             }
 
-            if ('open' == $post->comment_status && ($post_show_comment == 'show' || $post_show_comment == 'show-tleft') && ! $comments_disabled) {
+            if ('open' == $post->comment_status && ( $post_show_comment == 'show' || $post_show_comment == 'show-tleft' ) && !$comments_disabled) {
                 ?>
 				<span class="comments"><span class="icon">&nbsp;</span><a
 				href="<?php echo get_permalink($post->ID)?>#respond"><?php _e('Add comments', 'suffusion'); ?></a></span>
@@ -138,7 +137,7 @@ if ($post->post_type == 'post') {
 <!-- /.title-container -->
 <?php
 } else {
-    if (! is_singular()) {
+    if (!is_singular()) {
         ?>
 <header class="entry-header post-header fix">
 	<<?php echo $header_tag; ?> class="entry-title posttitle"><?php echo suffusion_get_post_title_and_link(); ?></<?php echo $header_tag; ?>>
@@ -146,7 +145,7 @@ if ($post->post_type == 'post') {
 <?php
     } else {
         $hide_title = suffusion_get_post_meta($post->ID, 'suf_hide_page_title', true);
-        if (! $hide_title) {
+        if (!$hide_title) {
             ?>
 <header class="entry-header post-header fix">
 	<<?php echo $header_tag; ?> class="entry-title posttitle"><?php the_title(); ?></<?php echo $header_tag; ?>>
@@ -165,7 +164,7 @@ if ($post->post_type == 'post') {
 
         if (is_attachment()) {
             $mime = get_post_mime_type();
-            if (strpos($mime, '/') > - 1) {
+            if (strpos($mime, '/') > -1) {
                 $mime = substr($mime, 0, strpos($mime, '/'));
             }
             $comments_disabled_var = "suf_{$mime}_comments";
@@ -179,7 +178,7 @@ if ($post->post_type == 'post') {
             $comments_disabled = false;
         }
 
-        if ('open' == $post->comment_status && ($suf_page_show_comment == 'show' || $suf_page_show_comment == 'show-tleft') && ! $comments_disabled) {
+        if ('open' == $post->comment_status && ( $suf_page_show_comment == 'show' || $suf_page_show_comment == 'show-tleft' ) && !$comments_disabled) {
             ?>
 			<span class="comments"><span class="icon">&nbsp;</span><a
 		href="#respond"><?php _e('Add comments', 'suffusion'); ?></a></span>

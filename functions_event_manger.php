@@ -8,6 +8,7 @@
  */
 add_filter('em_event_output_show_condition', 'filterRPS_EM_output_show_condition', 1, 4);
 add_filter('em_widget_events_get_args', 'filterRPS_EM_get_child_categories', 10, 1);
+add_filter('em_calendar_template_args', 'filterRPS_em_ical_args', 10, 1);
 add_filter('em_event_output_placeholder', 'filterRPS_EM_event_output_placeholder', 10, 4);
 add_filter('em_location_output_placeholder', 'filterRPS_EM_location_output_placeholder', 10, 4);
 add_filter('em_widget_calendar_get_args', 'filterRPS_EM_get_child_categories', 10, 1);
@@ -22,9 +23,9 @@ add_filter('em_widget_calendar_get_args', 'filterRPS_EM_get_child_categories', 1
  *
  * @param boolean $show_condition
  * @param string $condition
- *        The name of the conditional placeholder.
+ *            The name of the conditional placeholder.
  * @param string $match
- *        The string with conditional placeholder from opening to closing placeholder.
+ *            The string with conditional placeholder from opening to closing placeholder.
  * @param object $EM_Event
  * @return boolean
  */
@@ -114,7 +115,7 @@ function filterRPS_EM_location_output_placeholder($replace, $em, $full_result, $
 function rps_EM_get_children_of_categories($categories)
 {
     $all_categories = array();
-    if (!is_array($categories)) {
+    if (! is_array($categories)) {
         $categories = explode(',', $categories);
     }
     foreach ($categories as $category_id) {

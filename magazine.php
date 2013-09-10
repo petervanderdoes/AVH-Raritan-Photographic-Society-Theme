@@ -47,12 +47,14 @@ if (!rps_is_paid_member(get_current_user_id())) {
 }
 
 $sticky = get_option('sticky_posts');
-if (is_array($sticky) && is_numeric($sticky[0])) {
+$post_to_skip = array();
+$sticky_queries = array();
+if (is_array($sticky) && !empty($sticky) && is_numeric($sticky[0])) {
     rsort($sticky);
     $amount_of_stickies_to_display = 3;
     $sticky = array_slice($sticky, 0, $amount_of_stickies_to_display);
     /* Query sticky posts */
-    $sticky_articles = new WP_Query(array('post__in' => $sticky,'ignore_sticky_posts' => 1));
+    $sticky_articles = new WP_Query(array('post__in' => $sticky, 'ignore_sticky_posts' => 1));
 
     if (is_object($sticky_articles)) {
         $sticky_queries[] = $sticky_articles;
@@ -64,7 +66,7 @@ if (is_array($sticky) && is_numeric($sticky[0])) {
     wp_reset_query();
 }
 
-$mag_queries = rps_suffusion_get_mag_section_queries(array('meta_check_field' => 'suf_magazine_excerpt','category_prefix' => 'suf_mag_excerpt_categories','to_skip' => $post_to_skip));
+$mag_queries = rps_suffusion_get_mag_section_queries(array('meta_check_field' => 'suf_magazine_excerpt', 'category_prefix' => 'suf_mag_excerpt_categories', 'to_skip' => $post_to_skip));
 $queries = array_merge($sticky_queries, $mag_queries);
 $total = 0;
 foreach ($queries as $query) {
@@ -161,7 +163,7 @@ echo '<table>';
 wp_reset_query();
 
 $ctr = 0;
-$queries = rps_suffusion_get_mag_section_queries(array('meta_check_field' => 'suf_magazine_excerpt','category_prefix' => 'suf_mag_excerpt_categories','to_skip' => $post_to_skip,'total' => 10));
+$queries = rps_suffusion_get_mag_section_queries(array('meta_check_field' => 'suf_magazine_excerpt', 'category_prefix' => 'suf_mag_excerpt_categories', 'to_skip' => $post_to_skip, 'total' => 10));
 $total = 0;
 foreach ($queries as $query) {
     if (isset($query->posts) && is_array($query->posts)) {

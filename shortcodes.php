@@ -48,7 +48,7 @@ function rps_display_restriction($logged_in_message = "Only members can see this
 
 function shortcodeRPS_archive($atts)
 {
-    extract(shortcode_atts(array('text' => 'Select season','pulldown' => 'yes','values' => ''), $atts));
+    extract(shortcode_atts(array('text' => 'Select season', 'pulldown' => 'yes', 'values' => ''), $atts));
 
     $output = '';
     if (empty($values)) {

@@ -142,7 +142,7 @@ function actionRPS_enqueue_styles()
         $rps_style_version = "51d99ad";
         wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps-' . $rps_style_version . '.css');
     }
-    if (! isset($suffusion_theme_hierarchy[$suf_color_scheme])) {
+    if (!isset($suffusion_theme_hierarchy[$suf_color_scheme])) {
         if (@file_exists(get_stylesheet_directory() . '/skins/' . $suf_color_scheme . '/skin.css')) {
             $sheets = array('style.css', 'skins/' . $suf_color_scheme . '/skin.css');
         } else
@@ -200,12 +200,12 @@ function actionRPS_enqueue_styles()
         }
     }
 
-    if (($suf_autogen_css == 'autogen' || $suf_autogen_css == 'nogen-link') || (! $css_loaded && $suf_autogen_css == 'autogen-file')) {
+    if (( $suf_autogen_css == 'autogen' || $suf_autogen_css == 'nogen-link' ) || ( !$css_loaded && $suf_autogen_css == 'autogen-file' )) {
         wp_enqueue_style('suffusion-generated?suffusion-css=css', home_url(), array('suffusion-theme', 'suffusion-ie'), SUFFUSION_THEME_VERSION);
     }
 
     // Custom styles, from included CSS files
-    for ($i = 1; $i <= 3; $i ++) {
+    for ($i = 1; $i <= 3; $i++) {
         $var = "suf_custom_css_link_{$i}";
         global $$var;
         if (isset($$var) && trim($$var) != "") {
@@ -223,7 +223,7 @@ function filterRPS_remove_cssjs_ver($src)
         $port = isset($parsed_url['port']) ? ':' . $parsed_url['port'] : '';
         $user = isset($parsed_url['user']) ? $parsed_url['user'] : '';
         $pass = isset($parsed_url['pass']) ? ':' . $parsed_url['pass'] : '';
-        $pass = ($user || $pass) ? "$pass@" : '';
+        $pass = ( $user || $pass ) ? "$pass@" : '';
         $path = isset($parsed_url['path']) ? $parsed_url['path'] : '';
         $src = "$scheme$user$pass$host$port$path";
     }
@@ -270,7 +270,7 @@ function rps_suffusion_get_mag_section_queries($args = array())
     }
     $posts_to_ignore = array_merge($solos, $posts_to_skip);
 
-    $total_posts_to_get = (isset($args['total']) ? $args['total'] : $suf_mag_total_excerpts);
+    $total_posts_to_get = ( isset($args['total']) ? $args['total'] : $suf_mag_total_excerpts );
     $category_prefix = $args['category_prefix'];
     if ($category_prefix) {
         $categories = suffusion_get_allowed_categories($category_prefix);
@@ -319,11 +319,11 @@ function rps_comment_form($args = array(), $post_id = null)
     $user_identity = $user->exists() ? $user->display_name : '';
 
     $req = get_option('require_name_email');
-    $aria_req = ($req ? " aria-required='true'" : '');
-    $fields = array('author' => '<p class="comment-form-author">' . '<label for="author">' . __('Name') . ($req ? ' <span class="required">*</span>' : '') . '</label> ' . '<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . ' /></p>', 'email' => '<p class="comment-form-email"><label for="email">' . __('Email') . ($req ? ' <span class="required">*</span>' : '') . '</label> ' . '<input id="email" name="email" type="text" value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $aria_req . ' /></p>', 'url' => '<p class="comment-form-url"><label for="url">' . __('Website') . '</label>' . '<input id="url" name="url" type="text" value="' . esc_attr($commenter['comment_author_url']) . '" size="30" /></p>');
+    $aria_req = ( $req ? " aria-required='true'" : '' );
+    $fields = array('author' => '<p class="comment-form-author">' . '<label for="author">' . __('Name') . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' . '<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . ' /></p>', 'email' => '<p class="comment-form-email"><label for="email">' . __('Email') . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' . '<input id="email" name="email" type="text" value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $aria_req . ' /></p>', 'url' => '<p class="comment-form-url"><label for="url">' . __('Website') . '</label>' . '<input id="url" name="url" type="text" value="' . esc_attr($commenter['comment_author_url']) . '" size="30" /></p>');
 
     $required_text = sprintf(' ' . __('Required fields are marked %s'), '<span class="required">*</span>');
-    $defaults = array('fields' => apply_filters('comment_form_default_fields', $fields), 'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x('Comment', 'noun') . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>', 'must_log_in' => '<p class="must-log-in">' . sprintf(__('You must be <a href="%s">logged in</a> to post a comment.'), wp_login_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>', 'logged_in_as' => '<p class="logged-in-as">' . sprintf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>'), get_edit_user_link(), $user_identity, wp_logout_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>', 'comment_notes_before' => '<p class="comment-notes">' . __('Your email address will not be published.') . ($req ? $required_text : '') . '</p>', 'comment_notes_after' => '<p class="form-allowed-tags">' . sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s'), ' <code>' . allowed_tags() . '</code>') . '</p>', 'id_form' => 'commentform', 'id_submit' => 'submit', 'title_reply' => __('Leave a Reply'), 'title_reply_to' => __('Leave a Reply to %s'), 'cancel_reply_link' => __('Cancel reply'), 'label_submit' => __('Post Comment'));
+    $defaults = array('fields' => apply_filters('comment_form_default_fields', $fields), 'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x('Comment', 'noun') . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>', 'must_log_in' => '<p class="must-log-in">' . sprintf(__('You must be <a href="%s">logged in</a> to post a comment.'), wp_login_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>', 'logged_in_as' => '<p class="logged-in-as">' . sprintf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>'), get_edit_user_link(), $user_identity, wp_logout_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>', 'comment_notes_before' => '<p class="comment-notes">' . __('Your email address will not be published.') . ( $req ? $required_text : '' ) . '</p>', 'comment_notes_after' => '<p class="form-allowed-tags">' . sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s'), ' <code>' . allowed_tags() . '</code>') . '</p>', 'id_form' => 'commentform', 'id_submit' => 'submit', 'title_reply' => __('Leave a Reply'), 'title_reply_to' => __('Leave a Reply to %s'), 'cancel_reply_link' => __('Cancel reply'), 'label_submit' => __('Post Comment'));
 
     $args = wp_parse_args($args, apply_filters('comment_form_defaults', $defaults));
 

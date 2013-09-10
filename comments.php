@@ -21,7 +21,7 @@ if (post_password_required()) {
 } else {
     global $post, $post_id, $user_identity;
     global $suf_comment_label_styles, $suf_comment_label_name, $suf_comment_label_email, $suf_comment_label_uri, $suf_comment_label_your_comment, $suf_comment_label_name_req, $suf_comment_label_email_req, $suf_comments_disabled_all_sel, $suf_comments_disabled, $suf_comments_disabled_msg_for_posts;
-    
+
     // Begin Comments & Trackbacks
     if (have_comments()) {
         ?>
@@ -35,10 +35,10 @@ if (post_password_required()) {
         suffusion_comment_navigation();
         // End Comments
     }
-    
+
     if ('open' == $post->comment_status) {
         $label_style = $suf_comment_label_styles == "plain" ? "suf-comment-label" : "suf-comment-label fancy ";
-        
+
         if ($suf_comment_label_styles == 'inside') {
             $author_req = $req ? $suf_comment_label_name_req : "";
             $author_field = "
@@ -77,12 +77,12 @@ if (post_password_required()) {
             $author_field = "
 					<p>
 						<label for='author' class='$label_style'>$suf_comment_label_name</label>
-						<input type='text' name='author' id='author' class='textarea' value='" . esc_attr($comment_author) . "' size='28' tabindex='1' /> " . ($req ? $suf_comment_label_name_req : "") . "
+						<input type='text' name='author' id='author' class='textarea' value='" . esc_attr($comment_author) . "' size='28' tabindex='1' /> " . ( $req ? $suf_comment_label_name_req : "" ) . "
 					</p>";
             $email_field = "
 					<p>
 						<label for='email' class='$label_style'>$suf_comment_label_email</label>
-						<input type='text' name='email' id='email' value='" . esc_attr($comment_author_email) . "' size='28' tabindex='2' class='textarea' /> " . ($req ? $suf_comment_label_email_req : "") . "
+						<input type='text' name='email' id='email' value='" . esc_attr($comment_author_email) . "' size='28' tabindex='2' class='textarea' /> " . ( $req ? $suf_comment_label_email_req : "" ) . "
 					</p>";
             $url_field = "
 					<p>
@@ -95,24 +95,24 @@ if (post_password_required()) {
 						<textarea name='comment' id='comment' cols='60' rows='10' tabindex='4' class='textarea'></textarea>
 					</p>";
         }
-        
+
         rps_comment_form(apply_filters('suffusion_comment_form_fields', array('fields' => array('author' => $author_field, 'email' => $email_field, 'url' => $url_field), 'comment_field' => $comment_field, 'logged_in_as' => '', 'must_log_in' => '<p class="must-log-in">' . '<a href="' . wp_login_url(apply_filters('the_permalink', get_permalink($post->ID))) . '">' . __('You must be logged in to post a comment.', 'suffusion') . '</a></p>', 'title_reply' => '<span class="icon">&nbsp;</span>' . __('Leave a Reply', "suffusion"), 'title_reply_to' => __('Leave a Reply to %s', "suffusion"), 'label_submit' => __('Submit Comment', "suffusion"), 'comment_notes_before' => apply_filters('suffusion_before_comment_form', "<span></span>"), 'comment_notes_after' => apply_filters('suffusion_after_comment_form', '<p class="form-allowed-tags">' . sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'suffusion'), '<code>' . allowed_tags() . '</code>') . '</p>'), 'cancel_reply_link' => __('Cancel reply', 'suffusion'))));
     } else { // Comments are closed
         $message_disabled = false;
         if (is_page() && isset($suf_comments_disabled_all_sel) && $suf_comments_disabled_all_sel == 'all') {
             $message_disabled = true;
-        } else 
+        } else
             if (is_page() && isset($suf_comments_disabled_all_sel) && $suf_comments_disabled_all_sel != 'all' && isset($suf_comments_disabled)) {
                 $disabled_pages = explode(',', $suf_comments_disabled);
                 if (is_array($disabled_pages) && count($disabled_pages) > 0 && in_array($post->ID, $disabled_pages)) {
                     $message_disabled = true;
                 }
-            } else 
-                if (is_singular() && ! is_page() && $suf_comments_disabled_msg_for_posts == 'hide') {
+            } else
+                if (is_singular() && !is_page() && $suf_comments_disabled_msg_for_posts == 'hide') {
                     $message_disabled = true;
                 }
-        
-        if (! $message_disabled) {
+
+        if (!$message_disabled) {
             echo "<p>";
             _e('Sorry, the comment form is closed at this time.', "suffusion");
             echo "</p>";

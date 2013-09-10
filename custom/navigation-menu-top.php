@@ -68,7 +68,7 @@ $menu_locations = get_nav_menu_locations();
 
 if (isset($menus_included) && isset($menu_locations[$suffusion_menu_location])) {
     $menu_in_location = $menu_locations[$suffusion_menu_location];
-    if (! in_array($menu_in_location, $menus_included)) {
+    if (!in_array($menu_in_location, $menus_included)) {
         $menus_included[] = $menu_in_location;
     }
 }
@@ -92,24 +92,24 @@ foreach ($entity_order as $entity) {
     if ($entity == 'pages') {
         $selected_pages = $$suffusion_page_option;
         $page_args = array('sort_column' => 'menu_order,post_title', 'child_of' => 0, 'echo' => 0, 'suffusion_nav_display' => $pages_style);
-        
+
         if ($page_all_sel == 'selected') {
             if (trim($selected_pages) == '') {
                 $page_args = array();
             } else {
                 $page_args['include'] = $selected_pages;
             }
-        } else 
+        } else
             if ($page_all_sel == 'exclude-selected') {
                 $page_args['exclude'] = $selected_pages;
-            } else 
+            } else
                 if ($page_all_sel == 'exclude-all') {
                     $page_args = array();
                 }
-        
+
         if ($pages_style == 'rolled-up' && count($page_args) != 0) {
-            $page_args['title_li'] = "<a href='" . ($page_tab_link == '' ? '#' : $page_tab_link) . "'>" . $page_tab_title . "</a>";
-        } else 
+            $page_args['title_li'] = "<a href='" . ( $page_tab_link == '' ? '#' : $page_tab_link ) . "'>" . $page_tab_title . "</a>";
+        } else
             if ($pages_style == 'flattened' && count($page_args) != 0) {
                 $page_args['title_li'] = '';
             }
@@ -119,14 +119,14 @@ foreach ($entity_order as $entity) {
             $page_str = wp_list_pages($page_args);
         }
         $ret_str .= $page_str;
-    } else 
+    } else
         if ($entity == 'categories') {
             $cat_args = array('orderby' => 'name', 'order' => 'ASC', 'child_of' => 0, 'echo' => 0, 'current_category' => 0);
-            
+
             if (function_exists('mycategoryorder')) {
                 $cat_args['orderby'] = 'order';
             }
-            
+
             $selected_cats = $$suffusion_cats_option;
             if ($cat_all_sel == 'selected') {
                 if (trim($selected_cats) == '') {
@@ -134,34 +134,34 @@ foreach ($entity_order as $entity) {
                 } else {
                     $cat_args['include'] = $selected_cats;
                 }
-            } else 
+            } else
                 if ($cat_all_sel == 'exclude-selected') {
                     $cat_args['exclude'] = $selected_cats;
-                } else 
+                } else
                     if ($cat_all_sel == 'exclude-all') {
                         $cat_args = array();
                     }
-            
+
             if ($cat_style == 'rolled-up' && count($cat_args) != 0) {
-                $cat_args['title_li'] = "<a href='" . ($cat_tab_link == '' ? '#' : $cat_tab_link) . "'>" . $cat_tab_title . "</a>";
-            } else 
+                $cat_args['title_li'] = "<a href='" . ( $cat_tab_link == '' ? '#' : $cat_tab_link ) . "'>" . $cat_tab_title . "</a>";
+            } else
                 if ($cat_style == 'flattened' && count($cat_args) != 0) {
                     $cat_args['title_li'] = '';
                 }
-            
+
             if (count($cat_args) == 0) {
                 $cat_str = '';
             } else {
                 $cat_str = wp_list_categories($cat_args);
             }
             $ret_str .= $cat_str;
-        } else 
+        } else
             if ($entity == 'links') {
-                $link_args = array('orderby' => 'name', 'order' => 'ASC', 'limit' => - 1, 'echo' => 0, 'categorize' => 0, 'title_before' => '', 'title_after' => '');
+                $link_args = array('orderby' => 'name', 'order' => 'ASC', 'limit' => -1, 'echo' => 0, 'categorize' => 0, 'title_before' => '', 'title_after' => '');
                 if (function_exists('mylinkorder')) {
                     $link_args['orderby'] = 'order';
                 }
-                
+
                 $selected_links = $$suffusion_links_option;
                 if ($link_all_sel == 'selected') {
                     if (trim($selected_links) == '') {
@@ -169,29 +169,29 @@ foreach ($entity_order as $entity) {
                     } else {
                         $link_args['include'] = $selected_links;
                     }
-                } else 
+                } else
                     if ($link_all_sel == 'exclude-selected') {
                         $link_args['exclude'] = $selected_links;
-                    } else 
+                    } else
                         if ($link_all_sel == 'exclude-all') {
                             $link_args = array();
                         }
-                
+
                 if ($links_style == 'rolled-up' && count($link_args) != 0) {
-                    $link_args['title_li'] = "<a href='" . ($links_tab_link == '' ? '#' : $links_tab_link) . "'>" . $links_tab_title . "</a>";
-                } else 
+                    $link_args['title_li'] = "<a href='" . ( $links_tab_link == '' ? '#' : $links_tab_link ) . "'>" . $links_tab_title . "</a>";
+                } else
                     if ($links_style == 'flattened' && count($link_args) != 0) {
                         $link_args['title_li'] = '';
                     }
-                
+
                 if (count($link_args) == 0) {
                     $link_str = '';
                 } else {
                     $link_str = wp_list_bookmarks($link_args);
                 }
                 $ret_str .= $link_str;
-            } else 
-                if ((strlen($entity) >= 5 && substr($entity, 0, 5) == 'menu-')) {
+            } else
+                if (( strlen($entity) >= 5 && substr($entity, 0, 5) == 'menu-' )) {
                     if (count($menus_to_show) != 0) {
                         $menu_print_args = array('container' => '', 'menu_class' => 'menu', 'echo' => false, 'depth' => 0, 'theme_location' => $suffusion_menu_location, 'items_wrap' => '%3$s');
                         if (current_theme_supports('mega-menus')) {

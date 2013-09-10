@@ -19,11 +19,11 @@ class RPS_Member_Menu_Widget extends WP_Widget
         if (is_user_logged_in()) {
             // Get menu
             $rps_member_menu = wp_get_nav_menu_object($instance['rps_member_menu']);
-            if (! $rps_member_menu)
+            if (!$rps_member_menu)
                 return;
             $instance['title'] = apply_filters('widget_title', $instance['title'], $instance, $this->id_base);
             echo $args['before_widget'];
-            if (! empty($instance['title']))
+            if (!empty($instance['title']))
                 echo $args['before_title'] . $instance['title'] . $args['after_title'];
             wp_nav_menu(array('fallback_cb' => '', 'menu' => $rps_member_menu));
             echo $args['after_widget'];
@@ -44,7 +44,7 @@ class RPS_Member_Menu_Widget extends WP_Widget
         // Get menus
         $menus = get_terms('nav_menu', array('hide_empty' => false));
         // If no menus exists, direct the user to go and create some.
-        if (! $menus) {
+        if (!$menus) {
             echo '<p>' . sprintf(__('No menus have been created yet. <a href="%s">Create some</a>.'), admin_url('nav-menus.php')) . '</p>';
             return;
         }
