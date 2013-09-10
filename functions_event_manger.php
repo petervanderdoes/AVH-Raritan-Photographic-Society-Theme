@@ -63,7 +63,7 @@ function filterRPS_em_ical_args($args)
  */
 function filterRPS_EM_get_child_categories($instance)
 {
-    if ($instance['category'] != '0') {
+    if (isset($instance['category']) && $instance['category'] != '0') {
         $instance['category'] = rps_EM_get_children_of_categories($instance['category']);
     }
     return $instance;
