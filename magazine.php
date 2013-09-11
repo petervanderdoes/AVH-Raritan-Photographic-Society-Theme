@@ -19,9 +19,9 @@ global $suf_post_show_comment;
 
 <div id="main-col">
 <?php suffusion_before_begin_content(); ?>
-	<div id="content" class="hfeed">
+    <div id="content" class="hfeed">
 <?php
-if (!rps_is_paid_member(get_current_user_id())) {
+if ( !rps_is_paid_member(get_current_user_id()) ) {
     echo "\n" . '<section class="rps-welcome">';
     echo '<div class="suf-tiles suf-tiles-1">';
 
@@ -49,16 +49,16 @@ if (!rps_is_paid_member(get_current_user_id())) {
 $sticky = get_option('sticky_posts');
 $post_to_skip = array();
 $sticky_queries = array();
-if (is_array($sticky) && !empty($sticky) && is_numeric($sticky[0])) {
+if ( is_array($sticky) && !empty($sticky) && is_numeric($sticky[0]) ) {
     rsort($sticky);
     $amount_of_stickies_to_display = 3;
     $sticky = array_slice($sticky, 0, $amount_of_stickies_to_display);
     /* Query sticky posts */
-    $sticky_articles = new WP_Query(array('post__in' => $sticky, 'ignore_sticky_posts' => 1));
+    $sticky_articles = new WP_Query(array('post__in' => $sticky,'ignore_sticky_posts' => 1));
 
-    if (is_object($sticky_articles)) {
+    if ( is_object($sticky_articles) ) {
         $sticky_queries[] = $sticky_articles;
-        while ($sticky_articles->have_posts()) {
+        while ( $sticky_articles->have_posts() ) {
             $sticky_articles->the_post();
             $post_to_skip[] = $post->ID;
         }
@@ -66,19 +66,19 @@ if (is_array($sticky) && !empty($sticky) && is_numeric($sticky[0])) {
     wp_reset_query();
 }
 
-$mag_queries = rps_suffusion_get_mag_section_queries(array('meta_check_field' => 'suf_magazine_excerpt', 'category_prefix' => 'suf_mag_excerpt_categories', 'to_skip' => $post_to_skip));
+$mag_queries = rps_suffusion_get_mag_section_queries(array('meta_check_field' => 'suf_magazine_excerpt','category_prefix' => 'suf_mag_excerpt_categories','to_skip' => $post_to_skip));
 $queries = array_merge($sticky_queries, $mag_queries);
 $total = 0;
-foreach ($queries as $query) {
-    if (isset($query->posts) && is_array($query->posts)) {
+foreach ( $queries as $query ) {
+    if ( isset($query->posts) && is_array($query->posts) ) {
         $total += count($query->posts);
     }
 }
-if ($total > 0) {
+if ( $total > 0 ) {
     global $suf_mag_excerpts_per_row, $suf_mag_excerpts_title, $suf_mag_total_excerpts;
     echo "<section class='suf-mag-excerpts suf-mag-excerpts-$suf_mag_excerpts_per_row'>\n";
 
-    if (trim($suf_mag_excerpts_title) != '') {
+    if ( trim($suf_mag_excerpts_title) != '' ) {
         global $suf_mag_excerpts_main_title_alignment;
         echo "<div class='suf-mag-excerpts-header $suf_mag_excerpts_main_title_alignment'>" . stripslashes($suf_mag_excerpts_title) . "</div>";
     }
@@ -86,16 +86,16 @@ if ($total > 0) {
     $ctr = 0;
     $tiles = 0;
     $cols_per_row = $suf_mag_excerpts_per_row;
-    foreach ($queries as $query) {
-        if (isset($query->posts) && is_array($query->posts)) {
+    foreach ( $queries as $query ) {
+        if ( isset($query->posts) && is_array($query->posts) ) {
             $num_results = count($query->posts);
-            while ($query->have_posts()) {
-                if ($ctr >= $suf_mag_total_excerpts) {
+            while ( $query->have_posts() ) {
+                if ( $ctr >= $suf_mag_total_excerpts ) {
                     break;
                 }
                 $query->the_post();
-                if ($ctr % $suf_mag_excerpts_per_row == 0) {
-                    if ($total - 1 - $ctr < $suf_mag_excerpts_per_row) {
+                if ( $ctr % $suf_mag_excerpts_per_row == 0 ) {
+                    if ( $total - 1 - $ctr < $suf_mag_excerpts_per_row ) {
                         $cols_per_row = $total - $ctr;
                     }
                 }
@@ -103,7 +103,7 @@ if ($total > 0) {
                 global $post, $suf_mag_excerpt_full_story_text, $suf_mag_excerpts_images_enabled, $suf_mag_excerpt_full_story_position, $suf_mag_excerpt_title_alignment;
                 $post_to_skip[] = $post->ID;
                 $categories = get_the_category($post->ID);
-                if (empty($categories))
+                if ( empty($categories) )
                     $categories = apply_filters('the_category', __('Uncategorized'), '', '');
 
                 $category = $categories[0];
@@ -120,7 +120,7 @@ if ($total > 0) {
                 suffusion_excerpt();
                 echo "\t\t</div>\n";
 
-                if (trim($suf_mag_excerpt_full_story_text)) {
+                if ( trim($suf_mag_excerpt_full_story_text) ) {
                     echo "\t<div class='suf-mag-excerpt-footer'>\n";
                     echo "\t\t<a href='" . get_permalink($post->ID) . "' class='suf-mag-excerpt-full-story button'>$suf_mag_excerpt_full_story_text</a>";
                     echo "\t</div>\n";
@@ -129,7 +129,7 @@ if ($total > 0) {
                 echo "\t</div>";
                 $ctr++;
                 $tiles++;
-                if ($tiles == $cols_per_row) {
+                if ( $tiles == $cols_per_row ) {
                     $tiles = 0;
                     echo "</section>\n";
                     echo "<section class='suf-mag-excerpts suf-mag-excerpts-$suf_mag_excerpts_per_row'>\n";
@@ -163,25 +163,25 @@ echo '<table>';
 wp_reset_query();
 
 $ctr = 0;
-$queries = rps_suffusion_get_mag_section_queries(array('meta_check_field' => 'suf_magazine_excerpt', 'category_prefix' => 'suf_mag_excerpt_categories', 'to_skip' => $post_to_skip, 'total' => 10));
+$queries = rps_suffusion_get_mag_section_queries(array('meta_check_field' => 'suf_magazine_excerpt','category_prefix' => 'suf_mag_excerpt_categories','to_skip' => $post_to_skip,'total' => 10));
 $total = 0;
-foreach ($queries as $query) {
-    if (isset($query->posts) && is_array($query->posts)) {
+foreach ( $queries as $query ) {
+    if ( isset($query->posts) && is_array($query->posts) ) {
         $total += count($query->posts);
     }
 }
-if ($total > 0) {
-    foreach ($queries as $query) {
-        if (isset($query->posts) && is_array($query->posts)) {
+if ( $total > 0 ) {
+    foreach ( $queries as $query ) {
+        if ( isset($query->posts) && is_array($query->posts) ) {
             $num_results = count($query->posts);
-            while ($query->have_posts()) {
-                if ($ctr >= 10) {
+            while ( $query->have_posts() ) {
+                if ( $ctr >= 10 ) {
                     break;
                 }
                 global $post;
                 $query->the_post();
                 $categories = get_the_category($post->ID);
-                if (empty($categories))
+                if ( empty($categories) )
                     $categories = apply_filters('the_category', __('Uncategorized'), '', '');
 
                 $category = $categories[0];
@@ -212,7 +212,7 @@ echo '</div>' . "\n";
 echo '</section>' . "\n";
 ?>
       </div>
-	<!-- content -->
+    <!-- content -->
 </div>
 <!-- main col -->
 <?php get_footer(); ?>
