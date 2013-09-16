@@ -1,10 +1,37 @@
 <?php
+/*
+|--------------------------------------------------------------------------
+| Register The Composer Auto Loader
+|--------------------------------------------------------------------------
+|
+| Composer provides a convenient, automatically generated class loader
+| for our application. We just need to utilize it! We'll require it
+| into the script here so that we do not have to worry about the
+| loading of any our classes "manually". Feels great to relax.
+|
+*/
+require __DIR__ . '/vendor/autoload.php';
+/*
+|--------------------------------------------------------------------------
+| Setup Patchwork UTF-8 Handling
+|--------------------------------------------------------------------------
+|
+| The Patchwork library provides solid handling of UTF-8 strings as well
+| as provides replacements for all mb_* and iconv type functions that
+| are not available by default in PHP. We'll setup this stuff here.
+|
+*/
+
+Patchwork\Utf8\Bootup::initMbstring();
+
 /**
  * Your child theme's core functions file
  *
  * @package Suffu-RPS
  * @var $db RPSPDO
  */
+
+use Rps\Tutorials\Tutorials;
 
 // This is the entry for your custom functions file. The name of the function is
 // suffu_rps_theme_setup and its priority is 15.
@@ -14,6 +41,7 @@ add_action("after_setup_theme", "actionRPS_theme_setup", 15);
 
 // Standard actions and filters
 add_filter('wp_nav_menu_objects', 'filterRPS_members_menu', 10, 2);
+add_action('init', 'actionRPS_init');
 
 // RPS Actions & Filters
 add_filter('rps_comment_form_allow_comment', 'filterRPS_comment_form_allow_comment', 10, 1);
@@ -52,7 +80,7 @@ include 'shortcodes.php';
  * @param string $plugin
  * @return boolean
  */
-function rps_is_plugin_active($plugin)
+function rps_is_plugin_active ($plugin)
 {
     static $active_plugins = null;
 
@@ -67,7 +95,7 @@ function rps_is_plugin_active($plugin)
  * Use this function to add/remove hooks for Suffusion's execution, or to
  * disable theme functionality
  */
-function actionRPS_theme_setup()
+function actionRPS_theme_setup ()
 {
     remove_action('suffusion_before_begin_content', 'suffusion_build_breadcrumb');
     remove_action('suffusion_document_header', 'suffusion_set_title');
@@ -78,6 +106,11 @@ function actionRPS_theme_setup()
     add_action('wp_enqueue_scripts', 'actionRPS_enqueue_styles');
 }
 
+function actionRPS_init ()
+{
+    Tutorials::setupPosttype();
+}
+
 /**
  * This will add a menu item when a user is logged in.
  *
@@ -85,7 +118,7 @@ function actionRPS_theme_setup()
  * @param object $args
  * @return array
  */
-function filterRPS_members_menu($sorted_menu_items, $args)
+function filterRPS_members_menu ($sorted_menu_items, $args)
 {
     global $user_ID;
 
@@ -99,12 +132,12 @@ function filterRPS_members_menu($sorted_menu_items, $args)
     return $sorted_menu_items;
 }
 
-function actionRPS_set_document_title()
+function actionRPS_set_document_title ()
 {
     echo "\t<title>" . wp_title('&bull;', false) . "</title>\n";
 }
 
-function filterRPS_comment_form_allow_comment($allow_comment)
+function filterRPS_comment_form_allow_comment ($allow_comment)
 {
     global $user_ID;
 
@@ -124,7 +157,7 @@ function filterRPS_comment_form_allow_comment($allow_comment)
  *
  * @return void
  */
-function actionRPS_enqueue_styles()
+function actionRPS_enqueue_styles ()
 {
     // We don't want to enqueue any styles if this is not an admin page
     if ( is_admin() ) {
@@ -214,7 +247,7 @@ function actionRPS_enqueue_styles()
     }
 }
 
-function filterRPS_remove_cssjs_ver($src)
+function filterRPS_remove_cssjs_ver ($src)
 {
     $parsed_url = parse_url($src);
     if ( substr($parsed_url['path'], 0, 33) == '/content/themes/suffu-rps/css/rps' ) {
@@ -238,7 +271,7 @@ function filterRPS_remove_cssjs_ver($src)
  * @param array $args
  * @return array
  */
-function rps_suffusion_get_mag_section_queries($args = array())
+function rps_suffusion_get_mag_section_queries ($args = array())
 {
     global $post, $wpdb, $suf_mag_total_excerpts;
     $posts_to_skip = $args['to_skip'];
@@ -305,7 +338,7 @@ function rps_suffusion_get_mag_section_queries($args = array())
  *        Post ID to generate the form for, uses the current post if null
  * @return void
  */
-function rps_comment_form($args = array(), $post_id = null)
+function rps_comment_form ($args = array(), $post_id = null)
 {
     global $id;
 
@@ -339,8 +372,7 @@ function rps_comment_form($args = array(), $post_id = null)
                     <?php echo $args['must_log_in']; ?>
                     <?php do_action( 'comment_form_must_log_in_after' ); ?>
                 <?php else : ?>
-                    <form action="<?php echo site_url( '/wp-comments-post.php' ); ?>"
-        method="post" id="<?php echo esc_attr( $args['id_form'] ); ?>">
+                    <form action="<?php echo site_url( '/wp-comments-post.php' ); ?>" method="post" id="<?php echo esc_attr( $args['id_form'] ); ?>">
                         <?php do_action( 'comment_form_top' ); ?>
                         <?php if ( is_user_logged_in() ) : ?>
                             <?php echo apply_filters( 'comment_form_logged_in', $args['logged_in_as'], $commenter, $user_identity ); ?>
@@ -358,9 +390,7 @@ function rps_comment_form($args = array(), $post_id = null)
                         <?php echo apply_filters( 'comment_form_field_comment', $args['comment_field'] ); ?>
                         <?php echo $args['comment_notes_after']; ?>
                         <p class="form-submit">
-            <input name="submit" type="submit"
-                id="<?php echo esc_attr( $args['id_submit'] ); ?>"
-                value="<?php echo esc_attr( $args['label_submit'] ); ?>" />
+            <input name="submit" type="submit" id="<?php echo esc_attr( $args['id_submit'] ); ?>" value="<?php echo esc_attr( $args['label_submit'] ); ?>" />
                             <?php comment_id_fields( $post_id ); ?>
                         </p>
                         <?php do_action( 'comment_form', $post_id ); ?>
