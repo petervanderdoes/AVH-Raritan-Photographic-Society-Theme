@@ -109,6 +109,7 @@ function actionRPS_theme_setup ()
 function actionRPS_init ()
 {
     Tutorials::setupPosttype();
+    Tutorials::setupTaxonomies();
 }
 
 /**
