@@ -1,5 +1,5 @@
 <?php
-namespace Rps\Tutorials;
+namespace RpsTheme\Tutorials;
 
 class Tutorials
 {

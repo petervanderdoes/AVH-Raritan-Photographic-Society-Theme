@@ -3,8 +3,6 @@
         "patchwork/utf8": "1.1.*"
     },
     "autoload": {
-        "psr-0": {
-            "Rps\\Tutorials\\Tutorials": "./",
-        }
+        "psr-0": { "RpsTheme\\": "libs/"}
     }
 }
