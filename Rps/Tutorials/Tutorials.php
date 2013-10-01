@@ -6,7 +6,7 @@ class Tutorials
 
     static function setupPostType ()
     {
-        // @format_off
+        // @formatter:off
         $labels = array(
                         'name' =>  'Tutorials',
                         'singular_name' =>  'Tutorial',
@@ -39,7 +39,7 @@ class Tutorials
                         'slug' => 'tutorial',
                         'capability_type' => 'post'
                 );
-        //@format_off
+        //@formatter:off
         register_post_type('rps_tutorial', $args);
     }
 

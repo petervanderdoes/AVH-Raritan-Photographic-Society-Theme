@@ -138,7 +138,7 @@ function rps_EM_list_events($parent_category)
     } else {
         $format = '<tr><td style="white-space: nowrap;vertical-align: top;">#_EVENTDATES</td><td style="padding-left: 1rem;vertical-align: top;">#_CATEGORYNAME: #_EVENTLINK</td></tr>';
     }
-    // @format_off
+    // @formatter:off
     $arg = array(
         'title' => __('Events', 'dbem'),
         'scope' => 'future',
@@ -154,7 +154,7 @@ function rps_EM_list_events($parent_category)
         'all_events_text' => __('all events', 'dbem'),
         'no_events_text' => __('No events', 'dbem')
     );
-    // @format_on
+    // @formatter:on
     return EM_Events::output($arg);
 }
 
