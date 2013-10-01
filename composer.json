@@ -1,0 +1,10 @@
+{
+    "require": {
+        "patchwork/utf8": "1.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Rps\\Tutorials\\Tutorials": "./",
+        }
+    }
+}
