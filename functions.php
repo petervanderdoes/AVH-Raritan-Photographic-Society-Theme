@@ -31,7 +31,7 @@ Patchwork\Utf8\Bootup::initMbstring();
  * @var $db RPSPDO
  */
 
-use Rps\Tutorials\Tutorials;
+use RpsTheme\Tutorials\Tutorials;
 
 // This is the entry for your custom functions file. The name of the function is
 // suffu_rps_theme_setup and its priority is 15.
