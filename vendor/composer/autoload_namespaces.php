@@ -6,8 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Rps\\Tutorials\\Tutorials' => array($baseDir . '/'),
+    'RpsTheme\\' => array($baseDir . '/libs'),
     'Patchwork' => array($vendorDir . '/patchwork/utf8/class'),
     'Normalizer' => array($vendorDir . '/patchwork/utf8/class'),
-    'Avh' => array($baseDir . '/'),
 );

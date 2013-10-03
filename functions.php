@@ -31,7 +31,7 @@ Patchwork\Utf8\Bootup::initMbstring();
  * @var $db RPSPDO
  */
 
-use Rps\Tutorials\Tutorials;
+use RpsTheme\Tutorials\Tutorials;
 
 // This is the entry for your custom functions file. The name of the function is
 // suffu_rps_theme_setup and its priority is 15.
@@ -173,7 +173,7 @@ function actionRPS_enqueue_styles ()
     if ( WP_LOCAL_DEV == true ) {
         wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps.css');
     } else {
-        $rps_style_version = "0fdfa4a";
+        $rps_style_version = "245f009";
         wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps-' . $rps_style_version . '.css');
     }
     if ( !isset($suffusion_theme_hierarchy[$suf_color_scheme]) ) {
