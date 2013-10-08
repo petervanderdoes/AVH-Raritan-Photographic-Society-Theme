@@ -2,3 +2,4 @@ Capfile
 config/*
 css/rps.css
 Changes.md
+sass/*
