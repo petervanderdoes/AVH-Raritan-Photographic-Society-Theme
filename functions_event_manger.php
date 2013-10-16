@@ -99,6 +99,15 @@ function filterRPS_EM_event_output_placeholder ($replace, $EM_Event, $full_resul
 				break;
 		}
 	}
+
+	switch ($full_result)
+	{
+		case '#_ATT{SpeakerWebsite}':
+			if (Avh\Support\Url::isValidUrl($full_result)) {
+				$replace = Avh\Html\HtmlBuilder::anchor($full_result,null,array('target' => '_blank'));
+				break;
+			}
+	}
 	return $replace;
 }
 
