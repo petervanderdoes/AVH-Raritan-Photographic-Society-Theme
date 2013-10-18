@@ -3,16 +3,11 @@
 == Changelog
 
 = Version 1.4.0-dev.1 =
-* Preparation for new development cycle.
-
-= Version 1.4.0-dev.1 =
-* Preparation for new development cycle.
-
-= Version 1.4.0-dev.1 =
-* Preparation for new development cycle.
-
-= Version 1.4.0-dev.1 =
-* Preparation for new development cycle.
+ * Create link for speaker's site
+ * Add extra placeholder for website of speaker.
+ * Update for showcase category winners
+ * Use Facebook vanity URL
+ * Warning when there is no category to expand.
 
 = Version 1.3.3 =
 * Now really fix ical so only RPS events show up.
