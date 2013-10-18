@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 1.4.0-dev.1 =
+= Version 1.3.7 =
  * Create link for speaker's site
  * Add extra placeholder for website of speaker.
  * Update for showcase category winners
