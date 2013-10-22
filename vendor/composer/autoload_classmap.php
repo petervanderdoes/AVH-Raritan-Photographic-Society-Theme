@@ -6,13 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Normalizer' => $vendorDir . '/patchwork/utf8/class/Normalizer.php',
-    'Patchwork\\PHP\\Shim\\Iconv' => $vendorDir . '/patchwork/utf8/class/Patchwork/PHP/Shim/Iconv.php',
-    'Patchwork\\PHP\\Shim\\Intl' => $vendorDir . '/patchwork/utf8/class/Patchwork/PHP/Shim/Intl.php',
-    'Patchwork\\PHP\\Shim\\Mbstring' => $vendorDir . '/patchwork/utf8/class/Patchwork/PHP/Shim/Mbstring.php',
-    'Patchwork\\PHP\\Shim\\Normalizer' => $vendorDir . '/patchwork/utf8/class/Patchwork/PHP/Shim/Normalizer.php',
-    'Patchwork\\PHP\\Shim\\Xml' => $vendorDir . '/patchwork/utf8/class/Patchwork/PHP/Shim/Xml.php',
-    'Patchwork\\Utf8' => $vendorDir . '/patchwork/utf8/class/Patchwork/Utf8.php',
-    'Patchwork\\Utf8\\Bootup' => $vendorDir . '/patchwork/utf8/class/Patchwork/Utf8/Bootup.php',
-    'RpsTheme\\Tutorials\\Tutorials' => $baseDir . '/libs/RpsTheme/Tutorials/Tutorials.php',
 );
