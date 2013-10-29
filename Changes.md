@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 1.3.8-rc.1 =
+= Version 1.3.8 =
 * Preparation for new development cycle.
 
 = Version 1.3.7 =
