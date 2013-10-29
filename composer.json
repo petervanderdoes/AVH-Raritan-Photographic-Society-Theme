@@ -1,8 +1,25 @@
 {
-    "require": {
-        "patchwork/utf8": "1.1.*"
-    },
-    "autoload": {
-        "psr-0": { "RpsTheme\\": "libs/"}
-    }
+	"name" : "RPS Theme",
+	"description" : "Theme created for Raritan Photographic Society",
+	"type" : "wordpress-theme",
+	"authors" : [{
+			"name" : "Peter van der Does",
+			"email" : "peter@avirtualhome.com",
+			"role" : "Project Manager"
+		}
+	],
+	"keywords" : [
+		"wordpress"
+	],
+	"license" : [
+		"MIT"
+	],
+	"require" : {
+		"php" : ">=5.3.2"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"RpsTheme\\" : "libs/"
+		}
+	}
 }

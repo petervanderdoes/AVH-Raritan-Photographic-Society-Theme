@@ -82,6 +82,8 @@ function filterRPS_EM_get_child_categories ($instance)
 
 function filterRPS_EM_event_output_placeholder ($replace, $EM_Event, $full_result, $target)
 {
+	$html = new \Avh\Html\HtmlBuilder();
+
 	$EM_Categories = $EM_Event->get_categories();
 
 	if ( rps_EM_is_rps_category($EM_Categories->categories) ) {
@@ -103,8 +105,8 @@ function filterRPS_EM_event_output_placeholder ($replace, $EM_Event, $full_resul
 	switch ( $full_result )
 	{
 		case '#_ATT{SpeakerWebsite}':
-			if ( Avh\Support\Url::isValidUrl($replace) ) {
-				$replace = Avh\Html\HtmlBuilder::anchor($replace, null, array('target' => '_blank'));
+			if ( avh_is_valid_url($replace) ) {
+				$replace = $html->anchor($replace, null, array('target' => '_blank'));
 				break;
 			}
 	}

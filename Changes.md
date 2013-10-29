@@ -2,6 +2,9 @@
 
 == Changelog
 
+= Version 1.3.8 =
+* Preparation for new development cycle.
+
 = Version 1.3.7 =
  * Create link for speaker's site
  * Add extra placeholder for website of speaker.

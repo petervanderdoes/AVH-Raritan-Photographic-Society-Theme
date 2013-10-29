@@ -30,7 +30,7 @@ if ( $suf_footer_layout_style != 'in-align' ) {
                             <ul>
                                 <li><a href="https://www.facebook.com/raritanphotographicsociety"><span class="social-icon-16 social-icon-16-facebook"></span><span class="social-text">Facebook</span></a></li>
                                 <li><a href="http://www.meetup.com/http-www-raritanphoto-com/"><span class="social-icon-16 social-icon-16-meetup"></span><span class="social-text">Meetup</span></a></li>
-                                <li><a href="https://plus.google.com/114179804721869477091/about"><span class="social-icon-16 social-icon-16-google-plus"></span><span class="social-text">Google+</span></a></li>
+                                <li><a href="https://google.com/+Raritanphoto"><span class="social-icon-16 social-icon-16-google-plus"></span><span class="social-text">Google+</span></a></li>
                                 <li><a href="https://twitter.com/raritanphoto"><span class="social-icon-16 social-icon-16-twitter"></span><span class="social-text">Twitter</span></a></li>
                             </ul>
                         </td>
