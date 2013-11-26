@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 1.4.0-rc.1 =
+= Version 1.4.0 =
 * Update stylesheet for legal pages
 
 = Version 1.3.7 =
