@@ -12,6 +12,7 @@ add_filter('em_calendar_template_args', 'filterRPS_em_ical_args', 10, 1);
 add_filter('em_event_output_placeholder', 'filterRPS_EM_event_output_placeholder', 10, 4);
 add_filter('em_location_output_placeholder', 'filterRPS_EM_location_output_placeholder', 10, 4);
 add_filter('em_widget_calendar_get_args', 'filterRPS_EM_get_child_categories', 10, 1);
+add_filter('em_event_get_permalink', 'filterRPS_EM_get_permalink', 10, 2);
 
 /**
  * Handle custom conditional placeholders.
@@ -113,6 +114,54 @@ function filterRPS_EM_event_output_placeholder ($replace, $EM_Event, $full_resul
 	return $replace;
 }
 
+function filterRPS_EM_get_permalink ($permalink, $EM_Event)
+{
+	$rewritecode_wordpress = array('%year%','%monthnum%','%day%','%hour%','%minute%','%second%','%postname%','%post_id%','%category%','%author%','%pagename%');
+	$rewritecode_events = array('%event_year%','%event_monthnum%','%event_day%','%event_hour%','%event_minute%','%event_second%');
+	$rewritecode = array_merge($rewritecode_wordpress, $rewritecode_events);
+
+	if ( '' != $permalink && !in_array($EM_Event->post_status, array('draft','pending','auto-draft')) ) {
+		$unixtime = strtotime($EM_Event->post_date);
+		$unixtime_start = strtotime($EM_Event->event_start_date . ' ' . $EM_Event->event_start_time);
+
+		$category = '';
+		if ( strpos($permalink, '%category%') !== false ) {
+
+			$EM_Categories = $EM_Event->get_categories();
+			if ( $EM_Categories->categories ) {
+				usort($EM_Categories->categories, '_usort_terms_by_ID'); // order by ID
+				$category_object = $EM_Categories->categories[0];
+				$category_object = get_term($category_object, EM_TAXONOMY_CATEGORY);
+				$category = $category_object->slug;
+				if ( isset($category_object->parent) ) {
+					$parent = $category_object->parent;
+					$category = rps_EM_get_parents($parent, false, '/', true, array(), EM_TAXONOMY_CATEGORY) . $category;
+				}
+			}
+		}
+
+		$author = '';
+		if ( strpos($permalink, '%author%') !== false ) {
+			$authordata = get_userdata($EM_Event->post_author);
+			$author = $authordata->user_nicename;
+		}
+
+		$date = explode(" ", date('Y m d H i s', $unixtime));
+		$rewritereplace_wordpress = array($date[0],$date[1],$date[2],$date[3],$date[4],$date[5],$EM_Event->post_name,$EM_Event->ID,$category,$author,$EM_Event->post_name);
+
+		$date = explode(" ", date('Y m d H i s', $unixtime_start));
+		$rewritereplace_event = array($date[0],$date[1],$date[2],$date[3],$date[4],$date[5]);
+
+		$rewritereplace = array_merge($rewritereplace_wordpress , $rewritereplace_event);
+		$permalink = str_replace($rewritecode, $rewritereplace, $permalink);
+		$permalink = user_trailingslashit($permalink, 'single');
+	} else { // if they're not using the fancy permalink option
+		$permalink = home_url('?p=' . $EM_Event->ID);
+	}
+
+	return $permalink;
+}
+
 function filterRPS_EM_location_output_placeholder ($replace, $em, $full_result, $target)
 {
 	switch ( $full_result )
@@ -149,6 +198,48 @@ function rps_EM_get_children_of_categories ($categories)
 	}
 	$all_categories = array_unique($all_categories);
 	return $all_categories;
+}
+
+/**
+ * Retrieve category parents with separator.
+ *
+ *
+ * @param int $id
+ *        Category ID.
+ * @param bool $link
+ *        Optional, default is false. Whether to format with link.
+ * @param string $separator
+ *        Optional, default is '/'. How to separate categories.
+ * @param bool $nicename
+ *        Optional, default is false. Whether to use nice name for display.
+ * @param array $visited
+ *        Optional. Already linked to categories to prevent duplicates.
+ * @param string $taxanomy
+ *        The taxanomy we need to use.
+ * @return string WP_Error list of category parents on success, WP_Error on failure.
+ */
+function rps_EM_get_parents ($id, $link = false, $separator = '/', $nicename = false, $visited = array(), $taxanomy)
+{
+	$chain = '';
+	$parent = get_term($id, $taxanomy);
+	if ( is_wp_error($parent) )
+		return $parent;
+
+	if ( $nicename )
+		$name = $parent->slug;
+	else
+		$name = $parent->name;
+
+	if ( $parent->parent && ( $parent->parent != $parent->term_id ) && !in_array($parent->parent, $visited) ) {
+		$visited[] = $parent->parent;
+		$chain .= get_category_parents($parent->parent, $link, $separator, $nicename, $visited);
+	}
+
+	if ( $link )
+		$chain .= '<a href="' . esc_url(get_category_link($parent->term_id)) . '" title="' . esc_attr(sprintf(__("View all posts in %s"), $parent->name)) . '">' . $name . '</a>' . $separator;
+	else
+		$chain .= $name . $separator;
+	return $chain;
 }
 
 function rps_EM_list_events ($parent_category)
