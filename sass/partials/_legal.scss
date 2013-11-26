@@ -1,0 +1,37 @@
+#terms {
+  @include adjust-font-size-to($base-font-size-full-story);
+
+  ol, ul {
+    padding-left: 0px;
+  }
+  section {
+    border-top: 1px solid $color-text-lowlight;
+    clear: both;
+    float: left;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    .left {
+      float: left;
+      margin: 0 10px 0 0;
+      padding: 0 10px 0 0;
+      width: 55%;
+      h3 {
+        @include adjust-font-size-to($base-font-size-full-story);
+      }
+    }
+    .right {
+      float: left;
+      width: 39%;
+      .faded {
+        color: $color-text-lowlight;
+      }
+      h1 {
+        font-family: $headings;
+        @include adjust-font-size-to($base-font-size-oswald*2);
+        font-weight: 200;
+      }
+    }
+  }
+}
