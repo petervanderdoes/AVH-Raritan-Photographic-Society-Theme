@@ -173,7 +173,7 @@ function actionRPS_enqueue_styles ()
     if ( WP_LOCAL_DEV == true ) {
         wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps.css');
     } else {
-        $rps_style_version = "c38ef17";
+        $rps_style_version = "";
         wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps-' . $rps_style_version . '.css');
     }
     if ( !isset($suffusion_theme_hierarchy[$suf_color_scheme]) ) {

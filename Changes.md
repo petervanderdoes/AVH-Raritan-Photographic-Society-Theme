@@ -2,6 +2,9 @@
 
 == Changelog
 
+= Version 1.5.0-dev.1 =
+* Preparation for new development cycle.
+
 = Version 1.4.0 =
 * Update stylesheet for legal pages
 
