@@ -3,10 +3,7 @@
 == Changelog
 
 = Version 1.4.0-dev.1 =
-* Preparation for new development cycle.
-
-= Version 1.3.8 =
-* Preparation for new development cycle.
+* Update stylesheet for legal pages
 
 = Version 1.3.7 =
  * Create link for speaker's site
