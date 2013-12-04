@@ -123,7 +123,7 @@ function filterRPS_members_menu ($sorted_menu_items, $args)
 {
     global $user_ID;
 
-    if ( $args->theme_location == 'main' && is_user_logged_in() && rps_is_paid_member($user_ID) ) {
+    if ( $args->theme_location == 'main' && is_user_logged_in()  ) {
         $header_members = wp_get_nav_menu_items('Header_members');
         _wp_menu_item_classes_by_context($header_members);
         foreach ( $header_members as $item ) {
