@@ -59,5 +59,5 @@ function filterRPS_TML_change_action_links_title($title, $action)
  */
 function filterRPS_TML_set_role($role, $id)
 {
-    return 's2member_level1';
+    return 's2member_level4';
 }
