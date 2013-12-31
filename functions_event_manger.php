@@ -13,7 +13,7 @@ add_filter('em_event_output_placeholder', 'filterRPS_EM_event_output_placeholder
 add_filter('em_location_output_placeholder', 'filterRPS_EM_location_output_placeholder', 10, 4);
 add_filter('em_widget_calendar_get_args', 'filterRPS_EM_get_child_categories', 10, 1);
 add_filter('em_event_get_permalink', 'filterRPS_EM_get_permalink', 10, 2);
-add_filter('em_register_new_user', 'filterRPS_EM_set_member_level',10, 1);
+add_filter('em_register_new_user_pre', 'filterRPS_EM_set_member_level',10, 1);
 
 /**
  * Handle custom conditional placeholders.
@@ -82,10 +82,9 @@ function filterRPS_EM_get_child_categories ($instance)
 	return $instance;
 }
 
-function filterRPS_EM_set_member_level($user_ID) {
-	$user_object = new WP_User( $user->ID );
-	$user_object->set_role( 'access_s2member_level1' );
-	unset( $user_object );
+function filterRPS_EM_set_member_level($userdata) {
+	$userdata['role']= 's2member_level1' ;
+	return $userdata;
 
 }
 function filterRPS_EM_event_output_placeholder ($replace, $EM_Event, $full_result, $target)

@@ -14,3 +14,13 @@ function rps_is_paid_member($user_ID)
 {
     return user_can($user_ID, 'access_s2member_level4');
 }
+
+function rps_is_guest_member($user_ID)
+{
+    return user_can($user_ID, 'access_s2member_level1');
+}
+
+add_action('init', 'rps_up_membership_levels');
+function rps_up_membership_levels() {
+	$GLOBALS["WS_PLUGIN__"]["s2member"]["c"]["levels"] = 10;
+}

@@ -1,4 +1,4 @@
-/* line 5, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,50 +20,50 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+/* line 116, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
-/* line 106, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 106, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 81.25%;
   line-height: 1.5em;
@@ -5936,7 +5936,44 @@ div.css-search div.em-search-main .em-search-submit {
   color: #fff;
 }
 
-/* line 58, ../sass/partials/_magazine-layout.scss */
+/* line 57, ../sass/partials/_magazine-layout.scss */
+.rps-inmemory {
+  width: 100%;
+  padding: 0;
+  display: inline-block;
+}
+/* line 61, ../sass/partials/_magazine-layout.scss */
+.rps-inmemory h3 {
+  font-family: "Oswald";
+  font-size: 25px;
+  font-size: 1.925rem;
+  line-height: 38px;
+  line-height: 2.8875rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-align: center;
+}
+/* line 69, ../sass/partials/_magazine-layout.scss */
+.rps-inmemory h3 a {
+  color: white;
+  text-decoration: none;
+}
+/* line 74, ../sass/partials/_magazine-layout.scss */
+.rps-inmemory:after {
+  marging: 5px;
+}
+/* line 78, ../sass/partials/_magazine-layout.scss */
+.rps-inmemory .suf-tile-text h2 {
+  font-size: 21px;
+  font-size: 1.61538rem;
+  line-height: 29px;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+/* line 88, ../sass/partials/_magazine-layout.scss */
 h2.suf-mag-excerpt-title, h2.suf-tile-title {
   color: #e6e6e6;
   font-size: 16px;
@@ -5950,39 +5987,39 @@ h2.suf-mag-excerpt-title, h2.suf-tile-title {
   margin-right: 8px;
   margin-left: 8px;
 }
-/* line 67, ../sass/partials/_magazine-layout.scss */
+/* line 97, ../sass/partials/_magazine-layout.scss */
 h2.suf-mag-excerpt-title a, h2.suf-tile-title a {
   color: #e6e6e6;
   text-decoration: none;
 }
-/* line 70, ../sass/partials/_magazine-layout.scss */
+/* line 100, ../sass/partials/_magazine-layout.scss */
 h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag-excerpt-title a:active, h2.suf-tile-title a:hover, h2.suf-tile-title a:visited, h2.suf-tile-title a:active {
   color: #e6e6e6;
   text-decoration: none;
 }
 
-/* line 78, ../sass/partials/_magazine-layout.scss */
+/* line 108, ../sass/partials/_magazine-layout.scss */
 .suf-mag-excerpts-header {
   border-color: #555555;
   background-color: #000;
   color: #ddd;
 }
 
-/* line 84, ../sass/partials/_magazine-layout.scss */
+/* line 114, ../sass/partials/_magazine-layout.scss */
 .suf-tile-text > table {
   margin-left: 8px;
 }
-/* line 86, ../sass/partials/_magazine-layout.scss */
+/* line 116, ../sass/partials/_magazine-layout.scss */
 .suf-tile-text > table td {
   vertical-align: top;
 }
-/* line 89, ../sass/partials/_magazine-layout.scss */
+/* line 119, ../sass/partials/_magazine-layout.scss */
 .suf-tile-text > table:after {
   content: "";
   border-top: 1px;
 }
 
-/* line 95, ../sass/partials/_magazine-layout.scss */
+/* line 125, ../sass/partials/_magazine-layout.scss */
 .suf-mag-category, .suf-mag-excerpt, .suf-tile {
   font-size: 13px;
   font-size: 1rem;
@@ -6000,13 +6037,13 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   padding-bottom: 1em;
 }
 
-/* line 107, ../sass/partials/_magazine-layout.scss */
+/* line 137, ../sass/partials/_magazine-layout.scss */
 .suf-mag-excerpt-text {
   padding-bottom: 20px;
   padding-bottom: 1.5rem;
 }
 
-/* line 111, ../sass/partials/_magazine-layout.scss */
+/* line 141, ../sass/partials/_magazine-layout.scss */
 .suf-mag-excerpt-text p, .suf-tile-text p {
   margin-top: 20px;
   margin-top: 1.5rem;
@@ -6023,30 +6060,30 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 /**
 * Showcase
 */
-/* line 121, ../sass/partials/_magazine-layout.scss */
+/* line 151, ../sass/partials/_magazine-layout.scss */
 .rps-showcases {
   display: inline-block;
   margin: 10px 0;
   padding: 0;
   width: 100%;
 }
-/* line 126, ../sass/partials/_magazine-layout.scss */
+/* line 156, ../sass/partials/_magazine-layout.scss */
 .rps-showcases .image {
   text-align: center;
 }
-/* line 129, ../sass/partials/_magazine-layout.scss */
+/* line 159, ../sass/partials/_magazine-layout.scss */
 .rps-showcases .thumb_img {
   vertical-align: middle;
 }
-/* line 132, ../sass/partials/_magazine-layout.scss */
+/* line 162, ../sass/partials/_magazine-layout.scss */
 .rps-showcases .col-control {
   width: 960px;
 }
-/* line 135, ../sass/partials/_magazine-layout.scss */
+/* line 165, ../sass/partials/_magazine-layout.scss */
 .rps-showcases .suf-tile {
   margin-bottom: 3px;
 }
-/* line 138, ../sass/partials/_magazine-layout.scss */
+/* line 168, ../sass/partials/_magazine-layout.scss */
 .rps-showcases ul {
   float: left;
   list-style: none outside none;
@@ -6054,7 +6091,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   padding: 0;
   vertical-align: bottom;
 }
-/* line 145, ../sass/partials/_magazine-layout.scss */
+/* line 175, ../sass/partials/_magazine-layout.scss */
 .rps-showcases li {
   float: left;
   line-height: 150px;
@@ -6063,11 +6100,11 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   padding: 10px;
   width: 150px;
 }
-/* line 152, ../sass/partials/_magazine-layout.scss */
+/* line 182, ../sass/partials/_magazine-layout.scss */
 .rps-showcases li:last-child {
   margin-bottom: 10px;
 }
-/* line 156, ../sass/partials/_magazine-layout.scss */
+/* line 186, ../sass/partials/_magazine-layout.scss */
 .rps-showcases h3 {
   font-size: 20px;
   font-size: 1.5rem;
@@ -6079,7 +6116,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   padding: 0;
   color: white;
 }
-/* line 164, ../sass/partials/_magazine-layout.scss */
+/* line 194, ../sass/partials/_magazine-layout.scss */
 .rps-showcases:after {
   content: "";
   display: inline-block;
@@ -6088,7 +6125,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   width: 100%;
 }
 
-/* line 173, ../sass/partials/_magazine-layout.scss */
+/* line 203, ../sass/partials/_magazine-layout.scss */
 .rps-sc-tile {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -6109,14 +6146,14 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 /**
 * Misc boxes
 */
-/* line 191, ../sass/partials/_magazine-layout.scss */
+/* line 221, ../sass/partials/_magazine-layout.scss */
 .rps-misc {
   width: 100%;
   padding: 0;
   margin: 10px 0;
   display: inline-block;
 }
-/* line 196, ../sass/partials/_magazine-layout.scss */
+/* line 226, ../sass/partials/_magazine-layout.scss */
 .rps-misc h3 {
   font-family: "Oswald";
   font-size: 17px;
@@ -6129,32 +6166,32 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   color: white;
   text-align: center;
 }
-/* line 204, ../sass/partials/_magazine-layout.scss */
+/* line 234, ../sass/partials/_magazine-layout.scss */
 .rps-misc h3 a {
   color: white;
   text-decoration: none;
 }
-/* line 209, ../sass/partials/_magazine-layout.scss */
+/* line 239, ../sass/partials/_magazine-layout.scss */
 .rps-misc:after {
   marging: 5px;
 }
-/* line 212, ../sass/partials/_magazine-layout.scss */
+/* line 242, ../sass/partials/_magazine-layout.scss */
 .rps-misc .suf-tile-text {
   text-align: left;
 }
-/* line 215, ../sass/partials/_magazine-layout.scss */
+/* line 245, ../sass/partials/_magazine-layout.scss */
 .rps-misc ul {
   margin-left: 8px;
   margin-right: 8px;
   margin-top: 0;
   padding: 0;
 }
-/* line 221, ../sass/partials/_magazine-layout.scss */
+/* line 251, ../sass/partials/_magazine-layout.scss */
 .rps-misc ul li a {
   color: #e6e6e6;
   text-decoration: none;
 }
-/* line 224, ../sass/partials/_magazine-layout.scss */
+/* line 254, ../sass/partials/_magazine-layout.scss */
 .rps-misc ul li a:hover, .rps-misc ul li a:visited, .rps-misc ul li a:active {
   color: #e6e6e6;
   text-decoration: none;
@@ -6162,13 +6199,13 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 
 /* Props to the brilliant technique highlighted here: http://stackoverflow.com/questions/6865194/fluid-width-with-equally-spaced-divs.
  This distributes divs equally in a fluid-width row without any JS hack and without using CSS multi-columns. */
-/* line 236, ../sass/partials/_magazine-layout.scss */
+/* line 266, ../sass/partials/_magazine-layout.scss */
 .suf-tiles, .suf-mag-excerpts, .rps-showcases, .rps-misc {
   text-align: justify;
   -ms-text-justify: distribute;
   text-justify: distribute;
 }
-/* line 240, ../sass/partials/_magazine-layout.scss */
+/* line 270, ../sass/partials/_magazine-layout.scss */
 .suf-tiles:after, .suf-mag-excerpts:after, .rps-showcases:after, .rps-misc:after {
   content: '';
   width: 100%;
@@ -6177,52 +6214,52 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   line-height: 0;
 }
 
-/* line 249, ../sass/partials/_magazine-layout.scss */
+/* line 279, ../sass/partials/_magazine-layout.scss */
 .suf-tile-1c {
   width: 100%;
 }
 
-/* line 253, ../sass/partials/_magazine-layout.scss */
+/* line 283, ../sass/partials/_magazine-layout.scss */
 .suf-tile-2c {
   width: 49%;
 }
 
-/* line 257, ../sass/partials/_magazine-layout.scss */
+/* line 287, ../sass/partials/_magazine-layout.scss */
 .suf-tile-3c {
   width: 32%;
 }
 
-/* line 261, ../sass/partials/_magazine-layout.scss */
+/* line 291, ../sass/partials/_magazine-layout.scss */
 .suf-tile-4c {
   width: 24%;
 }
 
-/* line 265, ../sass/partials/_magazine-layout.scss */
+/* line 295, ../sass/partials/_magazine-layout.scss */
 .suf-tile-5c {
   width: 19%;
 }
 
-/* line 269, ../sass/partials/_magazine-layout.scss */
+/* line 299, ../sass/partials/_magazine-layout.scss */
 .suf-tile-6c {
   width: 16%;
 }
 
-/* line 273, ../sass/partials/_magazine-layout.scss */
+/* line 303, ../sass/partials/_magazine-layout.scss */
 .suf-tile-7c {
   width: 13%;
 }
 
-/* line 277, ../sass/partials/_magazine-layout.scss */
+/* line 307, ../sass/partials/_magazine-layout.scss */
 .suf-tile-8c {
   width: 12%;
 }
 
-/* line 281, ../sass/partials/_magazine-layout.scss */
+/* line 311, ../sass/partials/_magazine-layout.scss */
 .suf-tile-9c {
   width: 10.5%;
 }
 
-/* line 285, ../sass/partials/_magazine-layout.scss */
+/* line 315, ../sass/partials/_magazine-layout.scss */
 .suf-tile-10c {
   width: 9.5%;
 }
@@ -6676,7 +6713,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 .widget_em_widget ul {
   margin-left: 0;
 }
-/* line 29, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/typography/lists/_bullets.scss */
+/* line 29, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/lists/_bullets.scss */
 .widget_em_widget ul li {
   padding-left: 14px;
   background: url('../images/icons/bulletrbl.png?1372104041') no-repeat -1px 1px;
@@ -6806,28 +6843,28 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   background-repeat: no-repeat;
 }
 
-/* line 84, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 84, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/utilities/sprites/_base.scss */
 .social-icon-16-facebook {
   background-position: 0 0;
   height: 16px;
   width: 16px;
 }
 
-/* line 84, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 84, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/utilities/sprites/_base.scss */
 .social-icon-16-google-plus {
   background-position: 0 -24px;
   height: 16px;
   width: 16px;
 }
 
-/* line 84, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 84, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/utilities/sprites/_base.scss */
 .social-icon-16-meetup {
   background-position: 0 -48px;
   height: 16px;
   width: 16px;
 }
 
-/* line 84, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 84, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/utilities/sprites/_base.scss */
 .social-icon-16-twitter {
   background-position: 0 -72px;
   height: 16px;
