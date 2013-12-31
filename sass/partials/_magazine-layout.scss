@@ -54,6 +54,36 @@
   color: #fff;
 }
 
+.rps-inmemory {
+  width: 100%;
+  padding: 0;
+  display: inline-block;
+  h3 {
+    font-family: $headings;
+    @include adjust-font-size-to($base-font-size-oswald * 1.75 * 1.1, 1.75 * 1.1);
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+  &:after {
+    marging: 5px;
+  }
+  .suf-tile-text {
+  h2 {
+    @include adjust-font-size-to($base-font-size-full-story * 1.5, 1.5, $base-font-size-full-story);
+    font-weight: 700;
+    //@include rhythm($font-size: $base-font-size-full-story * 1.5)
+ 
+  }
+}
+}
+
 h2 {
   &.suf-mag-excerpt-title, &.suf-tile-title {
     color: $color-text-highlight;
