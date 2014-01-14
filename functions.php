@@ -174,12 +174,15 @@ function actionRPS_enqueue_styles ()
     $template_path = get_template_directory();
     $stylesheet_path = get_stylesheet_directory();
 
+    // Setup stylesheet
     if ( WP_LOCAL_DEV == true ) {
         wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps.css');
     } else {
+    	// The style version is automatically updated by using git-flow hooks.
         $rps_style_version = "5d83d5c";
         wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps-' . $rps_style_version . '.css');
     }
+
     if ( !isset($suffusion_theme_hierarchy[$suf_color_scheme]) ) {
         if ( @file_exists(get_stylesheet_directory() . '/skins/' . $suf_color_scheme . '/skin.css') ) {
             $sheets = array('style.css','skins/' . $suf_color_scheme . '/skin.css');
