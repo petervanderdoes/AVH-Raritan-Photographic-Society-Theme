@@ -150,6 +150,7 @@ if ($post->post_type == 'post') {
 	<<?php echo $header_tag; ?> class="entry-title posttitle"><?php the_title(); ?></<?php echo $header_tag; ?>>
 </header>
 <?php
+		echo '<span class="vcard" style="display: none"><a href="'.get_author_posts_url(get_the_author_meta('ID')).'" class="url fn" rel="author">'.get_the_author().'</a></span>';
         }
     }
 
