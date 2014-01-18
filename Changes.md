@@ -2,6 +2,9 @@
 
 == Changelog
 
+= Version 1.5.1 =
+* microformats.org Error for events and locations.
+
 = Version 1.5.0 =
 * microformats.org Error
   Missing: author
