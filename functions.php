@@ -100,10 +100,12 @@ function actionRPS_theme_setup ()
     remove_action('suffusion_before_begin_content', 'suffusion_build_breadcrumb');
     remove_action('suffusion_document_header', 'suffusion_set_title');
     remove_action('wp_enqueue_scripts', 'suffusion_enqueue_styles');
+    remove_action('suffusion_after_begin_post', 'suffusion_print_post_updated_information');
 
     add_action('suffusion_after_begin_wrapper', 'suffusion_build_breadcrumb');
     add_action('suffusion_document_header', 'actionRPS_set_document_title');
     add_action('wp_enqueue_scripts', 'actionRPS_enqueue_styles');
+    add_action('suffusion_after_begin_post', 'actionRPS_print_post_updated_information');
 }
 
 function actionRPS_init ()
@@ -174,12 +176,15 @@ function actionRPS_enqueue_styles ()
     $template_path = get_template_directory();
     $stylesheet_path = get_stylesheet_directory();
 
+    // Setup stylesheet
     if ( WP_LOCAL_DEV == true ) {
         wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps.css');
     } else {
+    	// The style version is automatically updated by using git-flow hooks.
         $rps_style_version = "5d83d5c";
         wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps-' . $rps_style_version . '.css');
     }
+
     if ( !isset($suffusion_theme_hierarchy[$suf_color_scheme]) ) {
         if ( @file_exists(get_stylesheet_directory() . '/skins/' . $suf_color_scheme . '/skin.css') ) {
             $sheets = array('style.css','skins/' . $suf_color_scheme . '/skin.css');
@@ -250,6 +255,10 @@ function actionRPS_enqueue_styles ()
             wp_enqueue_style('suffusion-included-' . $i, $$var, array('suffusion-theme'), null);
         }
     }
+}
+
+function actionRPS_print_post_updated_information() {
+	echo '<div class="updated" style="display: none"><time datetime="' . date(DATE_ISO8601, get_post_modified_time('U', true)) . '">'. date(DATE_ISO8601, get_post_modified_time('U', true)).'</time></div>';
 }
 
 function filterRPS_remove_cssjs_ver ($src)
