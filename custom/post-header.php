@@ -50,7 +50,6 @@ if ($post->post_type == 'post') {
 		<span class="month"><?php the_time('M'); ?></span> <span class="day"><?php the_time('d'); ?></span><span
 			class="year"><?php the_time('Y'); ?></span>
 	</div>
-			<?php echo '<div class="updated" style="display: none"><time datetime="' . date(DATE_ISO8601, get_post_modified_time('U', true)) . '">'. date(DATE_ISO8601, get_post_modified_time('U', true)).'</time></div>';?>
 	<?php
     }
     ?>
@@ -158,9 +157,9 @@ if ($post->post_type == 'post') {
         ?>
 <div class="postdata fix">
 		<?php
-        if ($suf_page_show_posted_by == 'show-tleft' || $suf_page_show_posted_by == 'show-tright') {
-            suffusion_print_author_byline();
-        }
+
+       echo '<span class="vcard" style="display: none"><a href="'.get_author_posts_url(get_the_author_meta('ID')).'" class="url fn" rel="author">'.get_the_author().'</a></span>';
+
 
         if (is_attachment()) {
             $mime = get_post_mime_type();

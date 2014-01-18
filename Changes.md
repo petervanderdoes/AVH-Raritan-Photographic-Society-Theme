@@ -3,16 +3,12 @@
 == Changelog
 
 = Version 1.5.0-dev.1 =
-* Preparation for new development cycle.
-
-= Version 1.4.2 =
-* Preparation for new development cycle.
-
-= Version 1.4.1 =
-* Preparation for new development cycle.
-
-= Version 1.4.0 =
-* Update stylesheet for legal pages
+* microformats.org Error
+  Missing: author
+  Missing: updated
+* Add guest user.
+  New level added, guest, this is for people who sign up for an event but
+  are not paying members.
 
 = Version 1.3.7 =
  * Create link for speaker's site
