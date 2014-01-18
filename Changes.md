@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 1.5.0-dev.1 =
+= Version 1.5.0-rc.1 =
 * microformats.org Error
   Missing: author
   Missing: updated
