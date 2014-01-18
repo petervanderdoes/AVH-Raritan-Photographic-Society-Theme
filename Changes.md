@@ -3,7 +3,7 @@
 == Changelog
 
 = Version 1.5.1-rc.1 =
-* Preparation for new development cycle.
+* microformats.org Error for events and locations.
 
 = Version 1.5.0 =
 * microformats.org Error
