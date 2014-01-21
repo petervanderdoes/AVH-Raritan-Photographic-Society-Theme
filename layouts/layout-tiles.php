@@ -95,7 +95,7 @@ if ( have_posts() ) {
         ?>
 <div class='suf-tiles suf-tiles-<?php echo $number_of_cols;?>'>
 <?php
-        $ctr = 0;
+        $max_articles = 0;
         $cols_per_row = $number_of_cols;
         global $suffusion_byline_type, $suffusion_cpt_post_id;
         if ( isset($suffusion_cpt_post_id) ) {
@@ -112,15 +112,15 @@ if ( have_posts() ) {
                 continue;
             }
             $suffusion_current_post_index++;
-            if ( $ctr % $number_of_cols == 0 ) {
-                if ( $total - 1 - $ctr < $number_of_cols ) {
-                    $cols_per_row = $total - $ctr;
+            if ( $max_articles % $number_of_cols == 0 ) {
+                if ( $total - 1 - $max_articles < $number_of_cols ) {
+                    $cols_per_row = $total - $max_articles;
                 }
             }
 
             global $suf_mag_excerpt_full_story_position;
             do_action('suffusion_before_post', $post->ID, 'tile', $suffusion_current_post_index);
-            echo "\n\t<article class='suf-tile suf-tile-{$cols_per_row}c $suf_mag_excerpt_full_story_position suf-tile-ctr-$ctr'>\n";
+            echo "\n\t<article class='suf-tile suf-tile-{$cols_per_row}c $suf_mag_excerpt_full_story_position suf-tile-ctr-$max_articles'>\n";
 
             $categories = get_the_category($post->ID);
             if ( empty($categories) )
@@ -148,7 +148,7 @@ if ( have_posts() ) {
             echo "\t</article>";
             do_action('suffusion_after_post', $post->ID, 'tile', $suffusion_current_post_index);
 
-            $ctr++;
+            $max_articles++;
         }
         ?>
 </div>

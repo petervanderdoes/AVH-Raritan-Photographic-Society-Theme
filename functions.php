@@ -295,22 +295,25 @@ function rps_suffusion_get_mag_section_queries ($args = array())
 
     if ( $meta_check_field ) {
         // Previously the script was loading all posts into memory using get_posts and checking the meta field. This causes the code to crash if the # posts is high.
-        $querystr = "SELECT wposts.*
-        FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta
-        WHERE wposts.ID = wpostmeta.post_id
-        AND wpostmeta.meta_key = '$meta_check_field'
-        AND wpostmeta.meta_value = 'on'
-        AND wposts.post_status = 'publish'
-        AND wposts.post_type = 'post'
-        ORDER BY wposts.post_date DESC
+        $querystr = "SELECT wp_posts.*
+        FROM $wpdb->posts AS wp_posts, $wpdb->postmeta AS wp_postmeta
+        WHERE wp_posts.ID = wp_postmeta.post_id
+        AND wp_postmeta.meta_key = '$meta_check_field'
+        AND wp_postmeta.meta_value = 'on'
+        AND wp_posts.post_status = 'publish'
+        AND wp_posts.post_type = 'post'
+        ORDER BY wp_posts.post_date DESC
         ";
 
         $post_results = $wpdb->get_results($querystr, OBJECT);
         foreach ( $post_results as $post ) {
             setup_postdata($post);
-            $solos[] = $post->ID;
+            if (! in_array($post->ID, $posts_to_skip)) {
+            	$solos[] = $post->ID;
+        	}
         }
     }
+
     if ( count($solos) > 0 ) {
         $solo_query = new WP_query(array('post__in' => $solos,'ignore_sticky_posts' => 1));
         $queries[] = $solo_query;
