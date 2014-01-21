@@ -108,7 +108,7 @@ foreach ($entity_order as $entity) {
                 }
 
         if ($pages_style == 'rolled-up' && count($page_args) != 0) {
-            $page_args['title_li'] = "<a href='" . ( $page_tab_link == '' ? '#' : $page_tab_link ) . "'>" . $page_tab_title . "</a>";
+            $page_args['title_li'] = "<a href='" . ($page_tab_link == '' ? '#' : $page_tab_link) . "'>" . $page_tab_title . "</a>";
         } else
             if ($pages_style == 'flattened' && count($page_args) != 0) {
                 $page_args['title_li'] = '';
@@ -143,7 +143,7 @@ foreach ($entity_order as $entity) {
                     }
 
             if ($cat_style == 'rolled-up' && count($cat_args) != 0) {
-                $cat_args['title_li'] = "<a href='" . ( $cat_tab_link == '' ? '#' : $cat_tab_link ) . "'>" . $cat_tab_title . "</a>";
+                $cat_args['title_li'] = "<a href='" . ($cat_tab_link == '' ? '#' : $cat_tab_link) . "'>" . $cat_tab_title . "</a>";
             } else
                 if ($cat_style == 'flattened' && count($cat_args) != 0) {
                     $cat_args['title_li'] = '';
@@ -178,7 +178,7 @@ foreach ($entity_order as $entity) {
                         }
 
                 if ($links_style == 'rolled-up' && count($link_args) != 0) {
-                    $link_args['title_li'] = "<a href='" . ( $links_tab_link == '' ? '#' : $links_tab_link ) . "'>" . $links_tab_title . "</a>";
+                    $link_args['title_li'] = "<a href='" . ($links_tab_link == '' ? '#' : $links_tab_link) . "'>" . $links_tab_title . "</a>";
                 } else
                     if ($links_style == 'flattened' && count($link_args) != 0) {
                         $link_args['title_li'] = '';
@@ -191,7 +191,7 @@ foreach ($entity_order as $entity) {
                 }
                 $ret_str .= $link_str;
             } else
-                if (( strlen($entity) >= 5 && substr($entity, 0, 5) == 'menu-' )) {
+                if ((strlen($entity) >= 5 && substr($entity, 0, 5) == 'menu-')) {
                     if (count($menus_to_show) != 0) {
                         $menu_print_args = array('container' => '', 'menu_class' => 'menu', 'echo' => false, 'depth' => 0, 'theme_location' => $suffusion_menu_location, 'items_wrap' => '%3$s');
                         if (current_theme_supports('mega-menus')) {
