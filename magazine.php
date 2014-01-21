@@ -46,27 +46,21 @@ if ( !rps_is_paid_member(get_current_user_id()) ) {
     echo '</section>' . "\n";
 }
 
-    echo "\n" . '<section class="rps-inmemory">';
-    echo '<div class="suf-tiles suf-tiles-1">';
-
-    echo '<div class="suf-tile suf-tile-1c suf-tile-ctr-0">';
-    echo '<div class="suf-gradient suf-tile-topmost"><h3>In memoriam</h3></div>';
-    echo '<div class="suf-tile-text entry-content">';
-    // echo '<p>Whether you’re a beginner or advanced amateur (even a professional) photographer, the Raritan Photographic Society, based in Middlesex County, New Jersey, has something to offer you.</p>';
-    // echo '<p>In addition to monthly lecture and competition/critique meetings, our members enjoy field trips and workshops, as well as our holiday and banquet parties.';
-    // echo 'If you want to socialize with other photographers and at the same time improve your photography skills, the Raritan Photographic Society is a fun camera club to be a part of.</p>';
-    // echo '<p>Before you decide to join, you are welcome to attend a meeting or two. You’ll be able to meet our members and find out in person what we’re all about. Check the ' . em_get_link('schedule of events') . ' for the season to see when and where we meet</p>';
-    echo '<p>';
-    echo '<a href="http://www.raritanphoto.com/content/uploads/2013/12/JakeChapple1.jpg"><img src="http://www.raritanphoto.com/content/uploads/2013/12/JakeChapple1-200x300.jpg" alt="Jake Chapple" width="200" height="300" class="alignleft size-medium wp-image-792" /></a>';
-    echo '</p>';
-    echo '<h2>Jake Chapple</h2>';
-    echo '<h2>October 5, 1957 - December 28, 2013</h2>';
-
-    echo '</div>';
-    echo "<div class='suf-mag-excerpt-footer'>\n";
-    echo "</div>";
-    echo '</div>';
-    echo '</section>' . "\n";
+//     echo "\n" . '<section class="rps-inmemory">';
+//     echo '<div class="suf-tiles suf-tiles-1">';
+//     echo '<div class="suf-tile suf-tile-1c suf-tile-ctr-0">';
+//     echo '<div class="suf-gradient suf-tile-topmost"><h3>In memoriam</h3></div>';
+//     echo '<div class="suf-tile-text entry-content">';
+//     echo '<p>';
+//     echo '<a href="http://www.raritanphoto.com/content/uploads/2013/12/JakeChapple1.jpg"><img src="http://www.raritanphoto.com/content/uploads/2013/12/JakeChapple1-200x300.jpg" alt="Jake Chapple" width="200" height="300" class="alignleft size-medium wp-image-792" /></a>';
+//     echo '</p>';
+//     echo '<h2>Jake Chapple</h2>';
+//     echo '<h2>October 5, 1957 - December 28, 2013</h2>';
+//     echo '</div>';
+//     echo "<div class='suf-mag-excerpt-footer'>\n";
+//     echo "</div>";
+//     echo '</div>';
+//     echo '</section>' . "\n";
 
 $sticky = get_option('sticky_posts');
 $post_to_skip = array();
