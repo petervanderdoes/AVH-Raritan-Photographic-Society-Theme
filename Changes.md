@@ -3,7 +3,7 @@
 == Changelog
 
 = Version 1.5.2-rc.1 =
-* Preparation for new development cycle.
+* Remove "In Meoriam"
 
 = Version 1.5.1 =
 * microformats.org Error for events and locations.
