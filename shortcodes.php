@@ -16,7 +16,7 @@ function shortcodeContentForPaidMembers($atts, $content)
 {
     global $user_ID;
 
-    if ( ( !is_user_logged_in() ) || ( !rps_is_paid_member($user_ID) ) ) {
+    if ((!is_user_logged_in()) || (!rps_is_paid_member($user_ID))) {
         $content = rps_display_restriction("Only members can see this content");
     }
     return $content;
@@ -36,7 +36,7 @@ function rps_display_restriction($logged_in_message = "Only members can see this
     $content .= "<small>Members only</small>";
     $content .= "</legend>";
     $content .= "<strong>";
-    if ( is_user_logged_in() ) {
+    if (is_user_logged_in()) {
         $content .= $logged_in_message;
     } else {
         $content .= $not_logged_in_message;
@@ -48,10 +48,10 @@ function rps_display_restriction($logged_in_message = "Only members can see this
 
 function shortcodeRPS_archive($atts)
 {
-    extract(shortcode_atts(array('text' => 'Select season','pulldown' => 'yes','values' => ''), $atts));
+    extract(shortcode_atts(array('text' => 'Select season', 'pulldown' => 'yes', 'values' => ''), $atts));
 
     $output = '';
-    if ( empty($values) ) {
+    if (empty($values)) {
         return;
     }
 
@@ -59,7 +59,7 @@ function shortcodeRPS_archive($atts)
     $form = $text . '<br />';
     $form .= "<select name='myselect' id='myselect' class='rps-select'>\n";
     $selected = ' selected';
-    foreach ( $form_values as $key => $value ) {
+    foreach ($form_values as $key => $value) {
         $form .= '<option value="' . $key . '"' . $selected . '>' . $value . '</option>' . "\n";
         $selected = '';
     }

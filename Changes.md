@@ -2,6 +2,9 @@
 
 == Changelog
 
+= Version 1.5.2 =
+* Remove "In Meoriam"
+
 = Version 1.5.1 =
 * microformats.org Error for events and locations.
 
