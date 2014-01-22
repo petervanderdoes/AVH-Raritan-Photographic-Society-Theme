@@ -426,3 +426,19 @@ function rps_comment_form ($args = array(), $post_id = null)
         <?php endif; ?>
     <?php
 }
+
+function rps_display_suffu_tile_misc ($title, $content, $column_number, $total_columns, $echo = false)
+{
+	$return = '<div class="suf-tile suf-tile-' . $total_columns . 'c suf-tile-ctr-' . $column_number . '">';
+	$return .= '<div class="suf-gradient suf-tile-topmost"><h3>' . $title . '</h3></div>';
+	$return .= '<div class="suf-tile-text entry-content">';
+	$return .= $content;
+	$return .= '</div>';
+	$return .= '</div>' . "\n";
+
+	if ( $echo ) {
+		echo $return;
+	} else {
+		return $return;
+	}
+}
