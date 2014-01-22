@@ -2,8 +2,8 @@
 
 == Changelog
 
-= Version 1.6.0-dev.1 =
-* Preparation for new development cycle.
+= Version 1.5.2 =
+* Remove "In Meoriam"
 
 = Version 1.5.1 =
 * microformats.org Error for events and locations.
