@@ -3,7 +3,8 @@
 == Changelog
 
 = Version 1.5.3-rc.1 =
-* Preparation for new development cycle.
+* Missing border in the showcase photos.
+* The misc tiles were not spread evenly on the page.
 
 = Version 1.5.2 =
 * Remove "In Meoriam"
