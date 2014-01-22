@@ -2,8 +2,9 @@
 
 == Changelog
 
-= Version 1.6.0-dev.1 =
-* Preparation for new development cycle.
+= Version 1.5.3 =
+* Missing border in the showcase photos.
+* The misc tiles were not spread evenly on the page.
 
 = Version 1.5.2 =
 * Remove "In Meoriam"
