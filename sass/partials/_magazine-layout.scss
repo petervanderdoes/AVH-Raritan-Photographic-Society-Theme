@@ -173,6 +173,8 @@ h2 {
     vertical-align: bottom;
   }
   li {
+    @include border-radius(5px);
+    border: 1px solid $color-border;
     float: left;
     line-height: 150px;
     margin: 0 13px 10px;

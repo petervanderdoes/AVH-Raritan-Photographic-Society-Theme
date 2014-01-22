@@ -74,11 +74,6 @@ foreach ($queries as $query) {
 if ($total > 0) {
     global $suf_mag_excerpts_per_row, $suf_mag_excerpts_title, $suf_mag_total_excerpts;
 
-    if (trim($suf_mag_excerpts_title) != '') {
-        global $suf_mag_excerpts_main_title_alignment;
-        echo "<div class='suf-mag-excerpts-header $suf_mag_excerpts_main_title_alignment'>" . stripslashes($suf_mag_excerpts_title) . "</div>";
-    }
-
     $ctr = 0;
     $tiles = 0;
     $cols_per_row = $suf_mag_excerpts_per_row;
@@ -149,17 +144,9 @@ echo "</section>";
 echo '<section class="rps-misc">';
 echo '<div class="suf-tiles suf-tiles-3">';
 
-echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-0">';
-echo "<div class='suf-gradient suf-tile-topmost'><h3>RPS events</h3></div>";
-echo "<div class='suf-tile-text entry-content'>";
-echo rps_EM_list_events(17);
-echo "</div>";
-echo '</div>';
+echo rps_display_suffu_tile_misc('RPS events', rps_EM_list_events(17), 0, 3);
 
-echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-1">';
-echo "<div class='suf-gradient suf-tile-topmost'><h3>More articles</h3></div>";
-echo "<div class='suf-tile-text entry-content'>";
-echo '<table>';
+$output = '<table>';
 wp_reset_query();
 
 $ctr = 0;
@@ -188,25 +175,19 @@ if ($total > 0) {
                 $category_link = '<a href="' . esc_url(get_category_link($category->term_id)) . '" title="' . esc_attr(sprintf(__("View all articles in %s"), $category->name)) . '" rel="category tag">';
                 $category_text = $category_link . $category->name . '</a>';
                 $title_text = "<a href='" . get_permalink($post->ID) . "'>" . get_the_title($post->ID) . "</a>";
-                echo '<tr>';
-                echo '<td style="white-space: nowrap; vertical-align: top;">' . $category_text . ':&nbsp;</td><td>' . $title_text . '</td>';
-                echo '</tr>';
+                $output .= '<tr>';
+                $output .= '<td style="white-space: nowrap; vertical-align: top;">' . $category_text . ':&nbsp;</td><td>' . $title_text . '</td>';
+                $output .= '</tr>';
                 $ctr++;
             }
         }
     }
 }
 
-echo '</tbody></table>';
-echo "</div>";
-echo '</div>';
+$output .= '</tbody></table>';
+echo rps_display_suffu_tile_misc('More articles', $output, 1, 3);
 
-echo '<div class="suf-tile suf-tile-3c suf-tile-ctr-2">';
-echo "<div class='suf-gradient suf-tile-topmost'><h3>Other events</h3></div>";
-echo "<div class='suf-tile-text entry-content'>";
-echo rps_EM_list_events(24);
-echo "</div>";
-echo '</div>';
+echo rps_display_suffu_tile_misc('Other events', rps_EM_list_events(24), 2, 3);
 
 echo '</div>';
 echo '</section>';

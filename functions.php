@@ -181,7 +181,7 @@ function actionRPS_enqueue_styles ()
 		wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps.css');
 	} else {
 		// The style version is automatically updated by using git-flow hooks.
-		$rps_style_version = "5d83d5c";
+		$rps_style_version = "cd2bb29";
 		wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps-' . $rps_style_version . '.css');
 	}
 
@@ -425,4 +425,20 @@ function rps_comment_form ($args = array(), $post_id = null)
             <?php do_action( 'comment_form_comments_closed' ); ?>
         <?php endif; ?>
     <?php
+}
+
+function rps_display_suffu_tile_misc ($title, $content, $column_number, $total_columns, $echo = false)
+{
+	$return = '<div class="suf-tile suf-tile-' . $total_columns . 'c suf-tile-ctr-' . $column_number . '">';
+	$return .= '<div class="suf-gradient suf-tile-topmost"><h3>' . $title . '</h3></div>';
+	$return .= '<div class="suf-tile-text entry-content">';
+	$return .= $content;
+	$return .= '</div>';
+	$return .= '</div>' . "\n";
+
+	if ( $echo ) {
+		echo $return;
+	} else {
+		return $return;
+	}
 }
