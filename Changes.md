@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 1.5.3-rc.1 =
+= Version 1.5.3 =
 * Missing border in the showcase photos.
 * The misc tiles were not spread evenly on the page.
 
