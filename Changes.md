@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 1.5.2-rc.1 =
+= Version 1.5.2 =
 * Remove "In Meoriam"
 
 = Version 1.5.1 =
