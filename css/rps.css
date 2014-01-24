@@ -5864,6 +5864,16 @@ div.css-search div.em-search-main .em-search-submit {
   color: #e9e9e9;
   border: solid 1px #002366;
 }
+/* line 84, ../sass/partials/_events-manager.scss */
+div.css-search div.em-search-main .em-search-submit:hover {
+  background: #6d8ce8;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF6D8CE8', endColorstr='#FF003599');
+  background: -moz-linear-gradient(top, #6d8ce8 0%, #003599 100%);
+  background: -o-linear-gradient(top, #6d8ce8 0%, #003599 100%);
+  background: -webkit-linear-gradient(top, #6d8ce8 0%, #003599 100%);
+  background: linear-gradient(to bottom, #6d8ce8 0%, #003599 100%);
+}
 
 /* line 1, ../sass/partials/_magazine-layout.scss */
 .suf-mag-excerpts {
