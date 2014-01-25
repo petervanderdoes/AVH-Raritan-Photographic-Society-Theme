@@ -3,7 +3,8 @@
 == Changelog
 
 = Version 1.5.4-rc.1 =
-* Preparation for new development cycle.
+* Event overview is incorrect after upgrading Event Manager,
+* Search icon in Event Manager is not conform the color standard of the site
 
 = Version 1.5.3 =
 * Missing border in the showcase photos.
