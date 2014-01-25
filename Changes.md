@@ -2,8 +2,9 @@
 
 == Changelog
 
-= Version 1.6.0-dev.4 =
-* Preparation for new development cycle.
+= Version 1.5.4 =
+* Event overview is incorrect after upgrading Event Manager,
+* Search icon in Event Manager is not conform the color standard of the site
 
 = Version 1.5.3 =
 * Missing border in the showcase photos.
