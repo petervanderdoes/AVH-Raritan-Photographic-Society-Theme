@@ -2,6 +2,10 @@
 
 == Changelog
 
+= Version 1.5.4 =
+* Event overview is incorrect after upgrading Event Manager,
+* Search icon in Event Manager is not conform the color standard of the site
+
 = Version 1.5.3 =
 * Missing border in the showcase photos.
 * The misc tiles were not spread evenly on the page.

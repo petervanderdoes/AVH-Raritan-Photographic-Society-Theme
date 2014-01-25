@@ -81,4 +81,7 @@ div.css-search div.em-search-main .em-search-submit {
   @include gradient-buttons;
   color: $color-button-text;
   border: solid 1px $color-button-border;
+  &:hover {
+    @include gradient-buttons-active
+  }
 }
