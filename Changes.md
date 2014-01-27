@@ -3,7 +3,12 @@
 == Changelog
 
 = Version 1.5.5-rc.1 =
-* Preparation for new development cycle.
+* Automatically change links for external domains.
+  Any links that point to a external domain will automatically be enhanced
+  with the following:
+  * Open in new window
+  * Add (external link, click to open in a new window) to the title
+  * Add icon at then end to indicate it will open in a new window.
 
 = Version 1.5.4 =
 * Event overview is incorrect after upgrading Event Manager,
