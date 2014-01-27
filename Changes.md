@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 1.6.0-dev.8 =
+= Version 1.5.5-rc.1 =
 * Preparation for new development cycle.
 
 = Version 1.5.4 =
