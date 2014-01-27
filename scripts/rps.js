@@ -6,13 +6,9 @@ jQuery(document)
 			/**
 			 * Setup external links
 			 */
-			// here goes your javascript code where you access
-			// jquery object will dollar sign
 			$('.entry a[href^="http://"] , #comments a[href^="http://"] , .entry a[href^="https://"] , #comments a[href^="https://"]')
 					.each(function() {
 						if (this.hostname !== location.hostname) {
-							// var title = (this.title ==
-							// "") ? this.href : this.title;
 							$(this).attr({
 							'class' : function(i, val) {
 								val = (val == undefined) ? "" : val;
