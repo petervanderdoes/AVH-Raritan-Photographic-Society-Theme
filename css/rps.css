@@ -6907,7 +6907,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   width: 16px;
 }
 
-/* line 51, ../sass/rps.scss */
+/* line 47, ../sass/rps.scss */
 body {
   font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
   background-attachment: scroll;
@@ -6921,7 +6921,7 @@ body {
   background-color: black;
 }
 
-/* line 64, ../sass/rps.scss */
+/* line 60, ../sass/rps.scss */
 a {
   color: #e6e6e6;
   text-decoration: none;
@@ -6937,13 +6937,13 @@ a:hover {
   text-decoration: none;
 }
 
-/* line 68, ../sass/rps.scss */
+/* line 64, ../sass/rps.scss */
 #content {
   clear: both;
   overflow: hidden;
 }
 
-/* line 73, ../sass/rps.scss */
+/* line 69, ../sass/rps.scss */
 .entry, .non-wp-entry {
   padding: 15px 0 5px;
   clear: both;
@@ -6951,14 +6951,14 @@ a:hover {
   overflow: hidden;
 }
 
-/* line 80, ../sass/rps.scss */
+/* line 76, ../sass/rps.scss */
 h2.suf-tile-title {
   font-size: 15px;
   font-size: 1.15385rem;
   line-height: 20px;
   line-height: 1.5rem;
 }
-/* line 82, ../sass/rps.scss */
+/* line 78, ../sass/rps.scss */
 h2.suf-tile-title a,
 h2.suf-tile-title a:hover,
 h2.suf-tile-title a:visited,
@@ -6969,7 +6969,7 @@ h2.suf-tile-title a:active {
   line-height: 1.5rem;
 }
 
-/* line 90, ../sass/rps.scss */
+/* line 86, ../sass/rps.scss */
 .suf-gradient {
   background: royalblue;
   *zoom: 1;
@@ -6980,7 +6980,7 @@ h2.suf-tile-title a:active {
   background: linear-gradient(to bottom, #4169e1 0%, rgba(0, 35, 102, 0.2) 100%);
 }
 
-/* line 94, ../sass/rps.scss */
+/* line 90, ../sass/rps.scss */
 .suf-mag-headline-block li.suf-mag-headline a.tab-current, h2.suf-mag-category-title {
   background: royalblue;
   *zoom: 1;
@@ -6991,7 +6991,7 @@ h2.suf-tile-title a:active {
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
 
-/* line 98, ../sass/rps.scss */
+/* line 94, ../sass/rps.scss */
 a.excerpt-more-append {
   color: #e9e9e9;
   border: solid 1px #002366;
@@ -7004,7 +7004,7 @@ a.excerpt-more-append {
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
 
-/* line 104, ../sass/rps.scss */
+/* line 100, ../sass/rps.scss */
 .warea a.suf-mag-category-all-posts, a.suf-mag-category-all-posts {
   background: royalblue;
   *zoom: 1;
@@ -7015,22 +7015,22 @@ a.excerpt-more-append {
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
 
-/* line 108, ../sass/rps.scss */
+/* line 104, ../sass/rps.scss */
 h2.suf-tile-title {
   margin-top: 0;
   text-align: left;
 }
 
-/* line 113, ../sass/rps.scss */
+/* line 109, ../sass/rps.scss */
 h2.suf-tile-title a {
   font-size: 58%;
 }
-/* line 115, ../sass/rps.scss */
+/* line 111, ../sass/rps.scss */
 h2.suf-tile-title a:hover, h2.suf-tile-title a:visited, h2.suf-tile-title a:active {
   font-size: 58%;
 }
 
-/* line 120, ../sass/rps.scss */
+/* line 116, ../sass/rps.scss */
 #header-container {
   background-image: url('../images/RPS-LOGO-2012.jpg');
   background-position: left top;
@@ -7050,7 +7050,7 @@ h2.suf-tile-title a:hover, h2.suf-tile-title a:visited, h2.suf-tile-title a:acti
   border-top-right-radius: inherit;
 }
 
-/* line 131, ../sass/rps.scss */
+/* line 127, ../sass/rps.scss */
 input[type="email"] {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -7060,14 +7060,14 @@ input[type="email"] {
 /**
 * Theme My Login
 */
-/* line 139, ../sass/rps.scss */
+/* line 135, ../sass/rps.scss */
 #theme-my-login *:focus {
   background-color: #999999;
   color: #333333;
   outline: 0 none;
 }
 
-/* line 145, ../sass/rps.scss */
+/* line 141, ../sass/rps.scss */
 ul.tml-action-links {
   display: block;
   float: right;
@@ -7076,7 +7076,7 @@ ul.tml-action-links {
   padding: 0;
   vertical-align: bottom;
 }
-/* line 152, ../sass/rps.scss */
+/* line 148, ../sass/rps.scss */
 ul.tml-action-links li {
   padding: 0;
 }
