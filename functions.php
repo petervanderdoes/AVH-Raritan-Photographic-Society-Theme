@@ -187,7 +187,7 @@ function actionRPS_enqueue_styles ()
 		wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps-' . $rps_style_version . '.css', array(), 'to_remove');
 		// The style version is automatically updated by using git-flow hooks.
 		$rps_js_version = "45a931b";
-		wp_enqueue_script('rps', get_stylesheet_directory_uri() . '/js/rps-' . $rps_js_version . '.js', array(), 'to_remove',true);
+		wp_enqueue_script('rps', get_stylesheet_directory_uri() . '/scripts/rps-' . $rps_js_version . '.js', array(), 'to_remove',true);
 	}
 
 	if ( !isset($suffusion_theme_hierarchy[$suf_color_scheme]) ) {
