@@ -15,27 +15,27 @@ $rhythm-unit: rem;
 @import "assets/variables";
 @import "assets/mixins";
 
+@import "general/jquery-ui";
+
 @import "suffusion/main";
 @import "suffusion/rounded-corners";
 @import "suffusion/light-royal-blue";
 @import "suffusion/dark-style";
 
-//@import "suffusion/dark-royal-blue";
-
-@import "partials/general";
-@import "partials/header";
-@import "partials/navigation-bar";
-@import "partials/breadcrumb";
-@import "partials/forms";
-@import "partials/events-manager";
-@import "partials/magazine-layout";
-@import "partials/legal";
-@import "partials/post";
-@import "partials/comments";
-@import "partials/monthly-winners";
-@import "partials/showcase";
-@import "partials/sidebars";
-@import "partials/footer";
+@import "rps/general";
+@import "rps/header";
+@import "rps/navigation-bar";
+@import "rps/breadcrumb";
+@import "rps/forms";
+@import "rps/events-manager";
+@import "rps/magazine-layout";
+@import "rps/legal";
+@import "rps/post";
+@import "rps/comments";
+@import "rps/monthly-winners";
+@import "rps/showcase";
+@import "rps/sidebars";
+@import "rps/footer";
 
 $social-icon-16-spacing: 8px;
 $social-icon-16-sprite-dimensions: true;
@@ -149,3 +149,4 @@ ul.tml-action-links {
     padding: 0;
   }
 }
+
