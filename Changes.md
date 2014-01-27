@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 1.5.5-rc.1 =
+= Version 1.5.5 =
 * Automatically change links for external domains.
   Any links that point to a external domain will automatically be enhanced
   with the following:
