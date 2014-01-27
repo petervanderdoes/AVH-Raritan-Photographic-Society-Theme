@@ -46,6 +46,7 @@ add_action('init', 'actionRPS_init');
 // RPS Actions & Filters
 add_filter('rps_comment_form_allow_comment', 'filterRPS_comment_form_allow_comment', 10, 1);
 add_filter('style_loader_src', 'filterRPS_remove_cssjs_ver', 10, 2);
+add_filter('script_loader_src', 'filterRPS_remove_cssjs_ver', 10, 2);
 
 /**
  * Here you can define any additional functions that you are hooking in the
@@ -178,11 +179,15 @@ function actionRPS_enqueue_styles ()
 
 	// Setup stylesheet
 	if ( WP_LOCAL_DEV == true ) {
-		wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps.css');
+		wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps.css', array(), 'to_remove');
+		wp_enqueue_script('rps', get_stylesheet_directory_uri() . '/scripts/rps.js', array(), 'to_remove', true);
 	} else {
 		// The style version is automatically updated by using git-flow hooks.
-		$rps_style_version = "2f1cf55";
-		wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps-' . $rps_style_version . '.css');
+		$rps_style_version = "90789c6";
+		wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps-' . $rps_style_version . '.css', array(), 'to_remove');
+		// The style version is automatically updated by using git-flow hooks.
+		$rps_js_version = "49f6b77";
+		wp_enqueue_script('rps', get_stylesheet_directory_uri() . '/js/rps-' . $rps_js_version . '.js', array(), 'to_remove',true);
 	}
 
 	if ( !isset($suffusion_theme_hierarchy[$suf_color_scheme]) ) {
@@ -264,16 +269,9 @@ function actionRPS_print_post_updated_information ()
 
 function filterRPS_remove_cssjs_ver ($src)
 {
-	$parsed_url = parse_url($src);
-	if ( substr($parsed_url['path'], 0, 33) == '/content/themes/suffu-rps/css/rps' ) {
-		$scheme = isset($parsed_url['scheme']) ? $parsed_url['scheme'] . '://' : '';
-		$host = isset($parsed_url['host']) ? $parsed_url['host'] : '';
-		$port = isset($parsed_url['port']) ? ':' . $parsed_url['port'] : '';
-		$user = isset($parsed_url['user']) ? $parsed_url['user'] : '';
-		$pass = isset($parsed_url['pass']) ? ':' . $parsed_url['pass'] : '';
-		$pass = ( $user || $pass ) ? "$pass@" : '';
-		$path = isset($parsed_url['path']) ? $parsed_url['path'] : '';
-		$src = "$scheme$user$pass$host$port$path";
+	parse_str(parse_url($src, PHP_URL_QUERY), $vars);
+	if ( isset($vars['ver']) && $vars['ver'] == 'to_remove' ) {
+		$src = remove_query_arg('ver', $src);
 	}
 	return $src;
 }
