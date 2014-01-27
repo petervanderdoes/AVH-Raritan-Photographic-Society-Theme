@@ -2,6 +2,9 @@
 
 == Changelog
 
+= Version 1.6.0-dev.1 =
+* Preparation for new development cycle.
+
 = Version 1.5.5 =
 * Automatically change links for external domains.
   Any links that point to a external domain will automatically be enhanced
