@@ -3,6 +3,8 @@
 function yoast_breadcrumb_output()
 {
     if (function_exists('yoast_breadcrumb')) {
-        yoast_breadcrumb('<div id="subnav" class="breadcrumb">', "</div>");
+        if (!(is_home() || is_front_page())) {
+            yoast_breadcrumb('<div class="breadcrumb">', "</div>");
+        }
     }
 }
