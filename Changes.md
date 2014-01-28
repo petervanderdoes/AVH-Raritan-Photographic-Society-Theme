@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 1.5.6-rc.1 =
+= Version 1.5.6 =
 * Do not display breadcrumb on the frontpage.
 * Display the next meeting on the frontpage on the same level where the
   breadcrumb normally displays.
