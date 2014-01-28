@@ -255,7 +255,19 @@ function rps_EM_list_events($parent_category)
         $format = '<tr><td style="white-space: nowrap;vertical-align: top;">#_EVENTDATES</td><td style="padding-left: 1rem;vertical-align: top;">#_CATEGORYNAME: #_EVENTLINK</td></tr>';
     }
     // @formatter:off
-	$arg = array('title' => __('Events', 'dbem'),'scope' => 'future','order' => 'ASC','limit' => 5,'category' => $categories,'format_header' => '','format' => '<table><tbody>' . $format . '</tbody></table>','format_footer' => '','nolistwrap' => false,'orderby' => 'event_start_date,event_start_time,event_name','all_events' => 0,'all_events_text' => __('all events', 'dbem'),'no_events_text' => __('No events', 'dbem'));
+	$arg = array('title' => __('Events', 'dbem'),
+		'scope' => 'future',
+		'order' => 'ASC',
+		'limit' => 5,
+		'category' => $categories,
+		'format_header' => '',
+		'format' => '<table><tbody>' . $format . '</tbody></table>',
+		'format_footer' => ''
+		,'nolistwrap' => false,
+		'orderby' => 'event_start_date,event_start_time,event_name',
+		'all_events' => 0,
+		'all_events_text' => __('all events', 'dbem'),
+		'no_events_text' => __('No events', 'dbem'));
 	// @formatter:on
     return EM_Events::output($arg);
 }

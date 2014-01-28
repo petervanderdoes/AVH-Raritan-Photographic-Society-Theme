@@ -67,9 +67,13 @@ wp_head();
         suffusion_before_begin_wrapper();
         ?>
         <div id="wrapper" class="fix">
+
         <?php
         suffusion_after_begin_wrapper();
         ?>
+        <div id="subnav"  class="fix">
+        <?php do_action('rps_subnav');?>
+        </div>
             <div id="container" class="fix">
                 <?php
                 suffusion_after_begin_container();
