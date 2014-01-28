@@ -3,7 +3,9 @@
 == Changelog
 
 = Version 1.5.6-rc.1 =
-* Preparation for new development cycle.
+* Do not display breadcrumb on the frontpage.
+* Display the next meeting on the frontpage on the same level where the
+  breadcrumb normally displays.
 
 = Version 1.5.5 =
 * Automatically change links for external domains.
