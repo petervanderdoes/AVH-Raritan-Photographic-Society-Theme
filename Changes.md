@@ -2,8 +2,10 @@
 
 == Changelog
 
-= Version 1.6.0-dev.7 =
-* Preparation for new development cycle.
+= Version 1.5.6 =
+* Do not display breadcrumb on the frontpage.
+* Display the next meeting on the frontpage on the same level where the
+  breadcrumb normally displays.
 
 = Version 1.5.5 =
 * Automatically change links for external domains.
