@@ -1,3 +1,20 @@
+function rps_make_tiles_equal(tiles) {
+  var tallest = 0;
+  // Reset all tiles to 0 min-height
+  tiles.css({
+    'height' : 'auto'
+  });
+  tiles.each(function() {
+    var currentHeight = $j(this).height();
+    if (currentHeight > tallest) {
+      tallest = currentHeight;
+    }
+  });
+  tiles.css({
+    'height' : tallest
+  });
+}
+
 jQuery(document)
     .ready(function($) {
       /**
@@ -56,4 +73,8 @@ jQuery(document)
                   }
                 });
           });
+
+      $('.gallery-row').each(function() {
+        rps_make_tiles_equal($(this).children());
+      });
     });
