@@ -1448,42 +1448,6 @@ hr.clear {
   }
 }
 
-/* Fix for IE8 */
-
-.wp-caption {
-  text-align: center;
-  background: #fff;
-  padding: 4px;
-  margin-bottom: 1em;
-}
-
-.entry .wp-caption {
-  max-width: 100%;
-}
-
-.wp-caption-text, .gallery-caption {
-  font-size: 100%;
-  font-style: italic;
-  margin: 0;
-  padding: 6px 3px 2px;
-  line-height: 16px;
-  text-align: center;
-}
-
-.wp-caption img {
-  margin: 5px 0 0;
-  padding: 0;
-  border: 0 none;
-  max-width: 100%;
-}
-
-.wp-caption-dd {
-  font-size: 91.67%;
-  line-height: 17px;
-  padding: 0 4px 5px;
-  margin: 0;
-}
-
 .sticky!, .bypostauthor! {}
 
 /* Clearfix: Courtesy http://www.positioniseverything.net/easyclearing.html */

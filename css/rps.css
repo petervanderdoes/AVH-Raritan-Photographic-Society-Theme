@@ -1739,53 +1739,13 @@ hr.clear {
   max-width: none;
 }
 
-/* Fix for IE8 */
-/* line 1453, ../sass/suffusion/_main.scss */
-.wp-caption {
-  text-align: center;
-  background: #fff;
-  padding: 4px;
-  margin-bottom: 1em;
-}
-
-/* line 1460, ../sass/suffusion/_main.scss */
-.entry .wp-caption {
-  max-width: 100%;
-}
-
-/* line 1464, ../sass/suffusion/_main.scss */
-.wp-caption-text, .gallery-caption {
-  font-size: 100%;
-  font-style: italic;
-  margin: 0;
-  padding: 6px 3px 2px;
-  line-height: 16px;
-  text-align: center;
-}
-
-/* line 1473, ../sass/suffusion/_main.scss */
-.wp-caption img {
-  margin: 5px 0 0;
-  padding: 0;
-  border: 0 none;
-  max-width: 100%;
-}
-
-/* line 1480, ../sass/suffusion/_main.scss */
-.wp-caption-dd {
-  font-size: 91.67%;
-  line-height: 17px;
-  padding: 0 4px 5px;
-  margin: 0;
-}
-
 /* Clearfix: Courtesy http://www.positioniseverything.net/easyclearing.html */
-/* line 1491, ../sass/suffusion/_main.scss */
+/* line 1455, ../sass/suffusion/_main.scss */
 .fix {
   display: inline-block;
   display: block;
 }
-/* line 1492, ../sass/suffusion/_main.scss */
+/* line 1456, ../sass/suffusion/_main.scss */
 .fix:after {
   content: ".";
   display: block;
@@ -1796,26 +1756,26 @@ hr.clear {
 
 /* Hide from IE Mac \*/
 /* End hide from IE Mac */
-/* line 1507, ../sass/suffusion/_main.scss */
+/* line 1471, ../sass/suffusion/_main.scss */
 #sidebar-container {
   display: inline-block;
   margin-top: 15px;
   position: relative;
 }
 
-/* line 1513, ../sass/suffusion/_main.scss */
+/* line 1477, ../sass/suffusion/_main.scss */
 .sidebar-container-left, .sidebar-container-right {
   float: left;
 }
 
-/* line 1519, ../sass/suffusion/_main.scss */
+/* line 1483, ../sass/suffusion/_main.scss */
 #sidebar-container.sidebar-container-left #sidebar-shell-1, #sidebar-container.sidebar-container-left #sidebar-shell-2 {
   float: left;
   margin-left: 0;
   margin-right: 15px;
   right: auto;
 }
-/* line 1527, ../sass/suffusion/_main.scss */
+/* line 1491, ../sass/suffusion/_main.scss */
 #sidebar-container.sidebar-container-right #sidebar-shell-1, #sidebar-container.sidebar-container-right #sidebar-shell-2 {
   float: right;
   margin-right: 0;
@@ -1825,7 +1785,7 @@ hr.clear {
 }
 
 /* Magazine */
-/* line 1539, ../sass/suffusion/_main.scss */
+/* line 1503, ../sass/suffusion/_main.scss */
 .suf-mag-headlines {
   margin-top: 3px;
   display: block;
@@ -1833,7 +1793,7 @@ hr.clear {
   border: 1px solid #c0c0c0;
 }
 
-/* line 1546, ../sass/suffusion/_main.scss */
+/* line 1510, ../sass/suffusion/_main.scss */
 .suf-mag-headline-photo-box {
   padding: 5px;
   overflow: hidden;
@@ -1843,56 +1803,56 @@ hr.clear {
   position: relative;
 }
 
-/* line 1555, ../sass/suffusion/_main.scss */
+/* line 1519, ../sass/suffusion/_main.scss */
 .suf-mag-headline-photo {
   display: inline-block;
   padding: 5px;
 }
 
-/* line 1560, ../sass/suffusion/_main.scss */
+/* line 1524, ../sass/suffusion/_main.scss */
 .suf-mag-headline-block {
   float: left;
   margin: 5px 5px 5px 2px;
   position: relative;
 }
-/* line 1564, ../sass/suffusion/_main.scss */
+/* line 1528, ../sass/suffusion/_main.scss */
 .suf-mag-headline-block ul.mag-headlines {
   border-collapse: collapse;
   list-style: none;
   margin: 10px;
   padding-left: 10px;
 }
-/* line 1570, ../sass/suffusion/_main.scss */
+/* line 1534, ../sass/suffusion/_main.scss */
 .suf-mag-headline-block li.suf-mag-headline a {
   padding: 3px 8px;
   text-decoration: none;
   color: #000;
 }
-/* line 1574, ../sass/suffusion/_main.scss */
+/* line 1538, ../sass/suffusion/_main.scss */
 .suf-mag-headline-block li.suf-mag-headline a.tab-current {
   padding: 2px 7px;
   border: none;
 }
 
-/* line 1581, ../sass/suffusion/_main.scss */
+/* line 1545, ../sass/suffusion/_main.scss */
 .suf-mag-headline {
   display: block;
   line-height: 22px;
   font-size: 108%;
 }
 
-/* line 1587, ../sass/suffusion/_main.scss */
+/* line 1551, ../sass/suffusion/_main.scss */
 .suf-mag-category-description {
   margin: 5px;
 }
 
-/* line 1591, ../sass/suffusion/_main.scss */
+/* line 1555, ../sass/suffusion/_main.scss */
 .suf-tiles {
   width: 100%;
   padding: 0;
 }
 
-/* line 1596, ../sass/suffusion/_main.scss */
+/* line 1560, ../sass/suffusion/_main.scss */
 .suf-tile-1c {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1900,37 +1860,37 @@ hr.clear {
   box-sizing: border-box;
 }
 
-/* line 1603, ../sass/suffusion/_main.scss */
+/* line 1567, ../sass/suffusion/_main.scss */
 .suf-mag-category {
   padding: 0 0 8px;
   text-align: left;
 }
 
-/* line 1608, ../sass/suffusion/_main.scss */
+/* line 1572, ../sass/suffusion/_main.scss */
 .suf-mag-excerpt-image {
   overflow: hidden;
 }
 
-/* line 1612, ../sass/suffusion/_main.scss */
+/* line 1576, ../sass/suffusion/_main.scss */
 div.suf-tile-image {
   float: none;
   display: inline-block;
 }
 
-/* line 1618, ../sass/suffusion/_main.scss */
+/* line 1582, ../sass/suffusion/_main.scss */
 .suf-tiles .left {
   text-align: left;
 }
-/* line 1621, ../sass/suffusion/_main.scss */
+/* line 1585, ../sass/suffusion/_main.scss */
 .suf-tiles .center {
   text-align: center;
 }
-/* line 1624, ../sass/suffusion/_main.scss */
+/* line 1588, ../sass/suffusion/_main.scss */
 .suf-tiles .right {
   text-align: right;
 }
 
-/* line 1629, ../sass/suffusion/_main.scss */
+/* line 1593, ../sass/suffusion/_main.scss */
 .suf-mag-excerpt-image, .suf-tile-image {
   overflow: hidden;
   height: 100px;
@@ -1939,12 +1899,12 @@ div.suf-tile-image {
   text-align: center;
 }
 
-/* line 1637, ../sass/suffusion/_main.scss */
+/* line 1601, ../sass/suffusion/_main.scss */
 .suf-mag-excerpt, .suf-tile {
   padding-top: 0;
 }
 
-/* line 1641, ../sass/suffusion/_main.scss */
+/* line 1605, ../sass/suffusion/_main.scss */
 .suf-tile-image img {
   margin: auto;
   max-width: 100%;
@@ -1954,7 +1914,7 @@ div.suf-tile-image {
   box-sizing: border-box;
 }
 
-/* line 1650, ../sass/suffusion/_main.scss */
+/* line 1614, ../sass/suffusion/_main.scss */
 .suf-tile-topmost {
   width: 100%;
   margin: 0;
@@ -1966,64 +1926,64 @@ div.suf-tile-image {
   border-top-right-radius: 5px;
 }
 
-/* line 1657, ../sass/suffusion/_main.scss */
+/* line 1621, ../sass/suffusion/_main.scss */
 .suf-mag-excerpt-image.suf-tile-topmost a, .suf-tile-image.suf-tile-topmost a {
   overflow: hidden;
   margin: 8px 10px;
 }
 
-/* line 1662, ../sass/suffusion/_main.scss */
+/* line 1626, ../sass/suffusion/_main.scss */
 .suf-mag-categories {
   width: 100%;
   padding: 0;
   margin: 10px 0;
 }
 
-/* line 1668, ../sass/suffusion/_main.scss */
+/* line 1632, ../sass/suffusion/_main.scss */
 .widget-suf-cat-posts ul.suf-cat-posts-list, .suf-mag-category ul.suf-mag-catblock-posts {
   border-collapse: collapse;
   list-style: none;
   padding-left: 0;
 }
 
-/* line 1674, ../sass/suffusion/_main.scss */
+/* line 1638, ../sass/suffusion/_main.scss */
 .widget-suf-cat-posts li.suf-cat-post, .suf-mag-category li.suf-mag-catblock-post {
   padding: 6px 1px 6px 20px;
   border-bottom: 1px dotted #c0c0c0;
   background: url(images/right_arrow.png) no-repeat 0 10px;
 }
 
-/* line 1680, ../sass/suffusion/_main.scss */
+/* line 1644, ../sass/suffusion/_main.scss */
 .widget-suf-cat-posts li.suf-cat-post a, .suf-mag-category li.suf-mag-catblock-post a {
   text-decoration: none;
   color: #000;
 }
 
-/* line 1685, ../sass/suffusion/_main.scss */
+/* line 1649, ../sass/suffusion/_main.scss */
 .widget-suf-cat-posts li.suf-cat-post:hover, .suf-mag-category li.suf-mag-catblock-post:hover {
   padding: 5px 0 5px 19px;
   border: 1px solid #c0c0c0;
 }
 
-/* line 1690, ../sass/suffusion/_main.scss */
+/* line 1654, ../sass/suffusion/_main.scss */
 .suf-cat-post, .suf-mag-catblock-post {
   display: block;
   line-height: 22px;
   font-size: 108%;
 }
 
-/* line 1696, ../sass/suffusion/_main.scss */
+/* line 1660, ../sass/suffusion/_main.scss */
 .suf-mag-category-footer {
   vertical-align: bottom;
 }
 
-/* line 1700, ../sass/suffusion/_main.scss */
+/* line 1664, ../sass/suffusion/_main.scss */
 .suf-mag-excerpt-footer {
   display: inline-block;
   width: 100%;
 }
 
-/* line 1706, ../sass/suffusion/_main.scss */
+/* line 1670, ../sass/suffusion/_main.scss */
 a.excerpt-more-append, a.suf-mag-excerpt-full-story, a.suf-mag-category-all-posts {
   float: right;
   margin: 5px;
@@ -2031,7 +1991,7 @@ a.excerpt-more-append, a.suf-mag-excerpt-full-story, a.suf-mag-category-all-post
   text-decoration: none;
 }
 
-/* line 1715, ../sass/suffusion/_main.scss */
+/* line 1679, ../sass/suffusion/_main.scss */
 .bottom .suf-mag-excerpt-footer, .bottom .suf-mag-category-footer {
   position: absolute;
   bottom: 0;
@@ -2039,7 +1999,7 @@ a.excerpt-more-append, a.suf-mag-excerpt-full-story, a.suf-mag-category-all-post
   width: 100%;
 }
 
-/* line 1723, ../sass/suffusion/_main.scss */
+/* line 1687, ../sass/suffusion/_main.scss */
 .suf-cat-posts-widget-image {
   overflow: hidden;
   height: 80px;
@@ -2048,7 +2008,7 @@ a.excerpt-more-append, a.suf-mag-excerpt-full-story, a.suf-mag-category-all-post
   text-align: center;
 }
 
-/* line 1731, ../sass/suffusion/_main.scss */
+/* line 1695, ../sass/suffusion/_main.scss */
 .follow-icon-and-tag {
   margin: 10px 5px 10px 0;
   display: inline-block;
@@ -2056,84 +2016,84 @@ a.excerpt-more-append, a.suf-mag-excerpt-full-story, a.suf-mag-category-all-post
   vertical-align: middle;
 }
 
-/* line 1738, ../sass/suffusion/_main.scss */
+/* line 1702, ../sass/suffusion/_main.scss */
 #right-header-widgets .follow-icon-and-tag, #left-header-widgets .follow-icon-and-tag, #top-bar-right-widgets .follow-icon-and-tag, #top-bar-left-widgets .follow-icon-and-tag {
   display: inline-block;
   margin: 0;
 }
 
-/* line 1743, ../sass/suffusion/_main.scss */
+/* line 1707, ../sass/suffusion/_main.scss */
 #right-header-widgets a.follow-icon-and-tag {
   padding: 3px 2px;
 }
-/* line 1744, ../sass/suffusion/_main.scss */
+/* line 1708, ../sass/suffusion/_main.scss */
 #right-header-widgets a.follow-icon-and-tag:hover, #right-header-widgets a.follow-icon-and-tag:active {
   padding: 3px 2px;
 }
 
-/* line 1750, ../sass/suffusion/_main.scss */
+/* line 1714, ../sass/suffusion/_main.scss */
 #left-header-widgets a.follow-icon-and-tag {
   padding: 3px 2px;
 }
-/* line 1751, ../sass/suffusion/_main.scss */
+/* line 1715, ../sass/suffusion/_main.scss */
 #left-header-widgets a.follow-icon-and-tag:hover, #left-header-widgets a.follow-icon-and-tag:active {
   padding: 3px 2px;
 }
 
-/* line 1757, ../sass/suffusion/_main.scss */
+/* line 1721, ../sass/suffusion/_main.scss */
 #top-bar-right-widgets a.follow-icon-and-tag {
   padding: 3px 2px;
 }
-/* line 1758, ../sass/suffusion/_main.scss */
+/* line 1722, ../sass/suffusion/_main.scss */
 #top-bar-right-widgets a.follow-icon-and-tag:hover, #top-bar-right-widgets a.follow-icon-and-tag:active {
   padding: 3px 2px;
 }
 
-/* line 1764, ../sass/suffusion/_main.scss */
+/* line 1728, ../sass/suffusion/_main.scss */
 #top-bar-left-widgets a.follow-icon-and-tag {
   padding: 3px 2px;
 }
-/* line 1765, ../sass/suffusion/_main.scss */
+/* line 1729, ../sass/suffusion/_main.scss */
 #top-bar-left-widgets a.follow-icon-and-tag:hover, #top-bar-left-widgets a.follow-icon-and-tag:active {
   padding: 3px 2px;
 }
 
-/* line 1771, ../sass/suffusion/_main.scss */
+/* line 1735, ../sass/suffusion/_main.scss */
 a.follow-icon-and-tag {
   text-decoration: none;
   background: none;
 }
-/* line 1772, ../sass/suffusion/_main.scss */
+/* line 1736, ../sass/suffusion/_main.scss */
 a.follow-icon-and-tag:hover, a.follow-icon-and-tag:active {
   text-decoration: none;
   background: none;
 }
 
-/* line 1780, ../sass/suffusion/_main.scss */
+/* line 1744, ../sass/suffusion/_main.scss */
 .warea a.follow-icon-and-tag {
   text-decoration: none;
   background: none;
 }
-/* line 1781, ../sass/suffusion/_main.scss */
+/* line 1745, ../sass/suffusion/_main.scss */
 .warea a.follow-icon-and-tag:hover, .warea a.follow-icon-and-tag:active {
   text-decoration: none;
   background: none;
 }
 
-/* line 1790, ../sass/suffusion/_main.scss */
+/* line 1754, ../sass/suffusion/_main.scss */
 .widget-suf-subscription form p, .widget-suf-subscription p {
   text-align: center;
 }
-/* line 1793, ../sass/suffusion/_main.scss */
+/* line 1757, ../sass/suffusion/_main.scss */
 .widget-suf-subscription form {
   margin: 10px auto;
   text-align: center;
 }
-/* line 1797, ../sass/suffusion/_main.scss */
+/* line 1761, ../sass/suffusion/_main.scss */
 .widget-suf-subscription div {
   text-align: center;
 }
-/* line 1800, ../sass/suffusion/_main.scss */
+/* line 1764, ../sass/suffusion/_main.scss */
 .widget-suf-subscription input[type='text'].subscription-email {
   color: #999;
   border: 1px solid #888;
@@ -2141,18 +2101,18 @@ a.follow-icon-and-tag:hover, a.follow-icon-and-tag:active {
   width: 140px;
 }
 
-/* line 1808, ../sass/suffusion/_main.scss */
+/* line 1772, ../sass/suffusion/_main.scss */
 .subscription-stats-icon {
   height: 26px;
   width: 88px;
   border: none;
 }
 
-/* line 1814, ../sass/suffusion/_main.scss */
+/* line 1778, ../sass/suffusion/_main.scss */
 .suf-flat-widget {
   margin: 15px 8px;
 }
-/* line 1816, ../sass/suffusion/_main.scss */
+/* line 1780, ../sass/suffusion/_main.scss */
 .suf-flat-widget h3 {
   font-size: 133%;
   border-top: 1px dotted #666;
@@ -2161,47 +2121,47 @@ a.follow-icon-and-tag:hover, a.follow-icon-and-tag:active {
   padding: 5px 0;
 }
 
-/* line 1825, ../sass/suffusion/_main.scss */
+/* line 1789, ../sass/suffusion/_main.scss */
 .flattened {
   background-color: #fff;
   border: 1px solid #c0c0c0;
 }
 
-/* line 1830, ../sass/suffusion/_main.scss */
+/* line 1794, ../sass/suffusion/_main.scss */
 #horizontal-outer-widgets-1.flattened {
   margin-top: 10px;
 }
 
-/* line 1834, ../sass/suffusion/_main.scss */
+/* line 1798, ../sass/suffusion/_main.scss */
 #horizontal-outer-widgets-2.flattened {
   margin: 10px 0;
 }
 
-/* line 1838, ../sass/suffusion/_main.scss */
+/* line 1802, ../sass/suffusion/_main.scss */
 .author-info {
   border: 1px solid #c0c0c0;
   margin-top: 15px;
   padding: 5px;
 }
-/* line 1842, ../sass/suffusion/_main.scss */
+/* line 1806, ../sass/suffusion/_main.scss */
 .author-info h4 {
   padding: 5px 0 5px 5px;
   font-family: Arial, sans-serif;
 }
 
-/* line 1848, ../sass/suffusion/_main.scss */
+/* line 1812, ../sass/suffusion/_main.scss */
 .widget_tag_cloud {
   font-family: Arial, Trebuchet, "Trebuchet MS", sans-serif;
 }
 
-/* line 1852, ../sass/suffusion/_main.scss */
+/* line 1816, ../sass/suffusion/_main.scss */
 .col-control {
   margin: 0 auto;
   padding: 0;
 }
 
 /* Sliding panel. */
-/* line 1859, ../sass/suffusion/_main.scss */
+/* line 1823, ../sass/suffusion/_main.scss */
 #top-bar-right-spanel {
   text-align: center;
   display: none;
@@ -2211,13 +2171,13 @@ a.follow-icon-and-tag:hover, a.follow-icon-and-tag:active {
 }
 
 /* The part of the panel that actually slides. */
-/* line 1869, ../sass/suffusion/_main.scss */
+/* line 1833, ../sass/suffusion/_main.scss */
 .spanel {
   overflow: hidden;
   position: relative;
   z-index: 10;
 }
-/* line 1873, ../sass/suffusion/_main.scss */
+/* line 1837, ../sass/suffusion/_main.scss */
 .spanel .spanel-content {
   display: block;
   overflow: hidden;
@@ -2225,7 +2185,7 @@ a.follow-icon-and-tag:hover, a.follow-icon-and-tag:active {
   padding: 0;
   text-align: left;
 }
-/* line 1880, ../sass/suffusion/_main.scss */
+/* line 1844, ../sass/suffusion/_main.scss */
 .spanel .suf-panel-widget {
   overflow: hidden;
   float: left;
@@ -2234,12 +2194,12 @@ a.follow-icon-and-tag:hover, a.follow-icon-and-tag:active {
   font-family: Arial, Helvetica, sans-serif;
   border: none;
 }
-/* line 1887, ../sass/suffusion/_main.scss */
+/* line 1851, ../sass/suffusion/_main.scss */
 .spanel .suf-panel-widget h3 {
   color: #999;
   font: bold 14px/100% Arial, Helvetica, sans-serif;
 }
-/* line 1892, ../sass/suffusion/_main.scss */
+/* line 1856, ../sass/suffusion/_main.scss */
 .spanel .suf-widget, .spanel .suf-flat-widget {
   float: left;
 }
@@ -2252,7 +2212,7 @@ a.follow-icon-and-tag:hover, a.follow-icon-and-tag:active {
 /* Open/close link hover. */
 /* Open/close link array (&urarr;). */
 /* Now Reading Plugin */
-/* line 1913, ../sass/suffusion/_main.scss */
+/* line 1877, ../sass/suffusion/_main.scss */
 .nr-post h3 {
   border: 1px solid #c0c0c0;
   padding: 5px;
@@ -2261,17 +2221,17 @@ a.follow-icon-and-tag:hover, a.follow-icon-and-tag:active {
   clear: both;
 }
 
-/* line 1922, ../sass/suffusion/_main.scss */
+/* line 1886, ../sass/suffusion/_main.scss */
 div.booklisting {
   list-style: none;
   margin: 10px 0;
 }
-/* line 1926, ../sass/suffusion/_main.scss */
+/* line 1890, ../sass/suffusion/_main.scss */
 div.bookentry {
   margin: 10px 0;
   display: inline-block;
 }
-/* line 1930, ../sass/suffusion/_main.scss */
+/* line 1894, ../sass/suffusion/_main.scss */
 div.booklisting img, div.bookentry img {
   border: 1px solid #c0c0c0;
   padding: 5px 5px 5px 5px;
@@ -2280,13 +2240,13 @@ div.booklisting img, div.bookentry img {
   height: 160px;
 }
 
-/* line 1940, ../sass/suffusion/_main.scss */
+/* line 1904, ../sass/suffusion/_main.scss */
 .nr_widget img {
   padding: 5px 5px 5px 5px;
   width: 65px;
   height: 100px;
 }
-/* line 1945, ../sass/suffusion/_main.scss */
+/* line 1909, ../sass/suffusion/_main.scss */
 .nr_widget h4 {
   border: 1px solid #c0c0c0;
   padding: 5px 5px 5px 5px;
@@ -2295,78 +2255,78 @@ div.booklisting img, div.bookentry img {
   clear: both;
 }
 
-/* line 1955, ../sass/suffusion/_main.scss */
+/* line 1919, ../sass/suffusion/_main.scss */
 div.bookentry .stats {
   float: left;
   font-size: 100%;
   line-height: 20px;
 }
-/* line 1959, ../sass/suffusion/_main.scss */
+/* line 1923, ../sass/suffusion/_main.scss */
 div.bookentry .stats p {
   text-align: left;
   margin-bottom: 7px;
 }
-/* line 1964, ../sass/suffusion/_main.scss */
+/* line 1928, ../sass/suffusion/_main.scss */
 div.bookentry .review {
   float: right;
   padding: 0 0 0 10px;
 }
 
-/* line 1970, ../sass/suffusion/_main.scss */
+/* line 1934, ../sass/suffusion/_main.scss */
 .bookdata {
   margin-top: 5px;
   font-size: 90%;
   color: #999999;
 }
-/* line 1974, ../sass/suffusion/_main.scss */
+/* line 1938, ../sass/suffusion/_main.scss */
 .bookdata a {
   color: #999999;
   text-decoration: none;
 }
-/* line 1977, ../sass/suffusion/_main.scss */
+/* line 1941, ../sass/suffusion/_main.scss */
 .bookdata a:visited {
   color: #999999;
   text-decoration: none;
 }
-/* line 1981, ../sass/suffusion/_main.scss */
+/* line 1945, ../sass/suffusion/_main.scss */
 .bookdata a:hover {
   text-decoration: none;
 }
-/* line 1985, ../sass/suffusion/_main.scss */
+/* line 1949, ../sass/suffusion/_main.scss */
 .bookdata .icon {
   width: 16px;
   height: 16px;
   display: inline-block;
 }
-/* line 1990, ../sass/suffusion/_main.scss */
+/* line 1954, ../sass/suffusion/_main.scss */
 .bookdata .edit, .bookdata .manage {
   float: right;
   margin-right: 10px;
   line-height: 1.5em;
   padding: 4px 0;
 }
-/* line 1996, ../sass/suffusion/_main.scss */
+/* line 1960, ../sass/suffusion/_main.scss */
 .bookdata .rating {
   float: right;
   line-height: 1.5em;
   padding: 4px 0;
 }
-/* line 2001, ../sass/suffusion/_main.scss */
+/* line 1965, ../sass/suffusion/_main.scss */
 .bookdata .edit .icon {
   background: no-repeat 0 -112px;
 }
-/* line 2004, ../sass/suffusion/_main.scss */
+/* line 1968, ../sass/suffusion/_main.scss */
 .bookdata .manage .icon {
   background: no-repeat -16px -128px;
 }
-/* line 2007, ../sass/suffusion/_main.scss */
+/* line 1971, ../sass/suffusion/_main.scss */
 .bookdata .author {
   padding: 4px 10px 4px 0;
   float: left;
   line-height: 1.5em;
 }
 
-/* line 2014, ../sass/suffusion/_main.scss */
+/* line 1978, ../sass/suffusion/_main.scss */
 .bookentry {
   padding: 15px 0 5px;
   clear: both;
@@ -2375,20 +2335,20 @@ div.bookentry .review {
   margin-bottom: 1em;
 }
 
-/* line 2022, ../sass/suffusion/_main.scss */
+/* line 1986, ../sass/suffusion/_main.scss */
 .post .libtitle {
   float: left;
   margin-left: 0;
   width: 745px;
 }
 
-/* line 2028, ../sass/suffusion/_main.scss */
+/* line 1992, ../sass/suffusion/_main.scss */
 .nr-shelf {
   width: 100%;
   padding: 0;
 }
 
-/* line 2033, ../sass/suffusion/_main.scss */
+/* line 1997, ../sass/suffusion/_main.scss */
 .nr-shelf-slot {
   margin: 8px;
   font-size: 108%;
@@ -2396,145 +2356,145 @@ div.bookentry .review {
   text-align: center;
 }
 
-/* line 2040, ../sass/suffusion/_main.scss */
+/* line 2004, ../sass/suffusion/_main.scss */
 .now-reading form input {
   margin: 3px 2px;
 }
 
 /* WP PageNavi Plugin */
-/* line 2046, ../sass/suffusion/_main.scss */
+/* line 2010, ../sass/suffusion/_main.scss */
 .wp-pagenavi {
   text-align: center;
   margin: 5px 0px;
 }
-/* line 2049, ../sass/suffusion/_main.scss */
+/* line 2013, ../sass/suffusion/_main.scss */
 .wp-pagenavi a {
   padding: 2px 5px 2px 5px;
   border-width: 1px;
   border-style: solid;
   margin: 3px;
 }
-/* line 2055, ../sass/suffusion/_main.scss */
+/* line 2019, ../sass/suffusion/_main.scss */
 .wp-pagenavi span {
   padding: 2px 5px 2px 5px;
   border-width: 1px;
   border-style: solid;
   margin: 3px;
 }
-/* line 2060, ../sass/suffusion/_main.scss */
+/* line 2024, ../sass/suffusion/_main.scss */
 .wp-pagenavi span.pages {
   padding: 2px 8px;
 }
-/* line 2063, ../sass/suffusion/_main.scss */
+/* line 2027, ../sass/suffusion/_main.scss */
 .wp-pagenavi span.extend {
   border: none;
 }
 
 /* WP-Recaptcha Plugin */
-/* line 2071, ../sass/suffusion/_main.scss */
+/* line 2035, ../sass/suffusion/_main.scss */
 #commentform label.recaptcha_input_area_text {
   border: none;
 }
 
 /* WPML Plugin */
-/* line 2078, ../sass/suffusion/_main.scss */
+/* line 2042, ../sass/suffusion/_main.scss */
 #language-selector span {
   font-weight: normal;
   font-size: 12px;
 }
-/* line 2083, ../sass/suffusion/_main.scss */
+/* line 2047, ../sass/suffusion/_main.scss */
 #language-selector ul li, #language-selector ul ul li {
   height: 30px;
   border-width: 0;
 }
-/* line 2087, ../sass/suffusion/_main.scss */
+/* line 2051, ../sass/suffusion/_main.scss */
 #language-selector ul li, #language-selector ul ul li, #language-selector ul li a, #language-selector ul ul li a {
   line-height: 18px;
   margin: 0;
 }
-/* line 2091, ../sass/suffusion/_main.scss */
+/* line 2055, ../sass/suffusion/_main.scss */
 #language-selector ul li a.lang_sel_sel {
   width: 147px;
 }
-/* line 2093, ../sass/suffusion/_main.scss */
+/* line 2057, ../sass/suffusion/_main.scss */
 #language-selector ul li a.lang_sel_sel:visited {
   width: 147px;
 }
-/* line 2097, ../sass/suffusion/_main.scss */
+/* line 2061, ../sass/suffusion/_main.scss */
 #language-selector ul ul {
   width: auto;
 }
-/* line 2098, ../sass/suffusion/_main.scss */
+/* line 2062, ../sass/suffusion/_main.scss */
 #language-selector ul ul li a {
   width: 147px;
 }
-/* line 2100, ../sass/suffusion/_main.scss */
+/* line 2064, ../sass/suffusion/_main.scss */
 #language-selector ul ul li a:visited {
   width: 147px;
 }
-/* line 2106, ../sass/suffusion/_main.scss */
+/* line 2070, ../sass/suffusion/_main.scss */
 #language-selector ul li a.lang_sel_sel, #language-selector ul ul li a {
   padding: 5px 0 3px 0;
 }
-/* line 2108, ../sass/suffusion/_main.scss */
+/* line 2072, ../sass/suffusion/_main.scss */
 #language-selector ul li a.lang_sel_sel:visited, #language-selector ul ul li a:visited {
   padding: 5px 0 3px 0;
 }
-/* line 2113, ../sass/suffusion/_main.scss */
+/* line 2077, ../sass/suffusion/_main.scss */
 #language-selector img {
   margin: 0 0 0 10px;
 }
-/* line 2116, ../sass/suffusion/_main.scss */
+/* line 2080, ../sass/suffusion/_main.scss */
 #language-selector ul li a.lang_sel_sel {
   background-image: none;
 }
-/* line 2118, ../sass/suffusion/_main.scss */
+/* line 2082, ../sass/suffusion/_main.scss */
 #language-selector ul li a.lang_sel_sel:visited, #language-selector ul li a.lang_sel_sel:hover, #language-selector ul li a.lang_sel_sel:active {
   background-image: none;
 }
 
-/* line 2124, ../sass/suffusion/_main.scss */
+/* line 2088, ../sass/suffusion/_main.scss */
 #lang_sel ul li a:active {
   background-image: none;
 }
 
-/* line 2128, ../sass/suffusion/_main.scss */
+/* line 2092, ../sass/suffusion/_main.scss */
 #language-selector ul ul li a {
   background-image: none;
 }
-/* line 2130, ../sass/suffusion/_main.scss */
+/* line 2094, ../sass/suffusion/_main.scss */
 #language-selector ul ul li a:visited, #language-selector ul ul li a:hover, #language-selector ul ul li a:active {
   background-image: none;
 }
 
-/* line 2135, ../sass/suffusion/_main.scss */
+/* line 2099, ../sass/suffusion/_main.scss */
 #lang_sel ul ul li a:active {
   background-image: none;
 }
 
-/* line 2139, ../sass/suffusion/_main.scss */
+/* line 2103, ../sass/suffusion/_main.scss */
 #language-selector ul ul {
   top: auto;
 }
 
-/* line 2143, ../sass/suffusion/_main.scss */
+/* line 2107, ../sass/suffusion/_main.scss */
 #lang_sel li:before {
   content: '';
 }
 
 /* Docking Boxes */
-/* line 2149, ../sass/suffusion/_main.scss */
+/* line 2113, ../sass/suffusion/_main.scss */
 .dbx-clone {
   position: absolute;
   visibility: hidden;
   cursor: move !important;
 }
-/* line 2153, ../sass/suffusion/_main.scss */
+/* line 2117, ../sass/suffusion/_main.scss */
 .dbx-clone .dbx-handle-cursor {
   cursor: move !important;
 }
 
-/* line 2158, ../sass/suffusion/_main.scss */
+/* line 2122, ../sass/suffusion/_main.scss */
 .dbx-dummy {
   display: block;
   width: 0;
@@ -2542,32 +2502,32 @@ div.bookentry .review {
   overflow: hidden;
 }
 
-/* line 2165, ../sass/suffusion/_main.scss */
+/* line 2129, ../sass/suffusion/_main.scss */
 .dbx-group, .dbx-box, .dbx-handle {
   position: relative;
   display: block;
 }
 
-/* line 2170, ../sass/suffusion/_main.scss */
+/* line 2134, ../sass/suffusion/_main.scss */
 .dbx-box {
   margin: 0 0 15px 0;
   padding: 0;
   clear: both;
 }
 
-/* line 2176, ../sass/suffusion/_main.scss */
+/* line 2140, ../sass/suffusion/_main.scss */
 .dbx-group {
   width: 210px;
   padding: 0 0 10px;
 }
 
-/* line 2181, ../sass/suffusion/_main.scss */
+/* line 2145, ../sass/suffusion/_main.scss */
 #ie6 .dbx-group {
   width: 210px;
   padding-bottom: 0;
 }
 
-/* line 2186, ../sass/suffusion/_main.scss */
+/* line 2150, ../sass/suffusion/_main.scss */
 .dbx-handle {
   position: relative;
   margin: 0;
@@ -2575,17 +2535,17 @@ div.bookentry .review {
   border-bottom: 1px dotted #c0c0c0;
 }
 
-/* line 2193, ../sass/suffusion/_main.scss */
+/* line 2157, ../sass/suffusion/_main.scss */
 .dbx-handle-cursor {
   cursor: move;
 }
 
-/* line 2197, ../sass/suffusion/_main.scss */
+/* line 2161, ../sass/suffusion/_main.scss */
 .dbx-handle.plain-borderless {
   border-bottom: none;
 }
 
-/* line 2202, ../sass/suffusion/_main.scss */
+/* line 2166, ../sass/suffusion/_main.scss */
 a.dbx-toggle {
   display: block;
   width: 20px;
@@ -2597,7 +2557,7 @@ a.dbx-toggle {
   text-indent: -50px;
   text-decoration: none;
 }
-/* line 2212, ../sass/suffusion/_main.scss */
+/* line 2176, ../sass/suffusion/_main.scss */
 a.dbx-toggle:visited {
   display: block;
   width: 20px;
@@ -2609,40 +2569,40 @@ a.dbx-toggle:visited {
   text-indent: -50px;
   text-decoration: none;
 }
-/* line 2224, ../sass/suffusion/_main.scss */
+/* line 2188, ../sass/suffusion/_main.scss */
 a.dbx-toggle-open {
   background-position: 0 0;
 }
-/* line 2226, ../sass/suffusion/_main.scss */
+/* line 2190, ../sass/suffusion/_main.scss */
 a.dbx-toggle-open:visited {
   background-position: 0 0;
 }
-/* line 2230, ../sass/suffusion/_main.scss */
+/* line 2194, ../sass/suffusion/_main.scss */
 a.dbx-toggle-closed {
   background-position: 0 -20px;
 }
-/* line 2232, ../sass/suffusion/_main.scss */
+/* line 2196, ../sass/suffusion/_main.scss */
 a.dbx-toggle-closed:visited {
   background-position: 0 -20px;
 }
-/* line 2236, ../sass/suffusion/_main.scss */
+/* line 2200, ../sass/suffusion/_main.scss */
 a.dbx-toggle-hilite-open {
   background-position: -20px 0;
 }
-/* line 2238, ../sass/suffusion/_main.scss */
+/* line 2202, ../sass/suffusion/_main.scss */
 a.dbx-toggle-hilite-open:visited {
   background-position: -20px 0;
 }
-/* line 2242, ../sass/suffusion/_main.scss */
+/* line 2206, ../sass/suffusion/_main.scss */
 a.dbx-toggle-hilite-closed {
   background-position: -20px -20px;
 }
-/* line 2244, ../sass/suffusion/_main.scss */
+/* line 2208, ../sass/suffusion/_main.scss */
 a.dbx-toggle-hilite-closed:visited {
   background-position: -20px -20px;
 }
 
-/* line 2250, ../sass/suffusion/_main.scss */
+/* line 2214, ../sass/suffusion/_main.scss */
 .dbx-tooltip {
   display: block;
   position: absolute;
@@ -2656,12 +2616,12 @@ a.dbx-toggle-hilite-closed:visited {
   text-align: left;
 }
 
-/* line 2263, ../sass/suffusion/_main.scss */
+/* line 2227, ../sass/suffusion/_main.scss */
 #ie6 .dbx-tooltip {
   width: 210px;
 }
 
-/* line 2267, ../sass/suffusion/_main.scss */
+/* line 2231, ../sass/suffusion/_main.scss */
 *[class="dbx-tooltip"]:lang(en) {
   border-color: InfoText;
   background: InfoBackground;
@@ -2670,33 +2630,33 @@ a.dbx-toggle-hilite-closed:visited {
   font-weight: normal;
 }
 
-/* line 2275, ../sass/suffusion/_main.scss */
+/* line 2239, ../sass/suffusion/_main.scss */
 .dbx-content {
   margin: 0;
   padding: 5px 10px 9px 10px;
   overflow: hidden;
 }
 
-/* line 2281, ../sass/suffusion/_main.scss */
+/* line 2245, ../sass/suffusion/_main.scss */
 .dbx-box-closed .dbx-content {
   display: block;
   height: 4px;
   padding: 0;
   overflow: hidden;
 }
-/* line 2286, ../sass/suffusion/_main.scss */
+/* line 2250, ../sass/suffusion/_main.scss */
 .dbx-box-closed .dbx-content * {
   display: none;
 }
 
-/* line 2291, ../sass/suffusion/_main.scss */
+/* line 2255, ../sass/suffusion/_main.scss */
 .dbx-clone {
   opacity: 0.8;
   filter: alpha(opacity=80);
 }
 
 /* Multi-column short code */
-/* line 2298, ../sass/suffusion/_main.scss */
+/* line 2262, ../sass/suffusion/_main.scss */
 .suf-multic {
   display: block;
   width: 100%;
@@ -2704,7 +2664,7 @@ a.dbx-toggle-hilite-closed:visited {
   margin: 10px 0;
 }
 
-/* line 2305, ../sass/suffusion/_main.scss */
+/* line 2269, ../sass/suffusion/_main.scss */
 .suf-mc-col {
   display: inline-block;
   float: left;
@@ -2712,32 +2672,32 @@ a.dbx-toggle-hilite-closed:visited {
   padding: 4px;
 }
 
-/* line 2312, ../sass/suffusion/_main.scss */
+/* line 2276, ../sass/suffusion/_main.scss */
 .suf-mc-col-025 {
   width: 23%;
 }
 
-/* line 2316, ../sass/suffusion/_main.scss */
+/* line 2280, ../sass/suffusion/_main.scss */
 .suf-mc-col-033 {
   width: 31%;
 }
 
-/* line 2320, ../sass/suffusion/_main.scss */
+/* line 2284, ../sass/suffusion/_main.scss */
 .suf-mc-col-050 {
   width: 48%;
 }
 
-/* line 2324, ../sass/suffusion/_main.scss */
+/* line 2288, ../sass/suffusion/_main.scss */
 .suf-mc-col-066 {
   width: 64%;
 }
 
-/* line 2328, ../sass/suffusion/_main.scss */
+/* line 2292, ../sass/suffusion/_main.scss */
 .suf-mc-col-075 {
   width: 73%;
 }
 
-/* line 2332, ../sass/suffusion/_main.scss */
+/* line 2296, ../sass/suffusion/_main.scss */
 .suf-mc-col-100 {
   width: 100%;
   margin: 0;
@@ -2747,39 +2707,39 @@ a.dbx-toggle-hilite-closed:visited {
   box-sizing: border-box;
 }
 
-/* line 2342, ../sass/suffusion/_main.scss */
+/* line 2306, ../sass/suffusion/_main.scss */
 .suf-multic .suf-mc-col:first-child {
   padding-left: 0;
   margin-left: 0;
 }
-/* line 2346, ../sass/suffusion/_main.scss */
+/* line 2310, ../sass/suffusion/_main.scss */
 .suf-multic .suf-mc-col:last-child {
   padding-right: 0;
   margin-right: 0;
 }
 
-/* line 2352, ../sass/suffusion/_main.scss */
+/* line 2316, ../sass/suffusion/_main.scss */
 form.search-info {
   padding: 1.5em 0;
 }
 
-/* line 2356, ../sass/suffusion/_main.scss */
+/* line 2320, ../sass/suffusion/_main.scss */
 .search-hl {
   display: inline;
 }
 
-/* line 2360, ../sass/suffusion/_main.scss */
+/* line 2324, ../sass/suffusion/_main.scss */
 span.search-highlight {
   background: #ff0;
   color: #000;
 }
 
-/* line 2365, ../sass/suffusion/_main.scss */
+/* line 2329, ../sass/suffusion/_main.scss */
 .post-pullout {
   width: 200px;
 }
 
-/* line 2369, ../sass/suffusion/_main.scss */
+/* line 2333, ../sass/suffusion/_main.scss */
 .entry-container {
   padding: 0;
   position: relative;
@@ -2789,17 +2749,17 @@ span.search-highlight {
 .meta-position-left-pullout { padding-left: 150px; }
 .meta-position-right-pullout { padding-right: 150px; }
 */
-/* line 2379, ../sass/suffusion/_main.scss */
+/* line 2343, ../sass/suffusion/_main.scss */
 .meta-position-left-pullout .entry-container {
   padding-left: 150px;
 }
 
-/* line 2383, ../sass/suffusion/_main.scss */
+/* line 2347, ../sass/suffusion/_main.scss */
 .meta-position-right-pullout .entry-container {
   padding-right: 150px;
 }
 
-/* line 2387, ../sass/suffusion/_main.scss */
+/* line 2351, ../sass/suffusion/_main.scss */
 .meta-position-left-pullout .entry, .meta-position-right-pullout .entry {
   width: 100%;
   float: left;
@@ -2809,7 +2769,7 @@ span.search-highlight {
   box-sizing: border-box;
 }
 
-/* line 2396, ../sass/suffusion/_main.scss */
+/* line 2360, ../sass/suffusion/_main.scss */
 .meta-pullout {
   position: relative;
   width: 150px;
@@ -2817,25 +2777,25 @@ span.search-highlight {
   font-size: 95%;
 }
 
-/* line 2403, ../sass/suffusion/_main.scss */
+/* line 2367, ../sass/suffusion/_main.scss */
 .meta-left-pullout {
   text-align: right;
   margin-left: -100%;
   right: 150px;
 }
 
-/* line 2409, ../sass/suffusion/_main.scss */
+/* line 2373, ../sass/suffusion/_main.scss */
 .meta-right-pullout {
   text-align: left;
   margin-right: -150px;
 }
 
-/* line 2414, ../sass/suffusion/_main.scss */
+/* line 2378, ../sass/suffusion/_main.scss */
 .meta-pullout ul {
   list-style: none;
 }
 
-/* line 2418, ../sass/suffusion/_main.scss */
+/* line 2382, ../sass/suffusion/_main.scss */
 .meta-left-pullout ul {
   margin-left: 0;
   margin-right: 10px;
@@ -2844,7 +2804,7 @@ span.search-highlight {
   border-right: 1px dotted #ccc;
 }
 
-/* line 2426, ../sass/suffusion/_main.scss */
+/* line 2390, ../sass/suffusion/_main.scss */
 .meta-right-pullout ul {
   margin-left: 10px;
   margin-right: 0;
@@ -2853,77 +2813,77 @@ span.search-highlight {
   border-left: 1px dotted #ccc;
 }
 
-/* line 2435, ../sass/suffusion/_main.scss */
+/* line 2399, ../sass/suffusion/_main.scss */
 .meta-pullout li {
   border-bottom: 1px dotted #ccc;
   padding: 0.6em 0;
   line-height: 1.5em;
 }
-/* line 2440, ../sass/suffusion/_main.scss */
+/* line 2404, ../sass/suffusion/_main.scss */
 .meta-pullout .icon {
   display: inline-block;
   width: 16px;
   height: 16px;
   margin-right: 4px;
 }
-/* line 2446, ../sass/suffusion/_main.scss */
+/* line 2410, ../sass/suffusion/_main.scss */
 .meta-pullout .tax {
   float: none;
   max-width: none;
   text-align: inherit;
 }
-/* line 2451, ../sass/suffusion/_main.scss */
+/* line 2415, ../sass/suffusion/_main.scss */
 .meta-pullout .category, .meta-pullout .comments, .meta-pullout .edit {
   float: none;
 }
-/* line 2454, ../sass/suffusion/_main.scss */
+/* line 2418, ../sass/suffusion/_main.scss */
 .meta-pullout .pullout-date .icon {
   background: no-repeat 0 -32px;
 }
-/* line 2457, ../sass/suffusion/_main.scss */
+/* line 2421, ../sass/suffusion/_main.scss */
 .meta-pullout .category .icon {
   background: no-repeat 0 0;
 }
-/* line 2460, ../sass/suffusion/_main.scss */
+/* line 2424, ../sass/suffusion/_main.scss */
 .meta-pullout .permalink .icon {
   background: no-repeat 0 -16px;
 }
-/* line 2463, ../sass/suffusion/_main.scss */
+/* line 2427, ../sass/suffusion/_main.scss */
 .meta-pullout .comments .icon {
   background: no-repeat 0 -64px;
 }
-/* line 2466, ../sass/suffusion/_main.scss */
+/* line 2430, ../sass/suffusion/_main.scss */
 .meta-pullout .edit .icon {
   background: no-repeat 0 -112px;
 }
-/* line 2469, ../sass/suffusion/_main.scss */
+/* line 2433, ../sass/suffusion/_main.scss */
 .meta-pullout .author .icon {
   background: no-repeat -32px -128px;
 }
-/* line 2472, ../sass/suffusion/_main.scss */
+/* line 2436, ../sass/suffusion/_main.scss */
 .meta-pullout .tax .icon {
   background: no-repeat -32px -144px;
 }
 
-/* line 2477, ../sass/suffusion/_main.scss */
+/* line 2441, ../sass/suffusion/_main.scss */
 table.exif {
   margin: 10px 0;
   border-collapse: collapse;
 }
-/* line 2480, ../sass/suffusion/_main.scss */
+/* line 2444, ../sass/suffusion/_main.scss */
 table.exif td {
   padding: 0.25em 2em 0.2em 0;
   border-bottom: 1px dotted #ccc;
 }
 
-/* line 2488, ../sass/suffusion/_main.scss */
+/* line 2452, ../sass/suffusion/_main.scss */
 ul.image-sizes {
   list-style: none;
   clear: both;
   margin: 0 0 10px 0;
   padding: 0;
 }
-/* line 2493, ../sass/suffusion/_main.scss */
+/* line 2457, ../sass/suffusion/_main.scss */
 ul.image-sizes li {
   float: left;
   padding: 5px 10px;
@@ -2931,12 +2891,12 @@ ul.image-sizes li {
   text-decoration: none;
 }
 
-/* line 2501, ../sass/suffusion/_main.scss */
+/* line 2465, ../sass/suffusion/_main.scss */
 .suf-widget {
   overflow: hidden;
 }
 
-/* line 2505, ../sass/suffusion/_main.scss */
+/* line 2469, ../sass/suffusion/_main.scss */
 .suf-widget-1c, .suf-widget-2c, .suf-widget-3c, .suf-widget-4c, .suf-widget-5c {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -2944,43 +2904,43 @@ ul.image-sizes li {
   box-sizing: border-box;
 }
 
-/* line 2512, ../sass/suffusion/_main.scss */
+/* line 2476, ../sass/suffusion/_main.scss */
 .suf-widget-1c {
   width: 100%;
   margin: 5px 0;
 }
 
-/* line 2517, ../sass/suffusion/_main.scss */
+/* line 2481, ../sass/suffusion/_main.scss */
 .suf-widget-2c {
   width: 49%;
   margin: 5px 0.39%;
 }
 
-/* line 2522, ../sass/suffusion/_main.scss */
+/* line 2486, ../sass/suffusion/_main.scss */
 .suf-widget-3c {
   width: 32%;
   margin: 5px 0.49%;
 }
 
-/* line 2527, ../sass/suffusion/_main.scss */
+/* line 2491, ../sass/suffusion/_main.scss */
 .suf-widget-4c {
   width: 24%;
   margin: 5px 0.38%;
 }
 
-/* line 2532, ../sass/suffusion/_main.scss */
+/* line 2496, ../sass/suffusion/_main.scss */
 .suf-widget-5c {
   width: 19%;
   margin: 5px 0.35%;
 }
 
-/* line 2537, ../sass/suffusion/_main.scss */
+/* line 2501, ../sass/suffusion/_main.scss */
 .flattened .suf-widget-1c {
   display: block;
   float: none;
 }
 
-/* line 2542, ../sass/suffusion/_main.scss */
+/* line 2506, ../sass/suffusion/_main.scss */
 .cl-widget {
   margin-top: 8px;
   margin-bottom: 8px;
@@ -2994,30 +2954,30 @@ ul.image-sizes li {
   box-sizing: border-box;
 }
 
-/* line 2555, ../sass/suffusion/_main.scss */
+/* line 2519, ../sass/suffusion/_main.scss */
 .cl-content {
   margin: 8px;
 }
 
-/* line 2559, ../sass/suffusion/_main.scss */
+/* line 2523, ../sass/suffusion/_main.scss */
 .cl-widget h3 {
   text-align: center;
 }
 
-/* line 2563, ../sass/suffusion/_main.scss */
+/* line 2527, ../sass/suffusion/_main.scss */
 .cl-warea-1 .cl-widget {
   float: none;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 2569, ../sass/suffusion/_main.scss */
+/* line 2533, ../sass/suffusion/_main.scss */
 .cl-warea {
   text-align: justify;
   -ms-text-justify: distribute;
   text-justify: distribute;
 }
-/* line 2573, ../sass/suffusion/_main.scss */
+/* line 2537, ../sass/suffusion/_main.scss */
 .cl-warea:after {
   content: '';
   width: 100%;
@@ -3025,46 +2985,46 @@ ul.image-sizes li {
   font-size: 0;
   line-height: 0;
 }
-/* line 2580, ../sass/suffusion/_main.scss */
+/* line 2544, ../sass/suffusion/_main.scss */
 .cl-warea .cl-widget {
   display: inline-block;
   vertical-align: top;
   float: none;
 }
 
-/* line 2587, ../sass/suffusion/_main.scss */
+/* line 2551, ../sass/suffusion/_main.scss */
 .cl-warea-1 .cl-widget {
   width: 100%;
 }
 
-/* line 2591, ../sass/suffusion/_main.scss */
+/* line 2555, ../sass/suffusion/_main.scss */
 .cl-warea-2 .cl-widget {
   width: 49%;
 }
 
-/* line 2595, ../sass/suffusion/_main.scss */
+/* line 2559, ../sass/suffusion/_main.scss */
 .cl-warea-3 .cl-widget {
   width: 32%;
 }
 
-/* line 2599, ../sass/suffusion/_main.scss */
+/* line 2563, ../sass/suffusion/_main.scss */
 .cl-warea-4 .cl-widget {
   width: 24%;
 }
 
-/* line 2603, ../sass/suffusion/_main.scss */
+/* line 2567, ../sass/suffusion/_main.scss */
 .cl-warea-5 .cl-widget {
   width: 19%;
 }
 
-/* line 2607, ../sass/suffusion/_main.scss */
+/* line 2571, ../sass/suffusion/_main.scss */
 .flickr_badge_image {
   display: inline-block;
   list-style: none;
   vertical-align: top;
   text-align: center;
 }
-/* line 2612, ../sass/suffusion/_main.scss */
+/* line 2576, ../sass/suffusion/_main.scss */
 .flickr_badge_image img {
   border: 1px solid #c0c0c0;
   padding: 5px;
@@ -3073,7 +3033,7 @@ ul.image-sizes li {
   opacity: 0.75;
 }
 
-/* line 2621, ../sass/suffusion/_main.scss */
+/* line 2585, ../sass/suffusion/_main.scss */
 .suf-post-gallery-nav img {
   border: 1px solid #c0c0c0;
   padding: 5px;
@@ -3082,7 +3042,7 @@ ul.image-sizes li {
   opacity: 0.75;
 }
 
-/* line 2629, ../sass/suffusion/_main.scss */
+/* line 2593, ../sass/suffusion/_main.scss */
 .flickr_badge_image a {
   display: inline-block;
   text-align: center;
@@ -3090,24 +3050,24 @@ ul.image-sizes li {
   font-size: 0.9em;
   vertical-align: middle;
 }
-/* line 2635, ../sass/suffusion/_main.scss */
+/* line 2599, ../sass/suffusion/_main.scss */
 .flickr_badge_image a span {
   display: block;
   padding: 3px;
   width: 90%;
 }
-/* line 2640, ../sass/suffusion/_main.scss */
+/* line 2604, ../sass/suffusion/_main.scss */
 .flickr_badge_image a:hover img {
   filter: alpha(opacity=100);
   opacity: 1;
 }
 
-/* line 2646, ../sass/suffusion/_main.scss */
+/* line 2610, ../sass/suffusion/_main.scss */
 .suf-flickr-wrap {
   text-align: center;
 }
 
-/* line 2650, ../sass/suffusion/_main.scss */
+/* line 2614, ../sass/suffusion/_main.scss */
 .suf-twitter-avatar {
   float: left;
   margin: 0 5px 5px 0;
@@ -3117,38 +3077,38 @@ ul.image-sizes li {
   border-color: #c0c0c0;
 }
 
-/* line 2659, ../sass/suffusion/_main.scss */
+/* line 2623, ../sass/suffusion/_main.scss */
 .suf-twitter-rest ul li {
   background: none;
   padding: 10px 0;
   border-bottom-style: dotted;
   border-bottom-width: 1px;
 }
-/* line 2664, ../sass/suffusion/_main.scss */
+/* line 2628, ../sass/suffusion/_main.scss */
 .suf-twitter-rest ul li:last-child {
   border-bottom: none;
 }
 
-/* line 2669, ../sass/suffusion/_main.scss */
+/* line 2633, ../sass/suffusion/_main.scss */
 .suf-tile-bylines {
   text-align: center;
   margin: 0 8px;
 }
 
-/* line 2674, ../sass/suffusion/_main.scss */
+/* line 2638, ../sass/suffusion/_main.scss */
 .suf-tile-byline-icons {
   padding: 0;
   margin: 0;
   display: inline-block;
 }
-/* line 2678, ../sass/suffusion/_main.scss */
+/* line 2642, ../sass/suffusion/_main.scss */
 .suf-tile-byline-icons li {
   list-style: none;
   float: left;
   padding: 0 3px;
 }
 
-/* line 2685, ../sass/suffusion/_main.scss */
+/* line 2649, ../sass/suffusion/_main.scss */
 a.suf-tile-icon {
   width: 16px;
   height: 16px;
@@ -3157,130 +3117,130 @@ a.suf-tile-icon {
   display: inline-block;
 }
 
-/* line 2693, ../sass/suffusion/_main.scss */
+/* line 2657, ../sass/suffusion/_main.scss */
 .suf-tile-date-icon {
   background: transparent url(images/icons/byline-icons.png) no-repeat 0 -48px;
 }
 
-/* line 2697, ../sass/suffusion/_main.scss */
+/* line 2661, ../sass/suffusion/_main.scss */
 .suf-tile-permalink-icon {
   background: transparent url(images/icons/byline-icons.png) no-repeat 0 -32px;
 }
 
-/* line 2701, ../sass/suffusion/_main.scss */
+/* line 2665, ../sass/suffusion/_main.scss */
 .suf-tile-postedby-icon {
   background: transparent url(images/icons/byline-icons.png) no-repeat 0 -80px;
 }
 
-/* line 2705, ../sass/suffusion/_main.scss */
+/* line 2669, ../sass/suffusion/_main.scss */
 .suf-tile-cats-icon {
   background: transparent url(images/icons/byline-icons.png) no-repeat 0 -64px;
 }
 
-/* line 2709, ../sass/suffusion/_main.scss */
+/* line 2673, ../sass/suffusion/_main.scss */
 .suf-tile-tax-icon {
   background: transparent url(images/icons/byline-icons.png) no-repeat 0 0;
 }
 
-/* line 2713, ../sass/suffusion/_main.scss */
+/* line 2677, ../sass/suffusion/_main.scss */
 .suf-tile-comments-icon {
   background: transparent url(images/icons/byline-icons.png) no-repeat 0 -16px;
 }
 
-/* line 2717, ../sass/suffusion/_main.scss */
+/* line 2681, ../sass/suffusion/_main.scss */
 .suf-tile-edit-icon {
   background: transparent url(images/icons/byline-icons.png) no-repeat 0 -96px;
 }
 
-/* line 2721, ../sass/suffusion/_main.scss */
+/* line 2685, ../sass/suffusion/_main.scss */
 .suf-tile-icon-text {
   list-style: none;
   padding-left: 5px;
   display: none;
 }
-/* line 2725, ../sass/suffusion/_main.scss */
+/* line 2689, ../sass/suffusion/_main.scss */
 .suf-tile-icon-text span.author {
   float: none;
 }
 
-/* line 2730, ../sass/suffusion/_main.scss */
+/* line 2694, ../sass/suffusion/_main.scss */
 .suf-tile-date-icon-text .icon {
   background: transparent url(images/icons/byline-icons.png) no-repeat -16px -48px;
 }
 
-/* line 2735, ../sass/suffusion/_main.scss */
+/* line 2699, ../sass/suffusion/_main.scss */
 .suf-tile-date-icon.clicked, .suf-tile-date-icon:hover {
   background: transparent url(images/icons/byline-icons.png) no-repeat -16px -48px;
 }
 
-/* line 2740, ../sass/suffusion/_main.scss */
+/* line 2704, ../sass/suffusion/_main.scss */
 .suf-tile-permalink-icon-text .icon {
   background: transparent url(images/icons/byline-icons.png) no-repeat -16px -32px;
 }
 
-/* line 2745, ../sass/suffusion/_main.scss */
+/* line 2709, ../sass/suffusion/_main.scss */
 .suf-tile-permalink-icon.clicked, .suf-tile-permalink-icon:hover {
   background: transparent url(images/icons/byline-icons.png) no-repeat -16px -32px;
 }
 
-/* line 2750, ../sass/suffusion/_main.scss */
+/* line 2714, ../sass/suffusion/_main.scss */
 .suf-tile-postedby-icon-text .icon {
   background: transparent url(images/icons/byline-icons.png) no-repeat -16px -80px;
 }
 
-/* line 2755, ../sass/suffusion/_main.scss */
+/* line 2719, ../sass/suffusion/_main.scss */
 .suf-tile-postedby-icon.clicked, .suf-tile-postedby-icon:hover {
   background: transparent url(images/icons/byline-icons.png) no-repeat -16px -80px;
 }
 
-/* line 2760, ../sass/suffusion/_main.scss */
+/* line 2724, ../sass/suffusion/_main.scss */
 .suf-tile-cats-icon-text .icon {
   background: transparent url(images/icons/byline-icons.png) no-repeat -16px -64px;
 }
 
-/* line 2765, ../sass/suffusion/_main.scss */
+/* line 2729, ../sass/suffusion/_main.scss */
 .suf-tile-cats-icon.clicked, .suf-tile-cats-icon:hover {
   background: transparent url(images/icons/byline-icons.png) no-repeat -16px -64px;
 }
 
-/* line 2770, ../sass/suffusion/_main.scss */
+/* line 2734, ../sass/suffusion/_main.scss */
 .suf-tile-tax-icon-text .icon {
   background: transparent url(images/icons/byline-icons.png) no-repeat -16px 0;
 }
 
-/* line 2775, ../sass/suffusion/_main.scss */
+/* line 2739, ../sass/suffusion/_main.scss */
 .suf-tile-tax-icon.clicked, .suf-tile-tax-icon:hover {
   background: transparent url(images/icons/byline-icons.png) no-repeat -16px 0;
 }
 
-/* line 2780, ../sass/suffusion/_main.scss */
+/* line 2744, ../sass/suffusion/_main.scss */
 .suf-tile-comments-icon-text .icon {
   background: transparent url(images/icons/byline-icons.png) no-repeat -16px -16px;
 }
 
-/* line 2785, ../sass/suffusion/_main.scss */
+/* line 2749, ../sass/suffusion/_main.scss */
 .suf-tile-comments-icon.clicked, .suf-tile-comments-icon:hover {
   background: transparent url(images/icons/byline-icons.png) no-repeat -16px -16px;
 }
 
-/* line 2790, ../sass/suffusion/_main.scss */
+/* line 2754, ../sass/suffusion/_main.scss */
 .suf-tile-edit-icon-text .icon {
   background: transparent url(images/icons/byline-icons.png) no-repeat -16px -96px;
 }
 
-/* line 2795, ../sass/suffusion/_main.scss */
+/* line 2759, ../sass/suffusion/_main.scss */
 .suf-tile-edit-icon.clicked, .suf-tile-edit-icon:hover {
   background: transparent url(images/icons/byline-icons.png) no-repeat -16px -96px;
 }
 
-/* line 2800, ../sass/suffusion/_main.scss */
+/* line 2764, ../sass/suffusion/_main.scss */
 .suf-tile-byline-texts {
   text-align: left;
   margin: 10px 10px 0;
   padding: 0;
   font-size: 85%;
 }
-/* line 2805, ../sass/suffusion/_main.scss */
+/* line 2769, ../sass/suffusion/_main.scss */
 .suf-tile-byline-texts .icon {
   width: 16px;
   height: 16px;
@@ -3288,129 +3248,129 @@ a.suf-tile-icon {
   padding: 0 5px;
 }
 
-/* line 2813, ../sass/suffusion/_main.scss */
+/* line 2777, ../sass/suffusion/_main.scss */
 .cl-warea ul.suf-posts-thumbnail {
   margin: 10px;
   padding-left: 0;
 }
 
-/* line 2818, ../sass/suffusion/_main.scss */
+/* line 2782, ../sass/suffusion/_main.scss */
 .warea ul.suf-posts-thumbnail li {
   background: none;
   padding: 5px 0;
   border-bottom: 1px dotted #ccc;
 }
 
-/* line 2824, ../sass/suffusion/_main.scss */
+/* line 2788, ../sass/suffusion/_main.scss */
 ul.suf-posts-thumbnail li {
   background: none;
   padding: 5px 0;
   border-bottom: 1px dotted #ccc;
 }
-/* line 2828, ../sass/suffusion/_main.scss */
+/* line 2792, ../sass/suffusion/_main.scss */
 ul.suf-posts-thumbnail li:last-child {
   border-bottom: none;
 }
 
-/* line 2833, ../sass/suffusion/_main.scss */
+/* line 2797, ../sass/suffusion/_main.scss */
 img.suf-widget-thumb {
   border: 1px solid #ccc;
   padding: 3px;
 }
 
-/* line 2838, ../sass/suffusion/_main.scss */
+/* line 2802, ../sass/suffusion/_main.scss */
 div.suf-widget-thumb {
   float: left;
   display: inline-block;
   margin: 0 5px 5px 0;
 }
 
-/* line 2844, ../sass/suffusion/_main.scss */
+/* line 2808, ../sass/suffusion/_main.scss */
 .suf-widget-mosaic {
   display: inline-block;
   list-style: none;
   float: left;
 }
 
-/* line 2850, ../sass/suffusion/_main.scss */
+/* line 2814, ../sass/suffusion/_main.scss */
 div.suf-post-gallery {
   width: 100%;
 }
 
-/* line 2854, ../sass/suffusion/_main.scss */
+/* line 2818, ../sass/suffusion/_main.scss */
 ul.suf-post-gallery {
   float: left;
 }
 
-/* line 2859, ../sass/suffusion/_main.scss */
+/* line 2823, ../sass/suffusion/_main.scss */
 .suf-post-gallery ul {
   margin: 0;
   padding: 0;
   position: relative;
 }
-/* line 2864, ../sass/suffusion/_main.scss */
+/* line 2828, ../sass/suffusion/_main.scss */
 .suf-post-gallery li {
   list-style: none;
 }
 
-/* line 2870, ../sass/suffusion/_main.scss */
+/* line 2834, ../sass/suffusion/_main.scss */
 .suf-post-gallery-nav li {
   float: left;
   text-align: center;
 }
-/* line 2874, ../sass/suffusion/_main.scss */
+/* line 2838, ../sass/suffusion/_main.scss */
 .suf-post-gallery-nav a {
   display: inline-block;
 }
 
-/* line 2879, ../sass/suffusion/_main.scss */
+/* line 2843, ../sass/suffusion/_main.scss */
 ul.full-display-users {
   list-style: none;
 }
 
-/* line 2884, ../sass/suffusion/_main.scss */
+/* line 2848, ../sass/suffusion/_main.scss */
 .widget-suf-users ul.full-display-users li {
   list-style: none;
   background: none;
   padding: 5px 0;
   border-bottom: 1px dotted #ccc;
 }
-/* line 2889, ../sass/suffusion/_main.scss */
+/* line 2853, ../sass/suffusion/_main.scss */
 .widget-suf-users ul.full-display-users li:last-child {
   border-bottom: none;
 }
-/* line 2893, ../sass/suffusion/_main.scss */
+/* line 2857, ../sass/suffusion/_main.scss */
 .widget-suf-users ul.full-display-users h5 {
   margin-top: 0;
 }
 
-/* line 2899, ../sass/suffusion/_main.scss */
+/* line 2863, ../sass/suffusion/_main.scss */
 .full-display-users img.avatar {
   float: left;
   margin: 0 5px 5px 0;
   border: 1px solid #ccc;
   padding: 3px;
 }
-/* line 2905, ../sass/suffusion/_main.scss */
+/* line 2869, ../sass/suffusion/_main.scss */
 .full-display-users .user-details {
   padding-left: 10px;
   float: none;
 }
-/* line 2909, ../sass/suffusion/_main.scss */
+/* line 2873, ../sass/suffusion/_main.scss */
 .full-display-users .user-description {
   display: inline;
 }
 
-/* line 2914, ../sass/suffusion/_main.scss */
+/* line 2878, ../sass/suffusion/_main.scss */
 ul.gravatar-display-users {
   list-style: none;
 }
-/* line 2916, ../sass/suffusion/_main.scss */
+/* line 2880, ../sass/suffusion/_main.scss */
 ul.gravatar-display-users a {
   float: left;
 }
 
-/* line 2921, ../sass/suffusion/_main.scss */
+/* line 2885, ../sass/suffusion/_main.scss */
 .widget-suf-users ul.gravatar-display-users li {
   float: left;
   list-style: none;
@@ -3418,7 +3378,7 @@ ul.gravatar-display-users a {
   padding: 0;
 }
 
-/* line 2929, ../sass/suffusion/_main.scss */
+/* line 2893, ../sass/suffusion/_main.scss */
 .gravatar-display-users .user-details {
   font-size: 80%;
   border: 1px solid #e7d605;
@@ -3428,7 +3388,7 @@ ul.gravatar-display-users a {
   left: -9999px;
   padding: 5px;
 }
-/* line 2938, ../sass/suffusion/_main.scss */
+/* line 2902, ../sass/suffusion/_main.scss */
 .gravatar-display-users img.avatar {
   float: left;
   margin: 0 5px 5px 0;
@@ -3436,22 +3396,22 @@ ul.gravatar-display-users a {
   padding: 3px;
 }
 
-/* line 2946, ../sass/suffusion/_main.scss */
+/* line 2910, ../sass/suffusion/_main.scss */
 .widget-suf-users {
   overflow: visible;
 }
 
-/* line 2950, ../sass/suffusion/_main.scss */
+/* line 2914, ../sass/suffusion/_main.scss */
 .suf-thumbnail-anchor-left {
   float: left;
 }
 
-/* line 2954, ../sass/suffusion/_main.scss */
+/* line 2918, ../sass/suffusion/_main.scss */
 .suf-thumbnail-anchor-right {
   float: right;
 }
 
-/* line 2958, ../sass/suffusion/_main.scss */
+/* line 2922, ../sass/suffusion/_main.scss */
 .post-format-icon {
   position: absolute;
   width: 50px;
@@ -3460,81 +3420,81 @@ ul.gravatar-display-users a {
   background-repeat: no-repeat;
 }
 
-/* line 2966, ../sass/suffusion/_main.scss */
+/* line 2930, ../sass/suffusion/_main.scss */
 article.page .post-format-icon {
   background: none;
 }
 
-/* line 2970, ../sass/suffusion/_main.scss */
+/* line 2934, ../sass/suffusion/_main.scss */
 .format-aside .post-format-icon {
   background-position: 0 0;
 }
 
-/* line 2974, ../sass/suffusion/_main.scss */
+/* line 2938, ../sass/suffusion/_main.scss */
 .format-audio .post-format-icon {
   background-position: -50px 0;
 }
 
-/* line 2978, ../sass/suffusion/_main.scss */
+/* line 2942, ../sass/suffusion/_main.scss */
 .format-chat .post-format-icon {
   background-position: -100px 0;
 }
 
-/* line 2982, ../sass/suffusion/_main.scss */
+/* line 2946, ../sass/suffusion/_main.scss */
 .format-gallery .post-format-icon {
   background-position: -150px 0;
 }
 
-/* line 2986, ../sass/suffusion/_main.scss */
+/* line 2950, ../sass/suffusion/_main.scss */
 .format-image .post-format-icon {
   background-position: -200px 0;
 }
 
-/* line 2990, ../sass/suffusion/_main.scss */
+/* line 2954, ../sass/suffusion/_main.scss */
 .format-link .post-format-icon {
   background-position: 0 -50px;
 }
 
-/* line 2994, ../sass/suffusion/_main.scss */
+/* line 2958, ../sass/suffusion/_main.scss */
 .format-quote .post-format-icon {
   background-position: -50px -50px;
 }
 
-/* line 2998, ../sass/suffusion/_main.scss */
+/* line 2962, ../sass/suffusion/_main.scss */
 .format-standard .post-format-icon {
   background-position: -100px -50px;
 }
 
-/* line 3002, ../sass/suffusion/_main.scss */
+/* line 2966, ../sass/suffusion/_main.scss */
 .format-status .post-format-icon {
   background-position: -150px -50px;
 }
 
-/* line 3006, ../sass/suffusion/_main.scss */
+/* line 2970, ../sass/suffusion/_main.scss */
 .format-video .post-format-icon {
   background-position: -200px -50px;
 }
 
-/* line 3010, ../sass/suffusion/_main.scss */
+/* line 2974, ../sass/suffusion/_main.scss */
 .nleft {
   float: left;
   font-size: 1%;
 }
 
-/* line 3015, ../sass/suffusion/_main.scss */
+/* line 2979, ../sass/suffusion/_main.scss */
 .nright {
   float: right;
   font-size: 1%;
 }
 
-/* line 3020, ../sass/suffusion/_main.scss */
+/* line 2984, ../sass/suffusion/_main.scss */
 .fancy-letter {
   font-size: 350%;
   float: left;
   padding: 0.2em 0.2em 0.2em 0;
 }
 
-/* line 3026, ../sass/suffusion/_main.scss */
+/* line 2990, ../sass/suffusion/_main.scss */
 .gallery-leading {
   width: 100%;
   position: relative;
@@ -3542,28 +3502,28 @@ article.page .post-format-icon {
   text-align: center;
 }
 
-/* line 3033, ../sass/suffusion/_main.scss */
+/* line 2997, ../sass/suffusion/_main.scss */
 .gallery-contents {
   position: relative;
   float: left;
   padding: 0 8px;
 }
-/* line 3037, ../sass/suffusion/_main.scss */
+/* line 3001, ../sass/suffusion/_main.scss */
 .gallery-contents.left {
   margin-left: -100%;
 }
-/* line 3040, ../sass/suffusion/_main.scss */
+/* line 3004, ../sass/suffusion/_main.scss */
 .gallery-contents.below {
   width: 100%;
   display: inline-block;
 }
 
-/* line 3046, ../sass/suffusion/_main.scss */
+/* line 3010, ../sass/suffusion/_main.scss */
 .gallery-container {
   position: relative;
 }
 
-/* line 3050, ../sass/suffusion/_main.scss */
+/* line 3014, ../sass/suffusion/_main.scss */
 .gallery-photo-counter {
   float: none;
   font-style: italic;
@@ -3572,35 +3532,35 @@ article.page .post-format-icon {
   display: inline-block;
 }
 
-/* line 3058, ../sass/suffusion/_main.scss */
+/* line 3022, ../sass/suffusion/_main.scss */
 .gallery-thumbs {
   text-align: center;
 }
-/* line 3060, ../sass/suffusion/_main.scss */
+/* line 3024, ../sass/suffusion/_main.scss */
 .gallery-thumbs img {
   float: none;
 }
 
-/* line 3065, ../sass/suffusion/_main.scss */
+/* line 3029, ../sass/suffusion/_main.scss */
 .image-container {
   text-align: center;
   margin-bottom: 1em;
 }
 
-/* line 3070, ../sass/suffusion/_main.scss */
+/* line 3034, ../sass/suffusion/_main.scss */
 .exif-button {
   float: right;
   border: 1px solid;
   padding: 0 1em 0 0.8em;
 }
-/* line 3074, ../sass/suffusion/_main.scss */
+/* line 3038, ../sass/suffusion/_main.scss */
 .exif-button a {
   text-decoration: none;
   line-height: 1.2em;
   padding: 0.3em 0;
   display: inline-block;
 }
-/* line 3080, ../sass/suffusion/_main.scss */
+/* line 3044, ../sass/suffusion/_main.scss */
 .exif-button .icon {
   width: 16px;
   height: 16px;
@@ -3609,12 +3569,12 @@ article.page .post-format-icon {
   margin-right: 0.5em;
 }
 
-/* line 3089, ../sass/suffusion/_main.scss */
+/* line 3053, ../sass/suffusion/_main.scss */
 .exif-panel {
   display: none;
 }
 
-/* line 3093, ../sass/suffusion/_main.scss */
+/* line 3057, ../sass/suffusion/_main.scss */
 .navigation-attachment {
   width: 100%;
   display: inline-block;
@@ -3622,20 +3582,20 @@ article.page .post-format-icon {
   margin-top: 1em;
 }
 
-/* line 3100, ../sass/suffusion/_main.scss */
+/* line 3064, ../sass/suffusion/_main.scss */
 ul.user-profiles {
   margin: 0.5em auto;
   padding: 0;
 }
 
-/* line 3106, ../sass/suffusion/_main.scss */
+/* line 3070, ../sass/suffusion/_main.scss */
 .user-profiles li {
   list-style: none;
   float: none;
   display: inline-block;
   margin: 0 1em;
 }
-/* line 3112, ../sass/suffusion/_main.scss */
+/* line 3076, ../sass/suffusion/_main.scss */
 .user-profiles .icon {
   width: 24px;
   height: 24px;
@@ -3643,57 +3603,57 @@ ul.user-profiles {
   display: inline-block;
   margin-right: 0.5em;
 }
-/* line 3119, ../sass/suffusion/_main.scss */
+/* line 3083, ../sass/suffusion/_main.scss */
 .user-profiles .twitter {
   background-position: 0 -180px;
 }
-/* line 3122, ../sass/suffusion/_main.scss */
+/* line 3086, ../sass/suffusion/_main.scss */
 .user-profiles .google {
   background-position: 0 -204px;
 }
-/* line 3125, ../sass/suffusion/_main.scss */
+/* line 3089, ../sass/suffusion/_main.scss */
 .user-profiles .facebook {
   background-position: 0 -228px;
 }
-/* line 3128, ../sass/suffusion/_main.scss */
+/* line 3092, ../sass/suffusion/_main.scss */
 .user-profiles .linkedin {
   background-position: 0 -252px;
 }
-/* line 3131, ../sass/suffusion/_main.scss */
+/* line 3095, ../sass/suffusion/_main.scss */
 .user-profiles .flickr {
   background-position: -24px -180px;
 }
-/* line 3134, ../sass/suffusion/_main.scss */
+/* line 3098, ../sass/suffusion/_main.scss */
 .user-profiles .digg {
   background-position: -24px -204px;
 }
-/* line 3137, ../sass/suffusion/_main.scss */
+/* line 3101, ../sass/suffusion/_main.scss */
 .user-profiles .delicious {
   background-position: -24px -228px;
 }
-/* line 3140, ../sass/suffusion/_main.scss */
+/* line 3104, ../sass/suffusion/_main.scss */
 .user-profiles .reddit {
   background-position: -24px -252px;
 }
-/* line 3143, ../sass/suffusion/_main.scss */
+/* line 3107, ../sass/suffusion/_main.scss */
 .user-profiles .technorati {
   background-position: -48px -180px;
 }
-/* line 3146, ../sass/suffusion/_main.scss */
+/* line 3110, ../sass/suffusion/_main.scss */
 .user-profiles .stumbleupon {
   background-position: -48px -204px;
 }
 
-/* line 3151, ../sass/suffusion/_main.scss */
+/* line 3115, ../sass/suffusion/_main.scss */
 span.updated {
   display: none;
 }
 
-/* line 3155, ../sass/suffusion/_main.scss */
+/* line 3119, ../sass/suffusion/_main.scss */
 .outer-pullout-container {
   padding-bottom: 15px;
 }
-/* line 3156, ../sass/suffusion/_main.scss */
+/* line 3120, ../sass/suffusion/_main.scss */
 .outer-pullout-container .post, .outer-pullout-container .page {
   width: 100%;
   float: left;
@@ -3705,61 +3665,61 @@ span.updated {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 3167, ../sass/suffusion/_main.scss */
+/* line 3131, ../sass/suffusion/_main.scss */
 .outer-pullout-container .post-header {
   margin-left: 15px;
   margin-right: 15px;
 }
-/* line 3172, ../sass/suffusion/_main.scss */
+/* line 3136, ../sass/suffusion/_main.scss */
 .outer-pullout-container .meta-pullout ul {
   margin-left: 0;
   margin-right: 0;
   padding: 10px;
 }
 
-/* line 3179, ../sass/suffusion/_main.scss */
+/* line 3143, ../sass/suffusion/_main.scss */
 .container-left-outer-pullout {
   padding-left: 170px;
 }
-/* line 3181, ../sass/suffusion/_main.scss */
+/* line 3145, ../sass/suffusion/_main.scss */
 .container-left-outer-pullout .meta-left-outer-pullout {
   right: 170px;
   margin-left: -100%;
 }
 
-/* line 3187, ../sass/suffusion/_main.scss */
+/* line 3151, ../sass/suffusion/_main.scss */
 .container-right-outer-pullout {
   padding-right: 170px;
 }
 
-/* line 3192, ../sass/suffusion/_main.scss */
+/* line 3156, ../sass/suffusion/_main.scss */
 .outer-pullout-container .meta-right-outer-pullout {
   margin-right: -170px;
   left: 16px;
 }
-/* line 3196, ../sass/suffusion/_main.scss */
+/* line 3160, ../sass/suffusion/_main.scss */
 .outer-pullout-container .entry-container {
   padding-left: 1em;
   padding-right: 1em;
 }
-/* line 3200, ../sass/suffusion/_main.scss */
+/* line 3164, ../sass/suffusion/_main.scss */
 .outer-pullout-container .entry {
   padding-left: 0;
   padding-right: 0;
 }
-/* line 3204, ../sass/suffusion/_main.scss */
+/* line 3168, ../sass/suffusion/_main.scss */
 .outer-pullout-container .meta-pullout {
   background: #fff;
   border-style: solid;
   border-width: 1px;
   border-color: #c0c0c0;
 }
-/* line 3210, ../sass/suffusion/_main.scss */
+/* line 3174, ../sass/suffusion/_main.scss */
 .outer-pullout-container #comments {
   padding: 15px;
 }
 
-/* line 3215, ../sass/suffusion/_main.scss */
+/* line 3179, ../sass/suffusion/_main.scss */
 .tinynav {
   display: none;
 }
@@ -6722,6 +6682,44 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   width: 100%;
 }
 
+/* line 2, ../sass/rps/_images.scss */
+.gallery-size-thumbnail .gallery-item {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #555555;
+  margin: 0 13px 10px;
+  min-height: 174px;
+  padding: 10px;
+  width: 150px;
+  float: left;
+}
+/* line 11, ../sass/rps/_images.scss */
+.gallery-size-thumbnail ul li {
+  list-style: none outside none;
+}
+
+/* line 16, ../sass/rps/_images.scss */
+.wp-caption {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #555555;
+  min-height: 154px;
+  padding: 10px;
+  width: 160px;
+}
+
+/* line 25, ../sass/rps/_images.scss */
+.wp-caption-text {
+  font-size: 13px;
+  font-size: 1rem;
+  line-height: 20px;
+  line-height: 1.5rem;
+  font-family: "Oswald";
+  margin-bottom: 0;
+}
+
 /* line 1, ../sass/rps/_sidebars.scss */
 #sidebar, #sidebar-b, #sidebar-2, #sidebar-2-b {
   width: 260px;
@@ -6924,7 +6922,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   width: 16px;
 }
 
-/* line 47, ../sass/rps.scss */
+/* line 48, ../sass/rps.scss */
 body {
   font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
   background-attachment: scroll;
@@ -6938,7 +6936,7 @@ body {
   background-color: black;
 }
 
-/* line 60, ../sass/rps.scss */
+/* line 61, ../sass/rps.scss */
 a {
   color: #e6e6e6;
   text-decoration: none;
@@ -6954,13 +6952,13 @@ a:hover {
   text-decoration: none;
 }
 
-/* line 64, ../sass/rps.scss */
+/* line 65, ../sass/rps.scss */
 #content {
   clear: both;
   overflow: hidden;
 }
 
-/* line 69, ../sass/rps.scss */
+/* line 70, ../sass/rps.scss */
 .entry, .non-wp-entry {
   padding: 15px 0 5px;
   clear: both;
@@ -6968,14 +6966,14 @@ a:hover {
   overflow: hidden;
 }
 
-/* line 76, ../sass/rps.scss */
+/* line 77, ../sass/rps.scss */
 h2.suf-tile-title {
   font-size: 15px;
   font-size: 1.15385rem;
   line-height: 20px;
   line-height: 1.5rem;
 }
-/* line 78, ../sass/rps.scss */
+/* line 79, ../sass/rps.scss */
 h2.suf-tile-title a,
 h2.suf-tile-title a:hover,
 h2.suf-tile-title a:visited,
@@ -6986,7 +6984,7 @@ h2.suf-tile-title a:active {
   line-height: 1.5rem;
 }
 
-/* line 86, ../sass/rps.scss */
+/* line 87, ../sass/rps.scss */
 .suf-gradient {
   background: royalblue;
   *zoom: 1;
@@ -6997,7 +6995,7 @@ h2.suf-tile-title a:active {
   background: linear-gradient(to bottom, #4169e1 0%, rgba(0, 35, 102, 0.2) 100%);
 }
 
-/* line 90, ../sass/rps.scss */
+/* line 91, ../sass/rps.scss */
 .suf-mag-headline-block li.suf-mag-headline a.tab-current, h2.suf-mag-category-title {
   background: royalblue;
   *zoom: 1;
@@ -7008,7 +7006,7 @@ h2.suf-tile-title a:active {
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
 
-/* line 94, ../sass/rps.scss */
+/* line 95, ../sass/rps.scss */
 a.excerpt-more-append {
   color: #e9e9e9;
   border: solid 1px #002366;
@@ -7021,7 +7019,7 @@ a.excerpt-more-append {
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
 
-/* line 100, ../sass/rps.scss */
+/* line 101, ../sass/rps.scss */
 .warea a.suf-mag-category-all-posts, a.suf-mag-category-all-posts {
   background: royalblue;
   *zoom: 1;
@@ -7032,22 +7030,22 @@ a.excerpt-more-append {
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
 
-/* line 104, ../sass/rps.scss */
+/* line 105, ../sass/rps.scss */
 h2.suf-tile-title {
   margin-top: 0;
   text-align: left;
 }
 
-/* line 109, ../sass/rps.scss */
+/* line 110, ../sass/rps.scss */
 h2.suf-tile-title a {
   font-size: 58%;
 }
-/* line 111, ../sass/rps.scss */
+/* line 112, ../sass/rps.scss */
 h2.suf-tile-title a:hover, h2.suf-tile-title a:visited, h2.suf-tile-title a:active {
   font-size: 58%;
 }
 
-/* line 116, ../sass/rps.scss */
+/* line 117, ../sass/rps.scss */
 #header-container {
   background-image: url('../images/RPS-LOGO-2012.jpg');
   background-position: left top;
@@ -7067,7 +7065,7 @@ h2.suf-tile-title a:hover, h2.suf-tile-title a:visited, h2.suf-tile-title a:acti
   border-top-right-radius: inherit;
 }
 
-/* line 127, ../sass/rps.scss */
+/* line 128, ../sass/rps.scss */
 input[type="email"] {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -7077,14 +7075,14 @@ input[type="email"] {
 /**
 * Theme My Login
 */
-/* line 135, ../sass/rps.scss */
+/* line 136, ../sass/rps.scss */
 #theme-my-login *:focus {
   background-color: #999999;
   color: #333333;
   outline: 0 none;
 }
 
-/* line 141, ../sass/rps.scss */
+/* line 142, ../sass/rps.scss */
 ul.tml-action-links {
   display: block;
   float: right;
@@ -7093,7 +7091,7 @@ ul.tml-action-links {
   padding: 0;
   vertical-align: bottom;
 }
-/* line 148, ../sass/rps.scss */
+/* line 149, ../sass/rps.scss */
 ul.tml-action-links li {
   padding: 0;
 }
