@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 1.5.8-rc.1 =
+= Version 1.5.8 =
 * Fix parts of event tracking.
 
 = Version 1.5.7 =
