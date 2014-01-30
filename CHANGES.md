@@ -3,7 +3,7 @@
 == Changelog
 
 = Version 1.5.8-rc.1 =
-* Preparation for new development cycle.
+* Fix parts of event tracking.
 
 = Version 1.5.7 =
 * Implement event tracking for Google Analytics.
