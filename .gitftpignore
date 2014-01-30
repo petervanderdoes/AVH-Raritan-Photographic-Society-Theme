@@ -2,5 +2,5 @@ Capfile
 config/*
 css/rps.css
 scripts/rps.js
-Changes.md
+CHANGES.md
 sass/*
