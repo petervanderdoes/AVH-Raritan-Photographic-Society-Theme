@@ -179,6 +179,7 @@ function actionRPS_enqueue_styles()
     $stylesheet_path = get_stylesheet_directory();
 
     // Setup stylesheet
+    wp_enqueue_script('jquery-url', get_stylesheet_directory_uri() . '/scripts/jquery.url.js',array(),'1.8.6', true);
     if (WP_LOCAL_DEV == true) {
         wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps.css', array(), 'to_remove');
         wp_enqueue_script('rps', get_stylesheet_directory_uri() . '/scripts/rps.js', array(), 'to_remove', true);
@@ -187,7 +188,7 @@ function actionRPS_enqueue_styles()
         $rps_style_version = "15ee5f0";
         wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps-' . $rps_style_version . '.css', array(), 'to_remove');
         // The style version is automatically updated by using git-flow hooks.
-        $rps_js_version = "844d407";
+        $rps_js_version = "e67b18a";
         wp_enqueue_script('rps', get_stylesheet_directory_uri() . '/scripts/rps-' . $rps_js_version . '.js', array(), 'to_remove', true);
     }
 
