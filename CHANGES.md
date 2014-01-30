@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 1.5.7-rc.1 =
+= Version 1.5.7 =
 * Implement event tracking for Google Analytics.
 
 = Version 1.5.6 =
