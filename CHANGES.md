@@ -2,8 +2,8 @@
 
 == Changelog
 
-= Version 1.6.0-dev.1 =
-* Preparation for new development cycle.
+= Version 1.5.8 =
+* Fix parts of event tracking.
 
 = Version 1.5.7 =
 * Implement event tracking for Google Analytics.
