@@ -3,7 +3,7 @@
 == Changelog
 
 = Version 1.5.7-rc.1 =
-* Preparation for new development cycle.
+* Implement event tracking for Google Analytics.
 
 = Version 1.5.6 =
 * Do not display breadcrumb on the frontpage.
