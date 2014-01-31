@@ -75,13 +75,13 @@
     marging: 5px;
   }
   .suf-tile-text {
-  h2 {
-    @include adjust-font-size-to($base-font-size-full-story * 1.5, 1.5, $base-font-size-full-story);
-    font-weight: 700;
-    //@include rhythm($font-size: $base-font-size-full-story * 1.5)
- 
+    h2 {
+      @include adjust-font-size-to($base-font-size-full-story * 1.5, 1.5, $base-font-size-full-story);
+      font-weight: 700;
+      //@include rhythm($font-size: $base-font-size-full-story * 1.5)
+   
+    }
   }
-}
 }
 
 h2 {

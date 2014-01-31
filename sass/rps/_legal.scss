@@ -1,6 +1,5 @@
 #terms {
   @include adjust-font-size-to($base-font-size-full-story);
-
   ol, ul {
     padding-left: 0px;
   }
@@ -29,7 +28,7 @@
       }
       h1 {
         font-family: $headings;
-        @include adjust-font-size-to($base-font-size-oswald*2);
+        @include adjust-font-size-to($base-font-size-oswald * 2);
         font-weight: 200;
       }
     }

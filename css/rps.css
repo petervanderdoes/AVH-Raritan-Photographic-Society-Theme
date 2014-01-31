@@ -6284,11 +6284,11 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   line-height: 20px;
   line-height: 1.5rem;
 }
-/* line 4, ../sass/rps/_legal.scss */
+/* line 3, ../sass/rps/_legal.scss */
 #terms ol, #terms ul {
   padding-left: 0px;
 }
-/* line 7, ../sass/rps/_legal.scss */
+/* line 6, ../sass/rps/_legal.scss */
 #terms section {
   border-top: 1px solid #666666;
   clear: both;
@@ -6298,30 +6298,30 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   padding-bottom: 10px;
   width: 100%;
 }
-/* line 15, ../sass/rps/_legal.scss */
+/* line 14, ../sass/rps/_legal.scss */
 #terms section .left {
   float: left;
   margin: 0 10px 0 0;
   padding: 0 10px 0 0;
   width: 55%;
 }
-/* line 20, ../sass/rps/_legal.scss */
+/* line 19, ../sass/rps/_legal.scss */
 #terms section .left h3 {
   font-size: 14px;
   font-size: 1.07692rem;
   line-height: 20px;
   line-height: 1.5rem;
 }
-/* line 24, ../sass/rps/_legal.scss */
+/* line 23, ../sass/rps/_legal.scss */
 #terms section .right {
   float: left;
   width: 39%;
 }
-/* line 27, ../sass/rps/_legal.scss */
+/* line 26, ../sass/rps/_legal.scss */
 #terms section .right .faded {
   color: #666666;
 }
-/* line 30, ../sass/rps/_legal.scss */
+/* line 29, ../sass/rps/_legal.scss */
 #terms section .right h1 {
   font-family: "Oswald";
   font-size: 26px;
@@ -6683,23 +6683,45 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 }
 
 /* line 2, ../sass/rps/_images.scss */
-.gallery-size-thumbnail .gallery-item {
+.gallery ul, rps-sc-text ul {
+  font-size: 0.1px;
+  line-height: 0;
+  list-style-type: none;
+  text-align: justify;
+  margin: 0 0 3rem;
+  padding: 0;
+}
+/* line 9, ../sass/rps/_images.scss */
+.gallery ul:after, rps-sc-text ul:after {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: 100%;
+  content: '';
+}
+/* line 16, ../sass/rps/_images.scss */
+.gallery li, rps-sc-text li {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+}
+/* line 19, ../sass/rps/_images.scss */
+.gallery .gallery-item-content, rps-sc-text .gallery-item-content {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   border: 1px solid #555555;
-  margin: 0 13px 10px;
-  min-height: 174px;
   padding: 10px;
   width: 150px;
-  float: left;
-}
-/* line 11, ../sass/rps/_images.scss */
-.gallery-size-thumbnail ul li {
-  list-style: none outside none;
+  position: relative;
 }
 
-/* line 16, ../sass/rps/_images.scss */
+/* line 28, ../sass/rps/_images.scss */
 .wp-caption {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -6710,7 +6732,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   width: 160px;
 }
 
-/* line 25, ../sass/rps/_images.scss */
+/* line 36, ../sass/rps/_images.scss */
 .wp-caption-text {
   font-size: 13px;
   font-size: 1rem;
@@ -6922,7 +6944,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   width: 16px;
 }
 
-/* line 48, ../sass/rps.scss */
+/* line 51, ../sass/rps.scss */
 body {
   font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
   background-attachment: scroll;
@@ -6936,7 +6958,7 @@ body {
   background-color: black;
 }
 
-/* line 61, ../sass/rps.scss */
+/* line 64, ../sass/rps.scss */
 a {
   color: #e6e6e6;
   text-decoration: none;
@@ -6952,13 +6974,13 @@ a:hover {
   text-decoration: none;
 }
 
-/* line 65, ../sass/rps.scss */
+/* line 68, ../sass/rps.scss */
 #content {
   clear: both;
   overflow: hidden;
 }
 
-/* line 70, ../sass/rps.scss */
+/* line 73, ../sass/rps.scss */
 .entry, .non-wp-entry {
   padding: 15px 0 5px;
   clear: both;
@@ -6966,14 +6988,14 @@ a:hover {
   overflow: hidden;
 }
 
-/* line 77, ../sass/rps.scss */
+/* line 80, ../sass/rps.scss */
 h2.suf-tile-title {
   font-size: 15px;
   font-size: 1.15385rem;
   line-height: 20px;
   line-height: 1.5rem;
 }
-/* line 79, ../sass/rps.scss */
+/* line 82, ../sass/rps.scss */
 h2.suf-tile-title a,
 h2.suf-tile-title a:hover,
 h2.suf-tile-title a:visited,
@@ -6984,7 +7006,7 @@ h2.suf-tile-title a:active {
   line-height: 1.5rem;
 }
 
-/* line 87, ../sass/rps.scss */
+/* line 90, ../sass/rps.scss */
 .suf-gradient {
   background: royalblue;
   *zoom: 1;
@@ -6995,7 +7017,7 @@ h2.suf-tile-title a:active {
   background: linear-gradient(to bottom, #4169e1 0%, rgba(0, 35, 102, 0.2) 100%);
 }
 
-/* line 91, ../sass/rps.scss */
+/* line 94, ../sass/rps.scss */
 .suf-mag-headline-block li.suf-mag-headline a.tab-current, h2.suf-mag-category-title {
   background: royalblue;
   *zoom: 1;
@@ -7006,7 +7028,7 @@ h2.suf-tile-title a:active {
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
 
-/* line 95, ../sass/rps.scss */
+/* line 98, ../sass/rps.scss */
 a.excerpt-more-append {
   color: #e9e9e9;
   border: solid 1px #002366;
@@ -7019,7 +7041,7 @@ a.excerpt-more-append {
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
 
-/* line 101, ../sass/rps.scss */
+/* line 104, ../sass/rps.scss */
 .warea a.suf-mag-category-all-posts, a.suf-mag-category-all-posts {
   background: royalblue;
   *zoom: 1;
@@ -7030,22 +7052,22 @@ a.excerpt-more-append {
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
 
-/* line 105, ../sass/rps.scss */
+/* line 108, ../sass/rps.scss */
 h2.suf-tile-title {
   margin-top: 0;
   text-align: left;
 }
 
-/* line 110, ../sass/rps.scss */
+/* line 113, ../sass/rps.scss */
 h2.suf-tile-title a {
   font-size: 58%;
 }
-/* line 112, ../sass/rps.scss */
+/* line 115, ../sass/rps.scss */
 h2.suf-tile-title a:hover, h2.suf-tile-title a:visited, h2.suf-tile-title a:active {
   font-size: 58%;
 }
 
-/* line 117, ../sass/rps.scss */
+/* line 120, ../sass/rps.scss */
 #header-container {
   background-image: url('../images/RPS-LOGO-2012.jpg');
   background-position: left top;
@@ -7065,7 +7087,7 @@ h2.suf-tile-title a:hover, h2.suf-tile-title a:visited, h2.suf-tile-title a:acti
   border-top-right-radius: inherit;
 }
 
-/* line 128, ../sass/rps.scss */
+/* line 131, ../sass/rps.scss */
 input[type="email"] {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -7075,14 +7097,14 @@ input[type="email"] {
 /**
 * Theme My Login
 */
-/* line 136, ../sass/rps.scss */
+/* line 139, ../sass/rps.scss */
 #theme-my-login *:focus {
   background-color: #999999;
   color: #333333;
   outline: 0 none;
 }
 
-/* line 142, ../sass/rps.scss */
+/* line 145, ../sass/rps.scss */
 ul.tml-action-links {
   display: block;
   float: right;
@@ -7091,7 +7113,7 @@ ul.tml-action-links {
   padding: 0;
   vertical-align: bottom;
 }
-/* line 149, ../sass/rps.scss */
+/* line 152, ../sass/rps.scss */
 ul.tml-action-links li {
   padding: 0;
 }

@@ -10,7 +10,7 @@
     vertical-align: middle;
   }
   .winner-heading {
-      @include adjust-font-size-to($base-font-size-oswald * 1, 1);
+    @include adjust-font-size-to($base-font-size-oswald * 1, 1);
     font-family: $headings;
   }
   .suf-tile {

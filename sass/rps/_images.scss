@@ -1,29 +1,40 @@
-.gallery-size-thumbnail {
-	.gallery-item {
-		@include border-radius(5px);
-    	border: 1px solid $color-border;
-    	margin: 0 13px 10px;
-    	min-height: 174px;
-    	padding: 10px;
-    	width: 150px;
-    	float: left;
+.gallery, rps-sc-text {
+  ul {
+    font-size: 0.1px;
+    line-height: 0;
+    list-style-type: none;
+    text-align: justify;
+    margin: 0 0 3rem;
+    padding: 0;
+    &:after {
+      content: '';
+      @include inline-block;
+      width: 100%;
+      content: '';
     }
-    ul li {
-    	list-style: none outside none;
-    }
- }
-
-.wp-caption {
-	@include border-radius(5px);
+  }
+  li {
+    @include inline-block;
+  }
+  .gallery-item-content {
+    @include border-radius(5px);
     border: 1px solid $color-border;
-    min-height: 154px;
     padding: 10px;
-    width: 160px;
-
+    width: 150px;
+    position: relative;
+  }
 }
 
-    .wp-caption-text {
-    @include adjust-font-size-to($base-font-size-oswald * 1, 1);
-    font-family: $headings;
-    margin-bottom: 0;
-    }
+.wp-caption {
+  @include border-radius(5px);
+  border: 1px solid $color-border;
+  min-height: 154px;
+  padding: 10px;
+  width: 160px;
+}
+
+.wp-caption-text {
+  @include adjust-font-size-to($base-font-size-oswald * 1, 1);
+  font-family: $headings;
+  margin-bottom: 0;
+}

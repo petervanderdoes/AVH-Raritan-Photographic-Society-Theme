@@ -75,6 +75,6 @@ jQuery(document)
           });
 
       $('.gallery-row').each(function() {
-        rps_make_tiles_equal($(this).children());
+        rps_make_tiles_equal($(this).children().children());
       });
     });

@@ -687,7 +687,7 @@ function filterRPS_gallery_output($foo, $attr)
         if (isset($image_meta['height'], $image_meta['width']))
             $orientation = ($image_meta['height'] > $image_meta['width']) ? 'portrait' : 'landscape';
 
-        $output .= "<li class='gallery-item'>";
+        $output .= "<li class='gallery-item'><div class='gallery-item-content'>";
         $output .= "
             <span class='gallery-icon {$orientation}'>
             $image_output
@@ -703,21 +703,16 @@ function filterRPS_gallery_output($foo, $attr)
             }
             // If image credit fields have data then attach the image credit
             if ($photographer_name) {
-                $caption = '<br /><span class="wp-caption-credit">Credits: ' . $photographer_name . '</span>';
+                $caption .= '<br /><span class="wp-caption-credit">Credits: ' . $photographer_name . '</span>';
             }
-            $output .= "
-            <span class='wp-caption-text gallery-caption'>
-            " . wptexturize($caption) . "
-            </span>";
+            $output .= "<span class='wp-caption-text gallery-caption'>            " . wptexturize($caption) . "</span>";
         }
-        $output .= "</li>";
+        $output .= "</div></li>\n";
         if ($columns > 0 && ++$i % $columns == 0)
-            $output .= '</ul style="clear: both" />';
+            $output .= '</ul>';
     }
 
-    $output .= "
-    			<br style='clear: both;' />
-    		</div>\n";
+    $output .= "</div>\n";
 
     return $output;
 }

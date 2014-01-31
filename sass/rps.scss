@@ -7,6 +7,9 @@ $rhythm-unit: rem;
 //$min-line-padding: 0px;
 
 @import "compass";
+@import "compass/layout/stretching";
+@import "compass/utilities";
+@import "compass/css3";
 
 @include global-reset;
 
@@ -150,4 +153,3 @@ ul.tml-action-links {
     padding: 0;
   }
 }
-
