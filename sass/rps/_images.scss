@@ -1,10 +1,10 @@
-.gallery, rps-sc-text {
+.gallery, .rps-sc-text {
   ul {
     font-size: 0.1px;
     line-height: 0;
     list-style-type: none;
     text-align: justify;
-    margin: 0 0 3rem;
+    margin: 0;
     padding: 0;
     &:after {
       content: '';
@@ -16,6 +16,7 @@
   li {
     @include inline-block;
   }
+}
   .gallery-item-content {
     @include border-radius(5px);
     border: 1px solid $color-border;
@@ -23,7 +24,6 @@
     width: 150px;
     position: relative;
   }
-}
 
 .wp-caption {
   @include border-radius(5px);
@@ -37,4 +37,10 @@
   @include adjust-font-size-to($base-font-size-oswald * 1, 1);
   font-family: $headings;
   margin-bottom: 0;
+}
+
+.gallery {
+  ul {
+  margin: 0 0 3rem;
+  }
 }

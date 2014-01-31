@@ -6094,30 +6094,23 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 }
 /* line 167, ../sass/rps/_magazine-layout.scss */
 .rps-showcases ul {
-  float: left;
   list-style: none outside none;
   margin: 0 4px;
   padding: 0;
   vertical-align: bottom;
 }
-/* line 174, ../sass/rps/_magazine-layout.scss */
+/* line 173, ../sass/rps/_magazine-layout.scss */
 .rps-showcases li {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   border: 1px solid #555555;
-  float: left;
   line-height: 150px;
-  margin: 0 13px 10px;
   min-height: 154px;
   padding: 10px;
   width: 150px;
 }
-/* line 183, ../sass/rps/_magazine-layout.scss */
-.rps-showcases li:last-child {
-  margin-bottom: 10px;
-}
-/* line 187, ../sass/rps/_magazine-layout.scss */
+/* line 181, ../sass/rps/_magazine-layout.scss */
 .rps-showcases h3 {
   font-size: 20px;
   font-size: 1.5rem;
@@ -6129,7 +6122,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   padding: 0;
   color: white;
 }
-/* line 195, ../sass/rps/_magazine-layout.scss */
+/* line 189, ../sass/rps/_magazine-layout.scss */
 .rps-showcases:after {
   content: "";
   display: inline-block;
@@ -6137,8 +6130,12 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   line-height: 0;
   width: 100%;
 }
+/* line 196, ../sass/rps/_magazine-layout.scss */
+.rps-showcases .rps-sc-text {
+  padding: .7rem;
+}
 
-/* line 204, ../sass/rps/_magazine-layout.scss */
+/* line 201, ../sass/rps/_magazine-layout.scss */
 .rps-sc-tile {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -6159,14 +6156,14 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 /**
 * Misc boxes
 */
-/* line 222, ../sass/rps/_magazine-layout.scss */
+/* line 219, ../sass/rps/_magazine-layout.scss */
 .rps-misc {
   width: 100%;
   padding: 0;
   margin: 10px 0;
   display: inline-block;
 }
-/* line 227, ../sass/rps/_magazine-layout.scss */
+/* line 224, ../sass/rps/_magazine-layout.scss */
 .rps-misc h3 {
   font-family: "Oswald";
   font-size: 17px;
@@ -6179,32 +6176,32 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   color: white;
   text-align: center;
 }
-/* line 235, ../sass/rps/_magazine-layout.scss */
+/* line 232, ../sass/rps/_magazine-layout.scss */
 .rps-misc h3 a {
   color: white;
   text-decoration: none;
 }
-/* line 240, ../sass/rps/_magazine-layout.scss */
+/* line 237, ../sass/rps/_magazine-layout.scss */
 .rps-misc:after {
   marging: 5px;
 }
-/* line 243, ../sass/rps/_magazine-layout.scss */
+/* line 240, ../sass/rps/_magazine-layout.scss */
 .rps-misc .suf-tile-text {
   text-align: left;
 }
-/* line 246, ../sass/rps/_magazine-layout.scss */
+/* line 243, ../sass/rps/_magazine-layout.scss */
 .rps-misc ul {
   margin-left: 8px;
   margin-right: 8px;
   margin-top: 0;
   padding: 0;
 }
-/* line 252, ../sass/rps/_magazine-layout.scss */
+/* line 249, ../sass/rps/_magazine-layout.scss */
 .rps-misc ul li a {
   color: #e6e6e6;
   text-decoration: none;
 }
-/* line 255, ../sass/rps/_magazine-layout.scss */
+/* line 252, ../sass/rps/_magazine-layout.scss */
 .rps-misc ul li a:hover, .rps-misc ul li a:visited, .rps-misc ul li a:active {
   color: #e6e6e6;
   text-decoration: none;
@@ -6212,13 +6209,13 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 
 /* Props to the brilliant technique highlighted here: http://stackoverflow.com/questions/6865194/fluid-width-with-equally-spaced-divs.
  This distributes divs equally in a fluid-width row without any JS hack and without using CSS multi-columns. */
-/* line 267, ../sass/rps/_magazine-layout.scss */
+/* line 264, ../sass/rps/_magazine-layout.scss */
 .suf-tiles, .suf-mag-excerpts, .rps-showcases, .rps-misc {
   text-align: justify;
   -ms-text-justify: distribute;
   text-justify: distribute;
 }
-/* line 271, ../sass/rps/_magazine-layout.scss */
+/* line 268, ../sass/rps/_magazine-layout.scss */
 .suf-tiles:after, .suf-mag-excerpts:after, .rps-showcases:after, .rps-misc:after {
   content: '';
   width: 100%;
@@ -6227,52 +6224,52 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   line-height: 0;
 }
 
-/* line 280, ../sass/rps/_magazine-layout.scss */
+/* line 277, ../sass/rps/_magazine-layout.scss */
 .suf-tile-1c {
   width: 100%;
 }
 
-/* line 284, ../sass/rps/_magazine-layout.scss */
+/* line 281, ../sass/rps/_magazine-layout.scss */
 .suf-tile-2c {
   width: 49%;
 }
 
-/* line 288, ../sass/rps/_magazine-layout.scss */
+/* line 285, ../sass/rps/_magazine-layout.scss */
 .suf-tile-3c {
   width: 32%;
 }
 
-/* line 292, ../sass/rps/_magazine-layout.scss */
+/* line 289, ../sass/rps/_magazine-layout.scss */
 .suf-tile-4c {
   width: 24%;
 }
 
-/* line 296, ../sass/rps/_magazine-layout.scss */
+/* line 293, ../sass/rps/_magazine-layout.scss */
 .suf-tile-5c {
   width: 19%;
 }
 
-/* line 300, ../sass/rps/_magazine-layout.scss */
+/* line 297, ../sass/rps/_magazine-layout.scss */
 .suf-tile-6c {
   width: 16%;
 }
 
-/* line 304, ../sass/rps/_magazine-layout.scss */
+/* line 301, ../sass/rps/_magazine-layout.scss */
 .suf-tile-7c {
   width: 13%;
 }
 
-/* line 308, ../sass/rps/_magazine-layout.scss */
+/* line 305, ../sass/rps/_magazine-layout.scss */
 .suf-tile-8c {
   width: 12%;
 }
 
-/* line 312, ../sass/rps/_magazine-layout.scss */
+/* line 309, ../sass/rps/_magazine-layout.scss */
 .suf-tile-9c {
   width: 10.5%;
 }
 
-/* line 316, ../sass/rps/_magazine-layout.scss */
+/* line 313, ../sass/rps/_magazine-layout.scss */
 .suf-tile-10c {
   width: 9.5%;
 }
@@ -6683,16 +6680,16 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 }
 
 /* line 2, ../sass/rps/_images.scss */
-.gallery ul, rps-sc-text ul {
+.gallery ul, .rps-sc-text ul {
   font-size: 0.1px;
   line-height: 0;
   list-style-type: none;
   text-align: justify;
-  margin: 0 0 3rem;
+  margin: 0;
   padding: 0;
 }
 /* line 9, ../sass/rps/_images.scss */
-.gallery ul:after, rps-sc-text ul:after {
+.gallery ul:after, .rps-sc-text ul:after {
   content: '';
   display: inline-block;
   vertical-align: middle;
@@ -6703,15 +6700,16 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   content: '';
 }
 /* line 16, ../sass/rps/_images.scss */
-.gallery li, rps-sc-text li {
+.gallery li, .rps-sc-text li {
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
   *zoom: 1;
   *display: inline;
 }
-/* line 19, ../sass/rps/_images.scss */
-.gallery .gallery-item-content, rps-sc-text .gallery-item-content {
+
+/* line 20, ../sass/rps/_images.scss */
+.gallery-item-content {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -6740,6 +6738,11 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   line-height: 1.5rem;
   font-family: "Oswald";
   margin-bottom: 0;
+}
+
+/* line 43, ../sass/rps/_images.scss */
+.gallery ul {
+  margin: 0 0 3rem;
 }
 
 /* line 1, ../sass/rps/_sidebars.scss */

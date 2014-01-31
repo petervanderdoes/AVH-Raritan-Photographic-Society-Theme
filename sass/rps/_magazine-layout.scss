@@ -165,7 +165,6 @@ h2 {
     margin-bottom: 3px;
   }
   ul {
-    float: left;
     list-style: none outside none;
     margin: 0 4px;
     padding: 0;
@@ -174,15 +173,10 @@ h2 {
   li {
     @include border-radius(5px);
     border: 1px solid $color-border;
-    float: left;
     line-height: 150px;
-    margin: 0 13px 10px;
     min-height: 154px;
     padding: 10px;
     width: 150px;
-    &:last-child {
-      margin-bottom: 10px;
-    }
   }
   h3 {
     @include adjust-font-size-to($base-font-size-oswald * 1.5, 1.5);
@@ -198,6 +192,9 @@ h2 {
     font-size: 0;
     line-height: 0;
     width: 100%;
+  }
+  .rps-sc-text {
+  padding: .7rem;
   }
 }
 
