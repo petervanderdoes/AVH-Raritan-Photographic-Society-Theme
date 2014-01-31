@@ -6,6 +6,8 @@ $rhythm-unit: rem;
 //$round-to-nearest-half-line: true;
 //$min-line-padding: 0px;
 
+$flex-legacy-enabled: true;
+
 @import "compass";
 @import "compass/layout/stretching";
 @import "compass/utilities";

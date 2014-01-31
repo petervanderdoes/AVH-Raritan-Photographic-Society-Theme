@@ -1,38 +1,4 @@
 .rps-showcase-category-winner {
-  display: inline-block;
-  margin: 10px 0;
-  padding: 0;
-  width: 100%;
-  .image {
-    text-align: center;
-  }
-  .thumb_img {
-    vertical-align: middle;
-  }
-  .winner-heading {
-    @include adjust-font-size-to($base-font-size-oswald * 1, 1);
-    font-family: $headings;
-  }
-  .suf-tile {
-    margin-bottom: 3px;
-  }
-  ul {
-    float: left;
-    list-style: none outside none;
-    margin: 0 4px;
-    padding: 0;
-    vertical-align: bottom;
-  }
-  li {
-    float: left;
-    line-height: 250px;
-    margin: 0 33px 10px;
-    padding: 10px;
-    width: 250px;
-    &:last-child {
-      margin-bottom: 10px;
-    }
-  }
   h3 {
     @include adjust-font-size-to($base-font-size-oswald * 1.5, 1.5);
     font-family: $headings;

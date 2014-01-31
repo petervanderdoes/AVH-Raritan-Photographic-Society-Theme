@@ -74,7 +74,7 @@ jQuery(document)
                 });
           });
 
-      $('.gallery-row').each(function() {
+      $('.gallery-row-equal', '').each(function() {
         rps_make_tiles_equal($(this).children().children());
       });
     });

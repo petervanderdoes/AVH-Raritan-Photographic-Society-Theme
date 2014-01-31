@@ -152,31 +152,11 @@ h2 {
   margin: 10px 0;
   padding: 0;
   width: 100%;
-  .image {
-    text-align: center;
-  }
-  .thumb_img {
-    vertical-align: middle;
-  }
   .col-control {
     width: 960px;
   }
   .suf-tile {
     margin-bottom: 3px;
-  }
-  ul {
-    list-style: none outside none;
-    margin: 0 4px;
-    padding: 0;
-    vertical-align: bottom;
-  }
-  li {
-    @include border-radius(5px);
-    border: 1px solid $color-border;
-    line-height: 150px;
-    min-height: 154px;
-    padding: 10px;
-    width: 150px;
   }
   h3 {
     @include adjust-font-size-to($base-font-size-oswald * 1.5, 1.5);
@@ -192,9 +172,6 @@ h2 {
     font-size: 0;
     line-height: 0;
     width: 100%;
-  }
-  .rps-sc-text {
-  padding: .7rem;
   }
 }
 
@@ -261,7 +238,7 @@ h2 {
 /* Props to the brilliant technique highlighted here: http://stackoverflow.com/questions/6865194/fluid-width-with-equally-spaced-divs.
  This distributes divs equally in a fluid-width row without any JS hack and without using CSS multi-columns. */
 
-.suf-tiles, .suf-mag-excerpts, .rps-showcases, .rps-misc {
+.suf-tiles, .suf-mag-excerpts, .rps-misc {
   text-align: justify;
   -ms-text-justify: distribute;
   text-justify: distribute;

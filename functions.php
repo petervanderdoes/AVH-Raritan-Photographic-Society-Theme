@@ -552,9 +552,9 @@ function shortcodeRPS_base_image_credit_to_captions($attr, $content = null)
     }
 
     // Allow plugins/themes to override the default caption template.
-    $output = apply_filters('img_caption_shortcode', '', $attr, $content);
-    if ($output != '')
-        return $output;
+    //$output = apply_filters('img_caption_shortcode', '', $attr, $content);
+    //if ($output != '')
+    //    return $output;
 
     $atts = shortcode_atts(array('id' => '', 'align' => 'alignnone', 'width' => '', 'caption' => ''), $attr, 'caption');
 
@@ -605,7 +605,7 @@ function shortcodeRPS_base_image_credit_to_captions($attr, $content = null)
     }
     // If image credit fields have data then attach the image credit
     if ($photographer_name) {
-        $atts['caption'] .= '<br /><span class="wp-caption-credit">Credits: ' . $photographer_name . '</span>';
+        $atts['caption'] .= '<br /><span class="wp-caption-credit">Credit: ' . $photographer_name . '</span>';
     }
 
     return '<div ' . $atts['id'] . $style . 'class="wp-caption ' . esc_attr($atts['align']) . '">' . do_shortcode($content) . '<p class="wp-caption-text">' . $atts['caption'] . '</p></div>';
@@ -664,14 +664,14 @@ function filterRPS_gallery_output($foo, $attr)
 
     $gallery_style = $gallery_div = '';
     $size_class = sanitize_html_class($size);
-    $gallery_div = "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
+    $gallery_div = "<div id='$selector' class='gallery gallery-sa galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
     $output = apply_filters('gallery_style', $gallery_style . "\n\t\t" . $gallery_div);
 
     $i = 0;
     foreach ($attachments as $id => $attachment) {
         $a= $i % $columns;
         if ($i % $columns == 0) {
-            $output .= '<ul class="gallery-row">';
+            $output .= '<ul class="gallery-row gallery-row-equal">';
         }
         if (!empty($link) && 'file' === $link) {
             $image_output = wp_get_attachment_link($id, $size, false, false);
@@ -705,7 +705,7 @@ function filterRPS_gallery_output($foo, $attr)
             if ($photographer_name) {
                 $caption .= '<br /><span class="wp-caption-credit">Credit: ' . $photographer_name . '</span>';
             }
-            $output .= "<span class='wp-caption-text gallery-caption'>" . wptexturize($caption) . "</span>";
+            $output .= "<p class='wp-caption-text gallery-caption'>" . wptexturize($caption) . "</p>";
         }
         $output .= "</div></li>\n";
         if ($columns > 0 && ++$i % $columns == 0)
