@@ -703,9 +703,9 @@ function filterRPS_gallery_output($foo, $attr)
             }
             // If image credit fields have data then attach the image credit
             if ($photographer_name) {
-                $caption .= '<br /><span class="wp-caption-credit">Credits: ' . $photographer_name . '</span>';
+                $caption .= '<br /><span class="wp-caption-credit">Credit: ' . $photographer_name . '</span>';
             }
-            $output .= "<span class='wp-caption-text gallery-caption'>            " . wptexturize($caption) . "</span>";
+            $output .= "<span class='wp-caption-text gallery-caption'>" . wptexturize($caption) . "</span>";
         }
         $output .= "</div></li>\n";
         if ($columns > 0 && ++$i % $columns == 0)
