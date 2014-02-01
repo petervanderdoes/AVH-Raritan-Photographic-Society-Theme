@@ -6659,7 +6659,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 
 /* line 42, ../sass/rps/_images.scss */
 .gallery-size-150 .gallery-item-content {
-  height: auto;
+  height: 150px;
   width: 150px;
 }
 
