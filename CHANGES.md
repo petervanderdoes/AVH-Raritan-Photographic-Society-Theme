@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 1.5.10-rc.1 =
+= Version 1.5.10 =
 * Showcase styling error.
 
 = Version 1.5.9 =
