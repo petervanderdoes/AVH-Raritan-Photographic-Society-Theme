@@ -3,7 +3,7 @@
 == Changelog
 
 = Version 1.5.10-rc.1 =
-* Preparation for new development cycle.
+* Showcase styling error.
 
 = Version 1.5.9 =
 * Media (gallery) improvements.
