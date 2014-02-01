@@ -6633,65 +6633,72 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 
 /* line 21, ../sass/rps/_images.scss */
 .gallery-item-content {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  border: 1px solid #555555;
-  padding: 10px;
+  border-width: 1px;
+  border-width: 0.07692rem;
+  border-style: solid;
+  padding: 19px;
+  padding: 1.42308rem;
+  -moz-border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  border-color: #555555;
   position: relative;
   text-align: center;
 }
 
-/* line 29, ../sass/rps/_images.scss */
+/* line 30, ../sass/rps/_images.scss */
 .gallery-size-thumbnail .gallery-item-content {
   width: 150px;
 }
 
-/* line 34, ../sass/rps/_images.scss */
+/* line 35, ../sass/rps/_images.scss */
 .gallery-size-250 .gallery-item-content {
-  min-height: 310px;
+  height: 310px;
   width: 250px;
 }
 
-/* line 41, ../sass/rps/_images.scss */
+/* line 42, ../sass/rps/_images.scss */
 .gallery-size-150 .gallery-item-content {
-  min-height: 150px;
+  height: auto;
   width: 150px;
 }
 
-/* line 47, ../sass/rps/_images.scss */
+/* line 49, ../sass/rps/_images.scss */
 .wp-caption {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  border: 1px solid #555555;
-  min-height: 154px;
-  padding: 10px;
-  width: 160px;
+  border-width: 1px;
+  border-width: 0.07692rem;
+  border-style: solid;
+  padding: 19px;
+  padding: 1.42308rem;
+  -moz-border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  border-color: #555555;
+  text-align: center;
 }
 
-/* line 55, ../sass/rps/_images.scss */
+/* line 59, ../sass/rps/_images.scss */
 .wp-caption-text {
   font-size: 13px;
   font-size: 1rem;
   line-height: 20px;
   line-height: 1.5rem;
-  margin-top: 20px;
-  margin-top: 1.5rem;
+  margin-top: 10px;
+  margin-top: 0.75rem;
   font-family: "Oswald";
   margin-bottom: 0;
 }
 
-/* line 62, ../sass/rps/_images.scss */
+/* line 66, ../sass/rps/_images.scss */
 p.wp-caption-text {
   margin-bottom: 0;
 }
 
-/* line 67, ../sass/rps/_images.scss */
+/* line 71, ../sass/rps/_images.scss */
 .rps-showcases .gallery ul {
   margin: 1rem;
 }
-/* line 70, ../sass/rps/_images.scss */
+/* line 74, ../sass/rps/_images.scss */
 .rps-showcases .gallery-item-content-image img {
   bottom: 0;
   left: 0;
@@ -6701,19 +6708,19 @@ p.wp-caption-text {
   top: 0;
 }
 
-/* line 82, ../sass/rps/_images.scss */
+/* line 86, ../sass/rps/_images.scss */
 .rps-showcase-category-winner .gallery ul {
   padding: 1rem;
   margin: 0;
 }
-/* line 86, ../sass/rps/_images.scss */
+/* line 90, ../sass/rps/_images.scss */
 .rps-showcase-category-winner .gallery-item-content {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
 }
 
-/* line 95, ../sass/rps/_images.scss */
+/* line 99, ../sass/rps/_images.scss */
 .gallery-sa .gallery-row {
   margin-bottom: 2rem;
 }

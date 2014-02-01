@@ -19,9 +19,10 @@
 }
 
 .gallery-item-content {
-  @include border-radius(5px);
-  border: 1px solid $color-border;
-  padding: 10px;
+  @include rhythm-borders($width:1px, $border-style:solid);
+  @include border-radius(.5rem);
+  border-color: #555555;
+  //padding: 1rem;
   position: relative;
   text-align: center;
 }
@@ -32,29 +33,32 @@
 
 .gallery-size-250 {
   .gallery-item-content {
-    min-height: 310px;
+    height: 310px;
     width: 250px;
   }
 }
 
 .gallery-size-150 {
   .gallery-item-content {
-    min-height: 150px;
+    height: auto;
     width: 150px;
   }
 }
 
+// Caption shortcode
 .wp-caption {
-  @include border-radius(5px);
-  border: 1px solid $color-border;
-  min-height: 154px;
-  padding: 10px;
-  width: 160px;
+  @include rhythm-borders($width:1px, $border-style:solid);
+  @include border-radius(.5rem);
+  border-color: #555555;
+  text-align: center;
 }
 
+//
+// Caption text in galleries
+//
 .wp-caption-text {
   @include adjust-font-size-to($base-font-size-oswald * 1, 1);
-  @include margin-leader(1);
+  @include margin-leader(0.5);
   font-family: $headings;
   margin-bottom: 0;
 }
