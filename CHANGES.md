@@ -2,8 +2,8 @@
 
 == Changelog
 
-= Version 1.6.0-dev.11 =
-* Preparation for new development cycle.
+= Version 1.5.9 =
+* Media (gallery) improvements.
 
 = Version 1.5.8 =
 * Fix parts of event tracking.
