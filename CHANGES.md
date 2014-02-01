@@ -3,7 +3,7 @@
 == Changelog
 
 = Version 1.5.9-rc.1 =
-* Preparation for new development cycle.
+* Media (gallery) improvements.
 
 = Version 1.5.8 =
 * Fix parts of event tracking.
