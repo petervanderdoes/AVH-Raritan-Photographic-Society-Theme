@@ -2,6 +2,9 @@
 
 == Changelog
 
+= Version 1.5.10 =
+* Showcase styling error.
+
 = Version 1.5.9 =
 * Media (gallery) improvements.
 
