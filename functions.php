@@ -185,10 +185,10 @@ function actionRPS_enqueue_styles()
         wp_enqueue_script('rps', get_stylesheet_directory_uri() . '/scripts/rps.js', array(), 'to_remove');
     } else {
         // The style version is automatically updated by using git-flow hooks.
-        $rps_style_version = "15ee5f0";
+        $rps_style_version = "d52d635";
         wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps-' . $rps_style_version . '.css', array(), 'to_remove');
         // The style version is automatically updated by using git-flow hooks.
-        $rps_js_version = "e67b18a";
+        $rps_js_version = "d52d635";
         wp_enqueue_script('rps', get_stylesheet_directory_uri() . '/scripts/rps-' . $rps_js_version . '.js', array(), 'to_remove');
     }
 
