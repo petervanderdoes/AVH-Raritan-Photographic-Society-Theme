@@ -80,7 +80,7 @@
     list-style: disc;
   }
   p {
-    @include trailer($font-size: $base-font-size-full-story);
+    @include trailer($font_size: $base-font-size-full-story);
   }
 }
 

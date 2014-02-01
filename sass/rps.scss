@@ -6,7 +6,12 @@ $rhythm-unit: rem;
 //$round-to-nearest-half-line: true;
 //$min-line-padding: 0px;
 
+$flex-legacy-enabled: true;
+
 @import "compass";
+@import "compass/layout/stretching";
+@import "compass/utilities";
+@import "compass/css3";
 
 @include global-reset;
 
@@ -34,6 +39,7 @@ $rhythm-unit: rem;
 @import "rps/comments";
 @import "rps/monthly-winners";
 @import "rps/showcase";
+@import "rps/images";
 @import "rps/sidebars";
 @import "rps/footer";
 
@@ -149,4 +155,3 @@ ul.tml-action-links {
     padding: 0;
   }
 }
-
