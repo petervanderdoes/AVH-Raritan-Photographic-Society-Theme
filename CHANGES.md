@@ -2,6 +2,9 @@
 
 == Changelog
 
+= Version 1.5.9 =
+* Media (gallery) improvements.
+
 = Version 1.5.8 =
 * Fix parts of event tracking.
 

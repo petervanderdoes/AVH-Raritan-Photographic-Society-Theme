@@ -69,12 +69,12 @@ table.em-calendar {
 }
 
 div.css-search {
-    background: inherit;
-    border: inherit;
-    border-radius: inherit;
-    min-height: 40px;
-    padding: 5px;
-    position: relative;
+  background: inherit;
+  border: inherit;
+  border-radius: inherit;
+  min-height: 40px;
+  padding: 5px;
+  position: relative;
 }
 
 div.css-search div.em-search-main .em-search-submit {
@@ -82,6 +82,6 @@ div.css-search div.em-search-main .em-search-submit {
   color: $color-button-text;
   border: solid 1px $color-button-border;
   &:hover {
-    @include gradient-buttons-active
+    @include gradient-buttons-active;
   }
 }

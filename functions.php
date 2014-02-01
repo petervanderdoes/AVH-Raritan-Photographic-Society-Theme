@@ -179,17 +179,17 @@ function actionRPS_enqueue_styles()
     $stylesheet_path = get_stylesheet_directory();
 
     // Setup stylesheet
-    wp_enqueue_script('jquery-url', get_stylesheet_directory_uri() . '/scripts/jquery.url.js',array(),'1.8.6', true);
+    wp_enqueue_script('jquery-url', get_stylesheet_directory_uri() . '/scripts/jquery.url.js', array(), '1.8.6', true);
     if (WP_LOCAL_DEV == true) {
         wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps.css', array(), 'to_remove');
-        wp_enqueue_script('rps', get_stylesheet_directory_uri() . '/scripts/rps.js', array(), 'to_remove', true);
+        wp_enqueue_script('rps', get_stylesheet_directory_uri() . '/scripts/rps.js', array(), 'to_remove');
     } else {
         // The style version is automatically updated by using git-flow hooks.
-        $rps_style_version = "15ee5f0";
+        $rps_style_version = "d52d635";
         wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps-' . $rps_style_version . '.css', array(), 'to_remove');
         // The style version is automatically updated by using git-flow hooks.
-        $rps_js_version = "e67b18a";
-        wp_enqueue_script('rps', get_stylesheet_directory_uri() . '/scripts/rps-' . $rps_js_version . '.js', array(), 'to_remove', true);
+        $rps_js_version = "d52d635";
+        wp_enqueue_script('rps', get_stylesheet_directory_uri() . '/scripts/rps-' . $rps_js_version . '.js', array(), 'to_remove');
     }
 
     if (!isset($suffusion_theme_hierarchy[$suf_color_scheme])) {
@@ -388,10 +388,11 @@ function rps_comment_form($args = array(), $post_id = null)
 {
     global $id;
 
-    if (null === $post_id)
+    if (null === $post_id) {
         $post_id = $id;
-    else
+    } else {
         $id = $post_id;
+    }
 
     $commenter = wp_get_current_commenter();
     $user = wp_get_current_user();
@@ -399,60 +400,71 @@ function rps_comment_form($args = array(), $post_id = null)
 
     $req = get_option('require_name_email');
     $aria_req = ($req ? " aria-required='true'" : '');
-    $fields = array('author' => '<p class="comment-form-author">' . '<label for="author">' . __('Name') . ($req ? ' <span class="required">*</span>' : '') . '</label> ' . '<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . ' /></p>', 'email' => '<p class="comment-form-email"><label for="email">' . __('Email') . ($req ? ' <span class="required">*</span>' : '') . '</label> ' . '<input id="email" name="email" type="text" value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $aria_req . ' /></p>', 'url' => '<p class="comment-form-url"><label for="url">' . __('Website') . '</label>' . '<input id="url" name="url" type="text" value="' . esc_attr($commenter['comment_author_url']) . '" size="30" /></p>');
-
+    // @formatter:off
+    $fields = array('author' => '<p class="comment-form-author">' . '<label for="author">' . __('Name') . ($req ? ' <span class="required">*</span>' : '') . '</label> ' . '<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . ' /></p>',
+                    'email' => '<p class="comment-form-email"><label for="email">' . __('Email') . ($req ? ' <span class="required">*</span>' : '') . '</label> ' . '<input id="email" name="email" type="text" value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $aria_req . ' /></p>',
+                    'url' => '<p class="comment-form-url"><label for="url">' . __('Website') . '</label>' . '<input id="url" name="url" type="text" value="' . esc_attr($commenter['comment_author_url']) . '" size="30" /></p>');
+    // @formatter:on
     $required_text = sprintf(' ' . __('Required fields are marked %s'), '<span class="required">*</span>');
-    $defaults = array('fields' => apply_filters('comment_form_default_fields', $fields), 'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x('Comment', 'noun') . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>', 'must_log_in' => '<p class="must-log-in">' . sprintf(__('You must be <a href="%s">logged in</a> to post a comment.'), wp_login_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>', 'logged_in_as' => '<p class="logged-in-as">' . sprintf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>'), get_edit_user_link(), $user_identity, wp_logout_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>', 'comment_notes_before' => '<p class="comment-notes">' . __('Your email address will not be published.') . ($req ? $required_text : '') . '</p>', 'comment_notes_after' => '<p class="form-allowed-tags">' . sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s'), ' <code>' . allowed_tags() . '</code>') . '</p>', 'id_form' => 'commentform', 'id_submit' => 'submit', 'title_reply' => __('Leave a Reply'), 'title_reply_to' => __('Leave a Reply to %s'), 'cancel_reply_link' => __('Cancel reply'), 'label_submit' => __('Post Comment'));
-
+    // @formatter:off
+    $defaults = array('fields' => apply_filters('comment_form_default_fields', $fields),
+                      'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x('Comment', 'noun') . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
+                      'must_log_in' => '<p class="must-log-in">' . sprintf(__('You must be <a href="%s">logged in</a> to post a comment.'), wp_login_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
+                      'logged_in_as' => '<p class="logged-in-as">' . sprintf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>'), get_edit_user_link(), $user_identity, wp_logout_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
+                       'comment_notes_before' => '<p class="comment-notes">' . __('Your email address will not be published.') . ($req ? $required_text : '') . '</p>',
+                      'comment_notes_after' => '<p class="form-allowed-tags">' . sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s'), ' <code>' . allowed_tags() . '</code>') . '</p>',
+                      'id_form' => 'commentform',
+                      'id_submit' => 'submit',
+                      'title_reply' => __('Leave a Reply'),
+                      'title_reply_to' => __('Leave a Reply to %s'),
+                      'cancel_reply_link' => __('Cancel reply'),
+                      'label_submit' => __('Post Comment'));
+    // @formatter:on
     $args = wp_parse_args($args, apply_filters('comment_form_defaults', $defaults));
+    if (comments_open($post_id)) {
+        do_action('comment_form_before');
+        echo '<div id="respond">';
+        echo '<h3 id="reply-title">';
 
-    ?>
-        <?php if ( comments_open( $post_id ) ) : ?>
-            <?php do_action( 'comment_form_before' ); ?>
-<div id="respond">
-	<h3 id="reply-title"><?php comment_form_title( $args['title_reply'], $args['title_reply_to'] ); ?> <small><?php cancel_comment_reply_link( $args['cancel_reply_link'] ); ?></small>
-	</h3>
-                <?php $allow_comment = get_option( 'comment_registration' ) && is_user_logged_in();?>
-                <?php apply_filters('rps_comment_form_allow_comment', $allow_comment); ?>
-                <?php if ( !$allow_comment ) : ?>
-                    <?php echo $args['must_log_in']; ?>
-                    <?php do_action( 'comment_form_must_log_in_after' ); ?>
-                <?php else : ?>
-                    <form
-		action="<?php echo site_url( '/wp-comments-post.php' ); ?>"
-		method="post" id="<?php echo esc_attr( $args['id_form'] ); ?>">
-                        <?php do_action( 'comment_form_top' ); ?>
-                        <?php if ( is_user_logged_in() ) : ?>
-                            <?php echo apply_filters( 'comment_form_logged_in', $args['logged_in_as'], $commenter, $user_identity ); ?>
-                            <?php do_action( 'comment_form_logged_in_after', $commenter, $user_identity ); ?>
-                        <?php else : ?>
-                            <?php echo $args['comment_notes_before']; ?>
-                            <?php
+        comment_form_title($args['title_reply'], $args['title_reply_to']);
+        echo '<small>';
+        cancel_comment_reply_link($args['cancel_reply_link']);
+        echo '</small>';
+        echo '</h3>';
+        $allow_comment = get_option('comment_registration') && is_user_logged_in();
+        apply_filters('rps_comment_form_allow_comment', $allow_comment);
+        if (!$allow_comment) {
+            echo $args['must_log_in'];
+            do_action('comment_form_must_log_in_after');
+        } else {
+            echo '<form action="' . site_url('/wp-comments-post.php') . '" method="post" id="' . esc_attr($args['id_form']) . '">';
+            do_action('comment_form_top');
+            if (is_user_logged_in()) {
+                echo apply_filters('comment_form_logged_in', $args['logged_in_as'], $commenter, $user_identity);
+                do_action('comment_form_logged_in_after', $commenter, $user_identity);
+            } else {
+                echo $args['comment_notes_before'];
+
                 do_action('comment_form_before_fields');
                 foreach ((array) $args['fields'] as $name => $field) {
                     echo apply_filters("comment_form_field_{$name}", $field) . "\n";
                 }
                 do_action('comment_form_after_fields');
-                ?>
-                        <?php endif; ?>
-                        <?php echo apply_filters( 'comment_form_field_comment', $args['comment_field'] ); ?>
-                        <?php echo $args['comment_notes_after']; ?>
-                        <p class="form-submit">
-			<input name="submit" type="submit"
-				id="<?php echo esc_attr( $args['id_submit'] ); ?>"
-				value="<?php echo esc_attr( $args['label_submit'] ); ?>" />
-                            <?php comment_id_fields( $post_id ); ?>
-                        </p>
-                        <?php do_action( 'comment_form', $post_id ); ?>
-                    </form>
-                <?php endif; ?>
-            </div>
-<!-- #respond -->
-<?php do_action( 'comment_form_after' ); ?>
-        <?php else : ?>
-            <?php do_action( 'comment_form_comments_closed' ); ?>
-        <?php endif; ?>
-    <?php
+            }
+            echo apply_filters('comment_form_field_comment', $args['comment_field']);
+            echo $args['comment_notes_after'];
+            echo '<p class="form-submit">';
+            echo '<input name="submit" type="submit" id="' . esc_attr($args['id_submit']) . '" value="' . esc_attr($args['label_submit']) . '" />';
+            comment_id_fields($post_id);
+            echo '</p>';
+            do_action('comment_form', $post_id);
+            echo '</form>';
+        }
+        echo '</div>';
+        do_action('comment_form_after');
+    } else {
+        do_action('comment_form_comments_closed');
+    }
 }
 
 function rps_display_suffu_tile_misc($title, $content, $column_number, $total_columns, $echo = false)
@@ -469,4 +481,238 @@ function rps_display_suffu_tile_misc($title, $content, $column_number, $total_co
     } else {
         return $return;
     }
+}
+
+/**
+ * ********************************************
+ * Media functions
+ * ********************************************
+ */
+
+add_filter('attachment_fields_to_edit', 'filterRPS_attachment_field_credit', 10, 2);
+add_filter('attachment_fields_to_save', 'filterRPS_attachment_field_credit_save', 10, 2);
+add_filter('use_default_gallery_style', '__return_false');
+add_shortcode('wp_caption', 'shortcodeRPS_base_image_credit_to_captions');
+add_shortcode('caption', 'shortcodeRPS_base_image_credit_to_captions');
+add_filter('post_gallery','filterRPS_gallery_output',10,2);
+
+/**
+ * Add Photographer Name and URL fields to media uploader
+ *
+ * @param $form_fields array,
+ *            fields to include in attachment form
+ * @param $post object,
+ *            attachment record in database
+ * @return $form_fields, modified form fields
+ */
+function filterRPS_attachment_field_credit($form_fields, $post)
+{
+    // @formatter:off
+    $form_fields['rps-photographer-name'] = array('label' => 'Photographer Name',
+                                                   'input' => 'text',
+                                                   'value' => esc_attr(get_post_meta($post->ID, ')rps_photographer_name', true)),
+                                                   'helps' => 'If provided, photo credit will be displayed');
+    // @formatter:on
+    return $form_fields;
+}
+
+/**
+ * Save values of Photographer Name and URL in media uploader
+ *
+ * @param $post array,
+ *            the post data for database
+ * @param $attachment array,
+ *            attachment fields from $_POST form
+ * @return $post array, modified post data
+ *
+ */
+function filterRPS_attachment_field_credit_save($post, $attachment)
+{
+    if (isset($attachment['rps-photographer-name'])) {
+        update_post_meta($post['ID'], '_rps_photographer_name', esc_attr($attachment['rps-photographer-name']));
+    }
+    return $post;
+}
+
+/**
+ * Add image credits to captions
+ *
+ * Add the "Credit" custom fields to media attachments with captions
+ *
+ * Uses get_post_custom() http://codex.wordpress.org/Function_Reference/get_post_custom
+ */
+function shortcodeRPS_base_image_credit_to_captions($attr, $content = null)
+{
+    // New-style shortcode with the caption inside the shortcode with the link and image tags.
+    if (!isset($attr['caption'])) {
+        if (preg_match('#((?:<a [^>]+>\s*)?<img [^>]+>(?:\s*</a>)?)(.*)#is', $content, $matches)) {
+            $content = $matches[1];
+            $attr['caption'] = trim($matches[2]);
+        }
+    }
+
+    // Allow plugins/themes to override the default caption template.
+    //$output = apply_filters('img_caption_shortcode', '', $attr, $content);
+    //if ($output != '')
+    //    return $output;
+
+    $atts = shortcode_atts(array('id' => '', 'align' => 'alignnone', 'width' => '', 'caption' => ''), $attr, 'caption');
+
+    $atts['width'] = (int) $atts['width'];
+    if ($atts['width'] < 1 || empty($atts['caption']))
+        return $content;
+
+    if (!empty($atts['id']))
+        $attachment_id = intval(str_replace('attachment_', '', $atts['id']));
+    $atts['id'] = 'id="' . esc_attr($atts['id']) . '" ';
+
+    $caption_width = 10 + $atts['width'];
+
+    /**
+     * Filter the width of an image's caption.
+     *
+     * By default, the caption is 10 pixels greater than the width of the image,
+     * to prevent post content from running up against a floated image.
+     *
+     * @since 3.7.0
+     *
+     * @param int $caption_width
+     *            Width in pixels. To remove this inline style, return zero.
+     * @param array $atts
+     *            {
+     *            The attributes of the caption shortcode.
+     *
+     *            @type string 'id' The ID of the div element for the caption.
+     *            @type string 'align' The class name that aligns the caption. Default 'alignnone'.
+     *            @type int 'width' The width of the image being captioned.
+     *            @type string 'caption' The image's caption.
+     *            }
+     * @param string $content
+     *            The image element, possibly wrapped in a hyperlink.
+     */
+    $caption_width = apply_filters('img_caption_shortcode_width', $caption_width, $atts, $content);
+
+    $style = '';
+    if ($caption_width) {
+        $style = 'style="width: ' . (int) $caption_width . 'px" ';
+    }
+
+    // Get image credit custom attachment fields
+    $attachment_fields = get_post_custom($attachment_id);
+    $photographer_name = '';
+    if (isset($attachment_fields['_rps_photographer_name'][0]) && !empty($attachment_fields['_rps_photographer_name'][0])) {
+        $photographer_name = esc_attr($attachment_fields['_rps_photographer_name'][0]);
+    }
+    // If image credit fields have data then attach the image credit
+    if ($photographer_name) {
+        $atts['caption'] .= '<br /><span class="wp-caption-credit">Credit: ' . $photographer_name . '</span>';
+    }
+
+    return '<div ' . $atts['id'] . $style . 'class="wp-caption ' . esc_attr($atts['align']) . '">' . do_shortcode($content) . '<p class="wp-caption-text">' . $atts['caption'] . '</p></div>';
+}
+
+function filterRPS_gallery_output($foo, $attr)
+{
+	$post = get_post();
+
+	static $instance = 0;
+	$instance++;
+
+    $output = '';
+
+    // We're trusting author input, so let's at least make sure it looks like a valid orderby statement
+    if (isset($attr['orderby'])) {
+        $attr['orderby'] = sanitize_sql_orderby($attr['orderby']);
+        if (!$attr['orderby'])
+            unset($attr['orderby']);
+    }
+
+    extract(shortcode_atts(array('order' => 'ASC', 'orderby' => 'menu_order ID', 'id' => $post ? $post->ID : 0, 'itemtag' => 'dl', 'icontag' => 'dt', 'captiontag' => 'dd', 'columns' => 3, 'size' => 'thumbnail', 'include' => '', 'exclude' => '', 'link' => ''), $attr, 'gallery'));
+
+    $id = intval($id);
+    if ('RAND' == $order)
+        $orderby = 'none';
+
+    if (!empty($include)) {
+        $_attachments = get_posts(array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby));
+
+        $attachments = array();
+        foreach ($_attachments as $key => $val) {
+            $attachments[$val->ID] = $_attachments[$key];
+        }
+    } elseif (!empty($exclude)) {
+        $attachments = get_children(array('post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby));
+    } else {
+        $attachments = get_children(array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby));
+    }
+
+    if (empty($attachments))
+        return '';
+
+    if (is_feed()) {
+        $output = "\n";
+        foreach ($attachments as $att_id => $attachment)
+            $output .= wp_get_attachment_link($att_id, $size, true) . "\n";
+        return $output;
+    }
+
+    $columns = intval($columns);
+    $itemwidth = $columns > 0 ? floor(100 / $columns) : 100;
+    $float = is_rtl() ? 'right' : 'left';
+
+    $selector = "gallery-{$instance}";
+
+    $gallery_style = $gallery_div = '';
+    $size_class = sanitize_html_class($size);
+    $gallery_div = "<div id='$selector' class='gallery gallery-sa galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
+    $output = apply_filters('gallery_style', $gallery_style . "\n\t\t" . $gallery_div);
+
+    $i = 0;
+    foreach ($attachments as $id => $attachment) {
+        $a= $i % $columns;
+        if ($i % $columns == 0) {
+            $output .= '<ul class="gallery-row gallery-row-equal">';
+        }
+        if (!empty($link) && 'file' === $link) {
+            $image_output = wp_get_attachment_link($id, $size, false, false);
+        } elseif (!empty($link) && 'none' === $link) {
+            $image_output = wp_get_attachment_image($id, $size, false);
+        } else {
+            $image_output = wp_get_attachment_link($id, $size, true, false);
+        }
+
+        $image_meta = wp_get_attachment_metadata($id);
+
+        $orientation = '';
+        if (isset($image_meta['height'], $image_meta['width']))
+            $orientation = ($image_meta['height'] > $image_meta['width']) ? 'portrait' : 'landscape';
+
+        $output .= "<li class='gallery-item'><div class='gallery-item-content'>";
+        $output .= "
+            <span class='gallery-icon {$orientation}'>
+            $image_output
+            </span>";
+        $caption = trim($attachment->post_excerpt);
+        if (!empty($caption)) {
+
+            // Get image credit custom attachment fields
+            $attachment_fields = get_post_custom($attachment->ID);
+            $photographer_name = '';
+            if (isset($attachment_fields['_rps_photographer_name'][0]) && !empty($attachment_fields['_rps_photographer_name'][0])) {
+                $photographer_name = esc_attr($attachment_fields['_rps_photographer_name'][0]);
+            }
+            // If image credit fields have data then attach the image credit
+            if ($photographer_name) {
+                $caption .= '<br /><span class="wp-caption-credit">Credit: ' . $photographer_name . '</span>';
+            }
+            $output .= "<p class='wp-caption-text gallery-caption'>" . wptexturize($caption) . "</p>";
+        }
+        $output .= "</div></li>\n";
+        if ($columns > 0 && ++$i % $columns == 0)
+            $output .= '</ul>';
+    }
+
+    $output .= "</div>\n";
+
+    return $output;
 }
