@@ -77,4 +77,15 @@ wp_head();
             <div id="container" class="fix">
                 <?php
                 suffusion_after_begin_container();
-                ?>
+
+                echo '<section class="rps-announcement">';
+    echo '<div class="suf-tiles suf-tiles-1">';
+
+    echo '<div class="suf-tile suf-tile-1c suf-tile-ctr-0">';
+    echo '<div class="suf-gradient suf-tile-topmost"><h3>Announcement</h3></div>';
+    echo '<div class="suf-tile-text entry-content">';
+    echo '<p style="font-weight:700; font-size: 2rem; text-align:center">The meeting for Thursday February 13, 2014 has been cancelled.</p>';
+    echo '<p style="text-align:center">We cancelled the meeting due to the inclement weather forecast and we will try to reschedule the lecture.</p>';
+    echo '</div>';
+    echo '</div>';
+    echo '</section>';

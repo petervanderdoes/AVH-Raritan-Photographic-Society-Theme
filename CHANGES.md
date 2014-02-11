@@ -2,6 +2,10 @@
 
 == Changelog
 
+= Version 1.5.11 =
+* Announcement block.
+* Small styling changes.
+
 = Version 1.5.10 =
 * Showcase styling error.
 

@@ -1,4 +1,5 @@
 .suf-mag-excerpts {
+  @include margin-trailer();
   width: 100%;
   padding: 0;
   display: inline-block;
@@ -15,12 +16,10 @@
       text-decoration: none;
     }
   }
-  &:after {
-    marging: 5px;
-  }
 }
 
 .rps-welcome {
+  @include margin-trailer();
   width: 100%;
   padding: 0;
   display: inline-block;
@@ -36,9 +35,6 @@
       color: white;
       text-decoration: none;
     }
-  }
-  &:after {
-    marging: 5px;
   }
 }
 
@@ -70,9 +66,6 @@
       color: white;
       text-decoration: none;
     }
-  }
-  &:after {
-    marging: 5px;
   }
   .suf-tile-text {
     h2 {
@@ -148,8 +141,8 @@ h2 {
 */
 
 .rps-showcases {
+  @include margin-trailer();
   display: inline-block;
-  margin: 10px 0;
   padding: 0;
   width: 100%;
   .col-control {
@@ -194,9 +187,9 @@ h2 {
 * Misc boxes
 */
 .rps-misc {
+  @include margin-trailer();
   width: 100%;
   padding: 0;
-  margin: 10px 0;
   display: inline-block;
   h3 {
     font-family: $headings;
@@ -210,9 +203,6 @@ h2 {
       color: white;
       text-decoration: none;
     }
-  }
-  &:after {
-    marging: 5px;
   }
   .suf-tile-text {
     text-align: left;
