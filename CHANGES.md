@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 1.5.11-rc.1 =
+= Version 1.5.11 =
 * Announcement block.
 * Small styling changes.
 
