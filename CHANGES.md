@@ -3,7 +3,8 @@
 == Changelog
 
 = Version 1.5.11-rc.1 =
-* Preparation for new development cycle.
+* Announcement block.
+* Small styling changes.
 
 = Version 1.5.10 =
 * Showcase styling error.
