@@ -11,3 +11,23 @@
   display: none;
   visibility: hidden;
 }
+
+.rps-announcement {
+	@include margin-trailer();
+  width: 100%;
+  padding: 0;
+  display: inline-block;
+  h3 {
+    font-family: $headings;
+    @include adjust-font-size-to($base-font-size-oswald * 1.75 * 1.1, 1.75 * 1.1);
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
