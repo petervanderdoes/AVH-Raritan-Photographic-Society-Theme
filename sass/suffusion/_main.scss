@@ -73,21 +73,6 @@ hr {
   margin-bottom: 1.5em;
 }
 
-blockquote {
-  background: url(images/blockquote-l.png) no-repeat left top;
-  padding: 10px 15px;
-  margin: 0 3em 1em;
-  font-size: 1em;
-  text-indent: 2em;
-  > div {
-    background: url(images/blockquote-r.png) no-repeat right bottom;
-    padding-bottom: 0.1em;
-  }
-  cite {
-    float: right;
-  }
-}
-
 abbr, acronym {
   cursor: help;
   border-bottom: 1px dotted #888;
