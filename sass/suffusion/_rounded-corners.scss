@@ -46,7 +46,7 @@ h3 {
   }
 }
 
-#reply-title, textarea, .author-info, blockquote, pre {
+#reply-title, textarea, .author-info, pre {
   @include border-radius(5px);
 }
 
