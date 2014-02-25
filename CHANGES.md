@@ -2,6 +2,9 @@
 
 == Changelog
 
+= Version 1.6.0-dev.1 =
+* Preparation for new development cycle.
+
 = Version 1.5.14 =
 * Preparation for new development cycle.
 
