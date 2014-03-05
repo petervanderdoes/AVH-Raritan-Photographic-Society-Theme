@@ -510,7 +510,7 @@ function filterRPS_attachment_field_credit($form_fields, $post)
     // @formatter:off
     $form_fields['rps-photographer-name'] = array('label' => 'Photographer Name',
                                                    'input' => 'text',
-                                                   'value' => esc_attr(get_post_meta($post->ID, ')rps_photographer_name', true)),
+                                                   'value' => esc_attr(get_post_meta($post->ID, 'rps_photographer_name', true)),
                                                    'helps' => 'If provided, photo credit will be displayed');
     // @formatter:on
     return $form_fields;
