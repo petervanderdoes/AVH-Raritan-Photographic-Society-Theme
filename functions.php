@@ -492,9 +492,8 @@ function rps_display_suffu_tile_misc($title, $content, $column_number, $total_co
 add_filter('attachment_fields_to_edit', 'filterRPS_attachment_field_credit', 10, 2);
 add_filter('attachment_fields_to_save', 'filterRPS_attachment_field_credit_save', 10, 2);
 add_filter('use_default_gallery_style', '__return_false');
-add_shortcode('wp_caption', 'shortcodeRPS_base_image_credit_to_captions');
-add_shortcode('caption', 'shortcodeRPS_base_image_credit_to_captions');
-add_filter('post_gallery','filterRPS_gallery_output',10,2);
+add_filter('img_caption_shortcode', 'filterRPS_base_image_credit_to_captions', 10, 3);
+add_filter('post_gallery', 'filterRPS_gallery_output', 10, 2);
 
 /**
  * Add Photographer Name and URL fields to media uploader
@@ -541,60 +540,12 @@ function filterRPS_attachment_field_credit_save($post, $attachment)
  *
  * Uses get_post_custom() http://codex.wordpress.org/Function_Reference/get_post_custom
  */
-function shortcodeRPS_base_image_credit_to_captions($attr, $content = null)
+function filterRPS_base_image_credit_to_captions($foo, $attr, $content = null)
 {
-    // New-style shortcode with the caption inside the shortcode with the link and image tags.
-    if (!isset($attr['caption'])) {
-        if (preg_match('#((?:<a [^>]+>\s*)?<img [^>]+>(?:\s*</a>)?)(.*)#is', $content, $matches)) {
-            $content = $matches[1];
-            $attr['caption'] = trim($matches[2]);
-        }
-    }
-
-    // Allow plugins/themes to override the default caption template.
-    //$output = apply_filters('img_caption_shortcode', '', $attr, $content);
-    //if ($output != '')
-    //    return $output;
-
     $atts = shortcode_atts(array('id' => '', 'align' => 'alignnone', 'width' => '', 'caption' => ''), $attr, 'caption');
 
-    $atts['width'] = (int) $atts['width'];
-    if ($atts['width'] < 1 || empty($atts['caption']))
-        return $content;
-
-    if (!empty($atts['id']))
+    if (!empty($atts['id'])) {
         $attachment_id = intval(str_replace('attachment_', '', $atts['id']));
-    $atts['id'] = 'id="' . esc_attr($atts['id']) . '" ';
-
-    $caption_width = 10 + $atts['width'];
-
-    /**
-     * Filter the width of an image's caption.
-     *
-     * By default, the caption is 10 pixels greater than the width of the image,
-     * to prevent post content from running up against a floated image.
-     *
-     * @since 3.7.0
-     *
-     * @param int $caption_width
-     *            Width in pixels. To remove this inline style, return zero.
-     * @param array $atts
-     *            {
-     *            The attributes of the caption shortcode.
-     *
-     *            @type string 'id' The ID of the div element for the caption.
-     *            @type string 'align' The class name that aligns the caption. Default 'alignnone'.
-     *            @type int 'width' The width of the image being captioned.
-     *            @type string 'caption' The image's caption.
-     *            }
-     * @param string $content
-     *            The image element, possibly wrapped in a hyperlink.
-     */
-    $caption_width = apply_filters('img_caption_shortcode_width', $caption_width, $atts, $content);
-
-    $style = '';
-    if ($caption_width) {
-        $style = 'style="width: ' . (int) $caption_width . 'px" ';
     }
 
     // Get image credit custom attachment fields
@@ -603,9 +554,26 @@ function shortcodeRPS_base_image_credit_to_captions($attr, $content = null)
     if (isset($attachment_fields['_rps_photographer_name'][0]) && !empty($attachment_fields['_rps_photographer_name'][0])) {
         $photographer_name = esc_attr($attachment_fields['_rps_photographer_name'][0]);
     }
+
+    $atts['width'] = (int) $atts['width'];
+    if ($atts['width'] < 1 || (empty($atts['caption']) && empty($photographer_name)))
+        return $content;
+
+    $atts['id'] = 'id="' . esc_attr($atts['id']) . '" ';
+
+    $caption_width = 10 + $atts['width'];
+
+    $style = '';
+    if ($caption_width) {
+        $style = 'style="width: ' . (int) $caption_width . 'px" ';
+    }
+
     // If image credit fields have data then attach the image credit
-    if ($photographer_name) {
-        $atts['caption'] .= '<br /><span class="wp-caption-credit">Credit: ' . $photographer_name . '</span>';
+    if (!empty($photographer_name)) {
+        if (!empty($atts['caption'])) {
+            $atts['caption'] .= '<br />';
+        }
+        $atts['caption'] .= '<span class="wp-caption-credit">Credit: ' . $photographer_name . '</span>';
     }
 
     return '<div ' . $atts['id'] . $style . 'class="wp-caption ' . esc_attr($atts['align']) . '">' . do_shortcode($content) . '<p class="wp-caption-text">' . $atts['caption'] . '</p></div>';
@@ -613,10 +581,10 @@ function shortcodeRPS_base_image_credit_to_captions($attr, $content = null)
 
 function filterRPS_gallery_output($foo, $attr)
 {
-	$post = get_post();
+    $post = get_post();
 
-	static $instance = 0;
-	$instance++;
+    static $instance = 0;
+    $instance++;
 
     $output = '';
 
@@ -669,7 +637,7 @@ function filterRPS_gallery_output($foo, $attr)
 
     $i = 0;
     foreach ($attachments as $id => $attachment) {
-        $a= $i % $columns;
+        $a = $i % $columns;
         if ($i % $columns == 0) {
             $output .= '<ul class="gallery-row gallery-row-equal">';
         }
