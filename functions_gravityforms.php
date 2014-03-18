@@ -21,7 +21,7 @@ add_filter('gform_field_value_email', 'filterRPS_GF_populate_email');
 // activate password field (By default Gravity Forms does not allow a password field to be used. This filter enables this option.
 add_filter("gform_enable_password_field", create_function("", "return true;"));
 
-add_action("gform_enqueue_scripts", 'actionRPS_GF_enqueue_scripts', 99, 2);
+//add_action("gform_enqueue_scripts", 'actionRPS_GF_enqueue_scripts', 99, 2);
 
 /**
  * The combination of Gravity Forms Picatcha 1.2 and jQuery 1.10.x results
