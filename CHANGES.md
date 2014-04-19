@@ -2,6 +2,9 @@
 
 == Changelog
 
+= Version 1.5.17 =
+* Preparation for new development cycle.
+
 = Version 1.5.16 =
 * Preparation for new development cycle.
 
