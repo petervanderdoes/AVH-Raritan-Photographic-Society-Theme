@@ -3,25 +3,7 @@
 == Changelog
 
 = Version 1.5.18-rc.1 =
-* Preparation for new development cycle.
-
-= Version 1.5.17 =
-* Preparation for new development cycle.
-
-= Version 1.5.16 =
-* Preparation for new development cycle.
-
-= Version 1.5.15 =
-* Preparation for new development cycle.
-
-= Version 1.5.14 =
-* Preparation for new development cycle.
-
-= Version 1.5.13 =
-* Preparation for new development cycle.
-
-= Version 1.5.12 =
-* Preparation for new development cycle.
+* Add Title and Credit to showcase on Frontpage
 
 = Version 1.5.11 =
 * Announcement block.
