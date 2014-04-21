@@ -2,6 +2,9 @@
 
 == Changelog
 
+= Version 1.5.19 =
+* Preparation for new development cycle.
+
 = Version 1.5.18 =
 * Add Title and Credit to showcase on Frontpage
 
