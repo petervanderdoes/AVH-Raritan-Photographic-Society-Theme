@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 1.5.18-rc.1 =
+= Version 1.5.18 =
 * Add Title and Credit to showcase on Frontpage
 
 = Version 1.5.11 =
