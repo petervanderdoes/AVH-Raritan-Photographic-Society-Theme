@@ -25,7 +25,7 @@ strong {
 //}
 
 blockquote {
-  @include apply-side-rhythm-border($side:left, $width:3px);
+  @include apply-side-rhythm-border($side: left, $width: 3px);
   font-style: italic;
 }
 
@@ -33,5 +33,5 @@ pre {
   font-family: "Courier New", Courier, Monaco, "Lucida Console", monospace;
   overflow: auto;
   background-color: #333333;
-  @include rhythm-borders($width:1px, $border-style: solid);
-    }
+  @include rhythm-borders($width: 1px, $border-style: solid);
+}

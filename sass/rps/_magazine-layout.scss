@@ -1,5 +1,5 @@
 .suf-mag-excerpts {
-  @include margin-trailer();
+  @include margin-trailer;
   width: 100%;
   padding: 0;
   display: inline-block;
@@ -19,7 +19,7 @@
 }
 
 .rps-welcome {
-  @include margin-trailer();
+  @include margin-trailer;
   width: 100%;
   padding: 0;
   display: inline-block;
@@ -141,7 +141,7 @@ h2 {
 */
 
 .rps-showcases {
-  @include margin-trailer();
+  @include margin-trailer;
   display: inline-block;
   padding: 0;
   width: 100%;
@@ -187,7 +187,7 @@ h2 {
 * Misc boxes
 */
 .rps-misc {
-  @include margin-trailer();
+  @include margin-trailer;
   width: 100%;
   padding: 0;
   display: inline-block;

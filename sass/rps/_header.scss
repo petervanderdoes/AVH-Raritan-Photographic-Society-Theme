@@ -13,7 +13,7 @@
 }
 
 .rps-announcement {
-	@include margin-trailer();
+  @include margin-trailer;
   width: 100%;
   padding: 0;
   display: inline-block;
