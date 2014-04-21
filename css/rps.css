@@ -1,4 +1,4 @@
-/* line 5, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,50 +20,50 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
-/* line 106, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 106, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 81.25%;
   line-height: 1.5em;
@@ -4791,7 +4791,6 @@ img.suf-widget-thumb, .suf-mosaic-img {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4169E1', endColorstr='#FF002366');
   background: -moz-linear-gradient(top, #4169e1 0%, #002366 100%);
-  background: -o-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: -webkit-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
   font-size: 12px;
@@ -4806,7 +4805,6 @@ img.suf-widget-thumb, .suf-mosaic-img {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF6D8CE8', endColorstr='#FF003599');
   background: -moz-linear-gradient(top, #6d8ce8 0%, #003599 100%);
-  background: -o-linear-gradient(top, #6d8ce8 0%, #003599 100%);
   background: -webkit-linear-gradient(top, #6d8ce8 0%, #003599 100%);
   background: linear-gradient(to bottom, #6d8ce8 0%, #003599 100%);
 }
@@ -4954,7 +4952,6 @@ pre {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4169E1', endColorstr='#FF002366');
   background: -moz-linear-gradient(top, #4169e1 0%, #002366 100%);
-  background: -o-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: -webkit-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
@@ -5069,7 +5066,6 @@ pre {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4169E1', endColorstr='#FF002366');
   background: -moz-linear-gradient(top, #4169e1 0%, #002366 100%);
-  background: -o-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: -webkit-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
@@ -5080,7 +5076,6 @@ pre {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4169E1', endColorstr='#FF002366');
   background: -moz-linear-gradient(top, #4169e1 0%, #002366 100%);
-  background: -o-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: -webkit-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
@@ -5656,7 +5651,6 @@ img.home-icon {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF696969', endColorstr='#FFA9A9A9');
   background: -moz-linear-gradient(top, #696969 0%, #a9a9a9 50%, #a9a9a9 100%);
-  background: -o-linear-gradient(top, #696969 0%, #a9a9a9 50%, #a9a9a9 100%);
   background: -webkit-linear-gradient(top, #696969 0%, #a9a9a9 50%, #a9a9a9 100%);
   background: linear-gradient(to bottom, #696969 0%, #a9a9a9 50%, #a9a9a9 100%);
   color: black;
@@ -5669,7 +5663,6 @@ img.home-icon {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFA9A9A9', endColorstr='#FFE9E9E9');
   background: -moz-linear-gradient(top, #a9a9a9 0%, #e9e9e9 50%, #e9e9e9 100%);
-  background: -o-linear-gradient(top, #a9a9a9 0%, #e9e9e9 50%, #e9e9e9 100%);
   background: -webkit-linear-gradient(top, #a9a9a9 0%, #e9e9e9 50%, #e9e9e9 100%);
   background: linear-gradient(to bottom, #a9a9a9 0%, #e9e9e9 50%, #e9e9e9 100%);
   color: black;
@@ -5683,7 +5676,6 @@ img.home-icon {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4169E1', endColorstr='#FF002366');
   background: -moz-linear-gradient(top, #4169e1 0%, #002366 100%);
-  background: -o-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: -webkit-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
   font-size: 12px;
@@ -5698,7 +5690,6 @@ img.home-icon {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF6D8CE8', endColorstr='#FF003599');
   background: -moz-linear-gradient(top, #6d8ce8 0%, #003599 100%);
-  background: -o-linear-gradient(top, #6d8ce8 0%, #003599 100%);
   background: -webkit-linear-gradient(top, #6d8ce8 0%, #003599 100%);
   background: linear-gradient(to bottom, #6d8ce8 0%, #003599 100%);
 }
@@ -5708,7 +5699,6 @@ img.home-icon {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF696969', endColorstr='#FFA9A9A9');
   background: -moz-linear-gradient(top, #696969 0%, #a9a9a9 50%, #a9a9a9 100%);
-  background: -o-linear-gradient(top, #696969 0%, #a9a9a9 50%, #a9a9a9 100%);
   background: -webkit-linear-gradient(top, #696969 0%, #a9a9a9 50%, #a9a9a9 100%);
   background: linear-gradient(to bottom, #696969 0%, #a9a9a9 50%, #a9a9a9 100%);
   color: black;
@@ -5727,7 +5717,6 @@ img.home-icon {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFA9A9A9', endColorstr='#FFE9E9E9');
   background: -moz-linear-gradient(top, #a9a9a9 0%, #e9e9e9 50%, #e9e9e9 100%);
-  background: -o-linear-gradient(top, #a9a9a9 0%, #e9e9e9 50%, #e9e9e9 100%);
   background: -webkit-linear-gradient(top, #a9a9a9 0%, #e9e9e9 50%, #e9e9e9 100%);
   background: linear-gradient(to bottom, #a9a9a9 0%, #e9e9e9 50%, #e9e9e9 100%);
   color: black;
@@ -5743,7 +5732,6 @@ input[type="submit"] {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4169E1', endColorstr='#FF002366');
   background: -moz-linear-gradient(top, #4169e1 0%, #002366 100%);
-  background: -o-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: -webkit-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
   font-size: 12px;
@@ -5758,7 +5746,6 @@ input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:fo
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF6D8CE8', endColorstr='#FF003599');
   background: -moz-linear-gradient(top, #6d8ce8 0%, #003599 100%);
-  background: -o-linear-gradient(top, #6d8ce8 0%, #003599 100%);
   background: -webkit-linear-gradient(top, #6d8ce8 0%, #003599 100%);
   background: linear-gradient(to bottom, #6d8ce8 0%, #003599 100%);
 }
@@ -5878,7 +5865,6 @@ div.css-search div.em-search-main .em-search-submit {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4169E1', endColorstr='#FF002366');
   background: -moz-linear-gradient(top, #4169e1 0%, #002366 100%);
-  background: -o-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: -webkit-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
   color: #e9e9e9;
@@ -5890,7 +5876,6 @@ div.css-search div.em-search-main .em-search-submit:hover {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF6D8CE8', endColorstr='#FF003599');
   background: -moz-linear-gradient(top, #6d8ce8 0%, #003599 100%);
-  background: -o-linear-gradient(top, #6d8ce8 0%, #003599 100%);
   background: -webkit-linear-gradient(top, #6d8ce8 0%, #003599 100%);
   background: linear-gradient(to bottom, #6d8ce8 0%, #003599 100%);
 }
@@ -6365,7 +6350,6 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4169E1', endColorstr='#FF002366');
   background: -moz-linear-gradient(top, #4169e1 0%, #002366 100%);
-  background: -o-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: -webkit-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
   -moz-border-radius: 3px;
@@ -6709,28 +6693,25 @@ p.wp-caption-text {
   margin: 1rem;
 }
 /* line 74, ../sass/rps/_images.scss */
-.rps-showcases .gallery-item-content-image img {
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  position: absolute;
-  right: 0;
-  top: 0;
+.rps-showcases .gallery-item-content {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
 
-/* line 86, ../sass/rps/_images.scss */
+/* line 83, ../sass/rps/_images.scss */
 .rps-showcase-category-winner .gallery ul {
   padding: 1rem;
   margin: 0;
 }
-/* line 90, ../sass/rps/_images.scss */
+/* line 87, ../sass/rps/_images.scss */
 .rps-showcase-category-winner .gallery-item-content {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
 }
 
-/* line 99, ../sass/rps/_images.scss */
+/* line 96, ../sass/rps/_images.scss */
 .gallery-sa .gallery-row {
   margin-bottom: 2rem;
 }
@@ -6779,7 +6760,7 @@ p.wp-caption-text {
 .widget_em_widget ul {
   margin-left: 0;
 }
-/* line 29, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/typography/lists/_bullets.scss */
+/* line 29, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/typography/lists/_bullets.scss */
 .widget_em_widget ul li {
   padding-left: 14px;
   background: url('../images/icons/bulletrbl.png?1372104041') no-repeat -1px 1px;
@@ -6909,28 +6890,28 @@ p.wp-caption-text {
   background-repeat: no-repeat;
 }
 
-/* line 84, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 84, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/utilities/sprites/_base.scss */
 .social-icon-16-facebook {
   background-position: 0 0;
   height: 16px;
   width: 16px;
 }
 
-/* line 84, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 84, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/utilities/sprites/_base.scss */
 .social-icon-16-google-plus {
   background-position: 0 -24px;
   height: 16px;
   width: 16px;
 }
 
-/* line 84, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 84, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/utilities/sprites/_base.scss */
 .social-icon-16-meetup {
   background-position: 0 -48px;
   height: 16px;
   width: 16px;
 }
 
-/* line 84, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 84, ../../../../../../../../home/pdoes/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/utilities/sprites/_base.scss */
 .social-icon-16-twitter {
   background-position: 0 -72px;
   height: 16px;
@@ -7005,7 +6986,6 @@ h2.suf-tile-title a:active {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4169E1', endColorstr='#FF002366');
   background: -moz-linear-gradient(top, #4169e1 0%, rgba(0, 35, 102, 0.2) 100%);
-  background: -o-linear-gradient(top, #4169e1 0%, rgba(0, 35, 102, 0.2) 100%);
   background: -webkit-linear-gradient(top, #4169e1 0%, rgba(0, 35, 102, 0.2) 100%);
   background: linear-gradient(to bottom, #4169e1 0%, rgba(0, 35, 102, 0.2) 100%);
 }
@@ -7016,7 +6996,6 @@ h2.suf-tile-title a:active {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4169E1', endColorstr='#FF002366');
   background: -moz-linear-gradient(top, #4169e1 0%, #002366 100%);
-  background: -o-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: -webkit-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
@@ -7029,7 +7008,6 @@ a.excerpt-more-append {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4169E1', endColorstr='#FF002366');
   background: -moz-linear-gradient(top, #4169e1 0%, #002366 100%);
-  background: -o-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: -webkit-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
@@ -7040,7 +7018,6 @@ a.excerpt-more-append {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4169E1', endColorstr='#FF002366');
   background: -moz-linear-gradient(top, #4169e1 0%, #002366 100%);
-  background: -o-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: -webkit-linear-gradient(top, #4169e1 0%, #002366 100%);
   background: linear-gradient(to bottom, #4169e1 0%, #002366 100%);
 }
