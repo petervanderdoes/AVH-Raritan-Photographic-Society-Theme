@@ -87,6 +87,14 @@ function filterRPS_EM_set_member_level($userdata)
     return $userdata;
 }
 
+/**
+ *
+ * @param string $replace
+ * @param EM_Event $EM_Event
+ * @param string $full_result
+ * @param string $target
+ * @return string
+ */
 function filterRPS_EM_event_output_placeholder($replace, $EM_Event, $full_result, $target)
 {
     $html = new \Avh\Html\HtmlBuilder();
@@ -118,6 +126,12 @@ function filterRPS_EM_event_output_placeholder($replace, $EM_Event, $full_result
     return $replace;
 }
 
+/**
+ *
+ * @param string $permalink
+ * @param EM_Event $EM_Event
+ * @return Ambigous <string, mixed>
+ */
 function filterRPS_EM_get_permalink($permalink, $EM_Event)
 {
     $rewritecode_wordpress = array('%year%', '%monthnum%', '%day%', '%hour%', '%minute%', '%second%', '%postname%', '%post_id%', '%category%', '%author%', '%pagename%');
