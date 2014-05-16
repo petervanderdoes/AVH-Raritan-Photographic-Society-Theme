@@ -173,10 +173,15 @@ function actionRPS_enqueue_styles()
         return;
     }
 
-    global $suf_style_inheritance, $suffusion_theme_hierarchy, $suf_color_scheme, $suf_show_rounded_corners, $suf_autogen_css;
+    global $suf_style_inheritance, $suffusion_theme_hierarchy, $suf_color_scheme, $suf_show_rounded_corners, $suf_autogen_css, $post;
 
     $template_path = get_template_directory();
     $stylesheet_path = get_stylesheet_directory();
+
+    if (has_shortcode($post->post_content, 'gallery')) {
+        wp_register_script('masonryInit', get_stylesheet_directory_uri() . '/scripts/rps-masonry.js', array('masonry'), '2.1.6', true);
+        wp_enqueue_script('masonryInit');
+    }
 
     // Setup stylesheet
     wp_enqueue_script('jquery-url', get_stylesheet_directory_uri() . '/scripts/jquery.url.js', array(), '1.8.6', true);
@@ -207,24 +212,6 @@ function actionRPS_enqueue_styles()
 
     // IE-specific CSS, loaded if the browser is IE < 8
     wp_enqueue_style('suffusion-ie', get_template_directory_uri() . '/ie-fix.css', array('suffusion-theme'), SUFFUSION_THEME_VERSION);
-
-    global $suffusion, $suf_mosaic_zoom_library;
-    if ($suffusion->get_content_layout() == 'mosaic') {
-        if ($suf_mosaic_zoom_library == 'fancybox') {
-            if (@file_exists($stylesheet_path . '/scripts/fancybox/jquery.fancybox-1.3.4.css')) {
-                wp_enqueue_style("suffusion-slideshow", get_stylesheet_directory_uri() . '/scripts/fancybox/jquery.fancybox-1.3.4.css', array(), SUFFUSION_THEME_VERSION);
-            } else {
-                wp_enqueue_style("suffusion-slideshow", get_template_directory_uri() . '/scripts/fancybox/jquery.fancybox-1.3.4.css', array(), SUFFUSION_THEME_VERSION);
-            }
-        } else
-            if ($suf_mosaic_zoom_library == 'colorbox') {
-                if (@file_exists($stylesheet_path . '/scripts/colorbox/colorbox.css')) {
-                    wp_enqueue_style("suffusion-slideshow", get_stylesheet_directory_uri() . '/scripts/colorbox/colorbox.css', array(), SUFFUSION_THEME_VERSION);
-                } else {
-                    wp_enqueue_style("suffusion-slideshow", get_template_directory_uri() . '/scripts/colorbox/colorbox.css', array(), SUFFUSION_THEME_VERSION);
-                }
-            }
-    }
 
     // Attachment styles. Loaded conditionally, because it uses a rather heavy image, which we don't want to load always.
     if (is_attachment()) {
@@ -285,20 +272,20 @@ function actionRPS_next_meeting()
 
         $format = '#_EVENTDATES, #_CATEGORYNAME: #_EVENTLINK';
         // @formatter:off
-	$arg = array('title' => __('Events', 'dbem'),
-	    'scope' => 'future',
-	    'order' => 'ASC',
-	    'limit' => 1,
-	    'category' => $categories,
-	    'format_header' => '',
-	    'format' => $format,
-	    'format_footer' => ''
-	    ,'nolistwrap' => false,
-	    'orderby' => 'event_start_date,event_start_time,event_name',
-	    'all_events' => 0,
-	    'all_events_text' => __('all events', 'dbem'),
-	    'no_events_text' => __('No events', 'dbem'));
-	// @formatter:on
+    	$arg = array('title' => __('Events', 'dbem'),
+	        'scope' => 'future',
+	       'order' => 'ASC',
+	       'limit' => 1,
+	       'category' => $categories,
+	       'format_header' => '',
+	       'format' => $format,
+	       'format_footer' => ''
+	       ,'nolistwrap' => false,
+	       'orderby' => 'event_start_date,event_start_time,event_name',
+	       'all_events' => 0,
+	       'all_events_text' => __('all events', 'dbem'),
+	       'no_events_text' => __('No events', 'dbem'));
+	   // @formatter:on
         $event = EM_Events::output($arg);
         echo '<div id="next-meeting">';
         echo 'Next meeting: ' . $event;
@@ -595,7 +582,7 @@ function filterRPS_gallery_output($foo, $attr)
             unset($attr['orderby']);
     }
 
-    extract(shortcode_atts(array('order' => 'ASC', 'orderby' => 'menu_order ID', 'id' => $post ? $post->ID : 0, 'itemtag' => 'dl', 'icontag' => 'dt', 'captiontag' => 'dd', 'columns' => 3, 'size' => 'thumbnail', 'include' => '', 'exclude' => '', 'link' => ''), $attr, 'gallery'));
+    extract(shortcode_atts(array('order' => 'ASC', 'orderby' => 'menu_order ID', 'id' => $post ? $post->ID : 0, 'itemtag' => 'dl', 'icontag' => 'dt', 'captiontag' => 'dd', 'columns' => 3, 'size' => 'thumbnail', 'include' => '', 'exclude' => '', 'link' => '', 'layout' => 'row-equal'), $attr, 'gallery'));
 
     $id = intval($id);
     if ('RAND' == $order)
@@ -632,14 +619,22 @@ function filterRPS_gallery_output($foo, $attr)
 
     $gallery_style = $gallery_div = '';
     $size_class = sanitize_html_class($size);
-    $gallery_div = "<div id='$selector' class='gallery gallery-sa galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
+    if ($layout == 'masonry') {
+        $gallery_div = "<div id='$selector' class='gallery gallery-masonry gallery-sa galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
+    } else {
+        $gallery_div = "<div id='$selector' class='gallery gallery-sa galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
+    }
     $output = apply_filters('gallery_style', $gallery_style . "\n\t\t" . $gallery_div);
 
     $i = 0;
     foreach ($attachments as $id => $attachment) {
         $a = $i % $columns;
         if ($i % $columns == 0) {
-            $output .= '<ul class="gallery-row gallery-row-equal">';
+            if ($layout == 'row-equal') {
+                $output .= '<ul class="gallery-row gallery-row-equal">';
+            } else {
+                $output .= '<ul class="gallery-row">';
+            }
         }
         if (!empty($link) && 'file' === $link) {
             $image_output = wp_get_attachment_link($id, $size, false, false);

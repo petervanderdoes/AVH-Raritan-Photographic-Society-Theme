@@ -31,6 +31,12 @@
   width: 150px;
 }
 
+.gallery-masonry  {
+  margin: 0 auto;
+  li {
+    margin-bottom: 20px;
+  }
+}
 .gallery-size-250 {
   .gallery-item-content {
     height: 310px;
