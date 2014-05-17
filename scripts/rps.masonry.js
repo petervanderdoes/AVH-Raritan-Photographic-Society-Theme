@@ -6,9 +6,9 @@ for ( var i=0, len = galleries.length; i < len; i++ ) {
 function initMasonry( container ) {
   var imgLoad = imagesLoaded( container, function() {
     new Masonry( container, {
-      itemSelector: '.gallery-item',
-      columnWidth: '.gallery-item',
-      "gutter": 25,
+      itemSelector: '.gallery-item-masonry',
+      columnWidth: '.gallery-item-masonry',
+      gutter: 5,
       isFitWidth: true
     });
   });
