@@ -194,7 +194,7 @@ function actionRPS_enqueue_styles()
         $rps_js_version = "d52d635";
         wp_enqueue_script('rps', get_stylesheet_directory_uri() . '/scripts/rps-' . $rps_js_version . '.js', array(), 'to_remove');
         $rps_masonry_version = "";
-        wp_enqueue_script('rps-masonryInit', get_stylesheet_directory_uri() . '/scripts/rps.masonry-'.$rps_masonry_js.'.js', array('masonry'), 'to_remove', true);
+        wp_enqueue_script('rps-masonryInit', get_stylesheet_directory_uri() . '/scripts/rps.masonry-' . $rps_masonry_js . '.js', array('masonry'), 'to_remove', true);
     }
 
     if (!isset($suffusion_theme_hierarchy[$suf_color_scheme])) {
@@ -726,18 +726,12 @@ function filterRPS_gallery_output($foo, $attr)
 		$item_class = (strtolower($layout) == 'masonry') ? 'gallery-item-masonry' : 'gallery-item';
 		$output .= "<{$itemtag} class='{$item_class}'>";
 		$output .= "<div class='gallery-item-content'>";
-		$output .= "
-			<{$icontag} class='gallery-icon {$orientation}'>
-				$image_output
-			</{$icontag}>";
+		$output .= "<{$icontag} class='gallery-icon {$orientation}'>$image_output</{$icontag}>";
 		if ( $captiontag && trim($attachment->post_excerpt) ) {
-		    $attachment_fields = get_post_custom($attachment->ID);
-		    $photographer_name = '';
-		    if (isset($attachment_fields['_rps_photographer_name'][0]) && !empty($attachment_fields['_rps_photographer_name'][0])) {
-		      $photographer_name = esc_attr($attachment_fields['_rps_photographer_name'][0]);
-		    }
+		    $photographer_name = get_post_meta($attachment->ID,'_rps_photographer_name', true);
 		    // If image credit fields have data then attach the image credit
-		    if ($photographer_name) {
+		    $credit = '';
+		    if ($photographer_name != '') {
 		      $credit = '<br /><span class="wp-caption-credit">Credit: ' . $photographer_name . '</span>';
 		    }
 			$output .= "
