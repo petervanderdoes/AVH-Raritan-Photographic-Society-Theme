@@ -1,15 +1,12 @@
-var galleries = document.querySelectorAll('.gallery-masonry');
-for ( var i=0, len = galleries.length; i < len; i++ ) {
-  var gallery = galleries[i];
-  initMasonry( gallery );
-}
-function initMasonry( container ) {
-  var imgLoad = imagesLoaded( container, function() {
-    new Masonry( container, {
-      itemSelector: '.gallery-item-masonry',
-      columnWidth: '.gallery-item-masonry',
-      gutter: 5,
-      isFitWidth: true
+(function($, window, document) {
+    // The $ is now locally scoped
+    $(document).ready(function() {
+	$('.gallery-masonry').masonry({
+	    itemSelector : '.gallery-item-masonry',
+	    columnWidth : '.grid-sizer',
+	    isFitWidth : true
+	}).imagesLoaded(function() {
+	    $('.gallery-masonry').masonry('reload');
+	});
     });
-  });
-}
+}(window.jQuery, window, document));
