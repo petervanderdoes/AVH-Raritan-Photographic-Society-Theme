@@ -17,18 +17,17 @@ add_filter('em_register_new_user_pre', 'filterRPS_EM_set_member_level', 10, 1);
 
 /**
  * Handle custom conditional placeholders.
- *
  * As we have custom conditional placeholders we need to check if the condition is met to show the placeholder content.
- *
  * Current custom conditional placeholders:
  * - has_speaker
  *
  * @param boolean $show_condition
- * @param string $condition
+ * @param string  $condition
  *            The name of the conditional placeholder.
- * @param string $match
+ * @param string  $match
  *            The string with conditional placeholder from opening to closing placeholder.
- * @param object $EM_Event
+ * @param object  $EM_Event
+ *
  * @return boolean
  */
 function filterRPS_EM_output_show_condition($show_condition, $condition, $match, $EM_Event)
@@ -55,22 +54,24 @@ function filterRPS_EM_output_show_condition($show_condition, $condition, $match,
  * For the ical function we only want to display RPS events
  *
  * @param array $args
+ *
  * @return array
  */
 function filterRPS_em_ical_args($args)
 {
     $args['category'] = 17;
     $args = filterRPS_EM_get_child_categories($args);
+
     return $args;
 }
 
 /**
  * Collect all children of the given categories in a widget form.
- *
  * By default the widget only shows the given categories, we prefer to show the children of the given categories as well.
  * This is more compliant with the default WordPress behavior.
  *
  * @param array $instance
+ *
  * @return array
  */
 function filterRPS_EM_get_child_categories($instance)
@@ -78,21 +79,23 @@ function filterRPS_EM_get_child_categories($instance)
     if (isset($instance['category']) && $instance['category'] != '0') {
         $instance['category'] = rps_EM_get_children_of_categories($instance['category']);
     }
+
     return $instance;
 }
 
 function filterRPS_EM_set_member_level($userdata)
 {
     $userdata['role'] = 's2member_level1';
+
     return $userdata;
 }
 
 /**
- *
- * @param string $replace
+ * @param string   $replace
  * @param EM_Event $EM_Event
- * @param string $full_result
- * @param string $target
+ * @param string   $full_result
+ * @param string   $target
+ *
  * @return string
  */
 function filterRPS_EM_event_output_placeholder($replace, $EM_Event, $full_result, $target)
@@ -123,13 +126,14 @@ function filterRPS_EM_event_output_placeholder($replace, $EM_Event, $full_result
                 break;
             }
     }
+
     return $replace;
 }
 
 /**
- *
- * @param string $permalink
+ * @param string   $permalink
  * @param EM_Event $EM_Event
+ *
  * @return Ambigous <string, mixed>
  */
 function filterRPS_EM_get_permalink($permalink, $EM_Event)
@@ -200,6 +204,7 @@ function filterRPS_EM_location_output_placeholder($replace, $em, $full_result, $
  * Get all children of the given categories
  *
  * @param array|string $categories
+ *
  * @return array
  */
 function rps_EM_get_children_of_categories($categories)
@@ -214,48 +219,53 @@ function rps_EM_get_children_of_categories($categories)
         $all_categories = array_merge($children, $all_categories);
     }
     $all_categories = array_unique($all_categories);
+
     return $all_categories;
 }
 
 /**
  * Retrieve category parents with separator.
  *
- *
- * @param int $id
+ * @param int    $id
  *            Category ID.
- * @param bool $link
+ * @param bool   $link
  *            Optional, default is false. Whether to format with link.
  * @param string $separator
  *            Optional, default is '/'. How to separate categories.
- * @param bool $nicename
+ * @param bool   $nicename
  *            Optional, default is false. Whether to use nice name for display.
- * @param array $visited
+ * @param array  $visited
  *            Optional. Already linked to categories to prevent duplicates.
  * @param string $taxanomy
  *            The taxanomy we need to use.
+ *
  * @return string WP_Error list of category parents on success, WP_Error on failure.
  */
 function rps_EM_get_parents($id, $link = false, $separator = '/', $nicename = false, $visited = array(), $taxanomy)
 {
     $chain = '';
     $parent = get_term($id, $taxanomy);
-    if (is_wp_error($parent))
+    if (is_wp_error($parent)) {
         return $parent;
+    }
 
-    if ($nicename)
+    if ($nicename) {
         $name = $parent->slug;
-    else
+    } else {
         $name = $parent->name;
+    }
 
     if ($parent->parent && ($parent->parent != $parent->term_id) && !in_array($parent->parent, $visited)) {
         $visited[] = $parent->parent;
         $chain .= get_category_parents($parent->parent, $link, $separator, $nicename, $visited);
     }
 
-    if ($link)
+    if ($link) {
         $chain .= '<a href="' . esc_url(get_category_link($parent->term_id)) . '" title="' . esc_attr(sprintf(__("View all posts in %s"), $parent->name)) . '">' . $name . '</a>' . $separator;
-    else
+    } else {
         $chain .= $name . $separator;
+    }
+
     return $chain;
 }
 
@@ -300,5 +310,6 @@ function rps_EM_is_rps_category($categories)
             break;
         }
     }
+
     return $in_rps_categories;
 }

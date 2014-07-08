@@ -6606,7 +6606,6 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   display: inline-block;
   text-align: center;
   vertical-align: top;
-  width: 100%;
 }
 
 /* line 12, ../sass/rps/_images.scss */
@@ -6626,7 +6625,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
 
 /* line 24, ../sass/rps/_images.scss */
 .gallery-columns-5 .gallery-item {
-  max-width: 19%;
+  max-width: 20%;
 }
 
 /* line 28, ../sass/rps/_images.scss */

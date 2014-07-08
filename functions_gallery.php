@@ -9,16 +9,18 @@ function filterRPS_gallery_output($foo, $attr)
 
     if (!empty($attr['ids'])) {
         // 'ids' is explicitly ordered, unless you specify otherwise.
-        if (empty($attr['orderby']))
+        if (empty($attr['orderby'])) {
             $attr['orderby'] = 'post__in';
+        }
         $attr['include'] = $attr['ids'];
     }
 
     // We're trusting author input, so let's at least make sure it looks like a valid orderby statement
     if (isset($attr['orderby'])) {
         $attr['orderby'] = sanitize_sql_orderby($attr['orderby']);
-        if (!$attr['orderby'])
+        if (!$attr['orderby']) {
             unset($attr['orderby']);
+        }
     }
 
     // @formatter:off
@@ -40,7 +42,8 @@ function filterRPS_gallery_output($foo, $attr)
 
         $id = intval($id);
         if ( 'RAND' == $order )
-            $orderby = 'none';
+            {$orderby = 'none';
+}
 
         if ( !empty($include) ) {
             $_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
@@ -56,12 +59,14 @@ function filterRPS_gallery_output($foo, $attr)
         }
 
         if ( empty($attachments) )
-            return '';
+            {return '';
+}
 
         if ( is_feed() ) {
             $output = "\n";
             foreach ( $attachments as $att_id => $attachment )
-                $output .= wp_get_attachment_link($att_id, $size, true) . "\n";
+                {$output .= wp_get_attachment_link($att_id, $size, true) . "\n";
+}
             return $output;
         }
 
@@ -70,11 +75,14 @@ function filterRPS_gallery_output($foo, $attr)
         $icontag = tag_escape($icontag);
         $valid_tags = wp_kses_allowed_html( 'post' );
         if ( ! isset( $valid_tags[ $itemtag ] ) )
-            $itemtag = 'dl';
+            {$itemtag = 'dl';
+}
         if ( ! isset( $valid_tags[ $captiontag ] ) )
-            $captiontag = 'dd';
+            {$captiontag = 'dd';
+}
         if ( ! isset( $valid_tags[ $icontag ] ) )
-            $icontag = 'dt';
+            {$icontag = 'dt';
+}
 
         $columns = intval($columns);
         $itemwidth = $columns > 0 ? floor(100/$columns) : 100;
@@ -93,15 +101,17 @@ function filterRPS_gallery_output($foo, $attr)
 
         /**
          * Filter the default gallery shortcode CSS styles.
+
          *
-         * @since 2.5.0
+*@since 2.5.0
+
          *
-         * @param string $gallery_style Default gallery shortcode CSS styles.
+*@param string $gallery_style Default gallery shortcode CSS styles.
          * @param string $gallery_div   Opening HTML div container for the gallery shortcode output.
          */
         $output = apply_filters( 'gallery_style', $gallery_style . $gallery_div );
         if (strtolower($layout) == 'masonry')  {
-            $output .= '<div class="grid-sizer"></div>';
+            $output .= '<div class="grid-sizer" style="width: 189px"></div>';
         }
         $i = 0;
         foreach ( $attachments as $id => $attachment ) {
@@ -115,19 +125,23 @@ function filterRPS_gallery_output($foo, $attr)
                 }
             }
             if ( ! empty( $link ) && 'file' === $link )
-                $image_output = wp_get_attachment_link( $id, $size, false, false );
+                {$image_output = wp_get_attachment_link( $id, $size, false, false );
+}
             elseif ( ! empty( $link ) && 'none' === $link )
-            $image_output = wp_get_attachment_image( $id, $size, false );
+            {$image_output = wp_get_attachment_image( $id, $size, false );
+}
             else
-                $image_output = wp_get_attachment_link( $id, $size, true, false );
+                {$image_output = wp_get_attachment_link( $id, $size, true, false );
+}
 
             $image_meta  = wp_get_attachment_metadata( $id );
 
             $orientation = '';
             if ( isset( $image_meta['height'], $image_meta['width'] ) )
-                $orientation = ( $image_meta['height'] > $image_meta['width'] ) ? 'portrait' : 'landscape';
+                {$orientation = ( $image_meta['height'] > $image_meta['width'] ) ? 'portrait' : 'landscape';
+}
 
-            $item_class = ($layout == 'masonry') ? 'gallery-item-masonry' : 'gallery-item';
+            $item_class = ($layout == 'masonry') ? 'gallery-item-masonry masonry-150' : 'gallery-item';
             $output .= "<{$itemtag} class='{$item_class}'>";
             $output .= "<div class='gallery-item-content'>";
             $output .= "<{$icontag} class='gallery-icon {$orientation}'>$image_output</{$icontag}>";
@@ -152,11 +166,13 @@ function filterRPS_gallery_output($foo, $attr)
             $output .= "</{$itemtag}>";
 
             if ($layout !== 'masonry' && $columns > 0 && ++$i % $columns == 0)
-                $output .= '</div>';
+                {$output .= '</div>';
+}
         }
 
         if ($columns > 0 && $i % $columns !== 0)
-            $output .= '</div>';
+            {$output .= '</div>';
+}
         $output .= "
 		</div>\n";
 

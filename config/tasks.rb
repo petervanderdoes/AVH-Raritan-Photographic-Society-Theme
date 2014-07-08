@@ -17,7 +17,7 @@ namespace :apc do
 		Create a temporary PHP file to clear APC cache, call it (using curl) and removes it
 		This task must be triggered AFTER the deployment to clear APC cache
 	DESC
-	task :clear_cache, :roles => :app do
+	task :clearCache, :roles => :app do
 		apc_file = "#{current_release}#{apc_webroot}/apc_clear.php"
 		curl_options = "-s"
 		put "<?php apc_clear_cache(); apc_clear_cache('user'); apc_clear_cache('opcode'); ?>", apc_file, :mode => 0644
@@ -30,7 +30,7 @@ namespace :opc do
 		Create a temporary PHP file to clear Zend Opcache cache, call it (using curl) and removes it
 		This task must be triggered AFTER the deployment to clear OPC cache
 	DESC
-	task :clear_cache, :roles => :app do
+	task :clearCache, :roles => :app do
 		opc_file = "#{current_release}#{opc_webroot}/opc_clear.php"
 		curl_options = "-s"
 		put "<?php define('CACHEPREFIX',function_exists('opcache_reset')?'opcache_':(function_exists('accelerator_reset')?'accelerator_':'')); call_user_func(CACHEPREFIX.'reset'); ?>", opc_file, :mode => 0644

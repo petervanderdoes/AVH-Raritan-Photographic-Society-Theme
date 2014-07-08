@@ -9,7 +9,6 @@ add_shortcode('rps_archive', 'shortcodeRPS_archive');
  * Handles the shortcode rps_paid_member
  *
  * @uses $user_ID;
- *
  * @return string The content to be displayed
  */
 function shortcodeContentForPaidMembers($atts, $content)
@@ -19,6 +18,7 @@ function shortcodeContentForPaidMembers($atts, $content)
     if ((!is_user_logged_in()) || (!rps_is_paid_member($user_ID))) {
         $content = rps_display_restriction("Only members can see this content");
     }
+
     return $content;
 }
 
@@ -27,6 +27,7 @@ function shortcodeContentForPaidMembers($atts, $content)
  *
  * @param string $logged_in_message
  * @param string $not_logged_in_message
+ *
  * @return string
  */
 function rps_display_restriction($logged_in_message = "Only members can see this content", $not_logged_in_message = "You must be logged to see this content.")
@@ -43,6 +44,7 @@ function rps_display_restriction($logged_in_message = "Only members can see this
     }
     $content .= "</strong>";
     $content .= "</fieldset>";
+
     return $content;
 }
 
@@ -74,5 +76,6 @@ function shortcodeRPS_archive($atts)
     $script .= '</script>' . "\n";
 
     $output = $form . $script . '<br />';
+
     return $output;
 }

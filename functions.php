@@ -79,9 +79,12 @@ include 'shortcodes.php';
 
 /**
  * Check if a plugin is active
+
  *
- * @param string $plugin
- * @return boolean
+*@param string $plugin
+
+ *
+*@return boolean
  */
 function rps_is_plugin_active($plugin)
 {
@@ -137,10 +140,13 @@ function actionRPS_init()
 
 /**
  * This will add a menu item when a user is logged in.
+
  *
- * @param array $sorted_menu_items
+*@param array  $sorted_menu_items
  * @param object $args
- * @return array
+
+ *
+*@return array
  */
 function filterRPS_members_menu($sorted_menu_items, $args)
 {
@@ -157,6 +163,7 @@ function filterRPS_members_menu($sorted_menu_items, $args)
             $sorted_menu_items[] = $item;
         }
     }
+
     return $sorted_menu_items;
 }
 
@@ -180,10 +187,10 @@ function filterRPS_comment_form_allow_comment($allow_comment)
  * Adds all stylesheets used by Suffusion.
  * Even conditional stylesheets are loaded, by using the "style_loader_tag" filter hook.
  * The theme version is added as a URL parameter so that when you upgrade the latest version is picked up.
- *
  * Exact copy of the suffusion function called suffusion_enqueue_styles
+
  *
- * @return void
+*@return void
  */
 function actionRPS_enqueue_styles()
 {
@@ -217,12 +224,13 @@ function actionRPS_enqueue_styles()
     if (!isset($suffusion_theme_hierarchy[$suf_color_scheme])) {
         if (@file_exists(get_stylesheet_directory() . '/skins/' . $suf_color_scheme . '/skin.css')) {
             $sheets = array('style.css', 'skins/' . $suf_color_scheme . '/skin.css');
-        } else
+        } else {
             if (@file_exists(get_template_directory() . '/skins/' . $suf_color_scheme . '/skin.css')) {
                 $sheets = array('style.css', 'skins/' . $suf_color_scheme . '/skin.css');
             } else {
                 $sheets = array('style.css');
             }
+        }
     } else {
         $sheets = $suffusion_theme_hierarchy[$suf_color_scheme];
     }
@@ -279,6 +287,7 @@ function filterRPS_remove_cssjs_ver($src)
     if (isset($vars['ver']) && $vars['ver'] == 'to_remove') {
         $src = remove_query_arg('ver', $src);
     }
+
     return $src;
 }
 
@@ -312,10 +321,10 @@ function actionRPS_next_meeting()
 
 /**
  * Magazine template function to build queries for individual magazine sections.
- *
  * Updated so you can add 'to_skip' argument, to skip the given post ID's
  *
  * @param array $args
+ *
  * @return array
  */
 function rps_suffusion_get_mag_section_queries($args = array())
@@ -367,6 +376,7 @@ function rps_suffusion_get_mag_section_queries($args = array())
             $queries[] = $cat_query;
         }
     }
+
     return $queries;
 }
 
@@ -378,7 +388,6 @@ function rps_suffusion_get_mag_section_queries($args = array())
  * one or remove a single field. All fields are also individually passed through
  * a filter of the form comment_form_field_$name where $name is the key used
  * in the array of fields.
- *
  * This is an exact copy of the core function comment_form, except that it doesn't just check for for logged in users
  * but checks the if the user has the capability to comment.
  *
@@ -386,6 +395,7 @@ function rps_suffusion_get_mag_section_queries($args = array())
  *            Options for strings, fields etc in the form
  * @param mixed $post_id
  *            Post ID to generate the form for, uses the current post if null
+ *
  * @return void
  */
 function rps_comment_form($args = array(), $post_id = null)
@@ -503,9 +513,10 @@ add_filter('post_gallery', 'filterRPS_gallery_output', 10, 2);
  * Add Photographer Name and URL fields to media uploader
  *
  * @param $form_fields array,
- *            fields to include in attachment form
- * @param $post object,
- *            attachment record in database
+ *                     fields to include in attachment form
+ * @param $post        object,
+ *                     attachment record in database
+ *
  * @return $form_fields, modified form fields
  */
 function filterRPS_attachment_field_credit($form_fields, $post)
@@ -522,26 +533,25 @@ function filterRPS_attachment_field_credit($form_fields, $post)
 /**
  * Save values of Photographer Name and URL in media uploader
  *
- * @param $post array,
- *            the post data for database
+ * @param $post       array,
+ *                    the post data for database
  * @param $attachment array,
- *            attachment fields from $_POST form
- * @return $post array, modified post data
+ *                    attachment fields from $_POST form
  *
+ * @return $post array, modified post data
  */
 function filterRPS_attachment_field_credit_save($post, $attachment)
 {
     if (isset($attachment['rps-photographer-name'])) {
         update_post_meta($post['ID'], '_rps_photographer_name', esc_attr($attachment['rps-photographer-name']));
     }
+
     return $post;
 }
 
 /**
  * Add image credits to captions
- *
  * Add the "Credit" custom fields to media attachments with captions
- *
  * Uses get_post_custom() http://codex.wordpress.org/Function_Reference/get_post_custom
  */
 function filterRPS_base_image_credit_to_captions($foo, $attr, $content = null)
@@ -560,8 +570,9 @@ function filterRPS_base_image_credit_to_captions($foo, $attr, $content = null)
     }
 
     $atts['width'] = (int) $atts['width'];
-    if ($atts['width'] < 1 || (empty($atts['caption']) && empty($photographer_name)))
+    if ($atts['width'] < 1 || (empty($atts['caption']) && empty($photographer_name))) {
         return $content;
+    }
 
     $atts['id'] = 'id="' . esc_attr($atts['id']) . '" ';
 
