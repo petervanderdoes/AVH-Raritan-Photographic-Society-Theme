@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 2.0.0-rc.1 =
+= Version 2.0.0 =
 * Using HTML5 for the gallery
 * Add masonry option to the gallery.
 
