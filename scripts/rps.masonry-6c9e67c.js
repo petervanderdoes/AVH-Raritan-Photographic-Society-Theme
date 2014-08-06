@@ -1,0 +1,1 @@
+!function($,window,document){$(document).ready(function(){$(".gallery-masonry").masonry({itemSelector:".gallery-item-masonry",columnWidth:".grid-sizer",isFitWidth:!0}).imagesLoaded(function(){$(".gallery-masonry").masonry("reload")})})}(window.jQuery,window,document);

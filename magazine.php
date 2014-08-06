@@ -1,11 +1,10 @@
 <?php
 /**
  * Template Name: Magazine
- *
  * Creates a page with a magazine-style layout. If you have a magazine-themed
  * blog you should can use this to define your front page.
  *
- * @package Suffusion
+ * @package    Suffusion
  * @subpackage Templates
  */
 get_header();
@@ -99,8 +98,9 @@ if ($total > 0) {
                 global $post, $suf_mag_excerpt_full_story_text, $suf_mag_excerpts_images_enabled, $suf_mag_excerpt_full_story_position, $suf_mag_excerpt_title_alignment;
                 $post_to_skip[] = $post->ID;
                 $categories = get_the_category($post->ID);
-                if (empty($categories))
+                if (empty($categories)) {
                     $categories = apply_filters('the_category', __('Uncategorized'), '', '');
+                }
 
                 $category = $categories[0];
                 $category_link = '<a href="' . esc_url(get_category_link($category->term_id)) . '" title="' . esc_attr(sprintf(__("View all articles in %s"), $category->name)) . '" rel="category tag">';
@@ -168,8 +168,9 @@ if ($total > 0) {
                 global $post;
                 $query->the_post();
                 $categories = get_the_category($post->ID);
-                if (empty($categories))
+                if (empty($categories)) {
                     $categories = apply_filters('the_category', __('Uncategorized'), '', '');
+                }
 
                 $category = $categories[0];
                 $category_link = '<a href="' . esc_url(get_category_link($category->term_id)) . '" title="' . esc_attr(sprintf(__("View all articles in %s"), $category->name)) . '" rel="category tag">';

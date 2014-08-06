@@ -22,7 +22,7 @@ set :branch, fetch(:branch, "develop")
 
 # if you want to clean up old releases on each deploy uncomment this:
 after "deploy:restart", "deploy:cleanup"
-after "deploy", "opc:clear_cache"
+after "deploy", "opc:clearCache"
 #after "deploy:finalize_update", "db:update_database"
 
 # If you are using Passenger mod_rails uncomment this:

@@ -47,6 +47,7 @@ add_action('init', 'actionRPS_init');
 add_filter('rps_comment_form_allow_comment', 'filterRPS_comment_form_allow_comment', 10, 1);
 add_filter('style_loader_src', 'filterRPS_remove_cssjs_ver', 10, 2);
 add_filter('script_loader_src', 'filterRPS_remove_cssjs_ver', 10, 2);
+add_action('admin_init', 'actionRPS_admin_init');
 
 /**
  * Here you can define any additional functions that you are hooking in the
@@ -73,13 +74,17 @@ if (rps_is_plugin_active('wordpress-seo/wp-seo.php')) {
     include 'functions_wordpress_seo.php';
 }
 
+include 'functions_gallery.php';
 include 'shortcodes.php';
 
 /**
  * Check if a plugin is active
+
  *
- * @param string $plugin
- * @return boolean
+*@param string $plugin
+
+ *
+*@return boolean
  */
 function rps_is_plugin_active($plugin)
 {
@@ -108,6 +113,23 @@ function actionRPS_theme_setup()
     add_action('suffusion_document_header', 'actionRPS_set_document_title');
     add_action('wp_enqueue_scripts', 'actionRPS_enqueue_styles');
     add_action('suffusion_after_begin_post', 'actionRPS_print_post_updated_information');
+
+    add_theme_support('html5', array('comment-list', 'search-form', 'comment-form', 'gallery'));
+}
+
+function actionRPS_admin_init()
+{
+    add_action('wp_enqueue_media', 'actionRPS_wp_enqueue_media');
+    add_action('print_media_templates', 'actionRPS_print_media_templates');
+}
+
+function actionRPS_wp_enqueue_media()
+{
+    if (!wp_script_is('rps-gallery-settings', 'registered')) {
+        wp_register_script('rps-gallery-settings', get_stylesheet_directory_uri() . '/scripts/rps.gallery.js', array('media-views'), 'toremove');
+    }
+
+    wp_enqueue_script('rps-gallery-settings');
 }
 
 function actionRPS_init()
@@ -118,10 +140,13 @@ function actionRPS_init()
 
 /**
  * This will add a menu item when a user is logged in.
+
  *
- * @param array $sorted_menu_items
+*@param array  $sorted_menu_items
  * @param object $args
- * @return array
+
+ *
+*@return array
  */
 function filterRPS_members_menu($sorted_menu_items, $args)
 {
@@ -138,6 +163,7 @@ function filterRPS_members_menu($sorted_menu_items, $args)
             $sorted_menu_items[] = $item;
         }
     }
+
     return $sorted_menu_items;
 }
 
@@ -161,10 +187,10 @@ function filterRPS_comment_form_allow_comment($allow_comment)
  * Adds all stylesheets used by Suffusion.
  * Even conditional stylesheets are loaded, by using the "style_loader_tag" filter hook.
  * The theme version is added as a URL parameter so that when you upgrade the latest version is picked up.
- *
  * Exact copy of the suffusion function called suffusion_enqueue_styles
+
  *
- * @return void
+*@return void
  */
 function actionRPS_enqueue_styles()
 {
@@ -173,58 +199,29 @@ function actionRPS_enqueue_styles()
         return;
     }
 
-    global $suf_style_inheritance, $suffusion_theme_hierarchy, $suf_color_scheme, $suf_show_rounded_corners, $suf_autogen_css;
+    global $suf_show_rounded_corners, $suf_autogen_css, $post;
 
-    $template_path = get_template_directory();
-    $stylesheet_path = get_stylesheet_directory();
 
     // Setup stylesheet
-    wp_enqueue_script('jquery-url', get_stylesheet_directory_uri() . '/scripts/jquery.url.js', array(), '1.8.6', true);
+    $stylesheet_directory_uri = get_stylesheet_directory_uri();
+    wp_enqueue_script('jquery-url', $stylesheet_directory_uri . '/scripts/jquery.url.js', array(), '1.8.6', true);
     if (WP_LOCAL_DEV == true) {
-        wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps.css', array(), 'to_remove');
-        wp_enqueue_script('rps', get_stylesheet_directory_uri() . '/scripts/rps.js', array(), 'to_remove');
+        wp_enqueue_style('suffusion-theme', $stylesheet_directory_uri . '/css/rps.css', array(), 'to_remove');
+        wp_enqueue_script('rps', $stylesheet_directory_uri . '/scripts/rps.js', array(), 'to_remove');
+        wp_enqueue_script('rps-masonryInit', $stylesheet_directory_uri . '/scripts/rps.masonry.js', array('masonry'), 'to_remove');
     } else {
         // The style version is automatically updated by using git-flow hooks.
-        $rps_style_version = "a637fc6";
-        wp_enqueue_style('suffusion-theme', get_stylesheet_directory_uri() . '/css/rps-' . $rps_style_version . '.css', array(), 'to_remove');
+        $rps_style_version = "13b4e6f";
+        wp_enqueue_style('suffusion-theme', $stylesheet_directory_uri . '/css/rps-' . $rps_style_version . '.css', array(), 'to_remove');
         // The style version is automatically updated by using git-flow hooks.
         $rps_js_version = "d52d635";
-        wp_enqueue_script('rps', get_stylesheet_directory_uri() . '/scripts/rps-' . $rps_js_version . '.js', array(), 'to_remove');
-    }
-
-    if (!isset($suffusion_theme_hierarchy[$suf_color_scheme])) {
-        if (@file_exists(get_stylesheet_directory() . '/skins/' . $suf_color_scheme . '/skin.css')) {
-            $sheets = array('style.css', 'skins/' . $suf_color_scheme . '/skin.css');
-        } else
-            if (@file_exists(get_template_directory() . '/skins/' . $suf_color_scheme . '/skin.css')) {
-                $sheets = array('style.css', 'skins/' . $suf_color_scheme . '/skin.css');
-            } else {
-                $sheets = array('style.css');
-            }
-    } else {
-        $sheets = $suffusion_theme_hierarchy[$suf_color_scheme];
+        wp_enqueue_script('rps', $stylesheet_directory_uri . '/scripts/rps-' . $rps_js_version . '.js', array(), 'to_remove');
+        $rps_masonry_version = "6c9e67c";
+        wp_enqueue_script('rps-masonryInit', $stylesheet_directory_uri . '/scripts/rps.masonry-' . $rps_masonry_version . '.js', array('masonry'), 'to_remove', true);
     }
 
     // IE-specific CSS, loaded if the browser is IE < 8
     wp_enqueue_style('suffusion-ie', get_template_directory_uri() . '/ie-fix.css', array('suffusion-theme'), SUFFUSION_THEME_VERSION);
-
-    global $suffusion, $suf_mosaic_zoom_library;
-    if ($suffusion->get_content_layout() == 'mosaic') {
-        if ($suf_mosaic_zoom_library == 'fancybox') {
-            if (@file_exists($stylesheet_path . '/scripts/fancybox/jquery.fancybox-1.3.4.css')) {
-                wp_enqueue_style("suffusion-slideshow", get_stylesheet_directory_uri() . '/scripts/fancybox/jquery.fancybox-1.3.4.css', array(), SUFFUSION_THEME_VERSION);
-            } else {
-                wp_enqueue_style("suffusion-slideshow", get_template_directory_uri() . '/scripts/fancybox/jquery.fancybox-1.3.4.css', array(), SUFFUSION_THEME_VERSION);
-            }
-        } else
-            if ($suf_mosaic_zoom_library == 'colorbox') {
-                if (@file_exists($stylesheet_path . '/scripts/colorbox/colorbox.css')) {
-                    wp_enqueue_style("suffusion-slideshow", get_stylesheet_directory_uri() . '/scripts/colorbox/colorbox.css', array(), SUFFUSION_THEME_VERSION);
-                } else {
-                    wp_enqueue_style("suffusion-slideshow", get_template_directory_uri() . '/scripts/colorbox/colorbox.css', array(), SUFFUSION_THEME_VERSION);
-                }
-            }
-    }
 
     // Attachment styles. Loaded conditionally, because it uses a rather heavy image, which we don't want to load always.
     if (is_attachment()) {
@@ -275,6 +272,7 @@ function filterRPS_remove_cssjs_ver($src)
     if (isset($vars['ver']) && $vars['ver'] == 'to_remove') {
         $src = remove_query_arg('ver', $src);
     }
+
     return $src;
 }
 
@@ -285,20 +283,20 @@ function actionRPS_next_meeting()
 
         $format = '#_EVENTDATES, #_CATEGORYNAME: #_EVENTLINK';
         // @formatter:off
-	$arg = array('title' => __('Events', 'dbem'),
-	    'scope' => 'future',
-	    'order' => 'ASC',
-	    'limit' => 1,
-	    'category' => $categories,
-	    'format_header' => '',
-	    'format' => $format,
-	    'format_footer' => ''
-	    ,'nolistwrap' => false,
-	    'orderby' => 'event_start_date,event_start_time,event_name',
-	    'all_events' => 0,
-	    'all_events_text' => __('all events', 'dbem'),
-	    'no_events_text' => __('No events', 'dbem'));
-	// @formatter:on
+    	$arg = array('title' => __('Events', 'dbem'),
+	        'scope' => 'future',
+	       'order' => 'ASC',
+	       'limit' => 1,
+	       'category' => $categories,
+	       'format_header' => '',
+	       'format' => $format,
+	       'format_footer' => ''
+	       ,'nolistwrap' => false,
+	       'orderby' => 'event_start_date,event_start_time,event_name',
+	       'all_events' => 0,
+	       'all_events_text' => __('all events', 'dbem'),
+	       'no_events_text' => __('No events', 'dbem'));
+	   // @formatter:on
         $event = EM_Events::output($arg);
         echo '<div id="next-meeting">';
         echo 'Next meeting: ' . $event;
@@ -308,10 +306,10 @@ function actionRPS_next_meeting()
 
 /**
  * Magazine template function to build queries for individual magazine sections.
- *
  * Updated so you can add 'to_skip' argument, to skip the given post ID's
  *
  * @param array $args
+ *
  * @return array
  */
 function rps_suffusion_get_mag_section_queries($args = array())
@@ -363,6 +361,7 @@ function rps_suffusion_get_mag_section_queries($args = array())
             $queries[] = $cat_query;
         }
     }
+
     return $queries;
 }
 
@@ -374,7 +373,6 @@ function rps_suffusion_get_mag_section_queries($args = array())
  * one or remove a single field. All fields are also individually passed through
  * a filter of the form comment_form_field_$name where $name is the key used
  * in the array of fields.
- *
  * This is an exact copy of the core function comment_form, except that it doesn't just check for for logged in users
  * but checks the if the user has the capability to comment.
  *
@@ -382,6 +380,7 @@ function rps_suffusion_get_mag_section_queries($args = array())
  *            Options for strings, fields etc in the form
  * @param mixed $post_id
  *            Post ID to generate the form for, uses the current post if null
+ *
  * @return void
  */
 function rps_comment_form($args = array(), $post_id = null)
@@ -499,9 +498,10 @@ add_filter('post_gallery', 'filterRPS_gallery_output', 10, 2);
  * Add Photographer Name and URL fields to media uploader
  *
  * @param $form_fields array,
- *            fields to include in attachment form
- * @param $post object,
- *            attachment record in database
+ *                     fields to include in attachment form
+ * @param $post        object,
+ *                     attachment record in database
+ *
  * @return $form_fields, modified form fields
  */
 function filterRPS_attachment_field_credit($form_fields, $post)
@@ -518,26 +518,25 @@ function filterRPS_attachment_field_credit($form_fields, $post)
 /**
  * Save values of Photographer Name and URL in media uploader
  *
- * @param $post array,
- *            the post data for database
+ * @param $post       array,
+ *                    the post data for database
  * @param $attachment array,
- *            attachment fields from $_POST form
- * @return $post array, modified post data
+ *                    attachment fields from $_POST form
  *
+ * @return $post array, modified post data
  */
 function filterRPS_attachment_field_credit_save($post, $attachment)
 {
     if (isset($attachment['rps-photographer-name'])) {
         update_post_meta($post['ID'], '_rps_photographer_name', esc_attr($attachment['rps-photographer-name']));
     }
+
     return $post;
 }
 
 /**
  * Add image credits to captions
- *
  * Add the "Credit" custom fields to media attachments with captions
- *
  * Uses get_post_custom() http://codex.wordpress.org/Function_Reference/get_post_custom
  */
 function filterRPS_base_image_credit_to_captions($foo, $attr, $content = null)
@@ -556,8 +555,9 @@ function filterRPS_base_image_credit_to_captions($foo, $attr, $content = null)
     }
 
     $atts['width'] = (int) $atts['width'];
-    if ($atts['width'] < 1 || (empty($atts['caption']) && empty($photographer_name)))
+    if ($atts['width'] < 1 || (empty($atts['caption']) && empty($photographer_name))) {
         return $content;
+    }
 
     $atts['id'] = 'id="' . esc_attr($atts['id']) . '" ';
 
@@ -577,110 +577,4 @@ function filterRPS_base_image_credit_to_captions($foo, $attr, $content = null)
     }
 
     return '<div ' . $atts['id'] . $style . 'class="wp-caption ' . esc_attr($atts['align']) . '">' . do_shortcode($content) . '<p class="wp-caption-text">' . $atts['caption'] . '</p></div>';
-}
-
-function filterRPS_gallery_output($foo, $attr)
-{
-    $post = get_post();
-
-    static $instance = 0;
-    $instance++;
-
-    $output = '';
-
-    // We're trusting author input, so let's at least make sure it looks like a valid orderby statement
-    if (isset($attr['orderby'])) {
-        $attr['orderby'] = sanitize_sql_orderby($attr['orderby']);
-        if (!$attr['orderby'])
-            unset($attr['orderby']);
-    }
-
-    extract(shortcode_atts(array('order' => 'ASC', 'orderby' => 'menu_order ID', 'id' => $post ? $post->ID : 0, 'itemtag' => 'dl', 'icontag' => 'dt', 'captiontag' => 'dd', 'columns' => 3, 'size' => 'thumbnail', 'include' => '', 'exclude' => '', 'link' => ''), $attr, 'gallery'));
-
-    $id = intval($id);
-    if ('RAND' == $order)
-        $orderby = 'none';
-
-    if (!empty($include)) {
-        $_attachments = get_posts(array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby));
-
-        $attachments = array();
-        foreach ($_attachments as $key => $val) {
-            $attachments[$val->ID] = $_attachments[$key];
-        }
-    } elseif (!empty($exclude)) {
-        $attachments = get_children(array('post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby));
-    } else {
-        $attachments = get_children(array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby));
-    }
-
-    if (empty($attachments))
-        return '';
-
-    if (is_feed()) {
-        $output = "\n";
-        foreach ($attachments as $att_id => $attachment)
-            $output .= wp_get_attachment_link($att_id, $size, true) . "\n";
-        return $output;
-    }
-
-    $columns = intval($columns);
-    $itemwidth = $columns > 0 ? floor(100 / $columns) : 100;
-    $float = is_rtl() ? 'right' : 'left';
-
-    $selector = "gallery-{$instance}";
-
-    $gallery_style = $gallery_div = '';
-    $size_class = sanitize_html_class($size);
-    $gallery_div = "<div id='$selector' class='gallery gallery-sa galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
-    $output = apply_filters('gallery_style', $gallery_style . "\n\t\t" . $gallery_div);
-
-    $i = 0;
-    foreach ($attachments as $id => $attachment) {
-        $a = $i % $columns;
-        if ($i % $columns == 0) {
-            $output .= '<ul class="gallery-row gallery-row-equal">';
-        }
-        if (!empty($link) && 'file' === $link) {
-            $image_output = wp_get_attachment_link($id, $size, false, false);
-        } elseif (!empty($link) && 'none' === $link) {
-            $image_output = wp_get_attachment_image($id, $size, false);
-        } else {
-            $image_output = wp_get_attachment_link($id, $size, true, false);
-        }
-
-        $image_meta = wp_get_attachment_metadata($id);
-
-        $orientation = '';
-        if (isset($image_meta['height'], $image_meta['width']))
-            $orientation = ($image_meta['height'] > $image_meta['width']) ? 'portrait' : 'landscape';
-
-        $output .= "<li class='gallery-item'><div class='gallery-item-content'>";
-        $output .= "
-            <span class='gallery-icon {$orientation}'>
-            $image_output
-            </span>";
-        $caption = trim($attachment->post_excerpt);
-        if (!empty($caption)) {
-
-            // Get image credit custom attachment fields
-            $attachment_fields = get_post_custom($attachment->ID);
-            $photographer_name = '';
-            if (isset($attachment_fields['_rps_photographer_name'][0]) && !empty($attachment_fields['_rps_photographer_name'][0])) {
-                $photographer_name = esc_attr($attachment_fields['_rps_photographer_name'][0]);
-            }
-            // If image credit fields have data then attach the image credit
-            if ($photographer_name) {
-                $caption .= '<br /><span class="wp-caption-credit">Credit: ' . $photographer_name . '</span>';
-            }
-            $output .= "<p class='wp-caption-text gallery-caption'>" . wptexturize($caption) . "</p>";
-        }
-        $output .= "</div></li>\n";
-        if ($columns > 0 && ++$i % $columns == 0)
-            $output .= '</ul>';
-    }
-
-    $output .= "</div>\n";
-
-    return $output;
 }

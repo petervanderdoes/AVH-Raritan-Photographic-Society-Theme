@@ -31,14 +31,15 @@ add_filter("gform_enable_password_field", create_function("", "return true;"));
  * version is < '1.7'. This fails with a version of 1.1x.x
  *
  * @param string|array $form
- * @param boolean $ajax
+ * @param boolean      $ajax
  */
 function actionRPS_GF_enqueue_scripts($form, $ajax)
 {
-    if (!is_array(rgar($form, "fields")))
+    if (!is_array(rgar($form, "fields"))) {
         return;
+    }
 
-        // cycle through the fields to see if picatcha is being used
+    // cycle through the fields to see if picatcha is being used
     foreach ($form['fields'] as $field) {
         if (($field['type'] == 'picatcha')) {
             wp_dequeue_script("gform_picatcha_script");
@@ -74,6 +75,7 @@ function rps_GF_get_profile_fields()
  *
  * @param array $form
  *            Current form
+ *
  * @return array
  */
 function filterRPS_GF_populate_profile_fields($form)
@@ -95,11 +97,13 @@ function filterRPS_GF_populate_profile_fields($form)
             $_public_display['display_nickname'] = $_profileuser->nickname;
             $_public_display['display_username'] = $_profileuser->user_login;
 
-            if (!empty($_profileuser->first_name))
+            if (!empty($_profileuser->first_name)) {
                 $_public_display['display_firstname'] = $_profileuser->first_name;
+            }
 
-            if (!empty($_profileuser->last_name))
+            if (!empty($_profileuser->last_name)) {
                 $_public_display['display_lastname'] = $_profileuser->last_name;
+            }
 
             if (!empty($_profileuser->first_name) && !empty($_profileuser->last_name)) {
                 $_public_display['display_firstlast'] = $_profileuser->first_name . ' ' . $_profileuser->last_name;
@@ -107,7 +111,9 @@ function filterRPS_GF_populate_profile_fields($form)
             }
 
             if (!in_array($_profileuser->display_name, $_public_display)) // Only add this if it isn't duplicated elsewhere
+            {
                 $_public_display = array('display_displayname' => $_profileuser->display_name) + $_public_display;
+            }
 
             $_public_display = array_map('trim', $_public_display);
             $_public_display = array_unique($_public_display);
@@ -189,7 +195,6 @@ function actionRPS_GF_update_profile($entry, $form)
 
 /**
  * Prepopulate the field paidmember.
- *
  * This field exists in the contact form and is used as a conditional field for the picatcha field.
  * If that field has the value as given in this function, the picatcha field is not used.
  * We don't show the picatcha field for current members,
@@ -197,6 +202,7 @@ function actionRPS_GF_update_profile($entry, $form)
  * @uses $user_ID
  *
  * @param string $value
+ *
  * @return string
  */
 function filterRPS_GF_populate_hidden_paidmember($value)
@@ -207,6 +213,7 @@ function filterRPS_GF_populate_hidden_paidmember($value)
         // The value must correspond with the value in the form itself.
         $value = "B5NjSa6tqvJV9jTqM358";
     }
+
     return $value;
 }
 
@@ -216,6 +223,7 @@ function filterRPS_GF_populate_hidden_paidmember($value)
  * @uses $user_ID
  *
  * @param string $value
+ *
  * @return string
  */
 function filterRPS_GF_populate_first_name($value)
@@ -226,6 +234,7 @@ function filterRPS_GF_populate_first_name($value)
         $user = get_user_by('id', $user_ID);
         $value = $user->user_firstname;
     }
+
     return $value;
 }
 
@@ -235,6 +244,7 @@ function filterRPS_GF_populate_first_name($value)
  * @uses $user_ID
  *
  * @param string $value
+ *
  * @return string
  */
 function filterRPS_GF_populate_last_name($value)
@@ -245,6 +255,7 @@ function filterRPS_GF_populate_last_name($value)
         $user = get_user_by('id', $user_ID);
         $value = $user->user_lastname;
     }
+
     return $value;
 }
 
@@ -254,6 +265,7 @@ function filterRPS_GF_populate_last_name($value)
  * @uses $user_ID
  *
  * @param string $value
+ *
  * @return string
  */
 function filterRPS_GF_populate_email($value)
@@ -264,5 +276,6 @@ function filterRPS_GF_populate_email($value)
         $user = get_user_by('id', $user_ID);
         $value = $user->user_email;
     }
+
     return $value;
 }

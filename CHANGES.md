@@ -2,11 +2,9 @@
 
 == Changelog
 
-= Version 1.5.20 =
-* Preparation for new development cycle.
-
-= Version 1.5.19 =
-* Preparation for new development cycle.
+= Version 2.0.0 =
+* Using HTML5 for the gallery
+* Add masonry option to the gallery.
 
 = Version 1.5.18 =
 * Add Title and Credit to showcase on Frontpage
