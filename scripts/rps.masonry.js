@@ -6,7 +6,8 @@
 	    columnWidth : '.grid-sizer',
 	    isFitWidth : true
 	}).imagesLoaded(function() {
-	    $('.gallery-masonry').masonry('reload');
+	    $('.gallery-masonry').masonry('reloadItems');
+        $('.gallery-masonry').masonry();
 	});
     });
 }(window.jQuery, window, document));
