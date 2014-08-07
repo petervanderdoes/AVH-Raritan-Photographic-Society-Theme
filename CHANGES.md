@@ -2,6 +2,9 @@
 
 == Changelog
 
+= Version 2.0.1 =
+* Preparation for new development cycle.
+
 = Version 2.0.0 =
 * Using HTML5 for the gallery
 * Add masonry option to the gallery.
