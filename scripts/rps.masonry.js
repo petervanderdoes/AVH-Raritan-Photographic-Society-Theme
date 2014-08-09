@@ -1,7 +1,7 @@
 (function ($, window, document) {
     // The $ is now locally scoped
     $(document).ready(function () {
-        var $container = $('.gallery-masonry').masonry({
+        var $container = $('#gallery-month-entries').masonry({
             itemSelector: '.gallery-item-masonry',
             columnWidth: '.grid-sizer',
             isFitWidth: true
@@ -9,8 +9,8 @@
         // reveal initial images
         $container.masonryImagesReveal($('#images').find('.gallery-item-masonry'));
     });
-}(window.jQuery, window, document));
 
+}(window.jQuery, window, document));
 
 jQuery.fn.masonryImagesReveal = function ($items) {
     var msnry = this.data('masonry');
