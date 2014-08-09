@@ -216,7 +216,7 @@ function actionRPS_enqueue_styles()
         // The style version is automatically updated by using git-flow hooks.
         $rps_js_version = "d52d635";
         wp_enqueue_script('rps', $stylesheet_directory_uri . '/scripts/rps-' . $rps_js_version . '.js', array(), 'to_remove');
-        $rps_masonry_version = "352d3e0";
+        $rps_masonry_version = "1fab244";
         wp_enqueue_script('rps-masonryInit', $stylesheet_directory_uri . '/scripts/rps.masonry-' . $rps_masonry_version . '.js', array('masonry'), 'to_remove', true);
     }
 
