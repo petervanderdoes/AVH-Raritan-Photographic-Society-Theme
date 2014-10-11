@@ -42,6 +42,7 @@ add_action("after_setup_theme", "actionRPS_theme_setup", 15);
 // Standard actions and filters
 add_filter('wp_nav_menu_objects', 'filterRPS_members_menu', 10, 2);
 add_action('init', 'actionRPS_init');
+add_filter('wp_revisions_to_keep', 'filterRPS_revisions_to_keep', 10, 2);
 
 // RPS Actions & Filters
 add_filter('rps_comment_form_allow_comment', 'filterRPS_comment_form_allow_comment', 10, 1);
@@ -201,7 +202,6 @@ function actionRPS_enqueue_styles()
 
     global $suf_show_rounded_corners, $suf_autogen_css, $post;
 
-
     // Setup stylesheet
     $stylesheet_directory_uri = get_stylesheet_directory_uri();
     wp_enqueue_script('jquery-url', $stylesheet_directory_uri . '/scripts/jquery.url.js', array(), '1.8.6', true);
@@ -210,10 +210,10 @@ function actionRPS_enqueue_styles()
         wp_enqueue_script('rps', $stylesheet_directory_uri . '/scripts/rps.js', array(), 'to_remove');
     } else {
         // The style version is automatically updated by using git-flow hooks.
-        $rps_style_version = "13b4e6f";
+        $rps_style_version = "5845b67";
         wp_enqueue_style('suffusion-theme', $stylesheet_directory_uri . '/css/rps-' . $rps_style_version . '.css', array(), 'to_remove');
         // The style version is automatically updated by using git-flow hooks.
-        $rps_js_version = "d52d635";
+        $rps_js_version = "5efe7dd";
         wp_enqueue_script('rps', $stylesheet_directory_uri . '/scripts/rps-' . $rps_js_version . '.js', array(), 'to_remove');
     }
 
@@ -271,6 +271,17 @@ function filterRPS_remove_cssjs_ver($src)
     }
 
     return $src;
+}
+
+function filterRPS_revisions_to_keep($num, $post)
+{
+    if (!post_type_supports($post->post_type, 'revisions')) {
+        $num = 0;
+    } else {
+        $num = 3;
+    }
+
+    return $num;
 }
 
 function actionRPS_next_meeting()

@@ -219,4 +219,3 @@ if (trim($ret_str) != '') {
 if ($suffusion_echo_menu) {
     echo $ret_str;
 }
-?>

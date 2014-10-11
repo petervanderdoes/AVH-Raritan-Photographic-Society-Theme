@@ -9,9 +9,8 @@
       'height' : 'auto'
     });
     selectors.each(function() {
-      var currentHeight = $j(this).height();
-      if (currentHeight > tallest) {
-        tallest = currentHeight;
+      if ($(this).height() > tallest) {
+        tallest = $(this).height();
       }
     });
     selectors.css({
@@ -82,7 +81,7 @@
   $(window).load(function() {
     // Set the gallery items in the same row to equal heights
     $('.gallery-row-equal').each(function() {
-      set_equal_height($(this).children().children());
+      set_equal_height($(this).find('.gallery-item-content'));
     });
   });
 }(window.jQuery, window, document));
