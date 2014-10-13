@@ -500,7 +500,8 @@ add_filter('attachment_fields_to_edit', 'filterRPS_attachment_field_credit', 10,
 add_filter('attachment_fields_to_save', 'filterRPS_attachment_field_credit_save', 10, 2);
 add_filter('use_default_gallery_style', '__return_false');
 add_filter('img_caption_shortcode', 'filterRPS_base_image_credit_to_captions', 10, 3);
-add_filter('post_gallery', 'filterRPS_gallery_output', 10, 2);
+//add_filter('post_gallery', 'filterRPS_gallery_output', 10, 2);
+//add_image_size('150w', 150, 9999);
 
 /**
  * Add Photographer Name and URL fields to media uploader
@@ -510,7 +511,7 @@ add_filter('post_gallery', 'filterRPS_gallery_output', 10, 2);
  * @param $post        object,
  *                     attachment record in database
  *
- * @return $form_fields, modified form fields
+ * @return array $form_fields, modified form fields
  */
 function filterRPS_attachment_field_credit($form_fields, $post)
 {
