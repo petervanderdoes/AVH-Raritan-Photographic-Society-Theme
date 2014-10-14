@@ -6693,40 +6693,42 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   border-color: #555555;
   position: relative;
   text-align: center;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
-/* line 55, ../sass/rps/_images.scss */
+/* line 56, ../sass/rps/_images.scss */
 .gallery-size-thumbnail .gallery-item-content {
   width: 150px;
 }
 
-/* line 59, ../sass/rps/_images.scss */
+/* line 60, ../sass/rps/_images.scss */
 .gallery-masonry {
   margin: 0 auto;
 }
-/* line 61, ../sass/rps/_images.scss */
+/* line 62, ../sass/rps/_images.scss */
 .gallery-masonry figure {
   margin-bottom: 5px;
 }
 
-/* line 66, ../sass/rps/_images.scss */
+/* line 67, ../sass/rps/_images.scss */
 .masonry-150 {
   max-width: 189px;
 }
 
-/* line 70, ../sass/rps/_images.scss */
+/* line 71, ../sass/rps/_images.scss */
 .gallery-size-250 .gallery-item-content {
   height: 310px;
   width: 250px;
 }
 
-/* line 77, ../sass/rps/_images.scss */
+/* line 78, ../sass/rps/_images.scss */
 .gallery-size-150 .gallery-item-content {
   height: 150px;
   width: 150px;
 }
 
-/* line 84, ../sass/rps/_images.scss */
+/* line 85, ../sass/rps/_images.scss */
 .wp-caption {
   border-width: 1px;
   border-width: 0.07692rem;
@@ -6740,7 +6742,7 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   text-align: center;
 }
 
-/* line 94, ../sass/rps/_images.scss */
+/* line 95, ../sass/rps/_images.scss */
 .wp-caption-text {
   font-size: 13px;
   font-size: 1rem;
@@ -6752,37 +6754,42 @@ h2.suf-mag-excerpt-title a:hover, h2.suf-mag-excerpt-title a:visited, h2.suf-mag
   margin-bottom: 0;
 }
 
-/* line 101, ../sass/rps/_images.scss */
+/* line 102, ../sass/rps/_images.scss */
 p.wp-caption-text {
   margin-bottom: 0;
 }
 
-/* line 106, ../sass/rps/_images.scss */
+/* line 107, ../sass/rps/_images.scss */
 .rps-showcases .gallery ul {
   margin: 1rem;
 }
-/* line 109, ../sass/rps/_images.scss */
+/* line 110, ../sass/rps/_images.scss */
 .rps-showcases .gallery-item-content {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
 }
 
-/* line 118, ../sass/rps/_images.scss */
+/* line 119, ../sass/rps/_images.scss */
 .rps-showcase-category-winner .gallery ul {
   padding: 1rem;
   margin: 0;
 }
-/* line 122, ../sass/rps/_images.scss */
+/* line 123, ../sass/rps/_images.scss */
 .rps-showcase-category-winner .gallery-item-content {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
 }
 
-/* line 129, ../sass/rps/_images.scss */
+/* line 130, ../sass/rps/_images.scss */
 .gallery-row {
   padding-top: 1rem;
+}
+
+/* line 134, ../sass/rps/_images.scss */
+.gallery-row-equal {
+  text-align: center;
 }
 
 /* line 1, ../sass/rps/_sidebars.scss */
