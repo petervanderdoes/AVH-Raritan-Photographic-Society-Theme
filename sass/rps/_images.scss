@@ -47,9 +47,10 @@
   @include rhythm-borders($width: 1px, $border-style: solid);
   @include border-radius(0.5rem);
   border-color: #555555;
-  //padding: 1rem;
   position: relative;
   text-align: center;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .gallery-size-thumbnail .gallery-item-content {
@@ -128,4 +129,8 @@ p.wp-caption-text {
 
 .gallery-row {
   padding-top: 1rem;
+}
+
+.gallery-row-equal {
+  text-align: center;
 }
