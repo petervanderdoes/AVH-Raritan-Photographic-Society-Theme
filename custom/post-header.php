@@ -126,7 +126,31 @@ if ($post->post_type == 'post') {
         }
         ?>
 	</div>
-		<!-- /.postdata -->
+    <?php
+    global $suf_category_excerpt, $suf_tag_excerpt, $suf_archive_excerpt, $suf_index_excerpt, $suf_search_excerpt, $suf_author_excerpt, $suf_show_excerpt_thumbnail, $suffusion_current_post_index, $suffusion_full_post_count_for_view, $suf_pop_excerpt, $page_of_posts;
+    global $suffusion_cpt_post_id;
+
+    if (isset($suffusion_cpt_post_id)) {
+        $cpt_excerpt = suffusion_get_post_meta($suffusion_cpt_post_id, 'suf_cpt_post_type_layout', true);
+        $cpt_image = suffusion_get_post_meta($suffusion_cpt_post_id, 'suf_cpt_show_excerpt_thumb', true);
+    }
+    else {
+        $cpt_excerpt = false;
+    }
+
+    if (!(($suffusion_current_post_index > $suffusion_full_post_count_for_view) && ($cpt_excerpt ||
+            (is_category() && $suf_category_excerpt == "excerpt") ||
+            (is_tag() && $suf_tag_excerpt == "excerpt") ||
+            (is_search() && $suf_search_excerpt == "excerpt") ||
+            (is_author() && $suf_author_excerpt == "excerpt") ||
+            ((is_date() || is_year() || is_month() || is_day() || is_time())&& $suf_archive_excerpt == "excerpt") ||
+            (isset($page_of_posts) && $page_of_posts && $suf_pop_excerpt == "excerpt") ||
+            (!(is_singular() || is_category() || is_tag() || is_search() || is_author() || is_date() || is_year() || is_month() || is_day() || is_time()) && $suf_index_excerpt == "excerpt")))) {
+
+        do_action('rps-social-buttons');
+    }
+        ?>
+        <!-- /.postdata -->
 		<?php
     }
     ?>
@@ -189,6 +213,7 @@ if ($post->post_type == 'post') {
             ?>
 			<span class="edit"><span class="icon">&nbsp;</span><?php edit_post_link(__('Edit', 'suffusion'), $prepend, $append); ?></span>
 			<?php
+            do_action('rps-social-buttons');
         }
         ?>
 	</div>
