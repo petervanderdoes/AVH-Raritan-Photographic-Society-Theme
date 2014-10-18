@@ -75,7 +75,7 @@ if ($post->post_type == 'post') {
             $prepend = apply_filters('suffusion_before_byline_html', do_shortcode($suf_byline_before_category), 'category');
             $append = apply_filters('suffusion_after_byline_html', do_shortcode($suf_byline_after_category), 'category');
             ?>
-			<span class="category"><span class="icon">&nbsp;</span><?php echo $prepend; the_category(', '); echo $append; ?></span>
+			<span class="category"><i class="fa fa-folder"></i> <?php echo $prepend; the_category(', '); echo $append; ?></span>
 			<?php
         }
         if (is_singular()) {
@@ -97,21 +97,21 @@ if ($post->post_type == 'post') {
 
             if ('open' == $post->comment_status && ($post_show_comment == 'show' || $post_show_comment == 'show-tleft') && !$comments_disabled) {
                 ?>
-				<span class="comments"><span class="icon">&nbsp;</span><a
+				<span class="comments"><i class="fa fa-comments"></i> <a
 				href="<?php echo get_permalink($post->ID)?>#respond"><?php _e('Add comments', 'suffusion'); ?></a></span>
 				<?php
             }
         } else
             if ($post_show_comment == 'show' || $post_show_comment == 'show-tleft') {
                 ?>
-			<span class="comments"><span class="icon">&nbsp;</span><?php comments_popup_link(__('No Responses', 'suffusion') . ' &#187;', __('1 Response', 'suffusion') . ' &#187;', __('% Responses', 'suffusion') . ' &#187;'); ?></span>
+			<span class="comments"><i class="fa fa-comments"></i> <?php comments_popup_link(__('No Responses', 'suffusion') . ' &#187;', __('1 Response', 'suffusion') . ' &#187;', __('% Responses', 'suffusion') . ' &#187;'); ?></span>
 			<?php
             }
         if (get_edit_post_link() != '') {
             $prepend = apply_filters('suffusion_before_byline_html', do_shortcode($suf_byline_before_edit), 'edit');
             $append = apply_filters('suffusion_after_byline_html', do_shortcode($suf_byline_after_edit), 'edit');
             ?>
-			<span class="edit"><span class="icon">&nbsp;</span><?php edit_post_link(__('Edit', 'suffusion'), $prepend, $append); ?></span>
+			<span class="edit"><i class="fa fa-edit"></i> <?php edit_post_link(__('Edit', 'suffusion'), $prepend, $append); ?></span>
 			<?php
         }
         if ($post_show_tags == 'show-tleft' || $post_show_tags == 'show-tright') {
@@ -120,7 +120,7 @@ if ($post->post_type == 'post') {
             $append = apply_filters('suffusion_after_byline_html', do_shortcode($suf_byline_after_tag), 'tag');
             if (is_array($tags) && count($tags) > 0) {
                 ?>
-			<span class="tags tax"><span class="icon">&nbsp;</span><?php the_tags($prepend, ', ', $append); ?></span>
+			<span class="tags tax"><i class="fa fa-tags"></i> <?php the_tags($prepend, ', ', $append); ?></span>
 			<?php
             }
         }
@@ -203,7 +203,7 @@ if ($post->post_type == 'post') {
 
         if ('open' == $post->comment_status && ($suf_page_show_comment == 'show' || $suf_page_show_comment == 'show-tleft') && !$comments_disabled) {
             ?>
-			<span class="comments"><span class="icon">&nbsp;</span><a
+			<span class="comments"><i class="fa fa-comments"></i> <a
 		href="#respond"><?php _e('Add comments', 'suffusion'); ?></a></span>
 			<?php
         }
@@ -211,7 +211,7 @@ if ($post->post_type == 'post') {
             $prepend = apply_filters('suffusion_before_byline_html', do_shortcode($suf_byline_before_edit), 'edit');
             $append = apply_filters('suffusion_after_byline_html', do_shortcode($suf_byline_after_edit), 'edit');
             ?>
-			<span class="edit"><span class="icon">&nbsp;</span><?php edit_post_link(__('Edit', 'suffusion'), $prepend, $append); ?></span>
+			<span class="edit"><i class="fa fa-edit"></i> <?php edit_post_link(__('Edit', 'suffusion'), $prepend, $append); ?></span>
 			<?php
             do_action('rps-social-buttons');
         }
