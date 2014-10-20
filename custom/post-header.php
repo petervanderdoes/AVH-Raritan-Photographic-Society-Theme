@@ -213,8 +213,8 @@ if ($post->post_type == 'post') {
             ?>
 			<span class="edit"><i class="fa fa-edit"></i> <?php edit_post_link(__('Edit', 'suffusion'), $prepend, $append); ?></span>
 			<?php
-            do_action('rps-social-buttons');
         }
+        do_action('rps-social-buttons');
         ?>
 	</div>
 <?php
