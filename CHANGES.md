@@ -2,6 +2,9 @@
 
 == Changelog
 
+= Version 2.0.7 =
+* Preparation for new development cycle.
+
 = Version 2.0.6 =
 * Preparation for new development cycle.
 
