@@ -14,8 +14,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": ">=5.3.2",
-        "patchwork/utf8": "~1"
+        "php": ">=5.3.2"
     },
     "autoload": {
         "psr-0": {
