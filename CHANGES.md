@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 2.0.9-rc.1 =
+= Version 2.0.9 =
 * Improve masonry layout.
 * Improve gallery equal row layout.
 * Add social buttons.
