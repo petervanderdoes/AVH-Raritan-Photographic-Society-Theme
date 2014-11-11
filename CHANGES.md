@@ -3,31 +3,9 @@
 == Changelog
 
 = Version 2.0.9-rc.1 =
-* Preparation for new development cycle.
-
-= Version 2.0.8 =
-* Preparation for new development cycle.
-
-= Version 2.0.7 =
-* Preparation for new development cycle.
-
-= Version 2.0.6 =
-* Preparation for new development cycle.
-
-= Version 2.0.5 =
-* Preparation for new development cycle.
-
-= Version 2.0.4 =
-* Preparation for new development cycle.
-
-= Version 2.0.3 =
-* Preparation for new development cycle.
-
-= Version 2.0.2 =
-* Preparation for new development cycle.
-
-= Version 2.0.1 =
-* Preparation for new development cycle.
+* Improve masonry layout.
+* Improve gallery equal row layout.
+* Add social buttons.
 
 = Version 2.0.0 =
 * Using HTML5 for the gallery
