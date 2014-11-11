@@ -1,23 +1,6 @@
 (function($, window, document) {
   // The $ is now locally scoped
 
-  // The rest of your code goes here!
-  function set_equal_height(selectors) {
-    var tallest = 0;
-    // Reset all tiles to 0 min-height
-    selectors.css({
-      'height' : 'auto'
-    });
-    selectors.each(function() {
-      if ($(this).height() > tallest) {
-        tallest = $(this).height();
-      }
-    });
-    selectors.css({
-      'height' : tallest
-    });
-  }
-
   $(function() {
     /**
      * Setup external links
@@ -78,11 +61,5 @@
         });
   });
 
-  $(window).load(function() {
-    // Set the gallery items in the same row to equal heights
-    $('.gallery-row-equal').each(function() {
-      set_equal_height($(this).find('.gallery-item-content'));
-    });
-  });
 }(window.jQuery, window, document));
 // The global jQuery object is passed as a parameter

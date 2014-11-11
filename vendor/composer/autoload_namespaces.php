@@ -7,6 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'RpsTheme\\' => array($baseDir . '/libs'),
-    'Patchwork' => array($vendorDir . '/patchwork/utf8/class'),
-    'Normalizer' => array($vendorDir . '/patchwork/utf8/class'),
 );
