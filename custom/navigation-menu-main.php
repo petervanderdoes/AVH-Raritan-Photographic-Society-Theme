@@ -200,12 +200,13 @@ if (trim($ret_str) != '') {
         global $user_ID, $user_identity;
         $login = get_userdata($user_ID);
         $login_bar .= 'Logged in: <a href="' . admin_url('profile.php') . '">' . $user_identity . "</a>";
+        $redirect = (is_object($post) ? get_permalink($post->ID) : '');
         $login_bar .= ' | <a href="' . wp_logout_url(apply_filters('the_permalink', get_permalink($post->ID))) . '">Log out</a>';
     } else {
         if (isset($_REQUEST["_s2member_seeking"]["_uri"]) && !empty($_GET["_s2member_seeking"]["_uri"])) {
             $redirect = trim(base64_decode(trim(stripslashes((string) $_GET["_s2member_seeking"]["_uri"]))));
         } else {
-            $redirect = get_permalink($post->ID);
+            $redirect = $redirect = (is_object($post) ? get_permalink($post->ID) : '');
         }
         $login_bar .= '<a href="' . wp_login_url(apply_filters('the_permalink', $redirect)) . '">Login</a>';
         if (get_option('users_can_register')) {
