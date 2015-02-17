@@ -4,10 +4,10 @@
   @include background(linear-gradient(top, $color-royal-blue-light-opaque 0%, $color-royal-blue-dark-transparent 100%));
 }
 
-@mixin gradient-buttons {
+@mixin gradient-buttons($lineheight: 100%) {
   background: $color-royal-blue-light;
   @include filter-gradient($color-royal-blue-light, $color-royal-blue-dark, vertical);
-  @include background(linear-gradient(top, $color-royal-blue-light-opaque 0%, $color-royal-blue-dark-opaque 100%));
+  @include background(linear-gradient(top, $color-royal-blue-light-opaque 0%, $color-royal-blue-dark-opaque $lineheight));
 }
 
 @mixin gradient-buttons-active {

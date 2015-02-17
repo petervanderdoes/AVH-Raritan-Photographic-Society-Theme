@@ -97,7 +97,7 @@ legend, .button {
   @include border-radius(20px);
 }
 
-input {
+button, input {
   &[type="button"], &[type="submit"] {
     @include border-radius(3px);
   }
