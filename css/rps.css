@@ -5764,9 +5764,9 @@ button[type="submit"]:hover, button[type="submit"]:active, button[type="submit"]
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF6D8CE8', endColorstr='#FF003599');
   background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzZkOGNlOCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMzU5OSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6d8ce8), color-stop(100%, #003599));
-  background: -moz-linear-gradient(top, #6d8ce8 0%, #003599 100%);
-  background: -webkit-linear-gradient(top, #6d8ce8 0%, #003599 100%);
-  background: linear-gradient(to bottom, #6d8ce8 0%, #003599 100%);
+  background: -moz-linear-gradient(top, #6d8ce8 0%, #003599 1.5rem);
+  background: -webkit-linear-gradient(top, #6d8ce8 0%, #003599 1.5rem);
+  background: linear-gradient(to bottom, #6d8ce8 0%, #003599 1.5rem);
 }
 
 /* line 61, ../sass/rps/_forms.scss */

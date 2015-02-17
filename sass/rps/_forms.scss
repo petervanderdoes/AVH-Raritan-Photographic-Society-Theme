@@ -54,7 +54,7 @@ button[type="submit"], input[type="submit"] {
   @include gradient-buttons($lineheight);
   &:hover, &:active, &:focus {
     color: $color-button-text;
-    @include gradient-buttons-active;
+    @include gradient-buttons-active($lineheight);
   }
 }
 
