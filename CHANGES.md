@@ -2,8 +2,10 @@
 
 == Changelog
 
-= Version 2.1.0-dev.1 =
-* Preparation for new development cycle.
+= Version 2.0.10 =
+* Update for usage if Symfony Forms
+* Update table styling
+* Fix gradient
 
 = Version 2.0.9 =
 * Improve masonry layout.
