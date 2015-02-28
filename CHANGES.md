@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 2.0.10-rc.1 =
+= Version 2.0.10 =
 * Update for usage if Symfony Forms
 * Update table styling
 * Fix gradient
