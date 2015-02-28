@@ -45,15 +45,16 @@
   }
 }
 
-input[type="submit"] {
+button[type="submit"], input[type="submit"] {
   width: auto;
   color: $color-button-text;
   border: solid 1px $color-button-border;
-  @include gradient-buttons;
   @include adjust-font-size-to($font-small);
+  $lineheight: rhythm($font-size: $font-small);
+  @include gradient-buttons($lineheight);
   &:hover, &:active, &:focus {
     color: $color-button-text;
-    @include gradient-buttons-active;
+    @include gradient-buttons-active($lineheight);
   }
 }
 

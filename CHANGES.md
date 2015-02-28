@@ -2,6 +2,11 @@
 
 == Changelog
 
+= Version 2.0.10 =
+* Update for usage if Symfony Forms
+* Update table styling
+* Fix gradient
+
 = Version 2.0.9 =
 * Improve masonry layout.
 * Improve gallery equal row layout.
