@@ -3,7 +3,9 @@
 == Changelog
 
 = Version 2.0.10-rc.1 =
-* Preparation for new development cycle.
+* Update for usage if Symfony Forms
+* Update table styling
+* Fix gradient
 
 = Version 2.0.9 =
 * Improve masonry layout.
