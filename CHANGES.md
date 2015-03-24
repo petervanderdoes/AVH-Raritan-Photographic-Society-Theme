@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 2.0.11-rc.1 =
+= Version 2.0.11 =
 * Gravity Forms fields are classes instead of arrays.
 * Update styles for reset buttons.
 
