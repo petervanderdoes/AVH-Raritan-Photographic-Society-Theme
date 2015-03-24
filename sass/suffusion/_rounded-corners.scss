@@ -98,7 +98,7 @@ legend, .button {
 }
 
 button, input {
-  &[type="button"], &[type="submit"] {
+  &[type="button"], &[type="submit"], &[type="reset"] {
     @include border-radius(3px);
   }
 }

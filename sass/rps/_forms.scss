@@ -3,61 +3,63 @@
 */
 #commentform {
   input[type="text"]:focus {
-    border: solid 1px #999;
+    border : solid 1px #999;
   }
   input {
     @include gradient-input;
-    color: $color-input-text;
-    font-size: 1em;
-    font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
+    color       : $color-input-text;
+    font-size   : 1em;
+    font-family : "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
     &:focus {
       @include gradient-input-focus;
-      color: $color-input-text-focus;
+      color : $color-input-text-focus;
     }
   }
-  input[type="submit"] {
-    width: auto;
-    color: $color-button-text;
-    border: solid 1px $color-button-border;
+  input[type="submit"], input[type="reset"] {
+    width  : auto;
+    color  : $color-button-text;
+    border : solid 1px $color-button-border;
     @include gradient-buttons;
     @include adjust-font-size-to($font-small);
     &:hover, &:active, &:focus {
-      color: $color-button-text;
+      color : $color-button-text;
       @include gradient-buttons-active;
     }
   }
   textarea {
     @include gradient-input;
-    color: $color-input-text;
-    font-size: 1em;
-    font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
-    height: 140px;
-    border: solid 1px #999999;
-    padding: 5px 3px 3px 7px;
-    margin-top: -1px;
-    width: 90%;
-    max-width: 90%;
+    color       : $color-input-text;
+    font-size   : 1em;
+    font-family : "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
+    height      : 140px;
+    border      : solid 1px #999999;
+    padding     : 5px 3px 3px 7px;
+    margin-top  : -1px;
+    width       : 90%;
+    max-width   : 90%;
     &:focus {
       @include gradient-input-focus;
-      color: $color-input-text-focus;
-      border: solid 1px #999;
+      color  : $color-input-text-focus;
+      border : solid 1px #999;
     }
   }
 }
 
-button[type="submit"], input[type="submit"] {
-  width: auto;
-  color: $color-button-text;
-  border: solid 1px $color-button-border;
-  @include adjust-font-size-to($font-small);
-  $lineheight: rhythm($font-size: $font-small);
-  @include gradient-buttons($lineheight);
-  &:hover, &:active, &:focus {
-    color: $color-button-text;
-    @include gradient-buttons-active($lineheight);
+button, input {
+  &[type="button"], &[type="submit"], &[type="reset"] {
+    width  : auto;
+    color  : $color-button-text;
+    border : solid 1px $color-button-border;
+    @include adjust-font-size-to($font-small);
+    $lineheight : rhythm($font-size : $font-small);
+    @include gradient-buttons($lineheight);
+    &:hover, &:active, &:focus {
+      color : $color-button-text;
+      @include gradient-buttons-active($lineheight);
+    }
   }
 }
 
 input[type="submit"].searchsubmit {
-  background: image-url("search-button-rblue.png", false, false);
+  background : image-url("search-button-rblue.png", false, false);
 }

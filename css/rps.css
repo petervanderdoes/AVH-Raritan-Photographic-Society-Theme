@@ -3849,7 +3849,7 @@ legend, .button {
 }
 
 /* line 101, ../sass/suffusion/_rounded-corners.scss */
-button[type="button"], button[type="submit"], input[type="button"], input[type="submit"] {
+button[type="button"], button[type="submit"], button[type="reset"], input[type="button"], input[type="submit"], input[type="reset"] {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -5660,7 +5660,7 @@ img.home-icon {
   background: linear-gradient(to bottom, #696969 0%, #a9a9a9 50%, #a9a9a9 100%);
   color: #000;
   font-size: 1em;
-  font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
+  font-family: "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
 }
 /* line 13, ../sass/rps/_forms.scss */
 #commentform input:focus {
@@ -5675,7 +5675,7 @@ img.home-icon {
   color: #000;
 }
 /* line 18, ../sass/rps/_forms.scss */
-#commentform input[type="submit"] {
+#commentform input[type="submit"], #commentform input[type="reset"] {
   width: auto;
   color: #e9e9e9;
   border: solid 1px #002366;
@@ -5693,7 +5693,7 @@ img.home-icon {
   line-height: 1.5rem;
 }
 /* line 24, ../sass/rps/_forms.scss */
-#commentform input[type="submit"]:hover, #commentform input[type="submit"]:active, #commentform input[type="submit"]:focus {
+#commentform input[type="submit"]:hover, #commentform input[type="submit"]:active, #commentform input[type="submit"]:focus, #commentform input[type="reset"]:hover, #commentform input[type="reset"]:active, #commentform input[type="reset"]:focus {
   color: #e9e9e9;
   background: #6d8ce8;
   *zoom: 1;
@@ -5716,7 +5716,7 @@ img.home-icon {
   background: linear-gradient(to bottom, #696969 0%, #a9a9a9 50%, #a9a9a9 100%);
   color: #000;
   font-size: 1em;
-  font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
+  font-family: "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
   height: 140px;
   border: solid 1px #999999;
   padding: 5px 3px 3px 7px;
@@ -5738,8 +5738,8 @@ img.home-icon {
   border: solid 1px #999;
 }
 
-/* line 48, ../sass/rps/_forms.scss */
-button[type="submit"], input[type="submit"] {
+/* line 49, ../sass/rps/_forms.scss */
+button[type="button"], button[type="submit"], button[type="reset"], input[type="button"], input[type="submit"], input[type="reset"] {
   width: auto;
   color: #e9e9e9;
   border: solid 1px #002366;
@@ -5756,8 +5756,8 @@ button[type="submit"], input[type="submit"] {
   background: -webkit-linear-gradient(top, #4169e1 0%, #002366 1.5rem);
   background: linear-gradient(to bottom, #4169e1 0%, #002366 1.5rem);
 }
-/* line 55, ../sass/rps/_forms.scss */
-button[type="submit"]:hover, button[type="submit"]:active, button[type="submit"]:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
+/* line 56, ../sass/rps/_forms.scss */
+button[type="button"]:hover, button[type="button"]:active, button[type="button"]:focus, button[type="submit"]:hover, button[type="submit"]:active, button[type="submit"]:focus, button[type="reset"]:hover, button[type="reset"]:active, button[type="reset"]:focus, input[type="button"]:hover, input[type="button"]:active, input[type="button"]:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus, input[type="reset"]:hover, input[type="reset"]:active, input[type="reset"]:focus {
   color: #e9e9e9;
   background: #6d8ce8;
   *zoom: 1;
@@ -5769,7 +5769,7 @@ button[type="submit"]:hover, button[type="submit"]:active, button[type="submit"]
   background: linear-gradient(to bottom, #6d8ce8 0%, #003599 1.5rem);
 }
 
-/* line 61, ../sass/rps/_forms.scss */
+/* line 63, ../sass/rps/_forms.scss */
 input[type="submit"].searchsubmit {
   background: url('../images/search-button-rblue.png');
 }
