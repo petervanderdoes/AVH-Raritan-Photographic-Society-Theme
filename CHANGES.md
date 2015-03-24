@@ -2,8 +2,9 @@
 
 == Changelog
 
-= Version 2.0.11-dev.1 =
+= Version 2.0.11 =
 * Gravity Forms fields are classes instead of arrays.
+* Update styles for reset buttons.
 
 = Version 2.0.10 =
 * Update for usage if Symfony Forms
