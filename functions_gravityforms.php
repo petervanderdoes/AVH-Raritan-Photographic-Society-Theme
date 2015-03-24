@@ -87,8 +87,8 @@ function filterRPS_GF_populate_profile_fields($form)
 
         if (strpos($field['cssClass'], 'rps-profile-name') !== false) {
             $_gf_name_id = $field['id'];
-            $field['defaultValue'][$_gf_name_id . '.3'] = $_profileuser->first_name;
-            $field['defaultValue'][$_gf_name_id . '.6'] = $_profileuser->last_name;
+            $field->defaultValue[$_gf_name_id . '.3'] = $_profileuser->first_name;
+            $field->defaultValue[$_gf_name_id . '.6'] = $_profileuser->last_name;
             continue;
         }
 
@@ -121,13 +121,13 @@ function filterRPS_GF_populate_profile_fields($form)
                 $_is_selected = ($_profileuser->display_name == $item ? 1 : null);
                 $choices[] = array('text' => $item, 'value' => $item, 'isSelected' => $_is_selected);
             }
-            $field['choices'] = $choices;
+            $field->choices = $choices;
             continue;
         }
 
         foreach ($_gf_fields as $gf_key => $info) {
             if (strpos($field['cssClass'], 'rps-profile-' . $gf_key) !== false) {
-                $field['defaultValue'] = $_profileuser->$info['wp_meta'];
+                $field->defaultValue = $_profileuser->$info['wp_meta'];
                 break;
             }
         }
