@@ -2,6 +2,9 @@
 
 == Changelog
 
+= Version 2.0.12-dev.1 =
+* Preparation for new development cycle.
+
 = Version 2.0.11 =
 * Gravity Forms fields are classes instead of arrays.
 * Update styles for reset buttons.
