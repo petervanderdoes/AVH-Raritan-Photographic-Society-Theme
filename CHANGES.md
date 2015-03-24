@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 2.0.11-dev.1 =
+= Version 2.0.11-rc.1 =
 * Gravity Forms fields are classes instead of arrays.
 
 = Version 2.0.10 =
