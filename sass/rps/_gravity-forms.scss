@@ -1,89 +1,80 @@
 .gform_wrapper {
   *:focus {
-    background-color: $color-input-bg-focus;
-    color: $color-input-text-focus;
-    outline: 0 none;
+    background-color : $color-input-bg-focus;
+    color            : $color-input-text-focus;
+    outline          : 0 none;
   }
   .gform_body {
     input,
     textarea {
       @include gradient-input;
-      color: $color-input-text;
+      color : $color-input-text;
     }
     input:focus,
     textarea:focus {
       @include gradient-input-focus;
-      color: $color-input-text-focus;
+      color : $color-input-text-focus;
     }
   }
   select {
-    background-color: #333333;
-    background-origin: padding-box;
+    background-color  : #333333;
+    background-origin : padding-box;
     @include border-radius(5px);
-    border: 1px solid $color-border;
-    color: #999999;
-    font-family: inherit;
-    font-size: 11px;
-    letter-spacing: normal;
-    padding: 3px 0;
+    border            : 1px solid $color-border;
+    color             : #999999;
+    font-family       : inherit;
+    font-size         : 11px;
+    letter-spacing    : normal;
+    padding           : 3px 0;
   }
   .chzn-container .chzn-drop {
-    background-color: #999999;
-    color: #333333;
-    border: 1px solid $color-border;
+    background-color : #999999;
+    color            : #333333;
+    border           : 1px solid $color-border;
   }
   .chzn-container-single .chzn-single {
     div {
-      background-color: #333333;
-      background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #333333), color-stop(1, black));
-      background-image: -webkit-linear-gradient(center bottom, #333333 0%, black 100%);
-      background-image: -moz-linear-gradient(center bottom, #333333 0%, black 100%);
-      background-image: -o-linear-gradient(top, #333333 0%, black 100%);
-      background-image: -ms-linear-gradient(top, #333333 0%, black 100%);
-      background-image: linear-gradient(top, #333333 0%, black 100%);
-      border-left: 1px solid $color-border;
+      background-color : #333333;
+      background-image : -webkit-gradient(linear, left bottom, left top, color-stop(0, #333333), color-stop(1, black));
+      background-image : -webkit-linear-gradient(center bottom, #333333 0%, black 100%);
+      background-image : -moz-linear-gradient(center bottom, #333333 0%, black 100%);
+      background-image : -o-linear-gradient(top, #333333 0%, black 100%);
+      background-image : -ms-linear-gradient(top, #333333 0%, black 100%);
+      background-image : linear-gradient(top, #333333 0%, black 100%);
+      border-left      : 1px solid $color-border;
     }
-    background-color: #333333;
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #333333), color-stop(1, black));
-    background-image: -webkit-linear-gradient(center bottom, #333333 0%, black 100%);
-    background-image: -moz-linear-gradient(center bottom, #333333 0%, black 100%);
-    background-image: -o-linear-gradient(top, #333333 0%, black 100%);
-    background-image: -ms-linear-gradient(top, #333333 0%, black 100%);
-    background-image: linear-gradient(top, #333333 0%, black 100%);
-    border: 1px solid $color-border;
-    color: #999999;
+    background-color : #333333;
+    background-image : -webkit-gradient(linear, left bottom, left top, color-stop(0, #333333), color-stop(1, black));
+    background-image : -webkit-linear-gradient(center bottom, #333333 0%, black 100%);
+    background-image : -moz-linear-gradient(center bottom, #333333 0%, black 100%);
+    background-image : -o-linear-gradient(top, #333333 0%, black 100%);
+    background-image : -ms-linear-gradient(top, #333333 0%, black 100%);
+    background-image : linear-gradient(top, #333333 0%, black 100%);
+    border           : 1px solid $color-border;
+    color            : #999999;
   }
   .chzn-container-active {
     .chzn-single {
-      -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
-      -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
-      -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+      -webkit-box-shadow : 0 0 5px rgba(0, 0, 0, 0);
+      -moz-box-shadow    : 0 0 5px rgba(0, 0, 0, 0);
+      -o-box-shadow      : 0 0 5px rgba(0, 0, 0, 0);
+      box-shadow         : 0 0 5px rgba(0, 0, 0, 0);
     }
     .chzn-single-with-drop {
-      border: 1px solid $color-border;
-      background-color: #333333;
-      background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #333333), color-stop(1, black));
-      background-image: -webkit-linear-gradient(center bottom, #333333 0%, black 100%);
-      background-image: -moz-linear-gradient(center bottom, #333333 0%, black 100%);
-      background-image: -o-linear-gradient(top, #333333 0%, black 100%);
-      background-image: -ms-linear-gradient(top, #333333 0%, black 100%);
-      background-image: linear-gradient(top, #333333 0%, black 100%);
+      border           : 1px solid $color-border;
+      background-color : #333333;
+      background-image : -webkit-gradient(linear, left bottom, left top, color-stop(0, #333333), color-stop(1, black));
+      background-image : -webkit-linear-gradient(center bottom, #333333 0%, black 100%);
+      background-image : -moz-linear-gradient(center bottom, #333333 0%, black 100%);
+      background-image : -o-linear-gradient(top, #333333 0%, black 100%);
+      background-image : -ms-linear-gradient(top, #333333 0%, black 100%);
+      background-image : linear-gradient(top, #333333 0%, black 100%);
     }
   }
   .chzn-container .chzn-results .highlighted {
-    background-color: $color-border;
+    background-color : $color-border;
   }
   .chzn-container-single .chzn-search input {
-    border: 1px solid $color-border;
+    border : 1px solid $color-border;
   }
-}
-
-#picatcha {
-  background-color: inherit !important;
-  border: 1px solid $color-border !important;
-}
-
-.picatcha .img_btn {
-  border: 2px solid $color-border !important;
 }

@@ -3,7 +3,7 @@
 == Changelog
 
 = Version 2.0.12-dev.1 =
-* Preparation for new development cycle.
+* Remove all Picatcha references.
 
 = Version 2.0.11 =
 * Gravity Forms fields are classes instead of arrays.
