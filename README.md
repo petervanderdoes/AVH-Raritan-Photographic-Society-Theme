@@ -2,7 +2,7 @@
 
 I'm personally not pleased with how this theme is setup.
 
-At the time we implemented this teme we were facing a deadline and the parent theme was the closest we could find that 
+At the time we implemented this theme we were facing a deadline and the parent theme was the closest we could find that 
 had a feel we liked.
 
 Lots of the options that Suffusion gives you we are not using and we'll never use.
