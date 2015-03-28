@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 2.0.12-rc.1 =
+= Version 2.0.12 =
 * Remove all Picatcha references.
 * Add new page for when there are no news articles to show.
 
