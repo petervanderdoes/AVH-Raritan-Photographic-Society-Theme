@@ -73,6 +73,6 @@ if (have_posts()) {
     }
     suffusion_before_end_content();
 } else {
-    get_template_part('layouts/template-missing');
+    get_template_part('layouts/no-news');
 }
 ?>
