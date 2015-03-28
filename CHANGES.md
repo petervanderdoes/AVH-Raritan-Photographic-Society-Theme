@@ -2,8 +2,9 @@
 
 == Changelog
 
-= Version 2.0.12-dev.1 =
+= Version 2.0.12 =
 * Remove all Picatcha references.
+* Add new page for when there are no news articles to show.
 
 = Version 2.0.11 =
 * Gravity Forms fields are classes instead of arrays.
