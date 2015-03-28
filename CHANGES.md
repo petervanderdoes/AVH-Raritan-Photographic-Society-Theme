@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 2.0.12-dev.1 =
+= Version 2.0.12-rc.1 =
 * Remove all Picatcha references.
 
 = Version 2.0.11 =
