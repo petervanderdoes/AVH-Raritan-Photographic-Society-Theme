@@ -3,7 +3,7 @@
 == Changelog
 
 = Version 2.0.13-dev.1 =
-* Preparation for new development cycle.
+* Update styling for mobile devices.
 
 = Version 2.0.12 =
 * Remove all Picatcha references.
