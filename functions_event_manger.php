@@ -12,7 +12,6 @@ add_filter('em_calendar_template_args', 'filterRPS_em_ical_args', 10, 1);
 add_filter('em_event_output_placeholder', 'filterRPS_EM_event_output_placeholder', 10, 4);
 add_filter('em_location_output_placeholder', 'filterRPS_EM_location_output_placeholder', 10, 4);
 add_filter('em_widget_calendar_get_args', 'filterRPS_EM_get_child_categories', 10, 1);
-add_filter('em_event_get_permalink', 'filterRPS_EM_get_permalink', 10, 2);
 add_filter('em_register_new_user_pre', 'filterRPS_EM_set_member_level', 10, 1);
 
 /**
@@ -130,59 +129,6 @@ function filterRPS_EM_event_output_placeholder($replace, $EM_Event, $full_result
     return $replace;
 }
 
-/**
- * @param string   $permalink
- * @param EM_Event $EM_Event
- *
- * @return Ambigous <string, mixed>
- */
-function filterRPS_EM_get_permalink($permalink, $EM_Event)
-{
-    $rewritecode_wordpress = array('%year%', '%monthnum%', '%day%', '%hour%', '%minute%', '%second%', '%postname%', '%post_id%', '%category%', '%author%', '%pagename%');
-    $rewritecode_events = array('%event_year%', '%event_monthnum%', '%event_day%', '%event_hour%', '%event_minute%', '%event_second%');
-    $rewritecode = array_merge($rewritecode_wordpress, $rewritecode_events);
-
-    if ('' != $permalink && !in_array($EM_Event->post_status, array('draft', 'pending', 'auto-draft'))) {
-        $unixtime = strtotime($EM_Event->post_date);
-        $unixtime_start = strtotime($EM_Event->event_start_date . ' ' . $EM_Event->event_start_time);
-
-        $category = '';
-        if (strpos($permalink, '%category%') !== false) {
-
-            $EM_Categories = $EM_Event->get_categories();
-            if ($EM_Categories->categories) {
-                usort($EM_Categories->categories, '_usort_terms_by_ID'); // order by ID
-                $category_object = $EM_Categories->categories[0];
-                $category_object = get_term($category_object, EM_TAXONOMY_CATEGORY);
-                $category = $category_object->slug;
-                if (isset($category_object->parent)) {
-                    $parent = $category_object->parent;
-                    $category = rps_EM_get_parents($parent, false, '/', true, array(), EM_TAXONOMY_CATEGORY) . $category;
-                }
-            }
-        }
-
-        $author = '';
-        if (strpos($permalink, '%author%') !== false) {
-            $authordata = get_userdata($EM_Event->post_author);
-            $author = $authordata->user_nicename;
-        }
-
-        $date = explode(" ", date('Y m d H i s', $unixtime));
-        $rewritereplace_wordpress = array($date[0], $date[1], $date[2], $date[3], $date[4], $date[5], $EM_Event->post_name, $EM_Event->ID, $category, $author, $EM_Event->post_name);
-
-        $date = explode(" ", date('Y m d H i s', $unixtime_start));
-        $rewritereplace_event = array($date[0], $date[1], $date[2], $date[3], $date[4], $date[5]);
-
-        $rewritereplace = array_merge($rewritereplace_wordpress, $rewritereplace_event);
-        $permalink = str_replace($rewritecode, $rewritereplace, $permalink);
-        $permalink = user_trailingslashit($permalink, 'single');
-    } else { // if they're not using the fancy permalink option
-        $permalink = home_url('?p=' . $EM_Event->ID);
-    }
-
-    return $permalink;
-}
 
 function filterRPS_EM_location_output_placeholder($replace, $em, $full_result, $target)
 {
