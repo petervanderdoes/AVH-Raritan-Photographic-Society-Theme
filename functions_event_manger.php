@@ -112,8 +112,14 @@ function filterRPS_EM_event_output_placeholder($replace, $EM_Event, $full_result
                 $replace .= '<meta itemprop="name" content="' . esc_attr($EM_Category->name) . ': ' . esc_attr($EM_Event->event_name) . '">';
                 break;
             case '#_SCHEMADATE':
-                $replace = '<meta itemprop="startDate" content="' . date('c', $EM_Event->start) . '">';
-                $replace .= '<meta itemprop="endDate" content="' . date('c', $EM_Event->end) . '">';
+                $tz = new DateTimeZone('America/New_York');
+                $date_start = new \DateTime("@$EM_Event->start");
+                $date_start->setTimezone($tz);
+                $replace = '<meta itemprop="startDate" content="' . $date_start->format('c') . '">';
+                $date_end = new \DateTime("@$EM_Event->end");
+                $date_end->setTimezone($tz);
+                $replace .= '<meta itemprop="endDate" content="' . $date_end->format('c') . '">';
+                $replace .= '<meta itemprop="duration" content="' . $date_start->format('c') .'/'.$date_end->format('c') . '">';
                 break;
         }
     }
