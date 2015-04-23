@@ -43,8 +43,7 @@ if ($suf_footer_layout_style != 'in-align') {
 										class="social-text">Twitter</span></a></li>
 							</ul>
 						</td>
-						<td class="cred-right">Built by Peter van der Does using the
-							Suffusion theme</td>
+						<td class="cred-right">Built by Peter van der Does</td>
 					</tr>
 				</table>
 			</div>
