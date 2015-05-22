@@ -1,0 +1,25 @@
+.info-msg,
+.success-msg,
+.warning-msg,
+.error-msg {
+  @include adjust-font-size-to($font-small);
+  @include border-radius(5px);
+  @include rhythm($font-size: $font-small);
+  padding: 0.5rem;
+}
+.info-msg {
+  color: #059;
+  background-color: #BEF;
+}
+.success-msg {
+  color: #270;
+  background-color: #DFF2BF;
+}
+.warning-msg {
+  color: #9F6000;
+  background-color: #FEEFB3;
+}
+.error-msg {
+  color: #D8000C;
+  background-color: #FFBABA;
+}
