@@ -1,0 +1,24 @@
+.alert-box {
+  border  : solid 1px;
+  @include adjust-font-size-to($font-small);
+  @include border-radius(3px);
+  @include rhythm($font-size : $font-small);
+  padding : 0.5rem;
+
+  &.info {
+    color            : #059;
+    background-color : #bef;
+  }
+  &.success {
+    color            : #270;
+    background-color : #dff2bf;
+  }
+  &.warning {
+    color            : #9f6000;
+    background-color : #feefb3;
+  }
+  &.error {
+    color            : #d8000c;
+    background-color : #ffbaba;
+  }
+}

@@ -70,7 +70,7 @@ input {
   }
 }
 
-.download, .announcement, .warning, .note, .suf-mag-headlines, .nr-post h3, .nr_widget h4 {
+.download, .announcement, .note, .suf-mag-headlines, .nr-post h3, .nr_widget h4 {
   @include border-radius(5px);
 }
 

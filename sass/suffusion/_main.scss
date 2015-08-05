@@ -704,7 +704,7 @@ ul.children {
 
 /* Emphasis */
 
-.download, .announcement, .warning, .note {
+.download, .announcement, .note {
   padding: 10px 5px 10px 5px;
   margin: 10px 0 10px 0;
   width: 98%;
@@ -719,11 +719,6 @@ ul.children {
 .announcement {
   background-color: #b8f9d5;
   border: 1px solid #088c43;
-}
-
-.warning {
-  background-color: #ffdbea;
-  border: 1px solid #ff0000;
 }
 
 .note {

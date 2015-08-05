@@ -2,6 +2,12 @@
 
 == Changelog
 
+= Version 2.0.13 =
+* Fix event schema.
+* Add alert-box styling.
+* Remove post information at bottom of post.
+* Update styling for mobile devices.
+
 = Version 2.0.12 =
 * Remove all Picatcha references.
 * Add new page for when there are no news articles to show.

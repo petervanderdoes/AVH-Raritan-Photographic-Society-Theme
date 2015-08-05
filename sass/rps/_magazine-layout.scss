@@ -128,6 +128,7 @@ h2 {
 
 .suf-mag-excerpt-text {
   @include padding-trailer;
+  text-align: left;
 }
 
 .suf-mag-excerpt-text p, .suf-tile-text p {

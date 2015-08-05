@@ -2,13 +2,6 @@
   margin-bottom: 1.5em;
 }
 
-.gallery-item {
-  display: inline-block;
-  text-align: center;
-  vertical-align: top;
-  //width: 100%;
-}
-
 .gallery-columns-2 .gallery-item {
   max-width: 50%;
 }
@@ -129,6 +122,39 @@ p.wp-caption-text {
   padding-top: 1rem;
 }
 
-.gallery-row-equal {
-  text-align: center;
+@media only screen
+and (max-device-width : 1023px)
+{
+  .rps-showcases {
+    .gallery-item-content {
+      display: block;
+    }
+  }
+  
+  .gallery-item {
+    display: block;
+    text-align: center;
+    vertical-align: top;
+    //width: 100%;
+  }
+  
+  .gallery-row-equal {
+    text-align: center;
+    display: inline-block;
+  }
+}
+
+@media only screen
+and (min-device-width : 1024px)
+{
+  .gallery-item {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    //width: 100%;
+  }
+  
+  .gallery-row-equal {
+    text-align: center;
+  }
 }

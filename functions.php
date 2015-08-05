@@ -108,6 +108,8 @@ function actionRPS_theme_setup()
     remove_action('suffusion_document_header', 'suffusion_set_title');
     remove_action('wp_enqueue_scripts', 'suffusion_enqueue_styles');
     remove_action('suffusion_after_begin_post', 'suffusion_print_post_updated_information');
+    remove_action('suffusion_before_end_post', 'suffusion_post_footer');
+    
 
     add_action('rps_subnav', 'suffusion_build_breadcrumb');
     add_action('rps_subnav', 'actionRPS_next_meeting');
@@ -210,7 +212,7 @@ function actionRPS_enqueue_styles()
         wp_enqueue_script('rps', $stylesheet_directory_uri . '/scripts/rps.js', array(), 'to_remove');
     } else {
         // The style version is automatically updated by using git-flow hooks.
-        $rps_style_version = "b90ce3d";
+        $rps_style_version = "59a4235";
         wp_enqueue_style('suffusion-theme', $stylesheet_directory_uri . '/css/rps-' . $rps_style_version . '.css', array(), 'to_remove');
         // The style version is automatically updated by using git-flow hooks.
         $rps_js_version = "9d65b67";
