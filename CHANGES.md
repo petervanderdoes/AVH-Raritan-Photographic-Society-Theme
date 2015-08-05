@@ -3,6 +3,9 @@
 == Changelog
 
 = Version 2.0.13-rc.1 =
+* Fix event schema.
+* Add alert-box styling.
+* Remove post information at bottom of post.
 * Update styling for mobile devices.
 
 = Version 2.0.12 =
