@@ -108,6 +108,8 @@ function actionRPS_theme_setup()
     remove_action('suffusion_document_header', 'suffusion_set_title');
     remove_action('wp_enqueue_scripts', 'suffusion_enqueue_styles');
     remove_action('suffusion_after_begin_post', 'suffusion_print_post_updated_information');
+    remove_action('suffusion_before_end_post', 'suffusion_post_footer');
+    
 
     add_action('rps_subnav', 'suffusion_build_breadcrumb');
     add_action('rps_subnav', 'actionRPS_next_meeting');
