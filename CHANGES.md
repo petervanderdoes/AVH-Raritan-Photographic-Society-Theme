@@ -2,7 +2,10 @@
 
 == Changelog
 
-= Version 2.0.13-dev.9 =
+= Version 2.0.13 =
+* Fix event schema.
+* Add alert-box styling.
+* Remove post information at bottom of post.
 * Update styling for mobile devices.
 
 = Version 2.0.12 =
