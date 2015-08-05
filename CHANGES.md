@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 2.0.13-dev.9 =
+= Version 2.0.13-rc.1 =
 * Update styling for mobile devices.
 
 = Version 2.0.12 =
