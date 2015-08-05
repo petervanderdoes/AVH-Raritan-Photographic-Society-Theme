@@ -5,11 +5,11 @@
   @include rhythm($font-size : $font-small);
   padding : 0.5rem;
 
-  &.info-msg {
+  &.info {
     color            : #059;
     background-color : #bef;
   }
-  &.success-msg {
+  &.success {
     color            : #270;
     background-color : #dff2bf;
   }
@@ -17,7 +17,7 @@
     color            : #9f6000;
     background-color : #feefb3;
   }
-  &.error-msg {
+  &.error {
     color            : #d8000c;
     background-color : #ffbaba;
   }
