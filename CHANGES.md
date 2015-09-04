@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 2.0.14-dev.1 =
+= Version 2.0.14-rc.1 =
 * Preparation for new development cycle.
 
 = Version 2.0.13 =
