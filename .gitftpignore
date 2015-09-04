@@ -1,6 +1,10 @@
-Capfile
-config/*
-css/rps.css
-scripts/rps.js
+/sass
+tests
+.editorconfig
+.scrutinizer.yml
+.travis.yml
+composer.json
+composer.lock
+config.rb
+phpunit.xml
 CHANGES.md
-sass/*
