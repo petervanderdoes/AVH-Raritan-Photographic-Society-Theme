@@ -99,7 +99,7 @@ function filterRPS_EM_set_member_level($userdata)
  */
 function filterRPS_EM_event_output_placeholder($replace, $EM_Event, $full_result, $target)
 {
-    $html = new \Avh\Html\HtmlBuilder();
+    $html = new \Avh\Framework\Html\HtmlBuilder();
 
     $EM_Categories = $EM_Event->get_categories();
 
