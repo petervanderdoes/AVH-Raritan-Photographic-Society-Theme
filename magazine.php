@@ -104,7 +104,7 @@ if ($total > 0) {
 
                 $category = $categories[0];
                 $category_link = '<a href="' . esc_url(get_category_link($category->term_id)) . '" title="' . esc_attr(sprintf(__("View all articles in %s"), $category->name)) . '" rel="category tag">';
-                $category_text = '<h3>' . $category_link . $category->name . '</h3></a>';
+                $category_text = '<h3>' . $category_link . $category->name . '</a></h3>';
 
                 echo "<div class='suf-mag-excerpt entry-content suf-tile-{$cols_per_row}c $suf_mag_excerpt_full_story_position'>";
 
