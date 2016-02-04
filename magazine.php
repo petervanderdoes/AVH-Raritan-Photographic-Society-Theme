@@ -35,6 +35,7 @@ if (!rps_is_paid_member(get_current_user_id())) {
     echo 'President</p>';
     echo '</div>';
     echo '</div>';
+    echo '</div>';
     echo '</section>';
 }
 
