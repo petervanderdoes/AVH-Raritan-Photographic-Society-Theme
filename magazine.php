@@ -135,7 +135,9 @@ if ($total > 0) {
         }
     }
 
-    echo "</section>";
+    if ($tiles !== 0) {
+        echo "</section>";    
+    }
 }
 
 echo "<section class='rps-showcases'>";
