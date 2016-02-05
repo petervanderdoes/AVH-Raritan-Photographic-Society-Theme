@@ -25,7 +25,7 @@ if ($suf_footer_layout_style != 'in-align') {
     <div id="cred">
 				<table>
 					<tr>
-						<td class="cred-left"><?php $strip = stripslashes($suf_footer_left); $strip = wp_specialchars_decode($strip, ENT_QUOTES); echo do_shortcode($strip); ?></td>
+						<td class="cred-left">&copy; 2013-<?php echo date("Y") ?> <a href='http://www.raritanphoto.com'>Raritan Photographic Society</a><br />New Jersey's oldest photography club.</td>
 						<td class="cred-center">Raritan Photographic Society on the web
 							<ul>
 								<li><a
