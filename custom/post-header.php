@@ -43,11 +43,11 @@ if (is_singular() && (!is_front_page())) {
 if ($post->post_type == 'post') {
     ?>
     <header class='entry-header post-header title-container fix'>
-
         <div class="date">
             <span class="month"><?php the_time('M'); ?></span> <span class="day"><?php the_time('d'); ?></span><span
                 class="year"><?php the_time('Y'); ?></span>
         </div>
+        <?php echo '<span class="vcard" style="display: none"><a href="' . get_author_posts_url(get_the_author_meta('ID')) . '" class="url fn" rel="author">' . get_the_author() . '</a></span>'; ?>
         <div class="title">
             <<?php echo $header_tag; ?> class="entry-title posttitle"><?php echo suffusion_get_post_title_and_link(); ?></<?php echo $header_tag; ?>>
         <?php
