@@ -1,18 +1,18 @@
 .ui-icon {
-  background-image: image-url("ui-icons_E6E6E6_256x240.png", false, false);
-  background-repeat: no-repeat;
-  display: inline-block;
-  height: 13px;
-  overflow: hidden;
-  text-indent: -99999px;
-  width: 13px;
+  background-image  : image-url("ui-icons_E6E6E6_256x240.png", false, false);
+  background-repeat : no-repeat;
+  display           : inline-block;
+  height            : 13px;
+  overflow          : hidden;
+  text-indent       : -99999px;
+  width             : 13px;
 }
 
 .ui-state-hover .ui-icon, .ui-state-focus .ui-icon {
-  background-image: image-url("ui-icons_4169E1_256x240.png", false, false);
+  background-image : image-url("ui-icons_4169E1_256x240.png", false, false);
 }
 
 /* Positioning */
 .ui-icon-extlink {
-  background-position: -32px -80px;
+  background-position : -32px -80px;
 }

@@ -3,8 +3,7 @@ namespace RpsTheme\Tutorials;
 
 class Tutorials
 {
-
-    static function setupPostType ()
+    static function setupPostType()
     {
         // @formatter:off
         $labels = array(

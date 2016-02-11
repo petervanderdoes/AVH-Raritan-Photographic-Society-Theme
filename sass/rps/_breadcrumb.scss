@@ -1,11 +1,11 @@
 .breadcrumb {
-  padding: 0;
-  float: left;
+  padding : 0;
+  float   : left;
   a {
     @include link-style;
   }
 }
 
 .breadcrumb_last {
-  font-weight: 700;
+  font-weight : 700;
 }

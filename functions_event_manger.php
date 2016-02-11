@@ -34,12 +34,16 @@ function filterRPS_EM_output_show_condition($show_condition, $condition, $match,
     if (is_object($EM_Event)) {
         switch ($condition) {
             case 'has_speaker':
-                if (isset($EM_Event->event_attributes['Speaker']) && (strlen($EM_Event->event_attributes['Speaker']) > 0)) {
+                if (isset($EM_Event->event_attributes['Speaker']) &&
+                    (strlen($EM_Event->event_attributes['Speaker']) > 0)
+                ) {
                     $show_condition = true;
                 }
                 break;
             case 'has_speakerwebsite':
-                if (isset($EM_Event->event_attributes['SpeakerWebsite']) && (strlen($EM_Event->event_attributes['SpeakerWebsite']) > 0)) {
+                if (isset($EM_Event->event_attributes['SpeakerWebsite']) &&
+                    (strlen($EM_Event->event_attributes['SpeakerWebsite']) > 0)
+                ) {
                     $show_condition = true;
                 }
                 break;
@@ -66,8 +70,8 @@ function filterRPS_em_ical_args($args)
 
 /**
  * Collect all children of the given categories in a widget form.
- * By default the widget only shows the given categories, we prefer to show the children of the given categories as well.
- * This is more compliant with the default WordPress behavior.
+ * By default the widget only shows the given categories, we prefer to show the children of the given categories as
+ * well. This is more compliant with the default WordPress behavior.
  *
  * @param array $instance
  *
@@ -109,7 +113,11 @@ function filterRPS_EM_event_output_placeholder($replace, $EM_Event, $full_result
                 $event_link = esc_url($EM_Event->get_permalink());
                 $EM_Category = $EM_Categories->get_first();
                 $replace = '<meta itemprop="url" content="' . $event_link . '">';
-                $replace .= '<meta itemprop="name" content="' . esc_attr($EM_Category->name) . ': ' . esc_attr($EM_Event->event_name) . '">';
+                $replace .= '<meta itemprop="name" content="' .
+                            esc_attr($EM_Category->name) .
+                            ': ' .
+                            esc_attr($EM_Event->event_name) .
+                            '">';
                 break;
             case '#_SCHEMADATE':
                 $tz = new DateTimeZone('America/New_York');
@@ -119,7 +127,11 @@ function filterRPS_EM_event_output_placeholder($replace, $EM_Event, $full_result
                 $date_end = new \DateTime("@$EM_Event->end");
                 $date_end->setTimezone($tz);
                 $replace .= '<meta itemprop="endDate" content="' . $date_end->format('c') . '">';
-                $replace .= '<meta itemprop="duration" content="' . $date_start->format('c') .'/'.$date_end->format('c') . '">';
+                $replace .= '<meta itemprop="duration" content="' .
+                            $date_start->format('c') .
+                            '/' .
+                            $date_end->format('c') .
+                            '">';
                 break;
         }
     }
@@ -127,14 +139,13 @@ function filterRPS_EM_event_output_placeholder($replace, $EM_Event, $full_result
     switch ($full_result) {
         case '#_ATT{SpeakerWebsite}':
             if (avh_is_valid_url($replace)) {
-                $replace = $html->anchor($replace, null, array('target' => '_blank'));
+                $replace = $html->anchor($replace, null, ['target' => '_blank']);
                 break;
             }
     }
 
     return $replace;
 }
-
 
 function filterRPS_EM_location_output_placeholder($replace, $em, $full_result, $target)
 {
@@ -149,6 +160,7 @@ function filterRPS_EM_location_output_placeholder($replace, $em, $full_result, $
             $replace .= '</span></span>';
             break;
     }
+
     return $replace;
 }
 
@@ -161,7 +173,7 @@ function filterRPS_EM_location_output_placeholder($replace, $em, $full_result, $
  */
 function rps_EM_get_children_of_categories($categories)
 {
-    $all_categories = array();
+    $all_categories = [];
     if (!is_array($categories)) {
         $categories = explode(',', $categories);
     }
@@ -193,7 +205,7 @@ function rps_EM_get_children_of_categories($categories)
  *
  * @return string WP_Error list of category parents on success, WP_Error on failure.
  */
-function rps_EM_get_parents($id, $link = false, $separator = '/', $nicename = false, $visited = array(), $taxanomy)
+function rps_EM_get_parents($id, $link = false, $separator = '/', $nicename = false, $visited = [], $taxanomy)
 {
     $chain = '';
     $parent = get_term($id, $taxanomy);
@@ -213,7 +225,14 @@ function rps_EM_get_parents($id, $link = false, $separator = '/', $nicename = fa
     }
 
     if ($link) {
-        $chain .= '<a href="' . esc_url(get_category_link($parent->term_id)) . '" title="' . esc_attr(sprintf(__("View all posts in %s"), $parent->name)) . '">' . $name . '</a>' . $separator;
+        $chain .= '<a href="' .
+                  esc_url(get_category_link($parent->term_id)) .
+                  '" title="' .
+                  esc_attr(sprintf(__("View all posts in %s"), $parent->name)) .
+                  '">' .
+                  $name .
+                  '</a>' .
+                  $separator;
     } else {
         $chain .= $name . $separator;
     }

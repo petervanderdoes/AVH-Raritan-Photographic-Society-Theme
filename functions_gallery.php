@@ -13,11 +13,14 @@ function actionRPS_print_media_templates()
             <span><?php echo 'Layout'; ?></span>
             <select class="layout" name="layout" data-setting="layout">
                 <?php foreach ($gallery_type as $value => $caption) : ?>
-                    <option value="<?php echo esc_attr($value); ?>" <?php selected($value, $default_gallery_type); ?>><?php echo esc_html($caption); ?></option>
+                    <option value="<?php echo esc_attr($value); ?>" <?php selected(
+                        $value,
+                        $default_gallery_type
+                    ); ?>><?php echo esc_html($caption); ?></option>
                 <?php endforeach; ?>
             </select>
         </label>
     </script>
 
-<?php
+    <?php
 }

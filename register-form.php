@@ -36,18 +36,23 @@
 
         <?php do_action('register_form'); ?>
 
-        <p id="reg_passmail<?php $template->the_instance(); ?>"><?php echo apply_filters('tml_register_passmail_template_message', __('A password will be e-mailed to you.')); ?></p>
+        <p id="reg_passmail<?php $template->the_instance(); ?>"><?php echo apply_filters(
+                'tml_register_passmail_template_message',
+                __('A password will be e-mailed to you.')
+            ); ?></p>
 
         <p class="submit">
             <input type="submit" name="wp-submit"
                    id="wp-submit<?php $template->the_instance(); ?>"
                    value="<?php esc_attr_e('Register'); ?>"/> <input type="hidden"
                                                                      name="redirect_to"
-                                                                     value="<?php $template->the_redirect_url('register'); ?>"/> <input
+                                                                     value="<?php $template->the_redirect_url(
+                                                                         'register'
+                                                                     ); ?>"/> <input
                 type="hidden" name="instance"
                 value="<?php $template->the_instance(); ?>"/> <input type="hidden"
                                                                      name="action" value="register"/>
         </p>
     </form>
-    <?php $template->the_action_links(array('register' => false)); ?>
+    <?php $template->the_action_links(['register' => false]); ?>
 </div>

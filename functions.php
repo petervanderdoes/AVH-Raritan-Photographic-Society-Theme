@@ -80,19 +80,17 @@ include 'shortcodes.php';
 
 /**
  * Check if a plugin is active
-
  *
-*@param string $plugin
-
+ * @param string $plugin
  *
-*@return boolean
+ * @return boolean
  */
 function rps_is_plugin_active($plugin)
 {
     static $active_plugins = null;
 
     if ($active_plugins === null) {
-        $active_plugins = (array) get_option('active_plugins', array());
+        $active_plugins = (array) get_option('active_plugins', []);
     }
 
     return in_array($plugin, $active_plugins);
@@ -109,7 +107,6 @@ function actionRPS_theme_setup()
     remove_action('wp_enqueue_scripts', 'suffusion_enqueue_styles');
     remove_action('suffusion_after_begin_post', 'suffusion_print_post_updated_information');
     remove_action('suffusion_before_end_post', 'suffusion_post_footer');
-    
 
     add_action('rps_subnav', 'suffusion_build_breadcrumb');
     add_action('rps_subnav', 'actionRPS_next_meeting');
@@ -117,7 +114,7 @@ function actionRPS_theme_setup()
     add_action('wp_enqueue_scripts', 'actionRPS_enqueue_styles');
     add_action('suffusion_after_begin_post', 'actionRPS_print_post_updated_information');
 
-    add_theme_support('html5', array('comment-list', 'search-form', 'comment-form', 'gallery'));
+    add_theme_support('html5', ['comment-list', 'search-form', 'comment-form', 'gallery']);
 }
 
 function actionRPS_admin_init()
@@ -129,7 +126,12 @@ function actionRPS_admin_init()
 function actionRPS_wp_enqueue_media()
 {
     if (!wp_script_is('rps-gallery-settings', 'registered')) {
-        wp_register_script('rps-gallery-settings', get_stylesheet_directory_uri() . '/scripts/rps.gallery.js', array('media-views'), 'toremove');
+        wp_register_script(
+            'rps-gallery-settings',
+            get_stylesheet_directory_uri() . '/scripts/rps.gallery.js',
+            ['media-views'],
+            'toremove'
+        );
     }
 
     wp_enqueue_script('rps-gallery-settings');
@@ -143,13 +145,11 @@ function actionRPS_init()
 
 /**
  * This will add a menu item when a user is logged in.
-
  *
-*@param array  $sorted_menu_items
+ * @param array  $sorted_menu_items
  * @param object $args
-
  *
-*@return array
+ * @return array
  */
 function filterRPS_members_menu($sorted_menu_items, $args)
 {
@@ -191,9 +191,8 @@ function filterRPS_comment_form_allow_comment($allow_comment)
  * Even conditional stylesheets are loaded, by using the "style_loader_tag" filter hook.
  * The theme version is added as a URL parameter so that when you upgrade the latest version is picked up.
  * Exact copy of the suffusion function called suffusion_enqueue_styles
-
  *
-*@return void
+ * @return void
  */
 function actionRPS_enqueue_styles()
 {
@@ -206,30 +205,55 @@ function actionRPS_enqueue_styles()
 
     // Setup stylesheet
     $stylesheet_directory_uri = get_stylesheet_directory_uri();
-    wp_enqueue_script('jquery-url', $stylesheet_directory_uri . '/scripts/jquery.url.js', array(), '1.8.6', true);
+    wp_enqueue_script('jquery-url', $stylesheet_directory_uri . '/scripts/jquery.url.js', [], '1.8.6', true);
     if (WP_LOCAL_DEV == true) {
-        wp_enqueue_style('suffusion-theme', $stylesheet_directory_uri . '/css/rps.css', array(), 'to_remove');
-        wp_enqueue_script('rps', $stylesheet_directory_uri . '/scripts/rps.js', array(), 'to_remove');
+        wp_enqueue_style('suffusion-theme', $stylesheet_directory_uri . '/css/rps.css', [], 'to_remove');
+        wp_enqueue_script('rps', $stylesheet_directory_uri . '/scripts/rps.js', [], 'to_remove');
     } else {
         // The style version is automatically updated by using git-flow hooks.
         $rps_style_version = "59a4235";
-        wp_enqueue_style('suffusion-theme', $stylesheet_directory_uri . '/css/rps-' . $rps_style_version . '.css', array(), 'to_remove');
+        wp_enqueue_style(
+            'suffusion-theme',
+            $stylesheet_directory_uri . '/css/rps-' . $rps_style_version . '.css',
+            [],
+            'to_remove'
+        );
         // The style version is automatically updated by using git-flow hooks.
         $rps_js_version = "9d65b67";
-        wp_enqueue_script('rps', $stylesheet_directory_uri . '/scripts/rps-' . $rps_js_version . '.js', array(), 'to_remove');
+        wp_enqueue_script(
+            'rps',
+            $stylesheet_directory_uri . '/scripts/rps-' . $rps_js_version . '.js',
+            [],
+            'to_remove'
+        );
     }
 
     // IE-specific CSS, loaded if the browser is IE < 8
-    wp_enqueue_style('suffusion-ie', get_template_directory_uri() . '/ie-fix.css', array('suffusion-theme'), SUFFUSION_THEME_VERSION);
+    wp_enqueue_style(
+        'suffusion-ie',
+        get_template_directory_uri() . '/ie-fix.css',
+        ['suffusion-theme'],
+        SUFFUSION_THEME_VERSION
+    );
 
     // Attachment styles. Loaded conditionally, because it uses a rather heavy image, which we don't want to load always.
     if (is_attachment()) {
-        wp_enqueue_style('suffusion-attachment', get_template_directory_uri() . '/attachment-styles.css', array('suffusion-theme'), SUFFUSION_THEME_VERSION);
+        wp_enqueue_style(
+            'suffusion-attachment',
+            get_template_directory_uri() . '/attachment-styles.css',
+            ['suffusion-theme'],
+            SUFFUSION_THEME_VERSION
+        );
     }
 
     // Rounded corners, loaded if the browser is not IE <= 8
     if ($suf_show_rounded_corners == 'show') {
-        wp_register_style('suffusion-rounded', get_template_directory_uri() . '/rounded-corners.css', array('suffusion-theme'), SUFFUSION_THEME_VERSION);
+        wp_register_style(
+            'suffusion-rounded',
+            get_template_directory_uri() . '/rounded-corners.css',
+            ['suffusion-theme'],
+            SUFFUSION_THEME_VERSION
+        );
         // $GLOBALS['wp_styles']->add_data('suffusion_rounded', 'conditional', '!IE'); // Doesn't work (yet). See http://core.trac.wordpress.org/ticket/16118. Instead we will filter style_loader_tag
         wp_enqueue_style('suffusion-rounded');
     }
@@ -241,13 +265,25 @@ function actionRPS_enqueue_styles()
         $custom_file = trailingslashit($upload_dir['basedir']) . 'suffusion/custom-styles.css';
         if (@file_exists($custom_file)) {
             $custom_file_url = $upload_dir['baseurl'] . '/suffusion/custom-styles.css';
-            wp_enqueue_style('suffusion-generated', $custom_file_url, array('suffusion-theme', 'suffusion-ie'), SUFFUSION_THEME_VERSION);
+            wp_enqueue_style(
+                'suffusion-generated',
+                $custom_file_url,
+                ['suffusion-theme', 'suffusion-ie'],
+                SUFFUSION_THEME_VERSION
+            );
             $css_loaded = true;
         }
     }
 
-    if (($suf_autogen_css == 'autogen' || $suf_autogen_css == 'nogen-link') || (!$css_loaded && $suf_autogen_css == 'autogen-file')) {
-        wp_enqueue_style('suffusion-generated?suffusion-css=css', home_url(), array('suffusion-theme', 'suffusion-ie'), SUFFUSION_THEME_VERSION);
+    if (($suf_autogen_css == 'autogen' || $suf_autogen_css == 'nogen-link') ||
+        (!$css_loaded && $suf_autogen_css == 'autogen-file')
+    ) {
+        wp_enqueue_style(
+            'suffusion-generated?suffusion-css=css',
+            home_url(),
+            ['suffusion-theme', 'suffusion-ie'],
+            SUFFUSION_THEME_VERSION
+        );
     }
 
     // Custom styles, from included CSS files
@@ -255,14 +291,18 @@ function actionRPS_enqueue_styles()
         $var = "suf_custom_css_link_{$i}";
         global $$var;
         if (isset($$var) && trim($$var) != "") {
-            wp_enqueue_style('suffusion-included-' . $i, $$var, array('suffusion-theme'), null);
+            wp_enqueue_style('suffusion-included-' . $i, $$var, ['suffusion-theme'], null);
         }
     }
 }
 
 function actionRPS_print_post_updated_information()
 {
-    echo '<div class="updated" style="display: none"><time datetime="' . date(DATE_ISO8601, get_post_modified_time('U', true)) . '">' . date(DATE_ISO8601, get_post_modified_time('U', true)) . '</time></div>';
+    echo '<div class="updated" style="display: none"><time datetime="' .
+         date(DATE_ISO8601, get_post_modified_time('U', true)) .
+         '">' .
+         date(DATE_ISO8601, get_post_modified_time('U', true)) .
+         '</time></div>';
 }
 
 function filterRPS_remove_cssjs_ver($src)
@@ -322,13 +362,13 @@ function actionRPS_next_meeting()
  *
  * @return array
  */
-function rps_suffusion_get_mag_section_queries($args = array())
+function rps_suffusion_get_mag_section_queries($args = [])
 {
     global $post, $wpdb, $suf_mag_total_excerpts;
     $posts_to_skip = $args['to_skip'];
     $meta_check_field = $args['meta_check_field'];
-    $solos = array();
-    $queries = array();
+    $solos = [];
+    $queries = [];
 
     if ($meta_check_field) {
         // Previously the script was loading all posts into memory using get_posts and checking the meta field. This causes the code to crash if the # posts is high.
@@ -352,7 +392,7 @@ function rps_suffusion_get_mag_section_queries($args = array())
     }
 
     if (count($solos) > 0) {
-        $solo_query = new WP_query(array('post__in' => $solos, 'ignore_sticky_posts' => 1));
+        $solo_query = new WP_query(['post__in' => $solos, 'ignore_sticky_posts' => 1]);
         $queries[] = $solo_query;
     }
     $posts_to_ignore = array_merge($solos, $posts_to_skip);
@@ -362,12 +402,18 @@ function rps_suffusion_get_mag_section_queries($args = array())
     if ($category_prefix) {
         $categories = suffusion_get_allowed_categories($category_prefix);
         if (is_array($categories) && count($categories) > 0) {
-            $query_cats = array();
+            $query_cats = [];
             foreach ($categories as $category) {
                 $query_cats[] = $category->cat_ID;
             }
             $query_posts = implode(",", array_values($query_cats));
-            $cat_query = new WP_query(array('cat' => $query_posts, 'post__not_in' => $posts_to_ignore, 'posts_per_page' => (int) $total_posts_to_get));
+            $cat_query = new WP_query(
+                [
+                    'cat'            => $query_posts,
+                    'post__not_in'   => $posts_to_ignore,
+                    'posts_per_page' => (int) $total_posts_to_get
+                ]
+            );
             $queries[] = $cat_query;
         }
     }
@@ -393,7 +439,7 @@ function rps_suffusion_get_mag_section_queries($args = array())
  *
  * @return void
  */
-function rps_comment_form($args = array(), $post_id = null)
+function rps_comment_form($args = [], $post_id = null)
 {
     global $id;
 
@@ -446,7 +492,11 @@ function rps_comment_form($args = array(), $post_id = null)
             echo $args['must_log_in'];
             do_action('comment_form_must_log_in_after');
         } else {
-            echo '<form action="' . site_url('/wp-comments-post.php') . '" method="post" id="' . esc_attr($args['id_form']) . '">';
+            echo '<form action="' .
+                 site_url('/wp-comments-post.php') .
+                 '" method="post" id="' .
+                 esc_attr($args['id_form']) .
+                 '">';
             do_action('comment_form_top');
             if (is_user_logged_in()) {
                 echo apply_filters('comment_form_logged_in', $args['logged_in_as'], $commenter, $user_identity);
@@ -463,7 +513,11 @@ function rps_comment_form($args = array(), $post_id = null)
             echo apply_filters('comment_form_field_comment', $args['comment_field']);
             echo $args['comment_notes_after'];
             echo '<p class="form-submit">';
-            echo '<input name="submit" type="submit" id="' . esc_attr($args['id_submit']) . '" value="' . esc_attr($args['label_submit']) . '" />';
+            echo '<input name="submit" type="submit" id="' .
+                 esc_attr($args['id_submit']) .
+                 '" value="' .
+                 esc_attr($args['label_submit']) .
+                 '" />';
             comment_id_fields($post_id);
             echo '</p>';
             do_action('comment_form', $post_id);
@@ -552,7 +606,7 @@ function filterRPS_attachment_field_credit_save($post, $attachment)
  */
 function filterRPS_base_image_credit_to_captions($foo, $attr, $content = null)
 {
-    $atts = shortcode_atts(array('id' => '', 'align' => 'alignnone', 'width' => '', 'caption' => ''), $attr, 'caption');
+    $atts = shortcode_atts(['id' => '', 'align' => 'alignnone', 'width' => '', 'caption' => ''], $attr, 'caption');
 
     if (!empty($atts['id'])) {
         $attachment_id = intval(str_replace('attachment_', '', $atts['id']));
@@ -561,7 +615,9 @@ function filterRPS_base_image_credit_to_captions($foo, $attr, $content = null)
     // Get image credit custom attachment fields
     $attachment_fields = get_post_custom($attachment_id);
     $photographer_name = '';
-    if (isset($attachment_fields['_rps_photographer_name'][0]) && !empty($attachment_fields['_rps_photographer_name'][0])) {
+    if (isset($attachment_fields['_rps_photographer_name'][0]) &&
+        !empty($attachment_fields['_rps_photographer_name'][0])
+    ) {
         $photographer_name = esc_attr($attachment_fields['_rps_photographer_name'][0]);
     }
 
@@ -587,5 +643,14 @@ function filterRPS_base_image_credit_to_captions($foo, $attr, $content = null)
         $atts['caption'] .= '<span class="wp-caption-credit">Credit: ' . $photographer_name . '</span>';
     }
 
-    return '<div ' . $atts['id'] . $style . 'class="wp-caption ' . esc_attr($atts['align']) . '">' . do_shortcode($content) . '<p class="wp-caption-text">' . $atts['caption'] . '</p></div>';
+    return '<div ' .
+           $atts['id'] .
+           $style .
+           'class="wp-caption ' .
+           esc_attr($atts['align']) .
+           '">' .
+           do_shortcode($content) .
+           '<p class="wp-caption-text">' .
+           $atts['caption'] .
+           '</p></div>';
 }

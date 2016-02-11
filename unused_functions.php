@@ -7,10 +7,12 @@ class RPS_Member_Menu_Widget extends WP_Widget
 {
     function RPS_Member_Menu_Widget()
     {
-        $widget_ops = array(
+        $widget_ops = [
 
-            'description' => __('Use this widget to add one of your custom menus as a widget and display it only when the visitor is logged in.')
-        );
+            'description' => __(
+                'Use this widget to add one of your custom menus as a widget and display it only when the visitor is logged in.'
+            )
+        ];
         parent::WP_Widget('rps_member_menu', __('Custom Member Menu'), $widget_ops);
     }
 
@@ -19,10 +21,15 @@ class RPS_Member_Menu_Widget extends WP_Widget
         $title = isset($instance['title']) ? $instance['title'] : '';
         $rps_member_menu = isset($instance['rps_member_menu']) ? $instance['rps_member_menu'] : '';
         // Get menus
-        $menus = get_terms('nav_menu', array('hide_empty' => false));
+        $menus = get_terms('nav_menu', ['hide_empty' => false]);
         // If no menus exists, direct the user to go and create some.
         if (!$menus) {
-            echo '<p>' . sprintf(__('No menus have been created yet. <a href="%s">Create some</a>.'), admin_url('nav-menus.php')) . '</p>';
+            echo '<p>' .
+                 sprintf(
+                     __('No menus have been created yet. <a href="%s">Create some</a>.'),
+                     admin_url('nav-menus.php')
+                 ) .
+                 '</p>';
 
             return;
         }
@@ -32,16 +39,16 @@ class RPS_Member_Menu_Widget extends WP_Widget
                 for="<?php
                 echo $this->get_field_id('title');
                 ?>"><?php
-                _e('Title:')?></label> <input type="text" class="widefat"
-                                              id="<?php
-                                              echo $this->get_field_id('title');
-                                              ?>"
-                                              name="<?php
-                                              echo $this->get_field_name('title');
-                                              ?>"
-                                              value="<?php
-                                              echo $title;
-                                              ?>"/>
+                _e('Title:') ?></label> <input type="text" class="widefat"
+                                               id="<?php
+                                               echo $this->get_field_id('title');
+                                               ?>"
+                                               name="<?php
+                                               echo $this->get_field_name('title');
+                                               ?>"
+                                               value="<?php
+                                               echo $title;
+                                               ?>"/>
         </p>
         <p>
             <label
@@ -64,7 +71,7 @@ class RPS_Member_Menu_Widget extends WP_Widget
                 ?>
             </select>
         </p>
-    <?php
+        <?php
     }
 
     function update($new_instance, $old_instance)
@@ -88,7 +95,7 @@ class RPS_Member_Menu_Widget extends WP_Widget
             if (!empty($instance['title'])) {
                 echo $args['before_title'] . $instance['title'] . $args['after_title'];
             }
-            wp_nav_menu(array('fallback_cb' => '', 'menu' => $rps_member_menu));
+            wp_nav_menu(['fallback_cb' => '', 'menu' => $rps_member_menu]);
             echo $args['after_widget'];
         }
     }

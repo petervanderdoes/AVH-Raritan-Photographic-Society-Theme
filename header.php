@@ -14,7 +14,10 @@ if (function_exists('icl_t')) {
          * If you have WPML installed, then there may be translations of such strings.
          * This code ensures that such translations are picked up, then the unified options array is rewritten so that subsequent calls can pick it up.
          */
-        if (function_exists('icl_t') && in_array($id, $suffusion_translatable_fields) && isset($suffusion_interactive_text_fields[$id])) {
+        if (function_exists('icl_t') &&
+            in_array($id, $suffusion_translatable_fields) &&
+            isset($suffusion_interactive_text_fields[$id])
+        ) {
             $value = wpml_t('suffusion-interactive', $suffusion_interactive_text_fields[$id] . "|" . $id, $value);
         }
         global $$id;
@@ -36,7 +39,7 @@ if (function_exists('icl_t')) {
 <!--[if gte IE 9]>
 <style type="text/css">
     .suf-gradient {
-        filter: none;
+        filter : none;
     }
 </style>
 <![endif]-->
@@ -78,8 +81,8 @@ suffusion_after_begin_wrapper();
         <?php do_action('rps_subnav'); ?>
     </div>
     <div id="container" class="fix">
-                <?php
-                suffusion_after_begin_container();
+<?php
+suffusion_after_begin_container();
 
 //     echo '<section class="rps-announcement">';
 //     echo '<div class="suf-tiles suf-tiles-1">';
