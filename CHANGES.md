@@ -2,10 +2,7 @@
 
 == Changelog
 
-= Version 2.0.15-dev.3 =
-* Preparation for new development cycle.
-
-= Version 2.0.14 =
+= Version 2.0.15-dev.12 =
 * Preparation for new development cycle.
 
 = Version 2.0.13 =

@@ -211,7 +211,7 @@ function actionRPS_enqueue_styles()
         wp_enqueue_script('rps', $stylesheet_directory_uri . '/scripts/rps.js', [], 'to_remove');
     } else {
         // The style version is automatically updated by using git-flow hooks.
-        $rps_style_version = "59a4235";
+        $rps_style_version = "9f7b308";
         wp_enqueue_style(
             'suffusion-theme',
             $stylesheet_directory_uri . '/css/rps-' . $rps_style_version . '.css',
@@ -219,7 +219,7 @@ function actionRPS_enqueue_styles()
             'to_remove'
         );
         // The style version is automatically updated by using git-flow hooks.
-        $rps_js_version = "9d65b67";
+        $rps_js_version = "9f7b308";
         wp_enqueue_script(
             'rps',
             $stylesheet_directory_uri . '/scripts/rps-' . $rps_js_version . '.js',
