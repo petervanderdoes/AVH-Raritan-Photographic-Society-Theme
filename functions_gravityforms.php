@@ -28,15 +28,15 @@ add_filter("gform_enable_password_field", create_function("", "return true;"));
  */
 function rps_GF_get_profile_fields()
 {
-    $_fields['first_name'] = array('gf_index' => '1.3', 'wp_meta' => 'first_name');
-    $_fields['last_name'] = array('gf_index' => '1.6', 'wp_meta' => 'last_name');
-    $_fields['nickname'] = array('gf_index' => '2', 'wp_meta' => 'nickname');
-    $_fields['display_name'] = array('gf_index' => '3', 'wp_meta' => 'display_name');
-    $_fields['website'] = array('gf_index' => '8', 'wp_meta' => 'user_url');
+    $_fields['first_name'] = ['gf_index' => '1.3', 'wp_meta' => 'first_name'];
+    $_fields['last_name'] = ['gf_index' => '1.6', 'wp_meta' => 'last_name'];
+    $_fields['nickname'] = ['gf_index' => '2', 'wp_meta' => 'nickname'];
+    $_fields['display_name'] = ['gf_index' => '3', 'wp_meta' => 'display_name'];
+    $_fields['website'] = ['gf_index' => '8', 'wp_meta' => 'user_url'];
 
     // Fields below are added by the parent Theme.
-    $_fields['facebook'] = array('gf_index' => '9', 'wp_meta' => 'facebook');
-    $_fields['flickr'] = array('gf_index' => '10', 'wp_meta' => 'flickr');
+    $_fields['facebook'] = ['gf_index' => '9', 'wp_meta' => 'facebook'];
+    $_fields['flickr'] = ['gf_index' => '10', 'wp_meta' => 'flickr'];
 
     return $_fields;
 }
@@ -53,7 +53,7 @@ function filterRPS_GF_populate_profile_fields($form)
 {
     $_gf_fields = rps_GF_get_profile_fields();
     $_profileuser = wp_get_current_user();
-
+    $user_metadata = get_user_meta($_profileuser->ID);
     foreach ($form['fields'] as &$field) {
 
         if (strpos($field['cssClass'], 'rps-profile-name') !== false) {
@@ -64,7 +64,7 @@ function filterRPS_GF_populate_profile_fields($form)
         }
 
         if (strpos($field['cssClass'], 'rps-profile-display-name') !== false) {
-            $_public_display = array();
+            $_public_display = [];
             $_public_display['display_nickname'] = $_profileuser->nickname;
             $_public_display['display_username'] = $_profileuser->user_login;
 
@@ -81,16 +81,20 @@ function filterRPS_GF_populate_profile_fields($form)
                 $_public_display['display_lastfirst'] = $_profileuser->last_name . ' ' . $_profileuser->first_name;
             }
 
-            if (!in_array($_profileuser->display_name, $_public_display)) // Only add this if it isn't duplicated elsewhere
+            if (!in_array(
+                $_profileuser->display_name,
+                $_public_display
+            )
+            ) // Only add this if it isn't duplicated elsewhere
             {
-                $_public_display = array('display_displayname' => $_profileuser->display_name) + $_public_display;
+                $_public_display = ['display_displayname' => $_profileuser->display_name] + $_public_display;
             }
 
             $_public_display = array_map('trim', $_public_display);
             $_public_display = array_unique($_public_display);
             foreach ($_public_display as $id => $item) {
                 $_is_selected = ($_profileuser->display_name == $item ? 1 : null);
-                $choices[] = array('text' => $item, 'value' => $item, 'isSelected' => $_is_selected);
+                $choices[] = ['text' => $item, 'value' => $item, 'isSelected' => $_is_selected];
             }
             $field->choices = $choices;
             continue;
@@ -98,7 +102,8 @@ function filterRPS_GF_populate_profile_fields($form)
 
         foreach ($_gf_fields as $gf_key => $info) {
             if (strpos($field['cssClass'], 'rps-profile-' . $gf_key) !== false) {
-                $field->defaultValue = $_profileuser->$info['wp_meta'];
+                $meta_value = isset($user_metadata[$info['wp_meta']]) ? $user_metadata[$info['wp_meta']][0] : '';
+                $field->defaultValue = $meta_value;
                 break;
             }
         }
@@ -146,14 +151,16 @@ function actionRPS_GF_update_profile($entry, $form)
         $_user->user_url = '';
     } else {
         $_user->user_url = esc_url_raw($entry[$gf_fields['website']['gf_index']]);
-        $_user->user_url = preg_match('/^(https?):/is', $_user->user_url) ? $_user->user_url : 'http://' . $_user->user_url;
+        $_user->user_url = preg_match('/^(https?):/is', $_user->user_url) ? $_user->user_url : 'http://' .
+                                                                                               $_user->user_url;
     }
 
     if (empty($entry[$gf_fields['facebook']['gf_index']]) || $entry[$gf_fields['facebook']['gf_index']] == "http://") {
         $_user->facebook = '';
     } else {
         $_user->facebook = esc_url_raw($entry[$gf_fields['facebook']['gf_index']]);
-        $_user->facebook = preg_match('/^(https?):/is', $_user->facebook) ? $_user->facebook : 'http://' . $_user->facebook;
+        $_user->facebook = preg_match('/^(https?):/is', $_user->facebook) ? $_user->facebook : 'http://' .
+                                                                                               $_user->facebook;
     }
     if (empty($entry[$gf_fields['flickr']['gf_index']]) || $entry[$gf_fields['flickr']['gf_index']] == "http://") {
         $_user->flickr = '';
