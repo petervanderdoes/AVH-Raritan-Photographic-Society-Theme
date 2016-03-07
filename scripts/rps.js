@@ -8,6 +8,7 @@
       .not('.entry a[href$=".jpg"]')
       .each(function () {
         if (this.hostname !== location.hostname) {
+          
           $(this)
             .attr({
               'class': function (i, val) {
@@ -18,9 +19,6 @@
               'title': function (i, val) {
                 val = (val == undefined) ? this.href : val;
                 return val + " (external link, click to open in a new window)";
-              },
-              'onclick': function (i, val) {
-                return "javascript:ga('send','event', 'Outgoing Links', '" + this.href + "', '" + document.location.pathname + document.location.search + "',  {'nonInteraction': 1});";
               }
             });
           $(this).append("<span class='ui-icon ui-icon-extlink'></span>");
@@ -56,3 +54,4 @@
   });
 }(window.jQuery, window, document));
 // The global jQuery object is passed as a parameter
+
