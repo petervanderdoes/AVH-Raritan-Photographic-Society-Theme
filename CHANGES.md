@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 2.0.15-dev.21 =
+= Version 2.0.15-dev.23 =
 * Let WordPress SEO take care of tracking outbound links.
 
 = Version 2.0.13 =
