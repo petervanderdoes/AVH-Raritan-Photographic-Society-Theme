@@ -1,4 +1,4 @@
-(function ($) {
+(function ($, window) {
   // The $ is now locally scoped
   $(function () {
     /**
@@ -20,7 +20,8 @@
                 return val + ' (external link, click to open in a new window)';
               },
               'onclick': function () {
-                return TrackClick('Outgoing Links', this.href, this.innerHTML);
+                var eventAction = ExtractDomain(this.href);
+                return TrackClick('Outgoing Links', eventAction, this.innerHTML);
               }
             });
           $(this).append('<span class=\'ui-icon ui-icon-extlink\'></span>');
@@ -37,7 +38,7 @@
         $(this)
           .attr({
             'onclick': function () {
-              return TrackClick('Images', this.href, this.title);
+              return TrackClick('Images', window.location.pathname, this.title);
             }
           });
       });
@@ -47,19 +48,30 @@
         $(this)
           .attr({
             'onclick': function () {
-              return TrackClick('Downloads', this.href, this.innerHTML);
+              return TrackClick('Downloads', window.location.pathname, this.innerHTML);
             }
           });
       });
   });
-}(window.jQuery));
+}(window.jQuery, window));
 // The global jQuery object is passed as a parameter
 /**
  * @return {string}
  */
 function TrackClick
 (eventCategory, eventAction, eventLabel) {
-  var n = eventAction.indexOf('?');
-  eventAction = eventAction.substring(0, n !== -1 ? n : eventAction.length);
   return '__gaTracker(\'send\',\'event\', \'' + eventCategory + '\', \'' + decodeURIComponent(eventAction) + '\', \'' + decodeURIComponent(eventLabel) + '\';, {\'nonInteraction\': 1}';
+}
+function ExtractDomain(url) {
+  var domain;
+  //find & remove protocol (http, ftp, etc.) and get domain
+  if (url.indexOf("://") > -1) {
+    domain = url.split('/')[2];
+  }
+  else {
+    domain = url.split('/')[0];
+  }
+  //find & remove port number
+  domain = domain.split(':')[0];
+  return domain;
 }
