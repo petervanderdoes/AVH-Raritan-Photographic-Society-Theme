@@ -14,9 +14,10 @@
                 val = (val === undefined) ? '' : val + ' ';
                 return val + 'ui-state-default';
               },
+              'rel': 'external nofollow',
               'target': '_blank',
               'title': function (i, val) {
-                val = (val === undefined) ? this.innerHTML : val;
+                val = !val ? this.innerHTML : val;
                 return val + ' (external link, click to open in a new window)';
               },
               'onclick': function () {
@@ -32,13 +33,20 @@
           });
         }
       });
-    var rps_IMG_select = '.entry a[href*=".jpg"], .entry area[href*=".jpg"], .entry a[href*=".gif"], .entry area[href*=".gif"], .entry a[href*=".png"], .entry area[href*=".png"]';
+    var rps_IMG_select = '.rps-showcases a[href*=".jpg"], .entry a[href*=".jpg"], .entry area[href*=".jpg"], .entry a[href*=".gif"], .entry area[href*=".gif"], .entry a[href*=".png"], .entry area[href*=".png"]';
     $(rps_IMG_select)
       .each(function () {
         $(this)
           .attr({
             'onclick': function () {
               return TrackClick('Images', window.location.pathname, this.title);
+            },
+            'title': function (i, val) {
+              if (!val) {
+                var image = $(this).find('img').first();
+                val = image[0].alt;
+              }
+              return val;
             }
           });
       });
@@ -65,7 +73,7 @@ function TrackClick
 function ExtractDomain(url) {
   var domain;
   //find & remove protocol (http, ftp, etc.) and get domain
-  if (url.indexOf("://") > -1) {
+  if (url.indexOf('://') > -1) {
     domain = url.split('/')[2];
   }
   else {
