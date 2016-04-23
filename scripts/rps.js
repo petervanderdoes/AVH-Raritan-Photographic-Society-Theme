@@ -16,7 +16,7 @@
             .attr({
               class: function (i, val) {
                 val = (val === undefined) ? '' : val + ' ';
-                return val + 'ui-state-default';
+                return val + '${val} ui-state-default';
               },
 
               rel: 'external nofollow',
