@@ -219,7 +219,7 @@ function actionRPS_enqueue_styles()
             'to_remove'
         );
         // The style version is automatically updated by using git-flow hooks.
-        $rps_js_version = "b691752";
+        $rps_js_version = "0aec772";
         wp_enqueue_script(
             'rps',
             $stylesheet_directory_uri . '/scripts/rps-' . $rps_js_version . '.js',
