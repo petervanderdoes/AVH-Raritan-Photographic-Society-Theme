@@ -2,8 +2,8 @@
 
 == Changelog
 
-= Version 2.0.14 =
-* Preparation for new development cycle.
+= Version 2.0.15 =
+* Let WordPress SEO take care of tracking outbound links.
 
 = Version 2.0.13 =
 * Fix event schema.

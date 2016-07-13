@@ -1,21 +1,21 @@
 .button {
-  width: auto;
-  color: $color-button-text;
-  border: solid 1px $color-button-border;
+  width  : auto;
+  color  : $color-button-text;
+  border : solid 1px $color-button-border;
   @include gradient-buttons;
   @include adjust-font-size-to($font-small);
   &:hover, &:active, &:focus {
-    color: $color-button-text;
+    color : $color-button-text;
     @include gradient-buttons-active;
   }
 }
 
 strong {
-  font-weight: 700;
+  font-weight : 700;
 }
 
 .hide {
-  display: none;
+  display : none;
 }
 
 //.button, input[type="submit"], .submit {
@@ -25,13 +25,13 @@ strong {
 //}
 
 blockquote {
-  @include apply-side-rhythm-border($side: left, $width: 3px);
-  font-style: italic;
+  @include apply-side-rhythm-border($side : left, $width : 3px);
+  font-style : italic;
 }
 
 pre {
-  font-family: "Courier New", Courier, Monaco, "Lucida Console", monospace;
-  overflow: auto;
-  background-color: #333333;
-  @include rhythm-borders($width: 1px, $border-style: solid);
+  font-family      : "Courier New", Courier, Monaco, "Lucida Console", monospace;
+  overflow         : auto;
+  background-color : #333333;
+  @include rhythm-borders($width : 1px, $border-style : solid);
 }

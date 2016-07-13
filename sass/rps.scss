@@ -1,12 +1,12 @@
 // Cache busting line record: 1
-$base-font-size: 13px;
-$base-line-height: $base-font-size * 1.5;
-$rhythm-unit: rem;
+$base-font-size : 13px;
+$base-line-height : $base-font-size * 1.5;
+$rhythm-unit : rem;
 
 //$round-to-nearest-half-line: true;
 //$min-line-padding: 0px;
 
-$flex-legacy-enabled: true;
+$flex-legacy-enabled : true;
 
 @import "compass";
 @import "compass/layout/stretching";
@@ -45,40 +45,40 @@ $flex-legacy-enabled: true;
 @import "rps/gravity-forms";
 @import "rps/alert";
 
-$social-icon-16-spacing: 8px;
-$social-icon-16-sprite-dimensions: true;
+$social-icon-16-spacing : 8px;
+$social-icon-16-sprite-dimensions : true;
 
 @import "social-icon-16/*.png";
 
 @include all-social-icon-16-sprites;
 
 body {
-  font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
-  background-attachment: scroll;
-  background-image: $background-img;
-  background-repeat: repeat-x;
-  color: $color-text;
-  font-size-adjust: none;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  background-color: $background-color;
+  font-family           : "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
+  background-attachment : scroll;
+  background-image      : $background-img;
+  background-repeat     : repeat-x;
+  color                 : $color-text;
+  font-size-adjust      : none;
+  font-style            : normal;
+  font-variant          : normal;
+  font-weight           : normal;
+  background-color      : $background-color;
 }
 
 a {
-  @include link-style($color: $color-text-highlight);
+  @include link-style($color : $color-text-highlight);
 }
 
 #content {
-  clear: both;
-  overflow: hidden;
+  clear    : both;
+  overflow : hidden;
 }
 
 .entry, .non-wp-entry {
-  padding: 15px 0 5px;
-  clear: both;
-  margin-bottom: 1em;
-  overflow: hidden;
+  padding       : 15px 0 5px;
+  clear         : both;
+  margin-bottom : 1em;
+  overflow      : hidden;
 }
 
 h2.suf-tile-title {
@@ -100,8 +100,8 @@ h2.suf-tile-title {
 }
 
 a.excerpt-more-append {
-  color: $color-button-text;
-  border: solid 1px $color-button-border;
+  color  : $color-button-text;
+  border : solid 1px $color-button-border;
   @include gradient-buttons;
 }
 
@@ -110,22 +110,22 @@ a.excerpt-more-append {
 }
 
 h2.suf-tile-title {
-  margin-top: 0;
-  text-align: left;
+  margin-top : 0;
+  text-align : left;
 }
 
 h2.suf-tile-title a {
-  font-size: 58%;
+  font-size : 58%;
   &:hover, &:visited, &:active {
-    font-size: 58%;
+    font-size : 58%;
   }
 }
 
 #header-container {
-  background-image: $header-img;
-  background-position: left top;
-  background-repeat: no-repeat;
-  background-color: #000;
+  background-image    : $header-img;
+  background-position : left top;
+  background-repeat   : no-repeat;
+  background-color    : #000;
   @include border-bottom-left-radius(0);
   @include border-bottom-right-radius(0);
   @include border-top-left-radius(inherit);
@@ -141,19 +141,19 @@ input[type="email"] {
 */
 
 #theme-my-login *:focus {
-  background-color: #999999;
-  color: #333333;
-  outline: 0 none;
+  background-color : #999999;
+  color            : #333333;
+  outline          : 0 none;
 }
 
 ul.tml-action-links {
-  display: block;
-  float: right;
-  list-style: none;
-  margin: 0 0 -1px 0;
-  padding: 0;
-  vertical-align: bottom;
+  display        : block;
+  float          : right;
+  list-style     : none;
+  margin         : 0 0 -1px 0;
+  padding        : 0;
+  vertical-align : bottom;
   li {
-    padding: 0;
+    padding : 0;
   }
 }

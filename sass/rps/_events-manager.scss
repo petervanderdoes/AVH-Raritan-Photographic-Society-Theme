@@ -1,57 +1,57 @@
 table.em-calendar {
-  width: 100%;
+  width : 100%;
   thead {
-    color: $color-text-highlight;
+    color : $color-text-highlight;
   }
   td {
     &.eventless-pre, &.eventless-post {
-      color: $color-text-lowlight;
+      color : $color-text-lowlight;
     }
     &.eventful-pre, &.eventful-post {
-      color: $color-link-lowlight;
+      color : $color-link-lowlight;
       a {
-        padding: 5px;
-        color: $color-link-lowlight;
-        text-decoration: none;
+        padding         : 5px;
+        color           : $color-link-lowlight;
+        text-decoration : none;
         &:hover {
           @include border-radius(1rem);
-          background-color: $color-link-lowlight;
-          color: $color-text-lowlight;
+          background-color : $color-link-lowlight;
+          color            : $color-text-lowlight;
         }
       }
     }
     &.eventful {
-      color: $color-link;
+      color : $color-link;
       a {
-        padding: 5px;
-        color: $color-link;
-        text-decoration: none;
+        padding         : 5px;
+        color           : $color-link;
+        text-decoration : none;
         &:hover {
           @include border-radius(1rem);
-          background-color: $color-link;
-          color: $color-text-highlight;
+          background-color : $color-link;
+          color            : $color-text-highlight;
         }
       }
     }
     &.eventful-today {
-      background-color: $background-color;
+      background-color : $background-color;
       a {
-        padding: 5px;
-        background-color: $color-text;
-        color: $background-color;
+        padding          : 5px;
+        background-color : $color-text;
+        color            : $background-color;
         @include border-radius(1rem);
         &:hover {
-          background-color: $color-link;
-          color: $color-text-highlight;
+          background-color : $color-link;
+          color            : $color-text-highlight;
         }
       }
     }
     &.eventless-today {
-      background-color: $background-color;
+      background-color : $background-color;
       .day {
-        padding: 5px;
-        background-color: $color-text;
-        color: $background-color;
+        padding          : 5px;
+        background-color : $color-text;
+        color            : $background-color;
         @include border-radius(1rem);
       }
     }
@@ -63,24 +63,24 @@ table.em-calendar {
 }
 
 .event-list {
-  list-style: disc outside none;
-  padding: inherit;
-  text-align: left;
+  list-style : disc outside none;
+  padding    : inherit;
+  text-align : left;
 }
 
 div.css-search {
-  background: inherit;
-  border: inherit;
-  border-radius: inherit;
-  min-height: 40px;
-  padding: 5px;
-  position: relative;
+  background    : inherit;
+  border        : inherit;
+  border-radius : inherit;
+  min-height    : 40px;
+  padding       : 5px;
+  position      : relative;
 }
 
 div.css-search div.em-search-main .em-search-submit {
   @include gradient-buttons;
-  color: $color-button-text;
-  border: solid 1px $color-button-border;
+  color  : $color-button-text;
+  border : solid 1px $color-button-border;
   &:hover {
     @include gradient-buttons-active;
   }

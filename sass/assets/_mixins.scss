@@ -1,42 +1,42 @@
 @mixin gradient-header {
-  background: $color-royal-blue-light;
+  background : $color-royal-blue-light;
   @include filter-gradient($color-royal-blue-light, $color-royal-blue-dark, vertical);
   @include background(linear-gradient(top, $color-royal-blue-light-opaque 0%, $color-royal-blue-dark-transparent 100%));
 }
 
 @mixin gradient-buttons($lineheight: 100%) {
-  background: $color-royal-blue-light;
+  background : $color-royal-blue-light;
   @include filter-gradient($color-royal-blue-light, $color-royal-blue-dark, vertical);
   @include background(linear-gradient(top, $color-royal-blue-light-opaque 0%, $color-royal-blue-dark-opaque $lineheight));
 }
 
 @mixin gradient-buttons-active($lineheight: 100%) {
-  background: lighten($color-royal-blue-light, 10);
+  background : lighten($color-royal-blue-light, 10);
   @include filter-gradient(lighten($color-royal-blue-light, 10), lighten($color-royal-blue-dark, 10), vertical);
   @include background(linear-gradient(top, lighten($color-royal-blue-light-opaque, 10) 0%, lighten($color-royal-blue-dark-opaque, 10) $lineheight));
 }
 
 @mixin gradient-input {
-  background: $color-input-bg;
+  background : $color-input-bg;
   @include filter-gradient(darken($color-input-bg, 25%), $color-input-bg, vertical);
   @include background(linear-gradient(top, darken($color-input-bg, 25%) 0%, $color-input-bg 50%, $color-input-bg 100%));
 }
 
 @mixin gradient-input-focus {
-  background: $color-input-bg-focus;
+  background : $color-input-bg-focus;
   @include filter-gradient(darken($color-input-bg-focus, 25%), $color-input-bg-focus, vertical);
   @include background(linear-gradient(top, darken($color-input-bg-focus, 25%) 0%, $color-input-bg-focus 50%, $color-input-bg-focus 100%));
 }
 
 @mixin link-style($color: inherit, $visit-color: $color, $hover-color: $color-link) {
-  color: $color;
-  text-decoration: none;
+  color           : $color;
+  text-decoration : none;
   &:visited {
-    color: $visit-color;
-    text-decoration: none;
+    color           : $visit-color;
+    text-decoration : none;
   }
   &:hover {
-    color: $hover-color;
-    text-decoration: none;
+    color           : $hover-color;
+    text-decoration : none;
   }
 }

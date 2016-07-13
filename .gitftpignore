@@ -3,6 +3,7 @@ tests
 .editorconfig
 .scrutinizer.yml
 .travis.yml
+.jshintrc
 composer.json
 composer.lock
 config.rb

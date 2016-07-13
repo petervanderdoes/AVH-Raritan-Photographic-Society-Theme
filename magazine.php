@@ -29,10 +29,13 @@ if (!rps_is_paid_member(get_current_user_id())) {
     echo '<p>Welcome to the Raritan Photographic Society. Based in Middlesex County we are New Jersey’s oldest photo club.</p>';
     echo '<p>If you enjoy using your camera phone, point & shoot, digital SLR, or mirrorless camera and want to socialize with other photographers, while at the same time improving your photography skills, the Raritan Photographic Society is a fun camera club to be a part of.</p>';
     echo '<p>In addition to monthly lecture and competition/critique meetings, we organize field trips and workshops. All these programs will help you grow as a photographer, whether you are a beginning or professional photographer. Besides the afore mentioned programs we organize a holiday party and an end of the year banquet, which are fun events to socialize even more with all the members.</p>';
-    echo '<p>Before you decide to join, you are welcome to attend a meeting. You’ll be able to meet our members and find out in person what we’re all about. Check the ' . em_get_link('schedule of events') . ' to see when and where we meet.</p>';
+    echo '<p>Before you decide to join, you are welcome to attend a meeting. You’ll be able to meet our members and find out in person what we’re all about. Check the ' .
+         em_get_link('schedule of events') .
+         ' to see when and where we meet.</p>';
     echo '<p>I hope to welcome you at one of the meetings.<br />';
     echo 'Peter van der Does<br />';
     echo 'President</p>';
+    echo '</div>';
     echo '</div>';
     echo '</div>';
     echo '</section>';
@@ -40,14 +43,14 @@ if (!rps_is_paid_member(get_current_user_id())) {
 
 // Setup query for sticky posts.
 $sticky = get_option('sticky_posts');
-$post_to_skip = array();
-$sticky_queries = array();
+$post_to_skip = [];
+$sticky_queries = [];
 if (is_array($sticky) && !empty($sticky) && is_numeric($sticky[0])) {
     rsort($sticky);
     $amount_of_stickies_to_display = 3;
     $sticky = array_slice($sticky, 0, $amount_of_stickies_to_display);
     /* Query sticky posts */
-    $sticky_articles = new WP_Query(array('post__in' => $sticky, 'ignore_sticky_posts' => 1));
+    $sticky_articles = new WP_Query(['post__in' => $sticky, 'ignore_sticky_posts' => 1]);
 
     if (is_object($sticky_articles)) {
         $sticky_queries[] = $sticky_articles;
@@ -61,7 +64,13 @@ if (is_array($sticky) && !empty($sticky) && is_numeric($sticky[0])) {
 }
 
 // Get the query for articles marked for Magazine Excerpts marked per post and in the selected categories.
-$mag_queries = rps_suffusion_get_mag_section_queries(array('meta_check_field' => 'suf_magazine_excerpt', 'category_prefix' => 'suf_mag_excerpt_categories', 'to_skip' => $post_to_skip));
+$mag_queries = rps_suffusion_get_mag_section_queries(
+    [
+        'meta_check_field' => 'suf_magazine_excerpt',
+        'category_prefix'  => 'suf_mag_excerpt_categories',
+        'to_skip'          => $post_to_skip
+    ]
+);
 $queries = array_merge($sticky_queries, $mag_queries);
 $total = 0;
 foreach ($queries as $query) {
@@ -103,14 +112,22 @@ if ($total > 0) {
                 }
 
                 $category = $categories[0];
-                $category_link = '<a href="' . esc_url(get_category_link($category->term_id)) . '" title="' . esc_attr(sprintf(__("View all articles in %s"), $category->name)) . '" rel="category tag">';
-                $category_text = '<h3>' . $category_link . $category->name . '</h3></a>';
+                $category_link = '<a href="' .
+                                 esc_url(get_category_link($category->term_id)) .
+                                 '" title="' .
+                                 esc_attr(sprintf(__("View all articles in %s"), $category->name)) .
+                                 '" rel="category tag">';
+                $category_text = '<h3>' . $category_link . $category->name . '</a></h3>';
 
                 echo "<div class='suf-mag-excerpt entry-content suf-tile-{$cols_per_row}c $suf_mag_excerpt_full_story_position'>";
 
                 echo "<div class='suf-gradient suf-tile-topmost'>" . $category_text . "</div>";
 
-                echo "<h2 class='suf-mag-excerpt-title $suf_mag_excerpt_title_alignment'><a class='entry-title' rel='bookmark' href='" . get_permalink($post->ID) . "'>" . get_the_title($post->ID) . "</a></h2>";
+                echo "<h2 class='suf-mag-excerpt-title $suf_mag_excerpt_title_alignment'><a class='entry-title' rel='bookmark' href='" .
+                     get_permalink($post->ID) .
+                     "'>" .
+                     get_the_title($post->ID) .
+                     "</a></h2>";
 
                 echo "<div class='suf-mag-excerpt-text entry-content'>";
                 suffusion_excerpt();
@@ -118,7 +135,9 @@ if ($total > 0) {
 
                 if (trim($suf_mag_excerpt_full_story_text)) {
                     echo "<div class='suf-mag-excerpt-footer'>";
-                    echo "<a href='" . get_permalink($post->ID) . "' class='suf-mag-excerpt-full-story button'>$suf_mag_excerpt_full_story_text</a>";
+                    echo "<a href='" .
+                         get_permalink($post->ID) .
+                         "' class='suf-mag-excerpt-full-story button'>$suf_mag_excerpt_full_story_text</a>";
                     echo "</div>";
                 }
 
@@ -134,7 +153,9 @@ if ($total > 0) {
         }
     }
 
-    echo "</section>";
+    if ($tiles !== 0) {
+        echo "</section>";
+    }
 }
 
 echo "<section class='rps-showcases'>";
@@ -150,7 +171,14 @@ $output = '<table>';
 wp_reset_query();
 
 $ctr = 0;
-$queries = rps_suffusion_get_mag_section_queries(array('meta_check_field' => 'suf_magazine_excerpt', 'category_prefix' => 'suf_mag_excerpt_categories', 'to_skip' => $post_to_skip, 'total' => 10));
+$queries = rps_suffusion_get_mag_section_queries(
+    [
+        'meta_check_field' => 'suf_magazine_excerpt',
+        'category_prefix'  => 'suf_mag_excerpt_categories',
+        'to_skip'          => $post_to_skip,
+        'total'            => 10
+    ]
+);
 $total = 0;
 foreach ($queries as $query) {
     if (isset($query->posts) && is_array($query->posts)) {
@@ -173,11 +201,19 @@ if ($total > 0) {
                 }
 
                 $category = $categories[0];
-                $category_link = '<a href="' . esc_url(get_category_link($category->term_id)) . '" title="' . esc_attr(sprintf(__("View all articles in %s"), $category->name)) . '" rel="category tag">';
+                $category_link = '<a href="' .
+                                 esc_url(get_category_link($category->term_id)) .
+                                 '" title="' .
+                                 esc_attr(sprintf(__("View all articles in %s"), $category->name)) .
+                                 '" rel="category tag">';
                 $category_text = $category_link . $category->name . '</a>';
                 $title_text = "<a href='" . get_permalink($post->ID) . "'>" . get_the_title($post->ID) . "</a>";
                 $output .= '<tr>';
-                $output .= '<td style="white-space: nowrap; vertical-align: top;">' . $category_text . ':&nbsp;</td><td>' . $title_text . '</td>';
+                $output .= '<td style="white-space: nowrap; vertical-align: top;">' .
+                           $category_text .
+                           ':&nbsp;</td><td>' .
+                           $title_text .
+                           '</td>';
                 $output .= '</tr>';
                 $ctr++;
             }

@@ -1,17 +1,17 @@
 .rps-showcase-category-winner {
   h3 {
     @include adjust-font-size-to($base-font-size-oswald * 1.5, 1.5);
-    font-family: $headings;
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
-    color: white;
+    font-family : $headings;
+    font-weight : 400;
+    margin      : 0;
+    padding     : 0;
+    color       : white;
   }
   &:after {
-    content: "";
-    display: inline-block;
-    font-size: 0;
-    line-height: 0;
-    width: 100%;
+    content     : "";
+    display     : inline-block;
+    font-size   : 0;
+    line-height : 0;
+    width       : 100%;
   }
 }
