@@ -3,7 +3,7 @@
 == Changelog
 
 = Version 2.0.16-rc.1 =
-* Preparation for new development cycle.
+* Use post content for the welcome header.
 
 = Version 2.0.15 =
 * Let WordPress SEO take care of tracking outbound links.
