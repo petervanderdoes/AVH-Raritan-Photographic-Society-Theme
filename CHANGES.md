@@ -2,6 +2,9 @@
 
 == Changelog
 
+= Version 2.0.17-dev.1 =
+* Preparation for new development cycle.
+
 = Version 2.0.16 =
 * Use post content for the welcome header.
 
