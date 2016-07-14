@@ -9,7 +9,7 @@
     @include gradient-input;
     color       : $color-input-text;
     font-size   : 1em;
-    font-family : "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
+    font-family : $font-family-general;
     &:focus {
       @include gradient-input-focus;
       color : $color-input-text-focus;
@@ -30,7 +30,7 @@
     @include gradient-input;
     color       : $color-input-text;
     font-size   : 1em;
-    font-family : "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
+    font-family : $font-family-general;
     height      : 140px;
     border      : solid 1px #999999;
     padding     : 5px 3px 3px 7px;
