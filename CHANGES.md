@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 2.0.16-rc.1 =
+= Version 2.0.16 =
 * Use post content for the welcome header.
 
 = Version 2.0.15 =
