@@ -211,7 +211,7 @@ function actionRPS_enqueue_styles()
         wp_enqueue_script('rps', $stylesheet_directory_uri . '/scripts/rps.js', [], 'to_remove');
     } else {
         // The style version is automatically updated by using git-flow hooks.
-        $rps_style_version = "f9b98e3";
+        $rps_style_version = "e4486ef";
         wp_enqueue_style(
             'suffusion-theme',
             $stylesheet_directory_uri . '/css/rps-' . $rps_style_version . '.css',

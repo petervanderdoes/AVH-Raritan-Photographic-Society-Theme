@@ -1,5 +1,5 @@
 // Cache busting line record: 1
-$base-font-size : 13px;
+$base-font-size : 14px;
 $base-line-height : $base-font-size * 1.5;
 $rhythm-unit : rem;
 
@@ -53,7 +53,7 @@ $social-icon-16-sprite-dimensions : true;
 @include all-social-icon-16-sprites;
 
 body {
-  font-family           : "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
+  font-family           : $font-family-general;
   background-attachment : scroll;
   background-image      : $background-img;
   background-repeat     : repeat-x;
