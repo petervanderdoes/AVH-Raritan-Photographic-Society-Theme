@@ -18,8 +18,6 @@ global $suf_nav_links_style, $suf_nav_links_tab_title, $suf_nav_links_tab_link, 
 global $suf_nav_entity_order, $suf_navt_entity_order, $suf_nav_pages_all_sel, $suf_nav_cats_all_sel, $suf_nav_links_all_sel, $suf_navt_pages_all_sel, $suf_navt_cats_all_sel, $suf_navt_links_all_sel;
 global $suf_nav_menus_all_sel, $suf_navt_menus_all_sel;
 
-global $avh_rps_build_menu;
-$avh_rps_build_menu=true;
 $pages_style = $suf_nav_pages_style;
 $page_tab_title = stripslashes($suf_nav_page_tab_title);
 $page_tab_link = $suf_nav_page_tab_link;
@@ -273,4 +271,3 @@ if ($suffusion_echo_menu) {
     $doMenu=true;
     echo $ret_str;
 }
-$avh_rps_build_menu=false;
