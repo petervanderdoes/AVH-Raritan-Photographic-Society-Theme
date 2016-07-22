@@ -5132,7 +5132,7 @@ pre {
 /* line 160, ../sass/rps/_navigation-bar.scss */
 #rps-login-bar a,
 #rps-login-bar a:visited {
-  display: inline;
+  display: inline-block;
   font-weight: bold;
   padding: 0;
 }
