@@ -2,7 +2,7 @@
 
 == Changelog
 
-= Version 2.0.17-dev.7 =
+= Version 2.0.17-dev.11 =
 * Update Font Family.
 * Increase font size.
 
